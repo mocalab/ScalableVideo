@@ -1,0 +1,84 @@
+\hypertarget{structpugi_1_1xpath__parse__result}{\section{pugi\-:\-:xpath\-\_\-parse\-\_\-result Struct Reference}
+\label{structpugi_1_1xpath__parse__result}\index{pugi\-::xpath\-\_\-parse\-\_\-result@{pugi\-::xpath\-\_\-parse\-\_\-result}}
+}
+
+
+{\ttfamily \#include $<$pugixml.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structpugi_1_1xpath__parse__result_a030c4eca6690d536f61e1e937f67ae1c}{xpath\-\_\-parse\-\_\-result} ()
+\item 
+\hyperlink{structpugi_1_1xpath__parse__result_a79b82e65183e2fe7e4c866afb02b07c0}{operator bool} () const 
+\item 
+const char $\ast$ \hyperlink{structpugi_1_1xpath__parse__result_a3de342b3c2c13db7ba9dafba73c06228}{description} () const 
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{structpugi_1_1xpath__parse__result_ab2c625be89b995afac829012bc749fe4}{error}
+\item 
+ptrdiff\-\_\-t \hyperlink{structpugi_1_1xpath__parse__result_add47d886c654b4d8a836573b2c2a7acb}{offset}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structpugi_1_1xpath__parse__result_a030c4eca6690d536f61e1e937f67ae1c}{\index{pugi\-::xpath\-\_\-parse\-\_\-result@{pugi\-::xpath\-\_\-parse\-\_\-result}!xpath\-\_\-parse\-\_\-result@{xpath\-\_\-parse\-\_\-result}}
+\index{xpath\-\_\-parse\-\_\-result@{xpath\-\_\-parse\-\_\-result}!pugi::xpath_parse_result@{pugi\-::xpath\-\_\-parse\-\_\-result}}
+\subsubsection[{xpath\-\_\-parse\-\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xpath\-\_\-parse\-\_\-result\-::xpath\-\_\-parse\-\_\-result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structpugi_1_1xpath__parse__result_a030c4eca6690d536f61e1e937f67ae1c}
+
+\begin{DoxyCode}
+9819                                                    : \hyperlink{structpugi_1_1xpath__parse__result_ab2c625be89b995afac829012bc749fe4}{error}(\textcolor{stringliteral}{"Internal error"}), 
+      \hyperlink{structpugi_1_1xpath__parse__result_add47d886c654b4d8a836573b2c2a7acb}{offset}(0)
+9820     \{
+9821     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structpugi_1_1xpath__parse__result_a3de342b3c2c13db7ba9dafba73c06228}{\index{pugi\-::xpath\-\_\-parse\-\_\-result@{pugi\-::xpath\-\_\-parse\-\_\-result}!description@{description}}
+\index{description@{description}!pugi::xpath_parse_result@{pugi\-::xpath\-\_\-parse\-\_\-result}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} const char $\ast$ pugi\-::xpath\-\_\-parse\-\_\-result\-::description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structpugi_1_1xpath__parse__result_a3de342b3c2c13db7ba9dafba73c06228}
+
+\begin{DoxyCode}
+9829     \{
+9830         \textcolor{keywordflow}{return} \hyperlink{structpugi_1_1xpath__parse__result_ab2c625be89b995afac829012bc749fe4}{error} ? \hyperlink{structpugi_1_1xpath__parse__result_ab2c625be89b995afac829012bc749fe4}{error} : \textcolor{stringliteral}{"No error"};
+9831     \}
+\end{DoxyCode}
+\hypertarget{structpugi_1_1xpath__parse__result_a79b82e65183e2fe7e4c866afb02b07c0}{\index{pugi\-::xpath\-\_\-parse\-\_\-result@{pugi\-::xpath\-\_\-parse\-\_\-result}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!pugi::xpath_parse_result@{pugi\-::xpath\-\_\-parse\-\_\-result}}
+\subsubsection[{operator bool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xpath\-\_\-parse\-\_\-result\-::operator bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structpugi_1_1xpath__parse__result_a79b82e65183e2fe7e4c866afb02b07c0}
+
+\begin{DoxyCode}
+9824     \{
+9825         \textcolor{keywordflow}{return} \hyperlink{structpugi_1_1xpath__parse__result_ab2c625be89b995afac829012bc749fe4}{error} == 0;
+9826     \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\hypertarget{structpugi_1_1xpath__parse__result_ab2c625be89b995afac829012bc749fe4}{\index{pugi\-::xpath\-\_\-parse\-\_\-result@{pugi\-::xpath\-\_\-parse\-\_\-result}!error@{error}}
+\index{error@{error}!pugi::xpath_parse_result@{pugi\-::xpath\-\_\-parse\-\_\-result}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ pugi\-::xpath\-\_\-parse\-\_\-result\-::error}}\label{structpugi_1_1xpath__parse__result_ab2c625be89b995afac829012bc749fe4}
+\hypertarget{structpugi_1_1xpath__parse__result_add47d886c654b4d8a836573b2c2a7acb}{\index{pugi\-::xpath\-\_\-parse\-\_\-result@{pugi\-::xpath\-\_\-parse\-\_\-result}!offset@{offset}}
+\index{offset@{offset}!pugi::xpath_parse_result@{pugi\-::xpath\-\_\-parse\-\_\-result}}
+\subsubsection[{offset}]{\setlength{\rightskip}{0pt plus 5cm}ptrdiff\-\_\-t pugi\-::xpath\-\_\-parse\-\_\-result\-::offset}}\label{structpugi_1_1xpath__parse__result_add47d886c654b4d8a836573b2c2a7acb}
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8hpp}{pugixml.\-hpp}\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

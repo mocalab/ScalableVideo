@@ -1,0 +1,350 @@
+\hypertarget{classMediaStatistics}{\section{Media\-Statistics Class Reference}
+\label{classMediaStatistics}\index{Media\-Statistics@{Media\-Statistics}}
+}
+
+
+A wrapper to V\-L\-C libvlc\-\_\-media\-\_\-stats\-\_\-t struct.  
+
+
+
+
+{\ttfamily \#include $<$mediastatistics.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMediaStatistics_a5b768a2e4c481a3e630ea88f1d7e6540}{Media\-Statistics} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMediaStatistics}{Media\-Statistics} constructor. \end{DoxyCompactList}\item 
+int \hyperlink{classMediaStatistics_a93b33f4ac072547f33b6a5be0d47f1d2}{get\-Read\-Bytes} () const 
+\item 
+void \hyperlink{classMediaStatistics_a729d2733cd49ad96ab595bb5eb38fe87}{set\-Read\-Bytes} (int value)
+\item 
+int \hyperlink{classMediaStatistics_ac48baa2b782e0dbcadd5d69914f9e80c}{get\-Demux\-Read\-Bytes} () const 
+\item 
+void \hyperlink{classMediaStatistics_afecbd2e8ebc147b344a9dc18dc6af431}{set\-Demux\-Read\-Bytes} (int value)
+\item 
+int \hyperlink{classMediaStatistics_aaa080505dbe504d5a4d696f4cbaf989d}{get\-Demux\-Corrupted} () const 
+\item 
+void \hyperlink{classMediaStatistics_a6d9b5760c321c9e189c780ad64cda8f8}{set\-Demux\-Corrupted} (int value)
+\item 
+int \hyperlink{classMediaStatistics_ad3c91e75dd165e0ca308dc40990ecc87}{get\-Demux\-Discontinuity} () const 
+\item 
+void \hyperlink{classMediaStatistics_a05b13c332cd4ed139392e528b52ac89c}{set\-Demux\-Discontinuity} (int value)
+\item 
+int \hyperlink{classMediaStatistics_a5265392ca4db34bf23cf298e8fd506af}{get\-Decoded\-Video} () const 
+\item 
+void \hyperlink{classMediaStatistics_a267abf187ab5690f931d0d7d45407dcc}{set\-Decoded\-Video} (int value)
+\item 
+int \hyperlink{classMediaStatistics_a2b1143b0060a9a21ba6ea5a881fa76c1}{get\-Displayed\-Pictures} () const 
+\item 
+void \hyperlink{classMediaStatistics_ad37d42721c420cea8862cbfd27380a69}{set\-Displayed\-Pictures} (int value)
+\item 
+int \hyperlink{classMediaStatistics_a1548c3da664b452a5c8ecbd927d7f684}{get\-Played\-Pictures} () const 
+\item 
+void \hyperlink{classMediaStatistics_adf378b9efe24da6724583ff13ad98356}{set\-Played\-Pictures} (int value)
+\item 
+int \hyperlink{classMediaStatistics_a264840500b7d487d6226e20b183c54ce}{get\-Lost\-Pictures} () const 
+\item 
+void \hyperlink{classMediaStatistics_a0b305cf428cdc7905d2beb98f08e7c62}{set\-Lost\-Pictures} (int value)
+\item 
+float \hyperlink{classMediaStatistics_a436b36f7f22c4bc93da33712c9e200f4}{get\-Input\-Bitrate} () const 
+\item 
+void \hyperlink{classMediaStatistics_ad504b337caf39ac04909a4c480101c19}{set\-Input\-Bitrate} (float value)
+\item 
+float \hyperlink{classMediaStatistics_a046962e0db08292a1778bb859c234908}{get\-Demux\-Bitrate} () const 
+\item 
+void \hyperlink{classMediaStatistics_a36bd398cacfada1aaf865374f4bc5e2a}{set\-Demux\-Bitrate} (float value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A wrapper to V\-L\-C libvlc\-\_\-media\-\_\-stats\-\_\-t struct. 
+
+This class serves as a C++ wrapper to the libvlc\-\_\-media\-\_\-stats\-\_\-t struct defined by V\-L\-C. It encapsulates only the fields we may be interested in. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMediaStatistics_a5b768a2e4c481a3e630ea88f1d7e6540}{\index{Media\-Statistics@{Media\-Statistics}!Media\-Statistics@{Media\-Statistics}}
+\index{Media\-Statistics@{Media\-Statistics}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{Media\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}Media\-Statistics\-::\-Media\-Statistics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMediaStatistics_a5b768a2e4c481a3e630ea88f1d7e6540}
+
+
+\hyperlink{classMediaStatistics}{Media\-Statistics} constructor. 
+
+
+\begin{DoxyCode}
+4 \{
+5 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMediaStatistics_a5265392ca4db34bf23cf298e8fd506af}{\index{Media\-Statistics@{Media\-Statistics}!get\-Decoded\-Video@{get\-Decoded\-Video}}
+\index{get\-Decoded\-Video@{get\-Decoded\-Video}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{get\-Decoded\-Video}]{\setlength{\rightskip}{0pt plus 5cm}int Media\-Statistics\-::get\-Decoded\-Video (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMediaStatistics_a5265392ca4db34bf23cf298e8fd506af}
+
+\begin{DoxyCode}
+58 \{
+59     \textcolor{keywordflow}{return} decodedVideo;
+60 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_a046962e0db08292a1778bb859c234908}{\index{Media\-Statistics@{Media\-Statistics}!get\-Demux\-Bitrate@{get\-Demux\-Bitrate}}
+\index{get\-Demux\-Bitrate@{get\-Demux\-Bitrate}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{get\-Demux\-Bitrate}]{\setlength{\rightskip}{0pt plus 5cm}float Media\-Statistics\-::get\-Demux\-Bitrate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMediaStatistics_a046962e0db08292a1778bb859c234908}
+
+\begin{DoxyCode}
+8 \{
+9     \textcolor{keywordflow}{return} demuxBitrate;
+10 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_aaa080505dbe504d5a4d696f4cbaf989d}{\index{Media\-Statistics@{Media\-Statistics}!get\-Demux\-Corrupted@{get\-Demux\-Corrupted}}
+\index{get\-Demux\-Corrupted@{get\-Demux\-Corrupted}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{get\-Demux\-Corrupted}]{\setlength{\rightskip}{0pt plus 5cm}int Media\-Statistics\-::get\-Demux\-Corrupted (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMediaStatistics_aaa080505dbe504d5a4d696f4cbaf989d}
+
+\begin{DoxyCode}
+78 \{
+79     \textcolor{keywordflow}{return} demuxCorrupted;
+80 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_ad3c91e75dd165e0ca308dc40990ecc87}{\index{Media\-Statistics@{Media\-Statistics}!get\-Demux\-Discontinuity@{get\-Demux\-Discontinuity}}
+\index{get\-Demux\-Discontinuity@{get\-Demux\-Discontinuity}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{get\-Demux\-Discontinuity}]{\setlength{\rightskip}{0pt plus 5cm}int Media\-Statistics\-::get\-Demux\-Discontinuity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMediaStatistics_ad3c91e75dd165e0ca308dc40990ecc87}
+
+\begin{DoxyCode}
+68 \{
+69     \textcolor{keywordflow}{return} demuxDiscontinuity;
+70 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_ac48baa2b782e0dbcadd5d69914f9e80c}{\index{Media\-Statistics@{Media\-Statistics}!get\-Demux\-Read\-Bytes@{get\-Demux\-Read\-Bytes}}
+\index{get\-Demux\-Read\-Bytes@{get\-Demux\-Read\-Bytes}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{get\-Demux\-Read\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}int Media\-Statistics\-::get\-Demux\-Read\-Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMediaStatistics_ac48baa2b782e0dbcadd5d69914f9e80c}
+
+\begin{DoxyCode}
+88 \{
+89     \textcolor{keywordflow}{return} demuxReadBytes;
+90 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_a2b1143b0060a9a21ba6ea5a881fa76c1}{\index{Media\-Statistics@{Media\-Statistics}!get\-Displayed\-Pictures@{get\-Displayed\-Pictures}}
+\index{get\-Displayed\-Pictures@{get\-Displayed\-Pictures}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{get\-Displayed\-Pictures}]{\setlength{\rightskip}{0pt plus 5cm}int Media\-Statistics\-::get\-Displayed\-Pictures (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMediaStatistics_a2b1143b0060a9a21ba6ea5a881fa76c1}
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordflow}{return} displayedPictures;
+50 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_a436b36f7f22c4bc93da33712c9e200f4}{\index{Media\-Statistics@{Media\-Statistics}!get\-Input\-Bitrate@{get\-Input\-Bitrate}}
+\index{get\-Input\-Bitrate@{get\-Input\-Bitrate}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{get\-Input\-Bitrate}]{\setlength{\rightskip}{0pt plus 5cm}float Media\-Statistics\-::get\-Input\-Bitrate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMediaStatistics_a436b36f7f22c4bc93da33712c9e200f4}
+
+\begin{DoxyCode}
+18 \{
+19     \textcolor{keywordflow}{return} inputBitrate;
+20 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_a264840500b7d487d6226e20b183c54ce}{\index{Media\-Statistics@{Media\-Statistics}!get\-Lost\-Pictures@{get\-Lost\-Pictures}}
+\index{get\-Lost\-Pictures@{get\-Lost\-Pictures}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{get\-Lost\-Pictures}]{\setlength{\rightskip}{0pt plus 5cm}int Media\-Statistics\-::get\-Lost\-Pictures (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMediaStatistics_a264840500b7d487d6226e20b183c54ce}
+
+\begin{DoxyCode}
+28 \{
+29     \textcolor{keywordflow}{return} lostPictures;
+30 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_a1548c3da664b452a5c8ecbd927d7f684}{\index{Media\-Statistics@{Media\-Statistics}!get\-Played\-Pictures@{get\-Played\-Pictures}}
+\index{get\-Played\-Pictures@{get\-Played\-Pictures}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{get\-Played\-Pictures}]{\setlength{\rightskip}{0pt plus 5cm}int Media\-Statistics\-::get\-Played\-Pictures (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMediaStatistics_a1548c3da664b452a5c8ecbd927d7f684}
+
+\begin{DoxyCode}
+38 \{
+39     \textcolor{keywordflow}{return} playedPictures;
+40 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_a93b33f4ac072547f33b6a5be0d47f1d2}{\index{Media\-Statistics@{Media\-Statistics}!get\-Read\-Bytes@{get\-Read\-Bytes}}
+\index{get\-Read\-Bytes@{get\-Read\-Bytes}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{get\-Read\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}int Media\-Statistics\-::get\-Read\-Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMediaStatistics_a93b33f4ac072547f33b6a5be0d47f1d2}
+
+\begin{DoxyCode}
+98 \{
+99     \textcolor{keywordflow}{return} readBytes;
+100 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_a267abf187ab5690f931d0d7d45407dcc}{\index{Media\-Statistics@{Media\-Statistics}!set\-Decoded\-Video@{set\-Decoded\-Video}}
+\index{set\-Decoded\-Video@{set\-Decoded\-Video}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{set\-Decoded\-Video}]{\setlength{\rightskip}{0pt plus 5cm}void Media\-Statistics\-::set\-Decoded\-Video (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}\label{classMediaStatistics_a267abf187ab5690f931d0d7d45407dcc}
+
+\begin{DoxyCode}
+63 \{
+64     decodedVideo = value;
+65 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_a36bd398cacfada1aaf865374f4bc5e2a}{\index{Media\-Statistics@{Media\-Statistics}!set\-Demux\-Bitrate@{set\-Demux\-Bitrate}}
+\index{set\-Demux\-Bitrate@{set\-Demux\-Bitrate}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{set\-Demux\-Bitrate}]{\setlength{\rightskip}{0pt plus 5cm}void Media\-Statistics\-::set\-Demux\-Bitrate (
+\begin{DoxyParamCaption}
+\item[{float}]{value}
+\end{DoxyParamCaption}
+)}}\label{classMediaStatistics_a36bd398cacfada1aaf865374f4bc5e2a}
+
+\begin{DoxyCode}
+13 \{
+14     demuxBitrate = value;
+15 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_a6d9b5760c321c9e189c780ad64cda8f8}{\index{Media\-Statistics@{Media\-Statistics}!set\-Demux\-Corrupted@{set\-Demux\-Corrupted}}
+\index{set\-Demux\-Corrupted@{set\-Demux\-Corrupted}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{set\-Demux\-Corrupted}]{\setlength{\rightskip}{0pt plus 5cm}void Media\-Statistics\-::set\-Demux\-Corrupted (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}\label{classMediaStatistics_a6d9b5760c321c9e189c780ad64cda8f8}
+
+\begin{DoxyCode}
+83 \{
+84     demuxCorrupted = value;
+85 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_a05b13c332cd4ed139392e528b52ac89c}{\index{Media\-Statistics@{Media\-Statistics}!set\-Demux\-Discontinuity@{set\-Demux\-Discontinuity}}
+\index{set\-Demux\-Discontinuity@{set\-Demux\-Discontinuity}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{set\-Demux\-Discontinuity}]{\setlength{\rightskip}{0pt plus 5cm}void Media\-Statistics\-::set\-Demux\-Discontinuity (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}\label{classMediaStatistics_a05b13c332cd4ed139392e528b52ac89c}
+
+\begin{DoxyCode}
+73 \{
+74     demuxDiscontinuity = value;
+75 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_afecbd2e8ebc147b344a9dc18dc6af431}{\index{Media\-Statistics@{Media\-Statistics}!set\-Demux\-Read\-Bytes@{set\-Demux\-Read\-Bytes}}
+\index{set\-Demux\-Read\-Bytes@{set\-Demux\-Read\-Bytes}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{set\-Demux\-Read\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}void Media\-Statistics\-::set\-Demux\-Read\-Bytes (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}\label{classMediaStatistics_afecbd2e8ebc147b344a9dc18dc6af431}
+
+\begin{DoxyCode}
+93 \{
+94     demuxReadBytes = value;
+95 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_ad37d42721c420cea8862cbfd27380a69}{\index{Media\-Statistics@{Media\-Statistics}!set\-Displayed\-Pictures@{set\-Displayed\-Pictures}}
+\index{set\-Displayed\-Pictures@{set\-Displayed\-Pictures}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{set\-Displayed\-Pictures}]{\setlength{\rightskip}{0pt plus 5cm}void Media\-Statistics\-::set\-Displayed\-Pictures (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}\label{classMediaStatistics_ad37d42721c420cea8862cbfd27380a69}
+
+\begin{DoxyCode}
+53 \{
+54     displayedPictures = value;
+55 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_ad504b337caf39ac04909a4c480101c19}{\index{Media\-Statistics@{Media\-Statistics}!set\-Input\-Bitrate@{set\-Input\-Bitrate}}
+\index{set\-Input\-Bitrate@{set\-Input\-Bitrate}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{set\-Input\-Bitrate}]{\setlength{\rightskip}{0pt plus 5cm}void Media\-Statistics\-::set\-Input\-Bitrate (
+\begin{DoxyParamCaption}
+\item[{float}]{value}
+\end{DoxyParamCaption}
+)}}\label{classMediaStatistics_ad504b337caf39ac04909a4c480101c19}
+
+\begin{DoxyCode}
+23 \{
+24     inputBitrate = value;
+25 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_a0b305cf428cdc7905d2beb98f08e7c62}{\index{Media\-Statistics@{Media\-Statistics}!set\-Lost\-Pictures@{set\-Lost\-Pictures}}
+\index{set\-Lost\-Pictures@{set\-Lost\-Pictures}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{set\-Lost\-Pictures}]{\setlength{\rightskip}{0pt plus 5cm}void Media\-Statistics\-::set\-Lost\-Pictures (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}\label{classMediaStatistics_a0b305cf428cdc7905d2beb98f08e7c62}
+
+\begin{DoxyCode}
+33 \{
+34     lostPictures = value;
+35 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_adf378b9efe24da6724583ff13ad98356}{\index{Media\-Statistics@{Media\-Statistics}!set\-Played\-Pictures@{set\-Played\-Pictures}}
+\index{set\-Played\-Pictures@{set\-Played\-Pictures}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{set\-Played\-Pictures}]{\setlength{\rightskip}{0pt plus 5cm}void Media\-Statistics\-::set\-Played\-Pictures (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}\label{classMediaStatistics_adf378b9efe24da6724583ff13ad98356}
+
+\begin{DoxyCode}
+43 \{
+44     playedPictures = value;
+45 \}
+\end{DoxyCode}
+\hypertarget{classMediaStatistics_a729d2733cd49ad96ab595bb5eb38fe87}{\index{Media\-Statistics@{Media\-Statistics}!set\-Read\-Bytes@{set\-Read\-Bytes}}
+\index{set\-Read\-Bytes@{set\-Read\-Bytes}!MediaStatistics@{Media\-Statistics}}
+\subsubsection[{set\-Read\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}void Media\-Statistics\-::set\-Read\-Bytes (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}\label{classMediaStatistics_a729d2733cd49ad96ab595bb5eb38fe87}
+
+\begin{DoxyCode}
+103 \{
+104     readBytes = value;
+105 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Types/\hyperlink{mediastatistics_8h}{mediastatistics.\-h}\item 
+Types/\hyperlink{mediastatistics_8cpp}{mediastatistics.\-cpp}\end{DoxyCompactItemize}

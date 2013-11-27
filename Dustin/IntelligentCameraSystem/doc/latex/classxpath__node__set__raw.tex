@@ -1,0 +1,256 @@
+\hypertarget{classxpath__node__set__raw}{\section{xpath\-\_\-node\-\_\-set\-\_\-raw Class Reference}
+\label{classxpath__node__set__raw}\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classxpath__node__set__raw_ae849a23893eef70c01197feaf5c07544}{xpath\-\_\-node\-\_\-set\-\_\-raw} ()
+\item 
+xpath\-\_\-node $\ast$ \hyperlink{classxpath__node__set__raw_a8d08142ac662315aa23395a44f301b66}{begin} () const 
+\item 
+xpath\-\_\-node $\ast$ \hyperlink{classxpath__node__set__raw_a6be07e8a83744082cf106d4611da0164}{end} () const 
+\item 
+bool \hyperlink{classxpath__node__set__raw_affb19c256fef52cc4d34e59a9ac0c2b6}{empty} () const 
+\item 
+size\-\_\-t \hyperlink{classxpath__node__set__raw_a7121a0eb1af207606b9613747834f3bd}{size} () const 
+\item 
+xpath\-\_\-node \hyperlink{classxpath__node__set__raw_ac6d6a4e637df45137d7cb6c925230830}{first} () const 
+\item 
+void \hyperlink{classxpath__node__set__raw_a676ec123e5be874869c78ff5c43ae9c2}{push\-\_\-back} (const xpath\-\_\-node \&node, \hyperlink{classxpath__allocator}{xpath\-\_\-allocator} $\ast$alloc)
+\item 
+void \hyperlink{classxpath__node__set__raw_a0c02728de3d895a2d12df9666d60e414}{append} (const xpath\-\_\-node $\ast$begin\-\_\-, const xpath\-\_\-node $\ast$end\-\_\-, \hyperlink{classxpath__allocator}{xpath\-\_\-allocator} $\ast$alloc)
+\item 
+void \hyperlink{classxpath__node__set__raw_a5e46ee306afc24ea83f6c1181bba3600}{sort\-\_\-do} ()
+\item 
+void \hyperlink{classxpath__node__set__raw_aba48d228f554065702f3e6d5059f701d}{truncate} (xpath\-\_\-node $\ast$pos)
+\item 
+void \hyperlink{classxpath__node__set__raw_af82da6fa8d42f9dff9c55e7b93d96e26}{remove\-\_\-duplicates} ()
+\item 
+xpath\-\_\-node\-\_\-set\-::type\-\_\-t \hyperlink{classxpath__node__set__raw_a9c1dceb2d9a8e0747380bd12968fc9d8}{type} () const 
+\item 
+void \hyperlink{classxpath__node__set__raw_ae73780271d772967f78ddd7b9376cdab}{set\-\_\-type} (xpath\-\_\-node\-\_\-set\-::type\-\_\-t value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classxpath__node__set__raw_ae849a23893eef70c01197feaf5c07544}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{xpath\-\_\-node\-\_\-set\-\_\-raw}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-node\-\_\-set\-\_\-raw\-::xpath\-\_\-node\-\_\-set\-\_\-raw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_ae849a23893eef70c01197feaf5c07544}
+
+\begin{DoxyCode}
+6809                             : \_type(xpath\_node\_set::type\_unsorted), \_begin(0), \_end(0), \_eos(0)
+6810         \{
+6811         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classxpath__node__set__raw_a0c02728de3d895a2d12df9666d60e414}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!append@{append}}
+\index{append@{append}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\-\_\-node\-\_\-set\-\_\-raw\-::append (
+\begin{DoxyParamCaption}
+\item[{const xpath\-\_\-node $\ast$}]{begin\-\_\-, }
+\item[{const xpath\-\_\-node $\ast$}]{end\-\_\-, }
+\item[{{\bf xpath\-\_\-allocator} $\ast$}]{alloc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_a0c02728de3d895a2d12df9666d60e414}
+
+\begin{DoxyCode}
+6861         \{
+6862             \textcolor{keywordtype}{size\_t} size\_ = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(\_end - \_begin);
+6863             \textcolor{keywordtype}{size\_t} capacity = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(\_eos - \_begin);
+6864             \textcolor{keywordtype}{size\_t} count = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(end\_ - begin\_);
+6865 
+6866             \textcolor{keywordflow}{if} (size\_ + count > capacity)
+6867             \{
+6868                 \textcolor{comment}{// reallocate the old array or allocate a new one}
+6869                 xpath\_node* data = \textcolor{keyword}{static\_cast<}xpath\_node*\textcolor{keyword}{>}(alloc->\hyperlink{classxpath__allocator_a4dd502389202ec8e7420832112a571e5}{reallocate}(\_begin, capacity * \textcolor{keyword}{
+      sizeof}(xpath\_node), (size\_ + count) * \textcolor{keyword}{sizeof}(xpath\_node)));
+6870                 assert(data);
+6871 
+6872                 \textcolor{comment}{// finalize}
+6873                 \_begin = data;
+6874                 \_end = data + size\_;
+6875                 \_eos = data + size\_ + count;
+6876             \}
+6877 
+6878             memcpy(\_end, begin\_, count * \textcolor{keyword}{sizeof}(xpath\_node));
+6879             \_end += count;
+6880         \}
+\end{DoxyCode}
+\hypertarget{classxpath__node__set__raw_a8d08142ac662315aa23395a44f301b66}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!begin@{begin}}
+\index{begin@{begin}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-node$\ast$ xpath\-\_\-node\-\_\-set\-\_\-raw\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_a8d08142ac662315aa23395a44f301b66}
+
+\begin{DoxyCode}
+6814         \{
+6815             \textcolor{keywordflow}{return} \_begin;
+6816         \}
+\end{DoxyCode}
+\hypertarget{classxpath__node__set__raw_affb19c256fef52cc4d34e59a9ac0c2b6}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!empty@{empty}}
+\index{empty@{empty}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}bool xpath\-\_\-node\-\_\-set\-\_\-raw\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_affb19c256fef52cc4d34e59a9ac0c2b6}
+
+\begin{DoxyCode}
+6824         \{
+6825             \textcolor{keywordflow}{return} \_begin == \_end;
+6826         \}
+\end{DoxyCode}
+\hypertarget{classxpath__node__set__raw_a6be07e8a83744082cf106d4611da0164}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!end@{end}}
+\index{end@{end}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-node$\ast$ xpath\-\_\-node\-\_\-set\-\_\-raw\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_a6be07e8a83744082cf106d4611da0164}
+
+\begin{DoxyCode}
+6819         \{
+6820             \textcolor{keywordflow}{return} \_end;
+6821         \}
+\end{DoxyCode}
+\hypertarget{classxpath__node__set__raw_ac6d6a4e637df45137d7cb6c925230830}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!first@{first}}
+\index{first@{first}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{first}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-node xpath\-\_\-node\-\_\-set\-\_\-raw\-::first (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_ac6d6a4e637df45137d7cb6c925230830}
+
+\begin{DoxyCode}
+6834         \{
+6835             \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_aca111b93f54ac52bd9a932ffda372368}{xpath\_first}(\_begin, \_end, \_type);
+6836         \}
+\end{DoxyCode}
+\hypertarget{classxpath__node__set__raw_a676ec123e5be874869c78ff5c43ae9c2}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!push\-\_\-back@{push\-\_\-back}}
+\index{push\-\_\-back@{push\-\_\-back}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{push\-\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\-\_\-node\-\_\-set\-\_\-raw\-::push\-\_\-back (
+\begin{DoxyParamCaption}
+\item[{const xpath\-\_\-node \&}]{node, }
+\item[{{\bf xpath\-\_\-allocator} $\ast$}]{alloc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_a676ec123e5be874869c78ff5c43ae9c2}
+
+\begin{DoxyCode}
+6839         \{
+6840             \textcolor{keywordflow}{if} (\_end == \_eos)
+6841             \{
+6842                 \textcolor{keywordtype}{size\_t} capacity = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(\_eos - \_begin);
+6843 
+6844                 \textcolor{comment}{// get new capacity (1.5x rule)}
+6845                 \textcolor{keywordtype}{size\_t} new\_capacity = capacity + capacity / 2 + 1;
+6846 
+6847                 \textcolor{comment}{// reallocate the old array or allocate a new one}
+6848                 xpath\_node* data = \textcolor{keyword}{static\_cast<}xpath\_node*\textcolor{keyword}{>}(alloc->\hyperlink{classxpath__allocator_a4dd502389202ec8e7420832112a571e5}{reallocate}(\_begin, capacity * \textcolor{keyword}{
+      sizeof}(xpath\_node), new\_capacity * \textcolor{keyword}{sizeof}(xpath\_node)));
+6849                 assert(data);
+6850 
+6851                 \textcolor{comment}{// finalize}
+6852                 \_begin = data;
+6853                 \_end = data + capacity;
+6854                 \_eos = data + new\_capacity;
+6855             \}
+6856 
+6857             *\_end++ = node;
+6858         \}
+\end{DoxyCode}
+\hypertarget{classxpath__node__set__raw_af82da6fa8d42f9dff9c55e7b93d96e26}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!remove\-\_\-duplicates@{remove\-\_\-duplicates}}
+\index{remove\-\_\-duplicates@{remove\-\_\-duplicates}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{remove\-\_\-duplicates}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\-\_\-node\-\_\-set\-\_\-raw\-::remove\-\_\-duplicates (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_af82da6fa8d42f9dff9c55e7b93d96e26}
+
+\begin{DoxyCode}
+6895         \{
+6896             \textcolor{keywordflow}{if} (\_type == xpath\_node\_set::type\_unsorted)
+6897                 \hyperlink{pugixml_8cpp_a422d054a9e9fa1f5546a8365cd1d757b}{sort}(\_begin, \_end, \hyperlink{structduplicate__comparator}{duplicate\_comparator}());
+6898         
+6899             \_end = \hyperlink{pugixml_8cpp_a50d3fa6d38fd850cdc7842683e656a11}{unique}(\_begin, \_end);
+6900         \}
+\end{DoxyCode}
+\hypertarget{classxpath__node__set__raw_ae73780271d772967f78ddd7b9376cdab}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!set\-\_\-type@{set\-\_\-type}}
+\index{set\-\_\-type@{set\-\_\-type}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{set\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\-\_\-node\-\_\-set\-\_\-raw\-::set\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{xpath\-\_\-node\-\_\-set\-::type\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_ae73780271d772967f78ddd7b9376cdab}
+
+\begin{DoxyCode}
+6908         \{
+6909             \_type = value;
+6910         \}
+\end{DoxyCode}
+\hypertarget{classxpath__node__set__raw_a7121a0eb1af207606b9613747834f3bd}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!size@{size}}
+\index{size@{size}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t xpath\-\_\-node\-\_\-set\-\_\-raw\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_a7121a0eb1af207606b9613747834f3bd}
+
+\begin{DoxyCode}
+6829         \{
+6830             \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(\_end - \_begin);
+6831         \}
+\end{DoxyCode}
+\hypertarget{classxpath__node__set__raw_a5e46ee306afc24ea83f6c1181bba3600}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!sort\-\_\-do@{sort\-\_\-do}}
+\index{sort\-\_\-do@{sort\-\_\-do}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{sort\-\_\-do}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\-\_\-node\-\_\-set\-\_\-raw\-::sort\-\_\-do (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_a5e46ee306afc24ea83f6c1181bba3600}
+
+\begin{DoxyCode}
+6883         \{
+6884             \_type = \hyperlink{pugixml_8cpp_a8cb0eb3d56ad07f31e10d66d23fbc66d}{xpath\_sort}(\_begin, \_end, \_type, \textcolor{keyword}{false});
+6885         \}
+\end{DoxyCode}
+\hypertarget{classxpath__node__set__raw_aba48d228f554065702f3e6d5059f701d}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!truncate@{truncate}}
+\index{truncate@{truncate}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{truncate}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\-\_\-node\-\_\-set\-\_\-raw\-::truncate (
+\begin{DoxyParamCaption}
+\item[{xpath\-\_\-node $\ast$}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_aba48d228f554065702f3e6d5059f701d}
+
+\begin{DoxyCode}
+6888         \{
+6889             assert(\_begin <= pos && pos <= \_end);
+6890 
+6891             \_end = pos;
+6892         \}
+\end{DoxyCode}
+\hypertarget{classxpath__node__set__raw_a9c1dceb2d9a8e0747380bd12968fc9d8}{\index{xpath\-\_\-node\-\_\-set\-\_\-raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}!type@{type}}
+\index{type@{type}!xpath_node_set_raw@{xpath\-\_\-node\-\_\-set\-\_\-raw}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-node\-\_\-set\-::type\-\_\-t xpath\-\_\-node\-\_\-set\-\_\-raw\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__node__set__raw_a9c1dceb2d9a8e0747380bd12968fc9d8}
+
+\begin{DoxyCode}
+6903         \{
+6904             \textcolor{keywordflow}{return} \_type;
+6905         \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

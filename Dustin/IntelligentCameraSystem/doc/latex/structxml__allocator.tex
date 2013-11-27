@@ -1,0 +1,302 @@
+\hypertarget{structxml__allocator}{\section{xml\-\_\-allocator Struct Reference}
+\label{structxml__allocator}\index{xml\-\_\-allocator@{xml\-\_\-allocator}}
+}
+Inheritance diagram for xml\-\_\-allocator\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structxml__allocator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxml__allocator_ad41b1a18595953aa71a470b45921c0fd}{xml\-\_\-allocator} (\hyperlink{structxml__memory__page}{xml\-\_\-memory\-\_\-page} $\ast$root)
+\item 
+\hyperlink{structxml__memory__page}{xml\-\_\-memory\-\_\-page} $\ast$ \hyperlink{structxml__allocator_a4b399b01e530220ec5849b912b84063b}{allocate\-\_\-page} (size\-\_\-t data\-\_\-size)
+\item 
+void $\ast$ \hyperlink{structxml__allocator_a30bb557bc040de54c041c6d3dca6772e}{allocate\-\_\-memory\-\_\-oob} (size\-\_\-t size, \hyperlink{structxml__memory__page}{xml\-\_\-memory\-\_\-page} $\ast$\&out\-\_\-page)
+\item 
+void $\ast$ \hyperlink{structxml__allocator_afac0b9fac2c2962972f60d0346eb4f39}{allocate\-\_\-memory} (size\-\_\-t size, \hyperlink{structxml__memory__page}{xml\-\_\-memory\-\_\-page} $\ast$\&out\-\_\-page)
+\item 
+void \hyperlink{structxml__allocator_a5df417155487cce4e0460b123ac33dc6}{deallocate\-\_\-memory} (void $\ast$ptr, size\-\_\-t size, \hyperlink{structxml__memory__page}{xml\-\_\-memory\-\_\-page} $\ast$page)
+\item 
+char\-\_\-t $\ast$ \hyperlink{structxml__allocator_ac5ec2b5d41672d6494a2742e95e525b3}{allocate\-\_\-string} (size\-\_\-t length)
+\item 
+void \hyperlink{structxml__allocator_af32c538db4d562c2d0bfe15f7c0aa879}{deallocate\-\_\-string} (char\-\_\-t $\ast$string)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{structxml__allocator_a1c6bfe15a257a094f55659f8d71c209e}{deallocate\-\_\-page} (\hyperlink{structxml__memory__page}{xml\-\_\-memory\-\_\-page} $\ast$page)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxml__memory__page}{xml\-\_\-memory\-\_\-page} $\ast$ \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\-\_\-root}
+\item 
+size\-\_\-t \hyperlink{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}{\-\_\-busy\-\_\-size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structxml__allocator_ad41b1a18595953aa71a470b45921c0fd}{\index{xml\-\_\-allocator@{xml\-\_\-allocator}!xml\-\_\-allocator@{xml\-\_\-allocator}}
+\index{xml\-\_\-allocator@{xml\-\_\-allocator}!xml_allocator@{xml\-\_\-allocator}}
+\subsubsection[{xml\-\_\-allocator}]{\setlength{\rightskip}{0pt plus 5cm}xml\-\_\-allocator\-::xml\-\_\-allocator (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-memory\-\_\-page} $\ast$}]{root}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__allocator_ad41b1a18595953aa71a470b45921c0fd}
+
+\begin{DoxyCode}
+292                                             : \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root}(root), \hyperlink{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}{\_busy\_size}(root->
+      \hyperlink{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{busy\_size})
+293         \{
+294         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structxml__allocator_afac0b9fac2c2962972f60d0346eb4f39}{\index{xml\-\_\-allocator@{xml\-\_\-allocator}!allocate\-\_\-memory@{allocate\-\_\-memory}}
+\index{allocate\-\_\-memory@{allocate\-\_\-memory}!xml_allocator@{xml\-\_\-allocator}}
+\subsubsection[{allocate\-\_\-memory}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ xml\-\_\-allocator\-::allocate\-\_\-memory (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{size, }
+\item[{{\bf xml\-\_\-memory\-\_\-page} $\ast$\&}]{out\-\_\-page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__allocator_afac0b9fac2c2962972f60d0346eb4f39}
+
+\begin{DoxyCode}
+324         \{
+325             \textcolor{keywordflow}{if} (\hyperlink{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}{\_busy\_size} + size > xml\_memory\_page\_size) \textcolor{keywordflow}{return} 
+      \hyperlink{structxml__allocator_a30bb557bc040de54c041c6d3dca6772e}{allocate\_memory\_oob}(size, out\_page);
+326 
+327             \textcolor{keywordtype}{void}* buf = \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root}->\hyperlink{structxml__memory__page_abd99ed1563aa66fb3573a9208452685c}{data} + \hyperlink{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}{\_busy\_size};
+328 
+329             \hyperlink{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}{\_busy\_size} += size;
+330 
+331             out\_page = \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root};
+332 
+333             \textcolor{keywordflow}{return} buf;
+334         \}
+\end{DoxyCode}
+\hypertarget{structxml__allocator_a30bb557bc040de54c041c6d3dca6772e}{\index{xml\-\_\-allocator@{xml\-\_\-allocator}!allocate\-\_\-memory\-\_\-oob@{allocate\-\_\-memory\-\_\-oob}}
+\index{allocate\-\_\-memory\-\_\-oob@{allocate\-\_\-memory\-\_\-oob}!xml_allocator@{xml\-\_\-allocator}}
+\subsubsection[{allocate\-\_\-memory\-\_\-oob}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N\-\_\-\-N\-O\-\_\-\-I\-N\-L\-I\-N\-E} void $\ast$ xml\-\_\-allocator\-::allocate\-\_\-memory\-\_\-oob (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{size, }
+\item[{{\bf xml\-\_\-memory\-\_\-page} $\ast$\&}]{out\-\_\-page}
+\end{DoxyParamCaption}
+)}}\label{structxml__allocator_a30bb557bc040de54c041c6d3dca6772e}
+
+\begin{DoxyCode}
+422     \{
+423         \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} large\_allocation\_threshold = xml\_memory\_page\_size / 4;
+424 
+425         \hyperlink{structxml__memory__page}{xml\_memory\_page}* page = \hyperlink{structxml__allocator_a4b399b01e530220ec5849b912b84063b}{allocate\_page}(size <= 
+      large\_allocation\_threshold ? xml\_memory\_page\_size : size);
+426         out\_page = page;
+427 
+428         \textcolor{keywordflow}{if} (!page) \textcolor{keywordflow}{return} 0;
+429 
+430         \textcolor{keywordflow}{if} (size <= large\_allocation\_threshold)
+431         \{
+432             \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root}->\hyperlink{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{busy\_size} = \hyperlink{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}{\_busy\_size};
+433 
+434             \textcolor{comment}{// insert page at the end of linked list}
+435             page->\hyperlink{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{prev} = \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root};
+436             \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root}->\hyperlink{structxml__memory__page_a326a74e009af80219ea31bc65ed9e45e}{next} = page;
+437             \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root} = page;
+438 
+439             \hyperlink{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}{\_busy\_size} = size;
+440         \}
+441         \textcolor{keywordflow}{else}
+442         \{
+443             \textcolor{comment}{// insert page before the end of linked list, so that it is deleted as soon as possible}
+444             \textcolor{comment}{// the last page is not deleted even if it's empty (see deallocate\_memory)}
+445             assert(\hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root}->\hyperlink{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{prev});
+446 
+447             page->\hyperlink{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{prev} = \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root}->\hyperlink{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{prev};
+448             page->\hyperlink{structxml__memory__page_a326a74e009af80219ea31bc65ed9e45e}{next} = \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root};
+449 
+450             \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root}->\hyperlink{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{prev}->\hyperlink{structxml__memory__page_a326a74e009af80219ea31bc65ed9e45e}{next} = page;
+451             \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root}->\hyperlink{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{prev} = page;
+452         \}
+453 
+454         \textcolor{comment}{// allocate inside page}
+455         page->\hyperlink{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{busy\_size} = size;
+456 
+457         \textcolor{keywordflow}{return} page->\hyperlink{structxml__memory__page_abd99ed1563aa66fb3573a9208452685c}{data};
+458     \}
+\end{DoxyCode}
+\hypertarget{structxml__allocator_a4b399b01e530220ec5849b912b84063b}{\index{xml\-\_\-allocator@{xml\-\_\-allocator}!allocate\-\_\-page@{allocate\-\_\-page}}
+\index{allocate\-\_\-page@{allocate\-\_\-page}!xml_allocator@{xml\-\_\-allocator}}
+\subsubsection[{allocate\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\-\_\-memory\-\_\-page}$\ast$ xml\-\_\-allocator\-::allocate\-\_\-page (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__allocator_a4b399b01e530220ec5849b912b84063b}
+
+\begin{DoxyCode}
+297         \{
+298             \textcolor{keywordtype}{size\_t} size = offsetof(\hyperlink{structxml__memory__page}{xml\_memory\_page}, data) + data\_size;
+299 
+300             \textcolor{comment}{// allocate block with some alignment, leaving memory for worst-case padding}
+301             \textcolor{keywordtype}{void}* memory = \hyperlink{structxml__memory__management__function__storage_abb6865f8d07d27fd9273737c59f6e941}{xml\_memory::allocate}(size + xml\_memory\_page\_alignment);
+302             \textcolor{keywordflow}{if} (!memory) \textcolor{keywordflow}{return} 0;
+303 
+304             \textcolor{comment}{// align upwards to page boundary}
+305             \textcolor{keywordtype}{void}* page\_memory = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}((\textcolor{keyword}{reinterpret\_cast<}uintptr\_t\textcolor{keyword}{>}(memory) + (
+      xml\_memory\_page\_alignment - 1)) & ~(xml\_memory\_page\_alignment - 1));
+306 
+307             \textcolor{comment}{// prepare page structure}
+308             \hyperlink{structxml__memory__page}{xml\_memory\_page}* page = \hyperlink{structxml__memory__page_ab425973f2abb4fa98ff077d88c0df11c}{xml\_memory\_page::construct}(
+      page\_memory);
+309 
+310             page->\hyperlink{structxml__memory__page_ab51315db80e7f2a5afb87c56fedcd734}{memory} = memory;
+311             page->\hyperlink{structxml__memory__page_adf8fa143123a842baa59b82fc3d83c3b}{allocator} = \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root}->\hyperlink{structxml__memory__page_adf8fa143123a842baa59b82fc3d83c3b}{allocator};
+312 
+313             \textcolor{keywordflow}{return} page;
+314         \}
+\end{DoxyCode}
+\hypertarget{structxml__allocator_ac5ec2b5d41672d6494a2742e95e525b3}{\index{xml\-\_\-allocator@{xml\-\_\-allocator}!allocate\-\_\-string@{allocate\-\_\-string}}
+\index{allocate\-\_\-string@{allocate\-\_\-string}!xml_allocator@{xml\-\_\-allocator}}
+\subsubsection[{allocate\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}char\-\_\-t$\ast$ xml\-\_\-allocator\-::allocate\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__allocator_ac5ec2b5d41672d6494a2742e95e525b3}
+
+\begin{DoxyCode}
+372         \{
+373             \textcolor{comment}{// allocate memory for string and header block}
+374             \textcolor{keywordtype}{size\_t} size = \textcolor{keyword}{sizeof}(\hyperlink{structxml__memory__string__header}{xml\_memory\_string\_header}) + length * \textcolor{keyword}{sizeof}(
+      \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t});
+375             
+376             \textcolor{comment}{// round size up to pointer alignment boundary}
+377             \textcolor{keywordtype}{size\_t} full\_size = (size + (\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*) - 1)) & ~(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*) - 1);
+378 
+379             \hyperlink{structxml__memory__page}{xml\_memory\_page}* page;
+380             \hyperlink{structxml__memory__string__header}{xml\_memory\_string\_header}* header = \textcolor{keyword}{static\_cast<}
+      \hyperlink{structxml__memory__string__header}{xml\_memory\_string\_header}*\textcolor{keyword}{>}(\hyperlink{structxml__allocator_afac0b9fac2c2962972f60d0346eb4f39}{allocate\_memory}(full\_size, page));
+381 
+382             \textcolor{keywordflow}{if} (!header) \textcolor{keywordflow}{return} 0;
+383 
+384             \textcolor{comment}{// setup header}
+385             ptrdiff\_t page\_offset = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(header) - page->\hyperlink{structxml__memory__page_abd99ed1563aa66fb3573a9208452685c}{data};
+386 
+387             assert(page\_offset >= 0 && page\_offset < (1 << 16));
+388             header->\hyperlink{structxml__memory__string__header_a0cc274672f1263f73eeb6bf839bf96ee}{page\_offset} = \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(page\_offset);
+389 
+390             \textcolor{comment}{// full\_size == 0 for large strings that occupy the whole page}
+391             assert(full\_size < (1 << 16) || (page->\hyperlink{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{busy\_size} == full\_size && page\_offset == 0));
+392             header->\hyperlink{structxml__memory__string__header_abbb48a709081e6610dffad322499e3f7}{full\_size} = \textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(full\_size < (1 << 16) ? full\_size : 0);
+393 
+394             \textcolor{comment}{// round-trip through void* to avoid 'cast increases required alignment of target type' warning}
+395             \textcolor{comment}{// header is guaranteed a pointer-sized alignment, which should be enough for char\_t}
+396             \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}*\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(header + 1));
+397         \}
+\end{DoxyCode}
+\hypertarget{structxml__allocator_a5df417155487cce4e0460b123ac33dc6}{\index{xml\-\_\-allocator@{xml\-\_\-allocator}!deallocate\-\_\-memory@{deallocate\-\_\-memory}}
+\index{deallocate\-\_\-memory@{deallocate\-\_\-memory}!xml_allocator@{xml\-\_\-allocator}}
+\subsubsection[{deallocate\-\_\-memory}]{\setlength{\rightskip}{0pt plus 5cm}void xml\-\_\-allocator\-::deallocate\-\_\-memory (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr, }
+\item[{size\-\_\-t}]{size, }
+\item[{{\bf xml\-\_\-memory\-\_\-page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__allocator_a5df417155487cce4e0460b123ac33dc6}
+
+\begin{DoxyCode}
+337         \{
+338             \textcolor{keywordflow}{if} (page == \hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root}) page->\hyperlink{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{busy\_size} = \hyperlink{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}{\_busy\_size};
+339 
+340             assert(ptr >= page->\hyperlink{structxml__memory__page_abd99ed1563aa66fb3573a9208452685c}{data} && ptr < page->data + page->\hyperlink{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{busy\_size});
+341             (void)!ptr;
+342 
+343             page->\hyperlink{structxml__memory__page_ab4c29645546530a0e1938b53979890a8}{freed\_size} += size;
+344             assert(page->\hyperlink{structxml__memory__page_ab4c29645546530a0e1938b53979890a8}{freed\_size} <= page->\hyperlink{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{busy\_size});
+345 
+346             \textcolor{keywordflow}{if} (page->\hyperlink{structxml__memory__page_ab4c29645546530a0e1938b53979890a8}{freed\_size} == page->\hyperlink{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{busy\_size})
+347             \{
+348                 \textcolor{keywordflow}{if} (page->\hyperlink{structxml__memory__page_a326a74e009af80219ea31bc65ed9e45e}{next} == 0)
+349                 \{
+350                     assert(\hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root} == page);
+351 
+352                     \textcolor{comment}{// top page freed, just reset sizes}
+353                     page->\hyperlink{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{busy\_size} = page->\hyperlink{structxml__memory__page_ab4c29645546530a0e1938b53979890a8}{freed\_size} = 0;
+354                     \hyperlink{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}{\_busy\_size} = 0;
+355                 \}
+356                 \textcolor{keywordflow}{else}
+357                 \{
+358                     assert(\hyperlink{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\_root} != page);
+359                     assert(page->\hyperlink{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{prev});
+360 
+361                     \textcolor{comment}{// remove from the list}
+362                     page->\hyperlink{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{prev}->\hyperlink{structxml__memory__page_a326a74e009af80219ea31bc65ed9e45e}{next} = page->\hyperlink{structxml__memory__page_a326a74e009af80219ea31bc65ed9e45e}{next};
+363                     page->\hyperlink{structxml__memory__page_a326a74e009af80219ea31bc65ed9e45e}{next}->\hyperlink{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{prev} = page->\hyperlink{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{prev};
+364 
+365                     \textcolor{comment}{// deallocate}
+366                     \hyperlink{structxml__allocator_a1c6bfe15a257a094f55659f8d71c209e}{deallocate\_page}(page);
+367                 \}
+368             \}
+369         \}
+\end{DoxyCode}
+\hypertarget{structxml__allocator_a1c6bfe15a257a094f55659f8d71c209e}{\index{xml\-\_\-allocator@{xml\-\_\-allocator}!deallocate\-\_\-page@{deallocate\-\_\-page}}
+\index{deallocate\-\_\-page@{deallocate\-\_\-page}!xml_allocator@{xml\-\_\-allocator}}
+\subsubsection[{deallocate\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}static void xml\-\_\-allocator\-::deallocate\-\_\-page (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-memory\-\_\-page} $\ast$}]{page}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structxml__allocator_a1c6bfe15a257a094f55659f8d71c209e}
+
+\begin{DoxyCode}
+317         \{
+318             \hyperlink{structxml__memory__management__function__storage_a1c80a9a045ed6cfb90b17a178e4b3512}{xml\_memory::deallocate}(page->\hyperlink{structxml__memory__page_ab51315db80e7f2a5afb87c56fedcd734}{memory});
+319         \}
+\end{DoxyCode}
+\hypertarget{structxml__allocator_af32c538db4d562c2d0bfe15f7c0aa879}{\index{xml\-\_\-allocator@{xml\-\_\-allocator}!deallocate\-\_\-string@{deallocate\-\_\-string}}
+\index{deallocate\-\_\-string@{deallocate\-\_\-string}!xml_allocator@{xml\-\_\-allocator}}
+\subsubsection[{deallocate\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void xml\-\_\-allocator\-::deallocate\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{string}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__allocator_af32c538db4d562c2d0bfe15f7c0aa879}
+
+\begin{DoxyCode}
+400         \{
+401             \textcolor{comment}{// this function casts pointers through void* to avoid 'cast increases required alignment of
+       target type' warnings}
+402             \textcolor{comment}{// we're guaranteed the proper (pointer-sized) alignment on the input string if it was
+       allocated via allocate\_string}
+403 
+404             \textcolor{comment}{// get header}
+405             \hyperlink{structxml__memory__string__header}{xml\_memory\_string\_header}* header = \textcolor{keyword}{static\_cast<}
+      \hyperlink{structxml__memory__string__header}{xml\_memory\_string\_header}*\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(string)) - 1;
+406 
+407             \textcolor{comment}{// deallocate}
+408             \textcolor{keywordtype}{size\_t} page\_offset = offsetof(\hyperlink{structxml__memory__page}{xml\_memory\_page}, data) + header->
+      \hyperlink{structxml__memory__string__header_a0cc274672f1263f73eeb6bf839bf96ee}{page\_offset};
+409             \hyperlink{structxml__memory__page}{xml\_memory\_page}* page = \textcolor{keyword}{reinterpret\_cast<}
+      \hyperlink{structxml__memory__page}{xml\_memory\_page}*\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(header) - page\_offset));
+410 
+411             \textcolor{comment}{// if full\_size == 0 then this string occupies the whole page}
+412             \textcolor{keywordtype}{size\_t} full\_size = header->\hyperlink{structxml__memory__string__header_abbb48a709081e6610dffad322499e3f7}{full\_size} == 0 ? page->\hyperlink{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{busy\_size} : header->
+      \hyperlink{structxml__memory__string__header_abbb48a709081e6610dffad322499e3f7}{full\_size};
+413 
+414             \hyperlink{structxml__allocator_a5df417155487cce4e0460b123ac33dc6}{deallocate\_memory}(header, full\_size, page);
+415         \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\hypertarget{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}{\index{xml\-\_\-allocator@{xml\-\_\-allocator}!\-\_\-busy\-\_\-size@{\-\_\-busy\-\_\-size}}
+\index{\-\_\-busy\-\_\-size@{\-\_\-busy\-\_\-size}!xml_allocator@{xml\-\_\-allocator}}
+\subsubsection[{\-\_\-busy\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t xml\-\_\-allocator\-::\-\_\-busy\-\_\-size}}\label{structxml__allocator_a4908b4aaa8cbbc3bf936ab8a938053c0}
+\hypertarget{structxml__allocator_a38082e85b23743620a257f997a00bb69}{\index{xml\-\_\-allocator@{xml\-\_\-allocator}!\-\_\-root@{\-\_\-root}}
+\index{\-\_\-root@{\-\_\-root}!xml_allocator@{xml\-\_\-allocator}}
+\subsubsection[{\-\_\-root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\-\_\-memory\-\_\-page}$\ast$ xml\-\_\-allocator\-::\-\_\-root}}\label{structxml__allocator_a38082e85b23743620a257f997a00bb69}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

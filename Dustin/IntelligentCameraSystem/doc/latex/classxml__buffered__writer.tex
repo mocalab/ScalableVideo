@@ -1,0 +1,391 @@
+\hypertarget{classxml__buffered__writer}{\section{xml\-\_\-buffered\-\_\-writer Class Reference}
+\label{classxml__buffered__writer}\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6a9021e7b22ef17fba93b80380f0ffbbc8}{bufcapacitybytes}, 
+\hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity} = bufcapacitybytes / (sizeof(char\-\_\-t) + 4)
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classxml__buffered__writer_a3c22ad246e2aebb6597935baf4a223a7}{xml\-\_\-buffered\-\_\-writer} (xml\-\_\-writer \&writer\-\_\-, xml\-\_\-encoding user\-\_\-encoding)
+\item 
+\hyperlink{classxml__buffered__writer_aa0aaa7ca5b9b61fb0e9dd79502e8d728}{$\sim$xml\-\_\-buffered\-\_\-writer} ()
+\item 
+void \hyperlink{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{flush} ()
+\item 
+void \hyperlink{classxml__buffered__writer_aa733cb2cd0d5fcacec92c67a7f26c553}{flush} (const char\-\_\-t $\ast$data, size\-\_\-t size)
+\item 
+void \hyperlink{classxml__buffered__writer_af830f04deffd7e28122d8c8973707c94}{write} (const char\-\_\-t $\ast$data, size\-\_\-t length)
+\item 
+void \hyperlink{classxml__buffered__writer_af4181dcf2610619ba4f35d86c3d66372}{write} (const char\-\_\-t $\ast$data)
+\item 
+void \hyperlink{classxml__buffered__writer_a1aa829bd551a69dd9005d2d46063308f}{write} (char\-\_\-t d0)
+\item 
+void \hyperlink{classxml__buffered__writer_a4cd6e908908e17c9b07eba34f7317791}{write} (char\-\_\-t d0, char\-\_\-t d1)
+\item 
+void \hyperlink{classxml__buffered__writer_af82b277c1ef5c75d1901bb5a8eb4507f}{write} (char\-\_\-t d0, char\-\_\-t d1, char\-\_\-t d2)
+\item 
+void \hyperlink{classxml__buffered__writer_af679f459dfa0af257c190b8db57e7dcb}{write} (char\-\_\-t d0, char\-\_\-t d1, char\-\_\-t d2, char\-\_\-t d3)
+\item 
+void \hyperlink{classxml__buffered__writer_aad4a4f18223ec3cb1ff607425119b85f}{write} (char\-\_\-t d0, char\-\_\-t d1, char\-\_\-t d2, char\-\_\-t d3, char\-\_\-t d4)
+\item 
+void \hyperlink{classxml__buffered__writer_ae6af5067d768c24b9c20422f76737f29}{write} (char\-\_\-t d0, char\-\_\-t d1, char\-\_\-t d2, char\-\_\-t d3, char\-\_\-t d4, char\-\_\-t d5)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char\-\_\-t \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer} \mbox{[}\hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity}\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>uint8\_t \hyperlink{classxml__buffered__writer_ac672c70ba0597cf94d35c352ac563891}{data\_u8} \mbox{[}4 $\ast$\hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity}\mbox{]}\\
+\>uint16\_t \hyperlink{classxml__buffered__writer_aa969d3724efe221a68927947e3a5196d}{data\_u16} \mbox{[}2 $\ast$\hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity}\mbox{]}\\
+\>uint32\_t \hyperlink{classxml__buffered__writer_afa54826d8227c4ee661e1a9cc1e1acf2}{data\_u32} \mbox{[}\hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity}\mbox{]}\\
+\>char\_t \hyperlink{classxml__buffered__writer_a6f21e839a1c66901995c8aae5cc9ad7b}{data\_char} \mbox{[}\hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity}\mbox{]}\\
+\} \hyperlink{classxml__buffered__writer_a74fd3d695095835afa0f7671ac33037c}{scratch}\\
+
+\end{tabbing}\item 
+xml\-\_\-writer \& \hyperlink{classxml__buffered__writer_a37cdd45f867937e1978565f5a0fa318b}{writer}
+\item 
+size\-\_\-t \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize}
+\item 
+xml\-\_\-encoding \hyperlink{classxml__buffered__writer_ab810a7286598172e1549561b285f08fb}{encoding}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{bufcapacitybytes@{bufcapacitybytes}!xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}}\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!bufcapacitybytes@{bufcapacitybytes}}\item[{\em 
+\hypertarget{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6a9021e7b22ef17fba93b80380f0ffbbc8}{bufcapacitybytes}\label{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6a9021e7b22ef17fba93b80380f0ffbbc8}
+}]\index{bufcapacity@{bufcapacity}!xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}}\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!bufcapacity@{bufcapacity}}\item[{\em 
+\hypertarget{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity}\label{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}
+}]\end{description}
+\end{Desc}
+
+\begin{DoxyCode}
+2966         \{
+2967             \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6a9021e7b22ef17fba93b80380f0ffbbc8}{bufcapacitybytes} =
+2968 \textcolor{preprocessor}{            #ifdef PUGIXML\_MEMORY\_OUTPUT\_STACK}
+2969 \textcolor{preprocessor}{}                PUGIXML\_MEMORY\_OUTPUT\_STACK
+2970 \textcolor{preprocessor}{            #else}
+2971 \textcolor{preprocessor}{}                10240
+2972 \textcolor{preprocessor}{            #endif}
+2973 \textcolor{preprocessor}{}            ,
+2974             \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity} = \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6a9021e7b22ef17fba93b80380f0ffbbc8}{bufcapacitybytes} / (\textcolor{keyword}{sizeof}(
+      \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}) + 4)
+2975         \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classxml__buffered__writer_a3c22ad246e2aebb6597935baf4a223a7}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}}
+\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{xml\-\_\-buffered\-\_\-writer}]{\setlength{\rightskip}{0pt plus 5cm}xml\-\_\-buffered\-\_\-writer\-::xml\-\_\-buffered\-\_\-writer (
+\begin{DoxyParamCaption}
+\item[{xml\-\_\-writer \&}]{writer\-\_\-, }
+\item[{xml\-\_\-encoding}]{user\-\_\-encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxml__buffered__writer_a3c22ad246e2aebb6597935baf4a223a7}
+
+\begin{DoxyCode}
+2819                                                                             : 
+      \hyperlink{classxml__buffered__writer_a37cdd45f867937e1978565f5a0fa318b}{writer}(writer\_), \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize}(0), \hyperlink{classxml__buffered__writer_ab810a7286598172e1549561b285f08fb}{encoding}(\hyperlink{pugixml_8cpp_aa7c85cfc84db7ee4b4eb887366365479}{get\_write\_encoding}(
+      user\_encoding))
+2820         \{
+2821             \hyperlink{pugixml_8cpp_a7d1280c499f3355965242c431435a695}{PUGI\_\_STATIC\_ASSERT}(\hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity} >= 8);
+2822         \}
+\end{DoxyCode}
+\hypertarget{classxml__buffered__writer_aa0aaa7ca5b9b61fb0e9dd79502e8d728}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!$\sim$xml\-\_\-buffered\-\_\-writer@{$\sim$xml\-\_\-buffered\-\_\-writer}}
+\index{$\sim$xml\-\_\-buffered\-\_\-writer@{$\sim$xml\-\_\-buffered\-\_\-writer}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{$\sim$xml\-\_\-buffered\-\_\-writer}]{\setlength{\rightskip}{0pt plus 5cm}xml\-\_\-buffered\-\_\-writer\-::$\sim$xml\-\_\-buffered\-\_\-writer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxml__buffered__writer_aa0aaa7ca5b9b61fb0e9dd79502e8d728}
+
+\begin{DoxyCode}
+2825         \{
+2826             \hyperlink{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{flush}();
+2827         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!flush@{flush}}
+\index{flush@{flush}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}void xml\-\_\-buffered\-\_\-writer\-::flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}
+
+\begin{DoxyCode}
+2830         \{
+2831             \hyperlink{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{flush}(\hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}, \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize});
+2832             \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} = 0;
+2833         \}
+\end{DoxyCode}
+\hypertarget{classxml__buffered__writer_aa733cb2cd0d5fcacec92c67a7f26c553}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!flush@{flush}}
+\index{flush@{flush}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}void xml\-\_\-buffered\-\_\-writer\-::flush (
+\begin{DoxyParamCaption}
+\item[{const char\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxml__buffered__writer_aa733cb2cd0d5fcacec92c67a7f26c553}
+
+\begin{DoxyCode}
+2836         \{
+2837             \textcolor{keywordflow}{if} (size == 0) \textcolor{keywordflow}{return};
+2838 
+2839             \textcolor{comment}{// fast path, just write data}
+2840             \textcolor{keywordflow}{if} (\hyperlink{classxml__buffered__writer_ab810a7286598172e1549561b285f08fb}{encoding} == \hyperlink{pugixml_8cpp_a12b9d6cff4d37c68755263d0687c62b1}{get\_write\_native\_encoding}())
+2841                 \hyperlink{classxml__buffered__writer_a37cdd45f867937e1978565f5a0fa318b}{writer}.write(data, size * \textcolor{keyword}{sizeof}(\hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}));
+2842             \textcolor{keywordflow}{else}
+2843             \{
+2844                 \textcolor{comment}{// convert chunk}
+2845                 \textcolor{keywordtype}{size\_t} result = \hyperlink{pugixml_8cpp_a307f5fbb9d87b5938c0b442458185ca6}{convert\_buffer}(\hyperlink{classxml__buffered__writer_a74fd3d695095835afa0f7671ac33037c}{scratch}.data\_char, 
+      \hyperlink{classxml__buffered__writer_a74fd3d695095835afa0f7671ac33037c}{scratch}.data\_u8, \hyperlink{classxml__buffered__writer_a74fd3d695095835afa0f7671ac33037c}{scratch}.data\_u16, \hyperlink{classxml__buffered__writer_a74fd3d695095835afa0f7671ac33037c}{scratch}.data\_u32, data, size, 
+      \hyperlink{classxml__buffered__writer_ab810a7286598172e1549561b285f08fb}{encoding});
+2846                 assert(result <= \textcolor{keyword}{sizeof}(\hyperlink{classxml__buffered__writer_a74fd3d695095835afa0f7671ac33037c}{scratch}));
+2847 
+2848                 \textcolor{comment}{// write data}
+2849                 \hyperlink{classxml__buffered__writer_a37cdd45f867937e1978565f5a0fa318b}{writer}.write(\hyperlink{classxml__buffered__writer_a74fd3d695095835afa0f7671ac33037c}{scratch}.data\_u8, result);
+2850             \}
+2851         \}
+\end{DoxyCode}
+\hypertarget{classxml__buffered__writer_af830f04deffd7e28122d8c8973707c94}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\-\_\-buffered\-\_\-writer\-::write (
+\begin{DoxyParamCaption}
+\item[{const char\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxml__buffered__writer_af830f04deffd7e28122d8c8973707c94}
+
+\begin{DoxyCode}
+2854         \{
+2855             \textcolor{keywordflow}{if} (\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + length > \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity})
+2856             \{
+2857                 \textcolor{comment}{// flush the remaining buffer contents}
+2858                 \hyperlink{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{flush}();
+2859 
+2860                 \textcolor{comment}{// handle large chunks}
+2861                 \textcolor{keywordflow}{if} (length > \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity})
+2862                 \{
+2863                     \textcolor{keywordflow}{if} (\hyperlink{classxml__buffered__writer_ab810a7286598172e1549561b285f08fb}{encoding} == \hyperlink{pugixml_8cpp_a12b9d6cff4d37c68755263d0687c62b1}{get\_write\_native\_encoding}())
+2864                     \{
+2865                         \textcolor{comment}{// fast path, can just write data chunk}
+2866                         \hyperlink{classxml__buffered__writer_a37cdd45f867937e1978565f5a0fa318b}{writer}.write(data, length * \textcolor{keyword}{sizeof}(\hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}));
+2867                         \textcolor{keywordflow}{return};
+2868                     \}
+2869 
+2870                     \textcolor{comment}{// need to convert in suitable chunks}
+2871                     \textcolor{keywordflow}{while} (length > \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity})
+2872                     \{
+2873                         \textcolor{comment}{// get chunk size by selecting such number of characters that are guaranteed to fit
+       into scratch buffer}
+2874                         \textcolor{comment}{// and form a complete codepoint sequence (i.e. discard start of last codepoint if
+       necessary)}
+2875                         \textcolor{keywordtype}{size\_t} chunk\_size = \hyperlink{pugixml_8cpp_a5dfd2dce8fc6dd9268a19ed553884234}{get\_valid\_length}(data, 
+      \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity});
+2876 
+2877                         \textcolor{comment}{// convert chunk and write}
+2878                         \hyperlink{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{flush}(data, chunk\_size);
+2879 
+2880                         \textcolor{comment}{// iterate}
+2881                         data += chunk\_size;
+2882                         length -= chunk\_size;
+2883                     \}
+2884 
+2885                     \textcolor{comment}{// small tail is copied below}
+2886                     \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} = 0;
+2887                 \}
+2888             \}
+2889 
+2890             memcpy(\hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer} + \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize}, data, length * \textcolor{keyword}{sizeof}(\hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}));
+2891             \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} += length;
+2892         \}
+\end{DoxyCode}
+\hypertarget{classxml__buffered__writer_af4181dcf2610619ba4f35d86c3d66372}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\-\_\-buffered\-\_\-writer\-::write (
+\begin{DoxyParamCaption}
+\item[{const char\-\_\-t $\ast$}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxml__buffered__writer_af4181dcf2610619ba4f35d86c3d66372}
+
+\begin{DoxyCode}
+2895         \{
+2896             \hyperlink{classxml__buffered__writer_af830f04deffd7e28122d8c8973707c94}{write}(data, \hyperlink{pugixml_8cpp_aab9e1f034d085b663d146fcceabb1c48}{strlength}(data));
+2897         \}
+\end{DoxyCode}
+\hypertarget{classxml__buffered__writer_a1aa829bd551a69dd9005d2d46063308f}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\-\_\-buffered\-\_\-writer\-::write (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t}]{d0}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxml__buffered__writer_a1aa829bd551a69dd9005d2d46063308f}
+
+\begin{DoxyCode}
+2900         \{
+2901             \textcolor{keywordflow}{if} (\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 1 > \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity}) \hyperlink{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{flush}();
+2902 
+2903             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 0] = d0;
+2904             \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} += 1;
+2905         \}
+\end{DoxyCode}
+\hypertarget{classxml__buffered__writer_a4cd6e908908e17c9b07eba34f7317791}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\-\_\-buffered\-\_\-writer\-::write (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t}]{d0, }
+\item[{char\-\_\-t}]{d1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxml__buffered__writer_a4cd6e908908e17c9b07eba34f7317791}
+
+\begin{DoxyCode}
+2908         \{
+2909             \textcolor{keywordflow}{if} (\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 2 > \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity}) \hyperlink{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{flush}();
+2910 
+2911             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 0] = d0;
+2912             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 1] = d1;
+2913             \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} += 2;
+2914         \}
+\end{DoxyCode}
+\hypertarget{classxml__buffered__writer_af82b277c1ef5c75d1901bb5a8eb4507f}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\-\_\-buffered\-\_\-writer\-::write (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t}]{d0, }
+\item[{char\-\_\-t}]{d1, }
+\item[{char\-\_\-t}]{d2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxml__buffered__writer_af82b277c1ef5c75d1901bb5a8eb4507f}
+
+\begin{DoxyCode}
+2917         \{
+2918             \textcolor{keywordflow}{if} (\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 3 > \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity}) \hyperlink{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{flush}();
+2919 
+2920             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 0] = d0;
+2921             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 1] = d1;
+2922             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 2] = d2;
+2923             \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} += 3;
+2924         \}
+\end{DoxyCode}
+\hypertarget{classxml__buffered__writer_af679f459dfa0af257c190b8db57e7dcb}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\-\_\-buffered\-\_\-writer\-::write (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t}]{d0, }
+\item[{char\-\_\-t}]{d1, }
+\item[{char\-\_\-t}]{d2, }
+\item[{char\-\_\-t}]{d3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxml__buffered__writer_af679f459dfa0af257c190b8db57e7dcb}
+
+\begin{DoxyCode}
+2927         \{
+2928             \textcolor{keywordflow}{if} (\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 4 > \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity}) \hyperlink{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{flush}();
+2929 
+2930             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 0] = d0;
+2931             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 1] = d1;
+2932             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 2] = d2;
+2933             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 3] = d3;
+2934             \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} += 4;
+2935         \}
+\end{DoxyCode}
+\hypertarget{classxml__buffered__writer_aad4a4f18223ec3cb1ff607425119b85f}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\-\_\-buffered\-\_\-writer\-::write (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t}]{d0, }
+\item[{char\-\_\-t}]{d1, }
+\item[{char\-\_\-t}]{d2, }
+\item[{char\-\_\-t}]{d3, }
+\item[{char\-\_\-t}]{d4}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxml__buffered__writer_aad4a4f18223ec3cb1ff607425119b85f}
+
+\begin{DoxyCode}
+2938         \{
+2939             \textcolor{keywordflow}{if} (\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 5 > \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity}) \hyperlink{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{flush}();
+2940 
+2941             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 0] = d0;
+2942             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 1] = d1;
+2943             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 2] = d2;
+2944             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 3] = d3;
+2945             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 4] = d4;
+2946             \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} += 5;
+2947         \}
+\end{DoxyCode}
+\hypertarget{classxml__buffered__writer_ae6af5067d768c24b9c20422f76737f29}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!write@{write}}
+\index{write@{write}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void xml\-\_\-buffered\-\_\-writer\-::write (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t}]{d0, }
+\item[{char\-\_\-t}]{d1, }
+\item[{char\-\_\-t}]{d2, }
+\item[{char\-\_\-t}]{d3, }
+\item[{char\-\_\-t}]{d4, }
+\item[{char\-\_\-t}]{d5}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxml__buffered__writer_ae6af5067d768c24b9c20422f76737f29}
+
+\begin{DoxyCode}
+2950         \{
+2951             \textcolor{keywordflow}{if} (\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 6 > \hyperlink{classxml__buffered__writer_a684aec07739ea6e60d47440eee97b4f6ab8b49b73105796783607f1f1ddd382cd}{bufcapacity}) \hyperlink{classxml__buffered__writer_a74192d6bbee5ea387377537ede483b4f}{flush}();
+2952 
+2953             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 0] = d0;
+2954             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 1] = d1;
+2955             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 2] = d2;
+2956             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 3] = d3;
+2957             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 4] = d4;
+2958             \hyperlink{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{buffer}[\hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} + 5] = d5;
+2959             \hyperlink{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{bufsize} += 6;
+2960         \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\hypertarget{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!buffer@{buffer}}
+\index{buffer@{buffer}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}char\-\_\-t xml\-\_\-buffered\-\_\-writer\-::buffer\mbox{[}{\bf bufcapacity}\mbox{]}}}\label{classxml__buffered__writer_a84c87765fbdf444d981ffb0f67899dd4}
+\hypertarget{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!bufsize@{bufsize}}
+\index{bufsize@{bufsize}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{bufsize}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t xml\-\_\-buffered\-\_\-writer\-::bufsize}}\label{classxml__buffered__writer_a6bad6a93035d796939d84bee30e74ce7}
+\hypertarget{classxml__buffered__writer_a6f21e839a1c66901995c8aae5cc9ad7b}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!data\-\_\-char@{data\-\_\-char}}
+\index{data\-\_\-char@{data\-\_\-char}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{data\-\_\-char}]{\setlength{\rightskip}{0pt plus 5cm}char\-\_\-t xml\-\_\-buffered\-\_\-writer\-::data\-\_\-char\mbox{[}{\bf bufcapacity}\mbox{]}}}\label{classxml__buffered__writer_a6f21e839a1c66901995c8aae5cc9ad7b}
+\hypertarget{classxml__buffered__writer_aa969d3724efe221a68927947e3a5196d}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!data\-\_\-u16@{data\-\_\-u16}}
+\index{data\-\_\-u16@{data\-\_\-u16}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{data\-\_\-u16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t xml\-\_\-buffered\-\_\-writer\-::data\-\_\-u16\mbox{[}2 $\ast${\bf bufcapacity}\mbox{]}}}\label{classxml__buffered__writer_aa969d3724efe221a68927947e3a5196d}
+\hypertarget{classxml__buffered__writer_afa54826d8227c4ee661e1a9cc1e1acf2}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!data\-\_\-u32@{data\-\_\-u32}}
+\index{data\-\_\-u32@{data\-\_\-u32}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{data\-\_\-u32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t xml\-\_\-buffered\-\_\-writer\-::data\-\_\-u32\mbox{[}{\bf bufcapacity}\mbox{]}}}\label{classxml__buffered__writer_afa54826d8227c4ee661e1a9cc1e1acf2}
+\hypertarget{classxml__buffered__writer_ac672c70ba0597cf94d35c352ac563891}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!data\-\_\-u8@{data\-\_\-u8}}
+\index{data\-\_\-u8@{data\-\_\-u8}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{data\-\_\-u8}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t xml\-\_\-buffered\-\_\-writer\-::data\-\_\-u8\mbox{[}4 $\ast${\bf bufcapacity}\mbox{]}}}\label{classxml__buffered__writer_ac672c70ba0597cf94d35c352ac563891}
+\hypertarget{classxml__buffered__writer_ab810a7286598172e1549561b285f08fb}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!encoding@{encoding}}
+\index{encoding@{encoding}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{encoding}]{\setlength{\rightskip}{0pt plus 5cm}xml\-\_\-encoding xml\-\_\-buffered\-\_\-writer\-::encoding}}\label{classxml__buffered__writer_ab810a7286598172e1549561b285f08fb}
+\hypertarget{classxml__buffered__writer_a74fd3d695095835afa0f7671ac33037c}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!scratch@{scratch}}
+\index{scratch@{scratch}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{scratch}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \}   xml\-\_\-buffered\-\_\-writer\-::scratch}}\label{classxml__buffered__writer_a74fd3d695095835afa0f7671ac33037c}
+\hypertarget{classxml__buffered__writer_a37cdd45f867937e1978565f5a0fa318b}{\index{xml\-\_\-buffered\-\_\-writer@{xml\-\_\-buffered\-\_\-writer}!writer@{writer}}
+\index{writer@{writer}!xml_buffered_writer@{xml\-\_\-buffered\-\_\-writer}}
+\subsubsection[{writer}]{\setlength{\rightskip}{0pt plus 5cm}xml\-\_\-writer\& xml\-\_\-buffered\-\_\-writer\-::writer}}\label{classxml__buffered__writer_a37cdd45f867937e1978565f5a0fa318b}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

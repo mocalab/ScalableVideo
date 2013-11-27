@@ -1,0 +1,143 @@
+\hypertarget{classStreamerTextEdit}{\section{Streamer\-Text\-Edit Class Reference}
+\label{classStreamerTextEdit}\index{Streamer\-Text\-Edit@{Streamer\-Text\-Edit}}
+}
+
+
+{\ttfamily \#include $<$streamertextedit.\-h$>$}
+
+Inheritance diagram for Streamer\-Text\-Edit\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classStreamerTextEdit}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classStreamerTextEdit_aef9c5b51fb00edb2f984128e612629be}{enter\-Pressed} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStreamerTextEdit_a92180ec1922ebb95e6eee9f6463a4190}{Streamer\-Text\-Edit} (Q\-Widget $\ast$parent=0)
+\item 
+void \hyperlink{classStreamerTextEdit_ac89b399e38a953a0a1835259e91881df}{add\-Command\-To\-List} (\hyperlink{namespaceMainWindowUI_ab4a56a6d14c3fc1c53d1f1373a9033d3}{Main\-Window\-U\-I\-::\-Command\-List\-Item} cmd)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classStreamerTextEdit_ad30da0518b808ace5b97f0a160a2f89c}{key\-Press\-Event} (Q\-Key\-Event $\ast$e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classStreamerTextEdit_a92180ec1922ebb95e6eee9f6463a4190}{\index{Streamer\-Text\-Edit@{Streamer\-Text\-Edit}!Streamer\-Text\-Edit@{Streamer\-Text\-Edit}}
+\index{Streamer\-Text\-Edit@{Streamer\-Text\-Edit}!StreamerTextEdit@{Streamer\-Text\-Edit}}
+\subsubsection[{Streamer\-Text\-Edit}]{\setlength{\rightskip}{0pt plus 5cm}Streamer\-Text\-Edit\-::\-Streamer\-Text\-Edit (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classStreamerTextEdit_a92180ec1922ebb95e6eee9f6463a4190}
+
+\begin{DoxyCode}
+5                                                   :
+6     QTextEdit(parent),
+7     m\_commands()
+8 \{   
+9     \textcolor{comment}{//Initialize list of commands}
+10     m\_commands.clear();
+11     m\_commands.push\_front(\textcolor{stringliteral}{"<Enter command>"});
+12     this->m\_last\_command = this->m\_commands.begin();
+13 
+14     \hyperlink{namespaceMainWindowUI_ab4a56a6d14c3fc1c53d1f1373a9033d3}{MainWindowUI::CommandListItem} selected = *(m\_last\_command);
+15     this->setText(selected.c\_str());
+16 
+17 
+18 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classStreamerTextEdit_ac89b399e38a953a0a1835259e91881df}{\index{Streamer\-Text\-Edit@{Streamer\-Text\-Edit}!add\-Command\-To\-List@{add\-Command\-To\-List}}
+\index{add\-Command\-To\-List@{add\-Command\-To\-List}!StreamerTextEdit@{Streamer\-Text\-Edit}}
+\subsubsection[{add\-Command\-To\-List}]{\setlength{\rightskip}{0pt plus 5cm}void Streamer\-Text\-Edit\-::add\-Command\-To\-List (
+\begin{DoxyParamCaption}
+\item[{{\bf Main\-Window\-U\-I\-::\-Command\-List\-Item}}]{cmd}
+\end{DoxyParamCaption}
+)}}\label{classStreamerTextEdit_ac89b399e38a953a0a1835259e91881df}
+
+\begin{DoxyCode}
+21 \{
+22     this->m\_commands.push\_front(cmd);
+23 \}
+\end{DoxyCode}
+\hypertarget{classStreamerTextEdit_aef9c5b51fb00edb2f984128e612629be}{\index{Streamer\-Text\-Edit@{Streamer\-Text\-Edit}!enter\-Pressed@{enter\-Pressed}}
+\index{enter\-Pressed@{enter\-Pressed}!StreamerTextEdit@{Streamer\-Text\-Edit}}
+\subsubsection[{enter\-Pressed}]{\setlength{\rightskip}{0pt plus 5cm}void Streamer\-Text\-Edit\-::enter\-Pressed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classStreamerTextEdit_aef9c5b51fb00edb2f984128e612629be}
+\hypertarget{classStreamerTextEdit_ad30da0518b808ace5b97f0a160a2f89c}{\index{Streamer\-Text\-Edit@{Streamer\-Text\-Edit}!key\-Press\-Event@{key\-Press\-Event}}
+\index{key\-Press\-Event@{key\-Press\-Event}!StreamerTextEdit@{Streamer\-Text\-Edit}}
+\subsubsection[{key\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Streamer\-Text\-Edit\-::key\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Key\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classStreamerTextEdit_ad30da0518b808ace5b97f0a160a2f89c}
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{comment}{//Determine which Key was pressed}
+28     \textcolor{keywordflow}{if}(e->key() == Qt::Key\_Up)
+29     \{
+30         \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Up arrow pressed."};
+31         \textcolor{keywordflow}{if}(this->toPlainText().compare(\textcolor{stringliteral}{""}) == 0)
+32         \{
+33             this->m\_last\_command = this->m\_commands.begin();
+34         \}
+35         \textcolor{keywordflow}{else}
+36         \{
+37             this->m\_last\_command++;
+38             \textcolor{comment}{//Iterate back to beginning of list}
+39             \textcolor{keywordflow}{if}(this->m\_last\_command == m\_commands.end())
+40                 m\_last\_command = m\_commands.begin();
+41         \}
+42         \hyperlink{namespaceMainWindowUI_ab4a56a6d14c3fc1c53d1f1373a9033d3}{MainWindowUI::CommandListItem}& selected = *(m\_last\_command);
+43         this->setText(selected.c\_str());
+44     \}
+45     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(e->key() == Qt::Key\_Down)
+46     \{
+47         \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Down arrow pressed."};
+48 
+49         \textcolor{comment}{//Iterate back to beginning of list}
+50         \textcolor{keywordflow}{if}(this->m\_last\_command == m\_commands.begin())
+51         \{
+52             this->setText(\textcolor{stringliteral}{""});
+53         \}
+54         \textcolor{keywordflow}{else}
+55         \{
+56             this->m\_last\_command--;
+57 
+58             \hyperlink{namespaceMainWindowUI_ab4a56a6d14c3fc1c53d1f1373a9033d3}{MainWindowUI::CommandListItem}& selected = *(m\_last\_command);
+59             this->setText(selected.c\_str());
+60         \}
+61     \}
+62     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(e->key() == Qt::Key\_Enter)
+63     \{
+64         \textcolor{comment}{//Emit the clicked button signal}
+65         emit \hyperlink{classStreamerTextEdit_aef9c5b51fb00edb2f984128e612629be}{enterPressed}();
+66     \}
+67     \textcolor{keywordflow}{else}
+68     \{
+69         QTextEdit::keyPressEvent(e);
+70     \}
+71 
+72 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+U\-I/\hyperlink{streamertextedit_8h}{streamertextedit.\-h}\item 
+U\-I/\hyperlink{streamertextedit_8cpp}{streamertextedit.\-cpp}\end{DoxyCompactItemize}

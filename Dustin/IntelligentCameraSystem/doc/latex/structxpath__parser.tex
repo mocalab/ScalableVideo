@@ -1,0 +1,1246 @@
+\hypertarget{structxpath__parser}{\section{xpath\-\_\-parser Struct Reference}
+\label{structxpath__parser}\index{xpath\-\_\-parser@{xpath\-\_\-parser}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\-\_\-error} (const char $\ast$message)
+\item 
+void \hyperlink{structxpath__parser_aeb5c7d7a6f8c5705a769297f42960c3e}{throw\-\_\-error\-\_\-oom} ()
+\item 
+void $\ast$ \hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\-\_\-node} ()
+\item 
+const char\-\_\-t $\ast$ \hyperlink{structxpath__parser_a109e4c472bb76911a2b49ee741d400af}{alloc\-\_\-string} (const \hyperlink{structxpath__lexer__string}{xpath\-\_\-lexer\-\_\-string} \&value)
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a21a1a2579c610e0ebd76247b9d325bb1}{parse\-\_\-function\-\_\-helper} (\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330d}{ast\-\_\-type\-\_\-t} type0, \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330d}{ast\-\_\-type\-\_\-t} type1, size\-\_\-t argc, \hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$args\mbox{[}2\mbox{]})
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a7acb32147ef3aac058f94257b57ff14f}{parse\-\_\-function} (const \hyperlink{structxpath__lexer__string}{xpath\-\_\-lexer\-\_\-string} \&name, size\-\_\-t argc, \hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$args\mbox{[}2\mbox{]})
+\item 
+\hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189a}{axis\-\_\-t} \hyperlink{structxpath__parser_ad67ec26e0e286ca1bb5144a79e3a3583}{parse\-\_\-axis\-\_\-name} (const \hyperlink{structxpath__lexer__string}{xpath\-\_\-lexer\-\_\-string} \&name, bool \&specified)
+\item 
+\hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275}{nodetest\-\_\-t} \hyperlink{structxpath__parser_a7b4555d7bfdb90971333c46963d5d791}{parse\-\_\-node\-\_\-test\-\_\-type} (const \hyperlink{structxpath__lexer__string}{xpath\-\_\-lexer\-\_\-string} \&name)
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a320728b83e426c4874066d633ffe65d9}{parse\-\_\-primary\-\_\-expression} ()
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a0530aefc1445c4eac4614e895dd0a219}{parse\-\_\-filter\-\_\-expression} ()
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a7daf146822e199d8ad564be25daa49db}{parse\-\_\-step} (\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$set)
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_ab50d8b75f78b7e2eb77a1cf6872daa00}{parse\-\_\-relative\-\_\-location\-\_\-path} (\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$set)
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_aae61a2931ba0b0c713b5d043f1cef6d4}{parse\-\_\-location\-\_\-path} ()
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a024b539aa4ea7226edce0a3d0a577549}{parse\-\_\-path\-\_\-expression} ()
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a2b5326e67d26a880cf29343a61e23891}{parse\-\_\-union\-\_\-expression} ()
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_af5f2714594608f2536f3324c27ce7969}{parse\-\_\-unary\-\_\-expression} ()
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a384f3f30c6182714b02df188314abb95}{parse\-\_\-multiplicative\-\_\-expression} ()
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a7744f7e05f69fa9c073d7a241036ee08}{parse\-\_\-additive\-\_\-expression} ()
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a2a3164bf53415c43fbe0b5293d8c9efe}{parse\-\_\-relational\-\_\-expression} ()
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_aa63ac82f43eaa1c9f8769174adc87f48}{parse\-\_\-equality\-\_\-expression} ()
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a84bbefffccb9fe91fec5c82aba2b6f02}{parse\-\_\-and\-\_\-expression} ()
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a44768d5969dfb9b0a44e845551813c77}{parse\-\_\-or\-\_\-expression} ()
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_adb814ff3b99621d2a1c8e788ffd1c1c5}{parse\-\_\-expression} ()
+\item 
+\hyperlink{structxpath__parser_a3f5b4a04f4d0a0a44962d9825a86ed0d}{xpath\-\_\-parser} (const char\-\_\-t $\ast$query, xpath\-\_\-variable\-\_\-set $\ast$variables, \hyperlink{classxpath__allocator}{xpath\-\_\-allocator} $\ast$alloc, xpath\-\_\-parse\-\_\-result $\ast$result)
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_a581e576958037e1ab682fb952b3ada38}{parse} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__parser_ab865a9a777b466365b3c4bd50290189d}{parse} (const char\-\_\-t $\ast$query, xpath\-\_\-variable\-\_\-set $\ast$variables, \hyperlink{classxpath__allocator}{xpath\-\_\-allocator} $\ast$alloc, xpath\-\_\-parse\-\_\-result $\ast$result)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classxpath__allocator}{xpath\-\_\-allocator} $\ast$ \hyperlink{structxpath__parser_ac34f5b21ef406bec944286eee2f45836}{\-\_\-alloc}
+\item 
+\hyperlink{classxpath__lexer}{xpath\-\_\-lexer} \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\-\_\-lexer}
+\item 
+const char\-\_\-t $\ast$ \hyperlink{structxpath__parser_aaf5ea5d5be97cdd93adc7a719d8edc1c}{\-\_\-query}
+\item 
+xpath\-\_\-variable\-\_\-set $\ast$ \hyperlink{structxpath__parser_a3e0adfea7cc81c08b97ee1375831df6c}{\-\_\-variables}
+\item 
+xpath\-\_\-parse\-\_\-result $\ast$ \hyperlink{structxpath__parser_a9370fb875bfc49ca6e35f3165ecb1692}{\-\_\-result}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structxpath__parser_a3f5b4a04f4d0a0a44962d9825a86ed0d}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!xpath\-\_\-parser@{xpath\-\_\-parser}}
+\index{xpath\-\_\-parser@{xpath\-\_\-parser}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{xpath\-\_\-parser}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-parser\-::xpath\-\_\-parser (
+\begin{DoxyParamCaption}
+\item[{const char\-\_\-t $\ast$}]{query, }
+\item[{xpath\-\_\-variable\-\_\-set $\ast$}]{variables, }
+\item[{{\bf xpath\-\_\-allocator} $\ast$}]{alloc, }
+\item[{xpath\-\_\-parse\-\_\-result $\ast$}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a3f5b4a04f4d0a0a44962d9825a86ed0d}
+
+\begin{DoxyCode}
+9550                                                                                                            
+                       : \hyperlink{structxpath__parser_ac34f5b21ef406bec944286eee2f45836}{\_alloc}(alloc), \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}(query), \hyperlink{structxpath__parser_aaf5ea5d5be97cdd93adc7a719d8edc1c}{\_query}(query), 
+      \hyperlink{structxpath__parser_a3e0adfea7cc81c08b97ee1375831df6c}{\_variables}(variables), \hyperlink{structxpath__parser_a9370fb875bfc49ca6e35f3165ecb1692}{\_result}(result)
+9551         \{
+9552         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structxpath__parser_ae33adcc8eb125124967d95297daff351}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!alloc\-\_\-node@{alloc\-\_\-node}}
+\index{alloc\-\_\-node@{alloc\-\_\-node}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{alloc\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ xpath\-\_\-parser\-::alloc\-\_\-node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_ae33adcc8eb125124967d95297daff351}
+
+\begin{DoxyCode}
+8754         \{
+8755             \textcolor{keywordtype}{void}* result = \hyperlink{structxpath__parser_ac34f5b21ef406bec944286eee2f45836}{\_alloc}->\hyperlink{classxpath__allocator_aa66f3703548657eca5316392a2d79d00}{allocate\_nothrow}(\textcolor{keyword}{sizeof}(
+      \hyperlink{classxpath__ast__node}{xpath\_ast\_node}));
+8756 
+8757             \textcolor{keywordflow}{if} (!result) \hyperlink{structxpath__parser_aeb5c7d7a6f8c5705a769297f42960c3e}{throw\_error\_oom}();
+8758 
+8759             \textcolor{keywordflow}{return} result;
+8760         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a109e4c472bb76911a2b49ee741d400af}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!alloc\-\_\-string@{alloc\-\_\-string}}
+\index{alloc\-\_\-string@{alloc\-\_\-string}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{alloc\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}const char\-\_\-t$\ast$ xpath\-\_\-parser\-::alloc\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{const {\bf xpath\-\_\-lexer\-\_\-string} \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a109e4c472bb76911a2b49ee741d400af}
+
+\begin{DoxyCode}
+8763         \{
+8764             \textcolor{keywordflow}{if} (value.\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin})
+8765             \{
+8766                 \textcolor{keywordtype}{size\_t} length = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(value.\hyperlink{structxpath__lexer__string_a13bbedeca2f8c2fb1e294325eea66878}{end} - value.\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin});
+8767 
+8768                 \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* c = \textcolor{keyword}{static\_cast<}\hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}*\textcolor{keyword}{>}(\hyperlink{structxpath__parser_ac34f5b21ef406bec944286eee2f45836}{\_alloc}->
+      \hyperlink{classxpath__allocator_aa66f3703548657eca5316392a2d79d00}{allocate\_nothrow}((length + 1) * \textcolor{keyword}{sizeof}(\hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t})));
+8769                 \textcolor{keywordflow}{if} (!c) \hyperlink{structxpath__parser_aeb5c7d7a6f8c5705a769297f42960c3e}{throw\_error\_oom}();
+8770 
+8771                 memcpy(c, value.\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin}, length * \textcolor{keyword}{sizeof}(\hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}));
+8772                 c[length] = 0;
+8773 
+8774                 \textcolor{keywordflow}{return} c;
+8775             \}
+8776             \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} 0;
+8777         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a581e576958037e1ab682fb952b3ada38}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse@{parse}}
+\index{parse@{parse}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a581e576958037e1ab682fb952b3ada38}
+
+\begin{DoxyCode}
+9555         \{
+9556             \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* result = \hyperlink{structxpath__parser_adb814ff3b99621d2a1c8e788ffd1c1c5}{parse\_expression}();
+9557             
+9558             \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() != \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aade5d69e447274d8785ebc7d438be522}{lex\_eof})
+9559             \{
+9560                 \textcolor{comment}{// there are still unparsed tokens left, error}
+9561                 \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Incorrect query"});
+9562             \}
+9563             
+9564             \textcolor{keywordflow}{return} result;
+9565         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_ab865a9a777b466365b3c4bd50290189d}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse@{parse}}
+\index{parse@{parse}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse (
+\begin{DoxyParamCaption}
+\item[{const char\-\_\-t $\ast$}]{query, }
+\item[{xpath\-\_\-variable\-\_\-set $\ast$}]{variables, }
+\item[{{\bf xpath\-\_\-allocator} $\ast$}]{alloc, }
+\item[{xpath\-\_\-parse\-\_\-result $\ast$}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structxpath__parser_ab865a9a777b466365b3c4bd50290189d}
+
+\begin{DoxyCode}
+9568         \{
+9569             \hyperlink{structxpath__parser}{xpath\_parser} parser(query, variables, alloc, result);
+9570 
+9571 \textcolor{preprocessor}{        #ifdef PUGIXML\_NO\_EXCEPTIONS}
+9572 \textcolor{preprocessor}{}            \textcolor{keywordtype}{int} error = setjmp(parser.\_error\_handler);
+9573 
+9574             \textcolor{keywordflow}{return} (error == 0) ? parser.parse() : 0;
+9575 \textcolor{preprocessor}{        #else}
+9576 \textcolor{preprocessor}{}            \textcolor{keywordflow}{return} parser.parse();
+9577 \textcolor{preprocessor}{        #endif}
+9578 \textcolor{preprocessor}{}        \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a7744f7e05f69fa9c073d7a241036ee08}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-additive\-\_\-expression@{parse\-\_\-additive\-\_\-expression}}
+\index{parse\-\_\-additive\-\_\-expression@{parse\-\_\-additive\-\_\-expression}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-additive\-\_\-expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-additive\-\_\-expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a7744f7e05f69fa9c073d7a241036ee08}
+
+\begin{DoxyCode}
+9448         \{
+9449             \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \hyperlink{structxpath__parser_a384f3f30c6182714b02df188314abb95}{parse\_multiplicative\_expression}
+      ();
+9450 
+9451             \textcolor{keywordflow}{while} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ab165cbd439d1c24dd336e02645c98727}{lex\_plus} || \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.
+      \hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa0a1d6df3298c5b043daa6ad9afa2733}{lex\_minus})
+9452             \{
+9453                 \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9}{lexeme\_t} l = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}();
+9454 
+9455                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9456 
+9457                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* expr = 
+      \hyperlink{structxpath__parser_a384f3f30c6182714b02df188314abb95}{parse\_multiplicative\_expression}();
+9458 
+9459                 n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(l == 
+      \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ab165cbd439d1c24dd336e02645c98727}{lex\_plus} ? \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dae52031dbbbd974aaa12ce304f58d6ca6}{ast\_op\_add} : \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa087aabd06e3c7df72d3159ccb53f718}{ast\_op\_subtract}, 
+      \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number}, n, expr);
+9460             \}
+9461 
+9462             \textcolor{keywordflow}{return} n;
+9463         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a84bbefffccb9fe91fec5c82aba2b6f02}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-and\-\_\-expression@{parse\-\_\-and\-\_\-expression}}
+\index{parse\-\_\-and\-\_\-expression@{parse\-\_\-and\-\_\-expression}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-and\-\_\-expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-and\-\_\-expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a84bbefffccb9fe91fec5c82aba2b6f02}
+
+\begin{DoxyCode}
+9512         \{
+9513             \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \hyperlink{structxpath__parser_aa63ac82f43eaa1c9f8769174adc87f48}{parse\_equality\_expression}();
+9514 
+9515             \textcolor{keywordflow}{while} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{lex\_string} && 
+      \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}() == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"and"}))
+9516             \{
+9517                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9518 
+9519                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* expr = \hyperlink{structxpath__parser_aa63ac82f43eaa1c9f8769174adc87f48}{parse\_equality\_expression}();
+9520 
+9521                 n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da0459a344c7cfda000e4c987449ea1e09}{ast\_op\_and}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a049dd1494237a55f8aba3392d12a0164}{xpath\_type\_boolean}, n, expr);
+9522             \}
+9523 
+9524             \textcolor{keywordflow}{return} n;
+9525         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_ad67ec26e0e286ca1bb5144a79e3a3583}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-axis\-\_\-name@{parse\-\_\-axis\-\_\-name}}
+\index{parse\-\_\-axis\-\_\-name@{parse\-\_\-axis\-\_\-name}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-axis\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf axis\-\_\-t} xpath\-\_\-parser\-::parse\-\_\-axis\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{const {\bf xpath\-\_\-lexer\-\_\-string} \&}]{name, }
+\item[{bool \&}]{specified}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_ad67ec26e0e286ca1bb5144a79e3a3583}
+
+\begin{DoxyCode}
+8902         \{
+8903             specified = \textcolor{keyword}{true};
+8904 
+8905             \textcolor{keywordflow}{switch} (name.\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin}[0])
+8906             \{
+8907             \textcolor{keywordflow}{case} \textcolor{charliteral}{'a'}:
+8908                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"ancestor"}))
+8909                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aad6f039a708acaaf1f7404cb061aac86f}{axis\_ancestor};
+8910                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"ancestor-or-self"}))
+8911                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa22656c644b010657ddc2635d97e7b4a3}{axis\_ancestor\_or\_self};
+8912                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"attribute"}))
+8913                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa3e7282ac37732c350a6f4890a3ab6401}{axis\_attribute};
+8914                 
+8915                 \textcolor{keywordflow}{break};
+8916             
+8917             \textcolor{keywordflow}{case} \textcolor{charliteral}{'c'}:
+8918                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"child"}))
+8919                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa6919787a75cb4c83edb15f11fbe98faa}{axis\_child};
+8920                 
+8921                 \textcolor{keywordflow}{break};
+8922             
+8923             \textcolor{keywordflow}{case} \textcolor{charliteral}{'d'}:
+8924                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"descendant"}))
+8925                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa835de5174f348c3a6b926f3467827ab9}{axis\_descendant};
+8926                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"descendant-or-self"}))
+8927                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaa4371804013320e9798cea401cffa22d}{axis\_descendant\_or\_self};
+8928                 
+8929                 \textcolor{keywordflow}{break};
+8930             
+8931             \textcolor{keywordflow}{case} \textcolor{charliteral}{'f'}:
+8932                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"following"}))
+8933                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aacb21ff57ba23bbf8e9bb3aa6e6d47106}{axis\_following};
+8934                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"following-sibling"}))
+8935                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa57a9f91a01f40c54aae642eefb9523c0}{axis\_following\_sibling};
+8936                 
+8937                 \textcolor{keywordflow}{break};
+8938             
+8939             \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:
+8940                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"namespace"}))
+8941                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaf530e34cb512f4b88fbb4b2caec602a0}{axis\_namespace};
+8942                 
+8943                 \textcolor{keywordflow}{break};
+8944             
+8945             \textcolor{keywordflow}{case} \textcolor{charliteral}{'p'}:
+8946                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"parent"}))
+8947                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aafa5cf248a5e26f36caf8163293db25a9}{axis\_parent};
+8948                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"preceding"}))
+8949                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa0b356ec6c3e3dec19179067e73db7089}{axis\_preceding};
+8950                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"preceding-sibling"}))
+8951                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaef80578171e44825bd50265feb9a32dc}{axis\_preceding\_sibling};
+8952                 
+8953                 \textcolor{keywordflow}{break};
+8954             
+8955             \textcolor{keywordflow}{case} \textcolor{charliteral}{'s'}:
+8956                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"self"}))
+8957                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aac3dba2fdf066d765a93e20508450e924}{axis\_self};
+8958                 
+8959                 \textcolor{keywordflow}{break};
+8960 
+8961             \textcolor{keywordflow}{default}:
+8962                 \textcolor{keywordflow}{break};
+8963             \}
+8964 
+8965             specified = \textcolor{keyword}{false};
+8966             \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa6919787a75cb4c83edb15f11fbe98faa}{axis\_child};
+8967         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_aa63ac82f43eaa1c9f8769174adc87f48}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-equality\-\_\-expression@{parse\-\_\-equality\-\_\-expression}}
+\index{parse\-\_\-equality\-\_\-expression@{parse\-\_\-equality\-\_\-expression}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-equality\-\_\-expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-equality\-\_\-expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_aa63ac82f43eaa1c9f8769174adc87f48}
+
+\begin{DoxyCode}
+9493         \{
+9494             \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \hyperlink{structxpath__parser_a2a3164bf53415c43fbe0b5293d8c9efe}{parse\_relational\_expression}();
+9495 
+9496             \textcolor{keywordflow}{while} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a5c2d9372cf8440a68eff3c16eeac8027}{lex\_equal} || \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.
+      \hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a266a8f8365e61873ecb66c78d363f156}{lex\_not\_equal})
+9497             \{
+9498                 \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9}{lexeme\_t} l = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}();
+9499 
+9500                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9501 
+9502                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* expr = \hyperlink{structxpath__parser_a2a3164bf53415c43fbe0b5293d8c9efe}{parse\_relational\_expression}
+      ();
+9503 
+9504                 n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(l == 
+      \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a5c2d9372cf8440a68eff3c16eeac8027}{lex\_equal} ? \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da2dec9732f911df2eba44fef4e50c89f4}{ast\_op\_equal} : \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da75624fef27d23fd3a97f82d24027c583}{ast\_op\_not\_equal}, 
+      \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a049dd1494237a55f8aba3392d12a0164}{xpath\_type\_boolean}, n, expr);
+9505             \}
+9506 
+9507             \textcolor{keywordflow}{return} n;
+9508         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_adb814ff3b99621d2a1c8e788ffd1c1c5}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-expression@{parse\-\_\-expression}}
+\index{parse\-\_\-expression@{parse\-\_\-expression}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_adb814ff3b99621d2a1c8e788ffd1c1c5}
+
+\begin{DoxyCode}
+9546         \{
+9547             \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_a44768d5969dfb9b0a44e845551813c77}{parse\_or\_expression}();
+9548         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a0530aefc1445c4eac4614e895dd0a219}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-filter\-\_\-expression@{parse\-\_\-filter\-\_\-expression}}
+\index{parse\-\_\-filter\-\_\-expression@{parse\-\_\-filter\-\_\-expression}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-filter\-\_\-expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-filter\-\_\-expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a0530aefc1445c4eac4614e895dd0a219}
+
+\begin{DoxyCode}
+9111         \{
+9112             \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \hyperlink{structxpath__parser_a320728b83e426c4874066d633ffe65d9}{parse\_primary\_expression}();
+9113 
+9114             \textcolor{keywordflow}{while} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ad9321b18d06078ecc38ad112ce654ce9}{lex\_open\_square\_brace})
+9115             \{
+9116                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9117 
+9118                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* expr = \hyperlink{structxpath__parser_adb814ff3b99621d2a1c8e788ffd1c1c5}{parse\_expression}();
+9119 
+9120                 \textcolor{keywordflow}{if} (n->\hyperlink{classxpath__ast__node_a2c3598521141ed4b763fe6c4f852234f}{rettype}() != \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set}) 
+      \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Predicate has to be applied to node set"});
+9121 
+9122                 \textcolor{keywordtype}{bool} posinv = expr->\hyperlink{classxpath__ast__node_a2c3598521141ed4b763fe6c4f852234f}{rettype}() != \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number} && expr->
+      \hyperlink{classxpath__ast__node_a9253f88832441a357ea65639c73a34be}{is\_posinv}();
+9123 
+9124                 n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(posinv ? 
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da3d009066e8b19be4c62cc378edcaf541}{ast\_filter\_posinv} : \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da0c9430d6adbe88945efa5a1cb100d843}{ast\_filter}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set}, n, expr)
+      ;
+9125 
+9126                 \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() != \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ad572f5fa18506a8bf523425d075cac5d}{lex\_close\_square\_brace})
+9127                     \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unmatched square brace"});
+9128             
+9129                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9130             \}
+9131             
+9132             \textcolor{keywordflow}{return} n;
+9133         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a7acb32147ef3aac058f94257b57ff14f}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-function@{parse\-\_\-function}}
+\index{parse\-\_\-function@{parse\-\_\-function}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-function (
+\begin{DoxyParamCaption}
+\item[{const {\bf xpath\-\_\-lexer\-\_\-string} \&}]{name, }
+\item[{size\-\_\-t}]{argc, }
+\item[{{\bf xpath\-\_\-ast\-\_\-node} $\ast$}]{args\mbox{[}2\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a7acb32147ef3aac058f94257b57ff14f}
+
+\begin{DoxyCode}
+8789         \{
+8790             \textcolor{keywordflow}{switch} (name.\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin}[0])
+8791             \{
+8792             \textcolor{keywordflow}{case} \textcolor{charliteral}{'b'}:
+8793                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"boolean"}) && argc == 1)
+8794                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa4d2882f2dfec6908671fd01bf626965}{ast\_func\_boolean}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a049dd1494237a55f8aba3392d12a0164}{xpath\_type\_boolean}, args[0]);
+8795                     
+8796                 \textcolor{keywordflow}{break};
+8797             
+8798             \textcolor{keywordflow}{case} \textcolor{charliteral}{'c'}:
+8799                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"count"}) && argc == 1)
+8800                 \{
+8801                     \textcolor{keywordflow}{if} (args[0]->rettype() != \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set}) 
+      \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Function has to be applied to node set"});
+8802                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dab7169d72ddafbb8e64bad8e9e28cf2da}{ast\_func\_count}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number}, args[0]);
+8803                 \}
+8804                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"contains"}) && argc == 2)
+8805                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da7ebe6f7042d21758eb74a8e1652d61ee}{ast\_func\_contains}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6ade2b17f4d9fad5bfb1617bf5012cf5ad}{xpath\_type\_string}, args[0], args[1]);
+8806                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"concat"}) && argc >= 2)
+8807                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da2b60b6562585b1e6f1bb2b60901503a7}{ast\_func\_concat}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6ade2b17f4d9fad5bfb1617bf5012cf5ad}{xpath\_type\_string}, args[0], args[1]);
+8808                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"ceiling"}) && argc == 1)
+8809                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da9352aabce4fc3f97d5a439acd0347b13}{ast\_func\_ceiling}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number}, args[0]);
+8810                     
+8811                 \textcolor{keywordflow}{break};
+8812             
+8813             \textcolor{keywordflow}{case} \textcolor{charliteral}{'f'}:
+8814                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"false"}) && argc == 0)
+8815                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf02fc3e0bd1c3695759342d0d051922c}{ast\_func\_false}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a049dd1494237a55f8aba3392d12a0164}{xpath\_type\_boolean});
+8816                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"floor"}) && argc == 1)
+8817                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da14388195af9fb91660f721911f4decaf}{ast\_func\_floor}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number}, args[0]);
+8818                     
+8819                 \textcolor{keywordflow}{break};
+8820             
+8821             \textcolor{keywordflow}{case} \textcolor{charliteral}{'i'}:
+8822                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"id"}) && argc == 1)
+8823                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf858fa45ee843ccfe4c7d2ae226a5e8c}{ast\_func\_id}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set}, args[0]);
+8824                     
+8825                 \textcolor{keywordflow}{break};
+8826             
+8827             \textcolor{keywordflow}{case} \textcolor{charliteral}{'l'}:
+8828                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"last"}) && argc == 0)
+8829                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa463c85b53c42378d421cbcf5eaf6009}{ast\_func\_last}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number});
+8830                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"lang"}) && argc == 1)
+8831                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da666d33d475c216b35e0eae756955729e}{ast\_func\_lang}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a049dd1494237a55f8aba3392d12a0164}{xpath\_type\_boolean}, args[0]);
+8832                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"local-name"}) && argc <= 1)
+8833                     \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_a21a1a2579c610e0ebd76247b9d325bb1}{parse\_function\_helper}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf12ccfa2490b679e1338d211e4f96c43}{ast\_func\_local\_name\_0}, \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da5d016b2c68613b3016415bcfeefbf2d5}{ast\_func\_local\_name\_1}, argc, args);
+8834             
+8835                 \textcolor{keywordflow}{break};
+8836             
+8837             \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:
+8838                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"name"}) && argc <= 1)
+8839                     \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_a21a1a2579c610e0ebd76247b9d325bb1}{parse\_function\_helper}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da354fdbfef6c16cc50e82c0c920cfd709}{ast\_func\_name\_0}, \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da12636568edce481fcb128064b25002b1}{ast\_func\_name\_1}, argc, args);
+8840                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"namespace-uri"}) && argc <= 1)
+8841                     \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_a21a1a2579c610e0ebd76247b9d325bb1}{parse\_function\_helper}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da5e6ac5151480d36a3a5469c6d17f8b24}{ast\_func\_namespace\_uri\_0}, \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dabaab13e8fc9981d54c1d10d47c1ade2b}{ast\_func\_namespace\_uri\_1}, argc, 
+      args);
+8842                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"normalize-space"}) && argc <= 1)
+8843                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(argc == 0 ? 
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa46c67b12851bceec7f56d2bef299145}{ast\_func\_normalize\_space\_0} : 
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da6ec954cce9f9c7a4119b280160c253da}{ast\_func\_normalize\_space\_1}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6ade2b17f4d9fad5bfb1617bf5012cf5ad}{xpath\_type\_string}, args[0], args[1])
+      ;
+8844                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"not"}) && argc == 1)
+8845                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da3d65825af60c39c5dd31ab710202f369}{ast\_func\_not}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a049dd1494237a55f8aba3392d12a0164}{xpath\_type\_boolean}, args[0]);
+8846                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"number"}) && argc <= 1)
+8847                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(argc == 0 ? 
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da4bba091feebb6ddbb1c3fd143b0defb4}{ast\_func\_number\_0} : \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daceb768b882e131cfb485dfd4a0cdd6dc}{ast\_func\_number\_1}, 
+      \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number}, args[0]);
+8848             
+8849                 \textcolor{keywordflow}{break};
+8850             
+8851             \textcolor{keywordflow}{case} \textcolor{charliteral}{'p'}:
+8852                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"position"}) && argc == 0)
+8853                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da8e32686d2d4ee9157d6ca389d7715998}{ast\_func\_position}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number});
+8854                 
+8855                 \textcolor{keywordflow}{break};
+8856             
+8857             \textcolor{keywordflow}{case} \textcolor{charliteral}{'r'}:
+8858                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"round"}) && argc == 1)
+8859                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dac896699d30b94232d7a5ffc7fe82fd2c}{ast\_func\_round}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number}, args[0]);
+8860 
+8861                 \textcolor{keywordflow}{break};
+8862             
+8863             \textcolor{keywordflow}{case} \textcolor{charliteral}{'s'}:
+8864                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"string"}) && argc <= 1)
+8865                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(argc == 0 ? 
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da478e1f441c013c69a95053844e900924}{ast\_func\_string\_0} : \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da40f79d68b93d0068942664ad1cd73703}{ast\_func\_string\_1}, 
+      \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6ade2b17f4d9fad5bfb1617bf5012cf5ad}{xpath\_type\_string}, args[0]);
+8866                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"string-length"}) && argc <= 1)
+8867                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(argc == 0 ? 
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da5bc4366fd91243376b21e0bd585418ec}{ast\_func\_string\_length\_0} : \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dad2e8b9497c0d63eac59c19129a2a79c7}{ast\_func\_string\_length\_1}, 
+      \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6ade2b17f4d9fad5bfb1617bf5012cf5ad}{xpath\_type\_string}, args[0]);
+8868                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"starts-with"}) && argc == 2)
+8869                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dade6b0e6cf600fd5462ff141dc924a152}{ast\_func\_starts\_with}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a049dd1494237a55f8aba3392d12a0164}{xpath\_type\_boolean}, args[0], args[1]);
+8870                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"substring-before"}) && argc == 2)
+8871                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da57968ecb15bcbfa4c6a1cf69183d18f8}{ast\_func\_substring\_before}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6ade2b17f4d9fad5bfb1617bf5012cf5ad}{xpath\_type\_string}, args[0], args[1]);
+8872                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"substring-after"}) && argc == 2)
+8873                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dab9cf1d6dbc207ac0d5421cc5f6d78c19}{ast\_func\_substring\_after}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6ade2b17f4d9fad5bfb1617bf5012cf5ad}{xpath\_type\_string}, args[0], args[1]);
+8874                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"substring"}) && (argc == 2 || argc == 3))
+8875                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(argc == 2 ? 
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da8bef77aeae6e5aa6d00d6f57ce9d7e13}{ast\_func\_substring\_2} : \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da108fa4adbb640058d5042a324d15020f}{ast\_func\_substring\_3}, 
+      \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6ade2b17f4d9fad5bfb1617bf5012cf5ad}{xpath\_type\_string}, args[0], args[1]);
+8876                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"sum"}) && argc == 1)
+8877                 \{
+8878                     \textcolor{keywordflow}{if} (args[0]->rettype() != \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set}) 
+      \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Function has to be applied to node set"});
+8879                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da11d81217d62ac719fce24834025750dc}{ast\_func\_sum}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number}, args[0]);
+8880                 \}
+8881 
+8882                 \textcolor{keywordflow}{break};
+8883             
+8884             \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:
+8885                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"translate"}) && argc == 3)
+8886                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dac2296a32ef88a1416f52def407024601}{ast\_func\_translate}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6ade2b17f4d9fad5bfb1617bf5012cf5ad}{xpath\_type\_string}, args[0], args[1]);
+8887                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"true"}) && argc == 0)
+8888                     \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da6cfca54a1db508b01b3a70b60a117bdf}{ast\_func\_true}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a049dd1494237a55f8aba3392d12a0164}{xpath\_type\_boolean});
+8889                     
+8890                 \textcolor{keywordflow}{break};
+8891 
+8892             \textcolor{keywordflow}{default}:
+8893                 \textcolor{keywordflow}{break};
+8894             \}
+8895 
+8896             \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unrecognized function or wrong parameter count"});
+8897 
+8898             \textcolor{keywordflow}{return} 0;
+8899         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a21a1a2579c610e0ebd76247b9d325bb1}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-function\-\_\-helper@{parse\-\_\-function\-\_\-helper}}
+\index{parse\-\_\-function\-\_\-helper@{parse\-\_\-function\-\_\-helper}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-function\-\_\-helper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-function\-\_\-helper (
+\begin{DoxyParamCaption}
+\item[{{\bf ast\-\_\-type\-\_\-t}}]{type0, }
+\item[{{\bf ast\-\_\-type\-\_\-t}}]{type1, }
+\item[{size\-\_\-t}]{argc, }
+\item[{{\bf xpath\-\_\-ast\-\_\-node} $\ast$}]{args\mbox{[}2\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a21a1a2579c610e0ebd76247b9d325bb1}
+
+\begin{DoxyCode}
+8780         \{
+8781             assert(argc <= 1);
+8782 
+8783             \textcolor{keywordflow}{if} (argc == 1 && args[0]->rettype() != \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set}) 
+      \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Function has to be applied to node set"});
+8784 
+8785             \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(argc == 0 ? type0 : type1, 
+      \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6ade2b17f4d9fad5bfb1617bf5012cf5ad}{xpath\_type\_string}, args[0]);
+8786         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_aae61a2931ba0b0c713b5d043f1cef6d4}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-location\-\_\-path@{parse\-\_\-location\-\_\-path}}
+\index{parse\-\_\-location\-\_\-path@{parse\-\_\-location\-\_\-path}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-location\-\_\-path}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-location\-\_\-path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_aae61a2931ba0b0c713b5d043f1cef6d4}
+
+\begin{DoxyCode}
+9305         \{
+9306             \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8be0786f2c3130ad30b61bbac70fa809}{lex\_slash})
+9307             \{
+9308                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9309                 
+9310                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) 
+      \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dabee572296f3d4f85d8ebfffca4c2d3bd}{ast\_step\_root}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set});
+9311 
+9312                 \textcolor{comment}{// relative location path can start from axis\_attribute, dot, double\_dot, multiply and
+       string lexemes; any other lexeme means standalone root path}
+9313                 \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9}{lexeme\_t} l = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}();
+9314 
+9315                 \textcolor{keywordflow}{if} (l == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{lex\_string} || l == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a408fe857bc6c9b3a148ab798d0ad34e7}{lex\_axis\_attribute} || l == 
+      \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa0709f7aad925098c9b62379206a536b}{lex\_dot} || l == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abf40f90b4cc064d49394e974962b111b}{lex\_double\_dot} || l == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a095a092388d76a21ccfc1338c875fe54}{lex\_multiply})
+9316                     \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_ab50d8b75f78b7e2eb77a1cf6872daa00}{parse\_relative\_location\_path}(n);
+9317                 \textcolor{keywordflow}{else}
+9318                     \textcolor{keywordflow}{return} n;
+9319             \}
+9320             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a0988911f62781c4a1e8831a76c1e1fe8}{lex\_double\_slash})
+9321             \{
+9322                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9323                 
+9324                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) 
+      \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dabee572296f3d4f85d8ebfffca4c2d3bd}{ast\_step\_root}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set});
+9325                 n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa6229c263d2e6f239a78d56b6f8aaf19}{ast\_step}, n, \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaa4371804013320e9798cea401cffa22d}{axis\_descendant\_or\_self}, 
+      \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275aef6cad334993e832458e028decb18c85}{nodetest\_type\_node}, 0);
+9326                 
+9327                 \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_ab50d8b75f78b7e2eb77a1cf6872daa00}{parse\_relative\_location\_path}(n);
+9328             \}
+9329 
+9330             \textcolor{comment}{// else clause moved outside of if because of bogus warning 'control may reach end of non-void
+       function being inlined' in gcc 4.0.1}
+9331             \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_ab50d8b75f78b7e2eb77a1cf6872daa00}{parse\_relative\_location\_path}(0);
+9332         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a384f3f30c6182714b02df188314abb95}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-multiplicative\-\_\-expression@{parse\-\_\-multiplicative\-\_\-expression}}
+\index{parse\-\_\-multiplicative\-\_\-expression@{parse\-\_\-multiplicative\-\_\-expression}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-multiplicative\-\_\-expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-multiplicative\-\_\-expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a384f3f30c6182714b02df188314abb95}
+
+\begin{DoxyCode}
+9426         \{
+9427             \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \hyperlink{structxpath__parser_af5f2714594608f2536f3324c27ce7969}{parse\_unary\_expression}();
+9428 
+9429             \textcolor{keywordflow}{while} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a095a092388d76a21ccfc1338c875fe54}{lex\_multiply} || (
+      \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{lex\_string} &&
+9430                    (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}() == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"mod"}) || 
+      \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}() == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"div"}))))
+9431             \{
+9432                 \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330d}{ast\_type\_t} op = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == 
+      \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a095a092388d76a21ccfc1338c875fe54}{lex\_multiply} ? \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dab0bf6ee67928daf76a761ca028c56d9b}{ast\_op\_multiply} :
+9433                     \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}().\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin}[0] == \textcolor{charliteral}{'d'} ? 
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da196364baec820eeb5970d3a36ac7a10e}{ast\_op\_divide} : \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf1b22f2953ec8782c50b2ab39366cd07}{ast\_op\_mod};
+9434                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9435 
+9436                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* expr = \hyperlink{structxpath__parser_af5f2714594608f2536f3324c27ce7969}{parse\_unary\_expression}();
+9437 
+9438                 n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(op, 
+      \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number}, n, expr);
+9439             \}
+9440 
+9441             \textcolor{keywordflow}{return} n;
+9442         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a7b4555d7bfdb90971333c46963d5d791}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-node\-\_\-test\-\_\-type@{parse\-\_\-node\-\_\-test\-\_\-type}}
+\index{parse\-\_\-node\-\_\-test\-\_\-type@{parse\-\_\-node\-\_\-test\-\_\-type}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-node\-\_\-test\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf nodetest\-\_\-t} xpath\-\_\-parser\-::parse\-\_\-node\-\_\-test\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{const {\bf xpath\-\_\-lexer\-\_\-string} \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a7b4555d7bfdb90971333c46963d5d791}
+
+\begin{DoxyCode}
+8970         \{
+8971             \textcolor{keywordflow}{switch} (name.\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin}[0])
+8972             \{
+8973             \textcolor{keywordflow}{case} \textcolor{charliteral}{'c'}:
+8974                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"comment"}))
+8975                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275aad06f521ae05b1d06d3d23ca7c1381e6}{nodetest\_type\_comment};
+8976 
+8977                 \textcolor{keywordflow}{break};
+8978 
+8979             \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:
+8980                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"node"}))
+8981                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275aef6cad334993e832458e028decb18c85}{nodetest\_type\_node};
+8982 
+8983                 \textcolor{keywordflow}{break};
+8984 
+8985             \textcolor{keywordflow}{case} \textcolor{charliteral}{'p'}:
+8986                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"processing-instruction"}))
+8987                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275aff02fd24afbb268bc0c40cb45ea9e0f6}{nodetest\_type\_pi};
+8988 
+8989                 \textcolor{keywordflow}{break};
+8990 
+8991             \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:
+8992                 \textcolor{keywordflow}{if} (name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"text"}))
+8993                     \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a86e4bcba2f6202e9fd8001c33b92800b}{nodetest\_type\_text};
+8994 
+8995                 \textcolor{keywordflow}{break};
+8996             
+8997             \textcolor{keywordflow}{default}:
+8998                 \textcolor{keywordflow}{break};
+8999             \}
+9000 
+9001             \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a6c7184af99feffae4eb898b764e93649}{nodetest\_none};
+9002         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a44768d5969dfb9b0a44e845551813c77}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-or\-\_\-expression@{parse\-\_\-or\-\_\-expression}}
+\index{parse\-\_\-or\-\_\-expression@{parse\-\_\-or\-\_\-expression}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-or\-\_\-expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-or\-\_\-expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a44768d5969dfb9b0a44e845551813c77}
+
+\begin{DoxyCode}
+9529         \{
+9530             \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \hyperlink{structxpath__parser_a84bbefffccb9fe91fec5c82aba2b6f02}{parse\_and\_expression}();
+9531 
+9532             \textcolor{keywordflow}{while} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{lex\_string} && 
+      \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}() == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"or"}))
+9533             \{
+9534                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9535 
+9536                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* expr = \hyperlink{structxpath__parser_a84bbefffccb9fe91fec5c82aba2b6f02}{parse\_and\_expression}();
+9537 
+9538                 n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330dae9da7f765cd2c72f580c86f06e0ab0a0}{ast\_op\_or}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a049dd1494237a55f8aba3392d12a0164}{xpath\_type\_boolean}, n, expr);
+9539             \}
+9540 
+9541             \textcolor{keywordflow}{return} n;
+9542         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a024b539aa4ea7226edce0a3d0a577549}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-path\-\_\-expression@{parse\-\_\-path\-\_\-expression}}
+\index{parse\-\_\-path\-\_\-expression@{parse\-\_\-path\-\_\-expression}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-path\-\_\-expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-path\-\_\-expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a024b539aa4ea7226edce0a3d0a577549}
+
+\begin{DoxyCode}
+9339         \{
+9340             \textcolor{comment}{// Clarification.}
+9341             \textcolor{comment}{// PathExpr begins with either LocationPath or FilterExpr.}
+9342             \textcolor{comment}{// FilterExpr begins with PrimaryExpr}
+9343             \textcolor{comment}{// PrimaryExpr begins with '$' in case of it being a variable reference,}
+9344             \textcolor{comment}{// '(' in case of it being an expression, string literal, number constant or}
+9345             \textcolor{comment}{// function call.}
+9346 
+9347             \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a933a0fd7c93a22506dc917d0868e05d1}{lex\_var\_ref} || 
+      \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aea53091cdb9dce7a878792f2c8d4d17b}{lex\_open\_brace} || 
+9348                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a1f793e76227244d2ae78acf451b82808}{lex\_quoted\_string} || 
+      \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abe562e581d64a34b55b3d9b38db2e480}{lex\_number} ||
+9349                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{lex\_string})
+9350             \{
+9351                 \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{lex\_string})
+9352                 \{
+9353                     \textcolor{comment}{// This is either a function call, or not - if not, we shall proceed with location path}
+9354                     \textcolor{keyword}{const} \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* state = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a3794e29f3bec2fa31346766eea978cbf}{state}();
+9355                     
+9356                     \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*state, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space})) ++state;
+9357                     
+9358                     \textcolor{keywordflow}{if} (*state != \textcolor{charliteral}{'('}) \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_aae61a2931ba0b0c713b5d043f1cef6d4}{parse\_location\_path}();
+9359 
+9360                     \textcolor{comment}{// This looks like a function call; however this still can be a node-test. Check it.}
+9361                     \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a7b4555d7bfdb90971333c46963d5d791}{parse\_node\_test\_type}(\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.
+      \hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}()) != \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a6c7184af99feffae4eb898b764e93649}{nodetest\_none}) \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_aae61a2931ba0b0c713b5d043f1cef6d4}{parse\_location\_path}();
+9362                 \}
+9363                 
+9364                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \hyperlink{structxpath__parser_a0530aefc1445c4eac4614e895dd0a219}{parse\_filter\_expression}();
+9365 
+9366                 \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8be0786f2c3130ad30b61bbac70fa809}{lex\_slash} || 
+      \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a0988911f62781c4a1e8831a76c1e1fe8}{lex\_double\_slash})
+9367                 \{
+9368                     \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9}{lexeme\_t} l = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}();
+9369                     \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9370                     
+9371                     \textcolor{keywordflow}{if} (l == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a0988911f62781c4a1e8831a76c1e1fe8}{lex\_double\_slash})
+9372                     \{
+9373                         \textcolor{keywordflow}{if} (n->\hyperlink{classxpath__ast__node_a2c3598521141ed4b763fe6c4f852234f}{rettype}() != \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set}) 
+      \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Step has to be applied to node set"});
+9374 
+9375                         n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa6229c263d2e6f239a78d56b6f8aaf19}{ast\_step}, n, \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaa4371804013320e9798cea401cffa22d}{axis\_descendant\_or\_self}, 
+      \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275aef6cad334993e832458e028decb18c85}{nodetest\_type\_node}, 0);
+9376                     \}
+9377     
+9378                     \textcolor{comment}{// select from location path}
+9379                     \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_ab50d8b75f78b7e2eb77a1cf6872daa00}{parse\_relative\_location\_path}(n);
+9380                 \}
+9381 
+9382                 \textcolor{keywordflow}{return} n;
+9383             \}
+9384             \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_aae61a2931ba0b0c713b5d043f1cef6d4}{parse\_location\_path}();
+9385         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a320728b83e426c4874066d633ffe65d9}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-primary\-\_\-expression@{parse\-\_\-primary\-\_\-expression}}
+\index{parse\-\_\-primary\-\_\-expression@{parse\-\_\-primary\-\_\-expression}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-primary\-\_\-expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-primary\-\_\-expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a320728b83e426c4874066d633ffe65d9}
+
+\begin{DoxyCode}
+9006         \{
+9007             \textcolor{keywordflow}{switch} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}())
+9008             \{
+9009             \textcolor{keywordflow}{case} \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a933a0fd7c93a22506dc917d0868e05d1}{lex\_var\_ref}:
+9010             \{
+9011                 \hyperlink{structxpath__lexer__string}{xpath\_lexer\_string} name = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.
+      \hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}();
+9012 
+9013                 \textcolor{keywordflow}{if} (!\hyperlink{structxpath__parser_a3e0adfea7cc81c08b97ee1375831df6c}{\_variables})
+9014                     \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unknown variable: variable set is not provided"});
+9015 
+9016                 xpath\_variable* var = \hyperlink{pugixml_8cpp_aa6b1912c612e1ba4ebd66c5f3e45094a}{get\_variable}(\hyperlink{structxpath__parser_a3e0adfea7cc81c08b97ee1375831df6c}{\_variables}, name.
+      \hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin}, name.\hyperlink{structxpath__lexer__string_a13bbedeca2f8c2fb1e294325eea66878}{end});
+9017 
+9018                 \textcolor{keywordflow}{if} (!var)
+9019                     \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unknown variable: variable set does not contain the given name"}
+      );
+9020 
+9021                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9022 
+9023                 \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da3e16540ee352944686b90794e0c94260}{ast\_variable}, var->type(), var);
+9024             \}
+9025 
+9026             \textcolor{keywordflow}{case} \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aea53091cdb9dce7a878792f2c8d4d17b}{lex\_open\_brace}:
+9027             \{
+9028                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9029 
+9030                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \hyperlink{structxpath__parser_adb814ff3b99621d2a1c8e788ffd1c1c5}{parse\_expression}();
+9031 
+9032                 \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() != \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8a39009230ffa4187d22c91412f7fcd7}{lex\_close\_brace})
+9033                     \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unmatched braces"});
+9034 
+9035                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9036 
+9037                 \textcolor{keywordflow}{return} n;
+9038             \}
+9039 
+9040             \textcolor{keywordflow}{case} \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a1f793e76227244d2ae78acf451b82808}{lex\_quoted\_string}:
+9041             \{
+9042                 \textcolor{keyword}{const} \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* value = \hyperlink{structxpath__parser_a109e4c472bb76911a2b49ee741d400af}{alloc\_string}(\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.
+      \hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}());
+9043 
+9044                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) 
+      \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da9062d53478f8a445ed281f1af75b9ab0}{ast\_string\_constant}, 
+      \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6ade2b17f4d9fad5bfb1617bf5012cf5ad}{xpath\_type\_string}, value);
+9045                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9046 
+9047                 \textcolor{keywordflow}{return} n;
+9048             \}
+9049 
+9050             \textcolor{keywordflow}{case} \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abe562e581d64a34b55b3d9b38db2e480}{lex\_number}:
+9051             \{
+9052                 \textcolor{keywordtype}{double} value = 0;
+9053 
+9054                 \textcolor{keywordflow}{if} (!\hyperlink{pugixml_8cpp_ac5908a6e73e3b0c5b4ab667a42f413f9}{convert\_string\_to\_number}(\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.
+      \hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}().\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin}, \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}().\hyperlink{structxpath__lexer__string_a13bbedeca2f8c2fb1e294325eea66878}{end}, &value))
+9055                     \hyperlink{structxpath__parser_aeb5c7d7a6f8c5705a769297f42960c3e}{throw\_error\_oom}();
+9056 
+9057                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) 
+      \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da09494df03f6c34c5431cb9851a1259ba}{ast\_number\_constant}, 
+      \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number}, value);
+9058                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9059 
+9060                 \textcolor{keywordflow}{return} n;
+9061             \}
+9062 
+9063             \textcolor{keywordflow}{case} \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{lex\_string}:
+9064             \{
+9065                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* args[2] = \{0\};
+9066                 \textcolor{keywordtype}{size\_t} argc = 0;
+9067                 
+9068                 \hyperlink{structxpath__lexer__string}{xpath\_lexer\_string} \textcolor{keyword}{function} = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.
+      \hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}();
+9069                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9070                 
+9071                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* last\_arg = 0;
+9072                 
+9073                 \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() != \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aea53091cdb9dce7a878792f2c8d4d17b}{lex\_open\_brace})
+9074                     \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unrecognized function call"});
+9075                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9076 
+9077                 \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() != \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8a39009230ffa4187d22c91412f7fcd7}{lex\_close\_brace})
+9078                     args[argc++] = \hyperlink{structxpath__parser_adb814ff3b99621d2a1c8e788ffd1c1c5}{parse\_expression}();
+9079 
+9080                 \textcolor{keywordflow}{while} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() != \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8a39009230ffa4187d22c91412f7fcd7}{lex\_close\_brace})
+9081                 \{
+9082                     \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() != \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a78c1259369ef92b19f0ea2701d9c1d60}{lex\_comma})
+9083                         \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"No comma between function arguments"});
+9084                     \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9085                     
+9086                     \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \hyperlink{structxpath__parser_adb814ff3b99621d2a1c8e788ffd1c1c5}{parse\_expression}();
+9087                     
+9088                     \textcolor{keywordflow}{if} (argc < 2) args[argc] = n;
+9089                     \textcolor{keywordflow}{else} last\_arg->\hyperlink{classxpath__ast__node_a2764184d076834284eb3ff3182b845cc}{set\_next}(n);
+9090 
+9091                     argc++;
+9092                     last\_arg = n;
+9093                 \}
+9094                 
+9095                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9096 
+9097                 \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_a7acb32147ef3aac058f94257b57ff14f}{parse\_function}(\textcolor{keyword}{function}, argc, args);
+9098             \}
+9099 
+9100             \textcolor{keywordflow}{default}:
+9101                 \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unrecognizable primary expression"});
+9102 
+9103                 \textcolor{keywordflow}{return} 0;
+9104             \}
+9105         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a2a3164bf53415c43fbe0b5293d8c9efe}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-relational\-\_\-expression@{parse\-\_\-relational\-\_\-expression}}
+\index{parse\-\_\-relational\-\_\-expression@{parse\-\_\-relational\-\_\-expression}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-relational\-\_\-expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-relational\-\_\-expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a2a3164bf53415c43fbe0b5293d8c9efe}
+
+\begin{DoxyCode}
+9471         \{
+9472             \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \hyperlink{structxpath__parser_a7744f7e05f69fa9c073d7a241036ee08}{parse\_additive\_expression}();
+9473 
+9474             \textcolor{keywordflow}{while} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a51a5852f31a8c2bd889f340ac3ab9fe4}{lex\_less} || \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.
+      \hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9acd542cd6bfd08efcfa647426a7d577b8}{lex\_less\_or\_equal} || 
+9475                    \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abef050e09f087253f62bd3b4b6b435af}{lex\_greater} || 
+      \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6308ad256806534e1cd586574718a562}{lex\_greater\_or\_equal})
+9476             \{
+9477                 \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9}{lexeme\_t} l = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}();
+9478                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9479 
+9480                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* expr = \hyperlink{structxpath__parser_a7744f7e05f69fa9c073d7a241036ee08}{parse\_additive\_expression}();
+9481 
+9482                 n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(l == 
+      \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a51a5852f31a8c2bd889f340ac3ab9fe4}{lex\_less} ? \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daf968d4e04b9f634f2466ec66f5a7b85f}{ast\_op\_less} : l == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abef050e09f087253f62bd3b4b6b435af}{lex\_greater} ? 
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da844979e65e0a70ebc59efa5bbdd42cc4}{ast\_op\_greater} :
+9483                                 l == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9acd542cd6bfd08efcfa647426a7d577b8}{lex\_less\_or\_equal} ? 
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa616495e1f242635e7538da36645ca2a}{ast\_op\_less\_or\_equal} : \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daec36ceed90ddf0bc022935266093c31e}{ast\_op\_greater\_or\_equal}, 
+      \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a049dd1494237a55f8aba3392d12a0164}{xpath\_type\_boolean}, n, expr);
+9484             \}
+9485 
+9486             \textcolor{keywordflow}{return} n;
+9487         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_ab50d8b75f78b7e2eb77a1cf6872daa00}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-relative\-\_\-location\-\_\-path@{parse\-\_\-relative\-\_\-location\-\_\-path}}
+\index{parse\-\_\-relative\-\_\-location\-\_\-path@{parse\-\_\-relative\-\_\-location\-\_\-path}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-relative\-\_\-location\-\_\-path}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-relative\-\_\-location\-\_\-path (
+\begin{DoxyParamCaption}
+\item[{{\bf xpath\-\_\-ast\-\_\-node} $\ast$}]{set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_ab50d8b75f78b7e2eb77a1cf6872daa00}
+
+\begin{DoxyCode}
+9285         \{
+9286             \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \hyperlink{structxpath__parser_a7daf146822e199d8ad564be25daa49db}{parse\_step}(set);
+9287             
+9288             \textcolor{keywordflow}{while} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8be0786f2c3130ad30b61bbac70fa809}{lex\_slash} || \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.
+      \hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a0988911f62781c4a1e8831a76c1e1fe8}{lex\_double\_slash})
+9289             \{
+9290                 \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9}{lexeme\_t} l = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}();
+9291                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9292 
+9293                 \textcolor{keywordflow}{if} (l == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a0988911f62781c4a1e8831a76c1e1fe8}{lex\_double\_slash})
+9294                     n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa6229c263d2e6f239a78d56b6f8aaf19}{ast\_step}, n, \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aaa4371804013320e9798cea401cffa22d}{axis\_descendant\_or\_self}, 
+      \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275aef6cad334993e832458e028decb18c85}{nodetest\_type\_node}, 0);
+9295                 
+9296                 n = \hyperlink{structxpath__parser_a7daf146822e199d8ad564be25daa49db}{parse\_step}(n);
+9297             \}
+9298             
+9299             \textcolor{keywordflow}{return} n;
+9300         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a7daf146822e199d8ad564be25daa49db}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-step@{parse\-\_\-step}}
+\index{parse\-\_\-step@{parse\-\_\-step}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-step}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-step (
+\begin{DoxyParamCaption}
+\item[{{\bf xpath\-\_\-ast\-\_\-node} $\ast$}]{set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a7daf146822e199d8ad564be25daa49db}
+
+\begin{DoxyCode}
+9141         \{
+9142             \textcolor{keywordflow}{if} (set && set->\hyperlink{classxpath__ast__node_a2c3598521141ed4b763fe6c4f852234f}{rettype}() != \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set})
+9143                 \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Step has to be applied to node set"});
+9144 
+9145             \textcolor{keywordtype}{bool} axis\_specified = \textcolor{keyword}{false};
+9146             \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189a}{axis\_t} axis = \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa6919787a75cb4c83edb15f11fbe98faa}{axis\_child}; \textcolor{comment}{// implied child axis}
+9147 
+9148             \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a408fe857bc6c9b3a148ab798d0ad34e7}{lex\_axis\_attribute})
+9149             \{
+9150                 axis = \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aa3e7282ac37732c350a6f4890a3ab6401}{axis\_attribute};
+9151                 axis\_specified = \textcolor{keyword}{true};
+9152                 
+9153                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9154             \}
+9155             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa0709f7aad925098c9b62379206a536b}{lex\_dot})
+9156             \{
+9157                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9158                 
+9159                 \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa6229c263d2e6f239a78d56b6f8aaf19}{ast\_step}, set, \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aac3dba2fdf066d765a93e20508450e924}{axis\_self}, \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275aef6cad334993e832458e028decb18c85}{nodetest\_type\_node}, 0);
+9160             \}
+9161             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abf40f90b4cc064d49394e974962b111b}{lex\_double\_dot})
+9162             \{
+9163                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9164                 
+9165                 \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa6229c263d2e6f239a78d56b6f8aaf19}{ast\_step}, set, \hyperlink{pugixml_8cpp_ae7747145441b0591a5c04f20f6f9189aafa5cf248a5e26f36caf8163293db25a9}{axis\_parent}, \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275aef6cad334993e832458e028decb18c85}{nodetest\_type\_node}, 0);
+9166             \}
+9167         
+9168             \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275}{nodetest\_t} nt\_type = \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a6c7184af99feffae4eb898b764e93649}{nodetest\_none};
+9169             \hyperlink{structxpath__lexer__string}{xpath\_lexer\_string} nt\_name;
+9170             
+9171             \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{lex\_string})
+9172             \{
+9173                 \textcolor{comment}{// node name test}
+9174                 nt\_name = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}();
+9175                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9176 
+9177                 \textcolor{comment}{// was it an axis name?}
+9178                 \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9afbd9c771f4154c9cf363ff3c0b9f7b9c}{lex\_double\_colon})
+9179                 \{
+9180                     \textcolor{comment}{// parse axis name}
+9181                     \textcolor{keywordflow}{if} (axis\_specified) \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Two axis specifiers in one step"});
+9182 
+9183                     axis = \hyperlink{structxpath__parser_ad67ec26e0e286ca1bb5144a79e3a3583}{parse\_axis\_name}(nt\_name, axis\_specified);
+9184 
+9185                     \textcolor{keywordflow}{if} (!axis\_specified) \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unknown axis"});
+9186 
+9187                     \textcolor{comment}{// read actual node test}
+9188                     \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9189 
+9190                     \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a095a092388d76a21ccfc1338c875fe54}{lex\_multiply})
+9191                     \{
+9192                         nt\_type = \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a414f38524d511536350bcc69fea49ef9}{nodetest\_all};
+9193                         nt\_name = \hyperlink{structxpath__lexer__string}{xpath\_lexer\_string}();
+9194                         \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9195                     \}
+9196                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{lex\_string})
+9197                     \{
+9198                         nt\_name = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}();
+9199                         \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9200                     \}
+9201                     \textcolor{keywordflow}{else} \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unrecognized node test"});
+9202                 \}
+9203                 
+9204                 \textcolor{keywordflow}{if} (nt\_type == \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a6c7184af99feffae4eb898b764e93649}{nodetest\_none})
+9205                 \{
+9206                     \textcolor{comment}{// node type test or processing-instruction}
+9207                     \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aea53091cdb9dce7a878792f2c8d4d17b}{lex\_open\_brace})
+9208                     \{
+9209                         \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9210                         
+9211                         \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8a39009230ffa4187d22c91412f7fcd7}{lex\_close\_brace})
+9212                         \{
+9213                             \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9214 
+9215                             nt\_type = \hyperlink{structxpath__parser_a7b4555d7bfdb90971333c46963d5d791}{parse\_node\_test\_type}(nt\_name);
+9216 
+9217                             \textcolor{keywordflow}{if} (nt\_type == \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a6c7184af99feffae4eb898b764e93649}{nodetest\_none}) 
+      \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unrecognized node type"});
+9218                             
+9219                             nt\_name = \hyperlink{structxpath__lexer__string}{xpath\_lexer\_string}();
+9220                         \}
+9221                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (nt\_name == \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"processing-instruction"}))
+9222                         \{
+9223                             \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() != 
+      \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a1f793e76227244d2ae78acf451b82808}{lex\_quoted\_string})
+9224                                 \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Only literals are allowed as arguments to
+       processing-instruction()"});
+9225                         
+9226                             nt\_type = \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a96311576befbea6bcdb8c7b098ab7031}{nodetest\_pi};
+9227                             nt\_name = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents}();
+9228                             \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9229                             
+9230                             \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() != \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8a39009230ffa4187d22c91412f7fcd7}{lex\_close\_brace})
+9231                                 \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unmatched brace near processing-instruction()"});
+9232                             \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9233                         \}
+9234                         \textcolor{keywordflow}{else}
+9235                             \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unmatched brace near node type test"});
+9236 
+9237                     \}
+9238                     \textcolor{comment}{// QName or NCName:*}
+9239                     \textcolor{keywordflow}{else}
+9240                     \{
+9241                         \textcolor{keywordflow}{if} (nt\_name.\hyperlink{structxpath__lexer__string_a13bbedeca2f8c2fb1e294325eea66878}{end} - nt\_name.\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin} > 2 && nt\_name.
+      \hyperlink{structxpath__lexer__string_a13bbedeca2f8c2fb1e294325eea66878}{end}[-2] == \textcolor{charliteral}{':'} && nt\_name.\hyperlink{structxpath__lexer__string_a13bbedeca2f8c2fb1e294325eea66878}{end}[-1] == \textcolor{charliteral}{'*'}) \textcolor{comment}{// NCName:*}
+9242                         \{
+9243                             nt\_name.\hyperlink{structxpath__lexer__string_a13bbedeca2f8c2fb1e294325eea66878}{end}--; \textcolor{comment}{// erase *}
+9244                             
+9245                             nt\_type = \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a92953acde5a4d8f8ab80fa3082dfa8af}{nodetest\_all\_in\_namespace};
+9246                         \}
+9247                         \textcolor{keywordflow}{else} nt\_type = \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a48897ee9908e5282657f6499c23b5caf}{nodetest\_name};
+9248                     \}
+9249                 \}
+9250             \}
+9251             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a095a092388d76a21ccfc1338c875fe54}{lex\_multiply})
+9252             \{
+9253                 nt\_type = \hyperlink{pugixml_8cpp_ab268b4264276130baeb17ab629015275a414f38524d511536350bcc69fea49ef9}{nodetest\_all};
+9254                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9255             \}
+9256             \textcolor{keywordflow}{else} \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unrecognized node test"});
+9257             
+9258             \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) 
+      \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330daa6229c263d2e6f239a78d56b6f8aaf19}{ast\_step}, set, axis, nt\_type, \hyperlink{structxpath__parser_a109e4c472bb76911a2b49ee741d400af}{alloc\_string}(nt\_name));
+9259             
+9260             \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* last = 0;
+9261             
+9262             \textcolor{keywordflow}{while} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ad9321b18d06078ecc38ad112ce654ce9}{lex\_open\_square\_brace})
+9263             \{
+9264                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9265                 
+9266                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* expr = \hyperlink{structxpath__parser_adb814ff3b99621d2a1c8e788ffd1c1c5}{parse\_expression}();
+9267 
+9268                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* pred = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) 
+      \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(\hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da39bc72aba9792b10763caa7c526b9ed5}{ast\_predicate}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set}, expr);
+9269                 
+9270                 \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() != \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ad572f5fa18506a8bf523425d075cac5d}{lex\_close\_square\_brace})
+9271                     \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Unmatched square brace"});
+9272                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9273                 
+9274                 \textcolor{keywordflow}{if} (last) last->\hyperlink{classxpath__ast__node_a2764184d076834284eb3ff3182b845cc}{set\_next}(pred);
+9275                 \textcolor{keywordflow}{else} n->\hyperlink{classxpath__ast__node_afe044146db852b7d4dbf188fd2ff6c75}{set\_right}(pred);
+9276                 
+9277                 last = pred;
+9278             \}
+9279             
+9280             \textcolor{keywordflow}{return} n;
+9281         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_af5f2714594608f2536f3324c27ce7969}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-unary\-\_\-expression@{parse\-\_\-unary\-\_\-expression}}
+\index{parse\-\_\-unary\-\_\-expression@{parse\-\_\-unary\-\_\-expression}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-unary\-\_\-expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-unary\-\_\-expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_af5f2714594608f2536f3324c27ce7969}
+
+\begin{DoxyCode}
+9409         \{
+9410             \textcolor{keywordflow}{if} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa0a1d6df3298c5b043daa6ad9afa2733}{lex\_minus})
+9411             \{
+9412                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9413 
+9414                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* expr = \hyperlink{structxpath__parser_af5f2714594608f2536f3324c27ce7969}{parse\_unary\_expression}();
+9415 
+9416                 \textcolor{keywordflow}{return} \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da8a1e59b48b67221da14fe292a232da26}{ast\_op\_negate}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6a02959f74f4fe93d71a1e109a45f23825}{xpath\_type\_number}, expr);
+9417             \}
+9418             \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \hyperlink{structxpath__parser_a2b5326e67d26a880cf29343a61e23891}{parse\_union\_expression}();
+9419         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a2b5326e67d26a880cf29343a61e23891}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!parse\-\_\-union\-\_\-expression@{parse\-\_\-union\-\_\-expression}}
+\index{parse\-\_\-union\-\_\-expression@{parse\-\_\-union\-\_\-expression}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{parse\-\_\-union\-\_\-expression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-parser\-::parse\-\_\-union\-\_\-expression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a2b5326e67d26a880cf29343a61e23891}
+
+\begin{DoxyCode}
+9389         \{
+9390             \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* n = \hyperlink{structxpath__parser_a024b539aa4ea7226edce0a3d0a577549}{parse\_path\_expression}();
+9391 
+9392             \textcolor{keywordflow}{while} (\hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current}() == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a751c2248d5cb85f4ba650a78281923a1}{lex\_union})
+9393             \{
+9394                 \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+9395 
+9396                 \hyperlink{classxpath__ast__node}{xpath\_ast\_node}* expr = \hyperlink{structxpath__parser_a2b5326e67d26a880cf29343a61e23891}{parse\_union\_expression}();
+9397 
+9398                 \textcolor{keywordflow}{if} (n->\hyperlink{classxpath__ast__node_a2c3598521141ed4b763fe6c4f852234f}{rettype}() != \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set} || expr->
+      \hyperlink{classxpath__ast__node_a2c3598521141ed4b763fe6c4f852234f}{rettype}() != \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set})
+9399                     \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Union operator has to be applied to node sets"});
+9400 
+9401                 n = \textcolor{keyword}{new} (\hyperlink{structxpath__parser_ae33adcc8eb125124967d95297daff351}{alloc\_node}()) \hyperlink{classxpath__ast__node}{xpath\_ast\_node}(
+      \hyperlink{pugixml_8cpp_a11258a240266b84b6b0526930e5d330da57012874ae8f1fe371ecd68677feb277}{ast\_op\_union}, \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set}, n, expr);
+9402             \}
+9403 
+9404             \textcolor{keywordflow}{return} n;
+9405         \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!throw\-\_\-error@{throw\-\_\-error}}
+\index{throw\-\_\-error@{throw\-\_\-error}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{throw\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\-\_\-parser\-::throw\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_a043353db574741cd4f460a042a0b22c6}
+
+\begin{DoxyCode}
+8733         \{
+8734             \hyperlink{structxpath__parser_a9370fb875bfc49ca6e35f3165ecb1692}{\_result}->error = message;
+8735             \hyperlink{structxpath__parser_a9370fb875bfc49ca6e35f3165ecb1692}{\_result}->offset = \hyperlink{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\_lexer}.\hyperlink{classxpath__lexer_a7adef722d64938e3ba79ae1a7e1c0d71}{current\_pos}() - 
+      \hyperlink{structxpath__parser_aaf5ea5d5be97cdd93adc7a719d8edc1c}{\_query};
+8736 
+8737 \textcolor{preprocessor}{        #ifdef PUGIXML\_NO\_EXCEPTIONS}
+8738 \textcolor{preprocessor}{}            longjmp(\_error\_handler, 1);
+8739 \textcolor{preprocessor}{        #else}
+8740 \textcolor{preprocessor}{}            \textcolor{keywordflow}{throw} xpath\_exception(*\hyperlink{structxpath__parser_a9370fb875bfc49ca6e35f3165ecb1692}{\_result});
+8741 \textcolor{preprocessor}{        #endif}
+8742 \textcolor{preprocessor}{}        \}
+\end{DoxyCode}
+\hypertarget{structxpath__parser_aeb5c7d7a6f8c5705a769297f42960c3e}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!throw\-\_\-error\-\_\-oom@{throw\-\_\-error\-\_\-oom}}
+\index{throw\-\_\-error\-\_\-oom@{throw\-\_\-error\-\_\-oom}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{throw\-\_\-error\-\_\-oom}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\-\_\-parser\-::throw\-\_\-error\-\_\-oom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__parser_aeb5c7d7a6f8c5705a769297f42960c3e}
+
+\begin{DoxyCode}
+8745         \{
+8746 \textcolor{preprocessor}{        #ifdef PUGIXML\_NO\_EXCEPTIONS}
+8747 \textcolor{preprocessor}{}            \hyperlink{structxpath__parser_a043353db574741cd4f460a042a0b22c6}{throw\_error}(\textcolor{stringliteral}{"Out of memory"});
+8748 \textcolor{preprocessor}{        #else}
+8749 \textcolor{preprocessor}{}            \textcolor{keywordflow}{throw} std::bad\_alloc();
+8750 \textcolor{preprocessor}{        #endif}
+8751 \textcolor{preprocessor}{}        \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\hypertarget{structxpath__parser_ac34f5b21ef406bec944286eee2f45836}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!\-\_\-alloc@{\-\_\-alloc}}
+\index{\-\_\-alloc@{\-\_\-alloc}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{\-\_\-alloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-allocator}$\ast$ xpath\-\_\-parser\-::\-\_\-alloc}}\label{structxpath__parser_ac34f5b21ef406bec944286eee2f45836}
+\hypertarget{structxpath__parser_a50106db584946e67acd080ef5391a0f4}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!\-\_\-lexer@{\-\_\-lexer}}
+\index{\-\_\-lexer@{\-\_\-lexer}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{\-\_\-lexer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-lexer} xpath\-\_\-parser\-::\-\_\-lexer}}\label{structxpath__parser_a50106db584946e67acd080ef5391a0f4}
+\hypertarget{structxpath__parser_aaf5ea5d5be97cdd93adc7a719d8edc1c}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!\-\_\-query@{\-\_\-query}}
+\index{\-\_\-query@{\-\_\-query}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{\-\_\-query}]{\setlength{\rightskip}{0pt plus 5cm}const char\-\_\-t$\ast$ xpath\-\_\-parser\-::\-\_\-query}}\label{structxpath__parser_aaf5ea5d5be97cdd93adc7a719d8edc1c}
+\hypertarget{structxpath__parser_a9370fb875bfc49ca6e35f3165ecb1692}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!\-\_\-result@{\-\_\-result}}
+\index{\-\_\-result@{\-\_\-result}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{\-\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-parse\-\_\-result$\ast$ xpath\-\_\-parser\-::\-\_\-result}}\label{structxpath__parser_a9370fb875bfc49ca6e35f3165ecb1692}
+\hypertarget{structxpath__parser_a3e0adfea7cc81c08b97ee1375831df6c}{\index{xpath\-\_\-parser@{xpath\-\_\-parser}!\-\_\-variables@{\-\_\-variables}}
+\index{\-\_\-variables@{\-\_\-variables}!xpath_parser@{xpath\-\_\-parser}}
+\subsubsection[{\-\_\-variables}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-variable\-\_\-set$\ast$ xpath\-\_\-parser\-::\-\_\-variables}}\label{structxpath__parser_a3e0adfea7cc81c08b97ee1375831df6c}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

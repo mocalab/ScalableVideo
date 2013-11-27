@@ -1,0 +1,97 @@
+\hypertarget{structxpath__query__impl}{\section{xpath\-\_\-query\-\_\-impl Struct Reference}
+\label{structxpath__query__impl}\index{xpath\-\_\-query\-\_\-impl@{xpath\-\_\-query\-\_\-impl}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxpath__query__impl_a57ef8fcfa3f46e6c395edb00328e9a0e}{xpath\-\_\-query\-\_\-impl} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structxpath__query__impl}{xpath\-\_\-query\-\_\-impl} $\ast$ \hyperlink{structxpath__query__impl_afcf45bb9a20a4117b1e963d83277aa7f}{create} ()
+\item 
+static void \hyperlink{structxpath__query__impl_a9b7194b1356cca3f3b62f4cdb8d8960f}{destroy} (void $\ast$ptr)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classxpath__ast__node}{xpath\-\_\-ast\-\_\-node} $\ast$ \hyperlink{structxpath__query__impl_ad25499e0c8391005e3a1a60633d631fe}{root}
+\item 
+\hyperlink{classxpath__allocator}{xpath\-\_\-allocator} \hyperlink{structxpath__query__impl_ae568b8642d48e729f2ccc2a50467c847}{alloc}
+\item 
+\hyperlink{structxpath__memory__block}{xpath\-\_\-memory\-\_\-block} \hyperlink{structxpath__query__impl_a3a8af3ceed6a504567656ec6d1b62641}{block}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structxpath__query__impl_a57ef8fcfa3f46e6c395edb00328e9a0e}{\index{xpath\-\_\-query\-\_\-impl@{xpath\-\_\-query\-\_\-impl}!xpath\-\_\-query\-\_\-impl@{xpath\-\_\-query\-\_\-impl}}
+\index{xpath\-\_\-query\-\_\-impl@{xpath\-\_\-query\-\_\-impl}!xpath_query_impl@{xpath\-\_\-query\-\_\-impl}}
+\subsubsection[{xpath\-\_\-query\-\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-query\-\_\-impl\-::xpath\-\_\-query\-\_\-impl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__query__impl_a57ef8fcfa3f46e6c395edb00328e9a0e}
+
+\begin{DoxyCode}
+9601                           : \hyperlink{structxpath__query__impl_ad25499e0c8391005e3a1a60633d631fe}{root}(0), \hyperlink{structxpath__query__impl_ae568b8642d48e729f2ccc2a50467c847}{alloc}(&\hyperlink{structxpath__query__impl_a3a8af3ceed6a504567656ec6d1b62641}{block})
+9602         \{
+9603             \hyperlink{structxpath__query__impl_a3a8af3ceed6a504567656ec6d1b62641}{block}.\hyperlink{structxpath__memory__block_ab7f0d8400b40a51cdb063e76fd19a93c}{next} = 0;
+9604         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structxpath__query__impl_afcf45bb9a20a4117b1e963d83277aa7f}{\index{xpath\-\_\-query\-\_\-impl@{xpath\-\_\-query\-\_\-impl}!create@{create}}
+\index{create@{create}!xpath_query_impl@{xpath\-\_\-query\-\_\-impl}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf xpath\-\_\-query\-\_\-impl}$\ast$ xpath\-\_\-query\-\_\-impl\-::create (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structxpath__query__impl_afcf45bb9a20a4117b1e963d83277aa7f}
+
+\begin{DoxyCode}
+9584         \{
+9585             \textcolor{keywordtype}{void}* memory = \hyperlink{structxml__memory__management__function__storage_abb6865f8d07d27fd9273737c59f6e941}{xml\_memory::allocate}(\textcolor{keyword}{sizeof}(
+      \hyperlink{structxpath__query__impl}{xpath\_query\_impl}));
+9586 
+9587             \textcolor{keywordflow}{return} \textcolor{keyword}{new} (memory) \hyperlink{structxpath__query__impl_a57ef8fcfa3f46e6c395edb00328e9a0e}{xpath\_query\_impl}();
+9588         \}
+\end{DoxyCode}
+\hypertarget{structxpath__query__impl_a9b7194b1356cca3f3b62f4cdb8d8960f}{\index{xpath\-\_\-query\-\_\-impl@{xpath\-\_\-query\-\_\-impl}!destroy@{destroy}}
+\index{destroy@{destroy}!xpath_query_impl@{xpath\-\_\-query\-\_\-impl}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}static void xpath\-\_\-query\-\_\-impl\-::destroy (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structxpath__query__impl_a9b7194b1356cca3f3b62f4cdb8d8960f}
+
+\begin{DoxyCode}
+9591         \{
+9592             \textcolor{keywordflow}{if} (!ptr) \textcolor{keywordflow}{return};
+9593             
+9594             \textcolor{comment}{// free all allocated pages}
+9595             \textcolor{keyword}{static\_cast<}\hyperlink{structxpath__query__impl}{xpath\_query\_impl}*\textcolor{keyword}{>}(ptr)->\hyperlink{structxpath__query__impl_ae568b8642d48e729f2ccc2a50467c847}{alloc}.
+      \hyperlink{classxpath__allocator_a9436b8bdef3e0e0ff0df28c2af6a430d}{release}();
+9596 
+9597             \textcolor{comment}{// free allocator memory (with the first page)}
+9598             \hyperlink{structxml__memory__management__function__storage_a1c80a9a045ed6cfb90b17a178e4b3512}{xml\_memory::deallocate}(ptr);
+9599         \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\hypertarget{structxpath__query__impl_ae568b8642d48e729f2ccc2a50467c847}{\index{xpath\-\_\-query\-\_\-impl@{xpath\-\_\-query\-\_\-impl}!alloc@{alloc}}
+\index{alloc@{alloc}!xpath_query_impl@{xpath\-\_\-query\-\_\-impl}}
+\subsubsection[{alloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-allocator} xpath\-\_\-query\-\_\-impl\-::alloc}}\label{structxpath__query__impl_ae568b8642d48e729f2ccc2a50467c847}
+\hypertarget{structxpath__query__impl_a3a8af3ceed6a504567656ec6d1b62641}{\index{xpath\-\_\-query\-\_\-impl@{xpath\-\_\-query\-\_\-impl}!block@{block}}
+\index{block@{block}!xpath_query_impl@{xpath\-\_\-query\-\_\-impl}}
+\subsubsection[{block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-memory\-\_\-block} xpath\-\_\-query\-\_\-impl\-::block}}\label{structxpath__query__impl_a3a8af3ceed6a504567656ec6d1b62641}
+\hypertarget{structxpath__query__impl_ad25499e0c8391005e3a1a60633d631fe}{\index{xpath\-\_\-query\-\_\-impl@{xpath\-\_\-query\-\_\-impl}!root@{root}}
+\index{root@{root}!xpath_query_impl@{xpath\-\_\-query\-\_\-impl}}
+\subsubsection[{root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-ast\-\_\-node}$\ast$ xpath\-\_\-query\-\_\-impl\-::root}}\label{structxpath__query__impl_ad25499e0c8391005e3a1a60633d631fe}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

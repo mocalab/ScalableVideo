@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['page_5foffset',['page_offset',['../structxml__memory__string__header.html#a0cc274672f1263f73eeb6bf839bf96ee',1,'xml_memory_string_header']]],
+  ['parent',['parent',['../structpugi_1_1xml__node__struct.html#af692c222bcc5a9f61108cb3ae0b7b5ea',1,'pugi::xml_node_struct']]],
+  ['parse_5fcdata',['parse_cdata',['../namespacepugi.html#a47b679897f8bc15e4e152978fc88c208',1,'pugi']]],
+  ['parse_5fcomments',['parse_comments',['../namespacepugi.html#adcab316176bfaf69158339962fb4ad38',1,'pugi']]],
+  ['parse_5fdeclaration',['parse_declaration',['../namespacepugi.html#adb5db03ce720dcd90e900b9bb7e70427',1,'pugi']]],
+  ['parse_5fdefault',['parse_default',['../namespacepugi.html#ad7c927d1c1752330637c3318b0d7b366',1,'pugi']]],
+  ['parse_5fdoctype',['parse_doctype',['../namespacepugi.html#afa993ffcd3e228d21f48071e7c097f32',1,'pugi']]],
+  ['parse_5feol',['parse_eol',['../namespacepugi.html#ad4e017365d2ff3ee04e226c35129b475',1,'pugi']]],
+  ['parse_5fescapes',['parse_escapes',['../namespacepugi.html#ab5ef8454110599611900ff48012c8ad6',1,'pugi']]],
+  ['parse_5ffull',['parse_full',['../namespacepugi.html#a7d773377222d4cb6951297d61605c6a7',1,'pugi']]],
+  ['parse_5fminimal',['parse_minimal',['../namespacepugi.html#ae5058761cfd25d6cdb7e092659dae1fd',1,'pugi']]],
+  ['parse_5fpi',['parse_pi',['../namespacepugi.html#a8fb7ea408d60b4f2ca79dd30b651f545',1,'pugi']]],
+  ['parse_5fwconv_5fattribute',['parse_wconv_attribute',['../namespacepugi.html#a1e943812f2de36fc3ee14f7756afdbd7',1,'pugi']]],
+  ['parse_5fwnorm_5fattribute',['parse_wnorm_attribute',['../namespacepugi.html#a8617ea5ba78c676aff8b7af960cb2f4b',1,'pugi']]],
+  ['parse_5fws_5fpcdata',['parse_ws_pcdata',['../namespacepugi.html#ae492a24302294f1ce3fbd56f2edbf131',1,'pugi']]],
+  ['parse_5fws_5fpcdata_5fsingle',['parse_ws_pcdata_single',['../namespacepugi.html#ae7c892ad8288b363daca0c3e1a8e38ee',1,'pugi']]],
+  ['position',['position',['../structxpath__context.html#add1fc9bd16b21d3a8d7a4bd63c60af07',1,'xpath_context']]],
+  ['prefix',['prefix',['../structnamespace__uri__predicate.html#a80a2c051b9e57b8895c28d8fcc32e051',1,'namespace_uri_predicate']]],
+  ['prefix_5flength',['prefix_length',['../structnamespace__uri__predicate.html#aa48279192e8d48b9c798f5485a2a9170',1,'namespace_uri_predicate']]],
+  ['prev',['prev',['../structxml__memory__page.html#a014969b0e4a34a6cb24e9823791e60ab',1,'xml_memory_page']]],
+  ['prev_5fattribute_5fc',['prev_attribute_c',['../structpugi_1_1xml__attribute__struct.html#a0e3a022235b316e4cfc1034ceb7d7862',1,'pugi::xml_attribute_struct']]],
+  ['prev_5fsibling_5fc',['prev_sibling_c',['../structpugi_1_1xml__node__struct.html#a74e62128c88c422c0ed969633bbb2d4e',1,'pugi::xml_node_struct']]]
+];

@@ -1,0 +1,369 @@
+\hypertarget{classTCPClient}{\section{T\-C\-P\-Client Class Reference}
+\label{classTCPClient}\index{T\-C\-P\-Client@{T\-C\-P\-Client}}
+}
+
+
+{\ttfamily \#include $<$tcpclient.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTCPClient_ad37bba4f2ebcc899b9871656802dcbe9}{T\-C\-P\-Client} ()
+\item 
+\hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569}{T\-C\-P\-Error} \hyperlink{classTCPClient_adb1706d816b7810d28ef9eeab77a423b}{connect\-To\-Server} (\hyperlink{classAddress}{Address} server\-\_\-addr)
+\item 
+void \hyperlink{classTCPClient_aeef43b15ef57aefead37ff7300ebc779}{disconnect} ()
+\item 
+\hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569}{T\-C\-P\-Error} \hyperlink{classTCPClient_a23a640eac58e631288cdeb479416e0ed}{Send} (const void $\ast$send\-\_\-data, int size)
+\begin{DoxyCompactList}\small\item\em Send function. \end{DoxyCompactList}\item 
+\hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569}{T\-C\-P\-Error} \hyperlink{classTCPClient_aa070f44fa48f948931b2c49e31b5a149}{Receive} (char $\ast$recv\-\_\-data, int max)
+\item 
+bool \hyperlink{classTCPClient_a8c1298fab750438558a6d1e13afc3217}{is\-Open} () const 
+\item 
+bool \hyperlink{classTCPClient_a30054a07061dfe22e7a9a7783a843bcc}{is\-Connected} () const 
+\item 
+bool \hyperlink{classTCPClient_a8043d706038dd8d4aebe3c8898aa1a5b}{open\-Local} ()
+\item 
+bool \hyperlink{classTCPClient_a3daf1addf9f9b21c05aeae58c443476a}{Listen} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTCPClient_ad37bba4f2ebcc899b9871656802dcbe9}{\index{T\-C\-P\-Client@{T\-C\-P\-Client}!T\-C\-P\-Client@{T\-C\-P\-Client}}
+\index{T\-C\-P\-Client@{T\-C\-P\-Client}!TCPClient@{T\-C\-P\-Client}}
+\subsubsection[{T\-C\-P\-Client}]{\setlength{\rightskip}{0pt plus 5cm}T\-C\-P\-Client\-::\-T\-C\-P\-Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTCPClient_ad37bba4f2ebcc899b9871656802dcbe9}
+
+\begin{DoxyCode}
+16                      :
+17     m\_is\_open(\textcolor{keyword}{false}),
+18     m\_is\_connected(\textcolor{keyword}{false})
+19 \{
+20 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTCPClient_adb1706d816b7810d28ef9eeab77a423b}{\index{T\-C\-P\-Client@{T\-C\-P\-Client}!connect\-To\-Server@{connect\-To\-Server}}
+\index{connect\-To\-Server@{connect\-To\-Server}!TCPClient@{T\-C\-P\-Client}}
+\subsubsection[{connect\-To\-Server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\-C\-P\-Error} T\-C\-P\-Client\-::connect\-To\-Server (
+\begin{DoxyParamCaption}
+\item[{{\bf Address}}]{server\-\_\-addr}
+\end{DoxyParamCaption}
+)}}\label{classTCPClient_adb1706d816b7810d28ef9eeab77a423b}
+
+\begin{DoxyCode}
+112 \{
+113     \textcolor{keywordtype}{int} status;
+114 \textcolor{preprocessor}{#ifdef Q\_OS\_WIN32}
+115 \textcolor{preprocessor}{}    WSADATA WsaData;
+116     \textcolor{keywordflow}{if}(!(WSAStartup(MAKEWORD(2,2), &WsaData) == NO\_ERROR))
+117     \{
+118         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Unable to initialize windows socket layer..."} << strerror(errno);
+119     \}
+120 \textcolor{preprocessor}{#endif}
+121 \textcolor{preprocessor}{}    \textcolor{keyword}{struct }addrinfo description, *servinfo;
+122     \textcolor{comment}{//For setsockopt}
+123     \textcolor{keywordtype}{int} set = 1;
+124     \textcolor{comment}{//Populate socket description}
+125     memset(&description, 0, \textcolor{keyword}{sizeof}(description));
+126     description.ai\_family = AF\_UNSPEC;
+127     description.ai\_socktype = SOCK\_STREAM;
+128 
+129     \textcolor{comment}{//Find local address}
+130     \textcolor{keywordflow}{if}((status = getaddrinfo(server\_addr.\hyperlink{classAddress_aa84d076d4adf5cac8381146fcf261af7}{getAddress}().c\_str(), server\_addr.
+      \hyperlink{classAddress_a7e29bafabaff50823ac432f74e5232be}{getStringPort}(),
+131                              &description, &servinfo)) != 0)
+132     \{
+133         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Unable to find address specified: "} << gai\_strerror(status);
+134         \textcolor{keywordflow}{return} \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569a677e05a70195600d99f343ac4d080f12}{TCP\_STATUS\_ADDRESS\_NOT\_FOUND};
+135     \}
+136     \textcolor{keyword}{struct }addrinfo *iter;
+137     \textcolor{comment}{//Iterate through to get address}
+138     \textcolor{keywordflow}{for}(iter = servinfo; iter != NULL; iter = iter->ai\_next)
+139     \{
+140         \textcolor{keywordflow}{if}((m\_sockfd\_server = socket(iter->ai\_family, iter->ai\_socktype,
+141                                     iter->ai\_protocol)) == -1)
+142         \{
+143             \textcolor{comment}{//Restart loop if not found}
+144             \textcolor{keywordflow}{continue};
+145         \}
+146 
+147         \textcolor{comment}{//Connect to server}
+148         \textcolor{keywordflow}{if}(connect(m\_sockfd\_server, iter->ai\_addr, iter->ai\_addrlen) == -1)
+149         \{
+150             \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Could not bind to socket: "} << strerror(errno);
+151 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+152 \textcolor{preprocessor}{}            close(m\_sockfd\_server);
+153 \textcolor{preprocessor}{#elif defined(Q\_OS\_WIN32)}
+154 \textcolor{preprocessor}{}            closesocket(m\_sockfd\_server);
+155 \textcolor{preprocessor}{#endif}
+156 \textcolor{preprocessor}{}            \textcolor{keywordflow}{continue};
+157         \}
+158         \textcolor{keywordflow}{break};
+159     \}
+160 
+161     \textcolor{keywordflow}{if}(iter == NULL)
+162     \{
+163         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Could not find any sockets."};
+164         \textcolor{keywordflow}{return} \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569afbc7ac61946e52ae324b1c658cf45e3a}{TCP\_STATUS\_SOCKET\_NOT\_OPENED};
+165     \}
+166 
+167     \textcolor{comment}{//Now we are connected to the server}
+168     freeaddrinfo(servinfo);
+169     m\_is\_connected = \textcolor{keyword}{true};
+170     \textcolor{keywordflow}{return} \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569a12de2815c3e64df634ac4d26a0bb2007}{TCP\_STATUS\_SUCCESS};
+171 \}
+\end{DoxyCode}
+\hypertarget{classTCPClient_aeef43b15ef57aefead37ff7300ebc779}{\index{T\-C\-P\-Client@{T\-C\-P\-Client}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!TCPClient@{T\-C\-P\-Client}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void T\-C\-P\-Client\-::disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTCPClient_aeef43b15ef57aefead37ff7300ebc779}
+
+\begin{DoxyCode}
+174 \{
+175 \textcolor{preprocessor}{#if defined(Q\_OS\_WIN32)}
+176 \textcolor{preprocessor}{}    closesocket(m\_sockfd\_server);
+177     WSACleanup();
+178 \textcolor{preprocessor}{#elif defined(Q\_OS\_LINUX)}
+179 \textcolor{preprocessor}{}    \textcolor{comment}{//close the socket fd}
+180     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Closing connection to server."};
+181     shutdown(m\_sockfd\_server, 2);
+182     \textcolor{keywordflow}{if}(close(m\_sockfd\_server) == -1)
+183     \{
+184         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Unable to close connection to server!"};
+185     \}
+186 \textcolor{preprocessor}{#endif}
+187 \textcolor{preprocessor}{}
+188 
+189     m\_is\_connected = \textcolor{keyword}{false};
+190 \}
+\end{DoxyCode}
+\hypertarget{classTCPClient_a30054a07061dfe22e7a9a7783a843bcc}{\index{T\-C\-P\-Client@{T\-C\-P\-Client}!is\-Connected@{is\-Connected}}
+\index{is\-Connected@{is\-Connected}!TCPClient@{T\-C\-P\-Client}}
+\subsubsection[{is\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool T\-C\-P\-Client\-::is\-Connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classTCPClient_a30054a07061dfe22e7a9a7783a843bcc}
+
+\begin{DoxyCode}
+262 \{
+263     \textcolor{keywordflow}{return} this->m\_is\_connected;
+264 \}
+\end{DoxyCode}
+\hypertarget{classTCPClient_a8c1298fab750438558a6d1e13afc3217}{\index{T\-C\-P\-Client@{T\-C\-P\-Client}!is\-Open@{is\-Open}}
+\index{is\-Open@{is\-Open}!TCPClient@{T\-C\-P\-Client}}
+\subsubsection[{is\-Open}]{\setlength{\rightskip}{0pt plus 5cm}bool T\-C\-P\-Client\-::is\-Open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classTCPClient_a8c1298fab750438558a6d1e13afc3217}
+
+\begin{DoxyCode}
+257 \{
+258     \textcolor{keywordflow}{return} this->m\_is\_open;
+259 \}
+\end{DoxyCode}
+\hypertarget{classTCPClient_a3daf1addf9f9b21c05aeae58c443476a}{\index{T\-C\-P\-Client@{T\-C\-P\-Client}!Listen@{Listen}}
+\index{Listen@{Listen}!TCPClient@{T\-C\-P\-Client}}
+\subsubsection[{Listen}]{\setlength{\rightskip}{0pt plus 5cm}bool T\-C\-P\-Client\-::\-Listen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTCPClient_a3daf1addf9f9b21c05aeae58c443476a}
+
+\begin{DoxyCode}
+102 \{
+103     \textcolor{keywordflow}{if}(listen(m\_sockfd\_local, \hyperlink{SocketConstants_8h_aeefbbafa97642defe3ee6c3080b7d66f}{BACKLOG}) == -1)
+104     \{
+105         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Could not listen: "} << strerror(errno);
+106         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+107     \}
+108     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+109 \}
+\end{DoxyCode}
+\hypertarget{classTCPClient_a8043d706038dd8d4aebe3c8898aa1a5b}{\index{T\-C\-P\-Client@{T\-C\-P\-Client}!open\-Local@{open\-Local}}
+\index{open\-Local@{open\-Local}!TCPClient@{T\-C\-P\-Client}}
+\subsubsection[{open\-Local}]{\setlength{\rightskip}{0pt plus 5cm}bool T\-C\-P\-Client\-::open\-Local (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTCPClient_a8043d706038dd8d4aebe3c8898aa1a5b}
+
+\begin{DoxyCode}
+24 \{
+25     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Opening up a stream connection."};
+26     \textcolor{keywordtype}{int} status;
+27 \textcolor{preprocessor}{#ifdef Q\_OS\_WIN32}
+28 \textcolor{preprocessor}{}    WSADATA WsaData;
+29     \textcolor{keywordflow}{if}(!(WSAStartup(MAKEWORD(2,2), &WsaData) == NO\_ERROR))
+30     \{
+31         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Unable to initialize windows socket layer..."} << strerror(errno);
+32     \}
+33 \textcolor{preprocessor}{#endif}
+34 \textcolor{preprocessor}{}
+35     \textcolor{keyword}{struct }addrinfo description, *servinfo;
+36     \textcolor{comment}{//For setsockopt}
+37 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+38 \textcolor{preprocessor}{}    \textcolor{keywordtype}{int} set = 1;
+39 \textcolor{preprocessor}{#elif defined(Q\_OS\_WIN32)}
+40 \textcolor{preprocessor}{}    BOOL set = TRUE;
+41 \textcolor{preprocessor}{#endif}
+42 \textcolor{preprocessor}{}    \textcolor{comment}{//Populate socket description}
+43     memset(&description, 0, \textcolor{keyword}{sizeof}(description));
+44     description.ai\_family = AF\_UNSPEC;
+45     description.ai\_socktype = SOCK\_STREAM;
+46     description.ai\_flags = AI\_PASSIVE;
+47 
+48     \textcolor{comment}{//Find local address}
+49     \textcolor{keywordflow}{if}((status = getaddrinfo(NULL, \hyperlink{SocketConstants_8h_a12d15f06e320c26324ec45934324faf6}{STR\_SEND\_PORT}, &description, &servinfo)) != 0)
+50     \{
+51         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Unable to find address specified: "} << gai\_strerror(status);
+52         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+53     \}
+54     \textcolor{keyword}{struct }addrinfo *iter;
+55     \textcolor{comment}{//Iterate through to get address}
+56     \textcolor{keywordflow}{for}(iter = servinfo; iter != NULL; iter = servinfo->ai\_next)
+57     \{
+58         \textcolor{keywordflow}{if}((m\_sockfd\_local = socket(iter->ai\_family, iter->ai\_socktype,
+59                                     iter->ai\_protocol)) == -1)
+60         \{
+61             \textcolor{comment}{//Restart loop if not found}
+62             \textcolor{keywordflow}{continue};
+63         \}
+64 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+65 \textcolor{preprocessor}{}        \textcolor{keywordtype}{int} sockopt = setsockopt(m\_sockfd\_local,SOL\_SOCKET, SO\_REUSEADDR, &set, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+66 \textcolor{preprocessor}{#elif defined(Q\_OS\_WIN32)}
+67 \textcolor{preprocessor}{}        \textcolor{keywordtype}{int} sockopt = setsockopt(m\_sockfd\_local,SOL\_SOCKET, SO\_REUSEADDR, (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *)set, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+68 \textcolor{preprocessor}{#endif}
+69 \textcolor{preprocessor}{}        \textcolor{keywordflow}{if}(sockopt == -1)
+70         \{
+71             \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"setsockopt: "} << strerror(errno);
+72             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+73         \}
+74 
+75         \textcolor{comment}{//Bind to the socket}
+76         \textcolor{keywordflow}{if}(bind(m\_sockfd\_local, iter->ai\_addr, iter->ai\_addrlen) == -1)
+77         \{
+78             \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Could not bind to socket: "} << strerror(errno);
+79 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+80 \textcolor{preprocessor}{}            close(m\_sockfd\_local);
+81 \textcolor{preprocessor}{#elif defined(Q\_OS\_WIN32)}
+82 \textcolor{preprocessor}{}            closesocket(m\_sockfd\_local);
+83 \textcolor{preprocessor}{#endif}
+84 \textcolor{preprocessor}{}            \textcolor{keywordflow}{continue};
+85         \}
+86         \textcolor{keywordflow}{break};
+87     \}
+88 
+89     \textcolor{keywordflow}{if}(iter == NULL)
+90     \{
+91         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Could not find any sockets."};
+92         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+93     \}
+94 
+95     \textcolor{comment}{//Now we are bound to the right address and port}
+96     freeaddrinfo(servinfo);
+97     m\_is\_open = \textcolor{keyword}{true};
+98     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+99 \}
+\end{DoxyCode}
+\hypertarget{classTCPClient_aa070f44fa48f948931b2c49e31b5a149}{\index{T\-C\-P\-Client@{T\-C\-P\-Client}!Receive@{Receive}}
+\index{Receive@{Receive}!TCPClient@{T\-C\-P\-Client}}
+\subsubsection[{Receive}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\-C\-P\-Error} T\-C\-P\-Client\-::\-Receive (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{recv\-\_\-data, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}}\label{classTCPClient_aa070f44fa48f948931b2c49e31b5a149}
+
+\begin{DoxyCode}
+223 \{
+224     \textcolor{comment}{//See if we are connected}
+225     \textcolor{keywordflow}{if}(!m\_is\_connected)
+226     \{
+227         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"No open connection to receive from!"};
+228         \textcolor{keywordflow}{return} \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569a31579e5845f194f359afdb50b2f85a86}{TCP\_STATUS\_CONNECTION\_CLOSED};
+229     \}
+230 \textcolor{preprocessor}{#ifdef Q\_OS\_WIN32}
+231 \textcolor{preprocessor}{}    \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} socklen\_t;
+232 \textcolor{preprocessor}{#endif}
+233 \textcolor{preprocessor}{}    \textcolor{comment}{//Receive data}
+234 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+235 \textcolor{preprocessor}{}    \textcolor{keywordtype}{int} status = recv(m\_sockfd\_server, recv\_data, max, MSG\_DONTWAIT);
+236 \textcolor{preprocessor}{#elif defined(Q\_OS\_WIN32)}
+237 \textcolor{preprocessor}{}    \textcolor{comment}{//Windows won't let us make the socket non-blocking....}
+238     \textcolor{keywordtype}{int} status = recv(m\_sockfd\_server, recv\_data, max, 0);
+239 \textcolor{preprocessor}{#endif}
+240 \textcolor{preprocessor}{}    \textcolor{comment}{//If error}
+241     \textcolor{keywordflow}{if}(status == -1)
+242     \{
+243         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Receiving: "} << strerror(errno);
+244         \textcolor{keywordflow}{return} \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569a9b5153de6f52108f95fe6f5ccec7e05d}{TCP\_STATUS\_RECEIVE\_FAILED};
+245     \}
+246     \textcolor{comment}{//If not connected}
+247     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(status == 0)
+248     \{
+249         \hyperlink{Log_8h_ad1ccc51e239005df4978895dae15497b}{WARN}() << \textcolor{stringliteral}{"Server is disconnected!"};
+250         m\_is\_connected = \textcolor{keyword}{false};
+251         \textcolor{keywordflow}{return} \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569a1f2b9b8cedc20d11900f30d9df9c8b1f}{TCP\_STATUS\_SERVER\_DISCONNECTED};
+252     \}
+253     \textcolor{keywordflow}{return} \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569a12de2815c3e64df634ac4d26a0bb2007}{TCP\_STATUS\_SUCCESS};
+254 \}
+\end{DoxyCode}
+\hypertarget{classTCPClient_a23a640eac58e631288cdeb479416e0ed}{\index{T\-C\-P\-Client@{T\-C\-P\-Client}!Send@{Send}}
+\index{Send@{Send}!TCPClient@{T\-C\-P\-Client}}
+\subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\-C\-P\-Error} T\-C\-P\-Client\-::\-Send (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{send\-\_\-data, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{classTCPClient_a23a640eac58e631288cdeb479416e0ed}
+
+
+Send function. 
+
+Function to send data. 
+\begin{DoxyCode}
+193 \{
+194     \textcolor{comment}{//Check if we have a connection}
+195     \textcolor{keywordflow}{if}(!m\_is\_connected)
+196     \{
+197         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"No open connection!"};
+198         \textcolor{keywordflow}{return} \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569a31579e5845f194f359afdb50b2f85a86}{TCP\_STATUS\_CONNECTION\_CLOSED};
+199     \}
+200     \textcolor{keywordtype}{int} bytes\_sent = 0;
+201     \textcolor{comment}{//send the data}
+202 
+203 
+204     \textcolor{keywordflow}{do}\{
+205 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+206 \textcolor{preprocessor}{}        \textcolor{keywordtype}{int} sent = send(m\_sockfd\_server, send\_data, size, MSG\_DONTWAIT);
+207 \textcolor{preprocessor}{#elif defined(Q\_OS\_WIN32)}
+208 \textcolor{preprocessor}{}        \textcolor{comment}{//Windows won't let us set non-blocking...}
+209         \textcolor{keywordtype}{int} sent = send(m\_sockfd\_server, (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *)send\_data, size, 0);
+210 \textcolor{preprocessor}{#endif}
+211 \textcolor{preprocessor}{}        \textcolor{keywordflow}{if}(sent == -1)
+212         \{
+213             \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Could not send data! "} << strerror(errno);
+214             \textcolor{keywordflow}{return} \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569a0fbe81dbe6a6972d6c80cecad3ee0d73}{TCP\_STATUS\_SEND\_FAILED};
+215         \}
+216         bytes\_sent += sent;
+217     \}\textcolor{keywordflow}{while}(bytes\_sent < size);
+218 
+219     \textcolor{keywordflow}{return} \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569a12de2815c3e64df634ac4d26a0bb2007}{TCP\_STATUS\_SUCCESS};
+220 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Network/\hyperlink{tcpclient_8h}{tcpclient.\-h}\item 
+Network/\hyperlink{tcpclient_8cpp}{tcpclient.\-cpp}\end{DoxyCompactItemize}

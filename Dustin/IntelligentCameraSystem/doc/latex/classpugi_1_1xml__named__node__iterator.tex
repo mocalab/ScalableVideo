@@ -1,0 +1,181 @@
+\hypertarget{classpugi_1_1xml__named__node__iterator}{\section{pugi\-:\-:xml\-\_\-named\-\_\-node\-\_\-iterator Class Reference}
+\label{classpugi_1_1xml__named__node__iterator}\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+}
+
+
+{\ttfamily \#include $<$pugixml.\-hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef ptrdiff\-\_\-t \hyperlink{classpugi_1_1xml__named__node__iterator_a18fa0d610fea4d64271729abc0e28849}{difference\-\_\-type}
+\item 
+typedef \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__named__node__iterator_a8d98d8218ea9740ceb990ef2c1a456e2}{value\-\_\-type}
+\item 
+typedef \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} $\ast$ \hyperlink{classpugi_1_1xml__named__node__iterator_aebf72c68ded20cf483a10c6b94aa3f57}{pointer}
+\item 
+typedef \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \& \hyperlink{classpugi_1_1xml__named__node__iterator_a1c338c7a2aefe04b83f746a963df808b}{reference}
+\item 
+typedef std\-::forward\-\_\-iterator\-\_\-tag \hyperlink{classpugi_1_1xml__named__node__iterator_a8d3aa9d72f7b79c82f40933b3b0db9cd}{iterator\-\_\-category}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpugi_1_1xml__named__node__iterator_a0cf8880a79c3723159d91ef025961bea}{xml\-\_\-named\-\_\-node\-\_\-iterator} ()
+\item 
+\hyperlink{classpugi_1_1xml__named__node__iterator_a900cdc6c175bcb56b1c66c7c05d2202f}{xml\-\_\-named\-\_\-node\-\_\-iterator} (const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&node, const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$name)
+\item 
+bool \hyperlink{classpugi_1_1xml__named__node__iterator_a49533305b71d21a160dda111a2ed9956}{operator==} (const \hyperlink{classpugi_1_1xml__named__node__iterator}{xml\-\_\-named\-\_\-node\-\_\-iterator} \&rhs) const 
+\item 
+bool \hyperlink{classpugi_1_1xml__named__node__iterator_a3f625995e15f1b5debecdb9fb618c9d9}{operator!=} (const \hyperlink{classpugi_1_1xml__named__node__iterator}{xml\-\_\-named\-\_\-node\-\_\-iterator} \&rhs) const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \& \hyperlink{classpugi_1_1xml__named__node__iterator_a382a1fe2474c25b47d96dd901e3add8a}{operator$\ast$} () const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} $\ast$ \hyperlink{classpugi_1_1xml__named__node__iterator_a9fa4ca35803bfd50c61d369241a3da4a}{operator-\/$>$} () const 
+\item 
+const \hyperlink{classpugi_1_1xml__named__node__iterator}{xml\-\_\-named\-\_\-node\-\_\-iterator} \& \hyperlink{classpugi_1_1xml__named__node__iterator_ae076ec9c8414c5444ce6e4db5052ccef}{operator++} ()
+\item 
+\hyperlink{classpugi_1_1xml__named__node__iterator}{xml\-\_\-named\-\_\-node\-\_\-iterator} \hyperlink{classpugi_1_1xml__named__node__iterator_a41e2afe0ee62a2d06d0694052277e1f9}{operator++} (int)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classpugi_1_1xml__named__node__iterator_a18fa0d610fea4d64271729abc0e28849}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!difference\-\_\-type@{difference\-\_\-type}}
+\index{difference\-\_\-type@{difference\-\_\-type}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{difference\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef ptrdiff\-\_\-t {\bf pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::difference\-\_\-type}}}\label{classpugi_1_1xml__named__node__iterator_a18fa0d610fea4d64271729abc0e28849}
+\hypertarget{classpugi_1_1xml__named__node__iterator_a8d3aa9d72f7b79c82f40933b3b0db9cd}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!iterator\-\_\-category@{iterator\-\_\-category}}
+\index{iterator\-\_\-category@{iterator\-\_\-category}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{iterator\-\_\-category}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::forward\-\_\-iterator\-\_\-tag {\bf pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::iterator\-\_\-category}}}\label{classpugi_1_1xml__named__node__iterator_a8d3aa9d72f7b79c82f40933b3b0db9cd}
+\hypertarget{classpugi_1_1xml__named__node__iterator_aebf72c68ded20cf483a10c6b94aa3f57}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!pointer@{pointer}}
+\index{pointer@{pointer}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{pointer}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf xml\-\_\-node}$\ast$ {\bf pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::pointer}}}\label{classpugi_1_1xml__named__node__iterator_aebf72c68ded20cf483a10c6b94aa3f57}
+\hypertarget{classpugi_1_1xml__named__node__iterator_a1c338c7a2aefe04b83f746a963df808b}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!reference@{reference}}
+\index{reference@{reference}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{reference}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf xml\-\_\-node}\& {\bf pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::reference}}}\label{classpugi_1_1xml__named__node__iterator_a1c338c7a2aefe04b83f746a963df808b}
+\hypertarget{classpugi_1_1xml__named__node__iterator_a8d98d8218ea9740ceb990ef2c1a456e2}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf xml\-\_\-node} {\bf pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::value\-\_\-type}}}\label{classpugi_1_1xml__named__node__iterator_a8d98d8218ea9740ceb990ef2c1a456e2}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpugi_1_1xml__named__node__iterator_a0cf8880a79c3723159d91ef025961bea}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!xml\-\_\-named\-\_\-node\-\_\-iterator@{xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\index{xml\-\_\-named\-\_\-node\-\_\-iterator@{xml\-\_\-named\-\_\-node\-\_\-iterator}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{xml\-\_\-named\-\_\-node\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::xml\-\_\-named\-\_\-node\-\_\-iterator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__named__node__iterator_a0cf8880a79c3723159d91ef025961bea}
+
+\begin{DoxyCode}
+5022                                                              : \_name(0)
+5023     \{
+5024     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__named__node__iterator_a900cdc6c175bcb56b1c66c7c05d2202f}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!xml\-\_\-named\-\_\-node\-\_\-iterator@{xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\index{xml\-\_\-named\-\_\-node\-\_\-iterator@{xml\-\_\-named\-\_\-node\-\_\-iterator}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{xml\-\_\-named\-\_\-node\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::xml\-\_\-named\-\_\-node\-\_\-iterator (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-node} \&}]{node, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__named__node__iterator_a900cdc6c175bcb56b1c66c7c05d2202f}
+
+\begin{DoxyCode}
+5026                                                                                                      : 
+      \_node(node), \_name(name)
+5027     \{
+5028     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpugi_1_1xml__named__node__iterator_a3f625995e15f1b5debecdb9fb618c9d9}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-named\-\_\-node\-\_\-iterator} \&}]{rhs}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__named__node__iterator_a3f625995e15f1b5debecdb9fb618c9d9}
+
+\begin{DoxyCode}
+5036     \{
+5037         \textcolor{keywordflow}{return} \_node != rhs.\_node;
+5038     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__named__node__iterator_a382a1fe2474c25b47d96dd901e3add8a}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} \& pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__named__node__iterator_a382a1fe2474c25b47d96dd901e3add8a}
+
+\begin{DoxyCode}
+5041     \{
+5042         assert(\_node.\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root});
+5043         \textcolor{keywordflow}{return} \_node;
+5044     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__named__node__iterator_ae076ec9c8414c5444ce6e4db5052ccef}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} const {\bf xml\-\_\-named\-\_\-node\-\_\-iterator} \& pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__named__node__iterator_ae076ec9c8414c5444ce6e4db5052ccef}
+
+\begin{DoxyCode}
+5053     \{
+5054         assert(\_node.\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root});
+5055         \_node = \_node.\hyperlink{classpugi_1_1xml__node_a713159ab981fb3f0a325434106dc94f5}{next\_sibling}(\_name);
+5056         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+5057     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__named__node__iterator_a41e2afe0ee62a2d06d0694052277e1f9}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-named\-\_\-node\-\_\-iterator} pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::operator++ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__named__node__iterator_a41e2afe0ee62a2d06d0694052277e1f9}
+
+\begin{DoxyCode}
+5060     \{
+5061         \hyperlink{classpugi_1_1xml__named__node__iterator_a0cf8880a79c3723159d91ef025961bea}{xml\_named\_node\_iterator} temp = *\textcolor{keyword}{this};
+5062         ++*\textcolor{keyword}{this};
+5063         \textcolor{keywordflow}{return} temp;
+5064     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__named__node__iterator_a9fa4ca35803bfd50c61d369241a3da4a}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} $\ast$ pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__named__node__iterator_a9fa4ca35803bfd50c61d369241a3da4a}
+
+\begin{DoxyCode}
+5047     \{
+5048         assert(\_node.\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root});
+5049         \textcolor{keywordflow}{return} \textcolor{keyword}{const\_cast<}xml\_node*\textcolor{keyword}{>}(&\_node); \textcolor{comment}{// BCC32 workaround}
+5050     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__named__node__iterator_a49533305b71d21a160dda111a2ed9956}{\index{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!pugi::xml_named_node_iterator@{pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-named\-\_\-node\-\_\-iterator\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-named\-\_\-node\-\_\-iterator} \&}]{rhs}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__named__node__iterator_a49533305b71d21a160dda111a2ed9956}
+
+\begin{DoxyCode}
+5031     \{
+5032         \textcolor{keywordflow}{return} \_node == rhs.\_node;
+5033     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8hpp}{pugixml.\-hpp}\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

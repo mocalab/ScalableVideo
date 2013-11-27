@@ -1,0 +1,31 @@
+\hypertarget{structduplicate__comparator}{\section{duplicate\-\_\-comparator Struct Reference}
+\label{structduplicate__comparator}\index{duplicate\-\_\-comparator@{duplicate\-\_\-comparator}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{structduplicate__comparator_afa36b2cf7af3e0bc7e41b03995bd99d3}{operator()} (const xpath\-\_\-node \&lhs, const xpath\-\_\-node \&rhs) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structduplicate__comparator_afa36b2cf7af3e0bc7e41b03995bd99d3}{\index{duplicate\-\_\-comparator@{duplicate\-\_\-comparator}!operator()@{operator()}}
+\index{operator()@{operator()}!duplicate_comparator@{duplicate\-\_\-comparator}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool duplicate\-\_\-comparator\-::operator() (
+\begin{DoxyParamCaption}
+\item[{const xpath\-\_\-node \&}]{lhs, }
+\item[{const xpath\-\_\-node \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structduplicate__comparator_afa36b2cf7af3e0bc7e41b03995bd99d3}
+
+\begin{DoxyCode}
+6209         \{
+6210             \textcolor{keywordflow}{if} (lhs.attribute()) \textcolor{keywordflow}{return} rhs.attribute() ? lhs.attribute() < rhs.attribute() : \textcolor{keyword}{true};
+6211             \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} rhs.attribute() ? \textcolor{keyword}{false} : lhs.node() < rhs.node();
+6212         \}
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<serverConfig>
+	<server hostname="localhost" port="37986" />
+</serverConfig>

@@ -1,0 +1,274 @@
+\hypertarget{classAddress}{\section{Address Class Reference}
+\label{classAddress}\index{Address@{Address}}
+}
+
+
+\hyperlink{classAddress}{Address} type This class defines a type for a network address.  
+
+
+
+
+{\ttfamily \#include $<$address.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAddress_a63f910c09d93bdd16d3744e47d13dc0e}{Address} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classAddress_a4addfdd8b8f27c995536e7c4df8e4b63}{Address} (string address, int port)
+\begin{DoxyCompactList}\small\item\em Explicit value constructor. \end{DoxyCompactList}\item 
+string \hyperlink{classAddress_aa84d076d4adf5cac8381146fcf261af7}{get\-Address} () const 
+\begin{DoxyCompactList}\small\item\em I\-P \hyperlink{classAddress}{Address} accessor. \end{DoxyCompactList}\item 
+int \hyperlink{classAddress_aa7d7e4b33ab75aa3ca146341a5e74472}{get\-Port} () const 
+\begin{DoxyCompactList}\small\item\em Port number accessor. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{classAddress_a7e29bafabaff50823ac432f74e5232be}{get\-String\-Port} () const 
+\begin{DoxyCompactList}\small\item\em Port number accessor. \end{DoxyCompactList}\item 
+bool \hyperlink{classAddress_ab208dda165ce302cb3298ee38060f4e0}{operator==} (const \hyperlink{classAddress}{Address} \&rhs) const 
+\begin{DoxyCompactList}\small\item\em operator ==. \end{DoxyCompactList}\item 
+bool \hyperlink{classAddress_a6f5c4d6b383e46315c3c21237a4ab800}{operator!=} (const \hyperlink{classAddress}{Address} \&rhs) const 
+\begin{DoxyCompactList}\small\item\em operator !=. \end{DoxyCompactList}\item 
+void \hyperlink{classAddress_a43ba5f8001b7e729b83b1b9299294495}{set\-Address} (const string \&address)
+\begin{DoxyCompactList}\small\item\em I\-P address mutator. \end{DoxyCompactList}\item 
+void \hyperlink{classAddress_ad73c29200f7d63641e48ebfc16efaf75}{set\-Port} (int port)
+\begin{DoxyCompactList}\small\item\em Port number mutator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classAddress}{Address} type This class defines a type for a network address. 
+
+It encapsulates two fields for the I\-P \hyperlink{classAddress}{Address} and the port to communicate over. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAddress_a63f910c09d93bdd16d3744e47d13dc0e}{\index{Address@{Address}!Address@{Address}}
+\index{Address@{Address}!Address@{Address}}
+\subsubsection[{Address}]{\setlength{\rightskip}{0pt plus 5cm}Address\-::\-Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAddress_a63f910c09d93bdd16d3744e47d13dc0e}
+
+
+Default constructor. 
+
+
+\begin{DoxyCode}
+7 \{
+8     this->m\_port = 0;
+9     this->m\_address = \textcolor{stringliteral}{"127.0.0.1"};
+10 \}
+\end{DoxyCode}
+\hypertarget{classAddress_a4addfdd8b8f27c995536e7c4df8e4b63}{\index{Address@{Address}!Address@{Address}}
+\index{Address@{Address}!Address@{Address}}
+\subsubsection[{Address}]{\setlength{\rightskip}{0pt plus 5cm}Address\-::\-Address (
+\begin{DoxyParamCaption}
+\item[{string}]{address, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{classAddress_a4addfdd8b8f27c995536e7c4df8e4b63}
+
+
+Explicit value constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & The I\-P address in string form. \\
+\hline
+{\em port} & The port in integer form \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+11                                          :
+12     m\_address(address),
+13     m\_port(port)
+14 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAddress_aa84d076d4adf5cac8381146fcf261af7}{\index{Address@{Address}!get\-Address@{get\-Address}}
+\index{get\-Address@{get\-Address}!Address@{Address}}
+\subsubsection[{get\-Address}]{\setlength{\rightskip}{0pt plus 5cm}string Address\-::get\-Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classAddress_aa84d076d4adf5cac8381146fcf261af7}
+
+
+I\-P \hyperlink{classAddress}{Address} accessor. 
+
+Accessor for the m\-\_\-address field. \begin{DoxyReturn}{Returns}
+The I\-P address this object represents. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+17 \{
+18     \textcolor{keywordflow}{return} this->m\_address;
+19 \}
+\end{DoxyCode}
+\hypertarget{classAddress_aa7d7e4b33ab75aa3ca146341a5e74472}{\index{Address@{Address}!get\-Port@{get\-Port}}
+\index{get\-Port@{get\-Port}!Address@{Address}}
+\subsubsection[{get\-Port}]{\setlength{\rightskip}{0pt plus 5cm}int Address\-::get\-Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classAddress_aa7d7e4b33ab75aa3ca146341a5e74472}
+
+
+Port number accessor. 
+
+Accessor for the m\-\_\-port field. \begin{DoxyReturn}{Returns}
+The port for this address. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+22 \{
+23     \textcolor{keywordflow}{return} this->m\_port;
+24 \}
+\end{DoxyCode}
+\hypertarget{classAddress_a7e29bafabaff50823ac432f74e5232be}{\index{Address@{Address}!get\-String\-Port@{get\-String\-Port}}
+\index{get\-String\-Port@{get\-String\-Port}!Address@{Address}}
+\subsubsection[{get\-String\-Port}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Address\-::get\-String\-Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classAddress_a7e29bafabaff50823ac432f74e5232be}
+
+
+Port number accessor. 
+
+Accessor for the m\-\_\-port field that will return a string representation of the port. \begin{DoxyReturn}{Returns}
+A C string contaning the port number. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+27 \{
+28     strstream ss;
+29     ss << this->m\_port;
+30     \textcolor{keywordflow}{return} ss.str();
+31 \}
+\end{DoxyCode}
+\hypertarget{classAddress_a6f5c4d6b383e46315c3c21237a4ab800}{\index{Address@{Address}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!Address@{Address}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool Address\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Address} \&}]{rhs}
+\end{DoxyParamCaption}
+) const}}\label{classAddress_a6f5c4d6b383e46315c3c21237a4ab800}
+
+
+operator !=. 
+
+Overloaded not-\/equals operator. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The address to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this object and rhs do not have the same address and port number, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+52 \{
+53     \textcolor{keywordtype}{bool} n\_eq = \textcolor{keyword}{true};
+54 
+55     \textcolor{keywordflow}{if}(this->m\_address.compare(rhs.m\_address) == 0)
+56     \{
+57         n\_eq = \textcolor{keyword}{false};
+58     \}
+59 
+60     \textcolor{keywordflow}{if}(this->m\_port == rhs.m\_port)
+61     \{
+62         n\_eq = \textcolor{keyword}{false};
+63     \}
+64 
+65     \textcolor{keywordflow}{return} n\_eq;
+66 \}
+\end{DoxyCode}
+\hypertarget{classAddress_ab208dda165ce302cb3298ee38060f4e0}{\index{Address@{Address}!operator==@{operator==}}
+\index{operator==@{operator==}!Address@{Address}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Address\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Address} \&}]{rhs}
+\end{DoxyParamCaption}
+) const}}\label{classAddress_ab208dda165ce302cb3298ee38060f4e0}
+
+
+operator ==. 
+
+Overloaded equivalence operator. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The address to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the addresses have the same address and port, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+35 \{
+36     \textcolor{keywordtype}{bool} eq = \textcolor{keyword}{true};
+37 
+38     \textcolor{keywordflow}{if}(this->m\_address.compare(rhs.m\_address) != 0)
+39     \{
+40         eq = \textcolor{keyword}{false};
+41     \}
+42 
+43     \textcolor{keywordflow}{if}(this->m\_port != rhs.m\_port)
+44     \{
+45         eq = \textcolor{keyword}{false};
+46     \}
+47 
+48     \textcolor{keywordflow}{return} eq;
+49 \}
+\end{DoxyCode}
+\hypertarget{classAddress_a43ba5f8001b7e729b83b1b9299294495}{\index{Address@{Address}!set\-Address@{set\-Address}}
+\index{set\-Address@{set\-Address}!Address@{Address}}
+\subsubsection[{set\-Address}]{\setlength{\rightskip}{0pt plus 5cm}void Address\-::set\-Address (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{address}
+\end{DoxyParamCaption}
+)}}\label{classAddress_a43ba5f8001b7e729b83b1b9299294495}
+
+
+I\-P address mutator. 
+
+Mutator for the m\-\_\-address field. 
+\begin{DoxyParams}{Parameters}
+{\em address} & The new address this object will represent. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+69 \{
+70     m\_address = address;
+71 \}
+\end{DoxyCode}
+\hypertarget{classAddress_ad73c29200f7d63641e48ebfc16efaf75}{\index{Address@{Address}!set\-Port@{set\-Port}}
+\index{set\-Port@{set\-Port}!Address@{Address}}
+\subsubsection[{set\-Port}]{\setlength{\rightskip}{0pt plus 5cm}void Address\-::set\-Port (
+\begin{DoxyParamCaption}
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{classAddress_ad73c29200f7d63641e48ebfc16efaf75}
+
+
+Port number mutator. 
+
+Mutator for the m\-\_\-port field. 
+\begin{DoxyParams}{Parameters}
+{\em port} & The new port for this address \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+74 \{
+75     m\_port = port;
+76 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Network/\hyperlink{address_8h}{address.\-h}\item 
+Network/\hyperlink{address_8cpp}{address.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,107 @@
+\hypertarget{classPacketSender}{\section{Packet\-Sender Class Reference}
+\label{classPacketSender}\index{Packet\-Sender@{Packet\-Sender}}
+}
+
+
+{\ttfamily \#include $<$packetsender.\-h$>$}
+
+Inheritance diagram for Packet\-Sender\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPacketSender}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPacketSender_a7d1fdff7ead38f3a32149facf14fe5fc}{Packet\-Sender} ()
+\item 
+char $\ast$ \hyperlink{classPacketSender_adf62a2c7ff2bbac54990764630705ce5}{get\-Buffer} () const 
+\item 
+void \hyperlink{classPacketSender_a987e41bbb8e8423af5d9e25f7ddcf3e0}{set\-Buffer} (const char $\ast$buffer)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPacketSender_adac7fe40c40a0a32a1a95f431acad704}{run} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPacketSender_a7d1fdff7ead38f3a32149facf14fe5fc}{\index{Packet\-Sender@{Packet\-Sender}!Packet\-Sender@{Packet\-Sender}}
+\index{Packet\-Sender@{Packet\-Sender}!PacketSender@{Packet\-Sender}}
+\subsubsection[{Packet\-Sender}]{\setlength{\rightskip}{0pt plus 5cm}Packet\-Sender\-::\-Packet\-Sender (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPacketSender_a7d1fdff7ead38f3a32149facf14fe5fc}
+
+\begin{DoxyCode}
+10 \{
+11 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPacketSender_adf62a2c7ff2bbac54990764630705ce5}{\index{Packet\-Sender@{Packet\-Sender}!get\-Buffer@{get\-Buffer}}
+\index{get\-Buffer@{get\-Buffer}!PacketSender@{Packet\-Sender}}
+\subsubsection[{get\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Packet\-Sender\-::get\-Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPacketSender_adf62a2c7ff2bbac54990764630705ce5}
+
+\begin{DoxyCode}
+38 \{
+39     \textcolor{keywordflow}{return} this->m\_buffer;
+40 \}
+\end{DoxyCode}
+\hypertarget{classPacketSender_adac7fe40c40a0a32a1a95f431acad704}{\index{Packet\-Sender@{Packet\-Sender}!run@{run}}
+\index{run@{run}!PacketSender@{Packet\-Sender}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Packet\-Sender\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classPacketSender_adac7fe40c40a0a32a1a95f431acad704}
+
+\begin{DoxyCode}
+14 \{
+15     \hyperlink{classSocket}{Socket} sock;
+16     \textcolor{comment}{//Lock this process}
+17     this->m\_mutex.lock();
+18     \textcolor{keywordtype}{bool} status = sock.\hyperlink{classSocket_a7d7e4c8274e8028cc56f5778f98936b1}{Open}((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}) \hyperlink{SocketConstants_8h_a92df38b61b193ac6bf60131babe08614}{SEND\_PORT});
+19     \textcolor{keywordflow}{if}(status)
+20     \{
+21         \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Setting up receiver address.........."};
+22         \hyperlink{classAddress}{Address} addr(\hyperlink{SocketConstants_8h_abcacfe0cacacfd5ec6a24b96e49715c3}{RECEIVER\_ADDRESS}, \hyperlink{SocketConstants_8h_a714d0c166e470fe1d95e17305a084931}{RECEIVER\_PORT});
+23         \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Send data: "} << this->m\_buffer;
+24         status = sock.\hyperlink{classSocket_a58639d5ede0d7f4ddd8b96ac8c6c0b9b}{Send}(addr, this->m\_buffer, strlen(this->m\_buffer));
+25 
+26     \}
+27     \textcolor{keywordflow}{else}
+28     \{
+29         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"UNABLE TO OPEN SOCKET......."};
+30     \}
+31     \textcolor{comment}{//Unlock process}
+32     this->m\_mutex.unlock();
+33 \}
+\end{DoxyCode}
+\hypertarget{classPacketSender_a987e41bbb8e8423af5d9e25f7ddcf3e0}{\index{Packet\-Sender@{Packet\-Sender}!set\-Buffer@{set\-Buffer}}
+\index{set\-Buffer@{set\-Buffer}!PacketSender@{Packet\-Sender}}
+\subsubsection[{set\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void Packet\-Sender\-::set\-Buffer (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{buffer}
+\end{DoxyParamCaption}
+)}}\label{classPacketSender_a987e41bbb8e8423af5d9e25f7ddcf3e0}
+
+\begin{DoxyCode}
+44 \{
+45     this->m\_buffer = (\textcolor{keywordtype}{char} *)buffer;
+46 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Util/\hyperlink{packetsender_8h}{packetsender.\-h}\item 
+Util/\hyperlink{packetsender_8cpp}{packetsender.\-cpp}\end{DoxyCompactItemize}

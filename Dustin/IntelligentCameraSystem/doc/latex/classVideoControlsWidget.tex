@@ -1,0 +1,219 @@
+\hypertarget{classVideoControlsWidget}{\section{Video\-Controls\-Widget Class Reference}
+\label{classVideoControlsWidget}\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}}
+}
+
+
+{\ttfamily \#include $<$videocontrolswidget.\-h$>$}
+
+Inheritance diagram for Video\-Controls\-Widget\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classVideoControlsWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVideoControlsWidget_aff63e3d97d541cf8c05d53dd32e26292}{send\-Button\-Clicked} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVideoControlsWidget_a5d85d6628fdb2016d49228bffb569679}{send\-Clicked} ()
+\item 
+void \hyperlink{classVideoControlsWidget_a9c0561d628dd239a37d1a0d52ce3a475}{send\-Clicked} (Q\-String width, Q\-String height, Q\-String fps, Q\-String bps)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVideoControlsWidget_ac0873fb8672cefc5f6549cac23e57757}{Video\-Controls\-Widget} (Q\-Widget $\ast$parent=0)
+\item 
+\hyperlink{classVideoControlsWidget_a6b85a92f3e656f11f48cdc580c2b4e0a}{$\sim$\-Video\-Controls\-Widget} ()
+\item 
+void \hyperlink{classVideoControlsWidget_aa7a0e5cf6d96db502d1826ec9ed43afa}{fade\-Out} ()
+\item 
+void \hyperlink{classVideoControlsWidget_a6fee9a987ad66923a326754e227019cc}{fade\-In} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classVideoControlsWidget_a733c88f42e0cdec6b6209c97cb2391ed}{paint\-Event} (Q\-Paint\-Event $\ast$e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVideoControlsWidget_ac0873fb8672cefc5f6549cac23e57757}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!Video\-Controls\-Widget@{Video\-Controls\-Widget}}
+\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!VideoControlsWidget@{Video\-Controls\-Widget}}
+\subsubsection[{Video\-Controls\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}Video\-Controls\-Widget\-::\-Video\-Controls\-Widget (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classVideoControlsWidget_ac0873fb8672cefc5f6549cac23e57757}
+
+\begin{DoxyCode}
+14                                                         :
+15     QWidget(parent)
+16 \{
+17     \textcolor{comment}{//Set up the UI}
+18     this->setUpUI();
+19     \textcolor{comment}{//this->fadeOut();}
+20 
+21     \textcolor{comment}{//setPalette(Qt::transparent);}
+22     \textcolor{comment}{//setAttribute(Qt::WA\_TransparentForMouseEvents);}
+23 \}
+\end{DoxyCode}
+\hypertarget{classVideoControlsWidget_a6b85a92f3e656f11f48cdc580c2b4e0a}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!$\sim$\-Video\-Controls\-Widget@{$\sim$\-Video\-Controls\-Widget}}
+\index{$\sim$\-Video\-Controls\-Widget@{$\sim$\-Video\-Controls\-Widget}!VideoControlsWidget@{Video\-Controls\-Widget}}
+\subsubsection[{$\sim$\-Video\-Controls\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}Video\-Controls\-Widget\-::$\sim$\-Video\-Controls\-Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVideoControlsWidget_a6b85a92f3e656f11f48cdc580c2b4e0a}
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{comment}{//DESTROY!!!!}
+28 \textcolor{preprocessor}{#if !USE\_COMBO\_BOX}
+29 \textcolor{preprocessor}{}    \textcolor{keyword}{delete} lblWidth;
+30     \textcolor{keyword}{delete} lblHeight;
+31     \textcolor{keyword}{delete} leWidth;
+32     \textcolor{keyword}{delete} leHeight;
+33 \textcolor{preprocessor}{#else}
+34 \textcolor{preprocessor}{}    \textcolor{keyword}{delete} lblWidthHeight;
+35     \textcolor{keyword}{delete} cbResolution;
+36 \textcolor{preprocessor}{#endif}
+37 \textcolor{preprocessor}{}    \textcolor{keyword}{delete} lblFPS;
+38 
+39     \textcolor{keyword}{delete} leFPS;
+40     \textcolor{keyword}{delete} bSend;
+41 
+42 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVideoControlsWidget_a6fee9a987ad66923a326754e227019cc}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!fade\-In@{fade\-In}}
+\index{fade\-In@{fade\-In}!VideoControlsWidget@{Video\-Controls\-Widget}}
+\subsubsection[{fade\-In}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Controls\-Widget\-::fade\-In (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVideoControlsWidget_a6fee9a987ad66923a326754e227019cc}
+
+\begin{DoxyCode}
+212 \{
+213     this->show();
+214     QGraphicsOpacityEffect *fade\_in\_effect = \textcolor{keyword}{new} QGraphicsOpacityEffect(\textcolor{keyword}{this});
+215     this->setGraphicsEffect(fade\_in\_effect);
+216     QPropertyAnimation *fade\_in\_animation = \textcolor{keyword}{new} QPropertyAnimation(fade\_in\_effect, \textcolor{stringliteral}{"opacity"});
+217     fade\_in\_animation->setEasingCurve(QEasingCurve::InOutQuad);
+218     fade\_in\_animation->setDuration(250);
+219     fade\_in\_animation->setStartValue(0.1);
+220     fade\_in\_animation->setEndValue(0.8);
+221 
+222     fade\_in\_animation->start(QPropertyAnimation::DeleteWhenStopped);
+223 
+224 \}
+\end{DoxyCode}
+\hypertarget{classVideoControlsWidget_aa7a0e5cf6d96db502d1826ec9ed43afa}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!fade\-Out@{fade\-Out}}
+\index{fade\-Out@{fade\-Out}!VideoControlsWidget@{Video\-Controls\-Widget}}
+\subsubsection[{fade\-Out}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Controls\-Widget\-::fade\-Out (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVideoControlsWidget_aa7a0e5cf6d96db502d1826ec9ed43afa}
+
+\begin{DoxyCode}
+195 \{
+196     QGraphicsOpacityEffect *fade\_out\_effect = \textcolor{keyword}{new} QGraphicsOpacityEffect(\textcolor{keyword}{this});
+197     this->setGraphicsEffect(fade\_out\_effect);
+198     QPropertyAnimation *fade\_out\_animation = \textcolor{keyword}{new} QPropertyAnimation(fade\_out\_effect, \textcolor{stringliteral}{"opacity"});
+199     fade\_out\_animation->setEasingCurve(QEasingCurve::InOutQuad);
+200     fade\_out\_animation->setDuration(175);
+201     fade\_out\_animation->setStartValue(0.8);
+202     fade\_out\_animation->setEndValue(0.0);
+203 
+204     fade\_out\_animation->start(QPropertyAnimation::DeleteWhenStopped);
+205     \textcolor{comment}{//this->hide();}
+206     QTimer::singleShot(225, \textcolor{keyword}{this}, SLOT(hideDelay()));
+207 
+208 \}
+\end{DoxyCode}
+\hypertarget{classVideoControlsWidget_a733c88f42e0cdec6b6209c97cb2391ed}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!paint\-Event@{paint\-Event}}
+\index{paint\-Event@{paint\-Event}!VideoControlsWidget@{Video\-Controls\-Widget}}
+\subsubsection[{paint\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Controls\-Widget\-::paint\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Paint\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classVideoControlsWidget_a733c88f42e0cdec6b6209c97cb2391ed}
+
+\begin{DoxyCode}
+59 \{
+60     QStyleOption opt;
+61     opt.init(\textcolor{keyword}{this});
+62     QPainter p(\textcolor{keyword}{this});
+63     style()->drawPrimitive(QStyle::PE\_Widget, &opt, &p, \textcolor{keyword}{this});
+64 \}
+\end{DoxyCode}
+\hypertarget{classVideoControlsWidget_aff63e3d97d541cf8c05d53dd32e26292}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!send\-Button\-Clicked@{send\-Button\-Clicked}}
+\index{send\-Button\-Clicked@{send\-Button\-Clicked}!VideoControlsWidget@{Video\-Controls\-Widget}}
+\subsubsection[{send\-Button\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Controls\-Widget\-::send\-Button\-Clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVideoControlsWidget_aff63e3d97d541cf8c05d53dd32e26292}
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{comment}{//emit sendClicked();}
+69     \textcolor{comment}{//Determine the width field and height field}
+70     QString width(\textcolor{stringliteral}{""});
+71     QString height(\textcolor{stringliteral}{""});
+72 \textcolor{preprocessor}{#if !USE\_COMBO\_BOX}
+73 \textcolor{preprocessor}{}    width = this->leWidth->text();
+74     height = this->leHeight->text()
+75 \textcolor{preprocessor}{#else}
+76 \textcolor{preprocessor}{}    QStringList res = this->cbResolution->currentText().split(\textcolor{stringliteral}{"x"});
+77     width = res.at(0);
+78     height = res.at(1);
+79 \textcolor{preprocessor}{#endif}
+80 \textcolor{preprocessor}{}
+81     \textcolor{comment}{//Check to see if all of the fields have been filled}
+82     \textcolor{keywordflow}{if}(width == \textcolor{stringliteral}{""} || height == \textcolor{stringliteral}{""} || this->leFPS->text() == \textcolor{stringliteral}{""} || this->lebitRate->text() == \textcolor{stringliteral}{""})
+83     \{
+84         \textcolor{comment}{//Create a message box to indicate error}
+85         QMessageBox msgBox;
+86         msgBox.setText(\textcolor{stringliteral}{"All fields must be filled!"});
+87         \textcolor{keywordtype}{int} ret = msgBox.exec();
+88 
+89     \}
+90     \textcolor{keywordflow}{else}
+91     \{
+92         \textcolor{comment}{//Inform the parent to resize the video}
+93         emit \hyperlink{classVideoControlsWidget_a5d85d6628fdb2016d49228bffb569679}{sendClicked}(width, height, leFPS->text(), lebitRate->text());
+94     \}
+95 \}
+\end{DoxyCode}
+\hypertarget{classVideoControlsWidget_a5d85d6628fdb2016d49228bffb569679}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!send\-Clicked@{send\-Clicked}}
+\index{send\-Clicked@{send\-Clicked}!VideoControlsWidget@{Video\-Controls\-Widget}}
+\subsubsection[{send\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Controls\-Widget\-::send\-Clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classVideoControlsWidget_a5d85d6628fdb2016d49228bffb569679}
+\hypertarget{classVideoControlsWidget_a9c0561d628dd239a37d1a0d52ce3a475}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!send\-Clicked@{send\-Clicked}}
+\index{send\-Clicked@{send\-Clicked}!VideoControlsWidget@{Video\-Controls\-Widget}}
+\subsubsection[{send\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Controls\-Widget\-::send\-Clicked (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{width, }
+\item[{Q\-String}]{height, }
+\item[{Q\-String}]{fps, }
+\item[{Q\-String}]{bps}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classVideoControlsWidget_a9c0561d628dd239a37d1a0d52ce3a475}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+U\-I/\hyperlink{videocontrolswidget_8h}{videocontrolswidget.\-h}\item 
+U\-I/\hyperlink{videocontrolswidget_8cpp}{videocontrolswidget.\-cpp}\end{DoxyCompactItemize}

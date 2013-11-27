@@ -1,0 +1,119 @@
+\hypertarget{classpugi_1_1xml__tree__walker}{\section{pugi\-:\-:xml\-\_\-tree\-\_\-walker Class Reference}
+\label{classpugi_1_1xml__tree__walker}\index{pugi\-::xml\-\_\-tree\-\_\-walker@{pugi\-::xml\-\_\-tree\-\_\-walker}}
+}
+
+
+{\ttfamily \#include $<$pugixml.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpugi_1_1xml__tree__walker_a9624dca15f5782ad7d8d78a27c3be805}{xml\-\_\-tree\-\_\-walker} ()
+\item 
+virtual \hyperlink{classpugi_1_1xml__tree__walker_ad42de75c8c8b07bc871e4072d838ddfb}{$\sim$xml\-\_\-tree\-\_\-walker} ()
+\item 
+virtual bool \hyperlink{classpugi_1_1xml__tree__walker_a831cc2fc61a47e23673c85efc41bc7a2}{begin} (\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&node)
+\item 
+virtual bool \hyperlink{classpugi_1_1xml__tree__walker_a309363c9d17ef3fc8cacc6f71fcbea88}{for\-\_\-each} (\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&node)=0
+\item 
+virtual bool \hyperlink{classpugi_1_1xml__tree__walker_a24e6ffd4a8351e2ee486440b6f784091}{end} (\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&node)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classpugi_1_1xml__tree__walker_acb27ca9fea177b0741f29274cb0c805a}{depth} () const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpugi_1_1xml__tree__walker_a156d917a92815c7b593bd5ef19f6d5fb}{xml\-\_\-node}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpugi_1_1xml__tree__walker_a9624dca15f5782ad7d8d78a27c3be805}{\index{pugi\-::xml\-\_\-tree\-\_\-walker@{pugi\-::xml\-\_\-tree\-\_\-walker}!xml\-\_\-tree\-\_\-walker@{xml\-\_\-tree\-\_\-walker}}
+\index{xml\-\_\-tree\-\_\-walker@{xml\-\_\-tree\-\_\-walker}!pugi::xml_tree_walker@{pugi\-::xml\-\_\-tree\-\_\-walker}}
+\subsubsection[{xml\-\_\-tree\-\_\-walker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xml\-\_\-tree\-\_\-walker\-::xml\-\_\-tree\-\_\-walker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__tree__walker_a9624dca15f5782ad7d8d78a27c3be805}
+
+\begin{DoxyCode}
+3693                                              : \_depth(0)
+3694     \{
+3695     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__tree__walker_ad42de75c8c8b07bc871e4072d838ddfb}{\index{pugi\-::xml\-\_\-tree\-\_\-walker@{pugi\-::xml\-\_\-tree\-\_\-walker}!$\sim$xml\-\_\-tree\-\_\-walker@{$\sim$xml\-\_\-tree\-\_\-walker}}
+\index{$\sim$xml\-\_\-tree\-\_\-walker@{$\sim$xml\-\_\-tree\-\_\-walker}!pugi::xml_tree_walker@{pugi\-::xml\-\_\-tree\-\_\-walker}}
+\subsubsection[{$\sim$xml\-\_\-tree\-\_\-walker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xml\-\_\-tree\-\_\-walker\-::$\sim$xml\-\_\-tree\-\_\-walker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classpugi_1_1xml__tree__walker_ad42de75c8c8b07bc871e4072d838ddfb}
+
+\begin{DoxyCode}
+3698     \{
+3699     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpugi_1_1xml__tree__walker_a831cc2fc61a47e23673c85efc41bc7a2}{\index{pugi\-::xml\-\_\-tree\-\_\-walker@{pugi\-::xml\-\_\-tree\-\_\-walker}!begin@{begin}}
+\index{begin@{begin}!pugi::xml_tree_walker@{pugi\-::xml\-\_\-tree\-\_\-walker}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-tree\-\_\-walker\-::begin (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classpugi_1_1xml__tree__walker_a831cc2fc61a47e23673c85efc41bc7a2}
+
+\begin{DoxyCode}
+3707     \{
+3708         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+3709     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__tree__walker_acb27ca9fea177b0741f29274cb0c805a}{\index{pugi\-::xml\-\_\-tree\-\_\-walker@{pugi\-::xml\-\_\-tree\-\_\-walker}!depth@{depth}}
+\index{depth@{depth}!pugi::xml_tree_walker@{pugi\-::xml\-\_\-tree\-\_\-walker}}
+\subsubsection[{depth}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} int pugi\-::xml\-\_\-tree\-\_\-walker\-::depth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classpugi_1_1xml__tree__walker_acb27ca9fea177b0741f29274cb0c805a}
+
+\begin{DoxyCode}
+3702     \{
+3703         \textcolor{keywordflow}{return} \_depth;
+3704     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__tree__walker_a24e6ffd4a8351e2ee486440b6f784091}{\index{pugi\-::xml\-\_\-tree\-\_\-walker@{pugi\-::xml\-\_\-tree\-\_\-walker}!end@{end}}
+\index{end@{end}!pugi::xml_tree_walker@{pugi\-::xml\-\_\-tree\-\_\-walker}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-tree\-\_\-walker\-::end (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classpugi_1_1xml__tree__walker_a24e6ffd4a8351e2ee486440b6f784091}
+
+\begin{DoxyCode}
+3712     \{
+3713         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+3714     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__tree__walker_a309363c9d17ef3fc8cacc6f71fcbea88}{\index{pugi\-::xml\-\_\-tree\-\_\-walker@{pugi\-::xml\-\_\-tree\-\_\-walker}!for\-\_\-each@{for\-\_\-each}}
+\index{for\-\_\-each@{for\-\_\-each}!pugi::xml_tree_walker@{pugi\-::xml\-\_\-tree\-\_\-walker}}
+\subsubsection[{for\-\_\-each}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool pugi\-::xml\-\_\-tree\-\_\-walker\-::for\-\_\-each (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-node} \&}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classpugi_1_1xml__tree__walker_a309363c9d17ef3fc8cacc6f71fcbea88}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classpugi_1_1xml__tree__walker_a156d917a92815c7b593bd5ef19f6d5fb}{\index{pugi\-::xml\-\_\-tree\-\_\-walker@{pugi\-::xml\-\_\-tree\-\_\-walker}!xml\-\_\-node@{xml\-\_\-node}}
+\index{xml\-\_\-node@{xml\-\_\-node}!pugi::xml_tree_walker@{pugi\-::xml\-\_\-tree\-\_\-walker}}
+\subsubsection[{xml\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf xml\-\_\-node}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classpugi_1_1xml__tree__walker_a156d917a92815c7b593bd5ef19f6d5fb}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8hpp}{pugixml.\-hpp}\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

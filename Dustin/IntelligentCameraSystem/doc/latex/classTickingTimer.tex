@@ -1,0 +1,110 @@
+\hypertarget{classTickingTimer}{\section{Ticking\-Timer Class Reference}
+\label{classTickingTimer}\index{Ticking\-Timer@{Ticking\-Timer}}
+}
+
+
+{\ttfamily \#include $<$tickingtimer.\-h$>$}
+
+Inheritance diagram for Ticking\-Timer\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTickingTimer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTickingTimer_abe9812a21ff1e231fa84041df5963a47}{Ticking\-Timer} (Q\-Object $\ast$parent=0)
+\item 
+void \hyperlink{classTickingTimer_a0f7c3da243271bcd1ffa833ebdc9c3a4}{start\-Ticking} (int msecs)
+\item 
+void \hyperlink{classTickingTimer_a7d4b5761d1fd127ab80e3249153df87b}{start\-Ticking} (int msecs, int total\-\_\-ticks)
+\item 
+int \hyperlink{classTickingTimer_aaddf41adb8a5dbe0346c44caf3fb0102}{get\-Ticks} () const 
+\item 
+int \hyperlink{classTickingTimer_a152763464d2d7be6b8a7877409ae1d24}{get\-Tick\-Limit} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTickingTimer_abe9812a21ff1e231fa84041df5963a47}{\index{Ticking\-Timer@{Ticking\-Timer}!Ticking\-Timer@{Ticking\-Timer}}
+\index{Ticking\-Timer@{Ticking\-Timer}!TickingTimer@{Ticking\-Timer}}
+\subsubsection[{Ticking\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}Ticking\-Timer\-::\-Ticking\-Timer (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classTickingTimer_abe9812a21ff1e231fa84041df5963a47}
+
+\begin{DoxyCode}
+3                                           :
+4     QTimer(parent),
+5     m\_tick\_limit(0)
+6 \{
+7     connect(\textcolor{keyword}{this}, SIGNAL(timeout()), \textcolor{keyword}{this}, SLOT(tick()));
+8 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTickingTimer_a152763464d2d7be6b8a7877409ae1d24}{\index{Ticking\-Timer@{Ticking\-Timer}!get\-Tick\-Limit@{get\-Tick\-Limit}}
+\index{get\-Tick\-Limit@{get\-Tick\-Limit}!TickingTimer@{Ticking\-Timer}}
+\subsubsection[{get\-Tick\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}int Ticking\-Timer\-::get\-Tick\-Limit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classTickingTimer_a152763464d2d7be6b8a7877409ae1d24}
+
+\begin{DoxyCode}
+28 \{
+29     \textcolor{keywordflow}{return} m\_tick\_limit;
+30 \}
+\end{DoxyCode}
+\hypertarget{classTickingTimer_aaddf41adb8a5dbe0346c44caf3fb0102}{\index{Ticking\-Timer@{Ticking\-Timer}!get\-Ticks@{get\-Ticks}}
+\index{get\-Ticks@{get\-Ticks}!TickingTimer@{Ticking\-Timer}}
+\subsubsection[{get\-Ticks}]{\setlength{\rightskip}{0pt plus 5cm}int Ticking\-Timer\-::get\-Ticks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classTickingTimer_aaddf41adb8a5dbe0346c44caf3fb0102}
+
+\begin{DoxyCode}
+24 \{
+25     \textcolor{keywordflow}{return} m\_ticks;
+26 \}
+\end{DoxyCode}
+\hypertarget{classTickingTimer_a0f7c3da243271bcd1ffa833ebdc9c3a4}{\index{Ticking\-Timer@{Ticking\-Timer}!start\-Ticking@{start\-Ticking}}
+\index{start\-Ticking@{start\-Ticking}!TickingTimer@{Ticking\-Timer}}
+\subsubsection[{start\-Ticking}]{\setlength{\rightskip}{0pt plus 5cm}void Ticking\-Timer\-::start\-Ticking (
+\begin{DoxyParamCaption}
+\item[{int}]{msecs}
+\end{DoxyParamCaption}
+)}}\label{classTickingTimer_a0f7c3da243271bcd1ffa833ebdc9c3a4}
+
+\begin{DoxyCode}
+11 \{
+12     m\_ticks = 0;
+13     this->start(msecs);
+14 \}
+\end{DoxyCode}
+\hypertarget{classTickingTimer_a7d4b5761d1fd127ab80e3249153df87b}{\index{Ticking\-Timer@{Ticking\-Timer}!start\-Ticking@{start\-Ticking}}
+\index{start\-Ticking@{start\-Ticking}!TickingTimer@{Ticking\-Timer}}
+\subsubsection[{start\-Ticking}]{\setlength{\rightskip}{0pt plus 5cm}void Ticking\-Timer\-::start\-Ticking (
+\begin{DoxyParamCaption}
+\item[{int}]{msecs, }
+\item[{int}]{total\-\_\-ticks}
+\end{DoxyParamCaption}
+)}}\label{classTickingTimer_a7d4b5761d1fd127ab80e3249153df87b}
+
+\begin{DoxyCode}
+17 \{
+18     m\_ticks = 0;
+19     m\_tick\_limit = total\_ticks;
+20     this->start(msecs);
+21 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Util/\hyperlink{tickingtimer_8h}{tickingtimer.\-h}\item 
+Util/\hyperlink{tickingtimer_8cpp}{tickingtimer.\-cpp}\end{DoxyCompactItemize}

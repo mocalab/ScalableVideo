@@ -1,0 +1,217 @@
+\hypertarget{classxpath__allocator}{\section{xpath\-\_\-allocator Class Reference}
+\label{classxpath__allocator}\index{xpath\-\_\-allocator@{xpath\-\_\-allocator}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classxpath__allocator_a3b8ba1722fba115d05949d8f592080e8}{xpath\-\_\-allocator} (\hyperlink{structxpath__memory__block}{xpath\-\_\-memory\-\_\-block} $\ast$root, size\-\_\-t root\-\_\-size=0)
+\item 
+void $\ast$ \hyperlink{classxpath__allocator_aa66f3703548657eca5316392a2d79d00}{allocate\-\_\-nothrow} (size\-\_\-t size)
+\item 
+void $\ast$ \hyperlink{classxpath__allocator_aad95aa445f2fdc7c3d1c19b1f3d67cb1}{allocate} (size\-\_\-t size)
+\item 
+void $\ast$ \hyperlink{classxpath__allocator_a4dd502389202ec8e7420832112a571e5}{reallocate} (void $\ast$ptr, size\-\_\-t old\-\_\-size, size\-\_\-t new\-\_\-size)
+\item 
+void \hyperlink{classxpath__allocator_af1c3ec117935d4488bbd16adf807fbc1}{revert} (const \hyperlink{classxpath__allocator}{xpath\-\_\-allocator} \&state)
+\item 
+void \hyperlink{classxpath__allocator_a9436b8bdef3e0e0ff0df28c2af6a430d}{release} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classxpath__allocator_a3b8ba1722fba115d05949d8f592080e8}{\index{xpath\-\_\-allocator@{xpath\-\_\-allocator}!xpath\-\_\-allocator@{xpath\-\_\-allocator}}
+\index{xpath\-\_\-allocator@{xpath\-\_\-allocator}!xpath_allocator@{xpath\-\_\-allocator}}
+\subsubsection[{xpath\-\_\-allocator}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-allocator\-::xpath\-\_\-allocator (
+\begin{DoxyParamCaption}
+\item[{{\bf xpath\-\_\-memory\-\_\-block} $\ast$}]{root, }
+\item[{size\-\_\-t}]{root\-\_\-size = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__allocator_a3b8ba1722fba115d05949d8f592080e8}
+
+\begin{DoxyCode}
+5675                                                                        : \_root(root), \_root\_size(root\_size)
+5676         \{
+5677 \textcolor{preprocessor}{        #ifdef PUGIXML\_NO\_EXCEPTIONS}
+5678 \textcolor{preprocessor}{}            error\_handler = 0;
+5679 \textcolor{preprocessor}{        #endif}
+5680 \textcolor{preprocessor}{}        \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classxpath__allocator_aad95aa445f2fdc7c3d1c19b1f3d67cb1}{\index{xpath\-\_\-allocator@{xpath\-\_\-allocator}!allocate@{allocate}}
+\index{allocate@{allocate}!xpath_allocator@{xpath\-\_\-allocator}}
+\subsubsection[{allocate}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ xpath\-\_\-allocator\-::allocate (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__allocator_aad95aa445f2fdc7c3d1c19b1f3d67cb1}
+
+\begin{DoxyCode}
+5713         \{
+5714             \textcolor{keywordtype}{void}* result = \hyperlink{classxpath__allocator_aa66f3703548657eca5316392a2d79d00}{allocate\_nothrow}(size);
+5715 
+5716             \textcolor{keywordflow}{if} (!result)
+5717             \{
+5718 \textcolor{preprocessor}{            #ifdef PUGIXML\_NO\_EXCEPTIONS}
+5719 \textcolor{preprocessor}{}                assert(error\_handler);
+5720                 longjmp(*error\_handler, 1);
+5721 \textcolor{preprocessor}{            #else}
+5722 \textcolor{preprocessor}{}                \textcolor{keywordflow}{throw} std::bad\_alloc();
+5723 \textcolor{preprocessor}{            #endif}
+5724 \textcolor{preprocessor}{}            \}
+5725 
+5726             \textcolor{keywordflow}{return} result;
+5727         \}
+\end{DoxyCode}
+\hypertarget{classxpath__allocator_aa66f3703548657eca5316392a2d79d00}{\index{xpath\-\_\-allocator@{xpath\-\_\-allocator}!allocate\-\_\-nothrow@{allocate\-\_\-nothrow}}
+\index{allocate\-\_\-nothrow@{allocate\-\_\-nothrow}!xpath_allocator@{xpath\-\_\-allocator}}
+\subsubsection[{allocate\-\_\-nothrow}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ xpath\-\_\-allocator\-::allocate\-\_\-nothrow (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__allocator_aa66f3703548657eca5316392a2d79d00}
+
+\begin{DoxyCode}
+5683         \{
+5684             \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} block\_capacity = \textcolor{keyword}{sizeof}(\_root->\hyperlink{structxpath__memory__block_a7b00376d0eac172ab537b6b0964858a9}{data});
+5685 
+5686             \textcolor{comment}{// align size so that we're able to store pointers in subsequent blocks}
+5687             size = (size + \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*) - 1) & ~(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*) - 1);
+5688 
+5689             \textcolor{keywordflow}{if} (\_root\_size + size <= block\_capacity)
+5690             \{
+5691                 \textcolor{keywordtype}{void}* buf = \_root->\hyperlink{structxpath__memory__block_a7b00376d0eac172ab537b6b0964858a9}{data} + \_root\_size;
+5692                 \_root\_size += size;
+5693                 \textcolor{keywordflow}{return} buf;
+5694             \}
+5695             \textcolor{keywordflow}{else}
+5696             \{
+5697                 \textcolor{keywordtype}{size\_t} block\_data\_size = (size > block\_capacity) ? size : block\_capacity;
+5698                 \textcolor{keywordtype}{size\_t} block\_size = block\_data\_size + offsetof(
+      \hyperlink{structxpath__memory__block}{xpath\_memory\_block}, data);
+5699 
+5700                 \hyperlink{structxpath__memory__block}{xpath\_memory\_block}* block = \textcolor{keyword}{static\_cast<}
+      \hyperlink{structxpath__memory__block}{xpath\_memory\_block}*\textcolor{keyword}{>}(\hyperlink{structxml__memory__management__function__storage_abb6865f8d07d27fd9273737c59f6e941}{xml\_memory::allocate}(block\_size));
+5701                 \textcolor{keywordflow}{if} (!block) \textcolor{keywordflow}{return} 0;
+5702                 
+5703                 block->\hyperlink{structxpath__memory__block_ab7f0d8400b40a51cdb063e76fd19a93c}{next} = \_root;
+5704                 
+5705                 \_root = block;
+5706                 \_root\_size = size;
+5707                 
+5708                 \textcolor{keywordflow}{return} block->\hyperlink{structxpath__memory__block_a7b00376d0eac172ab537b6b0964858a9}{data};
+5709             \}
+5710         \}
+\end{DoxyCode}
+\hypertarget{classxpath__allocator_a4dd502389202ec8e7420832112a571e5}{\index{xpath\-\_\-allocator@{xpath\-\_\-allocator}!reallocate@{reallocate}}
+\index{reallocate@{reallocate}!xpath_allocator@{xpath\-\_\-allocator}}
+\subsubsection[{reallocate}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ xpath\-\_\-allocator\-::reallocate (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr, }
+\item[{size\-\_\-t}]{old\-\_\-size, }
+\item[{size\-\_\-t}]{new\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__allocator_a4dd502389202ec8e7420832112a571e5}
+
+\begin{DoxyCode}
+5730         \{
+5731             \textcolor{comment}{// align size so that we're able to store pointers in subsequent blocks}
+5732             old\_size = (old\_size + \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*) - 1) & ~(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*) - 1);
+5733             new\_size = (new\_size + \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*) - 1) & ~(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*) - 1);
+5734 
+5735             \textcolor{comment}{// we can only reallocate the last object}
+5736             assert(ptr == 0 || static\_cast<char*>(ptr) + old\_size == \_root->\hyperlink{structxpath__memory__block_a7b00376d0eac172ab537b6b0964858a9}{data} + \_root\_size);
+5737 
+5738             \textcolor{comment}{// adjust root size so that we have not allocated the object at all}
+5739             \textcolor{keywordtype}{bool} only\_object = (\_root\_size == old\_size);
+5740 
+5741             \textcolor{keywordflow}{if} (ptr) \_root\_size -= old\_size;
+5742 
+5743             \textcolor{comment}{// allocate a new version (this will obviously reuse the memory if possible)}
+5744             \textcolor{keywordtype}{void}* result = \hyperlink{classxpath__allocator_aad95aa445f2fdc7c3d1c19b1f3d67cb1}{allocate}(new\_size);
+5745             assert(result);
+5746 
+5747             \textcolor{comment}{// we have a new block}
+5748             \textcolor{keywordflow}{if} (result != ptr && ptr)
+5749             \{
+5750                 \textcolor{comment}{// copy old data}
+5751                 assert(new\_size > old\_size);
+5752                 memcpy(result, ptr, old\_size);
+5753 
+5754                 \textcolor{comment}{// free the previous page if it had no other objects}
+5755                 \textcolor{keywordflow}{if} (only\_object)
+5756                 \{
+5757                     assert(\_root->\hyperlink{structxpath__memory__block_a7b00376d0eac172ab537b6b0964858a9}{data} == result);
+5758                     assert(\_root->\hyperlink{structxpath__memory__block_ab7f0d8400b40a51cdb063e76fd19a93c}{next});
+5759 
+5760                     \hyperlink{structxpath__memory__block}{xpath\_memory\_block}* next = \_root->\hyperlink{structxpath__memory__block_ab7f0d8400b40a51cdb063e76fd19a93c}{next}->
+      \hyperlink{structxpath__memory__block_ab7f0d8400b40a51cdb063e76fd19a93c}{next};
+5761 
+5762                     \textcolor{keywordflow}{if} (next)
+5763                     \{
+5764                         \textcolor{comment}{// deallocate the whole page, unless it was the first one}
+5765                         \hyperlink{structxml__memory__management__function__storage_a1c80a9a045ed6cfb90b17a178e4b3512}{xml\_memory::deallocate}(\_root->\hyperlink{structxpath__memory__block_ab7f0d8400b40a51cdb063e76fd19a93c}{next});
+5766                         \_root->\hyperlink{structxpath__memory__block_ab7f0d8400b40a51cdb063e76fd19a93c}{next} = next;
+5767                     \}
+5768                 \}
+5769             \}
+5770 
+5771             \textcolor{keywordflow}{return} result;
+5772         \}
+\end{DoxyCode}
+\hypertarget{classxpath__allocator_a9436b8bdef3e0e0ff0df28c2af6a430d}{\index{xpath\-\_\-allocator@{xpath\-\_\-allocator}!release@{release}}
+\index{release@{release}!xpath_allocator@{xpath\-\_\-allocator}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\-\_\-allocator\-::release (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__allocator_a9436b8bdef3e0e0ff0df28c2af6a430d}
+
+\begin{DoxyCode}
+5794         \{
+5795             \hyperlink{structxpath__memory__block}{xpath\_memory\_block}* cur = \_root;
+5796             assert(cur);
+5797 
+5798             \textcolor{keywordflow}{while} (cur->\hyperlink{structxpath__memory__block_ab7f0d8400b40a51cdb063e76fd19a93c}{next})
+5799             \{
+5800                 \hyperlink{structxpath__memory__block}{xpath\_memory\_block}* next = cur->\hyperlink{structxpath__memory__block_ab7f0d8400b40a51cdb063e76fd19a93c}{next};
+5801 
+5802                 \hyperlink{structxml__memory__management__function__storage_a1c80a9a045ed6cfb90b17a178e4b3512}{xml\_memory::deallocate}(cur);
+5803 
+5804                 cur = next;
+5805             \}
+5806         \}
+\end{DoxyCode}
+\hypertarget{classxpath__allocator_af1c3ec117935d4488bbd16adf807fbc1}{\index{xpath\-\_\-allocator@{xpath\-\_\-allocator}!revert@{revert}}
+\index{revert@{revert}!xpath_allocator@{xpath\-\_\-allocator}}
+\subsubsection[{revert}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\-\_\-allocator\-::revert (
+\begin{DoxyParamCaption}
+\item[{const {\bf xpath\-\_\-allocator} \&}]{state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__allocator_af1c3ec117935d4488bbd16adf807fbc1}
+
+\begin{DoxyCode}
+5775         \{
+5776             \textcolor{comment}{// free all new pages}
+5777             \hyperlink{structxpath__memory__block}{xpath\_memory\_block}* cur = \_root;
+5778 
+5779             \textcolor{keywordflow}{while} (cur != state.\_root)
+5780             \{
+5781                 \hyperlink{structxpath__memory__block}{xpath\_memory\_block}* next = cur->\hyperlink{structxpath__memory__block_ab7f0d8400b40a51cdb063e76fd19a93c}{next};
+5782 
+5783                 \hyperlink{structxml__memory__management__function__storage_a1c80a9a045ed6cfb90b17a178e4b3512}{xml\_memory::deallocate}(cur);
+5784 
+5785                 cur = next;
+5786             \}
+5787 
+5788             \textcolor{comment}{// restore state}
+5789             \_root = state.\_root;
+5790             \_root\_size = state.\_root\_size;
+5791         \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,140 @@
+\hypertarget{classServerConfigFileUtil}{\section{Server\-Config\-File\-Util Class Reference}
+\label{classServerConfigFileUtil}\index{Server\-Config\-File\-Util@{Server\-Config\-File\-Util}}
+}
+
+
+{\ttfamily \#include $<$serverconfigfileutil.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classServerConfigFileUtil_a49ddf234cbc1b215d7a65ee6dd710bb3}{Server\-Config\-File\-Util} ()
+\item 
+bool \hyperlink{classServerConfigFileUtil_a9b089be8defbadfd37fcdefee8b22ade}{load\-Document} (const char $\ast$file\-\_\-name)
+\item 
+\hyperlink{serverconfigfileutil_8h_a90d1af3762c28656b0507bb3a650f96e}{Address\-List} \hyperlink{classServerConfigFileUtil_a1eaba4990950df8f21ee8ae99b638a9d}{get\-Server\-Info} ()
+\item 
+void \hyperlink{classServerConfigFileUtil_a15d3e0e7fed7ef522b587878221dd13c}{save\-Server\-Info} (\hyperlink{serverconfigfileutil_8h_a90d1af3762c28656b0507bb3a650f96e}{Address\-List} info, const char $\ast$file\-\_\-name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classServerConfigFileUtil_a49ddf234cbc1b215d7a65ee6dd710bb3}{\index{Server\-Config\-File\-Util@{Server\-Config\-File\-Util}!Server\-Config\-File\-Util@{Server\-Config\-File\-Util}}
+\index{Server\-Config\-File\-Util@{Server\-Config\-File\-Util}!ServerConfigFileUtil@{Server\-Config\-File\-Util}}
+\subsubsection[{Server\-Config\-File\-Util}]{\setlength{\rightskip}{0pt plus 5cm}Server\-Config\-File\-Util\-::\-Server\-Config\-File\-Util (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classServerConfigFileUtil_a49ddf234cbc1b215d7a65ee6dd710bb3}
+
+\begin{DoxyCode}
+5                                            :
+6     m\_is\_loaded(\textcolor{keyword}{false})
+7 \{
+8 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classServerConfigFileUtil_a1eaba4990950df8f21ee8ae99b638a9d}{\index{Server\-Config\-File\-Util@{Server\-Config\-File\-Util}!get\-Server\-Info@{get\-Server\-Info}}
+\index{get\-Server\-Info@{get\-Server\-Info}!ServerConfigFileUtil@{Server\-Config\-File\-Util}}
+\subsubsection[{get\-Server\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Address\-List} Server\-Config\-File\-Util\-::get\-Server\-Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classServerConfigFileUtil_a1eaba4990950df8f21ee8ae99b638a9d}
+
+\begin{DoxyCode}
+32 \{
+33     \hyperlink{serverconfigfileutil_8h_a90d1af3762c28656b0507bb3a650f96e}{AddressList} server\_list;
+34     \textcolor{keywordflow}{if}(!m\_is\_loaded)
+35     \{
+36         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Document not loaded!"};
+37         \textcolor{keywordflow}{return} server\_list;
+38     \}
+39     \textcolor{comment}{//get all the "server" nodes}
+40     \hyperlink{classpugi_1_1xml__node}{xml\_node} servers = m\_root.\hyperlink{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{child}(\textcolor{stringliteral}{"serverConfig"}).\hyperlink{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{child}(\textcolor{stringliteral}{"server"});
+41     \textcolor{comment}{//iterate over all servers}
+42     \textcolor{keywordflow}{for}(\hyperlink{classpugi_1_1xml__node}{xml\_node} server = servers; server; server = server.\hyperlink{classpugi_1_1xml__node_a713159ab981fb3f0a325434106dc94f5}{next\_sibling}())
+43     \{
+44         \textcolor{comment}{//get the host and port, place in map}
+45         \hyperlink{classpugi_1_1xml__attribute}{xml\_attribute} host = server.attribute(\textcolor{stringliteral}{"hostname"});
+46         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *hostname = host.\hyperlink{classpugi_1_1xml__attribute_a583f470d768f5f8a4df0ebb2e016a88d}{as\_string}();
+47 
+48         \textcolor{comment}{//port}
+49         \hyperlink{classpugi_1_1xml__attribute}{xml\_attribute} port = server.attribute(\textcolor{stringliteral}{"port"});
+50         \textcolor{keywordtype}{int} portnum = port.\hyperlink{classpugi_1_1xml__attribute_afe009e964b9cec96c77495ef1ae6d91f}{as\_int}();
+51 
+52         \hyperlink{classAddress}{Address} next(hostname, portnum);
+53         server\_list.push\_back(next);
+54     \}
+55 
+56     \textcolor{keywordflow}{return} server\_list;
+57 \}
+\end{DoxyCode}
+\hypertarget{classServerConfigFileUtil_a9b089be8defbadfd37fcdefee8b22ade}{\index{Server\-Config\-File\-Util@{Server\-Config\-File\-Util}!load\-Document@{load\-Document}}
+\index{load\-Document@{load\-Document}!ServerConfigFileUtil@{Server\-Config\-File\-Util}}
+\subsubsection[{load\-Document}]{\setlength{\rightskip}{0pt plus 5cm}bool Server\-Config\-File\-Util\-::load\-Document (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{classServerConfigFileUtil_a9b089be8defbadfd37fcdefee8b22ade}
+
+\begin{DoxyCode}
+11 \{
+12     \textcolor{keywordtype}{bool} loaded = \textcolor{keyword}{false};
+13     \textcolor{comment}{//Load the file}
+14     \textcolor{comment}{//std::ifstream stream(file\_name);}
+15     \hyperlink{structpugi_1_1xml__parse__result}{xml\_parse\_result} result = m\_root.\hyperlink{classpugi_1_1xml__document_aad350209a4a91589fbd7e8cdaf79e010}{load\_file}(file\_name);
+16     \textcolor{keywordflow}{if}(result)
+17     \{
+18         loaded = \textcolor{keyword}{true};
+19         m\_is\_loaded = \textcolor{keyword}{true};
+20         \textcolor{comment}{//strcpy(m\_open\_document, file\_name);}
+21     \}
+22     \textcolor{keywordflow}{else}
+23     \{
+24         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Unable to load xml file. Result: "} << result.
+      \hyperlink{structpugi_1_1xml__parse__result_add183854c1798f4c8ae74f40def79b03}{description}();
+25     \}
+26 
+27     \textcolor{keywordflow}{return} loaded;
+28 \}
+\end{DoxyCode}
+\hypertarget{classServerConfigFileUtil_a15d3e0e7fed7ef522b587878221dd13c}{\index{Server\-Config\-File\-Util@{Server\-Config\-File\-Util}!save\-Server\-Info@{save\-Server\-Info}}
+\index{save\-Server\-Info@{save\-Server\-Info}!ServerConfigFileUtil@{Server\-Config\-File\-Util}}
+\subsubsection[{save\-Server\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void Server\-Config\-File\-Util\-::save\-Server\-Info (
+\begin{DoxyParamCaption}
+\item[{{\bf Address\-List}}]{info, }
+\item[{const char $\ast$}]{file\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{classServerConfigFileUtil_a15d3e0e7fed7ef522b587878221dd13c}
+
+\begin{DoxyCode}
+61 \{
+62 \textcolor{comment}{//    //Reopen the file}
+63     \textcolor{comment}{//bool result = this->loadDocument(m\_open\_document);}
+64 \textcolor{comment}{//    if(!result)}
+65 \textcolor{comment}{//    \{}
+66 \textcolor{comment}{//        L\_ERROR() << "Unable to load xml file. Result: ";}
+67 \textcolor{comment}{//        return;}
+68 \textcolor{comment}{//    \}}
+69 
+70     \textcolor{comment}{//Just using one server for now}
+71     \hyperlink{serverconfigfileutil_8h_aa849a66e29fe72431879f7d9d8ccda63}{AddressListIter} first = info.begin();
+72     \textcolor{comment}{//Set new node values}
+73     \hyperlink{classpugi_1_1xml__node}{xml\_node} servers = m\_root.\hyperlink{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{child}(\textcolor{stringliteral}{"serverConfig"}).\hyperlink{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{child}(\textcolor{stringliteral}{"server"});
+74     servers.\hyperlink{classpugi_1_1xml__node_a19fc1a285c0f751f52c0e151a727de97}{attribute}(\textcolor{stringliteral}{"hostname"}).\hyperlink{classpugi_1_1xml__attribute_af2ca1f0d13ee8f661bc17524bedc13d7}{set\_value}(first->getAddress().c\_str());
+75     servers.\hyperlink{classpugi_1_1xml__node_a19fc1a285c0f751f52c0e151a727de97}{attribute}(\textcolor{stringliteral}{"port"}).\hyperlink{classpugi_1_1xml__attribute_af2ca1f0d13ee8f661bc17524bedc13d7}{set\_value}(first->getPort());
+76 
+77     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << servers.\hyperlink{classpugi_1_1xml__node_a19fc1a285c0f751f52c0e151a727de97}{attribute}(\textcolor{stringliteral}{"hostname"}).\hyperlink{classpugi_1_1xml__attribute_ad535b73777f3eaa1c0c0a3c168683bd3}{value}();
+78 
+79     \textcolor{keywordtype}{bool} saved = m\_root.\hyperlink{classpugi_1_1xml__document_ac67294573cbaa41d3e6210480a9f7f99}{save\_file}(file\_name);
+80 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Util/\-File\-Util/\hyperlink{serverconfigfileutil_8h}{serverconfigfileutil.\-h}\item 
+Util/\-File\-Util/\hyperlink{serverconfigfileutil_8cpp}{serverconfigfileutil.\-cpp}\end{DoxyCompactItemize}

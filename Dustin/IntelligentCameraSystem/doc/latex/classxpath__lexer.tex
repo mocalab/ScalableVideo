@@ -1,0 +1,383 @@
+\hypertarget{classxpath__lexer}{\section{xpath\-\_\-lexer Class Reference}
+\label{classxpath__lexer}\index{xpath\-\_\-lexer@{xpath\-\_\-lexer}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classxpath__lexer_aa52661c9ba7dfa262d3ab49f578653c3}{xpath\-\_\-lexer} (const char\-\_\-t $\ast$query)
+\item 
+const char\-\_\-t $\ast$ \hyperlink{classxpath__lexer_a3794e29f3bec2fa31346766eea978cbf}{state} () const 
+\item 
+void \hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next} ()
+\item 
+\hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9}{lexeme\-\_\-t} \hyperlink{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{current} () const 
+\item 
+const char\-\_\-t $\ast$ \hyperlink{classxpath__lexer_a7adef722d64938e3ba79ae1a7e1c0d71}{current\-\_\-pos} () const 
+\item 
+const \hyperlink{structxpath__lexer__string}{xpath\-\_\-lexer\-\_\-string} \& \hyperlink{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{contents} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classxpath__lexer_aa52661c9ba7dfa262d3ab49f578653c3}{\index{xpath\-\_\-lexer@{xpath\-\_\-lexer}!xpath\-\_\-lexer@{xpath\-\_\-lexer}}
+\index{xpath\-\_\-lexer@{xpath\-\_\-lexer}!xpath_lexer@{xpath\-\_\-lexer}}
+\subsubsection[{xpath\-\_\-lexer}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-lexer\-::xpath\-\_\-lexer (
+\begin{DoxyParamCaption}
+\item[{const char\-\_\-t $\ast$}]{query}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classxpath__lexer_aa52661c9ba7dfa262d3ab49f578653c3}
+
+\begin{DoxyCode}
+6982                                                  : \_cur(query)
+6983         \{
+6984             \hyperlink{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{next}();
+6985         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}{\index{xpath\-\_\-lexer@{xpath\-\_\-lexer}!contents@{contents}}
+\index{contents@{contents}!xpath_lexer@{xpath\-\_\-lexer}}
+\subsubsection[{contents}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf xpath\-\_\-lexer\-\_\-string}\& xpath\-\_\-lexer\-::contents (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__lexer_aebb02b6d507f5e0839bfa42116bdbc9c}
+
+\begin{DoxyCode}
+7272         \{
+7273             assert(\_cur\_lexeme == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a933a0fd7c93a22506dc917d0868e05d1}{lex\_var\_ref} || \_cur\_lexeme == 
+      \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abe562e581d64a34b55b3d9b38db2e480}{lex\_number} || \_cur\_lexeme == \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{lex\_string} || \_cur\_lexeme == 
+      \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a1f793e76227244d2ae78acf451b82808}{lex\_quoted\_string});
+7274 
+7275             \textcolor{keywordflow}{return} \_cur\_lexeme\_contents;
+7276         \}
+\end{DoxyCode}
+\hypertarget{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}{\index{xpath\-\_\-lexer@{xpath\-\_\-lexer}!current@{current}}
+\index{current@{current}!xpath_lexer@{xpath\-\_\-lexer}}
+\subsubsection[{current}]{\setlength{\rightskip}{0pt plus 5cm}{\bf lexeme\-\_\-t} xpath\-\_\-lexer\-::current (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__lexer_a06cdc258948ef3a1a69bd7d5733fd987}
+
+\begin{DoxyCode}
+7262         \{
+7263             \textcolor{keywordflow}{return} \_cur\_lexeme;
+7264         \}
+\end{DoxyCode}
+\hypertarget{classxpath__lexer_a7adef722d64938e3ba79ae1a7e1c0d71}{\index{xpath\-\_\-lexer@{xpath\-\_\-lexer}!current\-\_\-pos@{current\-\_\-pos}}
+\index{current\-\_\-pos@{current\-\_\-pos}!xpath_lexer@{xpath\-\_\-lexer}}
+\subsubsection[{current\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}const char\-\_\-t$\ast$ xpath\-\_\-lexer\-::current\-\_\-pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__lexer_a7adef722d64938e3ba79ae1a7e1c0d71}
+
+\begin{DoxyCode}
+7267         \{
+7268             \textcolor{keywordflow}{return} \_cur\_lexeme\_pos;
+7269         \}
+\end{DoxyCode}
+\hypertarget{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}{\index{xpath\-\_\-lexer@{xpath\-\_\-lexer}!next@{next}}
+\index{next@{next}!xpath_lexer@{xpath\-\_\-lexer}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}void xpath\-\_\-lexer\-::next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__lexer_a32684b3097fccb4d626da620b44b72ad}
+
+\begin{DoxyCode}
+6993         \{
+6994             \textcolor{keyword}{const} \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* cur = \_cur;
+6995 
+6996             \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*cur, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space})) ++cur;
+6997 
+6998             \textcolor{comment}{// save lexeme position for error reporting}
+6999             \_cur\_lexeme\_pos = cur;
+7000 
+7001             \textcolor{keywordflow}{switch} (*cur)
+7002             \{
+7003             \textcolor{keywordflow}{case} 0:
+7004                 \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aade5d69e447274d8785ebc7d438be522}{lex\_eof};
+7005                 \textcolor{keywordflow}{break};
+7006             
+7007             \textcolor{keywordflow}{case} \textcolor{charliteral}{'>'}:
+7008                 \textcolor{keywordflow}{if} (*(cur+1) == \textcolor{charliteral}{'='})
+7009                 \{
+7010                     cur += 2;
+7011                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6308ad256806534e1cd586574718a562}{lex\_greater\_or\_equal};
+7012                 \}
+7013                 \textcolor{keywordflow}{else}
+7014                 \{
+7015                     cur += 1;
+7016                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abef050e09f087253f62bd3b4b6b435af}{lex\_greater};
+7017                 \}
+7018                 \textcolor{keywordflow}{break};
+7019 
+7020             \textcolor{keywordflow}{case} \textcolor{charliteral}{'<'}:
+7021                 \textcolor{keywordflow}{if} (*(cur+1) == \textcolor{charliteral}{'='})
+7022                 \{
+7023                     cur += 2;
+7024                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9acd542cd6bfd08efcfa647426a7d577b8}{lex\_less\_or\_equal};
+7025                 \}
+7026                 \textcolor{keywordflow}{else}
+7027                 \{
+7028                     cur += 1;
+7029                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a51a5852f31a8c2bd889f340ac3ab9fe4}{lex\_less};
+7030                 \}
+7031                 \textcolor{keywordflow}{break};
+7032 
+7033             \textcolor{keywordflow}{case} \textcolor{charliteral}{'!'}:
+7034                 \textcolor{keywordflow}{if} (*(cur+1) == \textcolor{charliteral}{'='})
+7035                 \{
+7036                     cur += 2;
+7037                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a266a8f8365e61873ecb66c78d363f156}{lex\_not\_equal};
+7038                 \}
+7039                 \textcolor{keywordflow}{else}
+7040                 \{
+7041                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6696dceb02e4d282197154d3805e8ce1}{lex\_none};
+7042                 \}
+7043                 \textcolor{keywordflow}{break};
+7044 
+7045             \textcolor{keywordflow}{case} \textcolor{charliteral}{'='}:
+7046                 cur += 1;
+7047                 \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a5c2d9372cf8440a68eff3c16eeac8027}{lex\_equal};
+7048 
+7049                 \textcolor{keywordflow}{break};
+7050             
+7051             \textcolor{keywordflow}{case} \textcolor{charliteral}{'+'}:
+7052                 cur += 1;
+7053                 \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ab165cbd439d1c24dd336e02645c98727}{lex\_plus};
+7054 
+7055                 \textcolor{keywordflow}{break};
+7056 
+7057             \textcolor{keywordflow}{case} \textcolor{charliteral}{'-'}:
+7058                 cur += 1;
+7059                 \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa0a1d6df3298c5b043daa6ad9afa2733}{lex\_minus};
+7060 
+7061                 \textcolor{keywordflow}{break};
+7062 
+7063             \textcolor{keywordflow}{case} \textcolor{charliteral}{'*'}:
+7064                 cur += 1;
+7065                 \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a095a092388d76a21ccfc1338c875fe54}{lex\_multiply};
+7066 
+7067                 \textcolor{keywordflow}{break};
+7068 
+7069             \textcolor{keywordflow}{case} \textcolor{charliteral}{'|'}:
+7070                 cur += 1;
+7071                 \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a751c2248d5cb85f4ba650a78281923a1}{lex\_union};
+7072 
+7073                 \textcolor{keywordflow}{break};
+7074             
+7075             \textcolor{keywordflow}{case} \textcolor{charliteral}{'$'}:
+7076                 cur += 1;
+7077 
+7078                 \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(*cur, \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a934b9be54f1b4446a7a6665373d50ad6}{ctx\_start\_symbol}))
+7079                 \{
+7080                     \_cur\_lexeme\_contents.\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin} = cur;
+7081 
+7082                     \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(*cur, \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a7f60ee1dbb91625306756d7b8289162e}{ctx\_symbol})) cur++;
+7083 
+7084                     \textcolor{keywordflow}{if} (cur[0] == \textcolor{charliteral}{':'} && \hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(cur[1], 
+      \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a7f60ee1dbb91625306756d7b8289162e}{ctx\_symbol})) \textcolor{comment}{// qname}
+7085                     \{
+7086                         cur++; \textcolor{comment}{// :}
+7087 
+7088                         \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(*cur, 
+      \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a7f60ee1dbb91625306756d7b8289162e}{ctx\_symbol})) cur++;
+7089                     \}
+7090 
+7091                     \_cur\_lexeme\_contents.\hyperlink{structxpath__lexer__string_a13bbedeca2f8c2fb1e294325eea66878}{end} = cur;
+7092                 
+7093                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a933a0fd7c93a22506dc917d0868e05d1}{lex\_var\_ref};
+7094                 \}
+7095                 \textcolor{keywordflow}{else}
+7096                 \{
+7097                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6696dceb02e4d282197154d3805e8ce1}{lex\_none};
+7098                 \}
+7099 
+7100                 \textcolor{keywordflow}{break};
+7101 
+7102             \textcolor{keywordflow}{case} \textcolor{charliteral}{'('}:
+7103                 cur += 1;
+7104                 \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aea53091cdb9dce7a878792f2c8d4d17b}{lex\_open\_brace};
+7105 
+7106                 \textcolor{keywordflow}{break};
+7107 
+7108             \textcolor{keywordflow}{case} \textcolor{charliteral}{')'}:
+7109                 cur += 1;
+7110                 \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8a39009230ffa4187d22c91412f7fcd7}{lex\_close\_brace};
+7111 
+7112                 \textcolor{keywordflow}{break};
+7113             
+7114             \textcolor{keywordflow}{case} \textcolor{charliteral}{'['}:
+7115                 cur += 1;
+7116                 \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ad9321b18d06078ecc38ad112ce654ce9}{lex\_open\_square\_brace};
+7117 
+7118                 \textcolor{keywordflow}{break};
+7119 
+7120             \textcolor{keywordflow}{case} \textcolor{charliteral}{']'}:
+7121                 cur += 1;
+7122                 \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9ad572f5fa18506a8bf523425d075cac5d}{lex\_close\_square\_brace};
+7123 
+7124                 \textcolor{keywordflow}{break};
+7125 
+7126             \textcolor{keywordflow}{case} \textcolor{charliteral}{','}:
+7127                 cur += 1;
+7128                 \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a78c1259369ef92b19f0ea2701d9c1d60}{lex\_comma};
+7129 
+7130                 \textcolor{keywordflow}{break};
+7131 
+7132             \textcolor{keywordflow}{case} \textcolor{charliteral}{'/'}:
+7133                 \textcolor{keywordflow}{if} (*(cur+1) == \textcolor{charliteral}{'/'})
+7134                 \{
+7135                     cur += 2;
+7136                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a0988911f62781c4a1e8831a76c1e1fe8}{lex\_double\_slash};
+7137                 \}
+7138                 \textcolor{keywordflow}{else}
+7139                 \{
+7140                     cur += 1;
+7141                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a8be0786f2c3130ad30b61bbac70fa809}{lex\_slash};
+7142                 \}
+7143                 \textcolor{keywordflow}{break};
+7144         
+7145             \textcolor{keywordflow}{case} \textcolor{charliteral}{'.'}:
+7146                 \textcolor{keywordflow}{if} (*(cur+1) == \textcolor{charliteral}{'.'})
+7147                 \{
+7148                     cur += 2;
+7149                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abf40f90b4cc064d49394e974962b111b}{lex\_double\_dot};
+7150                 \}
+7151                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(*(cur+1), 
+      \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a1e66040284fe331a2ec2162b6b9fee6a}{ctx\_digit}))
+7152                 \{
+7153                     \_cur\_lexeme\_contents.\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin} = cur; \textcolor{comment}{// .}
+7154 
+7155                     ++cur;
+7156 
+7157                     \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(*cur, \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a1e66040284fe331a2ec2162b6b9fee6a}{ctx\_digit})) cur++;
+7158 
+7159                     \_cur\_lexeme\_contents.\hyperlink{structxpath__lexer__string_a13bbedeca2f8c2fb1e294325eea66878}{end} = cur;
+7160                     
+7161                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abe562e581d64a34b55b3d9b38db2e480}{lex\_number};
+7162                 \}
+7163                 \textcolor{keywordflow}{else}
+7164                 \{
+7165                     cur += 1;
+7166                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa0709f7aad925098c9b62379206a536b}{lex\_dot};
+7167                 \}
+7168                 \textcolor{keywordflow}{break};
+7169 
+7170             \textcolor{keywordflow}{case} \textcolor{charliteral}{'@'}:
+7171                 cur += 1;
+7172                 \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a408fe857bc6c9b3a148ab798d0ad34e7}{lex\_axis\_attribute};
+7173 
+7174                 \textcolor{keywordflow}{break};
+7175 
+7176             \textcolor{keywordflow}{case} \textcolor{charliteral}{'"'}:
+7177             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)''}:
+7178             \{
+7179                 \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t} terminator = *cur;
+7180 
+7181                 ++cur;
+7182 
+7183                 \_cur\_lexeme\_contents.\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin} = cur;
+7184                 \textcolor{keywordflow}{while} (*cur && *cur != terminator) cur++;
+7185                 \_cur\_lexeme\_contents.\hyperlink{structxpath__lexer__string_a13bbedeca2f8c2fb1e294325eea66878}{end} = cur;
+7186                 
+7187                 \textcolor{keywordflow}{if} (!*cur)
+7188                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6696dceb02e4d282197154d3805e8ce1}{lex\_none};
+7189                 \textcolor{keywordflow}{else}
+7190                 \{
+7191                     cur += 1;
+7192                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a1f793e76227244d2ae78acf451b82808}{lex\_quoted\_string};
+7193                 \}
+7194 
+7195                 \textcolor{keywordflow}{break};
+7196             \}
+7197 
+7198             \textcolor{keywordflow}{case} \textcolor{charliteral}{':'}:
+7199                 \textcolor{keywordflow}{if} (*(cur+1) == \textcolor{charliteral}{':'})
+7200                 \{
+7201                     cur += 2;
+7202                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9afbd9c771f4154c9cf363ff3c0b9f7b9c}{lex\_double\_colon};
+7203                 \}
+7204                 \textcolor{keywordflow}{else}
+7205                 \{
+7206                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6696dceb02e4d282197154d3805e8ce1}{lex\_none};
+7207                 \}
+7208                 \textcolor{keywordflow}{break};
+7209 
+7210             \textcolor{keywordflow}{default}:
+7211                 \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(*cur, \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a1e66040284fe331a2ec2162b6b9fee6a}{ctx\_digit}))
+7212                 \{
+7213                     \_cur\_lexeme\_contents.\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin} = cur;
+7214 
+7215                     \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(*cur, \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a1e66040284fe331a2ec2162b6b9fee6a}{ctx\_digit})) cur++;
+7216                 
+7217                     \textcolor{keywordflow}{if} (*cur == \textcolor{charliteral}{'.'})
+7218                     \{
+7219                         cur++;
+7220 
+7221                         \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(*cur, 
+      \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a1e66040284fe331a2ec2162b6b9fee6a}{ctx\_digit})) cur++;
+7222                     \}
+7223 
+7224                     \_cur\_lexeme\_contents.\hyperlink{structxpath__lexer__string_a13bbedeca2f8c2fb1e294325eea66878}{end} = cur;
+7225 
+7226                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9abe562e581d64a34b55b3d9b38db2e480}{lex\_number};
+7227                 \}
+7228                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(*cur, 
+      \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a934b9be54f1b4446a7a6665373d50ad6}{ctx\_start\_symbol}))
+7229                 \{
+7230                     \_cur\_lexeme\_contents.\hyperlink{structxpath__lexer__string_a0b985863d7363a75d4fdd0a7ece1fca0}{begin} = cur;
+7231 
+7232                     \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(*cur, \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a7f60ee1dbb91625306756d7b8289162e}{ctx\_symbol})) cur++;
+7233 
+7234                     \textcolor{keywordflow}{if} (cur[0] == \textcolor{charliteral}{':'})
+7235                     \{
+7236                         \textcolor{keywordflow}{if} (cur[1] == \textcolor{charliteral}{'*'}) \textcolor{comment}{// namespace test ncname:*}
+7237                         \{
+7238                             cur += 2; \textcolor{comment}{// :*}
+7239                         \}
+7240                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(cur[1], 
+      \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a7f60ee1dbb91625306756d7b8289162e}{ctx\_symbol})) \textcolor{comment}{// namespace test qname}
+7241                         \{
+7242                             cur++; \textcolor{comment}{// :}
+7243 
+7244                             \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a4ce684b35edc78e6fda91e836f29a46c}{PUGI\_\_IS\_CHARTYPEX}(*cur, 
+      \hyperlink{pugixml_8cpp_af8255f70e16ba8c6dbd5ff66cef9af26a7f60ee1dbb91625306756d7b8289162e}{ctx\_symbol})) cur++;
+7245                         \}
+7246                     \}
+7247 
+7248                     \_cur\_lexeme\_contents.\hyperlink{structxpath__lexer__string_a13bbedeca2f8c2fb1e294325eea66878}{end} = cur;
+7249                 
+7250                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9aa18bda8e798cdf55d88ed65fd025e67c}{lex\_string};
+7251                 \}
+7252                 \textcolor{keywordflow}{else}
+7253                 \{
+7254                     \_cur\_lexeme = \hyperlink{pugixml_8cpp_a1fdd6d0a63acbba1491ab331ddce4ac9a6696dceb02e4d282197154d3805e8ce1}{lex\_none};
+7255                 \}
+7256             \}
+7257 
+7258             \_cur = cur;
+7259         \}
+\end{DoxyCode}
+\hypertarget{classxpath__lexer_a3794e29f3bec2fa31346766eea978cbf}{\index{xpath\-\_\-lexer@{xpath\-\_\-lexer}!state@{state}}
+\index{state@{state}!xpath_lexer@{xpath\-\_\-lexer}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}const char\-\_\-t$\ast$ xpath\-\_\-lexer\-::state (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classxpath__lexer_a3794e29f3bec2fa31346766eea978cbf}
+
+\begin{DoxyCode}
+6988         \{
+6989             \textcolor{keywordflow}{return} \_cur;
+6990         \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

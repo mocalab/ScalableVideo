@@ -1,0 +1,238 @@
+\hypertarget{classMainWindow}{\section{Main\-Window Class Reference}
+\label{classMainWindow}\index{Main\-Window@{Main\-Window}}
+}
+
+
+{\ttfamily \#include $<$mainwindow.\-h$>$}
+
+Inheritance diagram for Main\-Window\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMainWindow}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainWindow_a2605ed0a3de91bd4e13316d16887fd60}{on\-\_\-b\-Send\-\_\-clicked} ()
+\item 
+void \hyperlink{classMainWindow_ab7ed8f9211b6a43151b645f94a019502}{received\-Message} (const char $\ast$)
+\item 
+void \hyperlink{classMainWindow_a9e94a105f93d43505bd528088fd23846}{received\-Message} (Q\-String response)
+\item 
+void \hyperlink{classMainWindow_ac2886ac3cabca51c9b4ff8643dfbeff8}{disconnect} ()
+\item 
+void \hyperlink{classMainWindow_a4358d0320935424d76a693791b1066f5}{open\-Server\-Properties} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}{Main\-Window} (Q\-Widget $\ast$parent=0)
+\item 
+\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\-Main\-Window} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}{\index{Main\-Window@{Main\-Window}!Main\-Window@{Main\-Window}}
+\index{Main\-Window@{Main\-Window}!MainWindow@{Main\-Window}}
+\subsubsection[{Main\-Window}]{\setlength{\rightskip}{0pt plus 5cm}Main\-Window\-::\-Main\-Window (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classMainWindow_a8b244be8b7b7db1b08de2a2acb9409db}
+
+\begin{DoxyCode}
+15                                       :
+16     QMainWindow(parent),
+17     ui(\textcolor{keyword}{new} Ui::MainWindow)
+18 \{
+19     ui->setupUi(\textcolor{keyword}{this});
+20     connect(ui->teCommand, SIGNAL(enterPressed()), \textcolor{keyword}{this}, SLOT(\hyperlink{classMainWindow_a2605ed0a3de91bd4e13316d16887fd60}{on\_bSend\_clicked}()));
+21     this->server\_properties = \textcolor{keyword}{new} \hyperlink{classServerPropertiesDialog}{ServerPropertiesDialog}(\textcolor{keyword}{this});
+22 
+23     ui->teCommand->selectAll();
+24     connect(ui->actionServer\_Properties, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classMainWindow_a4358d0320935424d76a693791b1066f5}{openServerProperties}()));
+25 
+26     m\_server\_address.\hyperlink{classAddress_a43ba5f8001b7e729b83b1b9299294495}{setAddress}(server\_properties->\hyperlink{classServerPropertiesDialog_ae2fe6ffc4e0c04a9043a14a96f6aa5e9}{getHostName}().toStdString());
+27     m\_server\_address.\hyperlink{classAddress_ad73c29200f7d63641e48ebfc16efaf75}{setPort}(server\_properties->\hyperlink{classServerPropertiesDialog_a00869f1fe5e8418017acfa6f351020d1}{getPort}());
+28     \textcolor{comment}{//Try to set up the network connection}
+29     m\_tcp\_interface = \textcolor{keyword}{new} \hyperlink{classNetworkToQtInterface}{NetworkToQtInterface}(m\_server\_address);
+30     connect(m\_tcp\_interface, SIGNAL(messageDispatch(QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classMainWindow_ab7ed8f9211b6a43151b645f94a019502}{receivedMessage}(QString)));
+31     connect(m\_tcp\_interface, SIGNAL(serverDisconnected()), \textcolor{keyword}{this}, SLOT(\hyperlink{classMainWindow_ac2886ac3cabca51c9b4ff8643dfbeff8}{disconnect}()));
+32     this->setUpThreads();
+33     \textcolor{comment}{//Delay server connect}
+34 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+35 \textcolor{preprocessor}{}    \textcolor{comment}{//QTimer::singleShot(500, this, SLOT(delayServerConnect()));}
+36 \textcolor{preprocessor}{#endif}
+37 \textcolor{preprocessor}{}    QString q(\textcolor{stringliteral}{"Camera A"});
+38 
+39     vid = \textcolor{keyword}{new} \hyperlink{classVideoWindow}{VideoWindow}(\textcolor{keyword}{new} \hyperlink{classCamera}{Camera}(q, m\_server\_address, 
+      \hyperlink{camera_8h_a10395294162cb49637e9c8f6efdb10eaa8845b57cef431c1017ee723500b2d1f5}{CONTENT\_TYPE\_PERSONAL}));
+40     vid->setAttribute(Qt::WA\_DeleteOnClose);
+41     vid->show();
+42     \textcolor{comment}{//FOR UDP}
+43     \textcolor{comment}{//Set up a packet sender thread}
+44     \textcolor{comment}{//this->sender\_thread = new PacketSender();}
+45     \textcolor{comment}{//Set up a packet receiver thread and execute for the life of the main window}
+46     \textcolor{comment}{//this->receiver\_thread = new PacketReceiver(&m\_messageDispatcher);}
+47     \textcolor{comment}{//this->receiver\_thread->start();}
+48     \textcolor{comment}{//Connect receivers received signal to our slot}
+49     \textcolor{comment}{//connect(&m\_messageDispatcher, SIGNAL(passMessage(const char *)), this, SLOT(receivedMessage(const
+       char *)));}
+50 \}
+\end{DoxyCode}
+\hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{\index{Main\-Window@{Main\-Window}!$\sim$\-Main\-Window@{$\sim$\-Main\-Window}}
+\index{$\sim$\-Main\-Window@{$\sim$\-Main\-Window}!MainWindow@{Main\-Window}}
+\subsubsection[{$\sim$\-Main\-Window}]{\setlength{\rightskip}{0pt plus 5cm}Main\-Window\-::$\sim$\-Main\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}
+
+\begin{DoxyCode}
+53 \{
+54     \textcolor{keyword}{delete} ui;
+55     m\_request\_thread->terminate();
+56     \textcolor{keyword}{delete} m\_tcp\_interface;
+57 
+58     \textcolor{keyword}{delete} m\_request\_thread;
+59     \textcolor{keyword}{delete} server\_properties;
+60 
+61 
+62     \textcolor{comment}{//For UDP}
+63     \textcolor{comment}{//delete sender\_thread;}
+64     \textcolor{comment}{//receiver\_thread->waitToFinish();}
+65     \textcolor{comment}{//delete receiver\_thread;}
+66 
+67 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMainWindow_ac2886ac3cabca51c9b4ff8643dfbeff8}{\index{Main\-Window@{Main\-Window}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!MainWindow@{Main\-Window}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classMainWindow_ac2886ac3cabca51c9b4ff8643dfbeff8}
+
+\begin{DoxyCode}
+228 \{
+229     m\_tcp\_interface->\hyperlink{classNetworkToQtInterface_ac4889eb9f3c5b5e4509252481335200f}{close}();
+230     this->ui->bConnect->setText(\textcolor{stringliteral}{"Connect"});
+231 \}
+\end{DoxyCode}
+\hypertarget{classMainWindow_a2605ed0a3de91bd4e13316d16887fd60}{\index{Main\-Window@{Main\-Window}!on\-\_\-b\-Send\-\_\-clicked@{on\-\_\-b\-Send\-\_\-clicked}}
+\index{on\-\_\-b\-Send\-\_\-clicked@{on\-\_\-b\-Send\-\_\-clicked}!MainWindow@{Main\-Window}}
+\subsubsection[{on\-\_\-b\-Send\-\_\-clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::on\-\_\-b\-Send\-\_\-clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classMainWindow_a2605ed0a3de91bd4e13316d16887fd60}
+
+\begin{DoxyCode}
+82 \{
+83     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Send button clicked."};
+84     \textcolor{comment}{//Check to see if conencted to server}
+85 \textcolor{comment}{//    if(!m\_tcp\_interface->isConnected())}
+86 \textcolor{comment}{//    \{}
+87 \textcolor{comment}{//        this->receivedMessage("Not connected to the server");}
+88 \textcolor{comment}{//        return;}
+89 \textcolor{comment}{//    \}}
+90     \textcolor{comment}{//Send the command in the text box}
+91     QString cmd = ui->teCommand->toPlainText();
+92     \textcolor{comment}{//Send packet with text edit string as const char *}
+93     std::string c\_cmd = cmd.toStdString();
+94 
+95     \textcolor{comment}{//Add command to list of previous commands}
+96     \textcolor{keywordflow}{if}(c\_cmd.compare(\textcolor{stringliteral}{""}) != 0)
+97     \{
+98         ui->teCommand->addCommandToList(c\_cmd);
+99     \}
+100 
+101     ui->teCommand->setText(\textcolor{stringliteral}{""});
+102 
+103     \textcolor{comment}{//ui->video\_container->playUrl(cmd);}
+104     vid->\hyperlink{classVideoWindow_ac71a3e790d6956a26369294d5fb36c93}{streamVideo}(cmd);
+105 
+106     \textcolor{comment}{//cmd = cmd.trimmed();}
+107     \textcolor{keywordflow}{if}(!cmd.isEmpty())
+108         this->sendRequest(cmd);
+109 
+110     \textcolor{comment}{//FOR UDP}
+111 
+112     \textcolor{comment}{//Send packet last to protect data integrity}
+113     \textcolor{comment}{//this->sendPacket(c\_cmd.c\_str());}
+114     \textcolor{comment}{//Receive any responses from the other end}
+115     \textcolor{comment}{//this->listenForPackets();}
+116 
+117 \}
+\end{DoxyCode}
+\hypertarget{classMainWindow_a4358d0320935424d76a693791b1066f5}{\index{Main\-Window@{Main\-Window}!open\-Server\-Properties@{open\-Server\-Properties}}
+\index{open\-Server\-Properties@{open\-Server\-Properties}!MainWindow@{Main\-Window}}
+\subsubsection[{open\-Server\-Properties}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::open\-Server\-Properties (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classMainWindow_a4358d0320935424d76a693791b1066f5}
+
+\begin{DoxyCode}
+145 \{
+146     server\_properties->show();
+147     \textcolor{keywordtype}{int} ret = server\_properties->exec();
+148     \textcolor{comment}{//See what the return value is}
+149     \textcolor{keywordflow}{switch}(ret)
+150     \{
+151     \textcolor{keywordflow}{case} QDialog::Accepted:
+152         \textcolor{comment}{//Update the address info}
+153         m\_server\_address.\hyperlink{classAddress_a43ba5f8001b7e729b83b1b9299294495}{setAddress}(server\_properties->\hyperlink{classServerPropertiesDialog_ae2fe6ffc4e0c04a9043a14a96f6aa5e9}{getHostName}().toStdString());
+154         m\_server\_address.\hyperlink{classAddress_ad73c29200f7d63641e48ebfc16efaf75}{setPort}(server\_properties->\hyperlink{classServerPropertiesDialog_a00869f1fe5e8418017acfa6f351020d1}{getPort}());
+155         m\_tcp\_interface->\hyperlink{classNetworkToQtInterface_aa1fc46b9d7bf2e5c219ff36808c555eb}{setServerAddress}(m\_server\_address);
+156         \textcolor{keywordflow}{break};
+157     \textcolor{keywordflow}{case} QDialog::Rejected:
+158         \textcolor{keywordflow}{break};
+159     \}
+160 \}
+\end{DoxyCode}
+\hypertarget{classMainWindow_ab7ed8f9211b6a43151b645f94a019502}{\index{Main\-Window@{Main\-Window}!received\-Message@{received\-Message}}
+\index{received\-Message@{received\-Message}!MainWindow@{Main\-Window}}
+\subsubsection[{received\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::received\-Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classMainWindow_ab7ed8f9211b6a43151b645f94a019502}
+
+\begin{DoxyCode}
+126 \{
+127     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"In slot \(\backslash\)'receivedPacket\(\backslash\)' Message:"} << data;
+128     QMessageBox msgBox;
+129     msgBox.setText(QString(data));
+130     \textcolor{keywordtype}{int} ret = msgBox.exec();
+131 \}
+\end{DoxyCode}
+\hypertarget{classMainWindow_a9e94a105f93d43505bd528088fd23846}{\index{Main\-Window@{Main\-Window}!received\-Message@{received\-Message}}
+\index{received\-Message@{received\-Message}!MainWindow@{Main\-Window}}
+\subsubsection[{received\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::received\-Message (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{response}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classMainWindow_a9e94a105f93d43505bd528088fd23846}
+
+\begin{DoxyCode}
+135 \{
+136     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"In slot \(\backslash\)'receivedPacket\(\backslash\)' Message:"} << response;
+137     QMessageBox msgBox;
+138     msgBox.setText(response);
+139     \textcolor{keywordtype}{int} ret = msgBox.exec();
+140 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{mainwindow_8h}{mainwindow.\-h}\item 
+\hyperlink{mainwindow_8cpp}{mainwindow.\-cpp}\end{DoxyCompactItemize}

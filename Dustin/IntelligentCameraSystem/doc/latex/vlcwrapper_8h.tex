@@ -1,0 +1,38 @@
+\hypertarget{vlcwrapper_8h}{\section{Video/vlcwrapper.h File Reference}
+\label{vlcwrapper_8h}\index{Video/vlcwrapper.\-h@{Video/vlcwrapper.\-h}}
+}
+{\ttfamily \#include $<$vlc/vlc.\-h$>$}\\*
+{\ttfamily \#include $<$Q\-Mutex$>$}\\*
+{\ttfamily \#include \char`\"{}stdio.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classVLCWrapper}{V\-L\-C\-Wrapper}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{vlcwrapper_8h_af8a9ccc1becc3bda1670157d34206889}{log\-\_\-msg} (void $\ast$data, int level, const libvlc\-\_\-log\-\_\-t $\ast$ctx, const char $\ast$fmt, va\-\_\-list args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{vlcwrapper_8h_af8a9ccc1becc3bda1670157d34206889}{\index{vlcwrapper.\-h@{vlcwrapper.\-h}!log\-\_\-msg@{log\-\_\-msg}}
+\index{log\-\_\-msg@{log\-\_\-msg}!vlcwrapper.h@{vlcwrapper.\-h}}
+\subsubsection[{log\-\_\-msg}]{\setlength{\rightskip}{0pt plus 5cm}void log\-\_\-msg (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{int}]{level, }
+\item[{const libvlc\-\_\-log\-\_\-t $\ast$}]{ctx, }
+\item[{const char $\ast$}]{fmt, }
+\item[{va\-\_\-list}]{args}
+\end{DoxyParamCaption}
+)}}\label{vlcwrapper_8h_af8a9ccc1becc3bda1670157d34206889}
+
+\begin{DoxyCode}
+266 \{
+267     \textcolor{comment}{//Parse log message to see if it is a motion change; if so, get the number of motion areas}
+268     \textcolor{comment}{//to determine motion content}
+269     printf(fmt);
+270 \}
+\end{DoxyCode}

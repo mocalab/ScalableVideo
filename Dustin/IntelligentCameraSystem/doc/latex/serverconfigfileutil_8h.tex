@@ -1,0 +1,47 @@
+\hypertarget{serverconfigfileutil_8h}{\section{Util/\-File\-Util/serverconfigfileutil.h File Reference}
+\label{serverconfigfileutil_8h}\index{Util/\-File\-Util/serverconfigfileutil.\-h@{Util/\-File\-Util/serverconfigfileutil.\-h}}
+}
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$Third\-Party/pugixml/pugixml.\-hpp$>$}\\*
+{\ttfamily \#include \char`\"{}Network/address.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classServerConfigFileUtil}{Server\-Config\-File\-Util}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::map$<$ const char \\*
+$\ast$, int $>$ \hyperlink{serverconfigfileutil_8h_a70be237780751054e5003c6a52882e95}{Host\-Port\-Map}
+\item 
+typedef std\-::map$<$ const char \\*
+$\ast$, int $>$\-::iterator \hyperlink{serverconfigfileutil_8h_a8f7e6f95034f1f030741dc54c4e4fd9b}{Host\-Port\-Map\-Iter}
+\item 
+typedef std\-::pair$<$ const char \\*
+$\ast$, int $>$ \hyperlink{serverconfigfileutil_8h_a7534cf79dd73b74083eed92e94c56423}{Host\-Port\-Pair}
+\item 
+typedef std\-::list$<$ \hyperlink{classAddress}{Address} $>$ \hyperlink{serverconfigfileutil_8h_a90d1af3762c28656b0507bb3a650f96e}{Address\-List}
+\item 
+typedef std\-::list$<$ \hyperlink{classAddress}{Address} $>$\\*
+\-::iterator \hyperlink{serverconfigfileutil_8h_aa849a66e29fe72431879f7d9d8ccda63}{Address\-List\-Iter}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{serverconfigfileutil_8h_a90d1af3762c28656b0507bb3a650f96e}{\index{serverconfigfileutil.\-h@{serverconfigfileutil.\-h}!Address\-List@{Address\-List}}
+\index{Address\-List@{Address\-List}!serverconfigfileutil.h@{serverconfigfileutil.\-h}}
+\subsubsection[{Address\-List}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::list$<${\bf Address}$>$ {\bf Address\-List}}}\label{serverconfigfileutil_8h_a90d1af3762c28656b0507bb3a650f96e}
+\hypertarget{serverconfigfileutil_8h_aa849a66e29fe72431879f7d9d8ccda63}{\index{serverconfigfileutil.\-h@{serverconfigfileutil.\-h}!Address\-List\-Iter@{Address\-List\-Iter}}
+\index{Address\-List\-Iter@{Address\-List\-Iter}!serverconfigfileutil.h@{serverconfigfileutil.\-h}}
+\subsubsection[{Address\-List\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::list$<${\bf Address}$>$\-::iterator {\bf Address\-List\-Iter}}}\label{serverconfigfileutil_8h_aa849a66e29fe72431879f7d9d8ccda63}
+\hypertarget{serverconfigfileutil_8h_a70be237780751054e5003c6a52882e95}{\index{serverconfigfileutil.\-h@{serverconfigfileutil.\-h}!Host\-Port\-Map@{Host\-Port\-Map}}
+\index{Host\-Port\-Map@{Host\-Port\-Map}!serverconfigfileutil.h@{serverconfigfileutil.\-h}}
+\subsubsection[{Host\-Port\-Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::map$<$const char $\ast$, int$>$ {\bf Host\-Port\-Map}}}\label{serverconfigfileutil_8h_a70be237780751054e5003c6a52882e95}
+\hypertarget{serverconfigfileutil_8h_a8f7e6f95034f1f030741dc54c4e4fd9b}{\index{serverconfigfileutil.\-h@{serverconfigfileutil.\-h}!Host\-Port\-Map\-Iter@{Host\-Port\-Map\-Iter}}
+\index{Host\-Port\-Map\-Iter@{Host\-Port\-Map\-Iter}!serverconfigfileutil.h@{serverconfigfileutil.\-h}}
+\subsubsection[{Host\-Port\-Map\-Iter}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::map$<$const char $\ast$, int$>$\-::iterator {\bf Host\-Port\-Map\-Iter}}}\label{serverconfigfileutil_8h_a8f7e6f95034f1f030741dc54c4e4fd9b}
+\hypertarget{serverconfigfileutil_8h_a7534cf79dd73b74083eed92e94c56423}{\index{serverconfigfileutil.\-h@{serverconfigfileutil.\-h}!Host\-Port\-Pair@{Host\-Port\-Pair}}
+\index{Host\-Port\-Pair@{Host\-Port\-Pair}!serverconfigfileutil.h@{serverconfigfileutil.\-h}}
+\subsubsection[{Host\-Port\-Pair}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::pair$<$const char $\ast$, int$>$ {\bf Host\-Port\-Pair}}}\label{serverconfigfileutil_8h_a7534cf79dd73b74083eed92e94c56423}

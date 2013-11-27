@@ -1,0 +1,389 @@
+\hypertarget{classNetworkToQtInterface}{\section{Network\-To\-Qt\-Interface Class Reference}
+\label{classNetworkToQtInterface}\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}}
+}
+
+
+The \hyperlink{classNetworkToQtInterface}{Network\-To\-Qt\-Interface} class.  
+
+
+
+
+{\ttfamily \#include $<$networktoqtinterface.\-h$>$}
+
+Inheritance diagram for Network\-To\-Qt\-Interface\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNetworkToQtInterface}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classNetworkToQtInterface_ae998c02ca1c22313b0abc90fc4b7c2a6}{proc\-Request} ()
+\begin{DoxyCompactList}\small\item\em Process a request/response sequence. \end{DoxyCompactList}\item 
+void \hyperlink{classNetworkToQtInterface_a3413c676b1bb27ddc2df47128cf68c5d}{connection\-Timeout} ()
+\begin{DoxyCompactList}\small\item\em Timeout the connection. \end{DoxyCompactList}\item 
+void \hyperlink{classNetworkToQtInterface_ac4889eb9f3c5b5e4509252481335200f}{close} ()
+\begin{DoxyCompactList}\small\item\em Disconnect from server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classNetworkToQtInterface_aac3748797653d3164ff714edafda229a}{receive\-Finished} ()
+\item 
+void \hyperlink{classNetworkToQtInterface_a254dd8693e87acd8b05fc36d154b3393}{message\-Dispatch} (Q\-String msg)
+\begin{DoxyCompactList}\small\item\em Dispatch a message. \end{DoxyCompactList}\item 
+void \hyperlink{classNetworkToQtInterface_a1e20584cc20259fa76c180e087dc1a9f}{finished} ()
+\begin{DoxyCompactList}\small\item\em Finish thread execution. \end{DoxyCompactList}\item 
+void \hyperlink{classNetworkToQtInterface_a889713b57c1e461e7191add0820bb338}{server\-Disconnected} ()
+\begin{DoxyCompactList}\small\item\em Server has disconnected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNetworkToQtInterface_a35d74d050d8317ad3643f56ca51dd400}{Network\-To\-Qt\-Interface} ()
+\begin{DoxyCompactList}\small\item\em Default value constructor. \end{DoxyCompactList}\item 
+\hyperlink{classNetworkToQtInterface_aa979e45a30e3fd430b5bc4298aa1831e}{Network\-To\-Qt\-Interface} (\hyperlink{classAddress}{Address} server\-\_\-address)
+\begin{DoxyCompactList}\small\item\em Explicit value constructor. \end{DoxyCompactList}\item 
+\hyperlink{classNetworkToQtInterface_a1af69a269ee8405c5786696846786e09}{$\sim$\-Network\-To\-Qt\-Interface} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classNetworkToQtInterface_a756963d2d3590e52e5fbef2114066068}{Connect} ()
+\begin{DoxyCompactList}\small\item\em Connect to a server. \end{DoxyCompactList}\item 
+bool \hyperlink{classNetworkToQtInterface_af61a9805badd3d508f8f9619dc66f82d}{Connect} (\hyperlink{classAddress}{Address} server\-\_\-address)
+\begin{DoxyCompactList}\small\item\em Connect to a specific server. \end{DoxyCompactList}\item 
+bool \hyperlink{classNetworkToQtInterface_a2584e2afdb435bd83b9bd9bbec6214c3}{is\-Connected} () const 
+\begin{DoxyCompactList}\small\item\em Connection status. \end{DoxyCompactList}\item 
+void \hyperlink{classNetworkToQtInterface_aed3e3b56739941d40dd8f222f2bfc394}{set\-Buffer} (Q\-String \&data)
+\begin{DoxyCompactList}\small\item\em Set the internal message buffer. \end{DoxyCompactList}\item 
+void \hyperlink{classNetworkToQtInterface_aa1fc46b9d7bf2e5c219ff36808c555eb}{set\-Server\-Address} (\hyperlink{classAddress}{Address} \&addr)
+\begin{DoxyCompactList}\small\item\em Set the server address. \end{DoxyCompactList}\item 
+void \hyperlink{classNetworkToQtInterface_a9276c7187edac88dfa06e08f883bc39e}{send\-Message} (const Q\-String \&msg)
+\begin{DoxyCompactList}\small\item\em Directly send a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classNetworkToQtInterface}{Network\-To\-Qt\-Interface} class. 
+
+An interface between Qt and the underlying T\-C\-P client. Objects of this class generally should be moved into another thread before used by connecting a Q\-Thread object's start signal with the \hyperlink{classNetworkToQtInterface_ae998c02ca1c22313b0abc90fc4b7c2a6}{proc\-Request()} slot. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNetworkToQtInterface_a35d74d050d8317ad3643f56ca51dd400}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}}
+\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{Network\-To\-Qt\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}Network\-To\-Qt\-Interface\-::\-Network\-To\-Qt\-Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNetworkToQtInterface_a35d74d050d8317ad3643f56ca51dd400}
+
+
+Default value constructor. 
+
+
+\begin{DoxyCode}
+7                                            :
+8     m\_connection\_timeout(\textcolor{keyword}{false}),
+9     m\_buffer(\textcolor{stringliteral}{"Buffer"})
+10 \{
+11 
+12 \}
+\end{DoxyCode}
+\hypertarget{classNetworkToQtInterface_aa979e45a30e3fd430b5bc4298aa1831e}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}}
+\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{Network\-To\-Qt\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}Network\-To\-Qt\-Interface\-::\-Network\-To\-Qt\-Interface (
+\begin{DoxyParamCaption}
+\item[{{\bf Address}}]{server\-\_\-address}
+\end{DoxyParamCaption}
+)}}\label{classNetworkToQtInterface_aa979e45a30e3fd430b5bc4298aa1831e}
+
+
+Explicit value constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\-\_\-address} & The address to connect to. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+14                                                                  :
+15     m\_server\_address(server\_address),
+16     m\_connection\_timeout(\textcolor{keyword}{false}),
+17     m\_buffer(\textcolor{stringliteral}{"Buffer"})
+18 \{
+19 
+20 \}
+\end{DoxyCode}
+\hypertarget{classNetworkToQtInterface_a1af69a269ee8405c5786696846786e09}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!$\sim$\-Network\-To\-Qt\-Interface@{$\sim$\-Network\-To\-Qt\-Interface}}
+\index{$\sim$\-Network\-To\-Qt\-Interface@{$\sim$\-Network\-To\-Qt\-Interface}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{$\sim$\-Network\-To\-Qt\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}Network\-To\-Qt\-Interface\-::$\sim$\-Network\-To\-Qt\-Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNetworkToQtInterface_a1af69a269ee8405c5786696846786e09}
+
+
+Destructor. 
+
+
+\begin{DoxyCode}
+23 \{
+24     \textcolor{comment}{//Delete members}
+25     \textcolor{comment}{//delete m\_response\_loop;}
+26 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classNetworkToQtInterface_ac4889eb9f3c5b5e4509252481335200f}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!close@{close}}
+\index{close@{close}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-To\-Qt\-Interface\-::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classNetworkToQtInterface_ac4889eb9f3c5b5e4509252481335200f}
+
+
+Disconnect from server. 
+
+Slot which will disconnect from the server. 
+\begin{DoxyCode}
+56 \{
+57     \textcolor{comment}{//Close the connection}
+58     m\_tcp\_client.\hyperlink{classTCPClient_aeef43b15ef57aefead37ff7300ebc779}{disconnect}();
+59     \textcolor{comment}{//emit messageDispatch("Disconnected from server!");}
+60 \}
+\end{DoxyCode}
+\hypertarget{classNetworkToQtInterface_a756963d2d3590e52e5fbef2114066068}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!Connect@{Connect}}
+\index{Connect@{Connect}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}bool Network\-To\-Qt\-Interface\-::\-Connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNetworkToQtInterface_a756963d2d3590e52e5fbef2114066068}
+
+
+Connect to a server. 
+
+Connect to the server whose address is represented by the field m\-\_\-server\-\_\-address. \begin{DoxyReturn}{Returns}
+True if connection succeeded, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{comment}{//m\_connection\_timeout = false;}
+39     \textcolor{comment}{//Start a one shot timer to timeout after 10 seconds}
+40    \textcolor{comment}{// QTimer::singleShot(1000, this, SLOT(connectionTimeout()));}
+41     \textcolor{comment}{//Attempt to connect}
+42     \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569}{TCPError} connected = m\_tcp\_client.\hyperlink{classTCPClient_adb1706d816b7810d28ef9eeab77a423b}{connectToServer}(m\_server\_address);
+43 
+44 \textcolor{comment}{//    if(connected == TCP\_STATUS\_SUCCESS)}
+45 \textcolor{comment}{//    \{}
+46 \textcolor{comment}{//        emit messageDispatch("Connected!");}
+47 \textcolor{comment}{//    \}}
+48 \textcolor{comment}{//    else}
+49 \textcolor{comment}{//    \{}
+50 \textcolor{comment}{//        emit messageDispatch("Unable to connect!");}
+51 \textcolor{comment}{//    \}}
+52     \textcolor{keywordflow}{return} connected == \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569a12de2815c3e64df634ac4d26a0bb2007}{TCP\_STATUS\_SUCCESS};
+53 \}
+\end{DoxyCode}
+\hypertarget{classNetworkToQtInterface_af61a9805badd3d508f8f9619dc66f82d}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!Connect@{Connect}}
+\index{Connect@{Connect}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}bool Network\-To\-Qt\-Interface\-::\-Connect (
+\begin{DoxyParamCaption}
+\item[{{\bf Address}}]{server\-\_\-address}
+\end{DoxyParamCaption}
+)}}\label{classNetworkToQtInterface_af61a9805badd3d508f8f9619dc66f82d}
+
+
+Connect to a specific server. 
+
+Connect to the server represented by the parameter server\-\_\-address. 
+\begin{DoxyParams}{Parameters}
+{\em server\-\_\-address} & The address to connect to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if connection succeeded, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{classNetworkToQtInterface_a3413c676b1bb27ddc2df47128cf68c5d}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!connection\-Timeout@{connection\-Timeout}}
+\index{connection\-Timeout@{connection\-Timeout}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{connection\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-To\-Qt\-Interface\-::connection\-Timeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classNetworkToQtInterface_a3413c676b1bb27ddc2df47128cf68c5d}
+
+
+Timeout the connection. 
+
+Slot which will set an internal flag indicating that the connection has timed out. 
+\begin{DoxyCode}
+79 \{
+80     m\_connection\_timeout = \textcolor{keyword}{true};
+81 \}
+\end{DoxyCode}
+\hypertarget{classNetworkToQtInterface_a1e20584cc20259fa76c180e087dc1a9f}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!finished@{finished}}
+\index{finished@{finished}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{finished}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-To\-Qt\-Interface\-::finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classNetworkToQtInterface_a1e20584cc20259fa76c180e087dc1a9f}
+
+
+Finish thread execution. 
+
+Signal to indicate end of execution of the \hyperlink{classNetworkToQtInterface_ae998c02ca1c22313b0abc90fc4b7c2a6}{proc\-Request()} sequence. \hypertarget{classNetworkToQtInterface_a2584e2afdb435bd83b9bd9bbec6214c3}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!is\-Connected@{is\-Connected}}
+\index{is\-Connected@{is\-Connected}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{is\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool Network\-To\-Qt\-Interface\-::is\-Connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNetworkToQtInterface_a2584e2afdb435bd83b9bd9bbec6214c3}
+
+
+Connection status. 
+
+Indicate whether or not this object is connected to a server. \begin{DoxyReturn}{Returns}
+True if connected to a server, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+127 \{
+128     \textcolor{keywordflow}{return} m\_tcp\_client.\hyperlink{classTCPClient_a30054a07061dfe22e7a9a7783a843bcc}{isConnected}();
+129 \}
+\end{DoxyCode}
+\hypertarget{classNetworkToQtInterface_a254dd8693e87acd8b05fc36d154b3393}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!message\-Dispatch@{message\-Dispatch}}
+\index{message\-Dispatch@{message\-Dispatch}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{message\-Dispatch}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-To\-Qt\-Interface\-::message\-Dispatch (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classNetworkToQtInterface_a254dd8693e87acd8b05fc36d154b3393}
+
+
+Dispatch a message. 
+
+Signal that is emitted when an event occurs in the \hyperlink{classNetworkToQtInterface_ae998c02ca1c22313b0abc90fc4b7c2a6}{proc\-Request()} sequence that will send a message containing information about the current state of execution (i.\-e. server response, error messages) 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to send to connected handlers. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetworkToQtInterface_ae998c02ca1c22313b0abc90fc4b7c2a6}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!proc\-Request@{proc\-Request}}
+\index{proc\-Request@{proc\-Request}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{proc\-Request}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-To\-Qt\-Interface\-::proc\-Request (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classNetworkToQtInterface_ae998c02ca1c22313b0abc90fc4b7c2a6}
+
+
+Process a request/response sequence. 
+
+A slot which will begin a request response sequence; A message is attempted to be sent to the server. If successful, this function will wait until the server responds, and will emit a message\-Dispatch signal with either the server's response or an error message. 
+\begin{DoxyCode}
+63 \{
+64     \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569}{TCPError} status = \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569a12de2815c3e64df634ac4d26a0bb2007}{TCP\_STATUS\_SUCCESS};
+65     \textcolor{comment}{//First, send the request}
+66     m\_buffer.append(\textcolor{charliteral}{'\(\backslash\)n'});
+67     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *data = m\_buffer.toStdString().c\_str();
+68     \textcolor{comment}{//INFO() << "Just before send... Data:" << data;}
+69     status = m\_tcp\_client.\hyperlink{classTCPClient_a23a640eac58e631288cdeb479416e0ed}{Send}(data, strlen(data));
+70     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"After send. STATUS: "} << status;
+71     \textcolor{comment}{//Handle error}
+72     \textcolor{comment}{//check for a request for 5 seconds}
+73     \textcolor{comment}{//Set up timer}
+74     this->setUpTimer();
+75     this->m\_response\_loop->\hyperlink{classTickingTimer_a0f7c3da243271bcd1ffa833ebdc9c3a4}{startTicking}(500);
+76 \}
+\end{DoxyCode}
+\hypertarget{classNetworkToQtInterface_aac3748797653d3164ff714edafda229a}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!receive\-Finished@{receive\-Finished}}
+\index{receive\-Finished@{receive\-Finished}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{receive\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-To\-Qt\-Interface\-::receive\-Finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classNetworkToQtInterface_aac3748797653d3164ff714edafda229a}
+\hypertarget{classNetworkToQtInterface_a9276c7187edac88dfa06e08f883bc39e}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!send\-Message@{send\-Message}}
+\index{send\-Message@{send\-Message}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{send\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-To\-Qt\-Interface\-::send\-Message (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{msg}
+\end{DoxyParamCaption}
+)}}\label{classNetworkToQtInterface_a9276c7187edac88dfa06e08f883bc39e}
+
+
+Directly send a message. 
+
+Immediately send the message msg to the server this object is connected to, or send nothing if not connected to a server. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to send \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+142 \{
+143     \textcolor{keywordflow}{if}(m\_tcp\_client.\hyperlink{classTCPClient_a30054a07061dfe22e7a9a7783a843bcc}{isConnected}())
+144         m\_tcp\_client.\hyperlink{classTCPClient_a23a640eac58e631288cdeb479416e0ed}{Send}(msg.toStdString().c\_str(), msg.size());
+145 \}
+\end{DoxyCode}
+\hypertarget{classNetworkToQtInterface_a889713b57c1e461e7191add0820bb338}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!server\-Disconnected@{server\-Disconnected}}
+\index{server\-Disconnected@{server\-Disconnected}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{server\-Disconnected}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-To\-Qt\-Interface\-::server\-Disconnected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classNetworkToQtInterface_a889713b57c1e461e7191add0820bb338}
+
+
+Server has disconnected. 
+
+Signal to indicate that the server has disconnected. \hypertarget{classNetworkToQtInterface_aed3e3b56739941d40dd8f222f2bfc394}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!set\-Buffer@{set\-Buffer}}
+\index{set\-Buffer@{set\-Buffer}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{set\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-To\-Qt\-Interface\-::set\-Buffer (
+\begin{DoxyParamCaption}
+\item[{Q\-String \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classNetworkToQtInterface_aed3e3b56739941d40dd8f222f2bfc394}
+
+
+Set the internal message buffer. 
+
+Set the internal buffer containing the message to be sent to the server. This internal buffer is used when the \hyperlink{classNetworkToQtInterface_ae998c02ca1c22313b0abc90fc4b7c2a6}{proc\-Request()} slot is invoked, generally when the thread that an object of \hyperlink{classNetworkToQtInterface}{Network\-To\-Qt\-Interface} type is moved to issues it's start signal. 
+\begin{DoxyParams}{Parameters}
+{\em data} & The message to send to the server. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+132 \{
+133     m\_buffer = data;
+134 \}
+\end{DoxyCode}
+\hypertarget{classNetworkToQtInterface_aa1fc46b9d7bf2e5c219ff36808c555eb}{\index{Network\-To\-Qt\-Interface@{Network\-To\-Qt\-Interface}!set\-Server\-Address@{set\-Server\-Address}}
+\index{set\-Server\-Address@{set\-Server\-Address}!NetworkToQtInterface@{Network\-To\-Qt\-Interface}}
+\subsubsection[{set\-Server\-Address}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-To\-Qt\-Interface\-::set\-Server\-Address (
+\begin{DoxyParamCaption}
+\item[{{\bf Address} \&}]{addr}
+\end{DoxyParamCaption}
+)}}\label{classNetworkToQtInterface_aa1fc46b9d7bf2e5c219ff36808c555eb}
+
+
+Set the server address. 
+
+Set the server address that this object should connect to when the \hyperlink{classNetworkToQtInterface_a756963d2d3590e52e5fbef2114066068}{Connect()} call is made. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & The address to set. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+137 \{
+138     this->m\_server\_address = addr;
+139 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Network/\hyperlink{networktoqtinterface_8h}{networktoqtinterface.\-h}\item 
+Network/\hyperlink{networktoqtinterface_8cpp}{networktoqtinterface.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,98 @@
+\hypertarget{structutf8__writer}{\section{utf8\-\_\-writer Struct Reference}
+\label{structutf8__writer}\index{utf8\-\_\-writer@{utf8\-\_\-writer}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\-\_\-t $\ast$ \hyperlink{structutf8__writer_af25ec3c651f9a4a3f193573a4e95002b}{value\-\_\-type}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structutf8__writer_af25ec3c651f9a4a3f193573a4e95002b}{value\-\_\-type} \hyperlink{structutf8__writer_ac4ec52da6f37225ba4fde259bff2f86c}{low} (\hyperlink{structutf8__writer_af25ec3c651f9a4a3f193573a4e95002b}{value\-\_\-type} result, uint32\-\_\-t ch)
+\item 
+static \hyperlink{structutf8__writer_af25ec3c651f9a4a3f193573a4e95002b}{value\-\_\-type} \hyperlink{structutf8__writer_ac03dfaf797d599afdf0be7def86ff9b9}{high} (\hyperlink{structutf8__writer_af25ec3c651f9a4a3f193573a4e95002b}{value\-\_\-type} result, uint32\-\_\-t ch)
+\item 
+static \hyperlink{structutf8__writer_af25ec3c651f9a4a3f193573a4e95002b}{value\-\_\-type} \hyperlink{structutf8__writer_a288e9c5f3720b95ae6b77330ad38dd56}{any} (\hyperlink{structutf8__writer_af25ec3c651f9a4a3f193573a4e95002b}{value\-\_\-type} result, uint32\-\_\-t ch)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{structutf8__writer_af25ec3c651f9a4a3f193573a4e95002b}{\index{utf8\-\_\-writer@{utf8\-\_\-writer}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!utf8_writer@{utf8\-\_\-writer}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\-\_\-t$\ast$ {\bf utf8\-\_\-writer\-::value\-\_\-type}}}\label{structutf8__writer_af25ec3c651f9a4a3f193573a4e95002b}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structutf8__writer_a288e9c5f3720b95ae6b77330ad38dd56}{\index{utf8\-\_\-writer@{utf8\-\_\-writer}!any@{any}}
+\index{any@{any}!utf8_writer@{utf8\-\_\-writer}}
+\subsubsection[{any}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf value\-\_\-type} utf8\-\_\-writer\-::any (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type}}]{result, }
+\item[{uint32\-\_\-t}]{ch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structutf8__writer_a288e9c5f3720b95ae6b77330ad38dd56}
+
+\begin{DoxyCode}
+716         \{
+717             \textcolor{keywordflow}{return} (ch < 0x10000) ? \hyperlink{structutf8__writer_ac4ec52da6f37225ba4fde259bff2f86c}{low}(result, ch) : \hyperlink{structutf8__writer_ac03dfaf797d599afdf0be7def86ff9b9}{high}(result, ch);
+718         \}
+\end{DoxyCode}
+\hypertarget{structutf8__writer_ac03dfaf797d599afdf0be7def86ff9b9}{\index{utf8\-\_\-writer@{utf8\-\_\-writer}!high@{high}}
+\index{high@{high}!utf8_writer@{utf8\-\_\-writer}}
+\subsubsection[{high}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf value\-\_\-type} utf8\-\_\-writer\-::high (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type}}]{result, }
+\item[{uint32\-\_\-t}]{ch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structutf8__writer_ac03dfaf797d599afdf0be7def86ff9b9}
+
+\begin{DoxyCode}
+706         \{
+707             \textcolor{comment}{// U+10000..U+10FFFF}
+708             result[0] = \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(0xF0 | (ch >> 18));
+709             result[1] = \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(0x80 | ((ch >> 12) & 0x3F));
+710             result[2] = \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(0x80 | ((ch >> 6) & 0x3F));
+711             result[3] = \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(0x80 | (ch & 0x3F));
+712             \textcolor{keywordflow}{return} result + 4;
+713         \}
+\end{DoxyCode}
+\hypertarget{structutf8__writer_ac4ec52da6f37225ba4fde259bff2f86c}{\index{utf8\-\_\-writer@{utf8\-\_\-writer}!low@{low}}
+\index{low@{low}!utf8_writer@{utf8\-\_\-writer}}
+\subsubsection[{low}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf value\-\_\-type} utf8\-\_\-writer\-::low (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type}}]{result, }
+\item[{uint32\-\_\-t}]{ch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structutf8__writer_ac4ec52da6f37225ba4fde259bff2f86c}
+
+\begin{DoxyCode}
+681         \{
+682             \textcolor{comment}{// U+0000..U+007F}
+683             \textcolor{keywordflow}{if} (ch < 0x80)
+684             \{
+685                 *result = \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ch);
+686                 \textcolor{keywordflow}{return} result + 1;
+687             \}
+688             \textcolor{comment}{// U+0080..U+07FF}
+689             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch < 0x800)
+690             \{
+691                 result[0] = \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(0xC0 | (ch >> 6));
+692                 result[1] = \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(0x80 | (ch & 0x3F));
+693                 \textcolor{keywordflow}{return} result + 2;
+694             \}
+695             \textcolor{comment}{// U+0800..U+FFFF}
+696             \textcolor{keywordflow}{else}
+697             \{
+698                 result[0] = \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(0xE0 | (ch >> 12));
+699                 result[1] = \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(0x80 | ((ch >> 6) & 0x3F));
+700                 result[2] = \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(0x80 | (ch & 0x3F));
+701                 \textcolor{keywordflow}{return} result + 3;
+702             \}
+703         \}
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

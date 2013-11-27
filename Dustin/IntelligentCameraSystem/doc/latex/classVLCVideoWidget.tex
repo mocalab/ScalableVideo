@@ -1,0 +1,285 @@
+\hypertarget{classVLCVideoWidget}{\section{V\-L\-C\-Video\-Widget Class Reference}
+\label{classVLCVideoWidget}\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}}
+}
+
+
+{\ttfamily \#include $<$vlcvideowidget.\-h$>$}
+
+Inheritance diagram for V\-L\-C\-Video\-Widget\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classVLCVideoWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVLCVideoWidget_aff4501569b0e46b3641625c3c9bbd5c6}{video\-Resized} (int width, int height)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVLCVideoWidget_aeff3477d9c077d45b0ff8caea2514150}{resize\-Parent} (int width, int height)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVLCVideoWidget_a2ee422ecbf1d7c6a09c8c08461ae8f0d}{V\-L\-C\-Video\-Widget} (Q\-Widget $\ast$parent=0)
+\item 
+\hyperlink{classVLCVideoWidget_a2ad9c4a037fdb833b1b1f9ba71075d86}{$\sim$\-V\-L\-C\-Video\-Widget} ()
+\item 
+void \hyperlink{classVLCVideoWidget_a7eb5395abd53f19c012fea779b6bac1e}{play\-File} (Q\-String file)
+\item 
+void \hyperlink{classVLCVideoWidget_a1119aa3a41789fc1f4abe834e36c64df}{play\-Url} (Q\-String url)
+\item 
+void \hyperlink{classVLCVideoWidget_aefa842a30cbb11522428597c1f0608a0}{stop\-Playing} ()
+\item 
+bool \hyperlink{classVLCVideoWidget_a45fd49c0a63d1eeeaaff78ffd208ddad}{is\-Playing} ()
+\item 
+void \hyperlink{classVLCVideoWidget_a5fce57e1a69fd7371c7e0950d5bb14a8}{set\-Fps} (int fps)
+\item 
+int \hyperlink{classVLCVideoWidget_ac80ca2be7b8f96631f32827ab06e70a1}{get\-Fps} ()
+\item 
+void \hyperlink{classVLCVideoWidget_aff2bdf48d08757e6b86aa5f21eb43fb5}{set\-Playback\-Rate} (int fps)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVLCVideoWidget_ae6a2d91395f32ad7c80fb1839557da4f}{key\-Press\-Event} (Q\-Key\-Event $\ast$e)
+\item 
+void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Event} (Q\-Paint\-Event $\ast$e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVLCVideoWidget_a2ee422ecbf1d7c6a09c8c08461ae8f0d}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}}
+\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{V\-L\-C\-Video\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}V\-L\-C\-Video\-Widget\-::\-V\-L\-C\-Video\-Widget (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classVLCVideoWidget_a2ee422ecbf1d7c6a09c8c08461ae8f0d}
+
+\begin{DoxyCode}
+15                                               :
+16     QWidget(parent)
+17 \{
+18 
+19 \textcolor{comment}{//    //Set up sliders and timer}
+20 \textcolor{comment}{//    m\_volumeSlider=new QSlider(Qt::Horizontal,this);}
+21 \textcolor{comment}{//    m\_volumeSlider->setMaximum(100); //the volume is between 0 and 100}
+22 \textcolor{comment}{//    m\_volumeSlider->setToolTip("Audio slider");}
+23 
+24 \textcolor{comment}{//    // Note: if you use streaming, there is no ability to use the position slider}
+25 \textcolor{comment}{//    m\_positionSlider=new QSlider(Qt::Horizontal,this);}
+26 \textcolor{comment}{//    m\_positionSlider->setMaximum(POSITION\_RESOLUTION);}
+27 
+28     m\_poller = \textcolor{keyword}{new} QTimer(\textcolor{keyword}{this});
+29 
+30     \textcolor{comment}{//Get a qframe for the video widget}
+31     m\_videoWidget = \textcolor{keyword}{new} QFrame(\textcolor{keyword}{this});
+32 
+33     \textcolor{comment}{//Set up the box layout}
+34     \textcolor{comment}{//QVBoxLayout *layout = new QVBoxLayout;}
+35     \textcolor{comment}{//layout->addWidget(m\_videoWidget);}
+36 \textcolor{comment}{//    layout->addWidget(m\_volumeSlider);}
+37 \textcolor{comment}{//    layout->addWidget(m\_positionSlider);}
+38     \textcolor{comment}{//setLayout(layout);}
+39 
+40     \textcolor{comment}{//m\_videoWidget->setStyleSheet("background-color:black;");}
+41     m\_videoWidget->resize(\hyperlink{vlcvideowidget_8h_a2deec7650a0c6caf3c17a5ddf36d6460}{VIDEOWIDGET\_DEFAULT\_WIDTH}, 
+      \hyperlink{vlcvideowidget_8h_afea1bcfd5eabc718d60a92aee2cd7f50}{VIDEOWIDGET\_DEFAULT\_HEIGHT});
+42     \textcolor{comment}{//Signals and slots connections}
+43 \textcolor{comment}{//    connect(m\_poller, SIGNAL(timeout()), this, SLOT(updateInterface()));}
+44 \textcolor{comment}{//    connect(m\_volumeSlider, SIGNAL(sliderMoved(int)), this, SLOT(changeVolume(int)));}
+45 \textcolor{comment}{//    connect(m\_positionSlider, SIGNAL(sliderMoved(int)), this, SLOT(changePosition(int)));}
+46     m\_vlc\_interface = \textcolor{keyword}{new} \hyperlink{classVLCToQtInterface}{VLCToQtInterface}(m\_videoWidget->width(), m\_videoWidget->height())
+      ;
+47     m\_vlc\_interface->\hyperlink{classVLCToQtInterface_aaf25e1804b120924ad8b49e36e2bfa8c}{initialize}();
+48     m\_poller->start(10);
+49 
+50     connect(m\_vlc\_interface, SIGNAL(resizeFrame(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classVLCVideoWidget_aff4501569b0e46b3641625c3c9bbd5c6}{videoResized}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})));
+51 \}
+\end{DoxyCode}
+\hypertarget{classVLCVideoWidget_a2ad9c4a037fdb833b1b1f9ba71075d86}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!$\sim$\-V\-L\-C\-Video\-Widget@{$\sim$\-V\-L\-C\-Video\-Widget}}
+\index{$\sim$\-V\-L\-C\-Video\-Widget@{$\sim$\-V\-L\-C\-Video\-Widget}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{$\sim$\-V\-L\-C\-Video\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}V\-L\-C\-Video\-Widget\-::$\sim$\-V\-L\-C\-Video\-Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCVideoWidget_a2ad9c4a037fdb833b1b1f9ba71075d86}
+
+\begin{DoxyCode}
+54 \{
+55     this->\hyperlink{classVLCVideoWidget_aefa842a30cbb11522428597c1f0608a0}{stopPlaying}();
+56     \textcolor{keyword}{delete} m\_videoWidget;
+57     \textcolor{comment}{//delete m\_volumeSlider;}
+58     m\_poller->stop();
+59     \textcolor{keyword}{delete} m\_poller;
+60     \textcolor{comment}{//delete m\_positionSlider;}
+61     \textcolor{keyword}{delete} m\_vlc\_interface;
+62 
+63 
+64 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVLCVideoWidget_ac80ca2be7b8f96631f32827ab06e70a1}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!get\-Fps@{get\-Fps}}
+\index{get\-Fps@{get\-Fps}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{get\-Fps}]{\setlength{\rightskip}{0pt plus 5cm}int V\-L\-C\-Video\-Widget\-::get\-Fps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCVideoWidget_ac80ca2be7b8f96631f32827ab06e70a1}
+
+\begin{DoxyCode}
+96 \{
+97     \textcolor{keywordflow}{return} m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a197424c4ed7a829ee6d7d8afa9b377ef}{getFps}();
+98 \}
+\end{DoxyCode}
+\hypertarget{classVLCVideoWidget_a45fd49c0a63d1eeeaaff78ffd208ddad}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!is\-Playing@{is\-Playing}}
+\index{is\-Playing@{is\-Playing}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{is\-Playing}]{\setlength{\rightskip}{0pt plus 5cm}bool V\-L\-C\-Video\-Widget\-::is\-Playing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCVideoWidget_a45fd49c0a63d1eeeaaff78ffd208ddad}
+
+\begin{DoxyCode}
+86 \{
+87     \textcolor{keywordflow}{return} this->m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a10bc62d5d355788f700c7f45ba0713e8}{isPlaying}();
+88 \}
+\end{DoxyCode}
+\hypertarget{classVLCVideoWidget_ae6a2d91395f32ad7c80fb1839557da4f}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!key\-Press\-Event@{key\-Press\-Event}}
+\index{key\-Press\-Event@{key\-Press\-Event}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{key\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-Video\-Widget\-::key\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Key\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVLCVideoWidget_ae6a2d91395f32ad7c80fb1839557da4f}
+
+\begin{DoxyCode}
+135 \{
+136     \textcolor{keywordflow}{if}(e->key() == Qt::Key\_Down)
+137     \{
+138         this->\hyperlink{classVLCVideoWidget_aefa842a30cbb11522428597c1f0608a0}{stopPlaying}();
+139     \}
+140 \}
+\end{DoxyCode}
+\hypertarget{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!paint\-Event@{paint\-Event}}
+\index{paint\-Event@{paint\-Event}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{paint\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-Video\-Widget\-::paint\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Paint\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}
+
+\begin{DoxyCode}
+115 \{
+116     QStyleOption opt;
+117     opt.init(\textcolor{keyword}{this});
+118     QPainter p(\textcolor{keyword}{this});
+119     style()->drawPrimitive(QStyle::PE\_Widget, &opt, &p, \textcolor{keyword}{this});
+120 \}
+\end{DoxyCode}
+\hypertarget{classVLCVideoWidget_a7eb5395abd53f19c012fea779b6bac1e}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!play\-File@{play\-File}}
+\index{play\-File@{play\-File}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{play\-File}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-Video\-Widget\-::play\-File (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{file}
+\end{DoxyParamCaption}
+)}}\label{classVLCVideoWidget_a7eb5395abd53f19c012fea779b6bac1e}
+
+\begin{DoxyCode}
+67 \{
+68     m\_vlc\_interface->\hyperlink{classVLCToQtInterface_aea363afecbe6e3b47211eb94d9b918c6}{setMediaToFile}(file.toStdString().c\_str());
+69     this->openMedia();
+70 \}
+\end{DoxyCode}
+\hypertarget{classVLCVideoWidget_a1119aa3a41789fc1f4abe834e36c64df}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!play\-Url@{play\-Url}}
+\index{play\-Url@{play\-Url}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{play\-Url}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-Video\-Widget\-::play\-Url (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{url}
+\end{DoxyParamCaption}
+)}}\label{classVLCVideoWidget_a1119aa3a41789fc1f4abe834e36c64df}
+
+\begin{DoxyCode}
+73 \{
+74     m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a782ba1a8e8d174bd0fabc4d292b6e40e}{setMediaToUrl}(url.toStdString().c\_str());
+75     this->openMedia();
+76 \}
+\end{DoxyCode}
+\hypertarget{classVLCVideoWidget_aeff3477d9c077d45b0ff8caea2514150}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!resize\-Parent@{resize\-Parent}}
+\index{resize\-Parent@{resize\-Parent}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{resize\-Parent}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-Video\-Widget\-::resize\-Parent (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classVLCVideoWidget_aeff3477d9c077d45b0ff8caea2514150}
+\hypertarget{classVLCVideoWidget_a5fce57e1a69fd7371c7e0950d5bb14a8}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!set\-Fps@{set\-Fps}}
+\index{set\-Fps@{set\-Fps}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{set\-Fps}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-Video\-Widget\-::set\-Fps (
+\begin{DoxyParamCaption}
+\item[{int}]{fps}
+\end{DoxyParamCaption}
+)}}\label{classVLCVideoWidget_a5fce57e1a69fd7371c7e0950d5bb14a8}
+
+\begin{DoxyCode}
+91 \{
+92     this->m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a1193d87a92a558d51efc62e6f5639f0a}{setFps}(fps);
+93 \}
+\end{DoxyCode}
+\hypertarget{classVLCVideoWidget_aff2bdf48d08757e6b86aa5f21eb43fb5}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!set\-Playback\-Rate@{set\-Playback\-Rate}}
+\index{set\-Playback\-Rate@{set\-Playback\-Rate}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{set\-Playback\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-Video\-Widget\-::set\-Playback\-Rate (
+\begin{DoxyParamCaption}
+\item[{int}]{fps}
+\end{DoxyParamCaption}
+)}}\label{classVLCVideoWidget_aff2bdf48d08757e6b86aa5f21eb43fb5}
+
+\begin{DoxyCode}
+101 \{
+102     this->m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a7928cd122995dd11f7128a768de6015c}{setPlaybackRate}(fps);
+103 \}
+\end{DoxyCode}
+\hypertarget{classVLCVideoWidget_aefa842a30cbb11522428597c1f0608a0}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!stop\-Playing@{stop\-Playing}}
+\index{stop\-Playing@{stop\-Playing}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{stop\-Playing}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-Video\-Widget\-::stop\-Playing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCVideoWidget_aefa842a30cbb11522428597c1f0608a0}
+
+\begin{DoxyCode}
+80 \{
+81     \textcolor{keywordflow}{if}(m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a10bc62d5d355788f700c7f45ba0713e8}{isPlaying}())
+82         m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a59428645eef3ef14c957a35f5f71a14e}{stop}();
+83 \}
+\end{DoxyCode}
+\hypertarget{classVLCVideoWidget_aff4501569b0e46b3641625c3c9bbd5c6}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!video\-Resized@{video\-Resized}}
+\index{video\-Resized@{video\-Resized}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{video\-Resized}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-Video\-Widget\-::video\-Resized (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVLCVideoWidget_aff4501569b0e46b3641625c3c9bbd5c6}
+
+\begin{DoxyCode}
+106 \{
+107     m\_videoWidget->resize(width, height);
+108     this->resize(width, height);
+109     \textcolor{comment}{//Signal to resize parent}
+110     emit \hyperlink{classVLCVideoWidget_aeff3477d9c077d45b0ff8caea2514150}{resizeParent}(width, height);
+111 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+U\-I/\hyperlink{vlcvideowidget_8h}{vlcvideowidget.\-h}\item 
+U\-I/\hyperlink{vlcvideowidget_8cpp}{vlcvideowidget.\-cpp}\end{DoxyCompactItemize}

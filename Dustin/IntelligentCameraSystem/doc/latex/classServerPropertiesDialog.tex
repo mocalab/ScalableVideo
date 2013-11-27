@@ -1,0 +1,108 @@
+\hypertarget{classServerPropertiesDialog}{\section{Server\-Properties\-Dialog Class Reference}
+\label{classServerPropertiesDialog}\index{Server\-Properties\-Dialog@{Server\-Properties\-Dialog}}
+}
+
+
+{\ttfamily \#include $<$serverpropertiesdialog.\-h$>$}
+
+Inheritance diagram for Server\-Properties\-Dialog\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classServerPropertiesDialog}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classServerPropertiesDialog_aedeacbc38d85372d3fc543ca4537ed72}{Server\-Properties\-Dialog} (Q\-Widget $\ast$parent=0)
+\item 
+\hyperlink{classServerPropertiesDialog_abbf1b205ce936945c54ef51bf638ff07}{$\sim$\-Server\-Properties\-Dialog} ()
+\item 
+Q\-String \hyperlink{classServerPropertiesDialog_ae2fe6ffc4e0c04a9043a14a96f6aa5e9}{get\-Host\-Name} () const 
+\item 
+int \hyperlink{classServerPropertiesDialog_a00869f1fe5e8418017acfa6f351020d1}{get\-Port} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classServerPropertiesDialog_aedeacbc38d85372d3fc543ca4537ed72}{\index{Server\-Properties\-Dialog@{Server\-Properties\-Dialog}!Server\-Properties\-Dialog@{Server\-Properties\-Dialog}}
+\index{Server\-Properties\-Dialog@{Server\-Properties\-Dialog}!ServerPropertiesDialog@{Server\-Properties\-Dialog}}
+\subsubsection[{Server\-Properties\-Dialog}]{\setlength{\rightskip}{0pt plus 5cm}Server\-Properties\-Dialog\-::\-Server\-Properties\-Dialog (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classServerPropertiesDialog_aedeacbc38d85372d3fc543ca4537ed72}
+
+\begin{DoxyCode}
+5                                                               :
+6     QDialog(parent),
+7     ui(\textcolor{keyword}{new} Ui::ServerPropertiesDialog),
+8     m\_file\_util(\textcolor{keyword}{new} \hyperlink{classServerConfigFileUtil}{ServerConfigFileUtil}),
+9     m\_file\_name(QString(\textcolor{stringliteral}{"
+      /home/dustin/QtWorkspace/misc-applications/VideoStreamController/Config/server\_config.xml"}))
+10 \{
+11     ui->setupUi(\textcolor{keyword}{this});
+12     connect(\textcolor{keyword}{this}, SIGNAL(accepted()), \textcolor{keyword}{this}, SLOT(acceptedClicked()));
+13     \textcolor{comment}{//Attempt to load server properties}
+14     \textcolor{keywordtype}{bool} loaded = m\_file\_util->\hyperlink{classServerConfigFileUtil_a9b089be8defbadfd37fcdefee8b22ade}{loadDocument}(m\_file\_name.toStdString().c\_str());
+15     \textcolor{keywordflow}{if}(loaded)
+16     \{
+17         \hyperlink{serverconfigfileutil_8h_a90d1af3762c28656b0507bb3a650f96e}{AddressList} servers = m\_file\_util->\hyperlink{classServerConfigFileUtil_a1eaba4990950df8f21ee8ae99b638a9d}{getServerInfo}();
+18         \hyperlink{serverconfigfileutil_8h_aa849a66e29fe72431879f7d9d8ccda63}{AddressListIter} first\_node = servers.begin();
+19         m\_port = first\_node->getPort();
+20         m\_host\_name = QString(first\_node->getAddress().c\_str());
+21         ui->leHost->setText(m\_host\_name);
+22         ui->lePort->setText(QString::number(m\_port));
+23 
+24     \}
+25 \}
+\end{DoxyCode}
+\hypertarget{classServerPropertiesDialog_abbf1b205ce936945c54ef51bf638ff07}{\index{Server\-Properties\-Dialog@{Server\-Properties\-Dialog}!$\sim$\-Server\-Properties\-Dialog@{$\sim$\-Server\-Properties\-Dialog}}
+\index{$\sim$\-Server\-Properties\-Dialog@{$\sim$\-Server\-Properties\-Dialog}!ServerPropertiesDialog@{Server\-Properties\-Dialog}}
+\subsubsection[{$\sim$\-Server\-Properties\-Dialog}]{\setlength{\rightskip}{0pt plus 5cm}Server\-Properties\-Dialog\-::$\sim$\-Server\-Properties\-Dialog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classServerPropertiesDialog_abbf1b205ce936945c54ef51bf638ff07}
+
+\begin{DoxyCode}
+28 \{
+29     \textcolor{keyword}{delete} ui;
+30     \textcolor{keyword}{delete} m\_file\_util;
+31 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classServerPropertiesDialog_ae2fe6ffc4e0c04a9043a14a96f6aa5e9}{\index{Server\-Properties\-Dialog@{Server\-Properties\-Dialog}!get\-Host\-Name@{get\-Host\-Name}}
+\index{get\-Host\-Name@{get\-Host\-Name}!ServerPropertiesDialog@{Server\-Properties\-Dialog}}
+\subsubsection[{get\-Host\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Server\-Properties\-Dialog\-::get\-Host\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classServerPropertiesDialog_ae2fe6ffc4e0c04a9043a14a96f6aa5e9}
+
+\begin{DoxyCode}
+34 \{
+35     \textcolor{keywordflow}{return} m\_host\_name;
+36 \}
+\end{DoxyCode}
+\hypertarget{classServerPropertiesDialog_a00869f1fe5e8418017acfa6f351020d1}{\index{Server\-Properties\-Dialog@{Server\-Properties\-Dialog}!get\-Port@{get\-Port}}
+\index{get\-Port@{get\-Port}!ServerPropertiesDialog@{Server\-Properties\-Dialog}}
+\subsubsection[{get\-Port}]{\setlength{\rightskip}{0pt plus 5cm}int Server\-Properties\-Dialog\-::get\-Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classServerPropertiesDialog_a00869f1fe5e8418017acfa6f351020d1}
+
+\begin{DoxyCode}
+38 \{
+39     \textcolor{keywordflow}{return} m\_port;
+40 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+U\-I/\hyperlink{serverpropertiesdialog_8h}{serverpropertiesdialog.\-h}\item 
+U\-I/\hyperlink{serverpropertiesdialog_8cpp}{serverpropertiesdialog.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,79 @@
+\hypertarget{structxpath__stack__data}{\section{xpath\-\_\-stack\-\_\-data Struct Reference}
+\label{structxpath__stack__data}\index{xpath\-\_\-stack\-\_\-data@{xpath\-\_\-stack\-\_\-data}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxpath__stack__data_aba4a588075a5ec45a3aa661b97d62ca6}{xpath\-\_\-stack\-\_\-data} ()
+\item 
+\hyperlink{structxpath__stack__data_a1df4e020ecc629b398336969c8490d98}{$\sim$xpath\-\_\-stack\-\_\-data} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxpath__memory__block}{xpath\-\_\-memory\-\_\-block} \hyperlink{structxpath__stack__data_a6821cc444dd65d997467fd3f757f4aff}{blocks} \mbox{[}2\mbox{]}
+\item 
+\hyperlink{classxpath__allocator}{xpath\-\_\-allocator} \hyperlink{structxpath__stack__data_ab073a685c66383ded44076993afe62d6}{result}
+\item 
+\hyperlink{classxpath__allocator}{xpath\-\_\-allocator} \hyperlink{structxpath__stack__data_a56e6bb486d52f4c5c2d02370e1b41058}{temp}
+\item 
+\hyperlink{structxpath__stack}{xpath\-\_\-stack} \hyperlink{structxpath__stack__data_ad26a92328f9aaf83fa62cb6695dbee90}{stack}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structxpath__stack__data_aba4a588075a5ec45a3aa661b97d62ca6}{\index{xpath\-\_\-stack\-\_\-data@{xpath\-\_\-stack\-\_\-data}!xpath\-\_\-stack\-\_\-data@{xpath\-\_\-stack\-\_\-data}}
+\index{xpath\-\_\-stack\-\_\-data@{xpath\-\_\-stack\-\_\-data}!xpath_stack_data@{xpath\-\_\-stack\-\_\-data}}
+\subsubsection[{xpath\-\_\-stack\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-stack\-\_\-data\-::xpath\-\_\-stack\-\_\-data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__stack__data_aba4a588075a5ec45a3aa661b97d62ca6}
+
+\begin{DoxyCode}
+5841                           : \hyperlink{structxpath__stack__data_ab073a685c66383ded44076993afe62d6}{result}(\hyperlink{structxpath__stack__data_a6821cc444dd65d997467fd3f757f4aff}{blocks} + 0), \hyperlink{structxpath__stack__data_a56e6bb486d52f4c5c2d02370e1b41058}{temp}(\hyperlink{structxpath__stack__data_a6821cc444dd65d997467fd3f757f4aff}{blocks} + 1)
+5842         \{
+5843             \hyperlink{structxpath__stack__data_a6821cc444dd65d997467fd3f757f4aff}{blocks}[0].\hyperlink{structxpath__memory__block_ab7f0d8400b40a51cdb063e76fd19a93c}{next} = \hyperlink{structxpath__stack__data_a6821cc444dd65d997467fd3f757f4aff}{blocks}[1].\hyperlink{structxpath__memory__block_ab7f0d8400b40a51cdb063e76fd19a93c}{next} = 0;
+5844 
+5845             \hyperlink{structxpath__stack__data_ad26a92328f9aaf83fa62cb6695dbee90}{stack}.\hyperlink{structxpath__stack_adce164b779cbb3d1bc093a772067ea7e}{result} = &\hyperlink{structxpath__stack__data_ab073a685c66383ded44076993afe62d6}{result};
+5846             \hyperlink{structxpath__stack__data_ad26a92328f9aaf83fa62cb6695dbee90}{stack}.\hyperlink{structxpath__stack_a48edd585dfb910c6c016559f07fea0d8}{temp} = &\hyperlink{structxpath__stack__data_a56e6bb486d52f4c5c2d02370e1b41058}{temp};
+5847 
+5848 \textcolor{preprocessor}{        #ifdef PUGIXML\_NO\_EXCEPTIONS}
+5849 \textcolor{preprocessor}{}            \hyperlink{structxpath__stack__data_ab073a685c66383ded44076993afe62d6}{result}.error\_handler = \hyperlink{structxpath__stack__data_a56e6bb486d52f4c5c2d02370e1b41058}{temp}.error\_handler = &error\_handler;
+5850 \textcolor{preprocessor}{        #endif}
+5851 \textcolor{preprocessor}{}        \}
+\end{DoxyCode}
+\hypertarget{structxpath__stack__data_a1df4e020ecc629b398336969c8490d98}{\index{xpath\-\_\-stack\-\_\-data@{xpath\-\_\-stack\-\_\-data}!$\sim$xpath\-\_\-stack\-\_\-data@{$\sim$xpath\-\_\-stack\-\_\-data}}
+\index{$\sim$xpath\-\_\-stack\-\_\-data@{$\sim$xpath\-\_\-stack\-\_\-data}!xpath_stack_data@{xpath\-\_\-stack\-\_\-data}}
+\subsubsection[{$\sim$xpath\-\_\-stack\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}xpath\-\_\-stack\-\_\-data\-::$\sim$xpath\-\_\-stack\-\_\-data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxpath__stack__data_a1df4e020ecc629b398336969c8490d98}
+
+\begin{DoxyCode}
+5854         \{
+5855             \hyperlink{structxpath__stack__data_ab073a685c66383ded44076993afe62d6}{result}.\hyperlink{classxpath__allocator_a9436b8bdef3e0e0ff0df28c2af6a430d}{release}();
+5856             \hyperlink{structxpath__stack__data_a56e6bb486d52f4c5c2d02370e1b41058}{temp}.\hyperlink{classxpath__allocator_a9436b8bdef3e0e0ff0df28c2af6a430d}{release}();
+5857         \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\hypertarget{structxpath__stack__data_a6821cc444dd65d997467fd3f757f4aff}{\index{xpath\-\_\-stack\-\_\-data@{xpath\-\_\-stack\-\_\-data}!blocks@{blocks}}
+\index{blocks@{blocks}!xpath_stack_data@{xpath\-\_\-stack\-\_\-data}}
+\subsubsection[{blocks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-memory\-\_\-block} xpath\-\_\-stack\-\_\-data\-::blocks\mbox{[}2\mbox{]}}}\label{structxpath__stack__data_a6821cc444dd65d997467fd3f757f4aff}
+\hypertarget{structxpath__stack__data_ab073a685c66383ded44076993afe62d6}{\index{xpath\-\_\-stack\-\_\-data@{xpath\-\_\-stack\-\_\-data}!result@{result}}
+\index{result@{result}!xpath_stack_data@{xpath\-\_\-stack\-\_\-data}}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-allocator} xpath\-\_\-stack\-\_\-data\-::result}}\label{structxpath__stack__data_ab073a685c66383ded44076993afe62d6}
+\hypertarget{structxpath__stack__data_ad26a92328f9aaf83fa62cb6695dbee90}{\index{xpath\-\_\-stack\-\_\-data@{xpath\-\_\-stack\-\_\-data}!stack@{stack}}
+\index{stack@{stack}!xpath_stack_data@{xpath\-\_\-stack\-\_\-data}}
+\subsubsection[{stack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-stack} xpath\-\_\-stack\-\_\-data\-::stack}}\label{structxpath__stack__data_ad26a92328f9aaf83fa62cb6695dbee90}
+\hypertarget{structxpath__stack__data_a56e6bb486d52f4c5c2d02370e1b41058}{\index{xpath\-\_\-stack\-\_\-data@{xpath\-\_\-stack\-\_\-data}!temp@{temp}}
+\index{temp@{temp}!xpath_stack_data@{xpath\-\_\-stack\-\_\-data}}
+\subsubsection[{temp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xpath\-\_\-allocator} xpath\-\_\-stack\-\_\-data\-::temp}}\label{structxpath__stack__data_a56e6bb486d52f4c5c2d02370e1b41058}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

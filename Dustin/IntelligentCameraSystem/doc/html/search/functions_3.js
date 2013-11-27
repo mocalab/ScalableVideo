@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['data',['data',['../classxpath__string.html#ade42a938746bcba171b70bfb88c3c568',1,'xpath_string::data()'],['../classpugi_1_1xml__text.html#a30ca257f1614159c625d2904a6285224',1,'pugi::xml_text::data()']]],
+  ['deallocate_5fmemory',['deallocate_memory',['../structxml__allocator.html#a5df417155487cce4e0460b123ac33dc6',1,'xml_allocator']]],
+  ['deallocate_5fpage',['deallocate_page',['../structxml__allocator.html#a1c6bfe15a257a094f55659f8d71c209e',1,'xml_allocator']]],
+  ['deallocate_5fstring',['deallocate_string',['../structxml__allocator.html#af32c538db4d562c2d0bfe15f7c0aa879',1,'xml_allocator']]],
+  ['decode_5flatin1_5fblock',['decode_latin1_block',['../structutf__decoder.html#a3f728755fa7cc552e30e8d8776cad1ce',1,'utf_decoder']]],
+  ['decode_5futf16_5fblock',['decode_utf16_block',['../structutf__decoder.html#ac22afd983ac79318f0e7d07669bda8d1',1,'utf_decoder']]],
+  ['decode_5futf32_5fblock',['decode_utf32_block',['../structutf__decoder.html#a8bed41cc707328e8d8ab91fd7c3c943e',1,'utf_decoder']]],
+  ['decode_5futf8_5fblock',['decode_utf8_block',['../structutf__decoder.html#a671829bbdba1eac5c8bd2bf781eae498',1,'utf_decoder']]],
+  ['decode_5fwchar_5fblock',['decode_wchar_block',['../structutf__decoder.html#a5953fd0661c64408e08161342e4c538d',1,'utf_decoder']]],
+  ['decode_5fwchar_5fblock_5fimpl',['decode_wchar_block_impl',['../structutf__decoder.html#a56b161067860fde1ed534ac3b7399e36',1,'utf_decoder::decode_wchar_block_impl(const uint16_t *data, size_t size, typename Traits::value_type result)'],['../structutf__decoder.html#a3bd423d3ce99b245c76be8a0796d951b',1,'utf_decoder::decode_wchar_block_impl(const uint32_t *data, size_t size, typename Traits::value_type result)']]],
+  ['default_5fallocate',['default_allocate',['../pugixml_8cpp.html#a5c5a3cf417e46e0b3f5207fb9c6a5c18',1,'pugixml.cpp']]],
+  ['default_5fdeallocate',['default_deallocate',['../pugixml_8cpp.html#a04da64bb4806c0b7491d5d9d73d50100',1,'pugixml.cpp']]],
+  ['delayserverconnect',['delayServerConnect',['../classVideoWindow.html#a55220de4b6b3b8e2575201c933932059',1,'VideoWindow']]],
+  ['delete_5fxpath_5fvariable',['delete_xpath_variable',['../pugixml_8cpp.html#aa9eac4e01f2efcc207d5c31cc308cad3',1,'delete_xpath_variable(T *var):&#160;pugixml.cpp'],['../pugixml_8cpp.html#a7849f92cf1fb611f65e35760fe040998',1,'delete_xpath_variable(xpath_value_type type, xpath_variable *var):&#160;pugixml.cpp']]],
+  ['demux',['demux',['../classDemuxer.html#a95c38d118f61403a2828da35afc39c5f',1,'Demuxer::demux()'],['../classFFMPEGWrapper.html#a29bfb04c36db41f6a5dfee2c2669fb81',1,'FFMPEGWrapper::demux()']]],
+  ['demuxer',['Demuxer',['../classDemuxer.html#a266feb24cfea87bee1883b480694478d',1,'Demuxer']]],
+  ['depth',['depth',['../classpugi_1_1xml__tree__walker.html#acb27ca9fea177b0741f29274cb0c805a',1,'pugi::xml_tree_walker']]],
+  ['description',['description',['../structpugi_1_1xml__parse__result.html#add183854c1798f4c8ae74f40def79b03',1,'pugi::xml_parse_result::description()'],['../structpugi_1_1xpath__parse__result.html#a3de342b3c2c13db7ba9dafba73c06228',1,'pugi::xpath_parse_result::description()']]],
+  ['destroy',['destroy',['../structxml__stream__chunk.html#a4b812901d59950d48d539e5c8726a0e8',1,'xml_stream_chunk::destroy()'],['../structxpath__query__impl.html#a9b7194b1356cca3f3b62f4cdb8d8960f',1,'xpath_query_impl::destroy()']]],
+  ['destroy_5fattribute',['destroy_attribute',['../pugixml_8cpp.html#a451a69801ffa96a6389bb7d4c8099bd9',1,'pugixml.cpp']]],
+  ['destroy_5fnode',['destroy_node',['../pugixml_8cpp.html#a00ae2c226db329ac858206e646251867',1,'pugixml.cpp']]],
+  ['disconnect',['disconnect',['../classMainWindow.html#ac2886ac3cabca51c9b4ff8643dfbeff8',1,'MainWindow::disconnect()'],['../classTCPClient.html#aeef43b15ef57aefead37ff7300ebc779',1,'TCPClient::disconnect()'],['../classVideoWindow.html#a68b4f26c999360c30b12cc70347393c7',1,'VideoWindow::disconnect()']]],
+  ['document_5felement',['document_element',['../classpugi_1_1xml__document.html#aa3b17a8891e2c89996ab4c7a2a6759ad',1,'pugi::xml_document']]],
+  ['document_5forder',['document_order',['../pugixml_8cpp.html#af28012d575e412e524d54e911266d548',1,'pugixml.cpp']]]
+];

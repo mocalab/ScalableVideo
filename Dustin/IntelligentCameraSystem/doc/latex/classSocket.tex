@@ -1,0 +1,229 @@
+\hypertarget{classSocket}{\section{Socket Class Reference}
+\label{classSocket}\index{Socket@{Socket}}
+}
+
+
+{\ttfamily \#include $<$socket.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSocket_a7c3256c4fc6e2c603df73201049fae5a}{Socket} ()
+\item 
+\hyperlink{classSocket_aeac4eb6379a543d38ed88977d3b6630a}{$\sim$\-Socket} ()
+\item 
+bool \hyperlink{classSocket_a7d7e4c8274e8028cc56f5778f98936b1}{Open} (unsigned short port)
+\item 
+void \hyperlink{classSocket_a4c8ced9a8ce58834191b3b4f2033b173}{Close} ()
+\item 
+bool \hyperlink{classSocket_ac275fce8d3c3b200e92fd96437673d99}{is\-Open} () const 
+\item 
+bool \hyperlink{classSocket_a58639d5ede0d7f4ddd8b96ac8c6c0b9b}{Send} (const \hyperlink{classAddress}{Address} \&addr, const void $\ast$data, int size)
+\item 
+bool \hyperlink{classSocket_a24d0d17efdaab291e81d5d89b463a585}{Receive} (\hyperlink{classAddress}{Address} \&addr, void $\ast$data, int size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSocket_a7c3256c4fc6e2c603df73201049fae5a}{\index{Socket@{Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!Socket@{Socket}}
+\subsubsection[{Socket}]{\setlength{\rightskip}{0pt plus 5cm}Socket\-::\-Socket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a7c3256c4fc6e2c603df73201049fae5a}
+
+\begin{DoxyCode}
+16                :
+17     m\_isOpen(\textcolor{keyword}{false})
+18 \{
+19 \}
+\end{DoxyCode}
+\hypertarget{classSocket_aeac4eb6379a543d38ed88977d3b6630a}{\index{Socket@{Socket}!$\sim$\-Socket@{$\sim$\-Socket}}
+\index{$\sim$\-Socket@{$\sim$\-Socket}!Socket@{Socket}}
+\subsubsection[{$\sim$\-Socket}]{\setlength{\rightskip}{0pt plus 5cm}Socket\-::$\sim$\-Socket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_aeac4eb6379a543d38ed88977d3b6630a}
+
+\begin{DoxyCode}
+21 \{
+22     this->\hyperlink{classSocket_a4c8ced9a8ce58834191b3b4f2033b173}{Close}();
+23     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Destroyed the socket object."};
+24 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSocket_a4c8ced9a8ce58834191b3b4f2033b173}{\index{Socket@{Socket}!Close@{Close}}
+\index{Close@{Close}!Socket@{Socket}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}void Socket\-::\-Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a4c8ced9a8ce58834191b3b4f2033b173}
+
+\begin{DoxyCode}
+80 \{
+81 \textcolor{preprocessor}{#if defined(Q\_OS\_WIN32)}
+82 \textcolor{preprocessor}{}    closesocket(this->m\_handle);
+83     WSACleanup();
+84 \textcolor{preprocessor}{#elif defined(Q\_OS\_LINUX)}
+85 \textcolor{preprocessor}{}    close(this->m\_handle);
+86 \textcolor{preprocessor}{#endif}
+87 \textcolor{preprocessor}{}
+88     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Closed socket: "} << this->m\_handle;
+89     this->m\_isOpen = \textcolor{keyword}{false};
+90 \}
+\end{DoxyCode}
+\hypertarget{classSocket_ac275fce8d3c3b200e92fd96437673d99}{\index{Socket@{Socket}!is\-Open@{is\-Open}}
+\index{is\-Open@{is\-Open}!Socket@{Socket}}
+\subsubsection[{is\-Open}]{\setlength{\rightskip}{0pt plus 5cm}bool Socket\-::is\-Open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSocket_ac275fce8d3c3b200e92fd96437673d99}
+
+\begin{DoxyCode}
+94 \{
+95     \textcolor{keywordflow}{return} this->m\_isOpen;
+96 \}
+\end{DoxyCode}
+\hypertarget{classSocket_a7d7e4c8274e8028cc56f5778f98936b1}{\index{Socket@{Socket}!Open@{Open}}
+\index{Open@{Open}!Socket@{Socket}}
+\subsubsection[{Open}]{\setlength{\rightskip}{0pt plus 5cm}bool Socket\-::\-Open (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{port}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a7d7e4c8274e8028cc56f5778f98936b1}
+
+\begin{DoxyCode}
+26 \{
+27     errno = 0;
+28     \textcolor{comment}{//Setting up the windows socket layer}
+29 \textcolor{preprocessor}{#ifdef Q\_OS\_WIN32}
+30 \textcolor{preprocessor}{}    WSADATA WsaData;
+31     \textcolor{keywordflow}{if}(!(WSAStartup(MAKEWORD(2,2), &WsaData) == NO\_ERROR))
+32     \{
+33         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Unable to initialize windows socket layer..."} << strerror(errno);
+34     \}
+35 \textcolor{preprocessor}{#endif}
+36 \textcolor{preprocessor}{}
+37     \textcolor{comment}{//Open a socket}
+38     this->m\_handle = socket(AF\_INET, SOCK\_DGRAM, IPPROTO\_UDP);
+39     \textcolor{keywordflow}{if}(m\_handle < 0)
+40     \{
+41         this->m\_isOpen = \textcolor{keyword}{false};
+42         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Could not get handle on socket: "} << strerror(errno);
+43         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+44     \}
+45 
+46     \textcolor{comment}{//Bind to a socket on the host}
+47     sockaddr\_in address;
+48     address.sin\_family = AF\_INET;
+49     address.sin\_addr.s\_addr = INADDR\_ANY;
+50     address.sin\_port = htons(port);
+51 
+52     \textcolor{keywordflow}{if}(bind(m\_handle, (\textcolor{keyword}{const} sockaddr *)&address, \textcolor{keyword}{sizeof}(sockaddr\_in)) < 0)
+53     \{
+54         this->m\_isOpen = \textcolor{keyword}{false};
+55         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Could not bind to socket: "} << strerror(errno);
+56         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+57     \}
+58 
+59     \textcolor{comment}{//Set socket non-blocking}
+60 \textcolor{preprocessor}{#if defined(Q\_OS\_LINUX)}
+61 \textcolor{preprocessor}{}    \textcolor{keywordtype}{int} nonblocking = 1;
+62     \textcolor{keywordflow}{if}(fcntl(m\_handle, F\_SETFL, O\_NONBLOCK, nonblocking) == -1)
+63     \{
+64         this->m\_isOpen = \textcolor{keyword}{false};
+65         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Could not set socket non-blocking: "} << strerror(errno);
+66         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+67     \}
+68 \textcolor{preprocessor}{#elif defined(Q\_OS\_WIN32)}
+69 \textcolor{preprocessor}{}    DWORD nonblocking = 1;
+70     \textcolor{keywordflow}{if}((ioctlsocket(m\_handle, FIONBIO, &nonblocking) != 0))
+71     \{
+72         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Could not set non-blocking "} << strerror(errno);
+73     \}
+74 \textcolor{preprocessor}{#endif}
+75 \textcolor{preprocessor}{}    \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+76 \}
+\end{DoxyCode}
+\hypertarget{classSocket_a24d0d17efdaab291e81d5d89b463a585}{\index{Socket@{Socket}!Receive@{Receive}}
+\index{Receive@{Receive}!Socket@{Socket}}
+\subsubsection[{Receive}]{\setlength{\rightskip}{0pt plus 5cm}bool Socket\-::\-Receive (
+\begin{DoxyParamCaption}
+\item[{{\bf Address} \&}]{addr, }
+\item[{void $\ast$}]{data, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a24d0d17efdaab291e81d5d89b463a585}
+
+\begin{DoxyCode}
+128 \{
+129 \textcolor{preprocessor}{#ifdef Q\_OS\_WIN32}
+130 \textcolor{preprocessor}{}    \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} socklen\_t;
+131 \textcolor{preprocessor}{#endif}
+132 \textcolor{preprocessor}{}    sockaddr\_in from;
+133     socklen\_t fromLength = \textcolor{keyword}{sizeof}(from);
+134 
+135     \textcolor{keywordtype}{int} received\_bytes = recvfrom(this->m\_handle, (\textcolor{keywordtype}{char} *) data, size, 0, (sockaddr *)&from, &fromLength);
+136 
+137     \textcolor{keywordflow}{if}(received\_bytes <= 0)
+138         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+139 
+140     \textcolor{keywordtype}{string} address(inet\_ntoa(from.sin\_addr));
+141     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} port = ntohs(from.sin\_port);
+142     addr.\hyperlink{classAddress_a43ba5f8001b7e729b83b1b9299294495}{setAddress}(address);
+143     addr.\hyperlink{classAddress_ad73c29200f7d63641e48ebfc16efaf75}{setPort}(port);
+144 
+145     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+146 \}
+\end{DoxyCode}
+\hypertarget{classSocket_a58639d5ede0d7f4ddd8b96ac8c6c0b9b}{\index{Socket@{Socket}!Send@{Send}}
+\index{Send@{Send}!Socket@{Socket}}
+\subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}bool Socket\-::\-Send (
+\begin{DoxyParamCaption}
+\item[{const {\bf Address} \&}]{addr, }
+\item[{const void $\ast$}]{data, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{classSocket_a58639d5ede0d7f4ddd8b96ac8c6c0b9b}
+
+\begin{DoxyCode}
+99 \{
+100     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Sending packet with size: "} << size;
+101     \textcolor{comment}{//Set up the destination address}
+102     sockaddr\_in dest;
+103     dest.sin\_family = AF\_INET;
+104     dest.sin\_addr.s\_addr = inet\_addr(addr.\hyperlink{classAddress_aa84d076d4adf5cac8381146fcf261af7}{getAddress}().c\_str());
+105     dest.sin\_port = htons((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short})addr.\hyperlink{classAddress_aa7d7e4b33ab75aa3ca146341a5e74472}{getPort}());
+106 
+107     \textcolor{keywordtype}{int} sent\_bytes = sendto(this->m\_handle, (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *)data, size, 0, (sockaddr *)&dest, \textcolor{keyword}{sizeof}(
+      sockaddr\_in));
+108 
+109     \textcolor{keywordflow}{if}(sent\_bytes != size)
+110     \{
+111         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"RETURNED SIZE DOES NOT MATCH SIZE OF PACKET!"};
+112         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+113     \}
+114     \textcolor{keywordflow}{else}
+115     \{
+116         \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Packet sent sucessfully."};
+117         \textcolor{keywordflow}{if}(size < 50)
+118         \{
+119             \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Payload: "} << (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *)data;
+120         \}
+121         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+122     \}
+123 
+124 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Network/\hyperlink{socket_8h}{socket.\-h}\item 
+Network/\hyperlink{socket_8cpp}{socket.\-cpp}\end{DoxyCompactItemize}

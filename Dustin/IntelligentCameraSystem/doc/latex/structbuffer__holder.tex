@@ -1,0 +1,82 @@
+\hypertarget{structbuffer__holder}{\section{buffer\-\_\-holder Struct Reference}
+\label{structbuffer__holder}\index{buffer\-\_\-holder@{buffer\-\_\-holder}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structbuffer__holder_aec91ad4dabc8db2a6cacac601b317857}{buffer\-\_\-holder} (void $\ast$data\-\_\-, void($\ast$deleter\-\_\-)(void $\ast$))
+\item 
+\hyperlink{structbuffer__holder_a43e10af0ca501bfa9bd1c2a012937876}{$\sim$buffer\-\_\-holder} ()
+\item 
+void $\ast$ \hyperlink{structbuffer__holder_add9b75027bdf15dee0e2dc88225d5b10}{release} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{structbuffer__holder_a06c1e1004fac90848dfdb4fbc150cede}{data}
+\item 
+void($\ast$ \hyperlink{structbuffer__holder_a96e7067c68bc1f7a9ee7dd75c84f04e8}{deleter} )(void $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structbuffer__holder_aec91ad4dabc8db2a6cacac601b317857}{\index{buffer\-\_\-holder@{buffer\-\_\-holder}!buffer\-\_\-holder@{buffer\-\_\-holder}}
+\index{buffer\-\_\-holder@{buffer\-\_\-holder}!buffer_holder@{buffer\-\_\-holder}}
+\subsubsection[{buffer\-\_\-holder}]{\setlength{\rightskip}{0pt plus 5cm}buffer\-\_\-holder\-::buffer\-\_\-holder (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data\-\_\-, }
+\item[{void($\ast$)(void $\ast$)}]{deleter\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structbuffer__holder_aec91ad4dabc8db2a6cacac601b317857}
+
+\begin{DoxyCode}
+217                                                            : \hyperlink{structbuffer__holder_a06c1e1004fac90848dfdb4fbc150cede}{data}(data\_), 
+      \hyperlink{structbuffer__holder_a96e7067c68bc1f7a9ee7dd75c84f04e8}{deleter}(deleter\_)
+218         \{
+219         \}
+\end{DoxyCode}
+\hypertarget{structbuffer__holder_a43e10af0ca501bfa9bd1c2a012937876}{\index{buffer\-\_\-holder@{buffer\-\_\-holder}!$\sim$buffer\-\_\-holder@{$\sim$buffer\-\_\-holder}}
+\index{$\sim$buffer\-\_\-holder@{$\sim$buffer\-\_\-holder}!buffer_holder@{buffer\-\_\-holder}}
+\subsubsection[{$\sim$buffer\-\_\-holder}]{\setlength{\rightskip}{0pt plus 5cm}buffer\-\_\-holder\-::$\sim$buffer\-\_\-holder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structbuffer__holder_a43e10af0ca501bfa9bd1c2a012937876}
+
+\begin{DoxyCode}
+222         \{
+223             \textcolor{keywordflow}{if} (\hyperlink{structbuffer__holder_a06c1e1004fac90848dfdb4fbc150cede}{data}) \hyperlink{structbuffer__holder_a96e7067c68bc1f7a9ee7dd75c84f04e8}{deleter}(\hyperlink{structbuffer__holder_a06c1e1004fac90848dfdb4fbc150cede}{data});
+224         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structbuffer__holder_add9b75027bdf15dee0e2dc88225d5b10}{\index{buffer\-\_\-holder@{buffer\-\_\-holder}!release@{release}}
+\index{release@{release}!buffer_holder@{buffer\-\_\-holder}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ buffer\-\_\-holder\-::release (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structbuffer__holder_add9b75027bdf15dee0e2dc88225d5b10}
+
+\begin{DoxyCode}
+227         \{
+228             \textcolor{keywordtype}{void}* result = \hyperlink{structbuffer__holder_a06c1e1004fac90848dfdb4fbc150cede}{data};
+229             \hyperlink{structbuffer__holder_a06c1e1004fac90848dfdb4fbc150cede}{data} = 0;
+230             \textcolor{keywordflow}{return} result;
+231         \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\hypertarget{structbuffer__holder_a06c1e1004fac90848dfdb4fbc150cede}{\index{buffer\-\_\-holder@{buffer\-\_\-holder}!data@{data}}
+\index{data@{data}!buffer_holder@{buffer\-\_\-holder}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ buffer\-\_\-holder\-::data}}\label{structbuffer__holder_a06c1e1004fac90848dfdb4fbc150cede}
+\hypertarget{structbuffer__holder_a96e7067c68bc1f7a9ee7dd75c84f04e8}{\index{buffer\-\_\-holder@{buffer\-\_\-holder}!deleter@{deleter}}
+\index{deleter@{deleter}!buffer_holder@{buffer\-\_\-holder}}
+\subsubsection[{deleter}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ buffer\-\_\-holder\-::deleter)(void $\ast$)}}\label{structbuffer__holder_a96e7067c68bc1f7a9ee7dd75c84f04e8}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

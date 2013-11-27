@@ -1,0 +1,74 @@
+\hypertarget{classpugi_1_1xpath__exception}{\section{pugi\-:\-:xpath\-\_\-exception Class Reference}
+\label{classpugi_1_1xpath__exception}\index{pugi\-::xpath\-\_\-exception@{pugi\-::xpath\-\_\-exception}}
+}
+
+
+{\ttfamily \#include $<$pugixml.\-hpp$>$}
+
+Inheritance diagram for pugi\-:\-:xpath\-\_\-exception\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpugi_1_1xpath__exception}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpugi_1_1xpath__exception_a67698821481b5a73213d21a1ac174410}{xpath\-\_\-exception} (const \hyperlink{structpugi_1_1xpath__parse__result}{xpath\-\_\-parse\-\_\-result} \&\hyperlink{classpugi_1_1xpath__exception_a6602bbd541153f35a44c2233aa7d37de}{result})
+\item 
+virtual const char $\ast$ \hyperlink{classpugi_1_1xpath__exception_a986ab92474fa82507981c76ed115ccbd}{what} () const   throw ()
+\item 
+const \hyperlink{structpugi_1_1xpath__parse__result}{xpath\-\_\-parse\-\_\-result} \& \hyperlink{classpugi_1_1xpath__exception_a6602bbd541153f35a44c2233aa7d37de}{result} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpugi_1_1xpath__exception_a67698821481b5a73213d21a1ac174410}{\index{pugi\-::xpath\-\_\-exception@{pugi\-::xpath\-\_\-exception}!xpath\-\_\-exception@{xpath\-\_\-exception}}
+\index{xpath\-\_\-exception@{xpath\-\_\-exception}!pugi::xpath_exception@{pugi\-::xpath\-\_\-exception}}
+\subsubsection[{xpath\-\_\-exception}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xpath\-\_\-exception\-::xpath\-\_\-exception (
+\begin{DoxyParamCaption}
+\item[{const {\bf xpath\-\_\-parse\-\_\-result} \&}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classpugi_1_1xpath__exception_a67698821481b5a73213d21a1ac174410}
+
+\begin{DoxyCode}
+9628                                                                               : \_result(result\_)
+9629     \{
+9630         assert(\_result.\hyperlink{structpugi_1_1xpath__parse__result_ab2c625be89b995afac829012bc749fe4}{error});
+9631     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpugi_1_1xpath__exception_a6602bbd541153f35a44c2233aa7d37de}{\index{pugi\-::xpath\-\_\-exception@{pugi\-::xpath\-\_\-exception}!result@{result}}
+\index{result@{result}!pugi::xpath_exception@{pugi\-::xpath\-\_\-exception}}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} const {\bf xpath\-\_\-parse\-\_\-result} \& pugi\-::xpath\-\_\-exception\-::result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xpath__exception_a6602bbd541153f35a44c2233aa7d37de}
+
+\begin{DoxyCode}
+9639     \{
+9640         \textcolor{keywordflow}{return} \_result;
+9641     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xpath__exception_a986ab92474fa82507981c76ed115ccbd}{\index{pugi\-::xpath\-\_\-exception@{pugi\-::xpath\-\_\-exception}!what@{what}}
+\index{what@{what}!pugi::xpath_exception@{pugi\-::xpath\-\_\-exception}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} const char $\ast$ pugi\-::xpath\-\_\-exception\-::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const throw  ) \hspace{0.3cm}{\ttfamily [virtual]}}}\label{classpugi_1_1xpath__exception_a986ab92474fa82507981c76ed115ccbd}
+
+\begin{DoxyCode}
+9634     \{
+9635         \textcolor{keywordflow}{return} \_result.\hyperlink{structpugi_1_1xpath__parse__result_ab2c625be89b995afac829012bc749fe4}{error};
+9636     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8hpp}{pugixml.\-hpp}\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

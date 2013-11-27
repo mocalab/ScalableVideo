@@ -1,0 +1,56 @@
+\hypertarget{structstrconv__pcdata__impl}{\section{strconv\-\_\-pcdata\-\_\-impl$<$ opt\-\_\-eol, opt\-\_\-escape $>$ Struct Template Reference}
+\label{structstrconv__pcdata__impl}\index{strconv\-\_\-pcdata\-\_\-impl$<$ opt\-\_\-eol, opt\-\_\-escape $>$@{strconv\-\_\-pcdata\-\_\-impl$<$ opt\-\_\-eol, opt\-\_\-escape $>$}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char\-\_\-t $\ast$ \hyperlink{structstrconv__pcdata__impl_a0aa794c648c72338d92b86c95c681b32}{parse} (char\-\_\-t $\ast$s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structstrconv__pcdata__impl_a0aa794c648c72338d92b86c95c681b32}{\index{strconv\-\_\-pcdata\-\_\-impl@{strconv\-\_\-pcdata\-\_\-impl}!parse@{parse}}
+\index{parse@{parse}!strconv_pcdata_impl@{strconv\-\_\-pcdata\-\_\-impl}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename opt\-\_\-eol , typename opt\-\_\-escape $>$ static char\-\_\-t$\ast$ {\bf strconv\-\_\-pcdata\-\_\-impl}$<$ opt\-\_\-eol, opt\-\_\-escape $>$\-::parse (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structstrconv__pcdata__impl_a0aa794c648c72338d92b86c95c681b32}
+
+\begin{DoxyCode}
+1818         \{
+1819             \hyperlink{structgap}{gap} g;
+1820             
+1821             \textcolor{keywordflow}{while} (\textcolor{keyword}{true})
+1822             \{
+1823                 \textcolor{keywordflow}{while} (!\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108aa0f09a99c3d76641d00d0ad11f4f2fa1}{ct\_parse\_pcdata})) ++s;
+1824                     
+1825                 \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'<'}) \textcolor{comment}{// PCDATA ends here}
+1826                 \{
+1827                     *g.\hyperlink{structgap_a176c58ee8d57c41b91ae9f00d5e8cab5}{flush}(s) = 0;
+1828                     
+1829                     \textcolor{keywordflow}{return} s + 1;
+1830                 \}
+1831                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opt\_eol::value && *s == \textcolor{charliteral}{'\(\backslash\)r'}) \textcolor{comment}{// Either a single 0x0d or 0x0d 0x0a pair}
+1832                 \{
+1833                     *s++ = \textcolor{charliteral}{'\(\backslash\)n'}; \textcolor{comment}{// replace first one with 0x0a}
+1834                     
+1835                     \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'\(\backslash\)n'}) g.\hyperlink{structgap_a9c0d0b12bc778c8439c8aec7747ab2b0}{push}(s, 1);
+1836                 \}
+1837                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opt\_escape::value && *s == \textcolor{charliteral}{'&'})
+1838                 \{
+1839                     s = \hyperlink{pugixml_8cpp_a7cf2b6da7b109a11f8cb1c7e1a09bf7e}{strconv\_escape}(s, g);
+1840                 \}
+1841                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == 0)
+1842                 \{
+1843                     \textcolor{keywordflow}{return} s;
+1844                 \}
+1845                 \textcolor{keywordflow}{else} ++s;
+1846             \}
+1847         \}
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

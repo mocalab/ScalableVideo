@@ -1,0 +1,82 @@
+\hypertarget{structxml__memory__page}{\section{xml\-\_\-memory\-\_\-page Struct Reference}
+\label{structxml__memory__page}\index{xml\-\_\-memory\-\_\-page@{xml\-\_\-memory\-\_\-page}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structxml__memory__page}{xml\-\_\-memory\-\_\-page} $\ast$ \hyperlink{structxml__memory__page_ab425973f2abb4fa98ff077d88c0df11c}{construct} (void $\ast$\hyperlink{structxml__memory__page_ab51315db80e7f2a5afb87c56fedcd734}{memory})
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxml__allocator}{xml\-\_\-allocator} $\ast$ \hyperlink{structxml__memory__page_adf8fa143123a842baa59b82fc3d83c3b}{allocator}
+\item 
+void $\ast$ \hyperlink{structxml__memory__page_ab51315db80e7f2a5afb87c56fedcd734}{memory}
+\item 
+\hyperlink{structxml__memory__page}{xml\-\_\-memory\-\_\-page} $\ast$ \hyperlink{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{prev}
+\item 
+\hyperlink{structxml__memory__page}{xml\-\_\-memory\-\_\-page} $\ast$ \hyperlink{structxml__memory__page_a326a74e009af80219ea31bc65ed9e45e}{next}
+\item 
+size\-\_\-t \hyperlink{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{busy\-\_\-size}
+\item 
+size\-\_\-t \hyperlink{structxml__memory__page_ab4c29645546530a0e1938b53979890a8}{freed\-\_\-size}
+\item 
+char \hyperlink{structxml__memory__page_abd99ed1563aa66fb3573a9208452685c}{data} \mbox{[}1\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structxml__memory__page_ab425973f2abb4fa98ff077d88c0df11c}{\index{xml\-\_\-memory\-\_\-page@{xml\-\_\-memory\-\_\-page}!construct@{construct}}
+\index{construct@{construct}!xml_memory_page@{xml\-\_\-memory\-\_\-page}}
+\subsubsection[{construct}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf xml\-\_\-memory\-\_\-page}$\ast$ xml\-\_\-memory\-\_\-page\-::construct (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{memory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structxml__memory__page_ab425973f2abb4fa98ff077d88c0df11c}
+
+\begin{DoxyCode}
+256         \{
+257             \textcolor{keywordflow}{if} (!\hyperlink{structxml__memory__page_ab51315db80e7f2a5afb87c56fedcd734}{memory}) \textcolor{keywordflow}{return} 0; \textcolor{comment}{//$ redundant, left for performance}
+258 
+259             \hyperlink{structxml__memory__page}{xml\_memory\_page}* result = \textcolor{keyword}{static\_cast<}\hyperlink{structxml__memory__page}{xml\_memory\_page}*\textcolor{keyword}{>}(
+      \hyperlink{structxml__memory__page_ab51315db80e7f2a5afb87c56fedcd734}{memory});
+260 
+261             result->\hyperlink{structxml__memory__page_adf8fa143123a842baa59b82fc3d83c3b}{allocator} = 0;
+262             result->\hyperlink{structxml__memory__page_ab51315db80e7f2a5afb87c56fedcd734}{memory} = 0;
+263             result->\hyperlink{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{prev} = 0;
+264             result->\hyperlink{structxml__memory__page_a326a74e009af80219ea31bc65ed9e45e}{next} = 0;
+265             result->\hyperlink{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{busy\_size} = 0;
+266             result->\hyperlink{structxml__memory__page_ab4c29645546530a0e1938b53979890a8}{freed\_size} = 0;
+267 
+268             \textcolor{keywordflow}{return} result;
+269         \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\hypertarget{structxml__memory__page_adf8fa143123a842baa59b82fc3d83c3b}{\index{xml\-\_\-memory\-\_\-page@{xml\-\_\-memory\-\_\-page}!allocator@{allocator}}
+\index{allocator@{allocator}!xml_memory_page@{xml\-\_\-memory\-\_\-page}}
+\subsubsection[{allocator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\-\_\-allocator}$\ast$ xml\-\_\-memory\-\_\-page\-::allocator}}\label{structxml__memory__page_adf8fa143123a842baa59b82fc3d83c3b}
+\hypertarget{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}{\index{xml\-\_\-memory\-\_\-page@{xml\-\_\-memory\-\_\-page}!busy\-\_\-size@{busy\-\_\-size}}
+\index{busy\-\_\-size@{busy\-\_\-size}!xml_memory_page@{xml\-\_\-memory\-\_\-page}}
+\subsubsection[{busy\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t xml\-\_\-memory\-\_\-page\-::busy\-\_\-size}}\label{structxml__memory__page_a04780ddabc14b45baba3d1ded79d355a}
+\hypertarget{structxml__memory__page_abd99ed1563aa66fb3573a9208452685c}{\index{xml\-\_\-memory\-\_\-page@{xml\-\_\-memory\-\_\-page}!data@{data}}
+\index{data@{data}!xml_memory_page@{xml\-\_\-memory\-\_\-page}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}char xml\-\_\-memory\-\_\-page\-::data\mbox{[}1\mbox{]}}}\label{structxml__memory__page_abd99ed1563aa66fb3573a9208452685c}
+\hypertarget{structxml__memory__page_ab4c29645546530a0e1938b53979890a8}{\index{xml\-\_\-memory\-\_\-page@{xml\-\_\-memory\-\_\-page}!freed\-\_\-size@{freed\-\_\-size}}
+\index{freed\-\_\-size@{freed\-\_\-size}!xml_memory_page@{xml\-\_\-memory\-\_\-page}}
+\subsubsection[{freed\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t xml\-\_\-memory\-\_\-page\-::freed\-\_\-size}}\label{structxml__memory__page_ab4c29645546530a0e1938b53979890a8}
+\hypertarget{structxml__memory__page_ab51315db80e7f2a5afb87c56fedcd734}{\index{xml\-\_\-memory\-\_\-page@{xml\-\_\-memory\-\_\-page}!memory@{memory}}
+\index{memory@{memory}!xml_memory_page@{xml\-\_\-memory\-\_\-page}}
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ xml\-\_\-memory\-\_\-page\-::memory}}\label{structxml__memory__page_ab51315db80e7f2a5afb87c56fedcd734}
+\hypertarget{structxml__memory__page_a326a74e009af80219ea31bc65ed9e45e}{\index{xml\-\_\-memory\-\_\-page@{xml\-\_\-memory\-\_\-page}!next@{next}}
+\index{next@{next}!xml_memory_page@{xml\-\_\-memory\-\_\-page}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\-\_\-memory\-\_\-page}$\ast$ xml\-\_\-memory\-\_\-page\-::next}}\label{structxml__memory__page_a326a74e009af80219ea31bc65ed9e45e}
+\hypertarget{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}{\index{xml\-\_\-memory\-\_\-page@{xml\-\_\-memory\-\_\-page}!prev@{prev}}
+\index{prev@{prev}!xml_memory_page@{xml\-\_\-memory\-\_\-page}}
+\subsubsection[{prev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\-\_\-memory\-\_\-page}$\ast$ xml\-\_\-memory\-\_\-page\-::prev}}\label{structxml__memory__page_a014969b0e4a34a6cb24e9823791e60ab}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

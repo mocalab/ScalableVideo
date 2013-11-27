@@ -1,0 +1,393 @@
+\hypertarget{classpugi_1_1xml__document}{\section{pugi\-:\-:xml\-\_\-document Class Reference}
+\label{classpugi_1_1xml__document}\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}}
+}
+
+
+{\ttfamily \#include $<$pugixml.\-hpp$>$}
+
+Inheritance diagram for pugi\-:\-:xml\-\_\-document\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpugi_1_1xml__document}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpugi_1_1xml__document_afa82ca6827bda8504ce7dadbc443fa21}{xml\-\_\-document} ()
+\item 
+\hyperlink{classpugi_1_1xml__document_af37d8a79f7465ad48d65c2bd13461580}{$\sim$xml\-\_\-document} ()
+\item 
+void \hyperlink{classpugi_1_1xml__document_acf2b9daf1d12e12048796118b7a7685d}{reset} ()
+\item 
+void \hyperlink{classpugi_1_1xml__document_a4230de3de88f4fe481c4c3d5312aa5cf}{reset} (const \hyperlink{classpugi_1_1xml__document}{xml\-\_\-document} \&proto)
+\item 
+\hyperlink{structpugi_1_1xml__parse__result}{xml\-\_\-parse\-\_\-result} \hyperlink{classpugi_1_1xml__document_abb7db3882f94ac35b870510789a87778}{load} (std\-::basic\-\_\-istream$<$ char, std\-::char\-\_\-traits$<$ char $>$ $>$ \&stream, unsigned int options=\hyperlink{namespacepugi_ad7c927d1c1752330637c3318b0d7b366}{parse\-\_\-default}, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} encoding=\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\-\_\-auto})
+\item 
+\hyperlink{structpugi_1_1xml__parse__result}{xml\-\_\-parse\-\_\-result} \hyperlink{classpugi_1_1xml__document_a36131b6f1a80a1248666f4e7fe352685}{load} (std\-::basic\-\_\-istream$<$ wchar\-\_\-t, std\-::char\-\_\-traits$<$ wchar\-\_\-t $>$ $>$ \&stream, unsigned int options=\hyperlink{namespacepugi_ad7c927d1c1752330637c3318b0d7b366}{parse\-\_\-default})
+\item 
+\hyperlink{structpugi_1_1xml__parse__result}{xml\-\_\-parse\-\_\-result} \hyperlink{classpugi_1_1xml__document_ae17a77772fa21a40f3d91d9c79e60d0b}{load} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$contents, unsigned int options=\hyperlink{namespacepugi_ad7c927d1c1752330637c3318b0d7b366}{parse\-\_\-default})
+\item 
+\hyperlink{structpugi_1_1xml__parse__result}{xml\-\_\-parse\-\_\-result} \hyperlink{classpugi_1_1xml__document_aad350209a4a91589fbd7e8cdaf79e010}{load\-\_\-file} (const char $\ast$\hyperlink{classpugi_1_1xml__node_ae5694be88058346ad8e6e418410d4979}{path}, unsigned int options=\hyperlink{namespacepugi_ad7c927d1c1752330637c3318b0d7b366}{parse\-\_\-default}, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} encoding=\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\-\_\-auto})
+\item 
+\hyperlink{structpugi_1_1xml__parse__result}{xml\-\_\-parse\-\_\-result} \hyperlink{classpugi_1_1xml__document_ac5a29d9c9e754120a5e0c072b332a25a}{load\-\_\-file} (const wchar\-\_\-t $\ast$\hyperlink{classpugi_1_1xml__node_ae5694be88058346ad8e6e418410d4979}{path}, unsigned int options=\hyperlink{namespacepugi_ad7c927d1c1752330637c3318b0d7b366}{parse\-\_\-default}, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} encoding=\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\-\_\-auto})
+\item 
+\hyperlink{structpugi_1_1xml__parse__result}{xml\-\_\-parse\-\_\-result} \hyperlink{classpugi_1_1xml__document_ab29840790e26b2166a395c63a2b2d9bd}{load\-\_\-buffer} (const void $\ast$contents, size\-\_\-t size, unsigned int options=\hyperlink{namespacepugi_ad7c927d1c1752330637c3318b0d7b366}{parse\-\_\-default}, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} encoding=\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\-\_\-auto})
+\item 
+\hyperlink{structpugi_1_1xml__parse__result}{xml\-\_\-parse\-\_\-result} \hyperlink{classpugi_1_1xml__document_a3e20650182ccbdd175ca069dd5e08632}{load\-\_\-buffer\-\_\-inplace} (void $\ast$contents, size\-\_\-t size, unsigned int options=\hyperlink{namespacepugi_ad7c927d1c1752330637c3318b0d7b366}{parse\-\_\-default}, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} encoding=\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\-\_\-auto})
+\item 
+\hyperlink{structpugi_1_1xml__parse__result}{xml\-\_\-parse\-\_\-result} \hyperlink{classpugi_1_1xml__document_a9da4bdcdc4ad914fb0f4680b02983502}{load\-\_\-buffer\-\_\-inplace\-\_\-own} (void $\ast$contents, size\-\_\-t size, unsigned int options=\hyperlink{namespacepugi_ad7c927d1c1752330637c3318b0d7b366}{parse\-\_\-default}, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} encoding=\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\-\_\-auto})
+\item 
+void \hyperlink{classpugi_1_1xml__document_ae69983f0991300cc9afc8891ff9ca4ac}{save} (\hyperlink{classpugi_1_1xml__writer}{xml\-\_\-writer} \&writer, const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$indent=\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{}), unsigned int flags=\hyperlink{namespacepugi_a325f48a35abbaeacdfd8b7fc9ed1713c}{format\-\_\-default}, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} encoding=\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\-\_\-auto}) const 
+\item 
+void \hyperlink{classpugi_1_1xml__document_a471d7354af62da143f10943057c99ffa}{save} (std\-::basic\-\_\-ostream$<$ char, std\-::char\-\_\-traits$<$ char $>$ $>$ \&stream, const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$indent=\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{}), unsigned int flags=\hyperlink{namespacepugi_a325f48a35abbaeacdfd8b7fc9ed1713c}{format\-\_\-default}, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} encoding=\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\-\_\-auto}) const 
+\item 
+void \hyperlink{classpugi_1_1xml__document_ae0b377bda28c7fbac4ba50b4e3f9d211}{save} (std\-::basic\-\_\-ostream$<$ wchar\-\_\-t, std\-::char\-\_\-traits$<$ wchar\-\_\-t $>$ $>$ \&stream, const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$indent=\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{}), unsigned int flags=\hyperlink{namespacepugi_a325f48a35abbaeacdfd8b7fc9ed1713c}{format\-\_\-default}) const 
+\item 
+bool \hyperlink{classpugi_1_1xml__document_ac67294573cbaa41d3e6210480a9f7f99}{save\-\_\-file} (const char $\ast$\hyperlink{classpugi_1_1xml__node_ae5694be88058346ad8e6e418410d4979}{path}, const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$indent=\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{}), unsigned int flags=\hyperlink{namespacepugi_a325f48a35abbaeacdfd8b7fc9ed1713c}{format\-\_\-default}, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} encoding=\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\-\_\-auto}) const 
+\item 
+bool \hyperlink{classpugi_1_1xml__document_a47e18cd3438eabd64fa2f82d56b08aef}{save\-\_\-file} (const wchar\-\_\-t $\ast$\hyperlink{classpugi_1_1xml__node_ae5694be88058346ad8e6e418410d4979}{path}, const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$indent=\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{}), unsigned int flags=\hyperlink{namespacepugi_a325f48a35abbaeacdfd8b7fc9ed1713c}{format\-\_\-default}, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} encoding=\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\-\_\-auto}) const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__document_aa3b17a8891e2c89996ab4c7a2a6759ad}{document\-\_\-element} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpugi_1_1xml__document_afa82ca6827bda8504ce7dadbc443fa21}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!xml\-\_\-document@{xml\-\_\-document}}
+\index{xml\-\_\-document@{xml\-\_\-document}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{xml\-\_\-document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xml\-\_\-document\-::xml\-\_\-document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__document_afa82ca6827bda8504ce7dadbc443fa21}
+
+\begin{DoxyCode}
+5102                                        : \_buffer(0)
+5103     \{
+5104         create();
+5105     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_af37d8a79f7465ad48d65c2bd13461580}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!$\sim$xml\-\_\-document@{$\sim$xml\-\_\-document}}
+\index{$\sim$xml\-\_\-document@{$\sim$xml\-\_\-document}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{$\sim$xml\-\_\-document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xml\-\_\-document\-::$\sim$xml\-\_\-document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__document_af37d8a79f7465ad48d65c2bd13461580}
+
+\begin{DoxyCode}
+5108     \{
+5109         destroy();
+5110     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpugi_1_1xml__document_aa3b17a8891e2c89996ab4c7a2a6759ad}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!document\-\_\-element@{document\-\_\-element}}
+\index{document\-\_\-element@{document\-\_\-element}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{document\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-document\-::document\-\_\-element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__document_aa3b17a8891e2c89996ab4c7a2a6759ad}
+
+\begin{DoxyCode}
+5328     \{
+5329         \textcolor{keywordflow}{for} (xml\_node\_struct* i = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child}; i; i = i->
+      \hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling})
+5330             \textcolor{keywordflow}{if} ((i->header & impl::xml\_memory\_page\_type\_mask) + 1 == 
+      \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\_element})
+5331                 \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(i);
+5332 
+5333         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+5334     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_abb7db3882f94ac35b870510789a87778}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!load@{load}}
+\index{load@{load}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-parse\-\_\-result} pugi\-::xml\-\_\-document\-::load (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-istream$<$ char, std\-::char\-\_\-traits$<$ char $>$ $>$ \&}]{stream, }
+\item[{unsigned int}]{options = {\ttfamily {\bf parse\-\_\-default}}, }
+\item[{{\bf xml\-\_\-encoding}}]{encoding = {\ttfamily {\bf encoding\-\_\-auto}}}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__document_abb7db3882f94ac35b870510789a87778}
+
+\begin{DoxyCode}
+5183     \{
+5184         \hyperlink{classpugi_1_1xml__document_acf2b9daf1d12e12048796118b7a7685d}{reset}();
+5185 
+5186         \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_a3515ac8101e357707f45d7438d568682}{impl::load\_stream\_impl}(*\textcolor{keyword}{this}, stream, options, encoding);
+5187     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_a36131b6f1a80a1248666f4e7fe352685}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!load@{load}}
+\index{load@{load}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-parse\-\_\-result} pugi\-::xml\-\_\-document\-::load (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-istream$<$ wchar\-\_\-t, std\-::char\-\_\-traits$<$ wchar\-\_\-t $>$ $>$ \&}]{stream, }
+\item[{unsigned int}]{options = {\ttfamily {\bf parse\-\_\-default}}}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__document_a36131b6f1a80a1248666f4e7fe352685}
+
+\begin{DoxyCode}
+5190     \{
+5191         \hyperlink{classpugi_1_1xml__document_acf2b9daf1d12e12048796118b7a7685d}{reset}();
+5192 
+5193         \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_a3515ac8101e357707f45d7438d568682}{impl::load\_stream\_impl}(*\textcolor{keyword}{this}, stream, options, 
+      \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae670d39438f31fe41f1a596739e5c00e}{encoding\_wchar});
+5194     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_ae17a77772fa21a40f3d91d9c79e60d0b}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!load@{load}}
+\index{load@{load}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-parse\-\_\-result} pugi\-::xml\-\_\-document\-::load (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{contents, }
+\item[{unsigned int}]{options = {\ttfamily {\bf parse\-\_\-default}}}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__document_ae17a77772fa21a40f3d91d9c79e60d0b}
+
+\begin{DoxyCode}
+5198     \{
+5199         \textcolor{comment}{// Force native encoding (skip autodetection)}
+5200 \textcolor{preprocessor}{    #ifdef PUGIXML\_WCHAR\_MODE}
+5201 \textcolor{preprocessor}{}        \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\_encoding} encoding = \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae670d39438f31fe41f1a596739e5c00e}{encoding\_wchar};
+5202 \textcolor{preprocessor}{    #else}
+5203 \textcolor{preprocessor}{}        \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\_encoding} encoding = \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951ea96c73bf345f635f0fbee5f6646fb095e}{encoding\_utf8};
+5204 \textcolor{preprocessor}{    #endif}
+5205 \textcolor{preprocessor}{}
+5206         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__document_ab29840790e26b2166a395c63a2b2d9bd}{load\_buffer}(contents, \hyperlink{pugixml_8cpp_aab9e1f034d085b663d146fcceabb1c48}{impl::strlength}(contents) * \textcolor{keyword}{sizeof}(
+      \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}), options, encoding);
+5207     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_ab29840790e26b2166a395c63a2b2d9bd}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!load\-\_\-buffer@{load\-\_\-buffer}}
+\index{load\-\_\-buffer@{load\-\_\-buffer}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{load\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-parse\-\_\-result} pugi\-::xml\-\_\-document\-::load\-\_\-buffer (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{contents, }
+\item[{size\-\_\-t}]{size, }
+\item[{unsigned int}]{options = {\ttfamily {\bf parse\-\_\-default}}, }
+\item[{{\bf xml\-\_\-encoding}}]{encoding = {\ttfamily {\bf encoding\-\_\-auto}}}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__document_ab29840790e26b2166a395c63a2b2d9bd}
+
+\begin{DoxyCode}
+5259     \{
+5260         \textcolor{keywordflow}{return} load\_buffer\_impl(const\_cast<void*>(contents), size, options, encoding, \textcolor{keyword}{false}, \textcolor{keyword}{false});
+5261     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_a3e20650182ccbdd175ca069dd5e08632}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!load\-\_\-buffer\-\_\-inplace@{load\-\_\-buffer\-\_\-inplace}}
+\index{load\-\_\-buffer\-\_\-inplace@{load\-\_\-buffer\-\_\-inplace}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{load\-\_\-buffer\-\_\-inplace}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-parse\-\_\-result} pugi\-::xml\-\_\-document\-::load\-\_\-buffer\-\_\-inplace (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{contents, }
+\item[{size\-\_\-t}]{size, }
+\item[{unsigned int}]{options = {\ttfamily {\bf parse\-\_\-default}}, }
+\item[{{\bf xml\-\_\-encoding}}]{encoding = {\ttfamily {\bf encoding\-\_\-auto}}}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__document_a3e20650182ccbdd175ca069dd5e08632}
+
+\begin{DoxyCode}
+5264     \{
+5265         \textcolor{keywordflow}{return} load\_buffer\_impl(contents, size, options, encoding, \textcolor{keyword}{true}, \textcolor{keyword}{false});
+5266     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_a9da4bdcdc4ad914fb0f4680b02983502}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!load\-\_\-buffer\-\_\-inplace\-\_\-own@{load\-\_\-buffer\-\_\-inplace\-\_\-own}}
+\index{load\-\_\-buffer\-\_\-inplace\-\_\-own@{load\-\_\-buffer\-\_\-inplace\-\_\-own}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{load\-\_\-buffer\-\_\-inplace\-\_\-own}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-parse\-\_\-result} pugi\-::xml\-\_\-document\-::load\-\_\-buffer\-\_\-inplace\-\_\-own (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{contents, }
+\item[{size\-\_\-t}]{size, }
+\item[{unsigned int}]{options = {\ttfamily {\bf parse\-\_\-default}}, }
+\item[{{\bf xml\-\_\-encoding}}]{encoding = {\ttfamily {\bf encoding\-\_\-auto}}}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__document_a9da4bdcdc4ad914fb0f4680b02983502}
+
+\begin{DoxyCode}
+5269     \{
+5270         \textcolor{keywordflow}{return} load\_buffer\_impl(contents, size, options, encoding, \textcolor{keyword}{true}, \textcolor{keyword}{true});
+5271     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_aad350209a4a91589fbd7e8cdaf79e010}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!load\-\_\-file@{load\-\_\-file}}
+\index{load\-\_\-file@{load\-\_\-file}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{load\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-parse\-\_\-result} pugi\-::xml\-\_\-document\-::load\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path, }
+\item[{unsigned int}]{options = {\ttfamily {\bf parse\-\_\-default}}, }
+\item[{{\bf xml\-\_\-encoding}}]{encoding = {\ttfamily {\bf encoding\-\_\-auto}}}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__document_aad350209a4a91589fbd7e8cdaf79e010}
+
+\begin{DoxyCode}
+5210     \{
+5211         \hyperlink{classpugi_1_1xml__document_acf2b9daf1d12e12048796118b7a7685d}{reset}();
+5212 
+5213         FILE* file = fopen(path\_, \textcolor{stringliteral}{"rb"});
+5214 
+5215         \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_a79f0e2f9483c87a85ec4873a20caaa12}{impl::load\_file\_impl}(*\textcolor{keyword}{this}, file, options, encoding);
+5216     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_ac5a29d9c9e754120a5e0c072b332a25a}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!load\-\_\-file@{load\-\_\-file}}
+\index{load\-\_\-file@{load\-\_\-file}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{load\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-parse\-\_\-result} pugi\-::xml\-\_\-document\-::load\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{const wchar\-\_\-t $\ast$}]{path, }
+\item[{unsigned int}]{options = {\ttfamily {\bf parse\-\_\-default}}, }
+\item[{{\bf xml\-\_\-encoding}}]{encoding = {\ttfamily {\bf encoding\-\_\-auto}}}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__document_ac5a29d9c9e754120a5e0c072b332a25a}
+
+\begin{DoxyCode}
+5219     \{
+5220         \hyperlink{classpugi_1_1xml__document_acf2b9daf1d12e12048796118b7a7685d}{reset}();
+5221 
+5222         FILE* file = \hyperlink{pugixml_8cpp_a6a347080c51ac7c992a32cde66a43801}{impl::open\_file\_wide}(path\_, L\textcolor{stringliteral}{"rb"});
+5223 
+5224         \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_a79f0e2f9483c87a85ec4873a20caaa12}{impl::load\_file\_impl}(*\textcolor{keyword}{this}, file, options, encoding);
+5225     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_acf2b9daf1d12e12048796118b7a7685d}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!reset@{reset}}
+\index{reset@{reset}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} void pugi\-::xml\-\_\-document\-::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__document_acf2b9daf1d12e12048796118b7a7685d}
+
+\begin{DoxyCode}
+5113     \{
+5114         destroy();
+5115         create();
+5116     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_a4230de3de88f4fe481c4c3d5312aa5cf}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!reset@{reset}}
+\index{reset@{reset}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} void pugi\-::xml\-\_\-document\-::reset (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-document} \&}]{proto}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__document_a4230de3de88f4fe481c4c3d5312aa5cf}
+
+\begin{DoxyCode}
+5119     \{
+5120         \hyperlink{classpugi_1_1xml__document_acf2b9daf1d12e12048796118b7a7685d}{reset}();
+5121 
+5122         \textcolor{keywordflow}{for} (\hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} cur = proto.first\_child(); cur; cur = cur.next\_sibling())
+5123             \hyperlink{classpugi_1_1xml__node_a4c151e6665c6bfa614fe80d177fd5396}{append\_copy}(cur);
+5124     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_ae69983f0991300cc9afc8891ff9ca4ac}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!save@{save}}
+\index{save@{save}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} void pugi\-::xml\-\_\-document\-::save (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-writer} \&}]{writer, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{indent = {\ttfamily {\bf P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{})}, }
+\item[{unsigned int}]{flags = {\ttfamily {\bf format\-\_\-default}}, }
+\item[{{\bf xml\-\_\-encoding}}]{encoding = {\ttfamily {\bf encoding\-\_\-auto}}}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__document_ae69983f0991300cc9afc8891ff9ca4ac}
+
+\begin{DoxyCode}
+5274     \{
+5275         impl::xml\_buffered\_writer buffered\_writer(writer, encoding);
+5276 
+5277         \textcolor{keywordflow}{if} ((flags & \hyperlink{namespacepugi_ab863bcafd203aeaa98953df3a998243f}{format\_write\_bom}) && encoding != 
+      \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951ea9f1a8dbbf996bcd297ce0922b7eec40d}{encoding\_latin1})
+5278         \{
+5279             \textcolor{comment}{// BOM always represents the codepoint U+FEFF, so just write it in native encoding}
+5280 \textcolor{preprocessor}{        #ifdef PUGIXML\_WCHAR\_MODE}
+5281 \textcolor{preprocessor}{}            \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} bom = 0xfeff;
+5282             buffered\_writer.write(static\_cast<wchar\_t>(bom));
+5283 \textcolor{preprocessor}{        #else}
+5284 \textcolor{preprocessor}{}            buffered\_writer.write(\textcolor{stringliteral}{'\(\backslash\)xef'}, \textcolor{stringliteral}{'\(\backslash\)xbb'}, \textcolor{stringliteral}{'\(\backslash\)xbf'});
+5285 \textcolor{preprocessor}{        #endif}
+5286 \textcolor{preprocessor}{}        \}
+5287 
+5288         \textcolor{keywordflow}{if} (!(flags & \hyperlink{namespacepugi_a0ec33e4db09260718f7003ed091f5a1b}{format\_no\_declaration}) && !
+      \hyperlink{pugixml_8cpp_a51b27832195cf2345f65119f07056743}{impl::has\_declaration}(*\textcolor{keyword}{this}))
+5289         \{
+5290             buffered\_writer.write(\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"<?xml version=\(\backslash\)"1.0\(\backslash\)""}));
+5291             \textcolor{keywordflow}{if} (encoding == \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951ea9f1a8dbbf996bcd297ce0922b7eec40d}{encoding\_latin1}) buffered\_writer.write(
+      \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{" encoding=\(\backslash\)"ISO-8859-1\(\backslash\)""}));
+5292             buffered\_writer.write(\textcolor{charliteral}{'?'}, \textcolor{charliteral}{'>'});
+5293             \textcolor{keywordflow}{if} (!(flags & \hyperlink{namespacepugi_a2dd811716b1c0a6a2431ceca43bc649e}{format\_raw})) buffered\_writer.write(\textcolor{charliteral}{'\(\backslash\)n'});
+5294         \}
+5295 
+5296         \hyperlink{pugixml_8cpp_a7f5dd565c9321db184119a5f337333e7}{impl::node\_output}(buffered\_writer, *\textcolor{keyword}{this}, indent, flags, 0);
+5297     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_a471d7354af62da143f10943057c99ffa}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!save@{save}}
+\index{save@{save}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} void pugi\-::xml\-\_\-document\-::save (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-ostream$<$ char, std\-::char\-\_\-traits$<$ char $>$ $>$ \&}]{stream, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{indent = {\ttfamily {\bf P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{})}, }
+\item[{unsigned int}]{flags = {\ttfamily {\bf format\-\_\-default}}, }
+\item[{{\bf xml\-\_\-encoding}}]{encoding = {\ttfamily {\bf encoding\-\_\-auto}}}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__document_a471d7354af62da143f10943057c99ffa}
+
+\begin{DoxyCode}
+5301     \{
+5302         xml\_writer\_stream writer(stream);
+5303 
+5304         \hyperlink{classpugi_1_1xml__document_ae69983f0991300cc9afc8891ff9ca4ac}{save}(writer, indent, flags, encoding);
+5305     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_ae0b377bda28c7fbac4ba50b4e3f9d211}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!save@{save}}
+\index{save@{save}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} void pugi\-::xml\-\_\-document\-::save (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-ostream$<$ wchar\-\_\-t, std\-::char\-\_\-traits$<$ wchar\-\_\-t $>$ $>$ \&}]{stream, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{indent = {\ttfamily {\bf P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{})}, }
+\item[{unsigned int}]{flags = {\ttfamily {\bf format\-\_\-default}}}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__document_ae0b377bda28c7fbac4ba50b4e3f9d211}
+
+\begin{DoxyCode}
+5308     \{
+5309         xml\_writer\_stream writer(stream);
+5310 
+5311         \hyperlink{classpugi_1_1xml__document_ae69983f0991300cc9afc8891ff9ca4ac}{save}(writer, indent, flags, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae670d39438f31fe41f1a596739e5c00e}{encoding\_wchar});
+5312     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_ac67294573cbaa41d3e6210480a9f7f99}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!save\-\_\-file@{save\-\_\-file}}
+\index{save\-\_\-file@{save\-\_\-file}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{save\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-document\-::save\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{indent = {\ttfamily {\bf P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{})}, }
+\item[{unsigned int}]{flags = {\ttfamily {\bf format\-\_\-default}}, }
+\item[{{\bf xml\-\_\-encoding}}]{encoding = {\ttfamily {\bf encoding\-\_\-auto}}}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__document_ac67294573cbaa41d3e6210480a9f7f99}
+
+\begin{DoxyCode}
+5316     \{
+5317         FILE* file = fopen(path\_, (flags & \hyperlink{namespacepugi_ab0aae01dc0b870a2673c32ca6623ae09}{format\_save\_file\_text}) ? \textcolor{stringliteral}{"w"} : \textcolor{stringliteral}{"wb"});
+5318         \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_abde253604bc33c829133fdbc5d2b4dba}{impl::save\_file\_impl}(*\textcolor{keyword}{this}, file, indent, flags, encoding);
+5319     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__document_a47e18cd3438eabd64fa2f82d56b08aef}{\index{pugi\-::xml\-\_\-document@{pugi\-::xml\-\_\-document}!save\-\_\-file@{save\-\_\-file}}
+\index{save\-\_\-file@{save\-\_\-file}!pugi::xml_document@{pugi\-::xml\-\_\-document}}
+\subsubsection[{save\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-document\-::save\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{const wchar\-\_\-t $\ast$}]{path, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{indent = {\ttfamily {\bf P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{})}, }
+\item[{unsigned int}]{flags = {\ttfamily {\bf format\-\_\-default}}, }
+\item[{{\bf xml\-\_\-encoding}}]{encoding = {\ttfamily {\bf encoding\-\_\-auto}}}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__document_a47e18cd3438eabd64fa2f82d56b08aef}
+
+\begin{DoxyCode}
+5322     \{
+5323         FILE* file = \hyperlink{pugixml_8cpp_a6a347080c51ac7c992a32cde66a43801}{impl::open\_file\_wide}(path\_, (flags & 
+      \hyperlink{namespacepugi_ab0aae01dc0b870a2673c32ca6623ae09}{format\_save\_file\_text}) ? L\textcolor{stringliteral}{"w"} : L\textcolor{stringliteral}{"wb"});
+5324         \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_abde253604bc33c829133fdbc5d2b4dba}{impl::save\_file\_impl}(*\textcolor{keyword}{this}, file, indent, flags, encoding);
+5325     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8hpp}{pugixml.\-hpp}\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,197 @@
+\hypertarget{classCamera}{\section{Camera Class Reference}
+\label{classCamera}\index{Camera@{Camera}}
+}
+
+
+The \hyperlink{classCamera}{Camera} class.  
+
+
+
+
+{\ttfamily \#include $<$camera.\-h$>$}
+
+Inheritance diagram for Camera\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCamera}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCamera_a01f94c3543f56ede7af49dc778f19331}{Camera} ()
+\begin{DoxyCompactList}\small\item\em Default value constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCamera_a5a4ceda635ed01219348078adddb141b}{Camera} (Q\-String \&\hyperlink{classCamera_a5763757e8d6adb6437dde2502072a3b1}{name}, \hyperlink{classAddress}{Address} \&address, \hyperlink{camera_8h_a10395294162cb49637e9c8f6efdb10ea}{Camera\-Content\-Type} content\-\_\-type)
+\begin{DoxyCompactList}\small\item\em Explicit value constructor. \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classCamera_a5763757e8d6adb6437dde2502072a3b1}{name} () const 
+\begin{DoxyCompactList}\small\item\em Accessor for the camera name field. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_a4f009de64587caa5e2a91a2cdd18fd32}{set\-Name} (const Q\-String \&\hyperlink{classCamera_a5763757e8d6adb6437dde2502072a3b1}{name})
+\begin{DoxyCompactList}\small\item\em Mutator for the camera name field. \end{DoxyCompactList}\item 
+\hyperlink{classAddress}{Address} \hyperlink{classCamera_aa93654bec9b65adfb95e192ac9c71e80}{server\-\_\-address} () const 
+\begin{DoxyCompactList}\small\item\em Accessor for the server address field. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_a678d67d964307ffc9e323d74c7a28ca1}{set\-Server\-\_\-address} (const \hyperlink{classAddress}{Address} \&\hyperlink{classCamera_aa93654bec9b65adfb95e192ac9c71e80}{server\-\_\-address})
+\begin{DoxyCompactList}\small\item\em Mutator for the server address field. \end{DoxyCompactList}\item 
+bool \hyperlink{classCamera_a1b7b69303090eb7557713a6dda3d3de4}{operator==} (const \hyperlink{classCamera}{Camera} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCamera}{Camera} class. 
+
+This class describes a camera that can stream video to the client. It inherits from the Q\-List\-Widget\-Item class in order to facilitate its use in list boxes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCamera_a01f94c3543f56ede7af49dc778f19331}{\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\subsubsection[{Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\-::\-Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a01f94c3543f56ede7af49dc778f19331}
+
+
+Default value constructor. 
+
+
+\begin{DoxyCode}
+5 \{
+6 \}
+\end{DoxyCode}
+\hypertarget{classCamera_a5a4ceda635ed01219348078adddb141b}{\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\subsubsection[{Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\-::\-Camera (
+\begin{DoxyParamCaption}
+\item[{Q\-String \&}]{name, }
+\item[{{\bf Address} \&}]{address, }
+\item[{{\bf Camera\-Content\-Type}}]{content\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a5a4ceda635ed01219348078adddb141b}
+
+
+Explicit value constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of this camera. \\
+\hline
+{\em address} & The address of the server to which this camera refers to. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+8                                                                               :
+9     QListWidgetItem(\hyperlink{classCamera_a5763757e8d6adb6437dde2502072a3b1}{name}),
+10     m\_name(\hyperlink{classCamera_a5763757e8d6adb6437dde2502072a3b1}{name}),
+11     m\_server\_address(address),
+12     m\_content\_type(content\_type)
+13 \{
+14 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCamera_a5763757e8d6adb6437dde2502072a3b1}{\index{Camera@{Camera}!name@{name}}
+\index{name@{name}!Camera@{Camera}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Camera\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_a5763757e8d6adb6437dde2502072a3b1}
+
+
+Accessor for the camera name field. 
+
+\begin{DoxyReturn}{Returns}
+The name of the camera. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+33 \{
+34     \textcolor{keywordflow}{return} m\_name;
+35 \}
+\end{DoxyCode}
+\hypertarget{classCamera_a1b7b69303090eb7557713a6dda3d3de4}{\index{Camera@{Camera}!operator==@{operator==}}
+\index{operator==@{operator==}!Camera@{Camera}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Camera\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Camera} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a1b7b69303090eb7557713a6dda3d3de4}
+
+\begin{DoxyCode}
+28 \{
+29     \textcolor{keywordflow}{return} (this->\hyperlink{classCamera_a5763757e8d6adb6437dde2502072a3b1}{name}() == rhs.\hyperlink{classCamera_a5763757e8d6adb6437dde2502072a3b1}{name}() && this->\hyperlink{classCamera_aa93654bec9b65adfb95e192ac9c71e80}{server\_address}() == rhs.
+      \hyperlink{classCamera_aa93654bec9b65adfb95e192ac9c71e80}{server\_address}());
+30 \}
+\end{DoxyCode}
+\hypertarget{classCamera_aa93654bec9b65adfb95e192ac9c71e80}{\index{Camera@{Camera}!server\-\_\-address@{server\-\_\-address}}
+\index{server\-\_\-address@{server\-\_\-address}!Camera@{Camera}}
+\subsubsection[{server\-\_\-address}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Address} Camera\-::server\-\_\-address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCamera_aa93654bec9b65adfb95e192ac9c71e80}
+
+
+Accessor for the server address field. 
+
+\begin{DoxyReturn}{Returns}
+The address of this camera's server. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+17 \{
+18     \textcolor{keywordflow}{return} m\_server\_address;
+19 \}
+\end{DoxyCode}
+\hypertarget{classCamera_a4f009de64587caa5e2a91a2cdd18fd32}{\index{Camera@{Camera}!set\-Name@{set\-Name}}
+\index{set\-Name@{set\-Name}!Camera@{Camera}}
+\subsubsection[{set\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\-::set\-Name (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a4f009de64587caa5e2a91a2cdd18fd32}
+
+
+Mutator for the camera name field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The new camera name. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+38 \{
+39     m\_name = \hyperlink{classCamera_a5763757e8d6adb6437dde2502072a3b1}{name};
+40     this->setText(\hyperlink{classCamera_a5763757e8d6adb6437dde2502072a3b1}{name});
+41 \}
+\end{DoxyCode}
+\hypertarget{classCamera_a678d67d964307ffc9e323d74c7a28ca1}{\index{Camera@{Camera}!set\-Server\-\_\-address@{set\-Server\-\_\-address}}
+\index{set\-Server\-\_\-address@{set\-Server\-\_\-address}!Camera@{Camera}}
+\subsubsection[{set\-Server\-\_\-address}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\-::set\-Server\-\_\-address (
+\begin{DoxyParamCaption}
+\item[{const {\bf Address} \&}]{server\-\_\-address}
+\end{DoxyParamCaption}
+)}}\label{classCamera_a678d67d964307ffc9e323d74c7a28ca1}
+
+
+Mutator for the server address field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\-\_\-address} & The new address of the server. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+22 \{
+23     m\_server\_address = \hyperlink{classCamera_aa93654bec9b65adfb95e192ac9c71e80}{server\_address};
+24 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Types/\hyperlink{camera_8h}{camera.\-h}\item 
+Types/\hyperlink{camera_8cpp}{camera.\-cpp}\end{DoxyCompactItemize}

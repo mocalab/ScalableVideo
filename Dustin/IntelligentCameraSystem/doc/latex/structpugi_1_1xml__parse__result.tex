@@ -1,0 +1,113 @@
+\hypertarget{structpugi_1_1xml__parse__result}{\section{pugi\-:\-:xml\-\_\-parse\-\_\-result Struct Reference}
+\label{structpugi_1_1xml__parse__result}\index{pugi\-::xml\-\_\-parse\-\_\-result@{pugi\-::xml\-\_\-parse\-\_\-result}}
+}
+
+
+{\ttfamily \#include $<$pugixml.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structpugi_1_1xml__parse__result_a089c4cc4253638c7faa8f0726f0d0272}{xml\-\_\-parse\-\_\-result} ()
+\item 
+\hyperlink{structpugi_1_1xml__parse__result_a1fd8f66dd233df5f76f63dea8627e589}{operator bool} () const 
+\item 
+const char $\ast$ \hyperlink{structpugi_1_1xml__parse__result_add183854c1798f4c8ae74f40def79b03}{description} () const 
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555}{xml\-\_\-parse\-\_\-status} \hyperlink{structpugi_1_1xml__parse__result_af8b3e6badea671931017695c8a9dd1af}{status}
+\item 
+ptrdiff\-\_\-t \hyperlink{structpugi_1_1xml__parse__result_adb61df40459ba6fb1083d22467983086}{offset}
+\item 
+\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} \hyperlink{structpugi_1_1xml__parse__result_ad11f279dfce644dfe297e24dc5f72c01}{encoding}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structpugi_1_1xml__parse__result_a089c4cc4253638c7faa8f0726f0d0272}{\index{pugi\-::xml\-\_\-parse\-\_\-result@{pugi\-::xml\-\_\-parse\-\_\-result}!xml\-\_\-parse\-\_\-result@{xml\-\_\-parse\-\_\-result}}
+\index{xml\-\_\-parse\-\_\-result@{xml\-\_\-parse\-\_\-result}!pugi::xml_parse_result@{pugi\-::xml\-\_\-parse\-\_\-result}}
+\subsubsection[{xml\-\_\-parse\-\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xml\-\_\-parse\-\_\-result\-::xml\-\_\-parse\-\_\-result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{structpugi_1_1xml__parse__result_a089c4cc4253638c7faa8f0726f0d0272}
+
+\begin{DoxyCode}
+5066                                                : \hyperlink{structpugi_1_1xml__parse__result_af8b3e6badea671931017695c8a9dd1af}{status}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a37a3c224657a16f27c950ec70954c981}{status\_internal\_error}), \hyperlink{structpugi_1_1xml__parse__result_adb61df40459ba6fb1083d22467983086}{offset}(0), \hyperlink{structpugi_1_1xml__parse__result_ad11f279dfce644dfe297e24dc5f72c01}{encoding}(
+      \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\_auto})
+5067     \{
+5068     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structpugi_1_1xml__parse__result_add183854c1798f4c8ae74f40def79b03}{\index{pugi\-::xml\-\_\-parse\-\_\-result@{pugi\-::xml\-\_\-parse\-\_\-result}!description@{description}}
+\index{description@{description}!pugi::xml_parse_result@{pugi\-::xml\-\_\-parse\-\_\-result}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} const char $\ast$ pugi\-::xml\-\_\-parse\-\_\-result\-::description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structpugi_1_1xml__parse__result_add183854c1798f4c8ae74f40def79b03}
+
+\begin{DoxyCode}
+5076     \{
+5077         \textcolor{keywordflow}{switch} (\hyperlink{structpugi_1_1xml__parse__result_af8b3e6badea671931017695c8a9dd1af}{status})
+5078         \{
+5079         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a46ddc2abb6a54fdac07cf9086b45f10f}{status\_ok}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"No error"};
+5080 
+5081         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a32e05bc1b1356846e6a5fb0ec097d36b}{status\_file\_not\_found}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"File was not found"};
+5082         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a28bb6318a65eec5abcf1ef8174b92246}{status\_io\_error}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Error reading from file/stream"};
+5083         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a59e75d024e9f5c213ca6f4db8102b978}{status\_out\_of\_memory}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Could not allocate memory"};
+5084         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a37a3c224657a16f27c950ec70954c981}{status\_internal\_error}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Internal error occurred"};
+5085 
+5086         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a71a555b91e80b6d8f84aeb6a93904d28}{status\_unrecognized\_tag}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Could not determine tag type"};
+5087 
+5088         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555ad7a57e8554aabea52ed8b0d6a0891622}{status\_bad\_pi}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Error parsing document declaration/processing instruction"}
+      ;
+5089         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a563327f534e9b3ce55f9f7364aa746b2}{status\_bad\_comment}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Error parsing comment"};
+5090         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555aa2ebdaf5e8bf5414bec3004270e102b8}{status\_bad\_cdata}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Error parsing CDATA section"};
+5091         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a58d1b0d8787e97fc1b5b31ec5e4fabcf}{status\_bad\_doctype}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Error parsing document type declaration"};
+5092         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555ac5257467a3d1a971134c457066b21ee5}{status\_bad\_pcdata}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Error parsing PCDATA section"};
+5093         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a3cf4e84a5b433ce50e6f3037df5c1bdd}{status\_bad\_start\_element}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Error parsing start element tag"};
+5094         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a2b34aa9968d63b28a6d51b30575ff95a}{status\_bad\_attribute}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Error parsing element attribute"};
+5095         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a261cbf22c7da45388bcc1e6759020790}{status\_bad\_end\_element}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Error parsing end element tag"};
+5096         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a07a5f6f8392474ccb2d5dc10fe2307a2}{status\_end\_element\_mismatch}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Start-end tags mismatch"};
+5097 
+5098         \textcolor{keywordflow}{default}: \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Unknown error"};
+5099         \}
+5100     \}
+\end{DoxyCode}
+\hypertarget{structpugi_1_1xml__parse__result_a1fd8f66dd233df5f76f63dea8627e589}{\index{pugi\-::xml\-\_\-parse\-\_\-result@{pugi\-::xml\-\_\-parse\-\_\-result}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!pugi::xml_parse_result@{pugi\-::xml\-\_\-parse\-\_\-result}}
+\subsubsection[{operator bool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xml\-\_\-parse\-\_\-result\-::operator bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{structpugi_1_1xml__parse__result_a1fd8f66dd233df5f76f63dea8627e589}
+
+\begin{DoxyCode}
+5071     \{
+5072         \textcolor{keywordflow}{return} \hyperlink{structpugi_1_1xml__parse__result_af8b3e6badea671931017695c8a9dd1af}{status} == \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a46ddc2abb6a54fdac07cf9086b45f10f}{status\_ok};
+5073     \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\hypertarget{structpugi_1_1xml__parse__result_ad11f279dfce644dfe297e24dc5f72c01}{\index{pugi\-::xml\-\_\-parse\-\_\-result@{pugi\-::xml\-\_\-parse\-\_\-result}!encoding@{encoding}}
+\index{encoding@{encoding}!pugi::xml_parse_result@{pugi\-::xml\-\_\-parse\-\_\-result}}
+\subsubsection[{encoding}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\-\_\-encoding} pugi\-::xml\-\_\-parse\-\_\-result\-::encoding}}\label{structpugi_1_1xml__parse__result_ad11f279dfce644dfe297e24dc5f72c01}
+\hypertarget{structpugi_1_1xml__parse__result_adb61df40459ba6fb1083d22467983086}{\index{pugi\-::xml\-\_\-parse\-\_\-result@{pugi\-::xml\-\_\-parse\-\_\-result}!offset@{offset}}
+\index{offset@{offset}!pugi::xml_parse_result@{pugi\-::xml\-\_\-parse\-\_\-result}}
+\subsubsection[{offset}]{\setlength{\rightskip}{0pt plus 5cm}ptrdiff\-\_\-t pugi\-::xml\-\_\-parse\-\_\-result\-::offset}}\label{structpugi_1_1xml__parse__result_adb61df40459ba6fb1083d22467983086}
+\hypertarget{structpugi_1_1xml__parse__result_af8b3e6badea671931017695c8a9dd1af}{\index{pugi\-::xml\-\_\-parse\-\_\-result@{pugi\-::xml\-\_\-parse\-\_\-result}!status@{status}}
+\index{status@{status}!pugi::xml_parse_result@{pugi\-::xml\-\_\-parse\-\_\-result}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\-\_\-parse\-\_\-status} pugi\-::xml\-\_\-parse\-\_\-result\-::status}}\label{structpugi_1_1xml__parse__result_af8b3e6badea671931017695c8a9dd1af}
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8hpp}{pugixml.\-hpp}\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

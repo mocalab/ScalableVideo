@@ -1,0 +1,77 @@
+\hypertarget{structdocument__order__comparator}{\section{document\-\_\-order\-\_\-comparator Struct Reference}
+\label{structdocument__order__comparator}\index{document\-\_\-order\-\_\-comparator@{document\-\_\-order\-\_\-comparator}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{structdocument__order__comparator_a11e471cbfa426bc9e48844c1db1a190e}{operator()} (const xpath\-\_\-node \&lhs, const xpath\-\_\-node \&rhs) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structdocument__order__comparator_a11e471cbfa426bc9e48844c1db1a190e}{\index{document\-\_\-order\-\_\-comparator@{document\-\_\-order\-\_\-comparator}!operator()@{operator()}}
+\index{operator()@{operator()}!document_order_comparator@{document\-\_\-order\-\_\-comparator}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool document\-\_\-order\-\_\-comparator\-::operator() (
+\begin{DoxyParamCaption}
+\item[{const xpath\-\_\-node \&}]{lhs, }
+\item[{const xpath\-\_\-node \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structdocument__order__comparator_a11e471cbfa426bc9e48844c1db1a190e}
+
+\begin{DoxyCode}
+6154         \{
+6155             \textcolor{comment}{// optimized document order based check}
+6156             \textcolor{keyword}{const} \textcolor{keywordtype}{void}* lo = \hyperlink{pugixml_8cpp_af28012d575e412e524d54e911266d548}{document\_order}(lhs);
+6157             \textcolor{keyword}{const} \textcolor{keywordtype}{void}* ro = \hyperlink{pugixml_8cpp_af28012d575e412e524d54e911266d548}{document\_order}(rhs);
+6158 
+6159             \textcolor{keywordflow}{if} (lo && ro) \textcolor{keywordflow}{return} lo < ro;
+6160 
+6161             \textcolor{comment}{// slow comparison}
+6162             xml\_node ln = lhs.node(), rn = rhs.node();
+6163 
+6164             \textcolor{comment}{// compare attributes}
+6165             \textcolor{keywordflow}{if} (lhs.attribute() && rhs.attribute())
+6166             \{
+6167                 \textcolor{comment}{// shared parent}
+6168                 \textcolor{keywordflow}{if} (lhs.parent() == rhs.parent())
+6169                 \{
+6170                     \textcolor{comment}{// determine sibling order}
+6171                     \textcolor{keywordflow}{for} (xml\_attribute a = lhs.attribute(); a; a = a.next\_attribute())
+6172                         \textcolor{keywordflow}{if} (a == rhs.attribute())
+6173                             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+6174                     
+6175                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+6176                 \}
+6177                 
+6178                 \textcolor{comment}{// compare attribute parents}
+6179                 ln = lhs.parent();
+6180                 rn = rhs.parent();
+6181             \}
+6182             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (lhs.attribute())
+6183             \{
+6184                 \textcolor{comment}{// attributes go after the parent element}
+6185                 \textcolor{keywordflow}{if} (lhs.parent() == rhs.node()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+6186                 
+6187                 ln = lhs.parent();
+6188             \}
+6189             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rhs.attribute())
+6190             \{
+6191                 \textcolor{comment}{// attributes go after the parent element}
+6192                 \textcolor{keywordflow}{if} (rhs.parent() == lhs.node()) \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+6193                 
+6194                 rn = rhs.parent();
+6195             \}
+6196 
+6197             \textcolor{keywordflow}{if} (ln == rn) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+6198             
+6199             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} lh = \hyperlink{pugixml_8cpp_a71b769adcc2bf76bd8b2902980605082}{node\_height}(ln);
+6200             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} rh = \hyperlink{pugixml_8cpp_a71b769adcc2bf76bd8b2902980605082}{node\_height}(rn);
+6201             
+6202             \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_a64dbb9cc2216106e19248c7d5770525d}{node\_is\_before}(ln, lh, rn, rh);
+6203         \}
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

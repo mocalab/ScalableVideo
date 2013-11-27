@@ -1,0 +1,390 @@
+\hypertarget{classVideoWindow}{\section{Video\-Window Class Reference}
+\label{classVideoWindow}\index{Video\-Window@{Video\-Window}}
+}
+
+
+{\ttfamily \#include $<$videowindow.\-h$>$}
+
+Inheritance diagram for Video\-Window\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classVideoWindow}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVideoWindow_a5035f10be178cfc311d637c19938a344}{resize\-Window} (int width, int height)
+\item 
+void \hyperlink{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}{received\-Message} (Q\-String response)
+\item 
+void \hyperlink{classVideoWindow_a55220de4b6b3b8e2575201c933932059}{delay\-Server\-Connect} ()
+\item 
+void \hyperlink{classVideoWindow_a68b4f26c999360c30b12cc70347393c7}{disconnect} ()
+\item 
+void \hyperlink{classVideoWindow_a655194e6449c76e200135c88f8fafd7d}{send\-Button\-Clicked} ()
+\item 
+void \hyperlink{classVideoWindow_ac07f4db8a805849174cb129134708fd4}{resize\-Video} (Q\-String width, Q\-String height, Q\-String fps, Q\-String bps)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVideoWindow_a726415adc7cbeb8ed1ac0892929ecfaf}{send\-Camera} (\hyperlink{classCamera}{Camera} $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVideoWindow_a6867be437aebded8b690a9b95216df07}{Video\-Window} (\hyperlink{classCamera}{Camera} $\ast$\hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera}, Q\-Widget $\ast$parent=0)
+\item 
+\hyperlink{classVideoWindow_a3c5b83ed86071f9210388f0e06ac4876}{$\sim$\-Video\-Window} ()
+\item 
+void \hyperlink{classVideoWindow_ac71a3e790d6956a26369294d5fb36c93}{stream\-Video} (Q\-String url)
+\item 
+void \hyperlink{classVideoWindow_af5830c7faa6e46a69be02c93abc28d3a}{send\-Request} (Q\-String data)
+\item 
+\hyperlink{classCamera}{Camera} $\ast$ \hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera} () const 
+\item 
+void \hyperlink{classVideoWindow_a612b1b179b04ccebce717ff2fd95879e}{set\-Camera} (\hyperlink{classCamera}{Camera} $\ast$\hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera})
+\item 
+bool \hyperlink{classVideoWindow_af11854a41b4e79c396c04bc40789b46d}{operator==} (const \hyperlink{classVideoWindow}{Video\-Window} \&rhs)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classVideoWindow_aba663642b1a2911fc83c366c50fc1378}{enter\-Event} (Q\-Event $\ast$e)
+\item 
+virtual void \hyperlink{classVideoWindow_a58ad769fa96f197fd1212a9cbf5984d1}{leave\-Event} (Q\-Event $\ast$e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVideoWindow_a6867be437aebded8b690a9b95216df07}{\index{Video\-Window@{Video\-Window}!Video\-Window@{Video\-Window}}
+\index{Video\-Window@{Video\-Window}!VideoWindow@{Video\-Window}}
+\subsubsection[{Video\-Window}]{\setlength{\rightskip}{0pt plus 5cm}Video\-Window\-::\-Video\-Window (
+\begin{DoxyParamCaption}
+\item[{{\bf Camera} $\ast$}]{camera, }
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classVideoWindow_a6867be437aebded8b690a9b95216df07}
+
+\begin{DoxyCode}
+10                                                         :
+11     QDialog(parent),
+12     m\_camera(camera),
+13     ui(\textcolor{keyword}{new} Ui::VideoWindow),
+14     m\_controls\_revealed(\textcolor{keyword}{false}),
+15     m\_is\_inside(\textcolor{keyword}{false})
+16 \{   
+17 
+18     ui->setupUi(\textcolor{keyword}{this});
+19     this->setWindowTitle(m\_camera->\hyperlink{classCamera_a5763757e8d6adb6437dde2502072a3b1}{name}());
+20     \textcolor{comment}{//this->setFixedSize(this->size());}
+21     this->setFixedSize(ui->video\_player->width() + 10, ui->video\_player->height() + ui->video\_controls->
+      height() + 5);
+22 
+23     connect(ui->video\_player, SIGNAL(resizeParent(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classVideoWindow_a5035f10be178cfc311d637c19938a344}{resizeWindow}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})));
+24     connect(ui->video\_controls, SIGNAL(sendClicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classVideoWindow_a655194e6449c76e200135c88f8fafd7d}{sendButtonClicked}()));
+25     connect(ui->video\_controls, SIGNAL(sendClicked(QString,QString,QString, QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classVideoWindow_ac07f4db8a805849174cb129134708fd4}{resizeVideo}(QString,QString,QString, QString)));
+26 
+27     ui->video\_controls->resize(this->width(), ui->video\_controls->height());
+28     ui->video\_controls->move((this->width() / 2) - (ui->video\_controls->width() / 2),0);
+29 
+30     ui->video\_player->move((this->width() / 2) - (ui->video\_player->width() / 2),ui->video\_controls->height
+      ());
+31 
+32     \textcolor{comment}{//Try to connect to server}
+33     m\_tcp\_interface = \textcolor{keyword}{new} \hyperlink{classNetworkToQtInterface}{NetworkToQtInterface}(m\_camera->
+      \hyperlink{classCamera_aa93654bec9b65adfb95e192ac9c71e80}{server\_address}());
+34     connect(m\_tcp\_interface, SIGNAL(messageDispatch(QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}{receivedMessage}(QString)));
+35     connect(m\_tcp\_interface, SIGNAL(serverDisconnected()), \textcolor{keyword}{this}, SLOT(\hyperlink{classVideoWindow_a68b4f26c999360c30b12cc70347393c7}{disconnect}()));
+36     \textcolor{comment}{//connect(m\_request\_thread, SIGNAL(destroyed()), m\_tcp\_interface, SLOT(close()));}
+37 
+38     this->setUpThreads();
+39     \textcolor{comment}{//Delay server connect}
+40 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+41 \textcolor{preprocessor}{}    QTimer::singleShot(500, \textcolor{keyword}{this}, SLOT(\hyperlink{classVideoWindow_a55220de4b6b3b8e2575201c933932059}{delayServerConnect}()));
+42 \textcolor{preprocessor}{#endif}
+43 \textcolor{preprocessor}{}
+44 
+45 
+46     \textcolor{comment}{//qApp->installEventFilter(this);}
+47 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_a3c5b83ed86071f9210388f0e06ac4876}{\index{Video\-Window@{Video\-Window}!$\sim$\-Video\-Window@{$\sim$\-Video\-Window}}
+\index{$\sim$\-Video\-Window@{$\sim$\-Video\-Window}!VideoWindow@{Video\-Window}}
+\subsubsection[{$\sim$\-Video\-Window}]{\setlength{\rightskip}{0pt plus 5cm}Video\-Window\-::$\sim$\-Video\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVideoWindow_a3c5b83ed86071f9210388f0e06ac4876}
+
+\begin{DoxyCode}
+83 \{
+84     \textcolor{keyword}{delete} ui;
+85     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Video window destructor called."};
+86     \textcolor{comment}{//Must determine why server is not seeing us disconnect}
+87     this->\hyperlink{classVideoWindow_a68b4f26c999360c30b12cc70347393c7}{disconnect}();
+88     \textcolor{comment}{//ui->video\_player->stopPlaying();}
+89 
+90 
+91     m\_request\_thread->terminate();
+92 
+93 
+94     \textcolor{keyword}{delete} m\_tcp\_interface;
+95 
+96     \textcolor{keyword}{delete} m\_request\_thread;
+97 
+98     \textcolor{comment}{//Camera object should be managed by creating class}
+99     \textcolor{comment}{//delete m\_camera;}
+100     emit \hyperlink{classVideoWindow_a726415adc7cbeb8ed1ac0892929ecfaf}{sendCamera}(m\_camera);
+101 
+102 
+103 
+104 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{\index{Video\-Window@{Video\-Window}!camera@{camera}}
+\index{camera@{camera}!VideoWindow@{Video\-Window}}
+\subsubsection[{camera}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Camera} $\ast$ Video\-Window\-::camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classVideoWindow_aa163a5850ff726c12f59562b993e4403}
+
+\begin{DoxyCode}
+241 \{
+242     \textcolor{keywordflow}{return} m\_camera;
+243 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_a55220de4b6b3b8e2575201c933932059}{\index{Video\-Window@{Video\-Window}!delay\-Server\-Connect@{delay\-Server\-Connect}}
+\index{delay\-Server\-Connect@{delay\-Server\-Connect}!VideoWindow@{Video\-Window}}
+\subsubsection[{delay\-Server\-Connect}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Window\-::delay\-Server\-Connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVideoWindow_a55220de4b6b3b8e2575201c933932059}
+
+\begin{DoxyCode}
+157 \{
+158     connectToServer();
+159 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_a68b4f26c999360c30b12cc70347393c7}{\index{Video\-Window@{Video\-Window}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!VideoWindow@{Video\-Window}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Window\-::disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVideoWindow_a68b4f26c999360c30b12cc70347393c7}
+
+\begin{DoxyCode}
+256 \{
+257     m\_tcp\_interface->\hyperlink{classNetworkToQtInterface_ac4889eb9f3c5b5e4509252481335200f}{close}();
+258     
+259 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_aba663642b1a2911fc83c366c50fc1378}{\index{Video\-Window@{Video\-Window}!enter\-Event@{enter\-Event}}
+\index{enter\-Event@{enter\-Event}!VideoWindow@{Video\-Window}}
+\subsubsection[{enter\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Window\-::enter\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classVideoWindow_aba663642b1a2911fc83c366c50fc1378}
+
+\begin{DoxyCode}
+115 \{
+116 \textcolor{comment}{//    QDialog::enterEvent(e);}
+117 \textcolor{comment}{//    m\_is\_inside = true;}
+118 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_a58ad769fa96f197fd1212a9cbf5984d1}{\index{Video\-Window@{Video\-Window}!leave\-Event@{leave\-Event}}
+\index{leave\-Event@{leave\-Event}!VideoWindow@{Video\-Window}}
+\subsubsection[{leave\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Window\-::leave\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classVideoWindow_a58ad769fa96f197fd1212a9cbf5984d1}
+
+\begin{DoxyCode}
+121 \{
+122 \textcolor{comment}{//    QDialog::leaveEvent(e);}
+123 \textcolor{comment}{//    m\_is\_inside = false;}
+124 \textcolor{comment}{//    //Make sure we hide the controls if revealed}
+125 \textcolor{comment}{//    if(m\_controls\_revealed)}
+126 \textcolor{comment}{//    \{}
+127 \textcolor{comment}{//        ui->video\_controls->fadeOut();}
+128 \textcolor{comment}{//        m\_controls\_revealed = false;}
+129 \textcolor{comment}{//    \}}
+130 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_af11854a41b4e79c396c04bc40789b46d}{\index{Video\-Window@{Video\-Window}!operator==@{operator==}}
+\index{operator==@{operator==}!VideoWindow@{Video\-Window}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Video\-Window\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Video\-Window} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classVideoWindow_af11854a41b4e79c396c04bc40789b46d}
+
+\begin{DoxyCode}
+251 \{
+252     \textcolor{keywordflow}{return} *(this->\hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera}()) == *(rhs.\hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera}());
+253 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}{\index{Video\-Window@{Video\-Window}!received\-Message@{received\-Message}}
+\index{received\-Message@{received\-Message}!VideoWindow@{Video\-Window}}
+\subsubsection[{received\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Window\-::received\-Message (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{response}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}
+
+\begin{DoxyCode}
+145 \{
+146     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"In slot \(\backslash\)'receivedPacket\(\backslash\)' Message:"} << response;
+147     \textcolor{comment}{//Set non modal and allocate on heap so it does not block}
+148     \textcolor{comment}{//video from playing}
+149     QMessageBox *msgBox = \textcolor{keyword}{new} QMessageBox;
+150     msgBox->setText(response);
+151     msgBox->setWindowModality(Qt::NonModal);
+152     msgBox->setAttribute(Qt::WA\_DeleteOnClose);
+153     msgBox->show();
+154 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_ac07f4db8a805849174cb129134708fd4}{\index{Video\-Window@{Video\-Window}!resize\-Video@{resize\-Video}}
+\index{resize\-Video@{resize\-Video}!VideoWindow@{Video\-Window}}
+\subsubsection[{resize\-Video}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Window\-::resize\-Video (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{width, }
+\item[{Q\-String}]{height, }
+\item[{Q\-String}]{fps, }
+\item[{Q\-String}]{bps}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVideoWindow_ac07f4db8a805849174cb129134708fd4}
+
+\begin{DoxyCode}
+273 \{
+274     \textcolor{comment}{//Create the message}
+275     QString msg = QString(\textcolor{stringliteral}{"start "});
+276     msg += width + QString(\textcolor{stringliteral}{" "}) + height + QString(\textcolor{stringliteral}{" "}) + fps + QString(\textcolor{stringliteral}{" "}) + bps;
+277     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Sent: "} << msg;
+278     \textcolor{comment}{//Send it to server}
+279     this->\hyperlink{classVideoWindow_af5830c7faa6e46a69be02c93abc28d3a}{sendRequest}(msg);
+280 \textcolor{preprocessor}{#if PLAY\_WITH\_VLC}
+281 \textcolor{preprocessor}{}    \textcolor{keywordtype}{int} fps\_int = fps.toInt();
+282     \textcolor{comment}{//If FPS has changed we need to restart playback (limit to 15 and 30 fps for now... very poor and hacky
+       method)}
+283     \textcolor{keywordflow}{if}(fps\_int != ui->video\_player->getFps() && (fps\_int == 30 || fps\_int == 15))
+284     \{
+285         ui->video\_player->setFps(fps\_int);
+286         \textcolor{comment}{//ui->video\_player->setPlaybackRate(fps.toInt());}
+287         this->ui->video\_player->playUrl(QString(\hyperlink{videowindow_8h_a426bf7791468566b136608539264cc96}{VIDEO\_URL}));
+288     \}
+289 \textcolor{preprocessor}{#endif}
+290 \textcolor{preprocessor}{}
+291 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_a5035f10be178cfc311d637c19938a344}{\index{Video\-Window@{Video\-Window}!resize\-Window@{resize\-Window}}
+\index{resize\-Window@{resize\-Window}!VideoWindow@{Video\-Window}}
+\subsubsection[{resize\-Window}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Window\-::resize\-Window (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVideoWindow_a5035f10be178cfc311d637c19938a344}
+
+\begin{DoxyCode}
+135 \{
+136     \textcolor{comment}{//this->setFixedSize(width, height);}
+137     this->setFixedSize(width + 10, height + ui->video\_controls->height() + 5);
+138     ui->video\_controls->resize(this->width(), ui->video\_controls->height());
+139     ui->video\_controls->move((this->width() / 2) - (ui->video\_controls->width() / 2),0);
+140     ui->video\_player->move((this->width() / 2) - (ui->video\_player->width() / 2),ui->video\_controls->height
+      ());
+141 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_a655194e6449c76e200135c88f8fafd7d}{\index{Video\-Window@{Video\-Window}!send\-Button\-Clicked@{send\-Button\-Clicked}}
+\index{send\-Button\-Clicked@{send\-Button\-Clicked}!VideoWindow@{Video\-Window}}
+\subsubsection[{send\-Button\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Window\-::send\-Button\-Clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVideoWindow_a655194e6449c76e200135c88f8fafd7d}
+
+\begin{DoxyCode}
+262 \{
+263     \textcolor{comment}{//bool playing = this->ui->video\_player->isPlaying();}
+264     QString str;
+265     \textcolor{comment}{//if(playing)}
+266         str = \textcolor{stringliteral}{"Playing"};
+267     \textcolor{comment}{//else}
+268         \textcolor{comment}{//str = "Not Playing";}
+269     \hyperlink{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}{receivedMessage}(str);
+270 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_a726415adc7cbeb8ed1ac0892929ecfaf}{\index{Video\-Window@{Video\-Window}!send\-Camera@{send\-Camera}}
+\index{send\-Camera@{send\-Camera}!VideoWindow@{Video\-Window}}
+\subsubsection[{send\-Camera}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Window\-::send\-Camera (
+\begin{DoxyParamCaption}
+\item[{{\bf Camera} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classVideoWindow_a726415adc7cbeb8ed1ac0892929ecfaf}
+\hypertarget{classVideoWindow_af5830c7faa6e46a69be02c93abc28d3a}{\index{Video\-Window@{Video\-Window}!send\-Request@{send\-Request}}
+\index{send\-Request@{send\-Request}!VideoWindow@{Video\-Window}}
+\subsubsection[{send\-Request}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Window\-::send\-Request (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{data}
+\end{DoxyParamCaption}
+)}}\label{classVideoWindow_af5830c7faa6e46a69be02c93abc28d3a}
+
+\begin{DoxyCode}
+229 \{
+230     \textcolor{keywordflow}{if}(!m\_tcp\_interface->\hyperlink{classNetworkToQtInterface_a2584e2afdb435bd83b9bd9bbec6214c3}{isConnected}())
+231         \hyperlink{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}{receivedMessage}(\textcolor{stringliteral}{"Not connected!"});
+232     \textcolor{keywordflow}{else}
+233     \{
+234         m\_tcp\_interface->\hyperlink{classNetworkToQtInterface_aed3e3b56739941d40dd8f222f2bfc394}{setBuffer}(data);
+235         m\_request\_thread->start();
+236     \}
+237 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_a612b1b179b04ccebce717ff2fd95879e}{\index{Video\-Window@{Video\-Window}!set\-Camera@{set\-Camera}}
+\index{set\-Camera@{set\-Camera}!VideoWindow@{Video\-Window}}
+\subsubsection[{set\-Camera}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Window\-::set\-Camera (
+\begin{DoxyParamCaption}
+\item[{{\bf Camera} $\ast$}]{camera}
+\end{DoxyParamCaption}
+)}}\label{classVideoWindow_a612b1b179b04ccebce717ff2fd95879e}
+
+\begin{DoxyCode}
+246 \{
+247     m\_camera = \hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera};
+248 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_ac71a3e790d6956a26369294d5fb36c93}{\index{Video\-Window@{Video\-Window}!stream\-Video@{stream\-Video}}
+\index{stream\-Video@{stream\-Video}!VideoWindow@{Video\-Window}}
+\subsubsection[{stream\-Video}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Window\-::stream\-Video (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{url}
+\end{DoxyParamCaption}
+)}}\label{classVideoWindow_ac71a3e790d6956a26369294d5fb36c93}
+
+\begin{DoxyCode}
+107 \{
+108 \textcolor{preprocessor}{#if PLAY\_WITH\_VLC}
+109 \textcolor{preprocessor}{}   ui->video\_player->playUrl(url);
+110     \textcolor{comment}{//ui->video\_player->preprocess();}
+111 \textcolor{preprocessor}{#endif}
+112 \textcolor{preprocessor}{}\}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+U\-I/\hyperlink{videowindow_8h}{videowindow.\-h}\item 
+U\-I/\hyperlink{videowindow_8cpp}{videowindow.\-cpp}\end{DoxyCompactItemize}

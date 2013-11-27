@@ -1,0 +1,262 @@
+\hypertarget{structutf__decoder}{\section{utf\-\_\-decoder$<$ Traits, opt\-\_\-swap $>$ Struct Template Reference}
+\label{structutf__decoder}\index{utf\-\_\-decoder$<$ Traits, opt\-\_\-swap $>$@{utf\-\_\-decoder$<$ Traits, opt\-\_\-swap $>$}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Traits\-::value\-\_\-type \hyperlink{structutf__decoder_a671829bbdba1eac5c8bd2bf781eae498}{decode\-\_\-utf8\-\_\-block} (const uint8\-\_\-t $\ast$data, size\-\_\-t size, typename Traits\-::value\-\_\-type result)
+\item 
+static Traits\-::value\-\_\-type \hyperlink{structutf__decoder_ac22afd983ac79318f0e7d07669bda8d1}{decode\-\_\-utf16\-\_\-block} (const uint16\-\_\-t $\ast$data, size\-\_\-t size, typename Traits\-::value\-\_\-type result)
+\item 
+static Traits\-::value\-\_\-type \hyperlink{structutf__decoder_a8bed41cc707328e8d8ab91fd7c3c943e}{decode\-\_\-utf32\-\_\-block} (const uint32\-\_\-t $\ast$data, size\-\_\-t size, typename Traits\-::value\-\_\-type result)
+\item 
+static Traits\-::value\-\_\-type \hyperlink{structutf__decoder_a3f728755fa7cc552e30e8d8776cad1ce}{decode\-\_\-latin1\-\_\-block} (const uint8\-\_\-t $\ast$data, size\-\_\-t size, typename Traits\-::value\-\_\-type result)
+\item 
+static Traits\-::value\-\_\-type \hyperlink{structutf__decoder_a56b161067860fde1ed534ac3b7399e36}{decode\-\_\-wchar\-\_\-block\-\_\-impl} (const uint16\-\_\-t $\ast$data, size\-\_\-t size, typename Traits\-::value\-\_\-type result)
+\item 
+static Traits\-::value\-\_\-type \hyperlink{structutf__decoder_a3bd423d3ce99b245c76be8a0796d951b}{decode\-\_\-wchar\-\_\-block\-\_\-impl} (const uint32\-\_\-t $\ast$data, size\-\_\-t size, typename Traits\-::value\-\_\-type result)
+\item 
+static Traits\-::value\-\_\-type \hyperlink{structutf__decoder_a5953fd0661c64408e08161342e4c538d}{decode\-\_\-wchar\-\_\-block} (const wchar\-\_\-t $\ast$data, size\-\_\-t size, typename Traits\-::value\-\_\-type result)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structutf__decoder_a3f728755fa7cc552e30e8d8776cad1ce}{\index{utf\-\_\-decoder@{utf\-\_\-decoder}!decode\-\_\-latin1\-\_\-block@{decode\-\_\-latin1\-\_\-block}}
+\index{decode\-\_\-latin1\-\_\-block@{decode\-\_\-latin1\-\_\-block}!utf_decoder@{utf\-\_\-decoder}}
+\subsubsection[{decode\-\_\-latin1\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Traits , typename opt\-\_\-swap  = opt\-\_\-false$>$ static Traits\-::value\-\_\-type {\bf utf\-\_\-decoder}$<$ Traits, opt\-\_\-swap $>$\-::decode\-\_\-latin1\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{size, }
+\item[{typename Traits\-::value\-\_\-type}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structutf__decoder_a3f728755fa7cc552e30e8d8776cad1ce}
+
+\begin{DoxyCode}
+979         \{
+980             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < size; ++i)
+981             \{
+982                 result = Traits::low(result, data[i]);
+983             \}
+984 
+985             \textcolor{keywordflow}{return} result;
+986         \}
+\end{DoxyCode}
+\hypertarget{structutf__decoder_ac22afd983ac79318f0e7d07669bda8d1}{\index{utf\-\_\-decoder@{utf\-\_\-decoder}!decode\-\_\-utf16\-\_\-block@{decode\-\_\-utf16\-\_\-block}}
+\index{decode\-\_\-utf16\-\_\-block@{decode\-\_\-utf16\-\_\-block}!utf_decoder@{utf\-\_\-decoder}}
+\subsubsection[{decode\-\_\-utf16\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Traits , typename opt\-\_\-swap  = opt\-\_\-false$>$ static Traits\-::value\-\_\-type {\bf utf\-\_\-decoder}$<$ Traits, opt\-\_\-swap $>$\-::decode\-\_\-utf16\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{const uint16\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{size, }
+\item[{typename Traits\-::value\-\_\-type}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structutf__decoder_ac22afd983ac79318f0e7d07669bda8d1}
+
+\begin{DoxyCode}
+910         \{
+911             \textcolor{keyword}{const} uint16\_t* end = data + size;
+912 
+913             \textcolor{keywordflow}{while} (data < end)
+914             \{
+915                 uint16\_t lead = opt\_swap::value ? \hyperlink{pugixml_8cpp_a6d31b21cfa4167d79865a7797b33f3f1}{endian\_swap}(*data) : *data;
+916 
+917                 \textcolor{comment}{// U+0000..U+D7FF}
+918                 \textcolor{keywordflow}{if} (lead < 0xD800)
+919                 \{
+920                     result = Traits::low(result, lead);
+921                     data += 1;
+922                 \}
+923                 \textcolor{comment}{// U+E000..U+FFFF}
+924                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (static\_cast<unsigned int>(lead - 0xE000) < 0x2000)
+925                 \{
+926                     result = Traits::low(result, lead);
+927                     data += 1;
+928                 \}
+929                 \textcolor{comment}{// surrogate pair lead}
+930                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (static\_cast<unsigned int>(lead - 0xD800) < 0x400 && data + 1 < end)
+931                 \{
+932                     uint16\_t next = opt\_swap::value ? \hyperlink{pugixml_8cpp_a6d31b21cfa4167d79865a7797b33f3f1}{endian\_swap}(data[1]) : data[1];
+933 
+934                     \textcolor{keywordflow}{if} (static\_cast<unsigned int>(next - 0xDC00) < 0x400)
+935                     \{
+936                         result = Traits::high(result, 0x10000 + ((lead & 0x3ff) << 10) + (next & 0x3ff));
+937                         data += 2;
+938                     \}
+939                     \textcolor{keywordflow}{else}
+940                     \{
+941                         data += 1;
+942                     \}
+943                 \}
+944                 \textcolor{keywordflow}{else}
+945                 \{
+946                     data += 1;
+947                 \}
+948             \}
+949 
+950             \textcolor{keywordflow}{return} result;
+951         \}
+\end{DoxyCode}
+\hypertarget{structutf__decoder_a8bed41cc707328e8d8ab91fd7c3c943e}{\index{utf\-\_\-decoder@{utf\-\_\-decoder}!decode\-\_\-utf32\-\_\-block@{decode\-\_\-utf32\-\_\-block}}
+\index{decode\-\_\-utf32\-\_\-block@{decode\-\_\-utf32\-\_\-block}!utf_decoder@{utf\-\_\-decoder}}
+\subsubsection[{decode\-\_\-utf32\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Traits , typename opt\-\_\-swap  = opt\-\_\-false$>$ static Traits\-::value\-\_\-type {\bf utf\-\_\-decoder}$<$ Traits, opt\-\_\-swap $>$\-::decode\-\_\-utf32\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{const uint32\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{size, }
+\item[{typename Traits\-::value\-\_\-type}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structutf__decoder_a8bed41cc707328e8d8ab91fd7c3c943e}
+
+\begin{DoxyCode}
+954         \{
+955             \textcolor{keyword}{const} uint32\_t* end = data + size;
+956 
+957             \textcolor{keywordflow}{while} (data < end)
+958             \{
+959                 uint32\_t lead = opt\_swap::value ? \hyperlink{pugixml_8cpp_a6d31b21cfa4167d79865a7797b33f3f1}{endian\_swap}(*data) : *data;
+960 
+961                 \textcolor{comment}{// U+0000..U+FFFF}
+962                 \textcolor{keywordflow}{if} (lead < 0x10000)
+963                 \{
+964                     result = Traits::low(result, lead);
+965                     data += 1;
+966                 \}
+967                 \textcolor{comment}{// U+10000..U+10FFFF}
+968                 \textcolor{keywordflow}{else}
+969                 \{
+970                     result = Traits::high(result, lead);
+971                     data += 1;
+972                 \}
+973             \}
+974 
+975             \textcolor{keywordflow}{return} result;
+976         \}
+\end{DoxyCode}
+\hypertarget{structutf__decoder_a671829bbdba1eac5c8bd2bf781eae498}{\index{utf\-\_\-decoder@{utf\-\_\-decoder}!decode\-\_\-utf8\-\_\-block@{decode\-\_\-utf8\-\_\-block}}
+\index{decode\-\_\-utf8\-\_\-block@{decode\-\_\-utf8\-\_\-block}!utf_decoder@{utf\-\_\-decoder}}
+\subsubsection[{decode\-\_\-utf8\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Traits , typename opt\-\_\-swap  = opt\-\_\-false$>$ static Traits\-::value\-\_\-type {\bf utf\-\_\-decoder}$<$ Traits, opt\-\_\-swap $>$\-::decode\-\_\-utf8\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{size, }
+\item[{typename Traits\-::value\-\_\-type}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structutf__decoder_a671829bbdba1eac5c8bd2bf781eae498}
+
+\begin{DoxyCode}
+848         \{
+849             \textcolor{keyword}{const} uint8\_t utf8\_byte\_mask = 0x3f;
+850 
+851             \textcolor{keywordflow}{while} (size)
+852             \{
+853                 uint8\_t lead = *data;
+854 
+855                 \textcolor{comment}{// 0xxxxxxx -> U+0000..U+007F}
+856                 \textcolor{keywordflow}{if} (lead < 0x80)
+857                 \{
+858                     result = Traits::low(result, lead);
+859                     data += 1;
+860                     size -= 1;
+861 
+862                     \textcolor{comment}{// process aligned single-byte (ascii) blocks}
+863                     \textcolor{keywordflow}{if} ((reinterpret\_cast<uintptr\_t>(data) & 3) == 0)
+864                     \{
+865                         \textcolor{comment}{// round-trip through void* to silence 'cast increases required alignment of target
+       type' warnings}
+866                         \textcolor{keywordflow}{while} (size >= 4 && (*static\_cast<const uint32\_t*>(static\_cast<const void*>(data)) 
+      & 0x80808080) == 0)
+867                         \{
+868                             result = Traits::low(result, data[0]);
+869                             result = Traits::low(result, data[1]);
+870                             result = Traits::low(result, data[2]);
+871                             result = Traits::low(result, data[3]);
+872                             data += 4;
+873                             size -= 4;
+874                         \}
+875                     \}
+876                 \}
+877                 \textcolor{comment}{// 110xxxxx -> U+0080..U+07FF}
+878                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (static\_cast<unsigned int>(lead - 0xC0) < 0x20 && size >= 2 && (data[1] & 0xc0) == 
+      0x80)
+879                 \{
+880                     result = Traits::low(result, ((lead & ~0xC0) << 6) | (data[1] & utf8\_byte\_mask));
+881                     data += 2;
+882                     size -= 2;
+883                 \}
+884                 \textcolor{comment}{// 1110xxxx -> U+0800-U+FFFF}
+885                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (static\_cast<unsigned int>(lead - 0xE0) < 0x10 && size >= 3 && (data[1] & 0xc0) == 
+      0x80 && (data[2] & 0xc0) == 0x80)
+886                 \{
+887                     result = Traits::low(result, ((lead & ~0xE0) << 12) | ((data[1] & utf8\_byte\_mask) << 6)
+       | (data[2] & utf8\_byte\_mask));
+888                     data += 3;
+889                     size -= 3;
+890                 \}
+891                 \textcolor{comment}{// 11110xxx -> U+10000..U+10FFFF}
+892                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (static\_cast<unsigned int>(lead - 0xF0) < 0x08 && size >= 4 && (data[1] & 0xc0) == 
+      0x80 && (data[2] & 0xc0) == 0x80 && (data[3] & 0xc0) == 0x80)
+893                 \{
+894                     result = Traits::high(result, ((lead & ~0xF0) << 18) | ((data[1] & utf8\_byte\_mask) << 1
+      2) | ((data[2] & utf8\_byte\_mask) << 6) | (data[3] & utf8\_byte\_mask));
+895                     data += 4;
+896                     size -= 4;
+897                 \}
+898                 \textcolor{comment}{// 10xxxxxx or 11111xxx -> invalid}
+899                 \textcolor{keywordflow}{else}
+900                 \{
+901                     data += 1;
+902                     size -= 1;
+903                 \}
+904             \}
+905 
+906             \textcolor{keywordflow}{return} result;
+907         \}
+\end{DoxyCode}
+\hypertarget{structutf__decoder_a5953fd0661c64408e08161342e4c538d}{\index{utf\-\_\-decoder@{utf\-\_\-decoder}!decode\-\_\-wchar\-\_\-block@{decode\-\_\-wchar\-\_\-block}}
+\index{decode\-\_\-wchar\-\_\-block@{decode\-\_\-wchar\-\_\-block}!utf_decoder@{utf\-\_\-decoder}}
+\subsubsection[{decode\-\_\-wchar\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Traits , typename opt\-\_\-swap  = opt\-\_\-false$>$ static Traits\-::value\-\_\-type {\bf utf\-\_\-decoder}$<$ Traits, opt\-\_\-swap $>$\-::decode\-\_\-wchar\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{const wchar\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{size, }
+\item[{typename Traits\-::value\-\_\-type}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structutf__decoder_a5953fd0661c64408e08161342e4c538d}
+
+\begin{DoxyCode}
+999         \{
+1000             \textcolor{keywordflow}{return} \hyperlink{structutf__decoder_a56b161067860fde1ed534ac3b7399e36}{decode\_wchar\_block\_impl}(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }
+      \hyperlink{structwchar__selector}{wchar\_selector<sizeof(wchar\_t)>::type}*\textcolor{keyword}{>}(data), size, result);
+1001         \}
+\end{DoxyCode}
+\hypertarget{structutf__decoder_a56b161067860fde1ed534ac3b7399e36}{\index{utf\-\_\-decoder@{utf\-\_\-decoder}!decode\-\_\-wchar\-\_\-block\-\_\-impl@{decode\-\_\-wchar\-\_\-block\-\_\-impl}}
+\index{decode\-\_\-wchar\-\_\-block\-\_\-impl@{decode\-\_\-wchar\-\_\-block\-\_\-impl}!utf_decoder@{utf\-\_\-decoder}}
+\subsubsection[{decode\-\_\-wchar\-\_\-block\-\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Traits , typename opt\-\_\-swap  = opt\-\_\-false$>$ static Traits\-::value\-\_\-type {\bf utf\-\_\-decoder}$<$ Traits, opt\-\_\-swap $>$\-::decode\-\_\-wchar\-\_\-block\-\_\-impl (
+\begin{DoxyParamCaption}
+\item[{const uint16\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{size, }
+\item[{typename Traits\-::value\-\_\-type}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structutf__decoder_a56b161067860fde1ed534ac3b7399e36}
+
+\begin{DoxyCode}
+989         \{
+990             \textcolor{keywordflow}{return} \hyperlink{structutf__decoder_ac22afd983ac79318f0e7d07669bda8d1}{decode\_utf16\_block}(data, size, result);
+991         \}
+\end{DoxyCode}
+\hypertarget{structutf__decoder_a3bd423d3ce99b245c76be8a0796d951b}{\index{utf\-\_\-decoder@{utf\-\_\-decoder}!decode\-\_\-wchar\-\_\-block\-\_\-impl@{decode\-\_\-wchar\-\_\-block\-\_\-impl}}
+\index{decode\-\_\-wchar\-\_\-block\-\_\-impl@{decode\-\_\-wchar\-\_\-block\-\_\-impl}!utf_decoder@{utf\-\_\-decoder}}
+\subsubsection[{decode\-\_\-wchar\-\_\-block\-\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Traits , typename opt\-\_\-swap  = opt\-\_\-false$>$ static Traits\-::value\-\_\-type {\bf utf\-\_\-decoder}$<$ Traits, opt\-\_\-swap $>$\-::decode\-\_\-wchar\-\_\-block\-\_\-impl (
+\begin{DoxyParamCaption}
+\item[{const uint32\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{size, }
+\item[{typename Traits\-::value\-\_\-type}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structutf__decoder_a3bd423d3ce99b245c76be8a0796d951b}
+
+\begin{DoxyCode}
+994         \{
+995             \textcolor{keywordflow}{return} \hyperlink{structutf__decoder_a8bed41cc707328e8d8ab91fd7c3c943e}{decode\_utf32\_block}(data, size, result);
+996         \}
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,276 @@
+\hypertarget{classpugi_1_1xpath__query}{\section{pugi\-:\-:xpath\-\_\-query Class Reference}
+\label{classpugi_1_1xpath__query}\index{pugi\-::xpath\-\_\-query@{pugi\-::xpath\-\_\-query}}
+}
+
+
+{\ttfamily \#include $<$pugixml.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpugi_1_1xpath__query_a6ff5db850994f40154a7373b461c61d0}{xpath\-\_\-query} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$query, \hyperlink{classpugi_1_1xpath__variable__set}{xpath\-\_\-variable\-\_\-set} $\ast$variables=0)
+\item 
+\hyperlink{classpugi_1_1xpath__query_a430b82947a8a74f30a757940530544cf}{$\sim$xpath\-\_\-query} ()
+\item 
+\hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6}{xpath\-\_\-value\-\_\-type} \hyperlink{classpugi_1_1xpath__query_a63416a6b472bd8641facac09f3deb997}{return\-\_\-type} () const 
+\item 
+bool \hyperlink{classpugi_1_1xpath__query_a9d7c21acdc934a0b969f88f8ae3df21e}{evaluate\-\_\-boolean} (const \hyperlink{classpugi_1_1xpath__node}{xpath\-\_\-node} \&n) const 
+\item 
+double \hyperlink{classpugi_1_1xpath__query_a002919f6c360cc382ce050af37039fd9}{evaluate\-\_\-number} (const \hyperlink{classpugi_1_1xpath__node}{xpath\-\_\-node} \&n) const 
+\item 
+\hyperlink{namespacepugi_a053b39a84c8bb031ff3973d1954a876c}{string\-\_\-t} \hyperlink{classpugi_1_1xpath__query_ad628e189fc4924d67acfbaeeb0f1f21f}{evaluate\-\_\-string} (const \hyperlink{classpugi_1_1xpath__node}{xpath\-\_\-node} \&n) const 
+\item 
+size\-\_\-t \hyperlink{classpugi_1_1xpath__query_aa20b2392867d091115cdcd9194bf8ccf}{evaluate\-\_\-string} (\hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$buffer, size\-\_\-t capacity, const \hyperlink{classpugi_1_1xpath__node}{xpath\-\_\-node} \&n) const 
+\item 
+\hyperlink{classpugi_1_1xpath__node__set}{xpath\-\_\-node\-\_\-set} \hyperlink{classpugi_1_1xpath__query_ad5e3826c813e90c30db42f1778bc8adc}{evaluate\-\_\-node\-\_\-set} (const \hyperlink{classpugi_1_1xpath__node}{xpath\-\_\-node} \&n) const 
+\item 
+const \hyperlink{structpugi_1_1xpath__parse__result}{xpath\-\_\-parse\-\_\-result} \& \hyperlink{classpugi_1_1xpath__query_a36d9bd4c41c46ee085e7cb4af8ced7d3}{result} () const 
+\item 
+\hyperlink{classpugi_1_1xpath__query_a3e3410d6f652ada1ac9e059ebe87184c}{operator unspecified\-\_\-bool\-\_\-type} () const 
+\item 
+bool \hyperlink{classpugi_1_1xpath__query_aaf62ebc3aa5dbce405ee1dbdd55e779a}{operator!} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpugi_1_1xpath__query_a6ff5db850994f40154a7373b461c61d0}{\index{pugi\-::xpath\-\_\-query@{pugi\-::xpath\-\_\-query}!xpath\-\_\-query@{xpath\-\_\-query}}
+\index{xpath\-\_\-query@{xpath\-\_\-query}!pugi::xpath_query@{pugi\-::xpath\-\_\-query}}
+\subsubsection[{xpath\-\_\-query}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xpath\-\_\-query\-::xpath\-\_\-query (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{query, }
+\item[{{\bf xpath\-\_\-variable\-\_\-set} $\ast$}]{variables = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classpugi_1_1xpath__query_a6ff5db850994f40154a7373b461c61d0}
+
+\begin{DoxyCode}
+10023                                                                                        : \_impl(0)
+10024     \{
+10025         impl::xpath\_query\_impl* qimpl = impl::xpath\_query\_impl::create();
+10026 
+10027         \textcolor{keywordflow}{if} (!qimpl)
+10028         \{
+10029 \textcolor{preprocessor}{        #ifdef PUGIXML\_NO\_EXCEPTIONS}
+10030 \textcolor{preprocessor}{}            \_result.\hyperlink{structpugi_1_1xpath__parse__result_ab2c625be89b995afac829012bc749fe4}{error} = \textcolor{stringliteral}{"Out of memory"};
+10031 \textcolor{preprocessor}{        #else}
+10032 \textcolor{preprocessor}{}            \textcolor{keywordflow}{throw} std::bad\_alloc();
+10033 \textcolor{preprocessor}{        #endif}
+10034 \textcolor{preprocessor}{}        \}
+10035         \textcolor{keywordflow}{else}
+10036         \{
+10037             impl::buffer\_holder impl\_holder(qimpl, impl::xpath\_query\_impl::destroy);
+10038 
+10039             qimpl->root = impl::xpath\_parser::parse(query, variables, &qimpl->alloc, &\_result);
+10040 
+10041             \textcolor{keywordflow}{if} (qimpl->root)
+10042             \{
+10043                 \_impl = \textcolor{keyword}{static\_cast<}impl::xpath\_query\_impl*\textcolor{keyword}{>}(impl\_holder.release());
+10044                 \_result.\hyperlink{structpugi_1_1xpath__parse__result_ab2c625be89b995afac829012bc749fe4}{error} = 0;
+10045             \}
+10046         \}
+10047     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xpath__query_a430b82947a8a74f30a757940530544cf}{\index{pugi\-::xpath\-\_\-query@{pugi\-::xpath\-\_\-query}!$\sim$xpath\-\_\-query@{$\sim$xpath\-\_\-query}}
+\index{$\sim$xpath\-\_\-query@{$\sim$xpath\-\_\-query}!pugi::xpath_query@{pugi\-::xpath\-\_\-query}}
+\subsubsection[{$\sim$xpath\-\_\-query}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xpath\-\_\-query\-::$\sim$xpath\-\_\-query (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xpath__query_a430b82947a8a74f30a757940530544cf}
+
+\begin{DoxyCode}
+10050     \{
+10051         impl::xpath\_query\_impl::destroy(\_impl);
+10052     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpugi_1_1xpath__query_a9d7c21acdc934a0b969f88f8ae3df21e}{\index{pugi\-::xpath\-\_\-query@{pugi\-::xpath\-\_\-query}!evaluate\-\_\-boolean@{evaluate\-\_\-boolean}}
+\index{evaluate\-\_\-boolean@{evaluate\-\_\-boolean}!pugi::xpath_query@{pugi\-::xpath\-\_\-query}}
+\subsubsection[{evaluate\-\_\-boolean}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xpath\-\_\-query\-::evaluate\-\_\-boolean (
+\begin{DoxyParamCaption}
+\item[{const {\bf xpath\-\_\-node} \&}]{n}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xpath__query_a9d7c21acdc934a0b969f88f8ae3df21e}
+
+\begin{DoxyCode}
+10062     \{
+10063         \textcolor{keywordflow}{if} (!\_impl) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+10064         
+10065         impl::xpath\_context c(n, 1, 1);
+10066         impl::xpath\_stack\_data sd;
+10067 
+10068 \textcolor{preprocessor}{    #ifdef PUGIXML\_NO\_EXCEPTIONS}
+10069 \textcolor{preprocessor}{}        \textcolor{keywordflow}{if} (setjmp(sd.error\_handler)) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+10070 \textcolor{preprocessor}{    #endif}
+10071 \textcolor{preprocessor}{}        
+10072         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}impl::xpath\_query\_impl*\textcolor{keyword}{>}(\_impl)->root->eval\_boolean(c, sd.stack);
+10073     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xpath__query_ad5e3826c813e90c30db42f1778bc8adc}{\index{pugi\-::xpath\-\_\-query@{pugi\-::xpath\-\_\-query}!evaluate\-\_\-node\-\_\-set@{evaluate\-\_\-node\-\_\-set}}
+\index{evaluate\-\_\-node\-\_\-set@{evaluate\-\_\-node\-\_\-set}!pugi::xpath_query@{pugi\-::xpath\-\_\-query}}
+\subsubsection[{evaluate\-\_\-node\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xpath\-\_\-node\-\_\-set} pugi\-::xpath\-\_\-query\-::evaluate\-\_\-node\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{const {\bf xpath\-\_\-node} \&}]{n}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xpath__query_ad5e3826c813e90c30db42f1778bc8adc}
+
+\begin{DoxyCode}
+10119     \{
+10120         \textcolor{keywordflow}{if} (!\_impl) \textcolor{keywordflow}{return} xpath\_node\_set();
+10121 
+10122         impl::xpath\_ast\_node* root = \textcolor{keyword}{static\_cast<}impl::xpath\_query\_impl*\textcolor{keyword}{>}(\_impl)->root;
+10123 
+10124         \textcolor{keywordflow}{if} (root->rettype() != \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6af5613748204e2e4861524e7d63a699c9}{xpath\_type\_node\_set})
+10125         \{
+10126 \textcolor{preprocessor}{        #ifdef PUGIXML\_NO\_EXCEPTIONS}
+10127 \textcolor{preprocessor}{}            \textcolor{keywordflow}{return} xpath\_node\_set();
+10128 \textcolor{preprocessor}{        #else}
+10129 \textcolor{preprocessor}{}            xpath\_parse\_result res;
+10130             res.error = \textcolor{stringliteral}{"Expression does not evaluate to node set"};
+10131 
+10132             \textcolor{keywordflow}{throw} xpath\_exception(res);
+10133 \textcolor{preprocessor}{        #endif}
+10134 \textcolor{preprocessor}{}        \}
+10135         
+10136         impl::xpath\_context c(n, 1, 1);
+10137         impl::xpath\_stack\_data sd;
+10138 
+10139 \textcolor{preprocessor}{    #ifdef PUGIXML\_NO\_EXCEPTIONS}
+10140 \textcolor{preprocessor}{}        \textcolor{keywordflow}{if} (setjmp(sd.error\_handler)) \textcolor{keywordflow}{return} xpath\_node\_set();
+10141 \textcolor{preprocessor}{    #endif}
+10142 \textcolor{preprocessor}{}
+10143         impl::xpath\_node\_set\_raw r = root->eval\_node\_set(c, sd.stack);
+10144 
+10145         \textcolor{keywordflow}{return} xpath\_node\_set(r.begin(), r.end(), r.type());
+10146     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xpath__query_a002919f6c360cc382ce050af37039fd9}{\index{pugi\-::xpath\-\_\-query@{pugi\-::xpath\-\_\-query}!evaluate\-\_\-number@{evaluate\-\_\-number}}
+\index{evaluate\-\_\-number@{evaluate\-\_\-number}!pugi::xpath_query@{pugi\-::xpath\-\_\-query}}
+\subsubsection[{evaluate\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} double pugi\-::xpath\-\_\-query\-::evaluate\-\_\-number (
+\begin{DoxyParamCaption}
+\item[{const {\bf xpath\-\_\-node} \&}]{n}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xpath__query_a002919f6c360cc382ce050af37039fd9}
+
+\begin{DoxyCode}
+10076     \{
+10077         \textcolor{keywordflow}{if} (!\_impl) \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_a2d2fd408a346e00cc39c418d81f4341c}{impl::gen\_nan}();
+10078         
+10079         impl::xpath\_context c(n, 1, 1);
+10080         impl::xpath\_stack\_data sd;
+10081 
+10082 \textcolor{preprocessor}{    #ifdef PUGIXML\_NO\_EXCEPTIONS}
+10083 \textcolor{preprocessor}{}        \textcolor{keywordflow}{if} (setjmp(sd.error\_handler)) \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_a2d2fd408a346e00cc39c418d81f4341c}{impl::gen\_nan}();
+10084 \textcolor{preprocessor}{    #endif}
+10085 \textcolor{preprocessor}{}
+10086         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}impl::xpath\_query\_impl*\textcolor{keyword}{>}(\_impl)->root->eval\_number(c, sd.stack);
+10087     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xpath__query_ad628e189fc4924d67acfbaeeb0f1f21f}{\index{pugi\-::xpath\-\_\-query@{pugi\-::xpath\-\_\-query}!evaluate\-\_\-string@{evaluate\-\_\-string}}
+\index{evaluate\-\_\-string@{evaluate\-\_\-string}!pugi::xpath_query@{pugi\-::xpath\-\_\-query}}
+\subsubsection[{evaluate\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf string\-\_\-t} pugi\-::xpath\-\_\-query\-::evaluate\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{const {\bf xpath\-\_\-node} \&}]{n}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xpath__query_ad628e189fc4924d67acfbaeeb0f1f21f}
+
+\begin{DoxyCode}
+10091     \{
+10092         impl::xpath\_stack\_data sd;
+10093 
+10094         \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_a0ed220563fd15a1211ce33941feb6ae3}{impl::evaluate\_string\_impl}(static\_cast<impl::xpath\_query\_impl*>(
+      \_impl), n, sd).\hyperlink{classxpath__string_a0c5d08cda063f380e065f87041d20b39}{c\_str}();
+10095     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xpath__query_aa20b2392867d091115cdcd9194bf8ccf}{\index{pugi\-::xpath\-\_\-query@{pugi\-::xpath\-\_\-query}!evaluate\-\_\-string@{evaluate\-\_\-string}}
+\index{evaluate\-\_\-string@{evaluate\-\_\-string}!pugi::xpath_query@{pugi\-::xpath\-\_\-query}}
+\subsubsection[{evaluate\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} size\-\_\-t pugi\-::xpath\-\_\-query\-::evaluate\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{{\bf char\-\_\-t} $\ast$}]{buffer, }
+\item[{size\-\_\-t}]{capacity, }
+\item[{const {\bf xpath\-\_\-node} \&}]{n}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xpath__query_aa20b2392867d091115cdcd9194bf8ccf}
+
+\begin{DoxyCode}
+10099     \{
+10100         impl::xpath\_stack\_data sd;
+10101 
+10102         impl::xpath\_string r = \hyperlink{pugixml_8cpp_a0ed220563fd15a1211ce33941feb6ae3}{impl::evaluate\_string\_impl}(
+      static\_cast<impl::xpath\_query\_impl*>(\_impl), n, sd);
+10103 
+10104         \textcolor{keywordtype}{size\_t} full\_size = r.length() + 1;
+10105         
+10106         \textcolor{keywordflow}{if} (capacity > 0)
+10107         \{
+10108             \textcolor{keywordtype}{size\_t} size = (full\_size < capacity) ? full\_size : capacity;
+10109             assert(size > 0);
+10110 
+10111             memcpy(buffer, r.c\_str(), (size - 1) * \textcolor{keyword}{sizeof}(\hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}));
+10112             buffer[size - 1] = 0;
+10113         \}
+10114         
+10115         \textcolor{keywordflow}{return} full\_size;
+10116     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xpath__query_a3e3410d6f652ada1ac9e059ebe87184c}{\index{pugi\-::xpath\-\_\-query@{pugi\-::xpath\-\_\-query}!operator unspecified\-\_\-bool\-\_\-type@{operator unspecified\-\_\-bool\-\_\-type}}
+\index{operator unspecified\-\_\-bool\-\_\-type@{operator unspecified\-\_\-bool\-\_\-type}!pugi::xpath_query@{pugi\-::xpath\-\_\-query}}
+\subsubsection[{operator unspecified\-\_\-bool\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xpath\-\_\-query\-::operator xpath\-\_\-query\-::unspecified\-\_\-bool\-\_\-type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xpath__query_a3e3410d6f652ada1ac9e059ebe87184c}
+
+\begin{DoxyCode}
+10158     \{
+10159         \textcolor{keywordflow}{return} \_impl ? unspecified\_bool\_xpath\_query : 0;
+10160     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xpath__query_aaf62ebc3aa5dbce405ee1dbdd55e779a}{\index{pugi\-::xpath\-\_\-query@{pugi\-::xpath\-\_\-query}!operator!@{operator!}}
+\index{operator!@{operator!}!pugi::xpath_query@{pugi\-::xpath\-\_\-query}}
+\subsubsection[{operator!}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xpath\-\_\-query\-::operator! (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xpath__query_aaf62ebc3aa5dbce405ee1dbdd55e779a}
+
+\begin{DoxyCode}
+10163     \{
+10164         \textcolor{keywordflow}{return} !\_impl;
+10165     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xpath__query_a36d9bd4c41c46ee085e7cb4af8ced7d3}{\index{pugi\-::xpath\-\_\-query@{pugi\-::xpath\-\_\-query}!result@{result}}
+\index{result@{result}!pugi::xpath_query@{pugi\-::xpath\-\_\-query}}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} const {\bf xpath\-\_\-parse\-\_\-result} \& pugi\-::xpath\-\_\-query\-::result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xpath__query_a36d9bd4c41c46ee085e7cb4af8ced7d3}
+
+\begin{DoxyCode}
+10149     \{
+10150         \textcolor{keywordflow}{return} \_result;
+10151     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xpath__query_a63416a6b472bd8641facac09f3deb997}{\index{pugi\-::xpath\-\_\-query@{pugi\-::xpath\-\_\-query}!return\-\_\-type@{return\-\_\-type}}
+\index{return\-\_\-type@{return\-\_\-type}!pugi::xpath_query@{pugi\-::xpath\-\_\-query}}
+\subsubsection[{return\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xpath\-\_\-value\-\_\-type} pugi\-::xpath\-\_\-query\-::return\-\_\-type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xpath__query_a63416a6b472bd8641facac09f3deb997}
+
+\begin{DoxyCode}
+10055     \{
+10056         \textcolor{keywordflow}{if} (!\_impl) \textcolor{keywordflow}{return} \hyperlink{namespacepugi_ae3820874caf240e9f311bfd2790a84d6aaa768b8302ccc893f3cc9ba799360a77}{xpath\_type\_none};
+10057 
+10058         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}impl::xpath\_query\_impl*\textcolor{keyword}{>}(\_impl)->root->rettype();
+10059     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8hpp}{pugixml.\-hpp}\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,1828 @@
+\hypertarget{classpugi_1_1xml__node}{\section{pugi\-:\-:xml\-\_\-node Class Reference}
+\label{classpugi_1_1xml__node}\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}}
+}
+
+
+{\ttfamily \#include $<$pugixml.\-hpp$>$}
+
+Inheritance diagram for pugi\-:\-:xml\-\_\-node\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpugi_1_1xml__node}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classpugi_1_1xml__node__iterator}{xml\-\_\-node\-\_\-iterator} \hyperlink{classpugi_1_1xml__node_ae053ea39add5a64de584f7a81212e388}{iterator}
+\item 
+typedef \hyperlink{classpugi_1_1xml__attribute__iterator}{xml\-\_\-attribute\-\_\-iterator} \hyperlink{classpugi_1_1xml__node_a9084f97350ffc64af1eaf7c17c57f4ba}{attribute\-\_\-iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\-\_\-node} ()
+\item 
+\hyperlink{classpugi_1_1xml__node_afc9b1ed8891dfed9ce5ab5288a9ad4a1}{xml\-\_\-node} (\hyperlink{structpugi_1_1xml__node__struct}{xml\-\_\-node\-\_\-struct} $\ast$p)
+\item 
+\hyperlink{classpugi_1_1xml__node_af30001c73a3454a1e3794a850d3963c0}{operator unspecified\-\_\-bool\-\_\-type} () const 
+\item 
+bool \hyperlink{classpugi_1_1xml__node_a03c028fd83e07cda3f433f9eea3466ff}{operator!} () const 
+\item 
+bool \hyperlink{classpugi_1_1xml__node_aaf46fa45a1a117ca95867f37ade363c2}{operator==} (const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&r) const 
+\item 
+bool \hyperlink{classpugi_1_1xml__node_aa31095e51422a8a11b8d4832e0db71ed}{operator!=} (const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&r) const 
+\item 
+bool \hyperlink{classpugi_1_1xml__node_a2a57731a8d90392f88febf551bd5a924}{operator$<$} (const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&r) const 
+\item 
+bool \hyperlink{classpugi_1_1xml__node_a983e49938a893181fd8cc905c4c67f64}{operator$>$} (const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&r) const 
+\item 
+bool \hyperlink{classpugi_1_1xml__node_a09568e579d8c1b6bff12594bfb4246b6}{operator$<$=} (const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&r) const 
+\item 
+bool \hyperlink{classpugi_1_1xml__node_a8c89c4333fdd22f19714a945895d2e39}{operator$>$=} (const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&r) const 
+\item 
+bool \hyperlink{classpugi_1_1xml__node_a2c416c45fcd27a9cf4e7914d560a0cc4}{empty} () const 
+\item 
+\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9}{xml\-\_\-node\-\_\-type} \hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type} () const 
+\item 
+const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$ \hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name} () const 
+\item 
+const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$ \hyperlink{classpugi_1_1xml__node_a3e7e935a101432fd4f6dcaf6bfb495d4}{value} () const 
+\item 
+\hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \hyperlink{classpugi_1_1xml__node_ac53e177390f1f73e6cef4f5be3ecaa9d}{first\-\_\-attribute} () const 
+\item 
+\hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \hyperlink{classpugi_1_1xml__node_a10695e006b24e726ba313d5554086802}{last\-\_\-attribute} () const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a71641cb34be57df1b25e2df7eac31f00}{first\-\_\-child} () const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a076b2868a97458d5abeeec9e6c433244}{last\-\_\-child} () const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a713159ab981fb3f0a325434106dc94f5}{next\-\_\-sibling} () const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a367e7e2c78a3870aad7ad3831da7c0fa}{previous\-\_\-sibling} () const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a5c7a1b2ec89d59afa1028e9c5fc25640}{parent} () const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a713b60fd5cddd5d8671dd76b1457e6eb}{root} () const 
+\item 
+\hyperlink{classpugi_1_1xml__text}{xml\-\_\-text} \hyperlink{classpugi_1_1xml__node_aafe1c1c7cd27f3c9c758b517abc7886a}{text} () const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{child} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name}) const 
+\item 
+\hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \hyperlink{classpugi_1_1xml__node_a19fc1a285c0f751f52c0e151a727de97}{attribute} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name}) const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a51a25d1e6f2315b65a1f969126cbc612}{next\-\_\-sibling} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name}) const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a311405d1ee4a564071a5f44b476b05f7}{previous\-\_\-sibling} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name}) const 
+\item 
+const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$ \hyperlink{classpugi_1_1xml__node_a1c824a58d4c591c0da8f5dc39938456f}{child\-\_\-value} () const 
+\item 
+const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$ \hyperlink{classpugi_1_1xml__node_ad091dcc0ff970fb2920b8b2942154c94}{child\-\_\-value} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name}) const 
+\item 
+bool \hyperlink{classpugi_1_1xml__node_a9d688489fcf0960e945a12480419e434}{set\-\_\-name} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$rhs)
+\item 
+bool \hyperlink{classpugi_1_1xml__node_a160f1fa7a0eda1e5ad9d19d45f6b0e4e}{set\-\_\-value} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$rhs)
+\item 
+\hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \hyperlink{classpugi_1_1xml__node_a417eb03f034b432bb2800e54e38022aa}{append\-\_\-attribute} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name})
+\item 
+\hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \hyperlink{classpugi_1_1xml__node_a7d70631d6cb3624cdfc4cf9ef4abad06}{prepend\-\_\-attribute} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name})
+\item 
+\hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \hyperlink{classpugi_1_1xml__node_a74ab20fa84dffde317f8899af628f041}{insert\-\_\-attribute\-\_\-after} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name}, const \hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \&attr)
+\item 
+\hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \hyperlink{classpugi_1_1xml__node_a742898bc2342d943a4c49916ac3a64b8}{insert\-\_\-attribute\-\_\-before} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name}, const \hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \&attr)
+\item 
+\hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \hyperlink{classpugi_1_1xml__node_a4c151e6665c6bfa614fe80d177fd5396}{append\-\_\-copy} (const \hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \&proto)
+\item 
+\hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \hyperlink{classpugi_1_1xml__node_abd0f80e4d5bc938a27b50d37a0c7865b}{prepend\-\_\-copy} (const \hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \&proto)
+\item 
+\hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \hyperlink{classpugi_1_1xml__node_ab5fd2ccada30141544b12c6ef554d8f4}{insert\-\_\-copy\-\_\-after} (const \hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \&proto, const \hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \&attr)
+\item 
+\hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \hyperlink{classpugi_1_1xml__node_ac81f8aded4b53a9b8c98d131986cb535}{insert\-\_\-copy\-\_\-before} (const \hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \&proto, const \hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \&attr)
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a190f4851bb4bc4bb61c89fffb663a9af}{append\-\_\-child} (\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9}{xml\-\_\-node\-\_\-type} \hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}=\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\-\_\-element})
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a9e0a6dddfe1fefc74bb2b7689376989c}{prepend\-\_\-child} (\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9}{xml\-\_\-node\-\_\-type} \hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}=\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\-\_\-element})
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a4dd8d25c02560a2692c43cc4779fb7e3}{insert\-\_\-child\-\_\-after} (\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9}{xml\-\_\-node\-\_\-type} \hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}, const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&node)
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_afe89f53c01eac8209b06f9fe7f84e7c1}{insert\-\_\-child\-\_\-before} (\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9}{xml\-\_\-node\-\_\-type} \hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}, const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&node)
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a448342425806a4ad8068bf98fd4ff462}{append\-\_\-child} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name})
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_afa78286431f99a0f35b18185e11e28e8}{prepend\-\_\-child} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name})
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a778c2246fef9964b2d947253a86f2982}{insert\-\_\-child\-\_\-after} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name}, const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&node)
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a70fa68762aed11c82a1b913571df4394}{insert\-\_\-child\-\_\-before} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name}, const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&node)
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a17971e2b69c4dd4f45c461ebffe96732}{append\-\_\-copy} (const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&proto)
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a29cc787ee2270e3a71e1d511164621e6}{prepend\-\_\-copy} (const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&proto)
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a106a600eac7d08608f797d034b331fa8}{insert\-\_\-copy\-\_\-after} (const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&proto, const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&node)
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a21134448747e00888df7ecfb174032d3}{insert\-\_\-copy\-\_\-before} (const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&proto, const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&node)
+\item 
+bool \hyperlink{classpugi_1_1xml__node_aee02f0e2dab4aaeb6196f26b3bcf258c}{remove\-\_\-attribute} (const \hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \&a)
+\item 
+bool \hyperlink{classpugi_1_1xml__node_a2625858b335a1289d72d19b57acc639c}{remove\-\_\-attribute} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name})
+\item 
+bool \hyperlink{classpugi_1_1xml__node_a4b562d01edab7dad880e9e297203843d}{remove\-\_\-child} (const \hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \&n)
+\item 
+bool \hyperlink{classpugi_1_1xml__node_a1930157197e41cc15eea1fc00eecf1dd}{remove\-\_\-child} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name})
+\item 
+{\footnotesize template$<$typename Predicate $>$ }\\\hyperlink{classpugi_1_1xml__attribute}{xml\-\_\-attribute} \hyperlink{classpugi_1_1xml__node_a4e0125eb6c0857df370119df923096ea}{find\-\_\-attribute} (Predicate pred) const 
+\item 
+{\footnotesize template$<$typename Predicate $>$ }\\\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a25b60f2847c1937f0d4dbd4828bdcd7d}{find\-\_\-child} (Predicate pred) const 
+\item 
+{\footnotesize template$<$typename Predicate $>$ }\\\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a28ccb61937080e9cefe991a0c6837be6}{find\-\_\-node} (Predicate pred) const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_adcbe6392a84e4d156cca69c8ec3224da}{find\-\_\-child\-\_\-by\-\_\-attribute} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name}, const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$attr\-\_\-name, const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$attr\-\_\-value) const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_a96377b213e80a99cc21db911610b88e0}{find\-\_\-child\-\_\-by\-\_\-attribute} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$attr\-\_\-name, const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$attr\-\_\-value) const 
+\item 
+\hyperlink{namespacepugi_a053b39a84c8bb031ff3973d1954a876c}{string\-\_\-t} \hyperlink{classpugi_1_1xml__node_ae5694be88058346ad8e6e418410d4979}{path} (\hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} delimiter= '/') const 
+\item 
+\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} \hyperlink{classpugi_1_1xml__node_ae701cc3920f4a779610f94219bb41fe1}{first\-\_\-element\-\_\-by\-\_\-path} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ae5694be88058346ad8e6e418410d4979}{path}, \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} delimiter= '/') const 
+\item 
+bool \hyperlink{classpugi_1_1xml__node_a951d5d02987f75fabc4d575cfdeec8b4}{traverse} (\hyperlink{classpugi_1_1xml__tree__walker}{xml\-\_\-tree\-\_\-walker} \&walker)
+\item 
+\hyperlink{classpugi_1_1xpath__node}{xpath\-\_\-node} \hyperlink{classpugi_1_1xml__node_a51ae1ebf6d78f80f9e91f5d64c143d78}{select\-\_\-single\-\_\-node} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$query, \hyperlink{classpugi_1_1xpath__variable__set}{xpath\-\_\-variable\-\_\-set} $\ast$variables=0) const 
+\item 
+\hyperlink{classpugi_1_1xpath__node}{xpath\-\_\-node} \hyperlink{classpugi_1_1xml__node_a94b942e9f4438836b62d260ee65ab43f}{select\-\_\-single\-\_\-node} (const \hyperlink{classpugi_1_1xpath__query}{xpath\-\_\-query} \&query) const 
+\item 
+\hyperlink{classpugi_1_1xpath__node__set}{xpath\-\_\-node\-\_\-set} \hyperlink{classpugi_1_1xml__node_a32ade4ad1281495923687321825dbb1b}{select\-\_\-nodes} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$query, \hyperlink{classpugi_1_1xpath__variable__set}{xpath\-\_\-variable\-\_\-set} $\ast$variables=0) const 
+\item 
+\hyperlink{classpugi_1_1xpath__node__set}{xpath\-\_\-node\-\_\-set} \hyperlink{classpugi_1_1xml__node_acc6e39ed181fac7f56e69280ad51fac6}{select\-\_\-nodes} (const \hyperlink{classpugi_1_1xpath__query}{xpath\-\_\-query} \&query) const 
+\item 
+void \hyperlink{classpugi_1_1xml__node_aed2c5f51a149e116cfe7970c6a5df749}{print} (\hyperlink{classpugi_1_1xml__writer}{xml\-\_\-writer} \&writer, const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$indent=\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{}), unsigned int flags=\hyperlink{namespacepugi_a325f48a35abbaeacdfd8b7fc9ed1713c}{format\-\_\-default}, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} encoding=\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\-\_\-auto}, unsigned int depth=0) const 
+\item 
+void \hyperlink{classpugi_1_1xml__node_a930c02bae5ea9cc206ba358eaff96238}{print} (std\-::basic\-\_\-ostream$<$ char, std\-::char\-\_\-traits$<$ char $>$ $>$ \&os, const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$indent=\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{}), unsigned int flags=\hyperlink{namespacepugi_a325f48a35abbaeacdfd8b7fc9ed1713c}{format\-\_\-default}, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951e}{xml\-\_\-encoding} encoding=\hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae11b2ef666f03e77b7e764e38d22dc17}{encoding\-\_\-auto}, unsigned int depth=0) const 
+\item 
+void \hyperlink{classpugi_1_1xml__node_a59a563de9fb47e3916f35f14a77d19a9}{print} (std\-::basic\-\_\-ostream$<$ wchar\-\_\-t, std\-::char\-\_\-traits$<$ wchar\-\_\-t $>$ $>$ \&os, const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$indent=\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{}), unsigned int flags=\hyperlink{namespacepugi_a325f48a35abbaeacdfd8b7fc9ed1713c}{format\-\_\-default}, unsigned int depth=0) const 
+\item 
+\hyperlink{classpugi_1_1xml__node_ae053ea39add5a64de584f7a81212e388}{iterator} \hyperlink{classpugi_1_1xml__node_af1cfcc7ccae47095cd781a3c9c9b06e4}{begin} () const 
+\item 
+\hyperlink{classpugi_1_1xml__node_ae053ea39add5a64de584f7a81212e388}{iterator} \hyperlink{classpugi_1_1xml__node_a6e5b29519d6a1f08aa936d96624e095a}{end} () const 
+\item 
+\hyperlink{classpugi_1_1xml__node_a9084f97350ffc64af1eaf7c17c57f4ba}{attribute\-\_\-iterator} \hyperlink{classpugi_1_1xml__node_a1b4ab605d879cf5623e20505500b836e}{attributes\-\_\-begin} () const 
+\item 
+\hyperlink{classpugi_1_1xml__node_a9084f97350ffc64af1eaf7c17c57f4ba}{attribute\-\_\-iterator} \hyperlink{classpugi_1_1xml__node_a528b9274b0adeeda5ed12567057bee17}{attributes\-\_\-end} () const 
+\item 
+\hyperlink{classpugi_1_1xml__object__range}{xml\-\_\-object\-\_\-range}\\*
+$<$ \hyperlink{classpugi_1_1xml__node__iterator}{xml\-\_\-node\-\_\-iterator} $>$ \hyperlink{classpugi_1_1xml__node_a267ab4724e63940e5a50234fc52bc855}{children} () const 
+\item 
+\hyperlink{classpugi_1_1xml__object__range}{xml\-\_\-object\-\_\-range}\\*
+$<$ \hyperlink{classpugi_1_1xml__named__node__iterator}{xml\-\_\-named\-\_\-node\-\_\-iterator} $>$ \hyperlink{classpugi_1_1xml__node_afa490049463cabe6c5b5d774d85e5569}{children} (const \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\-\_\-t} $\ast$\hyperlink{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{name}) const 
+\item 
+\hyperlink{classpugi_1_1xml__object__range}{xml\-\_\-object\-\_\-range}\\*
+$<$ \hyperlink{classpugi_1_1xml__attribute__iterator}{xml\-\_\-attribute\-\_\-iterator} $>$ \hyperlink{classpugi_1_1xml__node_a35f616e0f529ec690b06ff0760d3f969}{attributes} () const 
+\item 
+ptrdiff\-\_\-t \hyperlink{classpugi_1_1xml__node_a77b819bd87978bebefe75d421a793cf3}{offset\-\_\-debug} () const 
+\item 
+size\-\_\-t \hyperlink{classpugi_1_1xml__node_a5abfc3ec37d1dd9cd0aee6a46d6cf88d}{hash\-\_\-value} () const 
+\item 
+\hyperlink{structpugi_1_1xml__node__struct}{xml\-\_\-node\-\_\-struct} $\ast$ \hyperlink{classpugi_1_1xml__node_a73e846c7ca8f6961a88150010c362ec6}{internal\-\_\-object} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{classpugi_1_1xml__node_a5787a5097d439a75a335290cb6fcf2a8}{unspecified\-\_\-bool\-\_\-type} )(\hyperlink{classpugi_1_1xml__node}{xml\-\_\-node} $\ast$$\ast$$\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structpugi_1_1xml__node__struct}{xml\-\_\-node\-\_\-struct} $\ast$ \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\-\_\-root}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpugi_1_1xml__node_aeff34dec57ee910e3344631528969539}{xml\-\_\-attribute\-\_\-iterator}
+\item 
+class \hyperlink{classpugi_1_1xml__node_aa25e28e29a8cec4daa60cdd2d5934757}{xml\-\_\-node\-\_\-iterator}
+\item 
+class \hyperlink{classpugi_1_1xml__node_a1e60ab2fa6d6adb56f4b833761fc0b66}{xml\-\_\-named\-\_\-node\-\_\-iterator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classpugi_1_1xml__node_a9084f97350ffc64af1eaf7c17c57f4ba}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!attribute\-\_\-iterator@{attribute\-\_\-iterator}}
+\index{attribute\-\_\-iterator@{attribute\-\_\-iterator}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{attribute\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf xml\-\_\-attribute\-\_\-iterator} {\bf pugi\-::xml\-\_\-node\-::attribute\-\_\-iterator}}}\label{classpugi_1_1xml__node_a9084f97350ffc64af1eaf7c17c57f4ba}
+\hypertarget{classpugi_1_1xml__node_ae053ea39add5a64de584f7a81212e388}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!iterator@{iterator}}
+\index{iterator@{iterator}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf xml\-\_\-node\-\_\-iterator} {\bf pugi\-::xml\-\_\-node\-::iterator}}}\label{classpugi_1_1xml__node_ae053ea39add5a64de584f7a81212e388}
+\hypertarget{classpugi_1_1xml__node_a5787a5097d439a75a335290cb6fcf2a8}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!unspecified\-\_\-bool\-\_\-type@{unspecified\-\_\-bool\-\_\-type}}
+\index{unspecified\-\_\-bool\-\_\-type@{unspecified\-\_\-bool\-\_\-type}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{unspecified\-\_\-bool\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ pugi\-::xml\-\_\-node\-::unspecified\-\_\-bool\-\_\-type)({\bf xml\-\_\-node} $\ast$$\ast$$\ast$)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classpugi_1_1xml__node_a5787a5097d439a75a335290cb6fcf2a8}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!xml\-\_\-node@{xml\-\_\-node}}
+\index{xml\-\_\-node@{xml\-\_\-node}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{xml\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xml\-\_\-node\-::xml\-\_\-node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}
+
+\begin{DoxyCode}
+3917                                : \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}(0)
+3918     \{
+3919     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_afc9b1ed8891dfed9ce5ab5288a9ad4a1}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!xml\-\_\-node@{xml\-\_\-node}}
+\index{xml\-\_\-node@{xml\-\_\-node}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{xml\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xml\-\_\-node\-::xml\-\_\-node (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-node\-\_\-struct} $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classpugi_1_1xml__node_afc9b1ed8891dfed9ce5ab5288a9ad4a1}
+
+\begin{DoxyCode}
+3921                                                  : \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}(p)
+3922     \{
+3923     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpugi_1_1xml__node_a417eb03f034b432bb2800e54e38022aa}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!append\-\_\-attribute@{append\-\_\-attribute}}
+\index{append\-\_\-attribute@{append\-\_\-attribute}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{append\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-attribute} pugi\-::xml\-\_\-node\-::append\-\_\-attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a417eb03f034b432bb2800e54e38022aa}
+
+\begin{DoxyCode}
+4167     \{
+4168         \textcolor{keywordflow}{if} (\hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}() != \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\_element} && \hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}() != 
+      \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aad8024cc4a4afbc68c871f3826a00616}{node\_declaration}) \textcolor{keywordflow}{return} xml\_attribute();
+4169         
+4170         xml\_attribute a(\hyperlink{pugixml_8cpp_aad3b67164b1e0fe8b1e9c57fe55dc8bc}{impl::append\_attribute\_ll}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}, 
+      \hyperlink{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}{impl::get\_allocator}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root})));
+4171         a.set\_name(name\_);
+4172         
+4173         \textcolor{keywordflow}{return} a;
+4174     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a190f4851bb4bc4bb61c89fffb663a9af}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!append\-\_\-child@{append\-\_\-child}}
+\index{append\-\_\-child@{append\-\_\-child}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{append\-\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::append\-\_\-child (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-node\-\_\-type}}]{type = {\ttfamily {\bf node\-\_\-element}}}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a190f4851bb4bc4bb61c89fffb663a9af}
+
+\begin{DoxyCode}
+4298     \{
+4299         \textcolor{keywordflow}{if} (!\hyperlink{pugixml_8cpp_a9a76bd4417ac5f4778004bbd1658175e}{impl::allow\_insert\_child}(this->\hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}(), type\_)) \textcolor{keywordflow}{return} 
+      \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4300         
+4301         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} n(\hyperlink{pugixml_8cpp_add30251379f717a3ebd53171dbb12f3c}{impl::append\_node}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}, 
+      \hyperlink{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}{impl::get\_allocator}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}), type\_));
+4302 
+4303         \textcolor{keywordflow}{if} (type\_ == \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aad8024cc4a4afbc68c871f3826a00616}{node\_declaration}) n.set\_name(\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"xml"}));
+4304 
+4305         \textcolor{keywordflow}{return} n;
+4306     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a448342425806a4ad8068bf98fd4ff462}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!append\-\_\-child@{append\-\_\-child}}
+\index{append\-\_\-child@{append\-\_\-child}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{append\-\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::append\-\_\-child (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a448342425806a4ad8068bf98fd4ff462}
+
+\begin{DoxyCode}
+4384     \{
+4385         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} result = \hyperlink{classpugi_1_1xml__node_a190f4851bb4bc4bb61c89fffb663a9af}{append\_child}(\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\_element});
+4386 
+4387         result.set\_name(name\_);
+4388 
+4389         \textcolor{keywordflow}{return} result;
+4390     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a4c151e6665c6bfa614fe80d177fd5396}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!append\-\_\-copy@{append\-\_\-copy}}
+\index{append\-\_\-copy@{append\-\_\-copy}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{append\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-attribute} pugi\-::xml\-\_\-node\-::append\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-attribute} \&}]{proto}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a4c151e6665c6bfa614fe80d177fd5396}
+
+\begin{DoxyCode}
+4258     \{
+4259         \textcolor{keywordflow}{if} (!proto) \textcolor{keywordflow}{return} xml\_attribute();
+4260 
+4261         xml\_attribute result = \hyperlink{classpugi_1_1xml__node_a417eb03f034b432bb2800e54e38022aa}{append\_attribute}(proto.name());
+4262         result.\hyperlink{classpugi_1_1xml__attribute_af2ca1f0d13ee8f661bc17524bedc13d7}{set\_value}(proto.value());
+4263 
+4264         \textcolor{keywordflow}{return} result;
+4265     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a17971e2b69c4dd4f45c461ebffe96732}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!append\-\_\-copy@{append\-\_\-copy}}
+\index{append\-\_\-copy@{append\-\_\-copy}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{append\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::append\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-node} \&}]{proto}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a17971e2b69c4dd4f45c461ebffe96732}
+
+\begin{DoxyCode}
+4420     \{
+4421         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} result = \hyperlink{classpugi_1_1xml__node_a190f4851bb4bc4bb61c89fffb663a9af}{append\_child}(proto.type());
+4422 
+4423         \textcolor{keywordflow}{if} (result) \hyperlink{pugixml_8cpp_aada7f66bd2b77338ef8b8089e7139f08}{impl::recursive\_copy\_skip}(result, proto, result);
+4424 
+4425         \textcolor{keywordflow}{return} result;
+4426     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a19fc1a285c0f751f52c0e151a727de97}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!attribute@{attribute}}
+\index{attribute@{attribute}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-attribute} pugi\-::xml\-\_\-node\-::attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a19fc1a285c0f751f52c0e151a727de97}
+
+\begin{DoxyCode}
+4035     \{
+4036         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} xml\_attribute();
+4037 
+4038         \textcolor{keywordflow}{for} (xml\_attribute\_struct* i = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute}; i; i = i->
+      \hyperlink{structpugi_1_1xml__attribute__struct_a9860c0eb7fa72dc9b69ee9b0575f9efc}{next\_attribute})
+4039             \textcolor{keywordflow}{if} (i->name && \hyperlink{pugixml_8cpp_af682718c79fea7fc666a593dc70764c1}{impl::strequal}(name\_, i->name))
+4040                 \textcolor{keywordflow}{return} xml\_attribute(i);
+4041         
+4042         \textcolor{keywordflow}{return} xml\_attribute();
+4043     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a35f616e0f529ec690b06ff0760d3f969}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!attributes@{attributes}}
+\index{attributes@{attributes}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{attributes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-object\-\_\-range}$<$ {\bf xml\-\_\-attribute\-\_\-iterator} $>$ pugi\-::xml\-\_\-node\-::attributes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a35f616e0f529ec690b06ff0760d3f969}
+
+\begin{DoxyCode}
+3970     \{
+3971         \textcolor{keywordflow}{return} xml\_object\_range<xml\_attribute\_iterator>(\hyperlink{classpugi_1_1xml__node_a1b4ab605d879cf5623e20505500b836e}{attributes\_begin}(), 
+      \hyperlink{classpugi_1_1xml__node_a528b9274b0adeeda5ed12567057bee17}{attributes\_end}());
+3972     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a1b4ab605d879cf5623e20505500b836e}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!attributes\-\_\-begin@{attributes\-\_\-begin}}
+\index{attributes\-\_\-begin@{attributes\-\_\-begin}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{attributes\-\_\-begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node\-::attribute\-\_\-iterator} pugi\-::xml\-\_\-node\-::attributes\-\_\-begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a1b4ab605d879cf5623e20505500b836e}
+
+\begin{DoxyCode}
+3950     \{
+3951         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a9084f97350ffc64af1eaf7c17c57f4ba}{attribute\_iterator}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} ? \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->
+      \hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute} : 0, \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root});
+3952     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a528b9274b0adeeda5ed12567057bee17}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!attributes\-\_\-end@{attributes\-\_\-end}}
+\index{attributes\-\_\-end@{attributes\-\_\-end}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{attributes\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node\-::attribute\-\_\-iterator} pugi\-::xml\-\_\-node\-::attributes\-\_\-end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a528b9274b0adeeda5ed12567057bee17}
+
+\begin{DoxyCode}
+3955     \{
+3956         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a9084f97350ffc64af1eaf7c17c57f4ba}{attribute\_iterator}(0, \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root});
+3957     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_af1cfcc7ccae47095cd781a3c9c9b06e4}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!begin@{begin}}
+\index{begin@{begin}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node\-::iterator} pugi\-::xml\-\_\-node\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_af1cfcc7ccae47095cd781a3c9c9b06e4}
+
+\begin{DoxyCode}
+3940     \{
+3941         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_ae053ea39add5a64de584f7a81212e388}{iterator}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} ? \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child} : 0, 
+      \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root});
+3942     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!child@{child}}
+\index{child@{child}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::child (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}
+
+\begin{DoxyCode}
+4025     \{
+4026         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4027 
+4028         \textcolor{keywordflow}{for} (xml\_node\_struct* i = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child}; i; i = i->
+      \hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling})
+4029             \textcolor{keywordflow}{if} (i->name && \hyperlink{pugixml_8cpp_af682718c79fea7fc666a593dc70764c1}{impl::strequal}(name\_, i->name)) \textcolor{keywordflow}{return} 
+      \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(i);
+4030 
+4031         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4032     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a1c824a58d4c591c0da8f5dc39938456f}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!child\-\_\-value@{child\-\_\-value}}
+\index{child\-\_\-value@{child\-\_\-value}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{child\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} const {\bf char\-\_\-t} $\ast$ pugi\-::xml\-\_\-node\-::child\-\_\-value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a1c824a58d4c591c0da8f5dc39938456f}
+
+\begin{DoxyCode}
+4101     \{
+4102         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{""});
+4103         
+4104         \textcolor{keywordflow}{for} (xml\_node\_struct* i = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child}; i; i = i->
+      \hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling})
+4105             \textcolor{keywordflow}{if} (i->value && \hyperlink{pugixml_8cpp_a78cb6a1f92159f3649ac191400feb3a2}{impl::is\_text\_node}(i))
+4106                 \textcolor{keywordflow}{return} i->value;
+4107 
+4108         \textcolor{keywordflow}{return} \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{""});
+4109     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_ad091dcc0ff970fb2920b8b2942154c94}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!child\-\_\-value@{child\-\_\-value}}
+\index{child\-\_\-value@{child\-\_\-value}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{child\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} const {\bf char\-\_\-t} $\ast$ pugi\-::xml\-\_\-node\-::child\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_ad091dcc0ff970fb2920b8b2942154c94}
+
+\begin{DoxyCode}
+4112     \{
+4113         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{child}(name\_).\hyperlink{classpugi_1_1xml__node_a1c824a58d4c591c0da8f5dc39938456f}{child\_value}();
+4114     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a267ab4724e63940e5a50234fc52bc855}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!children@{children}}
+\index{children@{children}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{children}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-object\-\_\-range}$<$ {\bf xml\-\_\-node\-\_\-iterator} $>$ pugi\-::xml\-\_\-node\-::children (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a267ab4724e63940e5a50234fc52bc855}
+
+\begin{DoxyCode}
+3960     \{
+3961         \textcolor{keywordflow}{return} xml\_object\_range<xml\_node\_iterator>(\hyperlink{classpugi_1_1xml__node_af1cfcc7ccae47095cd781a3c9c9b06e4}{begin}(), \hyperlink{classpugi_1_1xml__node_a6e5b29519d6a1f08aa936d96624e095a}{end}());
+3962     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_afa490049463cabe6c5b5d774d85e5569}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!children@{children}}
+\index{children@{children}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{children}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-object\-\_\-range}$<$ {\bf xml\-\_\-named\-\_\-node\-\_\-iterator} $>$ pugi\-::xml\-\_\-node\-::children (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_afa490049463cabe6c5b5d774d85e5569}
+
+\begin{DoxyCode}
+3965     \{
+3966         \textcolor{keywordflow}{return} xml\_object\_range<xml\_named\_node\_iterator>(\hyperlink{classpugi_1_1xml__node_a1e60ab2fa6d6adb56f4b833761fc0b66}{xml\_named\_node\_iterator}(
+      \hyperlink{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{child}(name\_), name\_), \hyperlink{classpugi_1_1xml__node_a1e60ab2fa6d6adb56f4b833761fc0b66}{xml\_named\_node\_iterator}());
+3967     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a2c416c45fcd27a9cf4e7914d560a0cc4}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!empty@{empty}}
+\index{empty@{empty}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a2c416c45fcd27a9cf4e7914d560a0cc4}
+
+\begin{DoxyCode}
+4005     \{
+4006         \textcolor{keywordflow}{return} !\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root};
+4007     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a6e5b29519d6a1f08aa936d96624e095a}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!end@{end}}
+\index{end@{end}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node\-::iterator} pugi\-::xml\-\_\-node\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a6e5b29519d6a1f08aa936d96624e095a}
+
+\begin{DoxyCode}
+3945     \{
+3946         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_ae053ea39add5a64de584f7a81212e388}{iterator}(0, \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root});
+3947     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a4e0125eb6c0857df370119df923096ea}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!find\-\_\-attribute@{find\-\_\-attribute}}
+\index{find\-\_\-attribute@{find\-\_\-attribute}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{find\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Predicate $>$ {\bf xml\-\_\-attribute} pugi\-::xml\-\_\-node\-::find\-\_\-attribute (
+\begin{DoxyParamCaption}
+\item[{Predicate}]{pred}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpugi_1_1xml__node_a4e0125eb6c0857df370119df923096ea}
+
+\begin{DoxyCode}
+477         \{
+478             \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} xml\_attribute();
+479             
+480             \textcolor{keywordflow}{for} (xml\_attribute attrib = \hyperlink{classpugi_1_1xml__node_ac53e177390f1f73e6cef4f5be3ecaa9d}{first\_attribute}(); attrib; attrib = attrib.
+      \hyperlink{classpugi_1_1xml__attribute_a71b0ee33f833781a94d6d35adfc0daac}{next\_attribute}())
+481                 \textcolor{keywordflow}{if} (pred(attrib))
+482                     \textcolor{keywordflow}{return} attrib;
+483         
+484             \textcolor{keywordflow}{return} xml\_attribute();
+485         \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a25b60f2847c1937f0d4dbd4828bdcd7d}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!find\-\_\-child@{find\-\_\-child}}
+\index{find\-\_\-child@{find\-\_\-child}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{find\-\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Predicate $>$ {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::find\-\_\-child (
+\begin{DoxyParamCaption}
+\item[{Predicate}]{pred}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpugi_1_1xml__node_a25b60f2847c1937f0d4dbd4828bdcd7d}
+
+\begin{DoxyCode}
+489         \{
+490             \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+491     
+492             \textcolor{keywordflow}{for} (\hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} node = \hyperlink{classpugi_1_1xml__node_a71641cb34be57df1b25e2df7eac31f00}{first\_child}(); node; node = node.
+      \hyperlink{classpugi_1_1xml__node_a713159ab981fb3f0a325434106dc94f5}{next\_sibling}())
+493                 \textcolor{keywordflow}{if} (pred(node))
+494                     \textcolor{keywordflow}{return} node;
+495         
+496             \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+497         \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_adcbe6392a84e4d156cca69c8ec3224da}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!find\-\_\-child\-\_\-by\-\_\-attribute@{find\-\_\-child\-\_\-by\-\_\-attribute}}
+\index{find\-\_\-child\-\_\-by\-\_\-attribute@{find\-\_\-child\-\_\-by\-\_\-attribute}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{find\-\_\-child\-\_\-by\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::find\-\_\-child\-\_\-by\-\_\-attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{attr\-\_\-name, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{attr\-\_\-value}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_adcbe6392a84e4d156cca69c8ec3224da}
+
+\begin{DoxyCode}
+4503     \{
+4504         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4505         
+4506         \textcolor{keywordflow}{for} (xml\_node\_struct* i = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child}; i; i = i->
+      \hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling})
+4507             \textcolor{keywordflow}{if} (i->name && \hyperlink{pugixml_8cpp_af682718c79fea7fc666a593dc70764c1}{impl::strequal}(name\_, i->name))
+4508             \{
+4509                 \textcolor{keywordflow}{for} (xml\_attribute\_struct* a = i->first\_attribute; a; a = a->next\_attribute)
+4510                     \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_af682718c79fea7fc666a593dc70764c1}{impl::strequal}(attr\_name, a->name) && 
+      \hyperlink{pugixml_8cpp_af682718c79fea7fc666a593dc70764c1}{impl::strequal}(attr\_value, a->value))
+4511                         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(i);
+4512             \}
+4513 
+4514         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4515     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a96377b213e80a99cc21db911610b88e0}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!find\-\_\-child\-\_\-by\-\_\-attribute@{find\-\_\-child\-\_\-by\-\_\-attribute}}
+\index{find\-\_\-child\-\_\-by\-\_\-attribute@{find\-\_\-child\-\_\-by\-\_\-attribute}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{find\-\_\-child\-\_\-by\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::find\-\_\-child\-\_\-by\-\_\-attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{attr\-\_\-name, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{attr\-\_\-value}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a96377b213e80a99cc21db911610b88e0}
+
+\begin{DoxyCode}
+4518     \{
+4519         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4520         
+4521         \textcolor{keywordflow}{for} (xml\_node\_struct* i = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child}; i; i = i->
+      \hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling})
+4522             \textcolor{keywordflow}{for} (xml\_attribute\_struct* a = i->first\_attribute; a; a = a->next\_attribute)
+4523                 \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_af682718c79fea7fc666a593dc70764c1}{impl::strequal}(attr\_name, a->name) && 
+      \hyperlink{pugixml_8cpp_af682718c79fea7fc666a593dc70764c1}{impl::strequal}(attr\_value, a->value))
+4524                     \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(i);
+4525 
+4526         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4527     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a28ccb61937080e9cefe991a0c6837be6}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!find\-\_\-node@{find\-\_\-node}}
+\index{find\-\_\-node@{find\-\_\-node}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{find\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Predicate $>$ {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::find\-\_\-node (
+\begin{DoxyParamCaption}
+\item[{Predicate}]{pred}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpugi_1_1xml__node_a28ccb61937080e9cefe991a0c6837be6}
+
+\begin{DoxyCode}
+501         \{
+502             \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+503 
+504             \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} cur = \hyperlink{classpugi_1_1xml__node_a71641cb34be57df1b25e2df7eac31f00}{first\_child}();
+505             
+506             \textcolor{keywordflow}{while} (cur.\_root && cur.\_root != \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root})
+507             \{
+508                 \textcolor{keywordflow}{if} (pred(cur)) \textcolor{keywordflow}{return} cur;
+509 
+510                 \textcolor{keywordflow}{if} (cur.first\_child()) cur = cur.first\_child();
+511                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cur.next\_sibling()) cur = cur.next\_sibling();
+512                 \textcolor{keywordflow}{else}
+513                 \{
+514                     \textcolor{keywordflow}{while} (!cur.next\_sibling() && cur.\_root != \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) cur = cur.parent();
+515 
+516                     \textcolor{keywordflow}{if} (cur.\_root != \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) cur = cur.next\_sibling();
+517                 \}
+518             \}
+519 
+520             \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+521         \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_ac53e177390f1f73e6cef4f5be3ecaa9d}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!first\-\_\-attribute@{first\-\_\-attribute}}
+\index{first\-\_\-attribute@{first\-\_\-attribute}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{first\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-attribute} pugi\-::xml\-\_\-node\-::first\-\_\-attribute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_ac53e177390f1f73e6cef4f5be3ecaa9d}
+
+\begin{DoxyCode}
+4117     \{
+4118         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} ? xml\_attribute(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute}) : xml\_attribute();
+4119     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a71641cb34be57df1b25e2df7eac31f00}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!first\-\_\-child@{first\-\_\-child}}
+\index{first\-\_\-child@{first\-\_\-child}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{first\-\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::first\-\_\-child (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a71641cb34be57df1b25e2df7eac31f00}
+
+\begin{DoxyCode}
+4127     \{
+4128         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} ? \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child}) : xml\_node();
+4129     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_ae701cc3920f4a779610f94219bb41fe1}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!first\-\_\-element\-\_\-by\-\_\-path@{first\-\_\-element\-\_\-by\-\_\-path}}
+\index{first\-\_\-element\-\_\-by\-\_\-path@{first\-\_\-element\-\_\-by\-\_\-path}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{first\-\_\-element\-\_\-by\-\_\-path}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::first\-\_\-element\-\_\-by\-\_\-path (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{path, }
+\item[{{\bf char\-\_\-t}}]{delimiter = {\ttfamily '/'}}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_ae701cc3920f4a779610f94219bb41fe1}
+
+\begin{DoxyCode}
+4551     \{
+4552         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} found = *\textcolor{keyword}{this}; \textcolor{comment}{// Current search context.}
+4553 
+4554         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} || !path\_ || !path\_[0]) \textcolor{keywordflow}{return} found;
+4555 
+4556         \textcolor{keywordflow}{if} (path\_[0] == delimiter)
+4557         \{
+4558             \textcolor{comment}{// Absolute path; e.g. '/foo/bar'}
+4559             found = found.root();
+4560             ++path\_;
+4561         \}
+4562 
+4563         \textcolor{keyword}{const} \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* path\_segment = path\_;
+4564 
+4565         \textcolor{keywordflow}{while} (*path\_segment == delimiter) ++path\_segment;
+4566 
+4567         \textcolor{keyword}{const} \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* path\_segment\_end = path\_segment;
+4568 
+4569         \textcolor{keywordflow}{while} (*path\_segment\_end && *path\_segment\_end != delimiter) ++path\_segment\_end;
+4570 
+4571         \textcolor{keywordflow}{if} (path\_segment == path\_segment\_end) \textcolor{keywordflow}{return} found;
+4572 
+4573         \textcolor{keyword}{const} \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* next\_segment = path\_segment\_end;
+4574 
+4575         \textcolor{keywordflow}{while} (*next\_segment == delimiter) ++next\_segment;
+4576 
+4577         \textcolor{keywordflow}{if} (*path\_segment == \textcolor{charliteral}{'.'} && path\_segment + 1 == path\_segment\_end)
+4578             \textcolor{keywordflow}{return} found.first\_element\_by\_path(next\_segment, delimiter);
+4579         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*path\_segment == \textcolor{charliteral}{'.'} && *(path\_segment+1) == \textcolor{charliteral}{'.'} && path\_segment + 2 == path\_segment\_end)
+4580             \textcolor{keywordflow}{return} found.parent().first\_element\_by\_path(next\_segment, delimiter);
+4581         \textcolor{keywordflow}{else}
+4582         \{
+4583             \textcolor{keywordflow}{for} (xml\_node\_struct* j = found.\_root->first\_child; j; j = j->next\_sibling)
+4584             \{
+4585                 \textcolor{keywordflow}{if} (j->name && \hyperlink{pugixml_8cpp_abbf171d1eb53f93f1fa710de5673f889}{impl::strequalrange}(j->name, path\_segment, 
+      static\_cast<size\_t>(path\_segment\_end - path\_segment)))
+4586                 \{
+4587                     \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} subsearch = \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(j).first\_element\_by\_path(next\_segment, 
+      delimiter);
+4588 
+4589                     \textcolor{keywordflow}{if} (subsearch) \textcolor{keywordflow}{return} subsearch;
+4590                 \}
+4591             \}
+4592 
+4593             \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4594         \}
+4595     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a5abfc3ec37d1dd9cd0aee6a46d6cf88d}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!hash\-\_\-value@{hash\-\_\-value}}
+\index{hash\-\_\-value@{hash\-\_\-value}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{hash\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} size\-\_\-t pugi\-::xml\-\_\-node\-::hash\-\_\-value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a5abfc3ec37d1dd9cd0aee6a46d6cf88d}
+
+\begin{DoxyCode}
+4646     \{
+4647         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(\textcolor{keyword}{reinterpret\_cast<}uintptr\_t\textcolor{keyword}{>}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) / \textcolor{keyword}{sizeof}(xml\_node\_struct));
+4648     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a74ab20fa84dffde317f8899af628f041}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!insert\-\_\-attribute\-\_\-after@{insert\-\_\-attribute\-\_\-after}}
+\index{insert\-\_\-attribute\-\_\-after@{insert\-\_\-attribute\-\_\-after}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{insert\-\_\-attribute\-\_\-after}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-attribute} pugi\-::xml\-\_\-node\-::insert\-\_\-attribute\-\_\-after (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name, }
+\item[{const {\bf xml\-\_\-attribute} \&}]{attr}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a74ab20fa84dffde317f8899af628f041}
+
+\begin{DoxyCode}
+4230     \{
+4231         \textcolor{keywordflow}{if} ((\hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}() != \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\_element} && \hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}() != 
+      \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aad8024cc4a4afbc68c871f3826a00616}{node\_declaration}) || attr.empty()) \textcolor{keywordflow}{return} xml\_attribute();
+4232         
+4233         \textcolor{comment}{// check that attribute belongs to *this}
+4234         xml\_attribute\_struct* cur = attr.\_attr;
+4235 
+4236         \textcolor{keywordflow}{while} (cur->prev\_attribute\_c->next\_attribute) cur = cur->prev\_attribute\_c;
+4237 
+4238         \textcolor{keywordflow}{if} (cur != \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute}) \textcolor{keywordflow}{return} xml\_attribute();
+4239 
+4240         xml\_attribute a(\hyperlink{pugixml_8cpp_aa5c147125f246a331c4a30df8e096960}{impl::allocate\_attribute}(
+      \hyperlink{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}{impl::get\_allocator}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root})));
+4241         \textcolor{keywordflow}{if} (!a) \textcolor{keywordflow}{return} xml\_attribute();
+4242 
+4243         a.set\_name(name\_);
+4244 
+4245         \textcolor{keywordflow}{if} (attr.\_attr->next\_attribute)
+4246             attr.\_attr->next\_attribute->prev\_attribute\_c = a.\_attr;
+4247         \textcolor{keywordflow}{else}
+4248             \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute}->\hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c} = a.\_attr;
+4249         
+4250         a.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a9860c0eb7fa72dc9b69ee9b0575f9efc}{next\_attribute} = attr.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a9860c0eb7fa72dc9b69ee9b0575f9efc}{next\_attribute};
+4251         a.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c} = attr.\_attr;
+4252         attr.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a9860c0eb7fa72dc9b69ee9b0575f9efc}{next\_attribute} = a.\_attr;
+4253 
+4254         \textcolor{keywordflow}{return} a;
+4255     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a742898bc2342d943a4c49916ac3a64b8}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!insert\-\_\-attribute\-\_\-before@{insert\-\_\-attribute\-\_\-before}}
+\index{insert\-\_\-attribute\-\_\-before@{insert\-\_\-attribute\-\_\-before}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{insert\-\_\-attribute\-\_\-before}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-attribute} pugi\-::xml\-\_\-node\-::insert\-\_\-attribute\-\_\-before (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name, }
+\item[{const {\bf xml\-\_\-attribute} \&}]{attr}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a742898bc2342d943a4c49916ac3a64b8}
+
+\begin{DoxyCode}
+4202     \{
+4203         \textcolor{keywordflow}{if} ((\hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}() != \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\_element} && \hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}() != 
+      \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aad8024cc4a4afbc68c871f3826a00616}{node\_declaration}) || attr.empty()) \textcolor{keywordflow}{return} xml\_attribute();
+4204         
+4205         \textcolor{comment}{// check that attribute belongs to *this}
+4206         xml\_attribute\_struct* cur = attr.\_attr;
+4207 
+4208         \textcolor{keywordflow}{while} (cur->prev\_attribute\_c->next\_attribute) cur = cur->prev\_attribute\_c;
+4209 
+4210         \textcolor{keywordflow}{if} (cur != \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute}) \textcolor{keywordflow}{return} xml\_attribute();
+4211 
+4212         xml\_attribute a(\hyperlink{pugixml_8cpp_aa5c147125f246a331c4a30df8e096960}{impl::allocate\_attribute}(
+      \hyperlink{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}{impl::get\_allocator}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root})));
+4213         \textcolor{keywordflow}{if} (!a) \textcolor{keywordflow}{return} xml\_attribute();
+4214 
+4215         a.set\_name(name\_);
+4216 
+4217         \textcolor{keywordflow}{if} (attr.\_attr->prev\_attribute\_c->next\_attribute)
+4218             attr.\_attr->prev\_attribute\_c->next\_attribute = a.\_attr;
+4219         \textcolor{keywordflow}{else}
+4220             \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute} = a.\_attr;
+4221         
+4222         a.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c} = attr.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c};
+4223         a.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a9860c0eb7fa72dc9b69ee9b0575f9efc}{next\_attribute} = attr.\_attr;
+4224         attr.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c} = a.\_attr;
+4225                 
+4226         \textcolor{keywordflow}{return} a;
+4227     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a4dd8d25c02560a2692c43cc4779fb7e3}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!insert\-\_\-child\-\_\-after@{insert\-\_\-child\-\_\-after}}
+\index{insert\-\_\-child\-\_\-after@{insert\-\_\-child\-\_\-after}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{insert\-\_\-child\-\_\-after}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::insert\-\_\-child\-\_\-after (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-node\-\_\-type}}]{type, }
+\item[{const {\bf xml\-\_\-node} \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a4dd8d25c02560a2692c43cc4779fb7e3}
+
+\begin{DoxyCode}
+4360     \{
+4361         \textcolor{keywordflow}{if} (!\hyperlink{pugixml_8cpp_a9a76bd4417ac5f4778004bbd1658175e}{impl::allow\_insert\_child}(this->\hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}(), type\_)) \textcolor{keywordflow}{return} 
+      \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4362         \textcolor{keywordflow}{if} (!node.\_root || node.\_root->parent != \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4363     
+4364         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} n(\hyperlink{pugixml_8cpp_a6e4b9f37c4ab9fb598758530d69d8611}{impl::allocate\_node}(
+      \hyperlink{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}{impl::get\_allocator}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}), type\_));
+4365         \textcolor{keywordflow}{if} (!n) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4366 
+4367         n.\_root->parent = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root};
+4368     
+4369         \textcolor{keywordflow}{if} (node.\_root->next\_sibling)
+4370             node.\_root->\hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling}->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c} = n.\_root;
+4371         \textcolor{keywordflow}{else}
+4372             \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child}->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c} = n.\_root;
+4373         
+4374         n.\_root->\hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling} = node.\_root->\hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling};
+4375         n.\_root->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c} = node.\_root;
+4376         node.\_root->\hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling} = n.\_root;
+4377 
+4378         \textcolor{keywordflow}{if} (type\_ == \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aad8024cc4a4afbc68c871f3826a00616}{node\_declaration}) n.set\_name(\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"xml"}));
+4379 
+4380         \textcolor{keywordflow}{return} n;
+4381     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a778c2246fef9964b2d947253a86f2982}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!insert\-\_\-child\-\_\-after@{insert\-\_\-child\-\_\-after}}
+\index{insert\-\_\-child\-\_\-after@{insert\-\_\-child\-\_\-after}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{insert\-\_\-child\-\_\-after}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::insert\-\_\-child\-\_\-after (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name, }
+\item[{const {\bf xml\-\_\-node} \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a778c2246fef9964b2d947253a86f2982}
+
+\begin{DoxyCode}
+4402     \{
+4403         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} result = \hyperlink{classpugi_1_1xml__node_a4dd8d25c02560a2692c43cc4779fb7e3}{insert\_child\_after}(
+      \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\_element}, node);
+4404 
+4405         result.set\_name(name\_);
+4406 
+4407         \textcolor{keywordflow}{return} result;
+4408     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_afe89f53c01eac8209b06f9fe7f84e7c1}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!insert\-\_\-child\-\_\-before@{insert\-\_\-child\-\_\-before}}
+\index{insert\-\_\-child\-\_\-before@{insert\-\_\-child\-\_\-before}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{insert\-\_\-child\-\_\-before}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::insert\-\_\-child\-\_\-before (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-node\-\_\-type}}]{type, }
+\item[{const {\bf xml\-\_\-node} \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_afe89f53c01eac8209b06f9fe7f84e7c1}
+
+\begin{DoxyCode}
+4336     \{
+4337         \textcolor{keywordflow}{if} (!\hyperlink{pugixml_8cpp_a9a76bd4417ac5f4778004bbd1658175e}{impl::allow\_insert\_child}(this->\hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}(), type\_)) \textcolor{keywordflow}{return} 
+      \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4338         \textcolor{keywordflow}{if} (!node.\_root || node.\_root->parent != \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4339     
+4340         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} n(\hyperlink{pugixml_8cpp_a6e4b9f37c4ab9fb598758530d69d8611}{impl::allocate\_node}(
+      \hyperlink{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}{impl::get\_allocator}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}), type\_));
+4341         \textcolor{keywordflow}{if} (!n) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4342 
+4343         n.\_root->parent = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root};
+4344         
+4345         \textcolor{keywordflow}{if} (node.\_root->prev\_sibling\_c->next\_sibling)
+4346             node.\_root->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c}->\hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling} = n.\_root;
+4347         \textcolor{keywordflow}{else}
+4348             \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child} = n.\_root;
+4349         
+4350         n.\_root->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c} = node.\_root->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c};
+4351         n.\_root->\hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling} = node.\_root;
+4352         node.\_root->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c} = n.\_root;
+4353 
+4354         \textcolor{keywordflow}{if} (type\_ == \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aad8024cc4a4afbc68c871f3826a00616}{node\_declaration}) n.set\_name(\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"xml"}));
+4355 
+4356         \textcolor{keywordflow}{return} n;
+4357     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a70fa68762aed11c82a1b913571df4394}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!insert\-\_\-child\-\_\-before@{insert\-\_\-child\-\_\-before}}
+\index{insert\-\_\-child\-\_\-before@{insert\-\_\-child\-\_\-before}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{insert\-\_\-child\-\_\-before}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::insert\-\_\-child\-\_\-before (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name, }
+\item[{const {\bf xml\-\_\-node} \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a70fa68762aed11c82a1b913571df4394}
+
+\begin{DoxyCode}
+4411     \{
+4412         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} result = \hyperlink{classpugi_1_1xml__node_afe89f53c01eac8209b06f9fe7f84e7c1}{insert\_child\_before}(
+      \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\_element}, node);
+4413 
+4414         result.set\_name(name\_);
+4415 
+4416         \textcolor{keywordflow}{return} result;
+4417     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_ab5fd2ccada30141544b12c6ef554d8f4}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!insert\-\_\-copy\-\_\-after@{insert\-\_\-copy\-\_\-after}}
+\index{insert\-\_\-copy\-\_\-after@{insert\-\_\-copy\-\_\-after}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{insert\-\_\-copy\-\_\-after}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-attribute} pugi\-::xml\-\_\-node\-::insert\-\_\-copy\-\_\-after (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-attribute} \&}]{proto, }
+\item[{const {\bf xml\-\_\-attribute} \&}]{attr}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_ab5fd2ccada30141544b12c6ef554d8f4}
+
+\begin{DoxyCode}
+4278     \{
+4279         \textcolor{keywordflow}{if} (!proto) \textcolor{keywordflow}{return} xml\_attribute();
+4280 
+4281         xml\_attribute result = \hyperlink{classpugi_1_1xml__node_a74ab20fa84dffde317f8899af628f041}{insert\_attribute\_after}(proto.name(), attr);
+4282         result.\hyperlink{classpugi_1_1xml__attribute_af2ca1f0d13ee8f661bc17524bedc13d7}{set\_value}(proto.value());
+4283 
+4284         \textcolor{keywordflow}{return} result;
+4285     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a106a600eac7d08608f797d034b331fa8}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!insert\-\_\-copy\-\_\-after@{insert\-\_\-copy\-\_\-after}}
+\index{insert\-\_\-copy\-\_\-after@{insert\-\_\-copy\-\_\-after}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{insert\-\_\-copy\-\_\-after}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::insert\-\_\-copy\-\_\-after (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-node} \&}]{proto, }
+\item[{const {\bf xml\-\_\-node} \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a106a600eac7d08608f797d034b331fa8}
+
+\begin{DoxyCode}
+4438     \{
+4439         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} result = \hyperlink{classpugi_1_1xml__node_a4dd8d25c02560a2692c43cc4779fb7e3}{insert\_child\_after}(proto.type(), node);
+4440 
+4441         \textcolor{keywordflow}{if} (result) \hyperlink{pugixml_8cpp_aada7f66bd2b77338ef8b8089e7139f08}{impl::recursive\_copy\_skip}(result, proto, result);
+4442 
+4443         \textcolor{keywordflow}{return} result;
+4444     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_ac81f8aded4b53a9b8c98d131986cb535}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!insert\-\_\-copy\-\_\-before@{insert\-\_\-copy\-\_\-before}}
+\index{insert\-\_\-copy\-\_\-before@{insert\-\_\-copy\-\_\-before}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{insert\-\_\-copy\-\_\-before}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-attribute} pugi\-::xml\-\_\-node\-::insert\-\_\-copy\-\_\-before (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-attribute} \&}]{proto, }
+\item[{const {\bf xml\-\_\-attribute} \&}]{attr}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_ac81f8aded4b53a9b8c98d131986cb535}
+
+\begin{DoxyCode}
+4288     \{
+4289         \textcolor{keywordflow}{if} (!proto) \textcolor{keywordflow}{return} xml\_attribute();
+4290 
+4291         xml\_attribute result = \hyperlink{classpugi_1_1xml__node_a742898bc2342d943a4c49916ac3a64b8}{insert\_attribute\_before}(proto.name(), attr);
+4292         result.\hyperlink{classpugi_1_1xml__attribute_af2ca1f0d13ee8f661bc17524bedc13d7}{set\_value}(proto.value());
+4293 
+4294         \textcolor{keywordflow}{return} result;
+4295     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a21134448747e00888df7ecfb174032d3}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!insert\-\_\-copy\-\_\-before@{insert\-\_\-copy\-\_\-before}}
+\index{insert\-\_\-copy\-\_\-before@{insert\-\_\-copy\-\_\-before}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{insert\-\_\-copy\-\_\-before}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::insert\-\_\-copy\-\_\-before (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-node} \&}]{proto, }
+\item[{const {\bf xml\-\_\-node} \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a21134448747e00888df7ecfb174032d3}
+
+\begin{DoxyCode}
+4447     \{
+4448         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} result = \hyperlink{classpugi_1_1xml__node_afe89f53c01eac8209b06f9fe7f84e7c1}{insert\_child\_before}(proto.type(), node);
+4449 
+4450         \textcolor{keywordflow}{if} (result) \hyperlink{pugixml_8cpp_aada7f66bd2b77338ef8b8089e7139f08}{impl::recursive\_copy\_skip}(result, proto, result);
+4451 
+4452         \textcolor{keywordflow}{return} result;
+4453     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a73e846c7ca8f6961a88150010c362ec6}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!internal\-\_\-object@{internal\-\_\-object}}
+\index{internal\-\_\-object@{internal\-\_\-object}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{internal\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node\-\_\-struct} $\ast$ pugi\-::xml\-\_\-node\-::internal\-\_\-object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a73e846c7ca8f6961a88150010c362ec6}
+
+\begin{DoxyCode}
+4651     \{
+4652         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root};
+4653     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a10695e006b24e726ba313d5554086802}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!last\-\_\-attribute@{last\-\_\-attribute}}
+\index{last\-\_\-attribute@{last\-\_\-attribute}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{last\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-attribute} pugi\-::xml\-\_\-node\-::last\-\_\-attribute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a10695e006b24e726ba313d5554086802}
+
+\begin{DoxyCode}
+4122     \{
+4123         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} && \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute} ? xml\_attribute(
+      \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute}->\hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c}) : xml\_attribute();
+4124     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a076b2868a97458d5abeeec9e6c433244}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!last\-\_\-child@{last\-\_\-child}}
+\index{last\-\_\-child@{last\-\_\-child}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{last\-\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::last\-\_\-child (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a076b2868a97458d5abeeec9e6c433244}
+
+\begin{DoxyCode}
+4132     \{
+4133         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} && \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child} ? \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(
+      \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child}->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c}) : \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4134     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!name@{name}}
+\index{name@{name}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} const {\bf char\-\_\-t} $\ast$ pugi\-::xml\-\_\-node\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_ac765caace42ecf252d90aea81e09df57}
+
+\begin{DoxyCode}
+4010     \{
+4011         \textcolor{keywordflow}{return} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} && \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_ae2324fdbd1e307fb12007d1d0f957a0b}{name}) ? \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_ae2324fdbd1e307fb12007d1d0f957a0b}{name} : 
+      \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{""});
+4012     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a713159ab981fb3f0a325434106dc94f5}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!next\-\_\-sibling@{next\-\_\-sibling}}
+\index{next\-\_\-sibling@{next\-\_\-sibling}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{next\-\_\-sibling}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::next\-\_\-sibling (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a713159ab981fb3f0a325434106dc94f5}
+
+\begin{DoxyCode}
+4056     \{
+4057         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4058         
+4059         \textcolor{keywordflow}{if} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->
+      \hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling});
+4060         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4061     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a51a25d1e6f2315b65a1f969126cbc612}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!next\-\_\-sibling@{next\-\_\-sibling}}
+\index{next\-\_\-sibling@{next\-\_\-sibling}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{next\-\_\-sibling}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::next\-\_\-sibling (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a51a25d1e6f2315b65a1f969126cbc612}
+
+\begin{DoxyCode}
+4046     \{
+4047         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4048         
+4049         \textcolor{keywordflow}{for} (xml\_node\_struct* i = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling}; i; i = i->
+      \hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling})
+4050             \textcolor{keywordflow}{if} (i->name && \hyperlink{pugixml_8cpp_af682718c79fea7fc666a593dc70764c1}{impl::strequal}(name\_, i->name)) \textcolor{keywordflow}{return} 
+      \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(i);
+4051 
+4052         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4053     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a77b819bd87978bebefe75d421a793cf3}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!offset\-\_\-debug@{offset\-\_\-debug}}
+\index{offset\-\_\-debug@{offset\-\_\-debug}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{offset\-\_\-debug}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} ptrdiff\-\_\-t pugi\-::xml\-\_\-node\-::offset\-\_\-debug (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a77b819bd87978bebefe75d421a793cf3}
+
+\begin{DoxyCode}
+4681     \{
+4682         xml\_node\_struct* r = \hyperlink{classpugi_1_1xml__node_a713b60fd5cddd5d8671dd76b1457e6eb}{root}().\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root};
+4683 
+4684         \textcolor{keywordflow}{if} (!r) \textcolor{keywordflow}{return} -1;
+4685 
+4686         \textcolor{keyword}{const} \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* buffer = \textcolor{keyword}{static\_cast<}impl::xml\_document\_struct*\textcolor{keyword}{>}(r)->buffer;
+4687 
+4688         \textcolor{keywordflow}{if} (!buffer) \textcolor{keywordflow}{return} -1;
+4689 
+4690         \textcolor{keywordflow}{switch} (\hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}())
+4691         \{
+4692         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aab42ba83cf941f7297325eade205bf80}{node\_document}:
+4693             \textcolor{keywordflow}{return} 0;
+4694 
+4695         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\_element}:
+4696         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aad8024cc4a4afbc68c871f3826a00616}{node\_declaration}:
+4697         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9acd772b12b3d5442b9771151f45134440}{node\_pi}:
+4698             \textcolor{keywordflow}{return} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_aea2e405a368dc5a278a2d23465f1975c}{header} & impl::xml\_memory\_page\_name\_allocated\_mask) ? -1 : 
+      \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_ae2324fdbd1e307fb12007d1d0f957a0b}{name} - buffer;
+4699 
+4700         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a5c0042693a8b8b6b54c191b4403fca21}{node\_pcdata}:
+4701         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9adf13d60a4dfd047be0700e1711aeb1ea}{node\_cdata}:
+4702         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a445fef674a66777dfd28dbd6bab14fed}{node\_comment}:
+4703         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a9504586a29b181817607cc7ec231c9d4}{node\_doctype}:
+4704             \textcolor{keywordflow}{return} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_aea2e405a368dc5a278a2d23465f1975c}{header} & impl::xml\_memory\_page\_value\_allocated\_mask) ? -1 : 
+      \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a191e708864fccda17bb66157afdadd2d}{value} - buffer;
+4705 
+4706         \textcolor{keywordflow}{default}:
+4707             \textcolor{keywordflow}{return} -1;
+4708         \}
+4709     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_af30001c73a3454a1e3794a850d3963c0}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!operator unspecified\-\_\-bool\-\_\-type@{operator unspecified\-\_\-bool\-\_\-type}}
+\index{operator unspecified\-\_\-bool\-\_\-type@{operator unspecified\-\_\-bool\-\_\-type}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{operator unspecified\-\_\-bool\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xml\-\_\-node\-::operator {\bf xml\-\_\-node\-::unspecified\-\_\-bool\-\_\-type} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_af30001c73a3454a1e3794a850d3963c0}
+
+\begin{DoxyCode}
+3930     \{
+3931         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} ? unspecified\_bool\_xml\_node : 0;
+3932     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a03c028fd83e07cda3f433f9eea3466ff}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!operator!@{operator!}}
+\index{operator!@{operator!}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{operator!}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::operator! (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a03c028fd83e07cda3f433f9eea3466ff}
+
+\begin{DoxyCode}
+3935     \{
+3936         \textcolor{keywordflow}{return} !\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root};
+3937     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_aa31095e51422a8a11b8d4832e0db71ed}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool {\bf pugi\-::xml\-\_\-node\-::operator!}= (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-node} \&}]{r}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_aa31095e51422a8a11b8d4832e0db71ed}
+
+\begin{DoxyCode}
+3980     \{
+3981         \textcolor{keywordflow}{return} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} != r.\_root);
+3982     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a2a57731a8d90392f88febf551bd5a924}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-node} \&}]{r}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a2a57731a8d90392f88febf551bd5a924}
+
+\begin{DoxyCode}
+3985     \{
+3986         \textcolor{keywordflow}{return} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} < r.\_root);
+3987     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a09568e579d8c1b6bff12594bfb4246b6}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-node} \&}]{r}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a09568e579d8c1b6bff12594bfb4246b6}
+
+\begin{DoxyCode}
+3995     \{
+3996         \textcolor{keywordflow}{return} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} <= r.\_root);
+3997     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_aaf46fa45a1a117ca95867f37ade363c2}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!operator==@{operator==}}
+\index{operator==@{operator==}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-node} \&}]{r}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_aaf46fa45a1a117ca95867f37ade363c2}
+
+\begin{DoxyCode}
+3975     \{
+3976         \textcolor{keywordflow}{return} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} == r.\_root);
+3977     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a983e49938a893181fd8cc905c4c67f64}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-node} \&}]{r}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a983e49938a893181fd8cc905c4c67f64}
+
+\begin{DoxyCode}
+3990     \{
+3991         \textcolor{keywordflow}{return} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} > r.\_root);
+3992     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a8c89c4333fdd22f19714a945895d2e39}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-node} \&}]{r}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a8c89c4333fdd22f19714a945895d2e39}
+
+\begin{DoxyCode}
+4000     \{
+4001         \textcolor{keywordflow}{return} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} >= r.\_root);
+4002     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a5c7a1b2ec89d59afa1028e9c5fc25640}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!parent@{parent}}
+\index{parent@{parent}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::parent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a5c7a1b2ec89d59afa1028e9c5fc25640}
+
+\begin{DoxyCode}
+4082     \{
+4083         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} ? \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af692c222bcc5a9f61108cb3ae0b7b5ea}{parent}) : xml\_node();
+4084     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_ae5694be88058346ad8e6e418410d4979}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!path@{path}}
+\index{path@{path}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf string\-\_\-t} pugi\-::xml\-\_\-node\-::path (
+\begin{DoxyParamCaption}
+\item[{{\bf char\-\_\-t}}]{delimiter = {\ttfamily '/'}}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_ae5694be88058346ad8e6e418410d4979}
+
+\begin{DoxyCode}
+4531     \{
+4532         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} cursor = *\textcolor{keyword}{this}; \textcolor{comment}{// Make a copy.}
+4533         
+4534         \hyperlink{namespacepugi_a053b39a84c8bb031ff3973d1954a876c}{string\_t} result = cursor.name();
+4535 
+4536         \textcolor{keywordflow}{while} (cursor.parent())
+4537         \{
+4538             cursor = cursor.parent();
+4539             
+4540             \hyperlink{namespacepugi_a053b39a84c8bb031ff3973d1954a876c}{string\_t} temp = cursor.name();
+4541             temp += delimiter;
+4542             temp += result;
+4543             result.swap(temp);
+4544         \}
+4545 
+4546         \textcolor{keywordflow}{return} result;
+4547     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a7d70631d6cb3624cdfc4cf9ef4abad06}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!prepend\-\_\-attribute@{prepend\-\_\-attribute}}
+\index{prepend\-\_\-attribute@{prepend\-\_\-attribute}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{prepend\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-attribute} pugi\-::xml\-\_\-node\-::prepend\-\_\-attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a7d70631d6cb3624cdfc4cf9ef4abad06}
+
+\begin{DoxyCode}
+4177     \{
+4178         \textcolor{keywordflow}{if} (\hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}() != \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\_element} && \hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}() != 
+      \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aad8024cc4a4afbc68c871f3826a00616}{node\_declaration}) \textcolor{keywordflow}{return} xml\_attribute();
+4179         
+4180         xml\_attribute a(\hyperlink{pugixml_8cpp_aa5c147125f246a331c4a30df8e096960}{impl::allocate\_attribute}(
+      \hyperlink{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}{impl::get\_allocator}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root})));
+4181         \textcolor{keywordflow}{if} (!a) \textcolor{keywordflow}{return} xml\_attribute();
+4182 
+4183         a.set\_name(name\_);
+4184         
+4185         xml\_attribute\_struct* head = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute};
+4186 
+4187         \textcolor{keywordflow}{if} (head)
+4188         \{
+4189             a.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c} = head->\hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c};
+4190             head->\hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c} = a.\_attr;
+4191         \}
+4192         \textcolor{keywordflow}{else}
+4193             a.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c} = a.\_attr;
+4194         
+4195         a.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a9860c0eb7fa72dc9b69ee9b0575f9efc}{next\_attribute} = head;
+4196         \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute} = a.\_attr;
+4197                 
+4198         \textcolor{keywordflow}{return} a;
+4199     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a9e0a6dddfe1fefc74bb2b7689376989c}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!prepend\-\_\-child@{prepend\-\_\-child}}
+\index{prepend\-\_\-child@{prepend\-\_\-child}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{prepend\-\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::prepend\-\_\-child (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-node\-\_\-type}}]{type = {\ttfamily {\bf node\-\_\-element}}}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a9e0a6dddfe1fefc74bb2b7689376989c}
+
+\begin{DoxyCode}
+4309     \{
+4310         \textcolor{keywordflow}{if} (!\hyperlink{pugixml_8cpp_a9a76bd4417ac5f4778004bbd1658175e}{impl::allow\_insert\_child}(this->\hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}(), type\_)) \textcolor{keywordflow}{return} 
+      \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4311         
+4312         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} n(\hyperlink{pugixml_8cpp_a6e4b9f37c4ab9fb598758530d69d8611}{impl::allocate\_node}(
+      \hyperlink{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}{impl::get\_allocator}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}), type\_));
+4313         \textcolor{keywordflow}{if} (!n) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4314 
+4315         n.\_root->parent = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root};
+4316 
+4317         xml\_node\_struct* head = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child};
+4318 
+4319         \textcolor{keywordflow}{if} (head)
+4320         \{
+4321             n.\_root->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c} = head->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c};
+4322             head->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c} = n.\_root;
+4323         \}
+4324         \textcolor{keywordflow}{else}
+4325             n.\_root->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c} = n.\_root;
+4326         
+4327         n.\_root->\hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling} = head;
+4328         \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child} = n.\_root;
+4329                 
+4330         \textcolor{keywordflow}{if} (type\_ == \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aad8024cc4a4afbc68c871f3826a00616}{node\_declaration}) n.set\_name(\hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{"xml"}));
+4331 
+4332         \textcolor{keywordflow}{return} n;
+4333     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_afa78286431f99a0f35b18185e11e28e8}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!prepend\-\_\-child@{prepend\-\_\-child}}
+\index{prepend\-\_\-child@{prepend\-\_\-child}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{prepend\-\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::prepend\-\_\-child (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_afa78286431f99a0f35b18185e11e28e8}
+
+\begin{DoxyCode}
+4393     \{
+4394         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} result = \hyperlink{classpugi_1_1xml__node_a9e0a6dddfe1fefc74bb2b7689376989c}{prepend\_child}(\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\_element});
+4395 
+4396         result.set\_name(name\_);
+4397 
+4398         \textcolor{keywordflow}{return} result;
+4399     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_abd0f80e4d5bc938a27b50d37a0c7865b}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!prepend\-\_\-copy@{prepend\-\_\-copy}}
+\index{prepend\-\_\-copy@{prepend\-\_\-copy}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{prepend\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-attribute} pugi\-::xml\-\_\-node\-::prepend\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-attribute} \&}]{proto}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_abd0f80e4d5bc938a27b50d37a0c7865b}
+
+\begin{DoxyCode}
+4268     \{
+4269         \textcolor{keywordflow}{if} (!proto) \textcolor{keywordflow}{return} xml\_attribute();
+4270 
+4271         xml\_attribute result = \hyperlink{classpugi_1_1xml__node_a7d70631d6cb3624cdfc4cf9ef4abad06}{prepend\_attribute}(proto.name());
+4272         result.\hyperlink{classpugi_1_1xml__attribute_af2ca1f0d13ee8f661bc17524bedc13d7}{set\_value}(proto.value());
+4273 
+4274         \textcolor{keywordflow}{return} result;
+4275     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a29cc787ee2270e3a71e1d511164621e6}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!prepend\-\_\-copy@{prepend\-\_\-copy}}
+\index{prepend\-\_\-copy@{prepend\-\_\-copy}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{prepend\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::prepend\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-node} \&}]{proto}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a29cc787ee2270e3a71e1d511164621e6}
+
+\begin{DoxyCode}
+4429     \{
+4430         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} result = \hyperlink{classpugi_1_1xml__node_a9e0a6dddfe1fefc74bb2b7689376989c}{prepend\_child}(proto.type());
+4431 
+4432         \textcolor{keywordflow}{if} (result) \hyperlink{pugixml_8cpp_aada7f66bd2b77338ef8b8089e7139f08}{impl::recursive\_copy\_skip}(result, proto, result);
+4433 
+4434         \textcolor{keywordflow}{return} result;
+4435     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a367e7e2c78a3870aad7ad3831da7c0fa}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!previous\-\_\-sibling@{previous\-\_\-sibling}}
+\index{previous\-\_\-sibling@{previous\-\_\-sibling}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{previous\-\_\-sibling}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::previous\-\_\-sibling (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a367e7e2c78a3870aad7ad3831da7c0fa}
+
+\begin{DoxyCode}
+4074     \{
+4075         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4076         
+4077         \textcolor{keywordflow}{if} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c}->\hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling}) \textcolor{keywordflow}{return} 
+      \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c});
+4078         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4079     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a311405d1ee4a564071a5f44b476b05f7}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!previous\-\_\-sibling@{previous\-\_\-sibling}}
+\index{previous\-\_\-sibling@{previous\-\_\-sibling}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{previous\-\_\-sibling}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::previous\-\_\-sibling (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a311405d1ee4a564071a5f44b476b05f7}
+
+\begin{DoxyCode}
+4064     \{
+4065         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4066         
+4067         \textcolor{keywordflow}{for} (xml\_node\_struct* i = \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c}; i->
+      \hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling}; i = i->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c})
+4068             \textcolor{keywordflow}{if} (i->name && \hyperlink{pugixml_8cpp_af682718c79fea7fc666a593dc70764c1}{impl::strequal}(name\_, i->name)) \textcolor{keywordflow}{return} 
+      \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(i);
+4069 
+4070         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4071     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_aed2c5f51a149e116cfe7970c6a5df749}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!print@{print}}
+\index{print@{print}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} void pugi\-::xml\-\_\-node\-::print (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-writer} \&}]{writer, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{indent = {\ttfamily {\bf P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{})}, }
+\item[{unsigned int}]{flags = {\ttfamily {\bf format\-\_\-default}}, }
+\item[{{\bf xml\-\_\-encoding}}]{encoding = {\ttfamily {\bf encoding\-\_\-auto}}, }
+\item[{unsigned int}]{depth = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_aed2c5f51a149e116cfe7970c6a5df749}
+
+\begin{DoxyCode}
+4656     \{
+4657         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return};
+4658 
+4659         impl::xml\_buffered\_writer buffered\_writer(writer, encoding);
+4660 
+4661         \hyperlink{pugixml_8cpp_a7f5dd565c9321db184119a5f337333e7}{impl::node\_output}(buffered\_writer, *\textcolor{keyword}{this}, indent, flags, depth);
+4662     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a930c02bae5ea9cc206ba358eaff96238}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!print@{print}}
+\index{print@{print}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} void pugi\-::xml\-\_\-node\-::print (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-ostream$<$ char, std\-::char\-\_\-traits$<$ char $>$ $>$ \&}]{os, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{indent = {\ttfamily {\bf P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{})}, }
+\item[{unsigned int}]{flags = {\ttfamily {\bf format\-\_\-default}}, }
+\item[{{\bf xml\-\_\-encoding}}]{encoding = {\ttfamily {\bf encoding\-\_\-auto}}, }
+\item[{unsigned int}]{depth = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a930c02bae5ea9cc206ba358eaff96238}
+
+\begin{DoxyCode}
+4666     \{
+4667         xml\_writer\_stream writer(stream);
+4668 
+4669         \hyperlink{classpugi_1_1xml__node_aed2c5f51a149e116cfe7970c6a5df749}{print}(writer, indent, flags, encoding, depth);
+4670     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a59a563de9fb47e3916f35f14a77d19a9}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!print@{print}}
+\index{print@{print}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} void pugi\-::xml\-\_\-node\-::print (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-ostream$<$ wchar\-\_\-t, std\-::char\-\_\-traits$<$ wchar\-\_\-t $>$ $>$ \&}]{os, }
+\item[{const {\bf char\-\_\-t} $\ast$}]{indent = {\ttfamily {\bf P\-U\-G\-I\-X\-M\-L\-\_\-\-T\-E\-X\-T}(\char`\"{}\textbackslash{}t\char`\"{})}, }
+\item[{unsigned int}]{flags = {\ttfamily {\bf format\-\_\-default}}, }
+\item[{unsigned int}]{depth = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a59a563de9fb47e3916f35f14a77d19a9}
+
+\begin{DoxyCode}
+4673     \{
+4674         xml\_writer\_stream writer(stream);
+4675 
+4676         \hyperlink{classpugi_1_1xml__node_aed2c5f51a149e116cfe7970c6a5df749}{print}(writer, indent, flags, \hyperlink{namespacepugi_a03f708f86abeff5fce6842ffd6a0951eae670d39438f31fe41f1a596739e5c00e}{encoding\_wchar}, depth);
+4677     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_aee02f0e2dab4aaeb6196f26b3bcf258c}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!remove\-\_\-attribute@{remove\-\_\-attribute}}
+\index{remove\-\_\-attribute@{remove\-\_\-attribute}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{remove\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::remove\-\_\-attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-attribute} \&}]{a}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_aee02f0e2dab4aaeb6196f26b3bcf258c}
+
+\begin{DoxyCode}
+4461     \{
+4462         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} || !a.\_attr) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+4463 
+4464         \textcolor{comment}{// check that attribute belongs to *this}
+4465         xml\_attribute\_struct* attr = a.\_attr;
+4466 
+4467         \textcolor{keywordflow}{while} (attr->prev\_attribute\_c->next\_attribute) attr = attr->prev\_attribute\_c;
+4468 
+4469         \textcolor{keywordflow}{if} (attr != \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute}) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+4470 
+4471         \textcolor{keywordflow}{if} (a.\_attr->next\_attribute) a.\_attr->next\_attribute->prev\_attribute\_c = a.\_attr->prev\_attribute\_c;
+4472         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute}) \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->
+      \hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute}->\hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c} = a.\_attr->
+      \hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c};
+4473         
+4474         \textcolor{keywordflow}{if} (a.\_attr->prev\_attribute\_c->next\_attribute) a.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a0e3a022235b316e4cfc1034ceb7d7862}{prev\_attribute\_c}->
+      \hyperlink{structpugi_1_1xml__attribute__struct_a9860c0eb7fa72dc9b69ee9b0575f9efc}{next\_attribute} = a.\_attr->\hyperlink{structpugi_1_1xml__attribute__struct_a9860c0eb7fa72dc9b69ee9b0575f9efc}{next\_attribute};
+4475         \textcolor{keywordflow}{else} \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a482d2daf97ce0745661cb2c57d8f6fb3}{first\_attribute} = a.\_attr->
+      \hyperlink{structpugi_1_1xml__attribute__struct_a9860c0eb7fa72dc9b69ee9b0575f9efc}{next\_attribute};
+4476 
+4477         \hyperlink{pugixml_8cpp_a451a69801ffa96a6389bb7d4c8099bd9}{impl::destroy\_attribute}(a.\_attr, 
+      \hyperlink{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}{impl::get\_allocator}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}));
+4478 
+4479         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+4480     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a2625858b335a1289d72d19b57acc639c}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!remove\-\_\-attribute@{remove\-\_\-attribute}}
+\index{remove\-\_\-attribute@{remove\-\_\-attribute}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{remove\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::remove\-\_\-attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a2625858b335a1289d72d19b57acc639c}
+
+\begin{DoxyCode}
+4456     \{
+4457         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_aee02f0e2dab4aaeb6196f26b3bcf258c}{remove\_attribute}(\hyperlink{classpugi_1_1xml__node_a19fc1a285c0f751f52c0e151a727de97}{attribute}(name\_));
+4458     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a4b562d01edab7dad880e9e297203843d}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!remove\-\_\-child@{remove\-\_\-child}}
+\index{remove\-\_\-child@{remove\-\_\-child}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{remove\-\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::remove\-\_\-child (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-node} \&}]{n}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a4b562d01edab7dad880e9e297203843d}
+
+\begin{DoxyCode}
+4488     \{
+4489         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} || !n.\_root || n.\_root->\hyperlink{structpugi_1_1xml__node__struct_af692c222bcc5a9f61108cb3ae0b7b5ea}{parent} != \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+4490 
+4491         \textcolor{keywordflow}{if} (n.\_root->next\_sibling) n.\_root->next\_sibling->prev\_sibling\_c = n.\_root->prev\_sibling\_c;
+4492         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child}) \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child}->
+      \hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c} = n.\_root->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c};
+4493         
+4494         \textcolor{keywordflow}{if} (n.\_root->prev\_sibling\_c->next\_sibling) n.\_root->\hyperlink{structpugi_1_1xml__node__struct_a74e62128c88c422c0ed969633bbb2d4e}{prev\_sibling\_c}->
+      \hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling} = n.\_root->\hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling};
+4495         \textcolor{keywordflow}{else} \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_af72c49a0f81928ef664d9d2f0260f23d}{first\_child} = n.\_root->\hyperlink{structpugi_1_1xml__node__struct_acf0867e3a77871e37132046d97398a6d}{next\_sibling};
+4496         
+4497         \hyperlink{pugixml_8cpp_a00ae2c226db329ac858206e646251867}{impl::destroy\_node}(n.\_root, \hyperlink{pugixml_8cpp_ab194763af6dca2d07ad5139dc2a75f60}{impl::get\_allocator}(
+      \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}));
+4498 
+4499         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+4500     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a1930157197e41cc15eea1fc00eecf1dd}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!remove\-\_\-child@{remove\-\_\-child}}
+\index{remove\-\_\-child@{remove\-\_\-child}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{remove\-\_\-child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::remove\-\_\-child (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a1930157197e41cc15eea1fc00eecf1dd}
+
+\begin{DoxyCode}
+4483     \{
+4484         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a4b562d01edab7dad880e9e297203843d}{remove\_child}(\hyperlink{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{child}(name\_));
+4485     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a713b60fd5cddd5d8671dd76b1457e6eb}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!root@{root}}
+\index{root@{root}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node} pugi\-::xml\-\_\-node\-::root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a713b60fd5cddd5d8671dd76b1457e6eb}
+
+\begin{DoxyCode}
+4087     \{
+4088         \textcolor{keywordflow}{if} (!\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}) \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}();
+4089 
+4090         impl::xml\_memory\_page* page = \textcolor{keyword}{reinterpret\_cast<}impl::xml\_memory\_page*\textcolor{keyword}{>}(
+      \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_aea2e405a368dc5a278a2d23465f1975c}{header} & impl::xml\_memory\_page\_pointer\_mask);
+4091 
+4092         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node}(static\_cast<impl::xml\_document\_struct*>(page->allocator));
+4093     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a32ade4ad1281495923687321825dbb1b}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!select\-\_\-nodes@{select\-\_\-nodes}}
+\index{select\-\_\-nodes@{select\-\_\-nodes}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{select\-\_\-nodes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xpath\-\_\-node\-\_\-set} pugi\-::xml\-\_\-node\-::select\-\_\-nodes (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{query, }
+\item[{{\bf xpath\-\_\-variable\-\_\-set} $\ast$}]{variables = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a32ade4ad1281495923687321825dbb1b}
+
+\begin{DoxyCode}
+10180     \{
+10181         xpath\_query q(query, variables);
+10182         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a32ade4ad1281495923687321825dbb1b}{select\_nodes}(q);
+10183     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_acc6e39ed181fac7f56e69280ad51fac6}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!select\-\_\-nodes@{select\-\_\-nodes}}
+\index{select\-\_\-nodes@{select\-\_\-nodes}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{select\-\_\-nodes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xpath\-\_\-node\-\_\-set} pugi\-::xml\-\_\-node\-::select\-\_\-nodes (
+\begin{DoxyParamCaption}
+\item[{const {\bf xpath\-\_\-query} \&}]{query}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_acc6e39ed181fac7f56e69280ad51fac6}
+
+\begin{DoxyCode}
+10186     \{
+10187         \textcolor{keywordflow}{return} query.evaluate\_node\_set(*\textcolor{keyword}{this});
+10188     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a51ae1ebf6d78f80f9e91f5d64c143d78}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!select\-\_\-single\-\_\-node@{select\-\_\-single\-\_\-node}}
+\index{select\-\_\-single\-\_\-node@{select\-\_\-single\-\_\-node}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{select\-\_\-single\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xpath\-\_\-node} pugi\-::xml\-\_\-node\-::select\-\_\-single\-\_\-node (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{query, }
+\item[{{\bf xpath\-\_\-variable\-\_\-set} $\ast$}]{variables = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a51ae1ebf6d78f80f9e91f5d64c143d78}
+
+\begin{DoxyCode}
+10168     \{
+10169         xpath\_query q(query, variables);
+10170         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a51ae1ebf6d78f80f9e91f5d64c143d78}{select\_single\_node}(q);
+10171     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a94b942e9f4438836b62d260ee65ab43f}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!select\-\_\-single\-\_\-node@{select\-\_\-single\-\_\-node}}
+\index{select\-\_\-single\-\_\-node@{select\-\_\-single\-\_\-node}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{select\-\_\-single\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xpath\-\_\-node} pugi\-::xml\-\_\-node\-::select\-\_\-single\-\_\-node (
+\begin{DoxyParamCaption}
+\item[{const {\bf xpath\-\_\-query} \&}]{query}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a94b942e9f4438836b62d260ee65ab43f}
+
+\begin{DoxyCode}
+10174     \{
+10175         xpath\_node\_set s = query.evaluate\_node\_set(*\textcolor{keyword}{this});
+10176         \textcolor{keywordflow}{return} s.empty() ? xpath\_node() : s.first();
+10177     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a9d688489fcf0960e945a12480419e434}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!set\-\_\-name@{set\-\_\-name}}
+\index{set\-\_\-name@{set\-\_\-name}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{set\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::set\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a9d688489fcf0960e945a12480419e434}
+
+\begin{DoxyCode}
+4137     \{
+4138         \textcolor{keywordflow}{switch} (\hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}())
+4139         \{
+4140         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9acd772b12b3d5442b9771151f45134440}{node\_pi}:
+4141         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aad8024cc4a4afbc68c871f3826a00616}{node\_declaration}:
+4142         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\_element}:
+4143             \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ab9527027631039c4e2361e30f2c0788e}{impl::strcpy\_insitu}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_ae2324fdbd1e307fb12007d1d0f957a0b}{name}, 
+      \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_aea2e405a368dc5a278a2d23465f1975c}{header}, impl::xml\_memory\_page\_name\_allocated\_mask, rhs);
+4144 
+4145         \textcolor{keywordflow}{default}:
+4146             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+4147         \}
+4148     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a160f1fa7a0eda1e5ad9d19d45f6b0e4e}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!set\-\_\-value@{set\-\_\-value}}
+\index{set\-\_\-value@{set\-\_\-value}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{set\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::set\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{const {\bf char\-\_\-t} $\ast$}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a160f1fa7a0eda1e5ad9d19d45f6b0e4e}
+
+\begin{DoxyCode}
+4151     \{
+4152         \textcolor{keywordflow}{switch} (\hyperlink{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{type}())
+4153         \{
+4154         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9acd772b12b3d5442b9771151f45134440}{node\_pi}:
+4155         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9adf13d60a4dfd047be0700e1711aeb1ea}{node\_cdata}:
+4156         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a5c0042693a8b8b6b54c191b4403fca21}{node\_pcdata}:
+4157         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a445fef674a66777dfd28dbd6bab14fed}{node\_comment}:
+4158         \textcolor{keywordflow}{case} \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a9504586a29b181817607cc7ec231c9d4}{node\_doctype}:
+4159             \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_ab9527027631039c4e2361e30f2c0788e}{impl::strcpy\_insitu}(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a191e708864fccda17bb66157afdadd2d}{value}, 
+      \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_aea2e405a368dc5a278a2d23465f1975c}{header}, impl::xml\_memory\_page\_value\_allocated\_mask, rhs);
+4160 
+4161         \textcolor{keywordflow}{default}:
+4162             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+4163         \}
+4164     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_aafe1c1c7cd27f3c9c758b517abc7886a}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!text@{text}}
+\index{text@{text}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-text} pugi\-::xml\-\_\-node\-::text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_aafe1c1c7cd27f3c9c758b517abc7886a}
+
+\begin{DoxyCode}
+4096     \{
+4097         \textcolor{keywordflow}{return} xml\_text(\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root});
+4098     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a951d5d02987f75fabc4d575cfdeec8b4}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!traverse@{traverse}}
+\index{traverse@{traverse}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{traverse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} bool pugi\-::xml\-\_\-node\-::traverse (
+\begin{DoxyParamCaption}
+\item[{{\bf xml\-\_\-tree\-\_\-walker} \&}]{walker}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__node_a951d5d02987f75fabc4d575cfdeec8b4}
+
+\begin{DoxyCode}
+4598     \{
+4599         walker.\_depth = -1;
+4600         
+4601         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} arg\_begin = *\textcolor{keyword}{this};
+4602         \textcolor{keywordflow}{if} (!walker.begin(arg\_begin)) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+4603 
+4604         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} cur = \hyperlink{classpugi_1_1xml__node_a71641cb34be57df1b25e2df7eac31f00}{first\_child}();
+4605                 
+4606         \textcolor{keywordflow}{if} (cur)
+4607         \{
+4608             ++walker.\_depth;
+4609 
+4610             \textcolor{keywordflow}{do} 
+4611             \{
+4612                 \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} arg\_for\_each = cur;
+4613                 \textcolor{keywordflow}{if} (!walker.for\_each(arg\_for\_each))
+4614                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+4615                         
+4616                 \textcolor{keywordflow}{if} (cur.first\_child())
+4617                 \{
+4618                     ++walker.\_depth;
+4619                     cur = cur.first\_child();
+4620                 \}
+4621                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cur.next\_sibling())
+4622                     cur = cur.next\_sibling();
+4623                 \textcolor{keywordflow}{else}
+4624                 \{
+4625                     \textcolor{comment}{// Borland C++ workaround}
+4626                     \textcolor{keywordflow}{while} (!cur.next\_sibling() && cur != *\textcolor{keyword}{this} && !cur.parent().empty())
+4627                     \{
+4628                         --walker.\_depth;
+4629                         cur = cur.parent();
+4630                     \}
+4631                         
+4632                     \textcolor{keywordflow}{if} (cur != *\textcolor{keyword}{this})
+4633                         cur = cur.next\_sibling();
+4634                 \}
+4635             \}
+4636             \textcolor{keywordflow}{while} (cur && cur != *\textcolor{keyword}{this});
+4637         \}
+4638 
+4639         assert(walker.\_depth == -1);
+4640 
+4641         \hyperlink{classpugi_1_1xml__node_a36ec0eb8b399d71f6b55be0e181c69f9}{xml\_node} arg\_end = *\textcolor{keyword}{this};
+4642         \textcolor{keywordflow}{return} walker.end(arg\_end);
+4643     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!type@{type}}
+\index{type@{type}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} {\bf xml\-\_\-node\-\_\-type} pugi\-::xml\-\_\-node\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_ab881e8c41edc84bf7507591d1ad8ead4}
+
+\begin{DoxyCode}
+4015     \{
+4016         \textcolor{keywordflow}{return} \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} ? \textcolor{keyword}{static\_cast<}\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9}{xml\_node\_type}\textcolor{keyword}{>}((\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->
+      \hyperlink{structpugi_1_1xml__node__struct_aea2e405a368dc5a278a2d23465f1975c}{header} & impl::xml\_memory\_page\_type\_mask) + 1) : \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9ad58c55e810076e076318cc2268191b1f}{node\_null};
+4017     \}
+\end{DoxyCode}
+\hypertarget{classpugi_1_1xml__node_a3e7e935a101432fd4f6dcaf6bfb495d4}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!value@{value}}
+\index{value@{value}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} const {\bf char\-\_\-t} $\ast$ pugi\-::xml\-\_\-node\-::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classpugi_1_1xml__node_a3e7e935a101432fd4f6dcaf6bfb495d4}
+
+\begin{DoxyCode}
+4020     \{
+4021         \textcolor{keywordflow}{return} (\hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root} && \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a191e708864fccda17bb66157afdadd2d}{value}) ? \hyperlink{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\_root}->\hyperlink{structpugi_1_1xml__node__struct_a191e708864fccda17bb66157afdadd2d}{value} : 
+      \hyperlink{pugixml_8hpp_ad5475bca2e336810ae5906349e644d0b}{PUGIXML\_TEXT}(\textcolor{stringliteral}{""});
+4022     \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classpugi_1_1xml__node_aeff34dec57ee910e3344631528969539}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!xml\-\_\-attribute\-\_\-iterator@{xml\-\_\-attribute\-\_\-iterator}}
+\index{xml\-\_\-attribute\-\_\-iterator@{xml\-\_\-attribute\-\_\-iterator}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{xml\-\_\-attribute\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf xml\-\_\-attribute\-\_\-iterator}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classpugi_1_1xml__node_aeff34dec57ee910e3344631528969539}
+\hypertarget{classpugi_1_1xml__node_a1e60ab2fa6d6adb56f4b833761fc0b66}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!xml\-\_\-named\-\_\-node\-\_\-iterator@{xml\-\_\-named\-\_\-node\-\_\-iterator}}
+\index{xml\-\_\-named\-\_\-node\-\_\-iterator@{xml\-\_\-named\-\_\-node\-\_\-iterator}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{xml\-\_\-named\-\_\-node\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf xml\-\_\-named\-\_\-node\-\_\-iterator}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classpugi_1_1xml__node_a1e60ab2fa6d6adb56f4b833761fc0b66}
+\hypertarget{classpugi_1_1xml__node_aa25e28e29a8cec4daa60cdd2d5934757}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!xml\-\_\-node\-\_\-iterator@{xml\-\_\-node\-\_\-iterator}}
+\index{xml\-\_\-node\-\_\-iterator@{xml\-\_\-node\-\_\-iterator}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{xml\-\_\-node\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf xml\-\_\-node\-\_\-iterator}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classpugi_1_1xml__node_aa25e28e29a8cec4daa60cdd2d5934757}
+
+
+\subsection{Field Documentation}
+\hypertarget{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}{\index{pugi\-::xml\-\_\-node@{pugi\-::xml\-\_\-node}!\-\_\-root@{\-\_\-root}}
+\index{\-\_\-root@{\-\_\-root}!pugi::xml_node@{pugi\-::xml\-\_\-node}}
+\subsubsection[{\-\_\-root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\-\_\-node\-\_\-struct}$\ast$ pugi\-::xml\-\_\-node\-::\-\_\-root\hspace{0.3cm}{\ttfamily [protected]}}}\label{classpugi_1_1xml__node_a45a5b342de1e37a60565f7693f03cc08}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8hpp}{pugixml.\-hpp}\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

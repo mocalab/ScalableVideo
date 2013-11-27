@@ -1,0 +1,97 @@
+\hypertarget{classDemuxer}{\section{Demuxer Class Reference}
+\label{classDemuxer}\index{Demuxer@{Demuxer}}
+}
+
+
+{\ttfamily \#include $<$demuxer.\-h$>$}
+
+Inheritance diagram for Demuxer\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDemuxer}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDemuxer_a95c38d118f61403a2828da35afc39c5f}{demux} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDemuxer_a62e1d551bc7e73a9fa23587b1960b92f}{finished} ()
+\item 
+void \hyperlink{classDemuxer_a0a8254e06b4450d65428e9d1f641c8cd}{new\-Image} (Q\-Image $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDemuxer_a266feb24cfea87bee1883b480694478d}{Demuxer} (Q\-String \hyperlink{classDemuxer_a4bd7bbc10d0c5356ac541b5f168fde93}{fifo}, Q\-Object $\ast$parent=0)
+\item 
+Q\-String \hyperlink{classDemuxer_a4bd7bbc10d0c5356ac541b5f168fde93}{fifo} () const 
+\item 
+void \hyperlink{classDemuxer_a92ca6dbf8971a34ecac0e6b671c588ed}{set\-Fifo} (const Q\-String \&\hyperlink{classDemuxer_a4bd7bbc10d0c5356ac541b5f168fde93}{fifo})
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDemuxer_a266feb24cfea87bee1883b480694478d}{\index{Demuxer@{Demuxer}!Demuxer@{Demuxer}}
+\index{Demuxer@{Demuxer}!Demuxer@{Demuxer}}
+\subsubsection[{Demuxer}]{\setlength{\rightskip}{0pt plus 5cm}Demuxer\-::\-Demuxer (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{fifo, }
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classDemuxer_a266feb24cfea87bee1883b480694478d}
+
+\begin{DoxyCode}
+4                                               :
+5     QObject(parent),
+6     m\_fifo(\hyperlink{classDemuxer_a4bd7bbc10d0c5356ac541b5f168fde93}{fifo}),
+7     video\_frame\_count(0),
+8     destination\_data(\{NULL\})
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDemuxer_a95c38d118f61403a2828da35afc39c5f}{\index{Demuxer@{Demuxer}!demux@{demux}}
+\index{demux@{demux}!Demuxer@{Demuxer}}
+\subsubsection[{demux}]{\setlength{\rightskip}{0pt plus 5cm}void Demuxer\-::demux (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classDemuxer_a95c38d118f61403a2828da35afc39c5f}
+\hypertarget{classDemuxer_a4bd7bbc10d0c5356ac541b5f168fde93}{\index{Demuxer@{Demuxer}!fifo@{fifo}}
+\index{fifo@{fifo}!Demuxer@{Demuxer}}
+\subsubsection[{fifo}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Demuxer\-::fifo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDemuxer_a4bd7bbc10d0c5356ac541b5f168fde93}
+\hypertarget{classDemuxer_a62e1d551bc7e73a9fa23587b1960b92f}{\index{Demuxer@{Demuxer}!finished@{finished}}
+\index{finished@{finished}!Demuxer@{Demuxer}}
+\subsubsection[{finished}]{\setlength{\rightskip}{0pt plus 5cm}void Demuxer\-::finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDemuxer_a62e1d551bc7e73a9fa23587b1960b92f}
+\hypertarget{classDemuxer_a0a8254e06b4450d65428e9d1f641c8cd}{\index{Demuxer@{Demuxer}!new\-Image@{new\-Image}}
+\index{new\-Image@{new\-Image}!Demuxer@{Demuxer}}
+\subsubsection[{new\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Demuxer\-::new\-Image (
+\begin{DoxyParamCaption}
+\item[{Q\-Image $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classDemuxer_a0a8254e06b4450d65428e9d1f641c8cd}
+\hypertarget{classDemuxer_a92ca6dbf8971a34ecac0e6b671c588ed}{\index{Demuxer@{Demuxer}!set\-Fifo@{set\-Fifo}}
+\index{set\-Fifo@{set\-Fifo}!Demuxer@{Demuxer}}
+\subsubsection[{set\-Fifo}]{\setlength{\rightskip}{0pt plus 5cm}void Demuxer\-::set\-Fifo (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{fifo}
+\end{DoxyParamCaption}
+)}}\label{classDemuxer_a92ca6dbf8971a34ecac0e6b671c588ed}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Video/\hyperlink{demuxer_8h}{demuxer.\-h}\item 
+Video/\hyperlink{demuxer_8cpp}{demuxer.\-cpp}\end{DoxyCompactItemize}

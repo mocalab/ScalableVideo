@@ -1,0 +1,98 @@
+\hypertarget{structxml__stream__chunk}{\section{xml\-\_\-stream\-\_\-chunk$<$ T $>$ Struct Template Reference}
+\label{structxml__stream__chunk}\index{xml\-\_\-stream\-\_\-chunk$<$ T $>$@{xml\-\_\-stream\-\_\-chunk$<$ T $>$}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxml__stream__chunk_a8b87fcb2074014dd252f752a95092337}{xml\-\_\-stream\-\_\-chunk} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structxml__stream__chunk}{xml\-\_\-stream\-\_\-chunk} $\ast$ \hyperlink{structxml__stream__chunk_a92cffe33c529ff266329fd4afb59226d}{create} ()
+\item 
+static void \hyperlink{structxml__stream__chunk_a4b812901d59950d48d539e5c8726a0e8}{destroy} (void $\ast$ptr)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxml__stream__chunk}{xml\-\_\-stream\-\_\-chunk} $\ast$ \hyperlink{structxml__stream__chunk_ad00071f7340adb2bde7c4157d4100b3c}{next}
+\item 
+size\-\_\-t \hyperlink{structxml__stream__chunk_a42618ba3b7bda1246cfc640149fc34eb}{size}
+\item 
+T \hyperlink{structxml__stream__chunk_a365e2e228a0277467b25a0fea42b8518}{data} \mbox{[}xml\-\_\-memory\-\_\-page\-\_\-size/sizeof(T)\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structxml__stream__chunk_a8b87fcb2074014dd252f752a95092337}{\index{xml\-\_\-stream\-\_\-chunk@{xml\-\_\-stream\-\_\-chunk}!xml\-\_\-stream\-\_\-chunk@{xml\-\_\-stream\-\_\-chunk}}
+\index{xml\-\_\-stream\-\_\-chunk@{xml\-\_\-stream\-\_\-chunk}!xml_stream_chunk@{xml\-\_\-stream\-\_\-chunk}}
+\subsubsection[{xml\-\_\-stream\-\_\-chunk}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf xml\-\_\-stream\-\_\-chunk}$<$ T $>$\-::{\bf xml\-\_\-stream\-\_\-chunk} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__stream__chunk_a8b87fcb2074014dd252f752a95092337}
+
+\begin{DoxyCode}
+3487                           : \hyperlink{structxml__stream__chunk_ad00071f7340adb2bde7c4157d4100b3c}{next}(0), \hyperlink{structxml__stream__chunk_a42618ba3b7bda1246cfc640149fc34eb}{size}(0)
+3488         \{
+3489         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structxml__stream__chunk_a92cffe33c529ff266329fd4afb59226d}{\index{xml\-\_\-stream\-\_\-chunk@{xml\-\_\-stream\-\_\-chunk}!create@{create}}
+\index{create@{create}!xml_stream_chunk@{xml\-\_\-stream\-\_\-chunk}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ static {\bf xml\-\_\-stream\-\_\-chunk}$\ast$ {\bf xml\-\_\-stream\-\_\-chunk}$<$ T $>$\-::create (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structxml__stream__chunk_a92cffe33c529ff266329fd4afb59226d}
+
+\begin{DoxyCode}
+3468         \{
+3469             \textcolor{keywordtype}{void}* memory = \hyperlink{structxml__memory__management__function__storage_abb6865f8d07d27fd9273737c59f6e941}{xml\_memory::allocate}(\textcolor{keyword}{sizeof}(
+      \hyperlink{structxml__stream__chunk}{xml\_stream\_chunk}));
+3470             
+3471             \textcolor{keywordflow}{return} \textcolor{keyword}{new} (memory) \hyperlink{structxml__stream__chunk_a8b87fcb2074014dd252f752a95092337}{xml\_stream\_chunk}();
+3472         \}
+\end{DoxyCode}
+\hypertarget{structxml__stream__chunk_a4b812901d59950d48d539e5c8726a0e8}{\index{xml\-\_\-stream\-\_\-chunk@{xml\-\_\-stream\-\_\-chunk}!destroy@{destroy}}
+\index{destroy@{destroy}!xml_stream_chunk@{xml\-\_\-stream\-\_\-chunk}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ static void {\bf xml\-\_\-stream\-\_\-chunk}$<$ T $>$\-::destroy (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structxml__stream__chunk_a4b812901d59950d48d539e5c8726a0e8}
+
+\begin{DoxyCode}
+3475         \{
+3476             \hyperlink{structxml__stream__chunk}{xml\_stream\_chunk}* chunk = \textcolor{keyword}{static\_cast<}
+      \hyperlink{structxml__stream__chunk}{xml\_stream\_chunk}*\textcolor{keyword}{>}(ptr);
+3477 
+3478             \textcolor{comment}{// free chunk chain}
+3479             \textcolor{keywordflow}{while} (chunk)
+3480             \{
+3481                 \hyperlink{structxml__stream__chunk}{xml\_stream\_chunk}* \hyperlink{structxml__stream__chunk_ad00071f7340adb2bde7c4157d4100b3c}{next} = chunk->\hyperlink{structxml__stream__chunk_ad00071f7340adb2bde7c4157d4100b3c}{next};
+3482                 \hyperlink{structxml__memory__management__function__storage_a1c80a9a045ed6cfb90b17a178e4b3512}{xml\_memory::deallocate}(chunk);
+3483                 chunk = \hyperlink{structxml__stream__chunk_ad00071f7340adb2bde7c4157d4100b3c}{next};
+3484             \}
+3485         \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\hypertarget{structxml__stream__chunk_a365e2e228a0277467b25a0fea42b8518}{\index{xml\-\_\-stream\-\_\-chunk@{xml\-\_\-stream\-\_\-chunk}!data@{data}}
+\index{data@{data}!xml_stream_chunk@{xml\-\_\-stream\-\_\-chunk}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf xml\-\_\-stream\-\_\-chunk}$<$ T $>$\-::data\mbox{[}xml\-\_\-memory\-\_\-page\-\_\-size/sizeof(T)\mbox{]}}}\label{structxml__stream__chunk_a365e2e228a0277467b25a0fea42b8518}
+\hypertarget{structxml__stream__chunk_ad00071f7340adb2bde7c4157d4100b3c}{\index{xml\-\_\-stream\-\_\-chunk@{xml\-\_\-stream\-\_\-chunk}!next@{next}}
+\index{next@{next}!xml_stream_chunk@{xml\-\_\-stream\-\_\-chunk}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf xml\-\_\-stream\-\_\-chunk}$\ast$ {\bf xml\-\_\-stream\-\_\-chunk}$<$ T $>$\-::next}}\label{structxml__stream__chunk_ad00071f7340adb2bde7c4157d4100b3c}
+\hypertarget{structxml__stream__chunk_a42618ba3b7bda1246cfc640149fc34eb}{\index{xml\-\_\-stream\-\_\-chunk@{xml\-\_\-stream\-\_\-chunk}!size@{size}}
+\index{size@{size}!xml_stream_chunk@{xml\-\_\-stream\-\_\-chunk}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ size\-\_\-t {\bf xml\-\_\-stream\-\_\-chunk}$<$ T $>$\-::size}}\label{structxml__stream__chunk_a42618ba3b7bda1246cfc640149fc34eb}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

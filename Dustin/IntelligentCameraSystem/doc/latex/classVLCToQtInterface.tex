@@ -1,0 +1,547 @@
+\hypertarget{classVLCToQtInterface}{\section{V\-L\-C\-To\-Qt\-Interface Class Reference}
+\label{classVLCToQtInterface}\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}}
+}
+
+
+{\ttfamily \#include $<$vlctoqtinterface.\-h$>$}
+
+Inheritance diagram for V\-L\-C\-To\-Qt\-Interface\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classVLCToQtInterface}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVLCToQtInterface_a93079dc8c7e065a6b9ff2a956e663259}{update\-Video\-Size} ()
+\begin{DoxyCompactList}\small\item\em Update video size slot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVLCToQtInterface_aaf0ae5e8675efd6c039df97c4c24bd77}{resize\-Frame} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Signal to resize. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVLCToQtInterface_a782cd983a96f40d16c1f4ba12872e7a1}{V\-L\-C\-To\-Qt\-Interface} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classVLCToQtInterface}{V\-L\-C\-To\-Qt\-Interface} default value constructor. \end{DoxyCompactList}\item 
+\hyperlink{classVLCToQtInterface_ac475e173dea8665cab256a9d8ac59fb2}{V\-L\-C\-To\-Qt\-Interface} (int width, int height)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classVLCToQtInterface}{V\-L\-C\-To\-Qt\-Interface} explicit value constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classVLCToQtInterface_aaf25e1804b120924ad8b49e36e2bfa8c}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Qt interface function to initialize the V\-L\-C client. \end{DoxyCompactList}\item 
+virtual \hyperlink{classVLCToQtInterface_aa89b1e15f7e45b93b7ff24aa0a8cbd33}{$\sim$\-V\-L\-C\-To\-Qt\-Interface} ()
+\begin{DoxyCompactList}\small\item\em $\sim$\-V\-L\-C\-To\-Qt\-Interface \end{DoxyCompactList}\item 
+void \hyperlink{classVLCToQtInterface_af0941bf47aa0a581545f7a367e24185f}{free\-Resources} ()
+\begin{DoxyCompactList}\small\item\em Qt interface function to release V\-L\-C allocated resources. \end{DoxyCompactList}\item 
+void \hyperlink{classVLCToQtInterface_aea363afecbe6e3b47211eb94d9b918c6}{set\-Media\-To\-File} (const char $\ast$file\-\_\-name)
+\begin{DoxyCompactList}\small\item\em Interface to set media to a file. \end{DoxyCompactList}\item 
+void \hyperlink{classVLCToQtInterface_a782ba1a8e8d174bd0fabc4d292b6e40e}{set\-Media\-To\-Url} (const char $\ast$url)
+\begin{DoxyCompactList}\small\item\em Interface to set the media to a U\-R\-L. \end{DoxyCompactList}\item 
+int \hyperlink{classVLCToQtInterface_ac6b8b81ce5f399604b29492654d9f4ca}{play} (uint32\-\_\-t win\-Id)
+\begin{DoxyCompactList}\small\item\em Play the media. \end{DoxyCompactList}\item 
+int \hyperlink{classVLCToQtInterface_a31f1552dd75dafa174a7b6c4f5d7859f}{play} (void $\ast$win\-Id)
+\begin{DoxyCompactList}\small\item\em Play the media. \end{DoxyCompactList}\item 
+void \hyperlink{classVLCToQtInterface_a59428645eef3ef14c957a35f5f71a14e}{stop} ()
+\begin{DoxyCompactList}\small\item\em Inform the V\-L\-C client to stop playing. \end{DoxyCompactList}\item 
+void \hyperlink{classVLCToQtInterface_a69c5cf8921c45d50d0e679447af3c12e}{pause} ()
+\begin{DoxyCompactList}\small\item\em Inform the V\-L\-C client to pause. \end{DoxyCompactList}\item 
+void \hyperlink{classVLCToQtInterface_a1193d87a92a558d51efc62e6f5639f0a}{set\-Fps} (int fps)
+\begin{DoxyCompactList}\small\item\em Sets the frame rate. \end{DoxyCompactList}\item 
+void \hyperlink{classVLCToQtInterface_a7928cd122995dd11f7128a768de6015c}{set\-Playback\-Rate} (int fps)
+\begin{DoxyCompactList}\small\item\em Set the video playback rate. \end{DoxyCompactList}\item 
+bool \hyperlink{classVLCToQtInterface_a10bc62d5d355788f700c7f45ba0713e8}{is\-Playing} ()
+\begin{DoxyCompactList}\small\item\em Whether or not the V\-L\-C client is playing. \end{DoxyCompactList}\item 
+int \hyperlink{classVLCToQtInterface_a197424c4ed7a829ee6d7d8afa9b377ef}{get\-Fps} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the video's frame rate. \end{DoxyCompactList}\item 
+bool \hyperlink{classVLCToQtInterface_a8d1084101000873c20c8ebd2b2bdfa13}{get\-Media\-Stats} (\hyperlink{classMediaStatistics}{Media\-Statistics} \&statistics)
+\begin{DoxyCompactList}\small\item\em Retrieve the media statistics. \end{DoxyCompactList}\item 
+float \hyperlink{classVLCToQtInterface_a7536c3fb0c8cba454414426e2a81239d}{get\-Current\-Bitrate\-Avg} ()
+\begin{DoxyCompactList}\small\item\em Interface function to get the average bitrate for the current segment of video. \end{DoxyCompactList}\item 
+void \hyperlink{classVLCToQtInterface_ae97936d40e2bd1aaa9bee707353bb8a2}{reset\-Running\-Average} ()
+\begin{DoxyCompactList}\small\item\em Reset the running bitrate average. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVLCToQtInterface_a782cd983a96f40d16c1f4ba12872e7a1}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}}
+\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{V\-L\-C\-To\-Qt\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}V\-L\-C\-To\-Qt\-Interface\-::\-V\-L\-C\-To\-Qt\-Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_a782cd983a96f40d16c1f4ba12872e7a1}
+
+
+\hyperlink{classVLCToQtInterface}{V\-L\-C\-To\-Qt\-Interface} default value constructor. 
+
+
+\begin{DoxyCode}
+4                                    :
+5     m\_width(320),
+6     m\_height(240)
+7 \{
+8     this->initTimer();
+9 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_ac475e173dea8665cab256a9d8ac59fb2}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}}
+\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{V\-L\-C\-To\-Qt\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}V\-L\-C\-To\-Qt\-Interface\-::\-V\-L\-C\-To\-Qt\-Interface (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_ac475e173dea8665cab256a9d8ac59fb2}
+
+
+\hyperlink{classVLCToQtInterface}{V\-L\-C\-To\-Qt\-Interface} explicit value constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The initial video width. \\
+\hline
+{\em height} & The initial video height. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+11                                                         :
+12     m\_width(width),
+13     m\_height(height)
+14 \{
+15     this->initTimer();
+16 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_aa89b1e15f7e45b93b7ff24aa0a8cbd33}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!$\sim$\-V\-L\-C\-To\-Qt\-Interface@{$\sim$\-V\-L\-C\-To\-Qt\-Interface}}
+\index{$\sim$\-V\-L\-C\-To\-Qt\-Interface@{$\sim$\-V\-L\-C\-To\-Qt\-Interface}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{$\sim$\-V\-L\-C\-To\-Qt\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}V\-L\-C\-To\-Qt\-Interface\-::$\sim$\-V\-L\-C\-To\-Qt\-Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classVLCToQtInterface_aa89b1e15f7e45b93b7ff24aa0a8cbd33}
+
+
+$\sim$\-V\-L\-C\-To\-Qt\-Interface 
+
+
+\begin{DoxyCode}
+35 \{
+36     m\_timer->stop();
+37     \textcolor{keyword}{delete} m\_timer;
+38 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVLCToQtInterface_af0941bf47aa0a581545f7a367e24185f}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!free\-Resources@{free\-Resources}}
+\index{free\-Resources@{free\-Resources}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{free\-Resources}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::free\-Resources (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_af0941bf47aa0a581545f7a367e24185f}
+
+
+Qt interface function to release V\-L\-C allocated resources. 
+
+
+\begin{DoxyCode}
+42 \{
+43     m\_vlc.\hyperlink{classVLCWrapper_a58462a6c083affe4ac09e057d2303565}{freeResources}();
+44 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_a7536c3fb0c8cba454414426e2a81239d}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!get\-Current\-Bitrate\-Avg@{get\-Current\-Bitrate\-Avg}}
+\index{get\-Current\-Bitrate\-Avg@{get\-Current\-Bitrate\-Avg}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{get\-Current\-Bitrate\-Avg}]{\setlength{\rightskip}{0pt plus 5cm}float V\-L\-C\-To\-Qt\-Interface\-::get\-Current\-Bitrate\-Avg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_a7536c3fb0c8cba454414426e2a81239d}
+
+
+Interface function to get the average bitrate for the current segment of video. 
+
+\begin{DoxyReturn}{Returns}
+The average bitrate. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+135 \{
+136     \textcolor{keywordflow}{return} m\_vlc.\hyperlink{classVLCWrapper_aff24a01fa335af7febc084c446620070}{getCurrentBitrateAvg}();
+137 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_a197424c4ed7a829ee6d7d8afa9b377ef}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!get\-Fps@{get\-Fps}}
+\index{get\-Fps@{get\-Fps}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{get\-Fps}]{\setlength{\rightskip}{0pt plus 5cm}int V\-L\-C\-To\-Qt\-Interface\-::get\-Fps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_a197424c4ed7a829ee6d7d8afa9b377ef}
+
+
+Retrieve the video's frame rate. 
+
+\begin{DoxyReturn}{Returns}
+The frame rate of the video. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+104 \{
+105     \textcolor{keywordflow}{return} this->m\_vlc.\hyperlink{classVLCWrapper_a696fd0d152c68c757f9135669cbcbe56}{getFps}();
+106 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_a8d1084101000873c20c8ebd2b2bdfa13}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!get\-Media\-Stats@{get\-Media\-Stats}}
+\index{get\-Media\-Stats@{get\-Media\-Stats}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{get\-Media\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}bool V\-L\-C\-To\-Qt\-Interface\-::get\-Media\-Stats (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\-Statistics} \&}]{statistics}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_a8d1084101000873c20c8ebd2b2bdfa13}
+
+
+Retrieve the media statistics. 
+
+Function to retrieve the statistics of the current media that is playing (i.\-e video bitrate). 
+\begin{DoxyParams}{Parameters}
+{\em statistics} & \hyperlink{classMediaStatistics}{Media\-Statistics} object to store the statistics in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the statistics are retrievable and the video is playing, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+110 \{
+111     \textcolor{comment}{//Get the important media statistics to be used by the caller.}
+112     \textcolor{keywordtype}{bool} err = \textcolor{keyword}{true};
+113     libvlc\_media\_stats\_t stats;
+114     \textcolor{keywordflow}{if}((err = m\_vlc.\hyperlink{classVLCWrapper_a743fecb30b118eb999780cc4559eba86}{getMediaStats}(&stats)))
+115     \{
+116         \textcolor{comment}{//Place in a MediaStatistics object}
+117         statistics.\hyperlink{classMediaStatistics_a267abf187ab5690f931d0d7d45407dcc}{setDecodedVideo}(stats.i\_decoded\_video);
+118         statistics.\hyperlink{classMediaStatistics_a36bd398cacfada1aaf865374f4bc5e2a}{setDemuxBitrate}(stats.f\_demux\_bitrate);
+119         statistics.\hyperlink{classMediaStatistics_a6d9b5760c321c9e189c780ad64cda8f8}{setDemuxCorrupted}(stats.i\_demux\_corrupted);
+120         statistics.\hyperlink{classMediaStatistics_a05b13c332cd4ed139392e528b52ac89c}{setDemuxDiscontinuity}(stats.i\_demux\_discontinuity);
+121         statistics.\hyperlink{classMediaStatistics_afecbd2e8ebc147b344a9dc18dc6af431}{setDemuxReadBytes}(stats.i\_demux\_read\_bytes);
+122         statistics.\hyperlink{classMediaStatistics_ad37d42721c420cea8862cbfd27380a69}{setDisplayedPictures}(stats.i\_displayed\_pictures);
+123         statistics.\hyperlink{classMediaStatistics_ad504b337caf39ac04909a4c480101c19}{setInputBitrate}(stats.f\_input\_bitrate);
+124         statistics.\hyperlink{classMediaStatistics_a0b305cf428cdc7905d2beb98f08e7c62}{setLostPictures}(stats.i\_lost\_pictures);
+125         statistics.\hyperlink{classMediaStatistics_adf378b9efe24da6724583ff13ad98356}{setPlayedPictures}(stats.i\_played\_abuffers);
+126         statistics.\hyperlink{classMediaStatistics_a729d2733cd49ad96ab595bb5eb38fe87}{setReadBytes}(stats.i\_read\_bytes);
+127 
+128     \}
+129 
+130     \textcolor{keywordflow}{return} err;
+131 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_aaf25e1804b120924ad8b49e36e2bfa8c}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!initialize@{initialize}}
+\index{initialize@{initialize}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_aaf25e1804b120924ad8b49e36e2bfa8c}
+
+
+Qt interface function to initialize the V\-L\-C client. 
+
+
+\begin{DoxyCode}
+30 \{
+31     m\_vlc.\hyperlink{classVLCWrapper_a23af9a9003d74b012967e72947141241}{initialize}();
+32 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_a10bc62d5d355788f700c7f45ba0713e8}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!is\-Playing@{is\-Playing}}
+\index{is\-Playing@{is\-Playing}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{is\-Playing}]{\setlength{\rightskip}{0pt plus 5cm}bool V\-L\-C\-To\-Qt\-Interface\-::is\-Playing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_a10bc62d5d355788f700c7f45ba0713e8}
+
+
+Whether or not the V\-L\-C client is playing. 
+
+\begin{DoxyReturn}{Returns}
+true if playing, false otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+99 \{
+100     \textcolor{keywordflow}{return} m\_vlc.\hyperlink{classVLCWrapper_a52d4cde1548105d10d1b8906fac68dac}{isPlaying}();
+101 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_a69c5cf8921c45d50d0e679447af3c12e}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!pause@{pause}}
+\index{pause@{pause}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_a69c5cf8921c45d50d0e679447af3c12e}
+
+
+Inform the V\-L\-C client to pause. 
+
+
+\begin{DoxyCode}
+83 \{
+84     m\_vlc.\hyperlink{classVLCWrapper_a8dadd74aef3a683cf73b677bc98db70c}{pause}();
+85 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_ac6b8b81ce5f399604b29492654d9f4ca}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!play@{play}}
+\index{play@{play}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}int V\-L\-C\-To\-Qt\-Interface\-::play (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{win\-Id}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_ac6b8b81ce5f399604b29492654d9f4ca}
+
+
+Play the media. 
+
+This interface function will inform the V\-L\-C client to begin playing, displaying the video in using the passed window handle. 
+\begin{DoxyParams}{Parameters}
+{\em win\-Id} & The handle to an X\-Window window (Linux). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on failure. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+62 \{
+63     \textcolor{keywordtype}{int} status = 0;
+64 
+65     status = m\_vlc.\hyperlink{classVLCWrapper_a75bc08d5b5d25ebcbdd50d3ecd1301bd}{play}(winId);
+66 
+67     \textcolor{keywordflow}{return} status;
+68 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_a31f1552dd75dafa174a7b6c4f5d7859f}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!play@{play}}
+\index{play@{play}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}int V\-L\-C\-To\-Qt\-Interface\-::play (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{win\-Id}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_a31f1552dd75dafa174a7b6c4f5d7859f}
+
+
+Play the media. 
+
+This interface function will inform the V\-L\-C client to begin playing, displaying the video in using the passed window handle. 
+\begin{DoxyParams}{Parameters}
+{\em win\-Id} & The handle to an H\-W\-N\-D window (Windows). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on failure. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+71 \{
+72     \textcolor{keywordtype}{int} status = 0;
+73     status = m\_vlc.\hyperlink{classVLCWrapper_a75bc08d5b5d25ebcbdd50d3ecd1301bd}{play}(winId);
+74     \textcolor{keywordflow}{return} status;
+75 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_ae97936d40e2bd1aaa9bee707353bb8a2}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!reset\-Running\-Average@{reset\-Running\-Average}}
+\index{reset\-Running\-Average@{reset\-Running\-Average}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{reset\-Running\-Average}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::reset\-Running\-Average (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_ae97936d40e2bd1aaa9bee707353bb8a2}
+
+
+Reset the running bitrate average. 
+
+Interface function to reset the running average of the video bitrate (as in when a new segment of video is started). 
+\begin{DoxyCode}
+141 \{
+142     m\_vlc.\hyperlink{classVLCWrapper_a5acd0eb82102874f09dacaa277a2f784}{resetRunningAverage}();
+143 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_aaf0ae5e8675efd6c039df97c4c24bd77}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!resize\-Frame@{resize\-Frame}}
+\index{resize\-Frame@{resize\-Frame}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{resize\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::resize\-Frame (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classVLCToQtInterface_aaf0ae5e8675efd6c039df97c4c24bd77}
+
+
+Signal to resize. 
+
+Signal that is emitted to inform the containing widget to resize the video frame. 
+\begin{DoxyParams}{Parameters}
+{\em width} & The new frame width. \\
+\hline
+{\em height} & The new frame height. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVLCToQtInterface_a1193d87a92a558d51efc62e6f5639f0a}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!set\-Fps@{set\-Fps}}
+\index{set\-Fps@{set\-Fps}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{set\-Fps}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::set\-Fps (
+\begin{DoxyParamCaption}
+\item[{int}]{fps}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_a1193d87a92a558d51efc62e6f5639f0a}
+
+
+Sets the frame rate. 
+
+Set the frame rate of the video to be played. 
+\begin{DoxyParams}{Parameters}
+{\em fps} & The frame rate. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+88 \{
+89     this->m\_vlc.\hyperlink{classVLCWrapper_abb027f9dfb30636141f85a1292885634}{setFps}(fps);
+90 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_aea363afecbe6e3b47211eb94d9b918c6}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!set\-Media\-To\-File@{set\-Media\-To\-File}}
+\index{set\-Media\-To\-File@{set\-Media\-To\-File}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{set\-Media\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::set\-Media\-To\-File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_aea363afecbe6e3b47211eb94d9b918c6}
+
+
+Interface to set media to a file. 
+
+Sets the V\-L\-C client's media object to play a certain file. 
+\begin{DoxyParams}{Parameters}
+{\em file\-\_\-name} & The path to the file to play. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{comment}{//Open the file specified in the open string}
+50     m\_vlc.\hyperlink{classVLCWrapper_a9f5993525559efb2fbdd434c79f040c7}{setMediaToFile}(file\_name);
+51 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_a782ba1a8e8d174bd0fabc4d292b6e40e}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!set\-Media\-To\-Url@{set\-Media\-To\-Url}}
+\index{set\-Media\-To\-Url@{set\-Media\-To\-Url}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{set\-Media\-To\-Url}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::set\-Media\-To\-Url (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{url}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_a782ba1a8e8d174bd0fabc4d292b6e40e}
+
+
+Interface to set the media to a U\-R\-L. 
+
+Sets the V\-L\-C client's media object to stream from a specified U\-R\-L. 
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\-R\-L of the media to stream. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+55 \{
+56     \textcolor{comment}{//Open specified url}
+57     m\_vlc.\hyperlink{classVLCWrapper_a9f5993525559efb2fbdd434c79f040c7}{setMediaToFile}(url);
+58 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_a7928cd122995dd11f7128a768de6015c}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!set\-Playback\-Rate@{set\-Playback\-Rate}}
+\index{set\-Playback\-Rate@{set\-Playback\-Rate}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{set\-Playback\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::set\-Playback\-Rate (
+\begin{DoxyParamCaption}
+\item[{int}]{fps}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_a7928cd122995dd11f7128a768de6015c}
+
+
+Set the video playback rate. 
+
+Set the V\-L\-C client's video playback rate. 
+\begin{DoxyParams}{Parameters}
+{\em fps} & The playback rate. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+93 \{
+94     this->m\_vlc.\hyperlink{classVLCWrapper_a7d2f4f7b0f796711b614f2d9f6ea63ee}{resetMedia}(fps);
+95 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_a59428645eef3ef14c957a35f5f71a14e}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!stop@{stop}}
+\index{stop@{stop}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCToQtInterface_a59428645eef3ef14c957a35f5f71a14e}
+
+
+Inform the V\-L\-C client to stop playing. 
+
+
+\begin{DoxyCode}
+78 \{
+79     m\_vlc.\hyperlink{classVLCWrapper_a2ddae6b4fb05cd9cd149c6769d8fa7a9}{stop}();
+80 \}
+\end{DoxyCode}
+\hypertarget{classVLCToQtInterface_a93079dc8c7e065a6b9ff2a956e663259}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!update\-Video\-Size@{update\-Video\-Size}}
+\index{update\-Video\-Size@{update\-Video\-Size}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{update\-Video\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::update\-Video\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVLCToQtInterface_a93079dc8c7e065a6b9ff2a956e663259}
+
+
+Update video size slot. 
+
+Slot that is called from a timer to determine if the parent widget needs to resize the video container. 
+\begin{DoxyCode}
+148 \{
+149     \textcolor{keywordtype}{int} width = 0, height = 0;
+150     \textcolor{comment}{//Get width and height, store in local variabled, return if video is playing}
+151     \textcolor{keywordtype}{bool} playing = m\_vlc.\hyperlink{classVLCWrapper_a806ad002020aaba2f471ee948226cb0c}{getVideoSize}(&width, &height);
+152     \textcolor{comment}{//If video is playing}
+153     \textcolor{keywordflow}{if}(playing)
+154     \{
+155         \textcolor{keywordflow}{if}(width == 0 && height == 0)
+156         \{
+157             \textcolor{comment}{//Set new widths and heights and emit resize signal}
+158             \textcolor{comment}{//this->m\_width = 320;}
+159             \textcolor{comment}{//this->m\_height = 240;}
+160             emit \hyperlink{classVLCToQtInterface_aaf0ae5e8675efd6c039df97c4c24bd77}{resizeFrame}(m\_width, m\_height);
+161         \}
+162         \textcolor{comment}{//If width and height are different}
+163         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((width) != this->m\_width || (height) != this->m\_height)
+164         \{
+165             \textcolor{comment}{//Set new widths and heights and emit resize signal}
+166             this->m\_width = width;
+167             this->m\_height = height;
+168             emit \hyperlink{classVLCToQtInterface_aaf0ae5e8675efd6c039df97c4c24bd77}{resizeFrame}(width, height);
+169         \}
+170 
+171     \}
+172     \textcolor{keywordflow}{else}
+173     \{
+174         \textcolor{keywordflow}{if}((width) != 320 && (height) != 240)
+175         \{
+176             this->m\_width = 320;
+177             this->m\_height = 240;
+178             emit \hyperlink{classVLCToQtInterface_aaf0ae5e8675efd6c039df97c4c24bd77}{resizeFrame}(m\_width, m\_height);
+179         \}
+180 
+181     \}
+182 
+183     \textcolor{comment}{//Get media stats}
+184     \textcolor{keywordflow}{if}(m\_vlc.\hyperlink{classVLCWrapper_a52d4cde1548105d10d1b8906fac68dac}{isPlaying}())
+185         this->m\_vlc.\hyperlink{classVLCWrapper_a743fecb30b118eb999780cc4559eba86}{getMediaStats}();
+186 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Video/\hyperlink{vlctoqtinterface_8h}{vlctoqtinterface.\-h}\item 
+Video/\hyperlink{vlctoqtinterface_8cpp}{vlctoqtinterface.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,130 @@
+\hypertarget{classPacketReceiver}{\section{Packet\-Receiver Class Reference}
+\label{classPacketReceiver}\index{Packet\-Receiver@{Packet\-Receiver}}
+}
+
+
+{\ttfamily \#include $<$packetreceiver.\-h$>$}
+
+Inheritance diagram for Packet\-Receiver\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPacketReceiver}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPacketReceiver_a336af20ed7b74dfd8ce5603ba89fc8c3}{Packet\-Receiver} (\hyperlink{classMessageDispatcher}{Message\-Dispatcher} $\ast$passer)
+\item 
+\hyperlink{classPacketReceiver_aaa7c59a15a919bb7842ed062199876cf}{$\sim$\-Packet\-Receiver} ()
+\item 
+void \hyperlink{classPacketReceiver_ad290dd22371f82675ee530fd123399a4}{wait\-To\-Finish} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPacketReceiver_abb2ff260250bf7baf8303f4ae1e1aa7e}{run} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPacketReceiver_a336af20ed7b74dfd8ce5603ba89fc8c3}{\index{Packet\-Receiver@{Packet\-Receiver}!Packet\-Receiver@{Packet\-Receiver}}
+\index{Packet\-Receiver@{Packet\-Receiver}!PacketReceiver@{Packet\-Receiver}}
+\subsubsection[{Packet\-Receiver}]{\setlength{\rightskip}{0pt plus 5cm}Packet\-Receiver\-::\-Packet\-Receiver (
+\begin{DoxyParamCaption}
+\item[{{\bf Message\-Dispatcher} $\ast$}]{passer}
+\end{DoxyParamCaption}
+)}}\label{classPacketReceiver_a336af20ed7b74dfd8ce5603ba89fc8c3}
+
+\begin{DoxyCode}
+8                                                          :
+9     m\_dispatcher(passer),
+10     valid(\textcolor{keyword}{true}),
+11     finishing(\textcolor{keyword}{false})
+12 \{
+13 \}
+\end{DoxyCode}
+\hypertarget{classPacketReceiver_aaa7c59a15a919bb7842ed062199876cf}{\index{Packet\-Receiver@{Packet\-Receiver}!$\sim$\-Packet\-Receiver@{$\sim$\-Packet\-Receiver}}
+\index{$\sim$\-Packet\-Receiver@{$\sim$\-Packet\-Receiver}!PacketReceiver@{Packet\-Receiver}}
+\subsubsection[{$\sim$\-Packet\-Receiver}]{\setlength{\rightskip}{0pt plus 5cm}Packet\-Receiver\-::$\sim$\-Packet\-Receiver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPacketReceiver_aaa7c59a15a919bb7842ed062199876cf}
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{keyword}{delete} data;
+18 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPacketReceiver_abb2ff260250bf7baf8303f4ae1e1aa7e}{\index{Packet\-Receiver@{Packet\-Receiver}!run@{run}}
+\index{run@{run}!PacketReceiver@{Packet\-Receiver}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Packet\-Receiver\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classPacketReceiver_abb2ff260250bf7baf8303f4ae1e1aa7e}
+
+\begin{DoxyCode}
+31 \{
+32     \hyperlink{classSocket}{Socket} sock;
+33     \textcolor{keywordtype}{bool} status = sock.\hyperlink{classSocket_a7d7e4c8274e8028cc56f5778f98936b1}{Open}((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}) \hyperlink{SocketConstants_8h_a4fba0963c20988d1f1a45afb1c636e44}{LISTEN\_PORT});
+34     \textcolor{comment}{//Delegate string to dispatch to main window}
+35     std::string message\_delegate;
+36     \textcolor{keywordflow}{if}(status)
+37     \{
+38         data = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[256];
+39         \hyperlink{classAddress}{Address} fromAddress;
+40         \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Beginning packet reception loop"};
+41         \textcolor{keywordtype}{bool} received = \textcolor{keyword}{false};
+42         \textcolor{comment}{//Begin loop to receive packet}
+43         \textcolor{keywordflow}{while}(valid)
+44         \{
+45             \textcolor{keywordflow}{if}(data == NULL)
+46                 data = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[256];
+47            received = sock.\hyperlink{classSocket_a24d0d17efdaab291e81d5d89b463a585}{Receive}(fromAddress, (\textcolor{keywordtype}{void} *)data, strlen(data));
+48 
+49             \textcolor{keywordflow}{if}(received)
+50             \{
+51                 \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Received packet, emitting signal. Payload:"} << data;
+52                 \textcolor{comment}{//Give the data to a delegate so we can delete the pointer}
+53                 message\_delegate.assign(data, strlen((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *)data));
+54                 this->m\_dispatcher->\hyperlink{classMessageDispatcher_a5c3f81bf5d598bb5f3833ef0d6e140a7}{reemitMessage}(message\_delegate.data());
+55                 \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"After signal emit"};
+56                 \textcolor{comment}{//Delete data and set to null}
+57                 \textcolor{keyword}{delete} data;
+58                 data = NULL;
+59             \}
+60         \}
+61         finishing = \textcolor{keyword}{false};
+62 
+63     \}
+64 \}
+\end{DoxyCode}
+\hypertarget{classPacketReceiver_ad290dd22371f82675ee530fd123399a4}{\index{Packet\-Receiver@{Packet\-Receiver}!wait\-To\-Finish@{wait\-To\-Finish}}
+\index{wait\-To\-Finish@{wait\-To\-Finish}!PacketReceiver@{Packet\-Receiver}}
+\subsubsection[{wait\-To\-Finish}]{\setlength{\rightskip}{0pt plus 5cm}void Packet\-Receiver\-::wait\-To\-Finish (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPacketReceiver_ad290dd22371f82675ee530fd123399a4}
+
+\begin{DoxyCode}
+21 \{
+22     \textcolor{comment}{//Finish this thread}
+23     finishing = \textcolor{keyword}{true};
+24     \textcolor{keywordflow}{while}(finishing)
+25     \{
+26         this->valid = \textcolor{keyword}{false};
+27     \}
+28 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Util/\hyperlink{packetreceiver_8h}{packetreceiver.\-h}\item 
+Util/\hyperlink{packetreceiver_8cpp}{packetreceiver.\-cpp}\end{DoxyCompactItemize}

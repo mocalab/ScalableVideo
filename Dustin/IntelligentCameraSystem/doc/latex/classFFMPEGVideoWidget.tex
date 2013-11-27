@@ -1,0 +1,186 @@
+\hypertarget{classFFMPEGVideoWidget}{\section{F\-F\-M\-P\-E\-G\-Video\-Widget Class Reference}
+\label{classFFMPEGVideoWidget}\index{F\-F\-M\-P\-E\-G\-Video\-Widget@{F\-F\-M\-P\-E\-G\-Video\-Widget}}
+}
+
+
+{\ttfamily \#include $<$ffmpegvideowidget.\-h$>$}
+
+Inheritance diagram for F\-F\-M\-P\-E\-G\-Video\-Widget\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classFFMPEGVideoWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classFFMPEGVideoWidget_aa1c7cfdbf973cc553b4aca82f683df2a}{add\-Image} (Q\-Image $\ast$img)
+\item 
+void \hyperlink{classFFMPEGVideoWidget_a25da9d4dcf34bfabffd09f968d1bf6fb}{timer\-Tick} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classFFMPEGVideoWidget_a05576df29f811639d71cbed8b69ee233}{resize\-Parent} (int, int)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFFMPEGVideoWidget_af50a9f43743bfd96959a4ed57c7dd9c9}{F\-F\-M\-P\-E\-G\-Video\-Widget} (Q\-Widget $\ast$parent=0)
+\item 
+\hyperlink{classFFMPEGVideoWidget_a5c083d5fdadead8ecae1e8c024e8bdb4}{$\sim$\-F\-F\-M\-P\-E\-G\-Video\-Widget} ()
+\item 
+void \hyperlink{classFFMPEGVideoWidget_aa43fafb327e17f47b2a7b8cd55063ef3}{play} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classFFMPEGVideoWidget_a4c0441e874e0186eca02d0ad750e4ca0}{paint\-Event} (Q\-Paint\-Event $\ast$e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFFMPEGVideoWidget_af50a9f43743bfd96959a4ed57c7dd9c9}{\index{F\-F\-M\-P\-E\-G\-Video\-Widget@{F\-F\-M\-P\-E\-G\-Video\-Widget}!F\-F\-M\-P\-E\-G\-Video\-Widget@{F\-F\-M\-P\-E\-G\-Video\-Widget}}
+\index{F\-F\-M\-P\-E\-G\-Video\-Widget@{F\-F\-M\-P\-E\-G\-Video\-Widget}!FFMPEGVideoWidget@{F\-F\-M\-P\-E\-G\-Video\-Widget}}
+\subsubsection[{F\-F\-M\-P\-E\-G\-Video\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}F\-F\-M\-P\-E\-G\-Video\-Widget\-::\-F\-F\-M\-P\-E\-G\-Video\-Widget (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classFFMPEGVideoWidget_af50a9f43743bfd96959a4ed57c7dd9c9}
+
+\begin{DoxyCode}
+6                                                     :
+7     QGLWidget(QGLFormat(QGL::SampleBuffers), parent),
+8     first\_frame(\textcolor{keyword}{true})
+9 \{
+10     setFixedSize(320, 240);
+11     setAutoFillBackground(\textcolor{keyword}{false});
+12     \textcolor{comment}{//Set up the demuxer}
+13     m\_demuxer = \textcolor{keyword}{new} \hyperlink{classDemuxer}{Demuxer}(QString(\hyperlink{ffmpegvideowidget_8h_aebde6daa4e9d1806e2c43f566475dfbe}{PIPENAME}));
+14     m\_ffmpeg = \textcolor{keyword}{new} \hyperlink{classFFMPEGWrapper}{FFMPEGWrapper}(39082, m\_demuxer);
+15     m\_ffmpeg\_thread = \textcolor{keyword}{new} QThread(\textcolor{keyword}{this});
+16     m\_ffmpeg->moveToThread(m\_ffmpeg\_thread);
+17     connect(m\_ffmpeg\_thread, SIGNAL(started()), m\_ffmpeg, SLOT(demux()));
+18     connect(m\_ffmpeg, SIGNAL(finished()), m\_ffmpeg\_thread, SLOT(quit()));
+19 
+20     connect(m\_demuxer, SIGNAL(newImage(QImage *)), \textcolor{keyword}{this}, SLOT(\hyperlink{classFFMPEGVideoWidget_aa1c7cfdbf973cc553b4aca82f683df2a}{addImage}(QImage *)));
+21 
+22     \textcolor{comment}{//Set up the timer}
+23     m\_timer = \textcolor{keyword}{new} QTimer(\textcolor{keyword}{this});
+24     connect(m\_timer, SIGNAL(timeout()), \textcolor{keyword}{this}, SLOT(\hyperlink{classFFMPEGVideoWidget_a25da9d4dcf34bfabffd09f968d1bf6fb}{timerTick}()));
+25 
+26 \}
+\end{DoxyCode}
+\hypertarget{classFFMPEGVideoWidget_a5c083d5fdadead8ecae1e8c024e8bdb4}{\index{F\-F\-M\-P\-E\-G\-Video\-Widget@{F\-F\-M\-P\-E\-G\-Video\-Widget}!$\sim$\-F\-F\-M\-P\-E\-G\-Video\-Widget@{$\sim$\-F\-F\-M\-P\-E\-G\-Video\-Widget}}
+\index{$\sim$\-F\-F\-M\-P\-E\-G\-Video\-Widget@{$\sim$\-F\-F\-M\-P\-E\-G\-Video\-Widget}!FFMPEGVideoWidget@{F\-F\-M\-P\-E\-G\-Video\-Widget}}
+\subsubsection[{$\sim$\-F\-F\-M\-P\-E\-G\-Video\-Widget}]{\setlength{\rightskip}{0pt plus 5cm}F\-F\-M\-P\-E\-G\-Video\-Widget\-::$\sim$\-F\-F\-M\-P\-E\-G\-Video\-Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFFMPEGVideoWidget_a5c083d5fdadead8ecae1e8c024e8bdb4}
+
+\begin{DoxyCode}
+35 \{
+36 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFFMPEGVideoWidget_aa1c7cfdbf973cc553b4aca82f683df2a}{\index{F\-F\-M\-P\-E\-G\-Video\-Widget@{F\-F\-M\-P\-E\-G\-Video\-Widget}!add\-Image@{add\-Image}}
+\index{add\-Image@{add\-Image}!FFMPEGVideoWidget@{F\-F\-M\-P\-E\-G\-Video\-Widget}}
+\subsubsection[{add\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void F\-F\-M\-P\-E\-G\-Video\-Widget\-::add\-Image (
+\begin{DoxyParamCaption}
+\item[{Q\-Image $\ast$}]{img}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classFFMPEGVideoWidget_aa1c7cfdbf973cc553b4aca82f683df2a}
+
+\begin{DoxyCode}
+39 \{
+40     m\_buffer.push(img);
+41 \}
+\end{DoxyCode}
+\hypertarget{classFFMPEGVideoWidget_a4c0441e874e0186eca02d0ad750e4ca0}{\index{F\-F\-M\-P\-E\-G\-Video\-Widget@{F\-F\-M\-P\-E\-G\-Video\-Widget}!paint\-Event@{paint\-Event}}
+\index{paint\-Event@{paint\-Event}!FFMPEGVideoWidget@{F\-F\-M\-P\-E\-G\-Video\-Widget}}
+\subsubsection[{paint\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void F\-F\-M\-P\-E\-G\-Video\-Widget\-::paint\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Paint\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classFFMPEGVideoWidget_a4c0441e874e0186eca02d0ad750e4ca0}
+
+\begin{DoxyCode}
+44 \{
+45     \textcolor{keywordflow}{if}(!first\_frame)
+46     \{
+47 
+48         QPainter p(\textcolor{keyword}{this});
+49 
+50         \textcolor{comment}{//Set the painter to use a smooth scaling algorithm.}
+51        p.setRenderHint(QPainter::SmoothPixmapTransform);
+52 
+53         p.begin(\textcolor{keyword}{this});
+54         p.drawImage(e->rect(), *current\_frame);
+55         p.end();
+56 
+57 
+58     \}
+59 \}
+\end{DoxyCode}
+\hypertarget{classFFMPEGVideoWidget_aa43fafb327e17f47b2a7b8cd55063ef3}{\index{F\-F\-M\-P\-E\-G\-Video\-Widget@{F\-F\-M\-P\-E\-G\-Video\-Widget}!play@{play}}
+\index{play@{play}!FFMPEGVideoWidget@{F\-F\-M\-P\-E\-G\-Video\-Widget}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}void F\-F\-M\-P\-E\-G\-Video\-Widget\-::play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFFMPEGVideoWidget_aa43fafb327e17f47b2a7b8cd55063ef3}
+
+\begin{DoxyCode}
+29 \{
+30     m\_ffmpeg\_thread->start();
+31     m\_timer->start(1000/30);
+32 \}
+\end{DoxyCode}
+\hypertarget{classFFMPEGVideoWidget_a05576df29f811639d71cbed8b69ee233}{\index{F\-F\-M\-P\-E\-G\-Video\-Widget@{F\-F\-M\-P\-E\-G\-Video\-Widget}!resize\-Parent@{resize\-Parent}}
+\index{resize\-Parent@{resize\-Parent}!FFMPEGVideoWidget@{F\-F\-M\-P\-E\-G\-Video\-Widget}}
+\subsubsection[{resize\-Parent}]{\setlength{\rightskip}{0pt plus 5cm}void F\-F\-M\-P\-E\-G\-Video\-Widget\-::resize\-Parent (
+\begin{DoxyParamCaption}
+\item[{int}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classFFMPEGVideoWidget_a05576df29f811639d71cbed8b69ee233}
+\hypertarget{classFFMPEGVideoWidget_a25da9d4dcf34bfabffd09f968d1bf6fb}{\index{F\-F\-M\-P\-E\-G\-Video\-Widget@{F\-F\-M\-P\-E\-G\-Video\-Widget}!timer\-Tick@{timer\-Tick}}
+\index{timer\-Tick@{timer\-Tick}!FFMPEGVideoWidget@{F\-F\-M\-P\-E\-G\-Video\-Widget}}
+\subsubsection[{timer\-Tick}]{\setlength{\rightskip}{0pt plus 5cm}void F\-F\-M\-P\-E\-G\-Video\-Widget\-::timer\-Tick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classFFMPEGVideoWidget_a25da9d4dcf34bfabffd09f968d1bf6fb}
+
+\begin{DoxyCode}
+64 \{
+65 
+66     \textcolor{comment}{//Delete first frame}
+67     \textcolor{keywordflow}{if}(!first\_frame)
+68     \{
+69         \textcolor{keywordflow}{if}(!m\_buffer.empty()) ;
+70             \textcolor{keyword}{delete} current\_frame;
+71     \}
+72 
+73     \textcolor{comment}{//Get the next frame}
+74 
+75     \textcolor{keywordflow}{if}(!m\_buffer.empty())
+76     \{
+77         \textcolor{keywordflow}{if}(first\_frame)
+78             first\_frame = \textcolor{keyword}{false};
+79         current\_frame = m\_buffer.front();
+80         m\_buffer.pop();
+81 
+82         repaint();
+83     \}
+84 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+U\-I/\hyperlink{ffmpegvideowidget_8h}{ffmpegvideowidget.\-h}\item 
+U\-I/\hyperlink{ffmpegvideowidget_8cpp}{ffmpegvideowidget.\-cpp}\end{DoxyCompactItemize}

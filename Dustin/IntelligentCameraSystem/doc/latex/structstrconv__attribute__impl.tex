@@ -1,0 +1,205 @@
+\hypertarget{structstrconv__attribute__impl}{\section{strconv\-\_\-attribute\-\_\-impl$<$ opt\-\_\-escape $>$ Struct Template Reference}
+\label{structstrconv__attribute__impl}\index{strconv\-\_\-attribute\-\_\-impl$<$ opt\-\_\-escape $>$@{strconv\-\_\-attribute\-\_\-impl$<$ opt\-\_\-escape $>$}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char\-\_\-t $\ast$ \hyperlink{structstrconv__attribute__impl_a9b7f8b1e860c5d022dbd29f9a89e9e27}{parse\-\_\-wnorm} (char\-\_\-t $\ast$s, char\-\_\-t end\-\_\-quote)
+\item 
+static char\-\_\-t $\ast$ \hyperlink{structstrconv__attribute__impl_a2d39998b79896af7c53c5f3dc22a526b}{parse\-\_\-wconv} (char\-\_\-t $\ast$s, char\-\_\-t end\-\_\-quote)
+\item 
+static char\-\_\-t $\ast$ \hyperlink{structstrconv__attribute__impl_a0f57ee9d69b9d626765f4a9c8af6df2e}{parse\-\_\-eol} (char\-\_\-t $\ast$s, char\-\_\-t end\-\_\-quote)
+\item 
+static char\-\_\-t $\ast$ \hyperlink{structstrconv__attribute__impl_a8358dc980178e55c8669b9dcd04872d7}{parse\-\_\-simple} (char\-\_\-t $\ast$s, char\-\_\-t end\-\_\-quote)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structstrconv__attribute__impl_a0f57ee9d69b9d626765f4a9c8af6df2e}{\index{strconv\-\_\-attribute\-\_\-impl@{strconv\-\_\-attribute\-\_\-impl}!parse\-\_\-eol@{parse\-\_\-eol}}
+\index{parse\-\_\-eol@{parse\-\_\-eol}!strconv_attribute_impl@{strconv\-\_\-attribute\-\_\-impl}}
+\subsubsection[{parse\-\_\-eol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename opt\-\_\-escape $>$ static char\-\_\-t$\ast$ {\bf strconv\-\_\-attribute\-\_\-impl}$<$ opt\-\_\-escape $>$\-::parse\-\_\-eol (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{s, }
+\item[{char\-\_\-t}]{end\-\_\-quote}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structstrconv__attribute__impl_a0f57ee9d69b9d626765f4a9c8af6df2e}
+
+\begin{DoxyCode}
+1957         \{
+1958             \hyperlink{structgap}{gap} g;
+1959 
+1960             \textcolor{keywordflow}{while} (\textcolor{keyword}{true})
+1961             \{
+1962                 \textcolor{keywordflow}{while} (!\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a884462ea84ab1e7745a2bf69fc2edf75}{ct\_parse\_attr})) ++s;
+1963                 
+1964                 \textcolor{keywordflow}{if} (*s == end\_quote)
+1965                 \{
+1966                     *g.\hyperlink{structgap_a176c58ee8d57c41b91ae9f00d5e8cab5}{flush}(s) = 0;
+1967                 
+1968                     \textcolor{keywordflow}{return} s + 1;
+1969                 \}
+1970                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'\(\backslash\)r'})
+1971                 \{
+1972                     *s++ = \textcolor{charliteral}{'\(\backslash\)n'};
+1973                     
+1974                     \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'\(\backslash\)n'}) g.\hyperlink{structgap_a9c0d0b12bc778c8439c8aec7747ab2b0}{push}(s, 1);
+1975                 \}
+1976                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opt\_escape::value && *s == \textcolor{charliteral}{'&'})
+1977                 \{
+1978                     s = \hyperlink{pugixml_8cpp_a7cf2b6da7b109a11f8cb1c7e1a09bf7e}{strconv\_escape}(s, g);
+1979                 \}
+1980                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!*s)
+1981                 \{
+1982                     \textcolor{keywordflow}{return} 0;
+1983                 \}
+1984                 \textcolor{keywordflow}{else} ++s;
+1985             \}
+1986         \}
+\end{DoxyCode}
+\hypertarget{structstrconv__attribute__impl_a8358dc980178e55c8669b9dcd04872d7}{\index{strconv\-\_\-attribute\-\_\-impl@{strconv\-\_\-attribute\-\_\-impl}!parse\-\_\-simple@{parse\-\_\-simple}}
+\index{parse\-\_\-simple@{parse\-\_\-simple}!strconv_attribute_impl@{strconv\-\_\-attribute\-\_\-impl}}
+\subsubsection[{parse\-\_\-simple}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename opt\-\_\-escape $>$ static char\-\_\-t$\ast$ {\bf strconv\-\_\-attribute\-\_\-impl}$<$ opt\-\_\-escape $>$\-::parse\-\_\-simple (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{s, }
+\item[{char\-\_\-t}]{end\-\_\-quote}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structstrconv__attribute__impl_a8358dc980178e55c8669b9dcd04872d7}
+
+\begin{DoxyCode}
+1989         \{
+1990             \hyperlink{structgap}{gap} g;
+1991 
+1992             \textcolor{keywordflow}{while} (\textcolor{keyword}{true})
+1993             \{
+1994                 \textcolor{keywordflow}{while} (!\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a884462ea84ab1e7745a2bf69fc2edf75}{ct\_parse\_attr})) ++s;
+1995                 
+1996                 \textcolor{keywordflow}{if} (*s == end\_quote)
+1997                 \{
+1998                     *g.\hyperlink{structgap_a176c58ee8d57c41b91ae9f00d5e8cab5}{flush}(s) = 0;
+1999                 
+2000                     \textcolor{keywordflow}{return} s + 1;
+2001                 \}
+2002                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opt\_escape::value && *s == \textcolor{charliteral}{'&'})
+2003                 \{
+2004                     s = \hyperlink{pugixml_8cpp_a7cf2b6da7b109a11f8cb1c7e1a09bf7e}{strconv\_escape}(s, g);
+2005                 \}
+2006                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!*s)
+2007                 \{
+2008                     \textcolor{keywordflow}{return} 0;
+2009                 \}
+2010                 \textcolor{keywordflow}{else} ++s;
+2011             \}
+2012         \}
+\end{DoxyCode}
+\hypertarget{structstrconv__attribute__impl_a2d39998b79896af7c53c5f3dc22a526b}{\index{strconv\-\_\-attribute\-\_\-impl@{strconv\-\_\-attribute\-\_\-impl}!parse\-\_\-wconv@{parse\-\_\-wconv}}
+\index{parse\-\_\-wconv@{parse\-\_\-wconv}!strconv_attribute_impl@{strconv\-\_\-attribute\-\_\-impl}}
+\subsubsection[{parse\-\_\-wconv}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename opt\-\_\-escape $>$ static char\-\_\-t$\ast$ {\bf strconv\-\_\-attribute\-\_\-impl}$<$ opt\-\_\-escape $>$\-::parse\-\_\-wconv (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{s, }
+\item[{char\-\_\-t}]{end\-\_\-quote}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structstrconv__attribute__impl_a2d39998b79896af7c53c5f3dc22a526b}
+
+\begin{DoxyCode}
+1921         \{
+1922             \hyperlink{structgap}{gap} g;
+1923 
+1924             \textcolor{keywordflow}{while} (\textcolor{keyword}{true})
+1925             \{
+1926                 \textcolor{keywordflow}{while} (!\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a8ac9b7ded4827803524b87f772f17c51}{ct\_parse\_attr\_ws})) ++s;
+1927                 
+1928                 \textcolor{keywordflow}{if} (*s == end\_quote)
+1929                 \{
+1930                     *g.\hyperlink{structgap_a176c58ee8d57c41b91ae9f00d5e8cab5}{flush}(s) = 0;
+1931                 
+1932                     \textcolor{keywordflow}{return} s + 1;
+1933                 \}
+1934                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space}))
+1935                 \{
+1936                     \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'\(\backslash\)r'})
+1937                     \{
+1938                         *s++ = \textcolor{charliteral}{' '};
+1939                 
+1940                         \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'\(\backslash\)n'}) g.\hyperlink{structgap_a9c0d0b12bc778c8439c8aec7747ab2b0}{push}(s, 1);
+1941                     \}
+1942                     \textcolor{keywordflow}{else} *s++ = \textcolor{charliteral}{' '};
+1943                 \}
+1944                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opt\_escape::value && *s == \textcolor{charliteral}{'&'})
+1945                 \{
+1946                     s = \hyperlink{pugixml_8cpp_a7cf2b6da7b109a11f8cb1c7e1a09bf7e}{strconv\_escape}(s, g);
+1947                 \}
+1948                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!*s)
+1949                 \{
+1950                     \textcolor{keywordflow}{return} 0;
+1951                 \}
+1952                 \textcolor{keywordflow}{else} ++s;
+1953             \}
+1954         \}
+\end{DoxyCode}
+\hypertarget{structstrconv__attribute__impl_a9b7f8b1e860c5d022dbd29f9a89e9e27}{\index{strconv\-\_\-attribute\-\_\-impl@{strconv\-\_\-attribute\-\_\-impl}!parse\-\_\-wnorm@{parse\-\_\-wnorm}}
+\index{parse\-\_\-wnorm@{parse\-\_\-wnorm}!strconv_attribute_impl@{strconv\-\_\-attribute\-\_\-impl}}
+\subsubsection[{parse\-\_\-wnorm}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename opt\-\_\-escape $>$ static char\-\_\-t$\ast$ {\bf strconv\-\_\-attribute\-\_\-impl}$<$ opt\-\_\-escape $>$\-::parse\-\_\-wnorm (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{s, }
+\item[{char\-\_\-t}]{end\-\_\-quote}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structstrconv__attribute__impl_a9b7f8b1e860c5d022dbd29f9a89e9e27}
+
+\begin{DoxyCode}
+1869         \{
+1870             \hyperlink{structgap}{gap} g;
+1871 
+1872             \textcolor{comment}{// trim leading whitespaces}
+1873             \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space}))
+1874             \{
+1875                 \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* str = s;
+1876                 
+1877                 \textcolor{keywordflow}{do} ++str;
+1878                 \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*str, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space}));
+1879                 
+1880                 g.\hyperlink{structgap_a9c0d0b12bc778c8439c8aec7747ab2b0}{push}(s, str - s);
+1881             \}
+1882 
+1883             \textcolor{keywordflow}{while} (\textcolor{keyword}{true})
+1884             \{
+1885                 \textcolor{keywordflow}{while} (!\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a8ac9b7ded4827803524b87f772f17c51}{ct\_parse\_attr\_ws} | 
+      \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space})) ++s;
+1886                 
+1887                 \textcolor{keywordflow}{if} (*s == end\_quote)
+1888                 \{
+1889                     \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* str = g.\hyperlink{structgap_a176c58ee8d57c41b91ae9f00d5e8cab5}{flush}(s);
+1890                     
+1891                     \textcolor{keywordflow}{do} *str-- = 0;
+1892                     \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*str, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space}));
+1893                 
+1894                     \textcolor{keywordflow}{return} s + 1;
+1895                 \}
+1896                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space}))
+1897                 \{
+1898                     *s++ = \textcolor{charliteral}{' '};
+1899         
+1900                     \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space}))
+1901                     \{
+1902                         \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* str = s + 1;
+1903                         \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*str, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space})) ++str;
+1904                         
+1905                         g.\hyperlink{structgap_a9c0d0b12bc778c8439c8aec7747ab2b0}{push}(s, str - s);
+1906                     \}
+1907                 \}
+1908                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opt\_escape::value && *s == \textcolor{charliteral}{'&'})
+1909                 \{
+1910                     s = \hyperlink{pugixml_8cpp_a7cf2b6da7b109a11f8cb1c7e1a09bf7e}{strconv\_escape}(s, g);
+1911                 \}
+1912                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!*s)
+1913                 \{
+1914                     \textcolor{keywordflow}{return} 0;
+1915                 \}
+1916                 \textcolor{keywordflow}{else} ++s;
+1917             \}
+1918         \}
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

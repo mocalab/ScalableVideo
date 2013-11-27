@@ -1,0 +1,774 @@
+\hypertarget{structxml__parser}{\section{xml\-\_\-parser Struct Reference}
+\label{structxml__parser}\index{xml\-\_\-parser@{xml\-\_\-parser}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxml__parser_acc030c4ed339b238e1ff2d3e6fa7188b}{xml\-\_\-parser} (const \hyperlink{structxml__allocator}{xml\-\_\-allocator} \&alloc\-\_\-)
+\item 
+char\-\_\-t $\ast$ \hyperlink{structxml__parser_a722853b603ad9a1d1f61bb8115bea5b4}{parse\-\_\-doctype\-\_\-primitive} (char\-\_\-t $\ast$s)
+\item 
+char\-\_\-t $\ast$ \hyperlink{structxml__parser_a1e996ac9c9993f1939128859596376a1}{parse\-\_\-doctype\-\_\-ignore} (char\-\_\-t $\ast$s)
+\item 
+char\-\_\-t $\ast$ \hyperlink{structxml__parser_a9bc0e5f3d75cd7edb267a85430e1cdfc}{parse\-\_\-doctype\-\_\-group} (char\-\_\-t $\ast$s, char\-\_\-t endch, bool toplevel)
+\item 
+char\-\_\-t $\ast$ \hyperlink{structxml__parser_a40da52e4b27a0a06752930a0edf16fe9}{parse\-\_\-exclamation} (char\-\_\-t $\ast$s, xml\-\_\-node\-\_\-struct $\ast$cursor, unsigned int optmsk, char\-\_\-t endch)
+\item 
+char\-\_\-t $\ast$ \hyperlink{structxml__parser_a2b0edc4fbf2ff448b4d5b31593c5c4fd}{parse\-\_\-question} (char\-\_\-t $\ast$s, xml\-\_\-node\-\_\-struct $\ast$\&ref\-\_\-cursor, unsigned int optmsk, char\-\_\-t endch)
+\item 
+char\-\_\-t $\ast$ \hyperlink{structxml__parser_a00626800a3d535c14273c48238c03a70}{parse} (char\-\_\-t $\ast$s, xml\-\_\-node\-\_\-struct $\ast$xmldoc, unsigned int optmsk, char\-\_\-t endch)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static xml\-\_\-parse\-\_\-result \hyperlink{structxml__parser_a116885dc8aaf5fcd025511def4605674}{parse} (char\-\_\-t $\ast$buffer, size\-\_\-t length, xml\-\_\-node\-\_\-struct $\ast$root, unsigned int optmsk)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxml__allocator}{xml\-\_\-allocator} \hyperlink{structxml__parser_a213cf019cbf45f5049acdcae296a2976}{alloc}
+\item 
+char\-\_\-t $\ast$ \hyperlink{structxml__parser_a2476a71cd7e67b3f4bdbcd1323524503}{error\-\_\-offset}
+\item 
+xml\-\_\-parse\-\_\-status \hyperlink{structxml__parser_a0555859911674e5a7a349447d6533383}{error\-\_\-status}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structxml__parser_acc030c4ed339b238e1ff2d3e6fa7188b}{\index{xml\-\_\-parser@{xml\-\_\-parser}!xml\-\_\-parser@{xml\-\_\-parser}}
+\index{xml\-\_\-parser@{xml\-\_\-parser}!xml_parser@{xml\-\_\-parser}}
+\subsubsection[{xml\-\_\-parser}]{\setlength{\rightskip}{0pt plus 5cm}xml\-\_\-parser\-::xml\-\_\-parser (
+\begin{DoxyParamCaption}
+\item[{const {\bf xml\-\_\-allocator} \&}]{alloc\-\_\-}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__parser_acc030c4ed339b238e1ff2d3e6fa7188b}
+
+\begin{DoxyCode}
+2067                                                : \hyperlink{structxml__parser_a213cf019cbf45f5049acdcae296a2976}{alloc}(alloc\_), 
+      \hyperlink{structxml__parser_a2476a71cd7e67b3f4bdbcd1323524503}{error\_offset}(0), \hyperlink{structxml__parser_a0555859911674e5a7a349447d6533383}{error\_status}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a46ddc2abb6a54fdac07cf9086b45f10f}{status\_ok})
+2068         \{
+2069         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structxml__parser_a00626800a3d535c14273c48238c03a70}{\index{xml\-\_\-parser@{xml\-\_\-parser}!parse@{parse}}
+\index{parse@{parse}!xml_parser@{xml\-\_\-parser}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}char\-\_\-t$\ast$ xml\-\_\-parser\-::parse (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{s, }
+\item[{xml\-\_\-node\-\_\-struct $\ast$}]{xmldoc, }
+\item[{unsigned int}]{optmsk, }
+\item[{char\-\_\-t}]{endch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__parser_a00626800a3d535c14273c48238c03a70}
+
+\begin{DoxyCode}
+2384         \{
+2385             \hyperlink{pugixml_8cpp_ab7ee7f946a7c5e9821fab22ef05fc0ed}{strconv\_attribute\_t} strconv\_attribute = 
+      \hyperlink{pugixml_8cpp_a2ea43b65ff9cfdf86459c60a1a0849ec}{get\_strconv\_attribute}(optmsk);
+2386             \hyperlink{pugixml_8cpp_aafccd3afb496514b0e76d81164955c28}{strconv\_pcdata\_t} strconv\_pcdata = \hyperlink{pugixml_8cpp_a2f80cbdc79c199f54f617b8c42a37bec}{get\_strconv\_pcdata}(optmsk);
+2387             
+2388             \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t} ch = 0;
+2389             xml\_node\_struct* cursor = xmldoc;
+2390             \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* mark = s;
+2391 
+2392             \textcolor{keywordflow}{while} (*s != 0)
+2393             \{
+2394                 \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'<'})
+2395                 \{
+2396                     ++s;
+2397 
+2398                 LOC\_TAG:
+2399                     \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a25a043d6a8b5a269b3cd8f512d712798}{ct\_start\_symbol})) \textcolor{comment}{// '<#...'}
+2400                     \{
+2401                         \hyperlink{pugixml_8cpp_accdd212cd2831662c3c2dda668246f8a}{PUGI\_\_PUSHNODE}(\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a6d223e3a0d8ce8e4ee6f4a2697b8bcd1}{node\_element}); \textcolor{comment}{// Append a new node to the
+       tree.}
+2402 
+2403                         cursor->name = s;
+2404 
+2405                         \hyperlink{pugixml_8cpp_adfcdc54e9f7e0f2d3927b4a7690abf2a}{PUGI\_\_SCANWHILE}(\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, 
+      \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108af8e561bd4654ab93d82193fdd3727915}{ct\_symbol})); \textcolor{comment}{// Scan for a terminator.}
+2406                         \hyperlink{pugixml_8cpp_a39554337dd1d0fef32ddf9926ee4e4ae}{PUGI\_\_ENDSEG}(); \textcolor{comment}{// Save char in 'ch', terminate & step over.}
+2407 
+2408                         \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{'>'})
+2409                         \{
+2410                             \textcolor{comment}{// end of tag}
+2411                         \}
+2412                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(ch, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space}))
+2413                         \{
+2414                         LOC\_ATTRIBUTES:
+2415                             \textcolor{keywordflow}{while} (\textcolor{keyword}{true})
+2416                             \{
+2417                                 \hyperlink{pugixml_8cpp_a87d9805caf644d370bb8e8faa2a1f887}{PUGI\_\_SKIPWS}(); \textcolor{comment}{// Eat any whitespace.}
+2418                         
+2419                                 \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, 
+      \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a25a043d6a8b5a269b3cd8f512d712798}{ct\_start\_symbol})) \textcolor{comment}{// <... #...}
+2420                                 \{
+2421                                     xml\_attribute\_struct* a = 
+      \hyperlink{pugixml_8cpp_aad3b67164b1e0fe8b1e9c57fe55dc8bc}{append\_attribute\_ll}(cursor, \hyperlink{structxml__parser_a213cf019cbf45f5049acdcae296a2976}{alloc}); \textcolor{comment}{// Make space for this attribute.}
+2422                                     \textcolor{keywordflow}{if} (!a) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a59e75d024e9f5c213ca6f4db8102b978}{status\_out\_of\_memory}, s);
+2423 
+2424                                     a->name = s; \textcolor{comment}{// Save the offset.}
+2425 
+2426                                     \hyperlink{pugixml_8cpp_adfcdc54e9f7e0f2d3927b4a7690abf2a}{PUGI\_\_SCANWHILE}(
+      \hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108af8e561bd4654ab93d82193fdd3727915}{ct\_symbol})); \textcolor{comment}{// Scan for a terminator.}
+2427                                     \hyperlink{pugixml_8cpp_a03531d9b3c74f0843567257537edfd53}{PUGI\_\_CHECK\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a2b34aa9968d63b28a6d51b30575ff95a}{status\_bad\_attribute}, s); \textcolor{comment}{//$ redundant, left for performance}
+2428 
+2429                                     \hyperlink{pugixml_8cpp_a39554337dd1d0fef32ddf9926ee4e4ae}{PUGI\_\_ENDSEG}(); \textcolor{comment}{// Save char in 'ch', terminate & step
+       over.}
+2430                                     \hyperlink{pugixml_8cpp_a03531d9b3c74f0843567257537edfd53}{PUGI\_\_CHECK\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a2b34aa9968d63b28a6d51b30575ff95a}{status\_bad\_attribute}, s); \textcolor{comment}{//$ redundant, left for performance}
+2431 
+2432                                     \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(ch, 
+      \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space}))
+2433                                     \{
+2434                                         \hyperlink{pugixml_8cpp_a87d9805caf644d370bb8e8faa2a1f887}{PUGI\_\_SKIPWS}(); \textcolor{comment}{// Eat any whitespace.}
+2435                                         \hyperlink{pugixml_8cpp_a03531d9b3c74f0843567257537edfd53}{PUGI\_\_CHECK\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a2b34aa9968d63b28a6d51b30575ff95a}{status\_bad\_attribute}, s); \textcolor{comment}{//$ redundant, left for performance}
+2436 
+2437                                         ch = *s;
+2438                                         ++s;
+2439                                     \}
+2440                                     
+2441                                     \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{'='}) \textcolor{comment}{// '<... #=...'}
+2442                                     \{
+2443                                         \hyperlink{pugixml_8cpp_a87d9805caf644d370bb8e8faa2a1f887}{PUGI\_\_SKIPWS}(); \textcolor{comment}{// Eat any whitespace.}
+2444 
+2445                                         \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'"'} || *s == \textcolor{charliteral}{'\(\backslash\)''}) \textcolor{comment}{// '<... #="...'}
+2446                                         \{
+2447                                             ch = *s; \textcolor{comment}{// Save quote char to avoid breaking on "''" -or-
+       '""'.}
+2448                                             ++s; \textcolor{comment}{// Step over the quote.}
+2449                                             a->value = s; \textcolor{comment}{// Save the offset.}
+2450 
+2451                                             s = strconv\_attribute(s, ch);
+2452                                         
+2453                                             \textcolor{keywordflow}{if} (!s) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a2b34aa9968d63b28a6d51b30575ff95a}{status\_bad\_attribute}, a->value);
+2454 
+2455                                             \textcolor{comment}{// After this line the loop continues from the start;}
+2456                                             \textcolor{comment}{// Whitespaces, / and > are ok, symbols and EOF are wrong,}
+2457                                             \textcolor{comment}{// everything else will be detected}
+2458                                             \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, 
+      \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a25a043d6a8b5a269b3cd8f512d712798}{ct\_start\_symbol})) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a2b34aa9968d63b28a6d51b30575ff95a}{status\_bad\_attribute}, s);
+2459                                         \}
+2460                                         \textcolor{keywordflow}{else} \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a2b34aa9968d63b28a6d51b30575ff95a}{status\_bad\_attribute}, s);
+2461                                     \}
+2462                                     \textcolor{keywordflow}{else} \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a2b34aa9968d63b28a6d51b30575ff95a}{status\_bad\_attribute}, s);
+2463                                 \}
+2464                                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'/'})
+2465                                 \{
+2466                                     ++s;
+2467                                     
+2468                                     \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'>'})
+2469                                     \{
+2470                                         \hyperlink{pugixml_8cpp_ab82f13ed99cc2d22c5ecb6e18b5dfe17}{PUGI\_\_POPNODE}();
+2471                                         s++;
+2472                                         \textcolor{keywordflow}{break};
+2473                                     \}
+2474                                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == 0 && endch == \textcolor{charliteral}{'>'})
+2475                                     \{
+2476                                         \hyperlink{pugixml_8cpp_ab82f13ed99cc2d22c5ecb6e18b5dfe17}{PUGI\_\_POPNODE}();
+2477                                         \textcolor{keywordflow}{break};
+2478                                     \}
+2479                                     \textcolor{keywordflow}{else} \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a3cf4e84a5b433ce50e6f3037df5c1bdd}{status\_bad\_start\_element}, s);
+2480                                 \}
+2481                                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'>'})
+2482                                 \{
+2483                                     ++s;
+2484 
+2485                                     \textcolor{keywordflow}{break};
+2486                                 \}
+2487                                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == 0 && endch == \textcolor{charliteral}{'>'})
+2488                                 \{
+2489                                     \textcolor{keywordflow}{break};
+2490                                 \}
+2491                                 \textcolor{keywordflow}{else} \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a3cf4e84a5b433ce50e6f3037df5c1bdd}{status\_bad\_start\_element}, s);
+2492                             \}
+2493 
+2494                             \textcolor{comment}{// !!!}
+2495                         \}
+2496                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{'/'}) \textcolor{comment}{// '<#.../'}
+2497                         \{
+2498                             \textcolor{keywordflow}{if} (!\hyperlink{pugixml_8cpp_a3a72d0b2c0e7f99940ce8fbcc69e532f}{ENDSWITH}(*s, \textcolor{charliteral}{'>'})) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a3cf4e84a5b433ce50e6f3037df5c1bdd}{status\_bad\_start\_element}, s);
+2499 
+2500                             \hyperlink{pugixml_8cpp_ab82f13ed99cc2d22c5ecb6e18b5dfe17}{PUGI\_\_POPNODE}(); \textcolor{comment}{// Pop.}
+2501 
+2502                             s += (*s == \textcolor{charliteral}{'>'});
+2503                         \}
+2504                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch == 0)
+2505                         \{
+2506                             \textcolor{comment}{// we stepped over null terminator, backtrack & handle closing tag}
+2507                             --s;
+2508                             
+2509                             \textcolor{keywordflow}{if} (endch != \textcolor{charliteral}{'>'}) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a3cf4e84a5b433ce50e6f3037df5c1bdd}{status\_bad\_start\_element}, s);
+2510                         \}
+2511                         \textcolor{keywordflow}{else} \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a3cf4e84a5b433ce50e6f3037df5c1bdd}{status\_bad\_start\_element}, s);
+2512                     \}
+2513                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'/'})
+2514                     \{
+2515                         ++s;
+2516 
+2517                         \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* name = cursor->name;
+2518                         \textcolor{keywordflow}{if} (!name) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a07a5f6f8392474ccb2d5dc10fe2307a2}{status\_end\_element\_mismatch}, s);
+2519                         
+2520                         \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108af8e561bd4654ab93d82193fdd3727915}{ct\_symbol}))
+2521                         \{
+2522                             \textcolor{keywordflow}{if} (*s++ != *name++) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a07a5f6f8392474ccb2d5dc10fe2307a2}{status\_end\_element\_mismatch}, s);
+2523                         \}
+2524 
+2525                         \textcolor{keywordflow}{if} (*name)
+2526                         \{
+2527                             \textcolor{keywordflow}{if} (*s == 0 && name[0] == endch && name[1] == 0) 
+      \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a261cbf22c7da45388bcc1e6759020790}{status\_bad\_end\_element}, s);
+2528                             \textcolor{keywordflow}{else} \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a07a5f6f8392474ccb2d5dc10fe2307a2}{status\_end\_element\_mismatch}, s);
+2529                         \}
+2530                             
+2531                         \hyperlink{pugixml_8cpp_ab82f13ed99cc2d22c5ecb6e18b5dfe17}{PUGI\_\_POPNODE}(); \textcolor{comment}{// Pop.}
+2532 
+2533                         \hyperlink{pugixml_8cpp_a87d9805caf644d370bb8e8faa2a1f887}{PUGI\_\_SKIPWS}();
+2534 
+2535                         \textcolor{keywordflow}{if} (*s == 0)
+2536                         \{
+2537                             \textcolor{keywordflow}{if} (endch != \textcolor{charliteral}{'>'}) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a261cbf22c7da45388bcc1e6759020790}{status\_bad\_end\_element}, s);
+2538                         \}
+2539                         \textcolor{keywordflow}{else}
+2540                         \{
+2541                             \textcolor{keywordflow}{if} (*s != \textcolor{charliteral}{'>'}) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a261cbf22c7da45388bcc1e6759020790}{status\_bad\_end\_element}, s);
+2542                             ++s;
+2543                         \}
+2544                     \}
+2545                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'?'}) \textcolor{comment}{// '<?...'}
+2546                     \{
+2547                         s = \hyperlink{structxml__parser_a2b0edc4fbf2ff448b4d5b31593c5c4fd}{parse\_question}(s, cursor, optmsk, endch);
+2548                         \textcolor{keywordflow}{if} (!s) \textcolor{keywordflow}{return} s;
+2549 
+2550                         assert(cursor);
+2551                         \textcolor{keywordflow}{if} ((cursor->header & xml\_memory\_page\_type\_mask) + 1 == 
+      \hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aad8024cc4a4afbc68c871f3826a00616}{node\_declaration}) \textcolor{keywordflow}{goto} LOC\_ATTRIBUTES;
+2552                     \}
+2553                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'!'}) \textcolor{comment}{// '<!...'}
+2554                     \{
+2555                         s = \hyperlink{structxml__parser_a40da52e4b27a0a06752930a0edf16fe9}{parse\_exclamation}(s, cursor, optmsk, endch);
+2556                         \textcolor{keywordflow}{if} (!s) \textcolor{keywordflow}{return} s;
+2557                     \}
+2558                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == 0 && endch == \textcolor{charliteral}{'?'}) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555ad7a57e8554aabea52ed8b0d6a0891622}{status\_bad\_pi}, s);
+2559                     \textcolor{keywordflow}{else} \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a71a555b91e80b6d8f84aeb6a93904d28}{status\_unrecognized\_tag}, s);
+2560                 \}
+2561                 \textcolor{keywordflow}{else}
+2562                 \{
+2563                     mark = s; \textcolor{comment}{// Save this offset while searching for a terminator.}
+2564 
+2565                     \hyperlink{pugixml_8cpp_a87d9805caf644d370bb8e8faa2a1f887}{PUGI\_\_SKIPWS}(); \textcolor{comment}{// Eat whitespace if no genuine PCDATA here.}
+2566 
+2567                     \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'<'})
+2568                     \{
+2569                         \textcolor{comment}{// We skipped some whitespace characters because otherwise we would take the tag
+       branch instead of PCDATA one}
+2570                         assert(mark != s);
+2571 
+2572                         \textcolor{keywordflow}{if} (!\hyperlink{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{PUGI\_\_OPTSET}(\hyperlink{namespacepugi_ae492a24302294f1ce3fbd56f2edbf131}{parse\_ws\_pcdata} | 
+      \hyperlink{namespacepugi_ae7c892ad8288b363daca0c3e1a8e38ee}{parse\_ws\_pcdata\_single}))
+2573                         \{
+2574                             \textcolor{keywordflow}{continue};
+2575                         \}
+2576                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{PUGI\_\_OPTSET}(\hyperlink{namespacepugi_ae7c892ad8288b363daca0c3e1a8e38ee}{parse\_ws\_pcdata\_single}))
+2577                         \{
+2578                             \textcolor{keywordflow}{if} (s[1] != \textcolor{charliteral}{'/'} || cursor->first\_child) \textcolor{keywordflow}{continue};
+2579                         \}
+2580                     \}
+2581 
+2582                     s = mark;
+2583                             
+2584                     \textcolor{keywordflow}{if} (cursor->parent)
+2585                     \{
+2586                         \hyperlink{pugixml_8cpp_accdd212cd2831662c3c2dda668246f8a}{PUGI\_\_PUSHNODE}(\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a5c0042693a8b8b6b54c191b4403fca21}{node\_pcdata}); \textcolor{comment}{// Append a new node on the
+       tree.}
+2587                         cursor->value = s; \textcolor{comment}{// Save the offset.}
+2588 
+2589                         s = strconv\_pcdata(s);
+2590                                 
+2591                         \hyperlink{pugixml_8cpp_ab82f13ed99cc2d22c5ecb6e18b5dfe17}{PUGI\_\_POPNODE}(); \textcolor{comment}{// Pop since this is a standalone.}
+2592                         
+2593                         \textcolor{keywordflow}{if} (!*s) \textcolor{keywordflow}{break};
+2594                     \}
+2595                     \textcolor{keywordflow}{else}
+2596                     \{
+2597                         \hyperlink{pugixml_8cpp_a98386e86f2c7e7e477939d209a5bbf7e}{PUGI\_\_SCANFOR}(*s == \textcolor{charliteral}{'<'}); \textcolor{comment}{// '...<'}
+2598                         \textcolor{keywordflow}{if} (!*s) \textcolor{keywordflow}{break};
+2599                         
+2600                         ++s;
+2601                     \}
+2602 
+2603                     \textcolor{comment}{// We're after '<'}
+2604                     \textcolor{keywordflow}{goto} LOC\_TAG;
+2605                 \}
+2606             \}
+2607 
+2608             \textcolor{comment}{// check that last tag is closed}
+2609             \textcolor{keywordflow}{if} (cursor != xmldoc) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a07a5f6f8392474ccb2d5dc10fe2307a2}{status\_end\_element\_mismatch}, s);
+2610 
+2611             \textcolor{keywordflow}{return} s;
+2612         \}
+\end{DoxyCode}
+\hypertarget{structxml__parser_a116885dc8aaf5fcd025511def4605674}{\index{xml\-\_\-parser@{xml\-\_\-parser}!parse@{parse}}
+\index{parse@{parse}!xml_parser@{xml\-\_\-parser}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}static xml\-\_\-parse\-\_\-result xml\-\_\-parser\-::parse (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{buffer, }
+\item[{size\-\_\-t}]{length, }
+\item[{xml\-\_\-node\-\_\-struct $\ast$}]{root, }
+\item[{unsigned int}]{optmsk}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structxml__parser_a116885dc8aaf5fcd025511def4605674}
+
+\begin{DoxyCode}
+2615         \{
+2616             \hyperlink{structxml__document__struct}{xml\_document\_struct}* xmldoc = \textcolor{keyword}{static\_cast<}
+      \hyperlink{structxml__document__struct}{xml\_document\_struct}*\textcolor{keyword}{>}(root);
+2617 
+2618             \textcolor{comment}{// store buffer for offset\_debug}
+2619             xmldoc->\hyperlink{structxml__document__struct_a120451f29b8cc2a82a3ecc926449ea0e}{buffer} = buffer;
+2620 
+2621             \textcolor{comment}{// early-out for empty documents}
+2622             \textcolor{keywordflow}{if} (length == 0) \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_a9081c36df7470451a2a067677ee9e423}{make\_parse\_result}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a46ddc2abb6a54fdac07cf9086b45f10f}{status\_ok});
+2623 
+2624             \textcolor{comment}{// create parser on stack}
+2625             \hyperlink{structxml__parser}{xml\_parser} parser(*xmldoc);
+2626 
+2627             \textcolor{comment}{// save last character and make buffer zero-terminated (speeds up parsing)}
+2628             \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t} endch = buffer[length - 1];
+2629             buffer[length - 1] = 0;
+2630             
+2631             \textcolor{comment}{// perform actual parsing}
+2632             parser.parse(buffer, xmldoc, optmsk, endch);
+2633 
+2634             xml\_parse\_result result = \hyperlink{pugixml_8cpp_a9081c36df7470451a2a067677ee9e423}{make\_parse\_result}(parser.error\_status, parser.
+      error\_offset ? parser.error\_offset - buffer : 0);
+2635             assert(result.offset >= 0 && static\_cast<size\_t>(result.offset) <= length);
+2636 
+2637             \textcolor{comment}{// update allocator state}
+2638             *\textcolor{keyword}{static\_cast<}\hyperlink{structxml__allocator}{xml\_allocator}*\textcolor{keyword}{>}(xmldoc) = parser.alloc;
+2639 
+2640             \textcolor{comment}{// since we removed last character, we have to handle the only possible false positive}
+2641             if (result && endch == \textcolor{charliteral}{'<'})
+2642             \{
+2643                 \textcolor{comment}{// there's no possible well-formed document with < at the end}
+2644                 \textcolor{keywordflow}{return} \hyperlink{pugixml_8cpp_a9081c36df7470451a2a067677ee9e423}{make\_parse\_result}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a71a555b91e80b6d8f84aeb6a93904d28}{status\_unrecognized\_tag}, length);
+2645             \}
+2646 
+2647             \textcolor{keywordflow}{return} result;
+2648         \}
+\end{DoxyCode}
+\hypertarget{structxml__parser_a9bc0e5f3d75cd7edb267a85430e1cdfc}{\index{xml\-\_\-parser@{xml\-\_\-parser}!parse\-\_\-doctype\-\_\-group@{parse\-\_\-doctype\-\_\-group}}
+\index{parse\-\_\-doctype\-\_\-group@{parse\-\_\-doctype\-\_\-group}!xml_parser@{xml\-\_\-parser}}
+\subsubsection[{parse\-\_\-doctype\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}char\-\_\-t$\ast$ xml\-\_\-parser\-::parse\-\_\-doctype\-\_\-group (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{s, }
+\item[{char\-\_\-t}]{endch, }
+\item[{bool}]{toplevel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__parser_a9bc0e5f3d75cd7edb267a85430e1cdfc}
+
+\begin{DoxyCode}
+2138         \{
+2139             assert(s[0] == \textcolor{charliteral}{'<'} && s[1] == \textcolor{charliteral}{'!'});
+2140             s++;
+2141 
+2142             \textcolor{keywordflow}{while} (*s)
+2143             \{
+2144                 \textcolor{keywordflow}{if} (s[0] == \textcolor{charliteral}{'<'} && s[1] == \textcolor{charliteral}{'!'} && s[2] != \textcolor{charliteral}{'-'})
+2145                 \{
+2146                     \textcolor{keywordflow}{if} (s[2] == \textcolor{charliteral}{'['})
+2147                     \{
+2148                         \textcolor{comment}{// ignore}
+2149                         s = \hyperlink{structxml__parser_a1e996ac9c9993f1939128859596376a1}{parse\_doctype\_ignore}(s);
+2150                         \textcolor{keywordflow}{if} (!s) \textcolor{keywordflow}{return} s;
+2151                     \}
+2152                     \textcolor{keywordflow}{else}
+2153                     \{
+2154                         \textcolor{comment}{// some control group}
+2155                         s = \hyperlink{structxml__parser_a9bc0e5f3d75cd7edb267a85430e1cdfc}{parse\_doctype\_group}(s, endch, \textcolor{keyword}{false});
+2156                         \textcolor{keywordflow}{if} (!s) \textcolor{keywordflow}{return} s;
+2157                     \}
+2158                 \}
+2159                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s[0] == \textcolor{charliteral}{'<'} || s[0] == \textcolor{charliteral}{'"'} || s[0] == \textcolor{charliteral}{'\(\backslash\)''})
+2160                 \{
+2161                     \textcolor{comment}{// unknown tag (forbidden), or some primitive group}
+2162                     s = \hyperlink{structxml__parser_a722853b603ad9a1d1f61bb8115bea5b4}{parse\_doctype\_primitive}(s);
+2163                     \textcolor{keywordflow}{if} (!s) \textcolor{keywordflow}{return} s;
+2164                 \}
+2165                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'>'})
+2166                 \{
+2167                     s++;
+2168 
+2169                     \textcolor{keywordflow}{return} s;
+2170                 \}
+2171                 \textcolor{keywordflow}{else} s++;
+2172             \}
+2173 
+2174             \textcolor{keywordflow}{if} (!toplevel || endch != \textcolor{charliteral}{'>'}) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a58d1b0d8787e97fc1b5b31ec5e4fabcf}{status\_bad\_doctype}, s);
+2175 
+2176             \textcolor{keywordflow}{return} s;
+2177         \}
+\end{DoxyCode}
+\hypertarget{structxml__parser_a1e996ac9c9993f1939128859596376a1}{\index{xml\-\_\-parser@{xml\-\_\-parser}!parse\-\_\-doctype\-\_\-ignore@{parse\-\_\-doctype\-\_\-ignore}}
+\index{parse\-\_\-doctype\-\_\-ignore@{parse\-\_\-doctype\-\_\-ignore}!xml_parser@{xml\-\_\-parser}}
+\subsubsection[{parse\-\_\-doctype\-\_\-ignore}]{\setlength{\rightskip}{0pt plus 5cm}char\-\_\-t$\ast$ xml\-\_\-parser\-::parse\-\_\-doctype\-\_\-ignore (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__parser_a1e996ac9c9993f1939128859596376a1}
+
+\begin{DoxyCode}
+2112         \{
+2113             assert(s[0] == \textcolor{charliteral}{'<'} && s[1] == \textcolor{charliteral}{'!'} && s[2] == \textcolor{charliteral}{'['});
+2114             s++;
+2115 
+2116             \textcolor{keywordflow}{while} (*s)
+2117             \{
+2118                 \textcolor{keywordflow}{if} (s[0] == \textcolor{charliteral}{'<'} && s[1] == \textcolor{charliteral}{'!'} && s[2] == \textcolor{charliteral}{'['})
+2119                 \{
+2120                     \textcolor{comment}{// nested ignore section}
+2121                     s = \hyperlink{structxml__parser_a1e996ac9c9993f1939128859596376a1}{parse\_doctype\_ignore}(s);
+2122                     \textcolor{keywordflow}{if} (!s) \textcolor{keywordflow}{return} s;
+2123                 \}
+2124                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s[0] == \textcolor{charliteral}{']'} && s[1] == \textcolor{charliteral}{']'} && s[2] == \textcolor{charliteral}{'>'})
+2125                 \{
+2126                     \textcolor{comment}{// ignore section end}
+2127                     s += 3;
+2128 
+2129                     \textcolor{keywordflow}{return} s;
+2130                 \}
+2131                 \textcolor{keywordflow}{else} s++;
+2132             \}
+2133 
+2134             \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a58d1b0d8787e97fc1b5b31ec5e4fabcf}{status\_bad\_doctype}, s);
+2135         \}
+\end{DoxyCode}
+\hypertarget{structxml__parser_a722853b603ad9a1d1f61bb8115bea5b4}{\index{xml\-\_\-parser@{xml\-\_\-parser}!parse\-\_\-doctype\-\_\-primitive@{parse\-\_\-doctype\-\_\-primitive}}
+\index{parse\-\_\-doctype\-\_\-primitive@{parse\-\_\-doctype\-\_\-primitive}!xml_parser@{xml\-\_\-parser}}
+\subsubsection[{parse\-\_\-doctype\-\_\-primitive}]{\setlength{\rightskip}{0pt plus 5cm}char\-\_\-t$\ast$ xml\-\_\-parser\-::parse\-\_\-doctype\-\_\-primitive (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__parser_a722853b603ad9a1d1f61bb8115bea5b4}
+
+\begin{DoxyCode}
+2079         \{
+2080             \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'"'} || *s == \textcolor{charliteral}{'\(\backslash\)''})
+2081             \{
+2082                 \textcolor{comment}{// quoted string}
+2083                 \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t} ch = *s++;
+2084                 \hyperlink{pugixml_8cpp_a98386e86f2c7e7e477939d209a5bbf7e}{PUGI\_\_SCANFOR}(*s == ch);
+2085                 \textcolor{keywordflow}{if} (!*s) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a58d1b0d8787e97fc1b5b31ec5e4fabcf}{status\_bad\_doctype}, s);
+2086 
+2087                 s++;
+2088             \}
+2089             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s[0] == \textcolor{charliteral}{'<'} && s[1] == \textcolor{charliteral}{'?'})
+2090             \{
+2091                 \textcolor{comment}{// <? ... ?>}
+2092                 s += 2;
+2093                 \hyperlink{pugixml_8cpp_a98386e86f2c7e7e477939d209a5bbf7e}{PUGI\_\_SCANFOR}(s[0] == \textcolor{charliteral}{'?'} && s[1] == \textcolor{charliteral}{'>'}); \textcolor{comment}{// no need for ENDSWITH because ?>
+       can't terminate proper doctype}
+2094                 \textcolor{keywordflow}{if} (!*s) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a58d1b0d8787e97fc1b5b31ec5e4fabcf}{status\_bad\_doctype}, s);
+2095 
+2096                 s += 2;
+2097             \}
+2098             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s[0] == \textcolor{charliteral}{'<'} && s[1] == \textcolor{charliteral}{'!'} && s[2] == \textcolor{charliteral}{'-'} && s[3] == \textcolor{charliteral}{'-'})
+2099             \{
+2100                 s += 4;
+2101                 \hyperlink{pugixml_8cpp_a98386e86f2c7e7e477939d209a5bbf7e}{PUGI\_\_SCANFOR}(s[0] == \textcolor{charliteral}{'-'} && s[1] == \textcolor{charliteral}{'-'} && s[2] == \textcolor{charliteral}{'>'}); \textcolor{comment}{// no need for
+       ENDSWITH because --> can't terminate proper doctype}
+2102                 \textcolor{keywordflow}{if} (!*s) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a58d1b0d8787e97fc1b5b31ec5e4fabcf}{status\_bad\_doctype}, s);
+2103 
+2104                 s += 4;
+2105             \}
+2106             \textcolor{keywordflow}{else} \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a58d1b0d8787e97fc1b5b31ec5e4fabcf}{status\_bad\_doctype}, s);
+2107 
+2108             \textcolor{keywordflow}{return} s;
+2109         \}
+\end{DoxyCode}
+\hypertarget{structxml__parser_a40da52e4b27a0a06752930a0edf16fe9}{\index{xml\-\_\-parser@{xml\-\_\-parser}!parse\-\_\-exclamation@{parse\-\_\-exclamation}}
+\index{parse\-\_\-exclamation@{parse\-\_\-exclamation}!xml_parser@{xml\-\_\-parser}}
+\subsubsection[{parse\-\_\-exclamation}]{\setlength{\rightskip}{0pt plus 5cm}char\-\_\-t$\ast$ xml\-\_\-parser\-::parse\-\_\-exclamation (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{s, }
+\item[{xml\-\_\-node\-\_\-struct $\ast$}]{cursor, }
+\item[{unsigned int}]{optmsk, }
+\item[{char\-\_\-t}]{endch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__parser_a40da52e4b27a0a06752930a0edf16fe9}
+
+\begin{DoxyCode}
+2180         \{
+2181             \textcolor{comment}{// parse node contents, starting with exclamation mark}
+2182             ++s;
+2183 
+2184             \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'-'}) \textcolor{comment}{// '<!-...'}
+2185             \{
+2186                 ++s;
+2187 
+2188                 \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'-'}) \textcolor{comment}{// '<!--...'}
+2189                 \{
+2190                     ++s;
+2191 
+2192                     \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{PUGI\_\_OPTSET}(\hyperlink{namespacepugi_adcab316176bfaf69158339962fb4ad38}{parse\_comments}))
+2193                     \{
+2194                         \hyperlink{pugixml_8cpp_accdd212cd2831662c3c2dda668246f8a}{PUGI\_\_PUSHNODE}(\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a445fef674a66777dfd28dbd6bab14fed}{node\_comment}); \textcolor{comment}{// Append a new node on the
+       tree.}
+2195                         cursor->value = s; \textcolor{comment}{// Save the offset.}
+2196                     \}
+2197 
+2198                     \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{PUGI\_\_OPTSET}(\hyperlink{namespacepugi_ad4e017365d2ff3ee04e226c35129b475}{parse\_eol}) && 
+      \hyperlink{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{PUGI\_\_OPTSET}(\hyperlink{namespacepugi_adcab316176bfaf69158339962fb4ad38}{parse\_comments}))
+2199                     \{
+2200                         s = \hyperlink{pugixml_8cpp_acd89f6b92cd5a83b4e8a56bff9e55118}{strconv\_comment}(s, endch);
+2201 
+2202                         \textcolor{keywordflow}{if} (!s) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a563327f534e9b3ce55f9f7364aa746b2}{status\_bad\_comment}, cursor->value);
+2203                     \}
+2204                     \textcolor{keywordflow}{else}
+2205                     \{
+2206                         \textcolor{comment}{// Scan for terminating '-->'.}
+2207                         \hyperlink{pugixml_8cpp_a98386e86f2c7e7e477939d209a5bbf7e}{PUGI\_\_SCANFOR}(s[0] == \textcolor{charliteral}{'-'} && s[1] == \textcolor{charliteral}{'-'} && 
+      \hyperlink{pugixml_8cpp_a3a72d0b2c0e7f99940ce8fbcc69e532f}{ENDSWITH}(s[2], \textcolor{charliteral}{'>'}));
+2208                         \hyperlink{pugixml_8cpp_a03531d9b3c74f0843567257537edfd53}{PUGI\_\_CHECK\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a563327f534e9b3ce55f9f7364aa746b2}{status\_bad\_comment}, s);
+2209 
+2210                         \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{PUGI\_\_OPTSET}(\hyperlink{namespacepugi_adcab316176bfaf69158339962fb4ad38}{parse\_comments}))
+2211                             *s = 0; \textcolor{comment}{// Zero-terminate this segment at the first terminating '-'.}
+2212 
+2213                         s += (s[2] == \textcolor{charliteral}{'>'} ? 3 : 2); \textcolor{comment}{// Step over the '\(\backslash\)0->'.}
+2214                     \}
+2215                 \}
+2216                 \textcolor{keywordflow}{else} \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a563327f534e9b3ce55f9f7364aa746b2}{status\_bad\_comment}, s);
+2217             \}
+2218             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == \textcolor{charliteral}{'['})
+2219             \{
+2220                 \textcolor{comment}{// '<![CDATA[...'}
+2221                 \textcolor{keywordflow}{if} (*++s==\textcolor{charliteral}{'C'} && *++s==\textcolor{charliteral}{'D'} && *++s==\textcolor{charliteral}{'A'} && *++s==\textcolor{charliteral}{'T'} && *++s==\textcolor{charliteral}{'A'} && *++s == \textcolor{charliteral}{'['})
+2222                 \{
+2223                     ++s;
+2224 
+2225                     \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{PUGI\_\_OPTSET}(\hyperlink{namespacepugi_a47b679897f8bc15e4e152978fc88c208}{parse\_cdata}))
+2226                     \{
+2227                         \hyperlink{pugixml_8cpp_accdd212cd2831662c3c2dda668246f8a}{PUGI\_\_PUSHNODE}(\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9adf13d60a4dfd047be0700e1711aeb1ea}{node\_cdata}); \textcolor{comment}{// Append a new node on the
+       tree.}
+2228                         cursor->value = s; \textcolor{comment}{// Save the offset.}
+2229 
+2230                         \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{PUGI\_\_OPTSET}(\hyperlink{namespacepugi_ad4e017365d2ff3ee04e226c35129b475}{parse\_eol}))
+2231                         \{
+2232                             s = \hyperlink{pugixml_8cpp_a9caa489db9fff49dc8819a48849627c0}{strconv\_cdata}(s, endch);
+2233 
+2234                             \textcolor{keywordflow}{if} (!s) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555aa2ebdaf5e8bf5414bec3004270e102b8}{status\_bad\_cdata}, cursor->value);
+2235                         \}
+2236                         \textcolor{keywordflow}{else}
+2237                         \{
+2238                             \textcolor{comment}{// Scan for terminating ']]>'.}
+2239                             \hyperlink{pugixml_8cpp_a98386e86f2c7e7e477939d209a5bbf7e}{PUGI\_\_SCANFOR}(s[0] == \textcolor{charliteral}{']'} && s[1] == \textcolor{charliteral}{']'} && 
+      \hyperlink{pugixml_8cpp_a3a72d0b2c0e7f99940ce8fbcc69e532f}{ENDSWITH}(s[2], \textcolor{charliteral}{'>'}));
+2240                             \hyperlink{pugixml_8cpp_a03531d9b3c74f0843567257537edfd53}{PUGI\_\_CHECK\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555aa2ebdaf5e8bf5414bec3004270e102b8}{status\_bad\_cdata}, s);
+2241 
+2242                             *s++ = 0; \textcolor{comment}{// Zero-terminate this segment.}
+2243                         \}
+2244                     \}
+2245                     \textcolor{keywordflow}{else} \textcolor{comment}{// Flagged for discard, but we still have to scan for the terminator.}
+2246                     \{
+2247                         \textcolor{comment}{// Scan for terminating ']]>'.}
+2248                         \hyperlink{pugixml_8cpp_a98386e86f2c7e7e477939d209a5bbf7e}{PUGI\_\_SCANFOR}(s[0] == \textcolor{charliteral}{']'} && s[1] == \textcolor{charliteral}{']'} && 
+      \hyperlink{pugixml_8cpp_a3a72d0b2c0e7f99940ce8fbcc69e532f}{ENDSWITH}(s[2], \textcolor{charliteral}{'>'}));
+2249                         \hyperlink{pugixml_8cpp_a03531d9b3c74f0843567257537edfd53}{PUGI\_\_CHECK\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555aa2ebdaf5e8bf5414bec3004270e102b8}{status\_bad\_cdata}, s);
+2250 
+2251                         ++s;
+2252                     \}
+2253 
+2254                     s += (s[1] == \textcolor{charliteral}{'>'} ? 2 : 1); \textcolor{comment}{// Step over the last ']>'.}
+2255                 \}
+2256                 \textcolor{keywordflow}{else} \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555aa2ebdaf5e8bf5414bec3004270e102b8}{status\_bad\_cdata}, s);
+2257             \}
+2258             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s[0] == \textcolor{charliteral}{'D'} && s[1] == \textcolor{charliteral}{'O'} && s[2] == \textcolor{charliteral}{'C'} && s[3] == \textcolor{charliteral}{'T'} && s[4] == \textcolor{charliteral}{'Y'} && s[5] == \textcolor{charliteral}{'P'}
+       && \hyperlink{pugixml_8cpp_a3a72d0b2c0e7f99940ce8fbcc69e532f}{ENDSWITH}(s[6], \textcolor{charliteral}{'E'}))
+2259             \{
+2260                 s -= 2;
+2261 
+2262                 \textcolor{keywordflow}{if} (cursor->parent) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a58d1b0d8787e97fc1b5b31ec5e4fabcf}{status\_bad\_doctype}, s);
+2263 
+2264                 \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* mark = s + 9;
+2265 
+2266                 s = \hyperlink{structxml__parser_a9bc0e5f3d75cd7edb267a85430e1cdfc}{parse\_doctype\_group}(s, endch, \textcolor{keyword}{true});
+2267                 \textcolor{keywordflow}{if} (!s) \textcolor{keywordflow}{return} s;
+2268 
+2269                 \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{PUGI\_\_OPTSET}(\hyperlink{namespacepugi_afa993ffcd3e228d21f48071e7c097f32}{parse\_doctype}))
+2270                 \{
+2271                     \textcolor{keywordflow}{while} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*mark, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space})) ++mark;
+2272 
+2273                     \hyperlink{pugixml_8cpp_accdd212cd2831662c3c2dda668246f8a}{PUGI\_\_PUSHNODE}(\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9a9504586a29b181817607cc7ec231c9d4}{node\_doctype});
+2274 
+2275                     cursor->value = mark;
+2276 
+2277                     assert((s[0] == 0 && endch == \textcolor{charliteral}{'>'}) || s[-1] == \textcolor{charliteral}{'>'});
+2278                     s[*s == 0 ? 0 : -1] = 0;
+2279 
+2280                     \hyperlink{pugixml_8cpp_ab82f13ed99cc2d22c5ecb6e18b5dfe17}{PUGI\_\_POPNODE}();
+2281                 \}
+2282             \}
+2283             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == 0 && endch == \textcolor{charliteral}{'-'}) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a563327f534e9b3ce55f9f7364aa746b2}{status\_bad\_comment}, s);
+2284             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*s == 0 && endch == \textcolor{charliteral}{'['}) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555aa2ebdaf5e8bf5414bec3004270e102b8}{status\_bad\_cdata}, s);
+2285             \textcolor{keywordflow}{else} \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555a71a555b91e80b6d8f84aeb6a93904d28}{status\_unrecognized\_tag}, s);
+2286 
+2287             \textcolor{keywordflow}{return} s;
+2288         \}
+\end{DoxyCode}
+\hypertarget{structxml__parser_a2b0edc4fbf2ff448b4d5b31593c5c4fd}{\index{xml\-\_\-parser@{xml\-\_\-parser}!parse\-\_\-question@{parse\-\_\-question}}
+\index{parse\-\_\-question@{parse\-\_\-question}!xml_parser@{xml\-\_\-parser}}
+\subsubsection[{parse\-\_\-question}]{\setlength{\rightskip}{0pt plus 5cm}char\-\_\-t$\ast$ xml\-\_\-parser\-::parse\-\_\-question (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{s, }
+\item[{xml\-\_\-node\-\_\-struct $\ast$\&}]{ref\-\_\-cursor, }
+\item[{unsigned int}]{optmsk, }
+\item[{char\-\_\-t}]{endch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structxml__parser_a2b0edc4fbf2ff448b4d5b31593c5c4fd}
+
+\begin{DoxyCode}
+2291         \{
+2292             \textcolor{comment}{// load into registers}
+2293             xml\_node\_struct* cursor = ref\_cursor;
+2294             \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t} ch = 0;
+2295 
+2296             \textcolor{comment}{// parse node contents, starting with question mark}
+2297             ++s;
+2298 
+2299             \textcolor{comment}{// read PI target}
+2300             \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* target = s;
+2301 
+2302             \textcolor{keywordflow}{if} (!\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108a25a043d6a8b5a269b3cd8f512d712798}{ct\_start\_symbol})) 
+      \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555ad7a57e8554aabea52ed8b0d6a0891622}{status\_bad\_pi}, s);
+2303 
+2304             \hyperlink{pugixml_8cpp_adfcdc54e9f7e0f2d3927b4a7690abf2a}{PUGI\_\_SCANWHILE}(\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(*s, 
+      \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108af8e561bd4654ab93d82193fdd3727915}{ct\_symbol}));
+2305             \hyperlink{pugixml_8cpp_a03531d9b3c74f0843567257537edfd53}{PUGI\_\_CHECK\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555ad7a57e8554aabea52ed8b0d6a0891622}{status\_bad\_pi}, s);
+2306 
+2307             \textcolor{comment}{// determine node type; stricmp / strcasecmp is not portable}
+2308             \textcolor{keywordtype}{bool} declaration = (target[0] | \textcolor{charliteral}{' '}) == \textcolor{charliteral}{'x'} && (target[1] | \textcolor{charliteral}{' '}) == \textcolor{charliteral}{'m'} && (target[2] | \textcolor{charliteral}{' '}) ==
+       \textcolor{charliteral}{'l'} && target + 3 == s;
+2309 
+2310             \textcolor{keywordflow}{if} (declaration ? \hyperlink{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{PUGI\_\_OPTSET}(\hyperlink{namespacepugi_adb5db03ce720dcd90e900b9bb7e70427}{parse\_declaration}) : 
+      \hyperlink{pugixml_8cpp_a06966692c7864407ceffff065b4d7da2}{PUGI\_\_OPTSET}(\hyperlink{namespacepugi_a8fb7ea408d60b4f2ca79dd30b651f545}{parse\_pi}))
+2311             \{
+2312                 \textcolor{keywordflow}{if} (declaration)
+2313                 \{
+2314                     \textcolor{comment}{// disallow non top-level declarations}
+2315                     \textcolor{keywordflow}{if} (cursor->parent) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555ad7a57e8554aabea52ed8b0d6a0891622}{status\_bad\_pi}, s);
+2316 
+2317                     \hyperlink{pugixml_8cpp_accdd212cd2831662c3c2dda668246f8a}{PUGI\_\_PUSHNODE}(\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9aad8024cc4a4afbc68c871f3826a00616}{node\_declaration});
+2318                 \}
+2319                 \textcolor{keywordflow}{else}
+2320                 \{
+2321                     \hyperlink{pugixml_8cpp_accdd212cd2831662c3c2dda668246f8a}{PUGI\_\_PUSHNODE}(\hyperlink{namespacepugi_a137e94a038e4ab0ada6477cf7f6153a9acd772b12b3d5442b9771151f45134440}{node\_pi});
+2322                 \}
+2323 
+2324                 cursor->name = target;
+2325 
+2326                 \hyperlink{pugixml_8cpp_a39554337dd1d0fef32ddf9926ee4e4ae}{PUGI\_\_ENDSEG}();
+2327 
+2328                 \textcolor{comment}{// parse value/attributes}
+2329                 \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{'?'})
+2330                 \{
+2331                     \textcolor{comment}{// empty node}
+2332                     \textcolor{keywordflow}{if} (!\hyperlink{pugixml_8cpp_a3a72d0b2c0e7f99940ce8fbcc69e532f}{ENDSWITH}(*s, \textcolor{charliteral}{'>'})) \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(
+      \hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555ad7a57e8554aabea52ed8b0d6a0891622}{status\_bad\_pi}, s);
+2333                     s += (*s == \textcolor{charliteral}{'>'});
+2334 
+2335                     \hyperlink{pugixml_8cpp_ab82f13ed99cc2d22c5ecb6e18b5dfe17}{PUGI\_\_POPNODE}();
+2336                 \}
+2337                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{pugixml_8cpp_a2adf5ae9b7505408a18e9f3bb1b3d332}{PUGI\_\_IS\_CHARTYPE}(ch, \hyperlink{pugixml_8cpp_ae83a55e5947d28c62625b690b1484108ac957a1774b6a4430e583bcb881909372}{ct\_space}))
+2338                 \{
+2339                     \hyperlink{pugixml_8cpp_a87d9805caf644d370bb8e8faa2a1f887}{PUGI\_\_SKIPWS}();
+2340 
+2341                     \textcolor{comment}{// scan for tag end}
+2342                     \hyperlink{namespacepugi_aef5a7a62cba0507542220ea15afe39df}{char\_t}* value = s;
+2343 
+2344                     \hyperlink{pugixml_8cpp_a98386e86f2c7e7e477939d209a5bbf7e}{PUGI\_\_SCANFOR}(s[0] == \textcolor{charliteral}{'?'} && \hyperlink{pugixml_8cpp_a3a72d0b2c0e7f99940ce8fbcc69e532f}{ENDSWITH}(s[1], \textcolor{charliteral}{'>'}));
+2345                     \hyperlink{pugixml_8cpp_a03531d9b3c74f0843567257537edfd53}{PUGI\_\_CHECK\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555ad7a57e8554aabea52ed8b0d6a0891622}{status\_bad\_pi}, s);
+2346 
+2347                     \textcolor{keywordflow}{if} (declaration)
+2348                     \{
+2349                         \textcolor{comment}{// replace ending ? with / so that 'element' terminates properly}
+2350                         *s = \textcolor{charliteral}{'/'};
+2351 
+2352                         \textcolor{comment}{// we exit from this function with cursor at node\_declaration, which is a signal to
+       parse() to go to LOC\_ATTRIBUTES}
+2353                         s = value;
+2354                     \}
+2355                     \textcolor{keywordflow}{else}
+2356                     \{
+2357                         \textcolor{comment}{// store value and step over >}
+2358                         cursor->value = value;
+2359                         \hyperlink{pugixml_8cpp_ab82f13ed99cc2d22c5ecb6e18b5dfe17}{PUGI\_\_POPNODE}();
+2360 
+2361                         \hyperlink{pugixml_8cpp_a39554337dd1d0fef32ddf9926ee4e4ae}{PUGI\_\_ENDSEG}();
+2362 
+2363                         s += (*s == \textcolor{charliteral}{'>'});
+2364                     \}
+2365                 \}
+2366                 \textcolor{keywordflow}{else} \hyperlink{pugixml_8cpp_a8af02d87a10272f03f96ab93a96d7202}{PUGI\_\_THROW\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555ad7a57e8554aabea52ed8b0d6a0891622}{status\_bad\_pi}, s);
+2367             \}
+2368             \textcolor{keywordflow}{else}
+2369             \{
+2370                 \textcolor{comment}{// scan for tag end}
+2371                 \hyperlink{pugixml_8cpp_a98386e86f2c7e7e477939d209a5bbf7e}{PUGI\_\_SCANFOR}(s[0] == \textcolor{charliteral}{'?'} && \hyperlink{pugixml_8cpp_a3a72d0b2c0e7f99940ce8fbcc69e532f}{ENDSWITH}(s[1], \textcolor{charliteral}{'>'}));
+2372                 \hyperlink{pugixml_8cpp_a03531d9b3c74f0843567257537edfd53}{PUGI\_\_CHECK\_ERROR}(\hyperlink{namespacepugi_a9054ca609e12afb8f3e5892fc6c0b555ad7a57e8554aabea52ed8b0d6a0891622}{status\_bad\_pi}, s);
+2373 
+2374                 s += (s[1] == \textcolor{charliteral}{'>'} ? 2 : 1);
+2375             \}
+2376 
+2377             \textcolor{comment}{// store from registers}
+2378             ref\_cursor = cursor;
+2379 
+2380             \textcolor{keywordflow}{return} s;
+2381         \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\hypertarget{structxml__parser_a213cf019cbf45f5049acdcae296a2976}{\index{xml\-\_\-parser@{xml\-\_\-parser}!alloc@{alloc}}
+\index{alloc@{alloc}!xml_parser@{xml\-\_\-parser}}
+\subsubsection[{alloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf xml\-\_\-allocator} xml\-\_\-parser\-::alloc}}\label{structxml__parser_a213cf019cbf45f5049acdcae296a2976}
+\hypertarget{structxml__parser_a2476a71cd7e67b3f4bdbcd1323524503}{\index{xml\-\_\-parser@{xml\-\_\-parser}!error\-\_\-offset@{error\-\_\-offset}}
+\index{error\-\_\-offset@{error\-\_\-offset}!xml_parser@{xml\-\_\-parser}}
+\subsubsection[{error\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}char\-\_\-t$\ast$ xml\-\_\-parser\-::error\-\_\-offset}}\label{structxml__parser_a2476a71cd7e67b3f4bdbcd1323524503}
+\hypertarget{structxml__parser_a0555859911674e5a7a349447d6533383}{\index{xml\-\_\-parser@{xml\-\_\-parser}!error\-\_\-status@{error\-\_\-status}}
+\index{error\-\_\-status@{error\-\_\-status}!xml_parser@{xml\-\_\-parser}}
+\subsubsection[{error\-\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}xml\-\_\-parse\-\_\-status xml\-\_\-parser\-::error\-\_\-status}}\label{structxml__parser_a0555859911674e5a7a349447d6533383}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

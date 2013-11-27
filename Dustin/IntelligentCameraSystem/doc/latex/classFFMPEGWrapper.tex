@@ -1,0 +1,235 @@
+\hypertarget{classFFMPEGWrapper}{\section{F\-F\-M\-P\-E\-G\-Wrapper Class Reference}
+\label{classFFMPEGWrapper}\index{F\-F\-M\-P\-E\-G\-Wrapper@{F\-F\-M\-P\-E\-G\-Wrapper}}
+}
+
+
+{\ttfamily \#include $<$ffmpegwrapper.\-h$>$}
+
+Inheritance diagram for F\-F\-M\-P\-E\-G\-Wrapper\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classFFMPEGWrapper}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classFFMPEGWrapper_a29bfb04c36db41f6a5dfee2c2669fb81}{demux} ()
+\item 
+void \hyperlink{classFFMPEGWrapper_a649288e95daaf556db954729d479589d}{got\-Image} (Q\-Shared\-Pointer$<$ Q\-Image $>$ img)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classFFMPEGWrapper_a40ad147b791bb875802826466ea94cf9}{finished} ()
+\item 
+void \hyperlink{classFFMPEGWrapper_a91a7fbecacc6d1b82661accd2126f846}{new\-Image} (Q\-Shared\-Pointer$<$ Q\-Image $>$)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFFMPEGWrapper_a5dece5b4d3637569611eaa1bc0a4bfcf}{F\-F\-M\-P\-E\-G\-Wrapper} (int port, \hyperlink{classDemuxer}{Demuxer} $\ast$demuxer=N\-U\-L\-L, Q\-Object $\ast$parent=0)
+\item 
+bool \hyperlink{classFFMPEGWrapper_a15893a6ead5df825bfd25fd7a04eb18d}{is\-Demuxing} () const 
+\item 
+void \hyperlink{classFFMPEGWrapper_a8bf46fe65fdb28b5e5642cc84a4a2b57}{stop} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFFMPEGWrapper_a5dece5b4d3637569611eaa1bc0a4bfcf}{\index{F\-F\-M\-P\-E\-G\-Wrapper@{F\-F\-M\-P\-E\-G\-Wrapper}!F\-F\-M\-P\-E\-G\-Wrapper@{F\-F\-M\-P\-E\-G\-Wrapper}}
+\index{F\-F\-M\-P\-E\-G\-Wrapper@{F\-F\-M\-P\-E\-G\-Wrapper}!FFMPEGWrapper@{F\-F\-M\-P\-E\-G\-Wrapper}}
+\subsubsection[{F\-F\-M\-P\-E\-G\-Wrapper}]{\setlength{\rightskip}{0pt plus 5cm}F\-F\-M\-P\-E\-G\-Wrapper\-::\-F\-F\-M\-P\-E\-G\-Wrapper (
+\begin{DoxyParamCaption}
+\item[{int}]{port, }
+\item[{{\bf Demuxer} $\ast$}]{demuxer = {\ttfamily NULL}, }
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classFFMPEGWrapper_a5dece5b4d3637569611eaa1bc0a4bfcf}
+
+\begin{DoxyCode}
+16                                                                         :
+17     QObject(parent),
+18     port(port)
+19 \{
+20     \textcolor{keywordflow}{if}(demuxer == NULL)
+21         m\_demuxer = \textcolor{keyword}{new} \hyperlink{classDemuxer}{Demuxer}(QString(\hyperlink{ffmpegvideowidget_8h_aebde6daa4e9d1806e2c43f566475dfbe}{PIPENAME}));
+22     \textcolor{keywordflow}{else}
+23         m\_demuxer = demuxer;
+24 
+25     \textcolor{comment}{//Set up the demuxer thread}
+26     m\_demux\_thread = \textcolor{keyword}{new} QThread(\textcolor{keyword}{this});
+27     m\_demuxer->moveToThread(m\_demux\_thread);
+28     connect(m\_demux\_thread, SIGNAL(started()), m\_demuxer, SLOT(\hyperlink{classFFMPEGWrapper_a29bfb04c36db41f6a5dfee2c2669fb81}{demux}()));
+29     connect(m\_demuxer, SIGNAL(\hyperlink{classFFMPEGWrapper_a40ad147b791bb875802826466ea94cf9}{finished}()), m\_demux\_thread, SLOT(quit()));
+30 
+31 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFFMPEGWrapper_a29bfb04c36db41f6a5dfee2c2669fb81}{\index{F\-F\-M\-P\-E\-G\-Wrapper@{F\-F\-M\-P\-E\-G\-Wrapper}!demux@{demux}}
+\index{demux@{demux}!FFMPEGWrapper@{F\-F\-M\-P\-E\-G\-Wrapper}}
+\subsubsection[{demux}]{\setlength{\rightskip}{0pt plus 5cm}void F\-F\-M\-P\-E\-G\-Wrapper\-::demux (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classFFMPEGWrapper_a29bfb04c36db41f6a5dfee2c2669fb81}
+
+\begin{DoxyCode}
+34 \{
+35     \textcolor{keywordtype}{int} serv\_sockfd, num\_bytes;
+36 
+37     \textcolor{keywordtype}{char} packet[\hyperlink{ffmpegwrapper_8h_a0fa354abb723f3d7b1cdfea68545bb45}{PKT\_SIZE}];
+38 
+39     \textcolor{comment}{//The file}
+40     FILE *buffer;
+41 
+42     \textcolor{comment}{//Storage for sender's address}
+43     \textcolor{keyword}{struct }sockaddr\_storage their\_addr;
+44     socklen\_t addr\_len;
+45 
+46     \textcolor{comment}{//Start a UDP server -- open up a port}
+47     \textcolor{comment}{//Open a socket}
+48     serv\_sockfd = socket(AF\_INET, SOCK\_DGRAM, IPPROTO\_UDP);
+49     \textcolor{keywordflow}{if}(serv\_sockfd <= 0)
+50     \{
+51         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Failed to open socket."};
+52         \textcolor{comment}{//perror("socket");}
+53         \textcolor{keywordflow}{return};
+54     \}
+55 
+56     \textcolor{comment}{//Bind to port on host side}
+57     \textcolor{keyword}{struct }sockaddr\_in address;
+58 
+59     address.sin\_family = AF\_INET;
+60     address.sin\_addr.s\_addr = INADDR\_ANY;
+61     address.sin\_port = htons((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}) port);
+62 
+63     \textcolor{keywordtype}{int} bound = bind(serv\_sockfd, (\textcolor{keyword}{struct} sockaddr *) &address, \textcolor{keyword}{sizeof}(address));
+64     \textcolor{keywordflow}{if}(bound < 0)
+65     \{
+66         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Failed to bind socket to port"};
+67         \textcolor{comment}{//perror("bind");}
+68         \textcolor{keywordflow}{return};
+69     \}
+70 
+71     \textcolor{comment}{//Create a named pipe (FIFO)}
+72 
+73     \textcolor{keywordtype}{char} *fifo = \hyperlink{ffmpegvideowidget_8h_aebde6daa4e9d1806e2c43f566475dfbe}{PIPENAME};
+74     mkfifo(fifo, S\_IRUSR | S\_IWUSR | S\_IRGRP | S\_IWGRP | S\_IROTH);
+75 
+76     \textcolor{comment}{//=====CHANGE CODE HERE TO START A QT THREAD FOR DEMUXER OBJ TO PERFORM ITS WORK}
+77     m\_demux\_thread->start();
+78 
+79     \textcolor{comment}{//Open pipe}
+80     \textcolor{comment}{//Open the file}
+81     \textcolor{keywordflow}{if}((buffer = fopen(\hyperlink{ffmpegvideowidget_8h_aebde6daa4e9d1806e2c43f566475dfbe}{PIPENAME}, \textcolor{stringliteral}{"wb"})) == NULL)
+82     \{
+83         \textcolor{comment}{//perror("fopen");}
+84         \textcolor{comment}{//exit(1);}
+85     \}
+86 
+87     is\_demuxing = \textcolor{keyword}{true};
+88 
+89     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Start demuxing"};
+90 
+91     \textcolor{keywordflow}{while}(is\_demuxing)
+92     \{
+93 
+94         memset(packet, 0, \hyperlink{ffmpegwrapper_8h_a0fa354abb723f3d7b1cdfea68545bb45}{PKT\_SIZE});
+95 
+96         \textcolor{comment}{//Get next packet}
+97         \textcolor{keywordflow}{if}((num\_bytes = recvfrom(serv\_sockfd, packet, \hyperlink{ffmpegwrapper_8h_a0fa354abb723f3d7b1cdfea68545bb45}{PKT\_SIZE}, 0,
+98             (\textcolor{keyword}{struct} sockaddr *)&their\_addr, &addr\_len)) == -1)
+99         \{
+100             \textcolor{keywordflow}{if}(errno != EAGAIN)
+101             \{
+102                 \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"recvfrom: "} << strerror(errno);
+103                 is\_demuxing = \textcolor{keyword}{false};
+104             \}
+105         \}
+106 
+107         \textcolor{keywordflow}{if}(errno != EAGAIN)
+108         \{
+109             \textcolor{keywordtype}{char} *dat = packet;
+110             \textcolor{comment}{//if(packet[4] != 0x67 && packet[4] != 0x65)}
+111             \textcolor{comment}{//\{}
+112                 \textcolor{comment}{//dat++;}
+113                 \textcolor{comment}{//num\_bytes--;}
+114             \textcolor{comment}{//\}}
+115             \textcolor{comment}{//Write to file}
+116             fwrite(dat, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}), (num\_bytes) / \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}), buffer);
+117         \}
+118 
+119     \}
+120 
+121     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"End demuxing"};
+122     close(serv\_sockfd);
+123     fclose(buffer);
+124 
+125     emit \hyperlink{classFFMPEGWrapper_a40ad147b791bb875802826466ea94cf9}{finished}();
+126 
+127     \textcolor{keywordflow}{return};
+128 
+129 \}
+\end{DoxyCode}
+\hypertarget{classFFMPEGWrapper_a40ad147b791bb875802826466ea94cf9}{\index{F\-F\-M\-P\-E\-G\-Wrapper@{F\-F\-M\-P\-E\-G\-Wrapper}!finished@{finished}}
+\index{finished@{finished}!FFMPEGWrapper@{F\-F\-M\-P\-E\-G\-Wrapper}}
+\subsubsection[{finished}]{\setlength{\rightskip}{0pt plus 5cm}void F\-F\-M\-P\-E\-G\-Wrapper\-::finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classFFMPEGWrapper_a40ad147b791bb875802826466ea94cf9}
+\hypertarget{classFFMPEGWrapper_a649288e95daaf556db954729d479589d}{\index{F\-F\-M\-P\-E\-G\-Wrapper@{F\-F\-M\-P\-E\-G\-Wrapper}!got\-Image@{got\-Image}}
+\index{got\-Image@{got\-Image}!FFMPEGWrapper@{F\-F\-M\-P\-E\-G\-Wrapper}}
+\subsubsection[{got\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void F\-F\-M\-P\-E\-G\-Wrapper\-::got\-Image (
+\begin{DoxyParamCaption}
+\item[{Q\-Shared\-Pointer$<$ Q\-Image $>$}]{img}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classFFMPEGWrapper_a649288e95daaf556db954729d479589d}
+
+\begin{DoxyCode}
+132 \{
+133     emit \hyperlink{classFFMPEGWrapper_a91a7fbecacc6d1b82661accd2126f846}{newImage}(img);
+134 \}
+\end{DoxyCode}
+\hypertarget{classFFMPEGWrapper_a15893a6ead5df825bfd25fd7a04eb18d}{\index{F\-F\-M\-P\-E\-G\-Wrapper@{F\-F\-M\-P\-E\-G\-Wrapper}!is\-Demuxing@{is\-Demuxing}}
+\index{is\-Demuxing@{is\-Demuxing}!FFMPEGWrapper@{F\-F\-M\-P\-E\-G\-Wrapper}}
+\subsubsection[{is\-Demuxing}]{\setlength{\rightskip}{0pt plus 5cm}bool F\-F\-M\-P\-E\-G\-Wrapper\-::is\-Demuxing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classFFMPEGWrapper_a15893a6ead5df825bfd25fd7a04eb18d}
+
+\begin{DoxyCode}
+138 \{
+139     \textcolor{keywordflow}{return} is\_demuxing;
+140 \}
+\end{DoxyCode}
+\hypertarget{classFFMPEGWrapper_a91a7fbecacc6d1b82661accd2126f846}{\index{F\-F\-M\-P\-E\-G\-Wrapper@{F\-F\-M\-P\-E\-G\-Wrapper}!new\-Image@{new\-Image}}
+\index{new\-Image@{new\-Image}!FFMPEGWrapper@{F\-F\-M\-P\-E\-G\-Wrapper}}
+\subsubsection[{new\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void F\-F\-M\-P\-E\-G\-Wrapper\-::new\-Image (
+\begin{DoxyParamCaption}
+\item[{Q\-Shared\-Pointer$<$ Q\-Image $>$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classFFMPEGWrapper_a91a7fbecacc6d1b82661accd2126f846}
+\hypertarget{classFFMPEGWrapper_a8bf46fe65fdb28b5e5642cc84a4a2b57}{\index{F\-F\-M\-P\-E\-G\-Wrapper@{F\-F\-M\-P\-E\-G\-Wrapper}!stop@{stop}}
+\index{stop@{stop}!FFMPEGWrapper@{F\-F\-M\-P\-E\-G\-Wrapper}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void F\-F\-M\-P\-E\-G\-Wrapper\-::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFFMPEGWrapper_a8bf46fe65fdb28b5e5642cc84a4a2b57}
+
+\begin{DoxyCode}
+143 \{
+144     is\_demuxing = \textcolor{keyword}{false};
+145 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Video/\hyperlink{ffmpegwrapper_8h}{ffmpegwrapper.\-h}\item 
+Video/\hyperlink{ffmpegwrapper_8cpp}{ffmpegwrapper.\-cpp}\end{DoxyCompactItemize}

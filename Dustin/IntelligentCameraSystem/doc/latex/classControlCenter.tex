@@ -1,0 +1,77 @@
+\hypertarget{classControlCenter}{\section{Control\-Center Class Reference}
+\label{classControlCenter}\index{Control\-Center@{Control\-Center}}
+}
+
+
+{\ttfamily \#include $<$controlcenter.\-h$>$}
+
+Inheritance diagram for Control\-Center\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classControlCenter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classControlCenter_aba3b5aafd3a4ee5c611d134b5d28d353}{Control\-Center} (\hyperlink{controlcenter_8h_aa96d2479f78139aaa02437fb3ece427d}{Camera\-List} cameras, Q\-Widget $\ast$parent=0)
+\item 
+\hyperlink{classControlCenter_a9ac145ced26cf2002a9d12c4c20bdc75}{$\sim$\-Control\-Center} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classControlCenter_aba3b5aafd3a4ee5c611d134b5d28d353}{\index{Control\-Center@{Control\-Center}!Control\-Center@{Control\-Center}}
+\index{Control\-Center@{Control\-Center}!ControlCenter@{Control\-Center}}
+\subsubsection[{Control\-Center}]{\setlength{\rightskip}{0pt plus 5cm}Control\-Center\-::\-Control\-Center (
+\begin{DoxyParamCaption}
+\item[{{\bf Camera\-List}}]{cameras, }
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classControlCenter_aba3b5aafd3a4ee5c611d134b5d28d353}
+
+\begin{DoxyCode}
+6                                                                 :
+7     QMainWindow(parent),
+8     ui(\textcolor{keyword}{new} Ui::ControlCenter)
+9 \{
+10     ui->setupUi(\textcolor{keyword}{this});
+11     this->setFixedSize(this->size());
+12 
+13     \textcolor{comment}{//c = new Camera(q, a);}
+14 
+15     this->addCameras(cameras);
+16 
+17     connect(ui->actionQuit, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(quitActionClicked()));
+18     QShortcut *quitHotkey = \textcolor{keyword}{new} QShortcut(QKeySequence(\textcolor{stringliteral}{"Ctrl+Q"}), \textcolor{keyword}{this});
+19     connect(quitHotkey, SIGNAL(activated()), \textcolor{keyword}{this}, SLOT(quitActionClicked()));
+20 
+21     \textcolor{comment}{//Set up demuxer test}
+22     m\_ffmpeg = \textcolor{keyword}{new} \hyperlink{classFFMPEGWrapper}{FFMPEGWrapper}(39082);
+23     m\_ffmpeg\_thread = \textcolor{keyword}{new} QThread(\textcolor{keyword}{this});
+24     m\_ffmpeg->moveToThread(m\_ffmpeg\_thread);
+25     connect(m\_ffmpeg\_thread, SIGNAL(started()), m\_ffmpeg, SLOT(demux()));
+26     connect(m\_ffmpeg, SIGNAL(finished()), m\_ffmpeg\_thread, SLOT(quit()));
+27 
+28 \}
+\end{DoxyCode}
+\hypertarget{classControlCenter_a9ac145ced26cf2002a9d12c4c20bdc75}{\index{Control\-Center@{Control\-Center}!$\sim$\-Control\-Center@{$\sim$\-Control\-Center}}
+\index{$\sim$\-Control\-Center@{$\sim$\-Control\-Center}!ControlCenter@{Control\-Center}}
+\subsubsection[{$\sim$\-Control\-Center}]{\setlength{\rightskip}{0pt plus 5cm}Control\-Center\-::$\sim$\-Control\-Center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classControlCenter_a9ac145ced26cf2002a9d12c4c20bdc75}
+
+\begin{DoxyCode}
+31 \{
+32     \textcolor{keyword}{delete} ui;
+33 
+34 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{controlcenter_8h}{controlcenter.\-h}\item 
+\hyperlink{controlcenter_8cpp}{controlcenter.\-cpp}\end{DoxyCompactItemize}

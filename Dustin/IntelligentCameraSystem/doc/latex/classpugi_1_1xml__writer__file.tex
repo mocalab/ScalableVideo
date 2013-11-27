@@ -1,0 +1,64 @@
+\hypertarget{classpugi_1_1xml__writer__file}{\section{pugi\-:\-:xml\-\_\-writer\-\_\-file Class Reference}
+\label{classpugi_1_1xml__writer__file}\index{pugi\-::xml\-\_\-writer\-\_\-file@{pugi\-::xml\-\_\-writer\-\_\-file}}
+}
+
+
+{\ttfamily \#include $<$pugixml.\-hpp$>$}
+
+Inheritance diagram for pugi\-:\-:xml\-\_\-writer\-\_\-file\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpugi_1_1xml__writer__file}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpugi_1_1xml__writer__file_a458afaf5231f88e182fa16b13fc2b0a6}{xml\-\_\-writer\-\_\-file} (void $\ast$file)
+\item 
+virtual void \hyperlink{classpugi_1_1xml__writer__file_a228a6e448d8fdbc155032e6eab5d86ed}{write} (const void $\ast$data, size\-\_\-t size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpugi_1_1xml__writer__file_a458afaf5231f88e182fa16b13fc2b0a6}{\index{pugi\-::xml\-\_\-writer\-\_\-file@{pugi\-::xml\-\_\-writer\-\_\-file}!xml\-\_\-writer\-\_\-file@{xml\-\_\-writer\-\_\-file}}
+\index{xml\-\_\-writer\-\_\-file@{xml\-\_\-writer\-\_\-file}!pugi::xml_writer_file@{pugi\-::xml\-\_\-writer\-\_\-file}}
+\subsubsection[{xml\-\_\-writer\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} pugi\-::xml\-\_\-writer\-\_\-file\-::xml\-\_\-writer\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}\label{classpugi_1_1xml__writer__file_a458afaf5231f88e182fa16b13fc2b0a6}
+
+\begin{DoxyCode}
+3657                                                         : file(file\_)
+3658     \{
+3659     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpugi_1_1xml__writer__file_a228a6e448d8fdbc155032e6eab5d86ed}{\index{pugi\-::xml\-\_\-writer\-\_\-file@{pugi\-::xml\-\_\-writer\-\_\-file}!write@{write}}
+\index{write@{write}!pugi::xml_writer_file@{pugi\-::xml\-\_\-writer\-\_\-file}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-U\-G\-I\-\_\-\-\_\-\-F\-N} void pugi\-::xml\-\_\-writer\-\_\-file\-::write (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classpugi_1_1xml__writer__file_a228a6e448d8fdbc155032e6eab5d86ed}
+
+
+Implements \hyperlink{classpugi_1_1xml__writer_ab7d3b6a8499ceef7799158370e1c2617}{pugi\-::xml\-\_\-writer}.
+
+
+\begin{DoxyCode}
+3662     \{
+3663         \textcolor{keywordtype}{size\_t} result = fwrite(data, 1, size, static\_cast<FILE*>(file));
+3664         (void)!result; \textcolor{comment}{// unfortunately we can't do proper error handling here}
+3665     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8hpp}{pugixml.\-hpp}\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

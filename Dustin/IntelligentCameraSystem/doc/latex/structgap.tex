@@ -1,0 +1,100 @@
+\hypertarget{structgap}{\section{gap Struct Reference}
+\label{structgap}\index{gap@{gap}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structgap_a4ae36e370647da0df57eb30d3bbcd32b}{gap} ()
+\item 
+void \hyperlink{structgap_a9c0d0b12bc778c8439c8aec7747ab2b0}{push} (char\-\_\-t $\ast$\&s, size\-\_\-t count)
+\item 
+char\-\_\-t $\ast$ \hyperlink{structgap_a176c58ee8d57c41b91ae9f00d5e8cab5}{flush} (char\-\_\-t $\ast$s)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char\-\_\-t $\ast$ \hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end}
+\item 
+size\-\_\-t \hyperlink{structgap_ad5bb3597ade78d89bbe0e300748ad508}{size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structgap_a4ae36e370647da0df57eb30d3bbcd32b}{\index{gap@{gap}!gap@{gap}}
+\index{gap@{gap}!gap@{gap}}
+\subsubsection[{gap}]{\setlength{\rightskip}{0pt plus 5cm}gap\-::gap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structgap_a4ae36e370647da0df57eb30d3bbcd32b}
+
+\begin{DoxyCode}
+1577              : \hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end}(0), \hyperlink{structgap_ad5bb3597ade78d89bbe0e300748ad508}{size}(0)
+1578         \{
+1579         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structgap_a176c58ee8d57c41b91ae9f00d5e8cab5}{\index{gap@{gap}!flush@{flush}}
+\index{flush@{flush}!gap@{gap}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}char\-\_\-t$\ast$ gap\-::flush (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structgap_a176c58ee8d57c41b91ae9f00d5e8cab5}
+
+\begin{DoxyCode}
+1601         \{
+1602             \textcolor{keywordflow}{if} (\hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end})
+1603             \{
+1604                 \textcolor{comment}{// Move [old\_gap\_end, current\_pos) to [old\_gap\_start, ...)}
+1605                 assert(s >= \hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end});
+1606                 memmove(\hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end} - \hyperlink{structgap_ad5bb3597ade78d89bbe0e300748ad508}{size}, \hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end}, reinterpret\_cast<char*>(s) - reinterpret\_cast<char*>(
+      \hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end}));
+1607 
+1608                 \textcolor{keywordflow}{return} s - \hyperlink{structgap_ad5bb3597ade78d89bbe0e300748ad508}{size};
+1609             \}
+1610             \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} s;
+1611         \}
+\end{DoxyCode}
+\hypertarget{structgap_a9c0d0b12bc778c8439c8aec7747ab2b0}{\index{gap@{gap}!push@{push}}
+\index{push@{push}!gap@{gap}}
+\subsubsection[{push}]{\setlength{\rightskip}{0pt plus 5cm}void gap\-::push (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-t $\ast$\&}]{s, }
+\item[{size\-\_\-t}]{count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structgap_a9c0d0b12bc778c8439c8aec7747ab2b0}
+
+\begin{DoxyCode}
+1584         \{
+1585             \textcolor{keywordflow}{if} (\hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end}) \textcolor{comment}{// there was a gap already; collapse it}
+1586             \{
+1587                 \textcolor{comment}{// Move [old\_gap\_end, new\_gap\_start) to [old\_gap\_start, ...)}
+1588                 assert(s >= \hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end});
+1589                 memmove(\hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end} - \hyperlink{structgap_ad5bb3597ade78d89bbe0e300748ad508}{size}, \hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end}, reinterpret\_cast<char*>(s) - reinterpret\_cast<char*>(
+      \hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end}));
+1590             \}
+1591                 
+1592             s += count; \textcolor{comment}{// end of current gap}
+1593                 
+1594             \textcolor{comment}{// "merge" two gaps}
+1595             \hyperlink{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{end} = s;
+1596             \hyperlink{structgap_ad5bb3597ade78d89bbe0e300748ad508}{size} += count;
+1597         \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\hypertarget{structgap_a1fafd4d9909a3413f723f24e46dfde0e}{\index{gap@{gap}!end@{end}}
+\index{end@{end}!gap@{gap}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}char\-\_\-t$\ast$ gap\-::end}}\label{structgap_a1fafd4d9909a3413f723f24e46dfde0e}
+\hypertarget{structgap_ad5bb3597ade78d89bbe0e300748ad508}{\index{gap@{gap}!size@{size}}
+\index{size@{size}!gap@{gap}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t gap\-::size}}\label{structgap_ad5bb3597ade78d89bbe0e300748ad508}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Third\-Party/pugixml/\hyperlink{pugixml_8cpp}{pugixml.\-cpp}\end{DoxyCompactItemize}

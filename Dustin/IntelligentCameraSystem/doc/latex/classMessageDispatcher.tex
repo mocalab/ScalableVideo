@@ -1,0 +1,69 @@
+\hypertarget{classMessageDispatcher}{\section{Message\-Dispatcher Class Reference}
+\label{classMessageDispatcher}\index{Message\-Dispatcher@{Message\-Dispatcher}}
+}
+
+
+{\ttfamily \#include $<$messagedispatcher.\-h$>$}
+
+Inheritance diagram for Message\-Dispatcher\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMessageDispatcher}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMessageDispatcher_aae3af7ebcc73f9600a9ed2ba7682852e}{pass\-Message} (const char $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMessageDispatcher_a9317eb6dd92c7a4c4a7b83ef87e4f11f}{Message\-Dispatcher} ()
+\item 
+void \hyperlink{classMessageDispatcher_a5c3f81bf5d598bb5f3833ef0d6e140a7}{reemit\-Message} (const char $\ast$msg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMessageDispatcher_a9317eb6dd92c7a4c4a7b83ef87e4f11f}{\index{Message\-Dispatcher@{Message\-Dispatcher}!Message\-Dispatcher@{Message\-Dispatcher}}
+\index{Message\-Dispatcher@{Message\-Dispatcher}!MessageDispatcher@{Message\-Dispatcher}}
+\subsubsection[{Message\-Dispatcher}]{\setlength{\rightskip}{0pt plus 5cm}Message\-Dispatcher\-::\-Message\-Dispatcher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMessageDispatcher_a9317eb6dd92c7a4c4a7b83ef87e4f11f}
+
+\begin{DoxyCode}
+4 \{
+5 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMessageDispatcher_aae3af7ebcc73f9600a9ed2ba7682852e}{\index{Message\-Dispatcher@{Message\-Dispatcher}!pass\-Message@{pass\-Message}}
+\index{pass\-Message@{pass\-Message}!MessageDispatcher@{Message\-Dispatcher}}
+\subsubsection[{pass\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void Message\-Dispatcher\-::pass\-Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classMessageDispatcher_aae3af7ebcc73f9600a9ed2ba7682852e}
+\hypertarget{classMessageDispatcher_a5c3f81bf5d598bb5f3833ef0d6e140a7}{\index{Message\-Dispatcher@{Message\-Dispatcher}!reemit\-Message@{reemit\-Message}}
+\index{reemit\-Message@{reemit\-Message}!MessageDispatcher@{Message\-Dispatcher}}
+\subsubsection[{reemit\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void Message\-Dispatcher\-::reemit\-Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{classMessageDispatcher_a5c3f81bf5d598bb5f3833ef0d6e140a7}
+
+\begin{DoxyCode}
+8 \{
+9     emit \hyperlink{classMessageDispatcher_aae3af7ebcc73f9600a9ed2ba7682852e}{passMessage}(msg);
+10 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Util/\hyperlink{messagedispatcher_8h}{messagedispatcher.\-h}\item 
+Util/\hyperlink{messagedispatcher_8cpp}{messagedispatcher.\-cpp}\end{DoxyCompactItemize}
