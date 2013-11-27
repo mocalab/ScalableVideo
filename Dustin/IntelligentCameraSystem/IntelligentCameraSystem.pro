@@ -81,7 +81,8 @@ HEADERS  += \
     UI/ffmpegvideowidget.h \
     Util/FileUtil/filereaderutility.h \
     Types/mediastatistics.h \
-    Util/FileUtil/bandwidthfilereader.h
+    Util/FileUtil/bandwidthfilereader.h \
+    Global/Constants.h
 
 FORMS    += \
     mainwindow.ui \

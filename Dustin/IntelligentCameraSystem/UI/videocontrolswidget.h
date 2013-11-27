@@ -2,13 +2,15 @@
 #define VIDEOCONTROLSWIDGET_H
 //Macro to define whether or not a combo box is used for resolution
 #define USE_COMBO_BOX       01
-#define RESOLUTIONS_FILE "../IntelligentCameraSystem/frame_size_options"
+
 
 #include <QWidget>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
 #include <QComboBox>
+
+#include "Global/Constants.h"
 
 
 class VideoControlsWidget : public QWidget

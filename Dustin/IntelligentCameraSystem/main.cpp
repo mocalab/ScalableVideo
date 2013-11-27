@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "controlcenter.h"
 #include "logindialog.h"
+#include "Global/Constants.h"
 #include <QApplication>
 #include <QDir>
 
@@ -13,7 +14,7 @@ int main(int argc, char *argv[])
     QsLogging::Logger& logger = QsLogging::Logger::instance();
     logger.setLoggingLevel(QsLogging::DebugLevel);
 
-    const QString path(QDir(a.applicationDirPath()).filePath("../logs/videostreamer.log"));
+    const QString path(QDir(a.applicationDirPath()).filePath(LOGFILE_PATH));
     QsLogging::DestinationPtr dest(QsLogging::DestinationFactory::MakeFileDestination(path));
     logger.addDestination(dest.get());
     QLOG_INFO() << __FILE__ << ":" << __LINE__ << " -- " << "Program init.";

@@ -1,10 +1,9 @@
 #ifndef BANDWIDTHFILEREADER_H
 #define BANDWIDTHFILEREADER_H
 
-#define  BWFILE_PATH            "../IntelligentCameraSystem/Config/"
-
 #include <QObject>
 #include <QMutex>
+#include "Global/Constants.h"
 #include "filereaderutility.h"
 
 /**
