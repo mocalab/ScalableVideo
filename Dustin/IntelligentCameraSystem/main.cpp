@@ -14,7 +14,12 @@ int main(int argc, char *argv[])
     QsLogging::Logger& logger = QsLogging::Logger::instance();
     logger.setLoggingLevel(QsLogging::DebugLevel);
 
-    const QString path(QDir(a.applicationDirPath()).filePath(LOGFILE_PATH));
+    //Get path to the logging directory; Developer should set this environment variable
+    QByteArray pathname = qgetenv("INTELLIGENT_CAMERA_SYSTEM_ROOT_DIR");
+    QString filename(pathname);
+    filename += "/";
+    filename += LOGFILE_PATH;
+    const QString path(QDir(a.applicationDirPath()).filePath(filename));
     QsLogging::DestinationPtr dest(QsLogging::DestinationFactory::MakeFileDestination(path));
     logger.addDestination(dest.get());
     QLOG_INFO() << __FILE__ << ":" << __LINE__ << " -- " << "Program init.";

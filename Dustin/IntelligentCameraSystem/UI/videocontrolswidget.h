@@ -12,7 +12,9 @@
 
 #include "Global/Constants.h"
 
-
+/**
+ * @brief This class defines the controls widget for a video window.
+ */
 class VideoControlsWidget : public QWidget
 {
     Q_OBJECT

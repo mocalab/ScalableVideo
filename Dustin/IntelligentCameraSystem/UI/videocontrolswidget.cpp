@@ -121,7 +121,11 @@ void VideoControlsWidget::setUpUI()
     //Instantiate the combo box
     this->cbResolution = new QComboBox(this);
     //Populate the combo box
-    FileReaderUtility reader(QString(RESOLUTIONS_FILE));
+    QByteArray pathname = qgetenv("INTELLIGENT_CAMERA_SYSTEM_ROOT_DIR");
+    QString filename(pathname);
+    filename += "/";
+    filename += RESOLUTIONS_FILE;
+    FileReaderUtility reader(filename);
     if(reader.open_file())
         this->cbResolution->addItems(reader.parse());
     else
