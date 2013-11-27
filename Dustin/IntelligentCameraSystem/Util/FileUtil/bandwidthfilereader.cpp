@@ -22,6 +22,12 @@ BandwidthFileReader::BandwidthFileReader(QString &filename) :
         m_ready = false;
 }
 
+BandwidthFileReader::~BandwidthFileReader()
+{
+    //Destroy the fifo
+    unlink(m_filereader.getFile().toStdString().c_str());
+}
+
 //Sets the value of the ready flag
 void BandwidthFileReader::setReadyFlag(bool val)
 {
@@ -48,7 +54,7 @@ void BandwidthFileReader::readLoop()
         QString line = m_filereader.readLine();
 
         //If a null string
-        if(!m_filereader.isOpen())
+        if(!m_filereader.isOpen() || line == "-1")
         {
             //We've reached EOF
             m_readymutex.lock();
@@ -58,7 +64,8 @@ void BandwidthFileReader::readLoop()
         else
         {
             //Signal we have a new bandwidth
-            emit newBandwidth(line);
+            if(line != "")
+                emit newBandwidth(line);
         }
 
         //Set the new value of isReady

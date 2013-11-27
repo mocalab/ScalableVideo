@@ -4,6 +4,9 @@
 #include <QStringList>
 #include <QFile>
 
+//Forward class declarations
+class QTextStream;
+
 /**
  * @brief A class to parse a file, specifically to generate a list of strings which are the lines of that file.
  */
@@ -21,6 +24,8 @@ public:
      * @param filename The file to read from.
      */
     FileReaderUtility(QString filename);
+
+    ~FileReaderUtility();
 
     /**
      * @brief setFile
@@ -72,6 +77,10 @@ private:
     QString                 m_filename;
     ///The file we are opening
     QFile                  *m_infile;
+
+    ///A text stream for reading from the file
+    QTextStream             *m_stream;
+
     ///A list of strings (each line of the input file)
     QStringList             m_lines;
     ///Whether or not the file is open

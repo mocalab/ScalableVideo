@@ -21,6 +21,8 @@ public:
      */
     BandwidthFileReader(QString &filename);
 
+    ~BandwidthFileReader();
+
     /**
      * @brief Set the value of the ready flag.
      * @param val The new value of the read flag.

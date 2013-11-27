@@ -111,6 +111,7 @@ VideoWindow::~VideoWindow()
     delete m_request_thread;
 
     m_bwfilereader->setReadyFlag(false);
+
     m_bwreaderthread->terminate();
 
     delete m_bwfilereader;

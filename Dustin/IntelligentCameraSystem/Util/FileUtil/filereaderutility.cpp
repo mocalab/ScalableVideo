@@ -1,7 +1,12 @@
 #include "filereaderutility.h"
 #include <QTextStream>
 
-FileReaderUtility::FileReaderUtility()
+FileReaderUtility::FileReaderUtility() :
+    m_filename(""),
+    m_isOpen(false),
+    m_lines(QStringList()),
+    m_infile(NULL),
+    m_stream(NULL)
 {
 
 }
@@ -9,8 +14,15 @@ FileReaderUtility::FileReaderUtility()
 FileReaderUtility::FileReaderUtility(QString filename) :
     m_filename(filename),
     m_isOpen(false),
-    m_lines(QStringList())
+    m_lines(QStringList()),
+    m_infile(NULL),
+    m_stream(NULL)
 {
+}
+
+FileReaderUtility::~FileReaderUtility()
+{
+    this->close();
 }
 
 void FileReaderUtility::setFile(const QString &filename)
@@ -27,9 +39,16 @@ bool FileReaderUtility::open_file()
 {
     //Open the file
     m_infile = new QFile(m_filename);
+    m_isOpen = m_infile->open(QIODevice::ReadOnly);
+
+    if(m_isOpen)
+    {
+        //Open a text stream;
+        m_stream = new QTextStream(m_infile);
+    }
 
     //Open read only
-    return (m_isOpen = m_infile->open(QIODevice::ReadOnly));
+    return m_isOpen;
 
 }
 
@@ -40,6 +59,12 @@ void FileReaderUtility::close()
     {
         m_infile->close();
         m_isOpen = false;
+
+        //Delete resources
+        delete m_infile;
+        m_infile = NULL;
+        delete m_stream;
+        m_stream = NULL;
     }
 }
 
@@ -81,12 +106,12 @@ QString FileReaderUtility::readLine()
         return next;
 
     //Create an input stream
-    QTextStream input_stream(m_infile);
+    //QTextStream input_stream(m_infile);
 
     if(this->isOpen())
     {
         //Read the next line
-        next = input_stream.readLine();
+        next = m_stream->readLine();
         m_lines << next;
 
     }
