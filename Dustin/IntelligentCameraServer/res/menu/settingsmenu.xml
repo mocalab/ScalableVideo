@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:orientation="vertical">
+    
+    <item 
+        android:title="Encoder Parameters"
+        android:id="@+id/itemParams"
+        />
+    <item 
+        android:title="Cancel"
+        android:id="@+id/cancel"
+        />
+
+</menu>

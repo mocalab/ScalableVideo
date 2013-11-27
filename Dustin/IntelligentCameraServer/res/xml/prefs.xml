@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <EditTextPreference 
+        android:title="Frame Width"
+        android:key="width"
+        android:summary="Width of frame to be encoded"
+        android:defaultValue="320"
+        android:inputType="number"
+        />
+    
+    <EditTextPreference 
+        android:title="Frame Height"
+        android:key="height"
+        android:summary="Height of frame to be encoded"
+        android:defaultValue="240"
+        android:inputType="number"
+        />
+    
+    <EditTextPreference 
+        android:title="Frame Rate"
+        android:key="frame_rate"
+        android:summary="Specify the frame rate"
+        android:defaultValue="30"
+        android:inputType="number"
+        />
+    
+
+</PreferenceScreen>

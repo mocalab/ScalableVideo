@@ -1,0 +1,536 @@
+/*==============================================================================
+            Copyright (c) 2011 QUALCOMM Incorporated.
+            All Rights Reserved.
+            Qualcomm Proprietary
+
+	File: ndkOmxEncodeDecode.cpp
+
+	This class is used to illustrate how to integrate the built shared
+	libraries for using the hardware-accelerated video codecs into an
+	Android apk by way of native calls.
+
+	These calls focus on the encoding and decoding of image files to and from
+	yuv and rgb formats.  The libraries for Froyo and Gingerbread here are
+	cross-compatible, but are not cross-compatible with Honeycomb and as such
+	to run on Honeycomb must be built against the Honeycomb shared library.
+
+==============================================================================*/
+#include <string.h>
+#include <jni.h>
+#include "QcomOmxPublicInterface.h"
+#include <android/log.h>
+#include <semaphore.h>
+//FOR SENDING PACKETS
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <fcntl.h>
+#include <time.h>
+#include <errno.h>
+
+// In some cases a bitrate test may be found to be useful.  In order to perform
+// a bitrate test, the following steps must be performed.
+//    1. Rebuild the shared library from source if necessary, modifying
+//       BitrateTest.cpp searching for BITRATE CONFIGURATION to set custom
+//       values for the different bitrates and frame intervals.  If doing so,
+//       the newly built shared library needs to be recopied to the lib/ folder.
+//    2. Copy BitrateTest.h from the qcomomxsample directory in source
+//       to the jni/ directory in the project.
+//    3. Set the USE_BITRATE_ENCODING_TEST flag to 1.
+//
+#define USE_BITRATE_ENCODING_TEST 0
+#define PORT 39082
+#define IP_ADDRESS "192.168.1.7"
+
+#if USE_BITRATE_ENCODING_TEST
+#include "BitrateTest.h"
+#endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void 		 *g_encoder = NULL;
+encoderParams g_params;
+long 		  g_timeStamp;
+
+//Socket file descriptor
+int 		  g_sockfd;
+
+char 		 *g_address = "192.168.1.1";
+int			  g_port = 39082;
+
+FILE 		 *f = NULL;
+
+
+///////////////////////////////////////////////////////////////////////////////////
+// Common Capture and Decode Availability Functions
+///////////////////////////////////////////////////////////////////////////////////
+
+// hardwareVersionIs8x60
+//
+//    Tests hardware version.
+//
+jint Java_com_qcom_iomx_sample_ActivityLauncher_hardwareVersionIs8x60
+  	(JNIEnv *env, jclass cls) {
+  	
+  	int hardwareVersion = getHardwareBaseVersion();
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "HW VERSION = %d", hardwareVersion);
+  	int is8x60Hardware = hardwareVersion == kHardwareBase8x60;
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "IS 8x60 = %d", is8x60Hardware);
+  	return is8x60Hardware;
+}
+
+// encoderIsAvailable
+//
+//    Creates and initializes a decoder instance.  Once set up, the instance
+//    can be fed from any input source.
+//
+jint Java_com_qcom_iomx_sample_ActivityLauncher_encoderIsAvailable
+  	(JNIEnv *env, jclass cls) {
+	
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "QUERY ENCODER AVC A");
+  	bool isAvailable = omx_component_is_available("OMX.qcom.video.encoder.avc");
+
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "QUERY ENCODER AVC B");
+  	return isAvailable ? 1 : 0;
+}
+
+//CUSTOM TEST TO SEE IF MPEG4 DECODER IS AVAILABLE DWRIGHT
+jstring Java_com_qcom_iomx_sample_ActivityLauncher_decodeMPEGAvailable
+  	(JNIEnv *env, jclass cls) {
+
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "QUERY DECODER MPEG4");
+  	bool isAvailable = omx_component_is_available("OMX.qcom.video.decoder.mpeg4");
+
+	//__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "QUERY ENCODER AVC B");
+  	return isAvailable ? env->NewStringUTF("Success! Decoder found") : env->NewStringUTF("FAILURE! Decoder not found");
+}
+
+//CUSTOM TEST TO SEE IF SPECIFIED DECODER IS AVAILABLE DWRIGHT
+jstring Java_com_qcom_iomx_sample_dwright_QueryComponent_queryComponentAvailable
+  	(JNIEnv *env, jclass cls, jstring comp) {
+
+	const char *component = env->GetStringUTFChars(comp, 0);
+
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "QUERY COMPONENT %s", component);
+  	bool isAvailable = omx_component_is_available(component);
+
+
+	//__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "QUERY ENCODER AVC B");
+  	return isAvailable ? env->NewStringUTF("Success!") : env->NewStringUTF("FAILURE!");
+}
+
+// decoderIsAvailable
+//
+//    Creates and initializes a decoder instance.  Once set up, the instance
+//    can be fed from any input source.
+//
+jint Java_com_qcom_iomx_sample_ActivityLauncher_decoderIsAvailable
+  	(JNIEnv *env, jclass cls) {
+	
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "QUERY DECODER AVC A");
+  	bool isAvailable = omx_component_is_available("OMX.qcom.video.decoder.avc");
+
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "QUERY DECODER AVC B %d", isAvailable);
+  	return isAvailable ? 1 : 0;
+}
+
+// decodeYuvIsAvailable
+//
+//    Returns 1 if the hardware can decode to yuv, 0 otherwise.
+//
+jint Java_com_qcom_iomx_sample_ActivityLauncher_decodeYuvIsAvailable(JNIEnv *env, jclass cls) {
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "BASE V: %d", getHardwareBaseVersion());
+	return getHardwareBaseVersion() == kHardwareBase8x60 ? 0 : 1;
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+// Capture / Encoder Functions
+///////////////////////////////////////////////////////////////////////////////////
+
+// handleOutputEncoded
+//
+//     Output callback to write an encoded video frame to a file handle
+//
+int handleOutputEncoded(void *obj, void *buffer, size_t bufferSize, void *iomxBuffer, void *userData) {
+	if (bufferSize) {
+		int outputSize = bufferSize;
+		int size = fwrite(buffer, 1, outputSize, (FILE *)userData);
+		if (size != outputSize) {
+			// Log error
+			__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "FILE OUTPUT FAILED: actual size %d vs expected size %d", size, outputSize);
+		}
+	}
+	return 0;
+}
+
+// encoderStart
+//
+//    Initializes the encoder by passing in the name of a file that will
+//    receive the output of the encoder.  The width and height are provided
+//    as parameters, while the frame rate, rate control, and bitrate are
+//    filled with some default parameters.
+//
+//    The frame rate, rate control, and bitrate settings should be modified
+//    or configured to suit the needs of the application, as these values
+//    are used for example purposes only.
+//
+jstring Java_com_qcom_iomx_sample_capture_ActivityCameraToH264_encoderStart
+  	(JNIEnv *env, jclass cls, jstring outfile, jint width, jint height) {
+
+	g_encoder = NULL;
+	g_timeStamp = 0;
+
+	g_params.frameWidth = width;
+	g_params.frameHeight = height;
+	g_params.frameRate = 1;
+	g_params.rateControl = 10;
+	g_params.bitRate = 320*240*3;//width * height;// * (150 / g_params.frameRate);
+	g_params.codecString = NULL;
+
+	const char *outputFileName = env->GetStringUTFChars(outfile,0);
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "FRAME WxH = %dx%d TO %s", width, height, outputFileName);
+
+	f = fopen(outputFileName, "wb");
+	
+	int status = 0;
+	g_encoder = encoder_create(&status, &g_params);
+	if (g_encoder == NULL) {
+		return env->NewStringUTF(resultDescription(status));
+	}
+
+	// The input semaphore is important; by using it, the procedure for 
+	// feeding the component will wait for an available input buffer when
+	// the component is busy.
+	// 
+	omx_setup_input_semaphore(g_encoder);
+
+#if USE_BITRATE_ENCODING_TEST
+	// Uses the variable bitrate encoding as given in BitrateTest.cpp.  The
+	// bitrate setting in g_params is ignored in this version.
+	omx_interface_register_output_callback(g_encoder, handleOutputEncodedToFile, f);
+
+#else
+	// Default implementation uses arbitrary bitrate of width * height * 3 kbps
+	omx_interface_register_output_callback(g_encoder, handleOutputEncoded, f);
+
+#endif
+
+	// Initialize the component and set to the execution state, waiting
+	// for frames from the camera.
+	status = omx_interface_init(g_encoder);
+
+	// Return the state
+	const char *result = resultDescription(status);
+	return env->NewStringUTF(result);
+}
+
+// encoderFrame
+//
+//    Sends a single video frame for encoding processing
+//
+jstring Java_com_qcom_iomx_sample_capture_ActivityCameraToH264_encoderFrame
+  	(JNIEnv *env, jclass cls, jbyteArray frameData, jobject camera) {
+	jbyte *frameBytes = (jbyte *)env->GetByteArrayElements(frameData, 0);
+
+	// Directly sends the bytes to the encoder
+	omx_send_data_frame_to_encoder(g_encoder, (unsigned short *)frameBytes,
+                                   g_params.frameWidth, g_params.frameHeight, g_timeStamp);
+
+    // Sets the timestamp to 1/30 of a frame.  Actual applications
+    // should use more accurately measured timestamping.
+	g_timeStamp += 1000000/30;
+	
+	// Free up the byte elements that were referenced
+	env->ReleaseByteArrayElements(frameData, frameBytes, 0);
+
+	return env->NewStringUTF("Frame!");
+}
+
+// encoderFinish
+//
+//    Stops and tears down an encoder instance.
+//
+jstring Java_com_qcom_iomx_sample_capture_ActivityCameraToH264_encoderFinish
+  	(JNIEnv *env, jclass cls) {
+  	fclose(f);
+
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "ABOUT TO FINISH ENCODER");
+
+	int status = 0;
+	do {
+		// Send the end of input flag until unable to.  This could be better
+		// handled by a semaphore instead of a tight while loop.
+		status = omx_interface_send_end_of_input_flag(g_encoder, g_timeStamp);
+
+	} while (status != 0);
+		
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "ENCODER DE-INIT");
+
+	// Clean up the input semaphore
+	omx_teardown_input_semaphore();
+
+	// Deinitialize the component.
+	status = omx_interface_deinit(g_encoder);
+	if (status == 0) {
+		// On success, destroy the component
+		__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "ENCODER DESTROY");
+		status = omx_interface_destroy(g_encoder);
+	}
+
+	// Return status back to the application.
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "ENCODER STATUS CHECK");
+	const char *result = resultDescription(status);
+
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "FINISHED");
+	return env->NewStringUTF(result);
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+// File Direct Decode
+///////////////////////////////////////////////////////////////////////////////////
+
+jstring Java_com_qcom_iomx_sample_display_ActivityH264Decoder_decodeFile
+  	(JNIEnv *env, jclass cls, jstring infile, jstring outfile) {
+
+	const char *inputFileName = env->GetStringUTFChars(infile,0);
+	const char *outputFileName = env->GetStringUTFChars(outfile,0);
+
+	__android_log_print(ANDROID_LOG_ERROR,"LOG TAG", "DECODING FROM %s TO %s\n", inputFileName, outputFileName);
+	const char *result = resultDescription(decode_file(inputFileName, outputFileName));
+
+	__android_log_print(ANDROID_LOG_ERROR,"LOG TAG", "RESULT: %s\n", result);
+	return env->NewStringUTF(result);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+// DWRIGHT
+// NATIVE SOURCE FOR H.264 STREAMING
+///////////////////////////////////////////////////////////////////////////////////////
+int pipeEncodedtoPacket(void *obj, void *buffer, size_t bufferSize, void *iomxBuffer, void *userData)
+{
+	//Open Socket
+//	int handle = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+//	if(handle <= 0)
+//	{
+//		__android_log_print(ANDROID_LOG_ERROR, "DWRIGHT--UDPSEND", "Failed to create socket");
+//	}
+//
+//	//Bind to port on host side
+//	sockaddr_in address;
+//
+//	address.sin_family = AF_INET;
+//	address.sin_addr.s_addr = INADDR_ANY;
+//	address.sin_port = htons((unsigned short) PORT);
+//
+//	int status = bind(handle, (sockaddr*) &address, sizeof(address));
+//	if(status < 0)
+//	{
+//		__android_log_print(ANDROID_LOG_ERROR, "DWRIGHT--UDPSEND", "Failed to bind to socket: %s", strerror(errno));
+//
+//	}
+//	else
+//	{
+//		__android_log_print(ANDROID_LOG_ERROR, "DWRIGHT--UDPSEND", "Bound to socket!: %s", inet_ntoa(address.sin_addr));
+//	}
+//
+//	//Set non-blocking
+//	int nonBlocking = 1;
+//	if(fcntl(handle, F_SETFL, O_NONBLOCK, nonBlocking) == -1)
+//	{
+//		__android_log_print(ANDROID_LOG_ERROR, "DWRIGHT--UDPSEND", "Failed to set nonblocking");
+//
+//	}
+//	//Set up RTP header
+//	char *rtp_header = (char *) malloc(12 + bufferSize);
+//	*(rtp_header) = 0x80; //10000000
+//	*(rtp_header + 1) = 0xE0;//11100000
+//	*(rtp_header + 2) = 0x022E;
+//	*(rtp_header + 4) = (unsigned int)g_timeStamp;//0x00000000;
+//	*(rtp_header + 8) = 0x0FE00DC0;
+//	*(rtp_header + 12) = *((char *)buffer);
+
+
+	//Send buffer to receiver address (server side)
+	sockaddr_in receiver;
+
+	receiver.sin_family = AF_INET;
+	receiver.sin_addr.s_addr = inet_addr(g_address);
+	receiver.sin_port = htons(g_port);
+
+	int sent_bytes = sendto(g_sockfd, (const char *) buffer/*rtp_header*/, bufferSize /*+ 12*/, 0,
+								(sockaddr*) &receiver, sizeof(sockaddr_in));
+	if(sent_bytes != bufferSize /*+ 12*/)
+	{
+		__android_log_print(ANDROID_LOG_ERROR, "DWRIGHT--UDPSEND", "Failed to send packet: %s", strerror(errno));
+
+	}
+
+	//Close socket
+	//close(handle);
+	//free(rtp_header);
+	//shutdown(handle, 2);
+	return 0;
+}
+
+//Open up the socket
+jvoid Java_edu_sdsu_server_util_EncoderActivationInterface_setReceiver
+	(JNIEnv *env, jclass cls, jstring address)
+{
+	//const char *new_addr = env->GetStringUTFChars(address, 0);
+	//free(g_address);
+	//g_address = (char *)malloc(strlen(new_addr));
+	//strcpy(g_address, new_addr);
+	//return env->NewStringUTF("Set receiver address");
+}
+
+//SET UP ENCODER
+jstring Java_edu_sdsu_server_util_EncoderActivationInterface_encoderStart
+  	(JNIEnv *env, jclass cls, /*jstring outfile,*/ jint width, jint height, jint frame_rate) {
+
+	//Open a socket
+	g_sockfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+	if(g_sockfd <= 0)
+	{
+		__android_log_print(ANDROID_LOG_ERROR, "DWRIGHT--UDPSEND", "Failed to create socket");
+		return env->NewStringUTF("Failed to open socket");
+	}
+
+	//Bind to port on host side
+	sockaddr_in address;
+
+	address.sin_family = AF_INET;
+	address.sin_addr.s_addr = INADDR_ANY;
+	address.sin_port = htons((unsigned short) PORT);
+
+	int bound = bind(g_sockfd, (sockaddr*) &address, sizeof(address));
+	if(bound < 0)
+	{
+		__android_log_print(ANDROID_LOG_ERROR, "DWRIGHT--UDPSEND", "Failed to bind to socket: %s", strerror(errno));
+		close(g_sockfd);
+		return env->NewStringUTF("Failed to open socket");
+	}
+	else
+	{
+		__android_log_print(ANDROID_LOG_ERROR, "DWRIGHT--UDPSEND", "Bound to socket!: %s", inet_ntoa(address.sin_addr));
+	}
+
+	//Set non-blocking
+	int nonBlocking = 1;
+	if(fcntl(g_sockfd, F_SETFL, O_NONBLOCK, nonBlocking) == -1)
+	{
+		__android_log_print(ANDROID_LOG_ERROR, "DWRIGHT--UDPSEND", "Failed to set nonblocking");
+		close(g_sockfd);
+		return env->NewStringUTF("Failed to open socket");
+	}
+
+	//Set up encoder params
+	g_encoder = NULL;
+	g_timeStamp = 0;
+
+	g_params.frameWidth = width;
+	g_params.frameHeight = height;
+	g_params.frameRate = frame_rate;//30; //Specify frame rate at 30fps
+	g_params.rateControl = 2;//3;
+	g_params.bitRate = 480*320*2;//width * height * 2;
+	g_params.codecString = NULL;
+
+	//const char *outputFileName = env->GetStringUTFChars(outfile,0);
+	//__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "FRAME WxH = %dx%d TO %s", width, height, outputFileName);
+
+	//f = fopen(outputFileName, "wb");
+
+	int status = 0;
+	g_encoder = encoder_create(&status, &g_params);
+	if (g_encoder == NULL) {
+		return env->NewStringUTF(resultDescription(status));
+	}
+
+	// The input semaphore is important; by using it, the procedure for
+	// feeding the component will wait for an available input buffer when
+	// the component is busy.
+	//
+	omx_setup_input_semaphore(g_encoder);
+
+//#if USE_BITRATE_ENCODING_TEST
+//	// Uses the variable bitrate encoding as given in BitrateTest.cpp.  The
+//	// bitrate setting in g_params is ignored in this version.
+//	omx_interface_register_output_callback(g_encoder, handleOutputEncodedToFile, f);
+//
+//#else
+//	// Default implementation uses arbitrary bitrate of width * height * 3 kbps
+//	omx_interface_register_output_callback(g_encoder, handleOutputEncoded, f);
+//
+//#endif
+
+	omx_interface_register_output_callback(g_encoder, pipeEncodedtoPacket, NULL);
+
+	// Initialize the component and set to the execution state, waiting
+	// for frames from the camera.
+	status = omx_interface_init(g_encoder);
+
+	// Return the state
+	const char *result = resultDescription(status);
+	return env->NewStringUTF(result);
+}
+
+//TEAR DOWN ENCODER
+jstring Java_edu_sdsu_server_util_EncoderActivationInterface_encoderFinish
+  	(JNIEnv *env, jclass cls) {
+  	//fclose(f);
+	//Close socket
+	close(g_sockfd);
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "ABOUT TO FINISH ENCODER");
+
+	int status = 0;
+	do {
+		// Send the end of input flag until unable to.  This could be better
+		// handled by a semaphore instead of a tight while loop.
+		status = omx_interface_send_end_of_input_flag(g_encoder, g_timeStamp);
+
+	} while (status != 0);
+
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "ENCODER DE-INIT");
+
+	// Clean up the input semaphore
+	omx_teardown_input_semaphore();
+
+	// Deinitialize the component.
+	status = omx_interface_deinit(g_encoder);
+	if (status == 0) {
+		// On success, destroy the component
+		__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "ENCODER DESTROY");
+		status = omx_interface_destroy(g_encoder);
+	}
+
+	// Return status back to the application.
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "ENCODER STATUS CHECK");
+	const char *result = resultDescription(status);
+
+	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "FINISHED");
+	return env->NewStringUTF(result);
+}
+
+//SEND FRAMES TO ENCODER
+jstring Java_edu_sdsu_server_util_EncoderActivationInterface_encoderFrame
+  	(JNIEnv *env, jclass cls, jbyteArray frameData, jobject camera) {
+	jbyte *frameBytes = (jbyte *)env->GetByteArrayElements(frameData, 0);
+
+	// Directly sends the bytes to the encoder
+	omx_send_data_frame_to_encoder(g_encoder, (unsigned short *)frameBytes,
+                                   g_params.frameWidth, g_params.frameHeight, g_timeStamp);
+
+    // Sets the timestamp to 1/30 of a frame.  Actual applications
+    // should use more accurately measured timestamping.
+	g_timeStamp += 1000000/30;
+
+	// Free up the byte elements that were referenced
+	env->ReleaseByteArrayElements(frameData, frameBytes, 0);
+
+	return env->NewStringUTF("Frame!");
+}
+
+#ifdef __cplusplus
+}
+#endif

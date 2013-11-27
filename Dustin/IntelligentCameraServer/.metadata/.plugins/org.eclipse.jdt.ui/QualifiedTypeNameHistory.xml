@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.os.Handler"/>
+<fullyQualifiedTypeName name="edu.sdsu.server.util.EncoderActivationInterface"/>
+<fullyQualifiedTypeName name="edu.sdsu.server.ServerThread"/>
+<fullyQualifiedTypeName name="android.net.wifi.WifiManager"/>
+<fullyQualifiedTypeName name="android.net.wifi.WifiManager.WifiLock"/>
+<fullyQualifiedTypeName name="android.hardware.Camera.Parameters"/>
+</qualifiedTypeNameHistroy>

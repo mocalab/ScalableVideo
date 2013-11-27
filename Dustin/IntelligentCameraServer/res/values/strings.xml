@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IntelligentCameraServer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <color name="BackgroundColor">#1B1B1B</color>
+    <color name="ButtonTextColor">#FEFEFE</color>
+
+</resources>
