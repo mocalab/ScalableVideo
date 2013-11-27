@@ -1,3 +1,0 @@
--Video not playing although it is being streamed... use the fact that it tells us it is not playing to loop until it plays
--Board has trouble keeping up with client connects/disconnects
--Connection time... freezing the UI thread when it has trouble finding the host
