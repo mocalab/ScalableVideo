@@ -47,7 +47,8 @@ SOURCES += main.cpp \
     UI/ffmpegvideowidget.cpp \
     Util/FileUtil/filereaderutility.cpp \
     Types/mediastatistics.cpp \
-    Util/FileUtil/bandwidthfilereader.cpp
+    Util/FileUtil/bandwidthfilereader.cpp \
+    Util/FileUtil/cameralistfileutil.cpp
 
 HEADERS  += \
     mainwindow.h \
@@ -82,7 +83,8 @@ HEADERS  += \
     Util/FileUtil/filereaderutility.h \
     Types/mediastatistics.h \
     Util/FileUtil/bandwidthfilereader.h \
-    Global/Constants.h
+    Global/Constants.h \
+    Util/FileUtil/cameralistfileutil.h
 
 FORMS    += \
     mainwindow.ui \

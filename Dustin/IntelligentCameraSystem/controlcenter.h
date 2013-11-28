@@ -8,9 +8,6 @@
 #include "Video/ffmpegwrapper.h"
 #include <QThread>
 
-typedef list<Camera *>                  CameraList;
-typedef list<Camera *>::iterator        CameraListIterator;
-
 namespace Ui {
 class ControlCenter;
 }

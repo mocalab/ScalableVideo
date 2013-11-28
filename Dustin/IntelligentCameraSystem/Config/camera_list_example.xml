@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<cameraList>
+	<camera name="DragonBoard Home">
+		<address port="7744">140.154.1.27</address>
+		<contentType enum="1">CONTENT_TYPE_PERSONAL</contentType>
+	</camera>
+	
+	<camera name="DragonBoard Lab">
+		<address port="7744">140.154.1.28</address>
+		<contentType enum="1">CONTENT_TYPE_PERSONAL</contentType>
+	</camera>
+	
+	<camera name="Camera A">
+		<address port="37986">localhost</address>
+		<contentType enum="0">CONTENT_TYPE_NONE</contentType>
+	</camera>
+</cameraList>

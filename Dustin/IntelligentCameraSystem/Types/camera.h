@@ -4,6 +4,17 @@
 #include <QListWidgetItem>
 #include <Network/address.h>
 
+class Camera;
+
+/**
+ * @brief List of cameras declaration.
+ */
+typedef std::list<Camera *>                  CameraList;
+/**
+ * @brief Iterator for a list of cameras.
+ */
+typedef std::list<Camera *>::iterator        CameraListIterator;
+
 /**
  * @brief An enumeration of camera content types.
  */
