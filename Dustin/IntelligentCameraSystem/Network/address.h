@@ -1,3 +1,6 @@
+/**
+ *  @file Declaration of the Address class.
+ */
 #ifndef ADDRESS_H
 #define ADDRESS_H
 

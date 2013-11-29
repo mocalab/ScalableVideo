@@ -1,3 +1,7 @@
+/**
+ *  @file Macros for different logging levels.
+ */
+
 #ifndef LOG_H
 #define LOG_H
 #include "QsLog.h"

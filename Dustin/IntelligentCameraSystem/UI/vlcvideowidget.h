@@ -1,3 +1,6 @@
+/**
+ *  @file Definition of the video widget which serves as the user interface to the media player.
+ */
 #ifndef VLCVIDEOWIDGET_H
 #define VLCVIDEOWIDGET_H
 
@@ -16,6 +19,9 @@ class QTimer;
 class QPushButton;
 //class VLCToQtInterface;
 
+/**
+ * @brief This class defines a widget that uses a VLC client to display video.
+ */
 class VLCVideoWidget : public QWidget
 {
 private:
@@ -93,7 +99,11 @@ public slots:
 //    void updateInterface();
 //    void changeVolume(int newVolume);
 //    void changePosition(int newPosition);
-
+    /**
+     * @brief A slot invoked when the size of the video changes.
+     * @param width The new width of the video.
+     * @param height The new height of the video.
+     */
     void videoResized(int width, int height);
 protected:
     void paintEvent(QPaintEvent *e);

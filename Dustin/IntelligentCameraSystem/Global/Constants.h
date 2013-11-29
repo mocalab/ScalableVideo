@@ -1,3 +1,7 @@
+/**
+ *  @file This file defines global constants.
+ */
+
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 

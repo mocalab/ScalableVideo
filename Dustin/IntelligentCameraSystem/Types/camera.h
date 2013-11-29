@@ -1,3 +1,6 @@
+/**
+ *  @file Definition of the Camera class and associated types.
+ */
 #ifndef CAMERA_H
 #define CAMERA_H
 

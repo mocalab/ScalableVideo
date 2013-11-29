@@ -3,30 +3,38 @@
 }
 
 
+This class defines a T\-C\-P client that will send requests to and receive responses from a specified server.  
+
+
+
+
 {\ttfamily \#include $<$tcpclient.\-h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classTCPClient_ad37bba4f2ebcc899b9871656802dcbe9}{T\-C\-P\-Client} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default value constructor. \end{DoxyCompactList}\item 
 \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569}{T\-C\-P\-Error} \hyperlink{classTCPClient_adb1706d816b7810d28ef9eeab77a423b}{connect\-To\-Server} (\hyperlink{classAddress}{Address} server\-\_\-addr)
-\item 
+\begin{DoxyCompactList}\small\item\em Connect to a specified server. \end{DoxyCompactList}\item 
 void \hyperlink{classTCPClient_aeef43b15ef57aefead37ff7300ebc779}{disconnect} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Disconnect from the server. \end{DoxyCompactList}\item 
 \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569}{T\-C\-P\-Error} \hyperlink{classTCPClient_a23a640eac58e631288cdeb479416e0ed}{Send} (const void $\ast$send\-\_\-data, int size)
-\begin{DoxyCompactList}\small\item\em Send function. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Send a request to the server. \end{DoxyCompactList}\item 
 \hyperlink{tcpclient_8h_ab36b81f0daebbad95a533ea9951ee569}{T\-C\-P\-Error} \hyperlink{classTCPClient_aa070f44fa48f948931b2c49e31b5a149}{Receive} (char $\ast$recv\-\_\-data, int max)
-\item 
+\begin{DoxyCompactList}\small\item\em Receive a response from the server. \end{DoxyCompactList}\item 
 bool \hyperlink{classTCPClient_a8c1298fab750438558a6d1e13afc3217}{is\-Open} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Whether or not the socket is open. \end{DoxyCompactList}\item 
 bool \hyperlink{classTCPClient_a30054a07061dfe22e7a9a7783a843bcc}{is\-Connected} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Whether or not the object is connected to a server. \end{DoxyCompactList}\item 
 bool \hyperlink{classTCPClient_a8043d706038dd8d4aebe3c8898aa1a5b}{open\-Local} ()
 \item 
 bool \hyperlink{classTCPClient_a3daf1addf9f9b21c05aeae58c443476a}{Listen} ()
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+This class defines a T\-C\-P client that will send requests to and receive responses from a specified server. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classTCPClient_ad37bba4f2ebcc899b9871656802dcbe9}{\index{T\-C\-P\-Client@{T\-C\-P\-Client}!T\-C\-P\-Client@{T\-C\-P\-Client}}
@@ -36,6 +44,10 @@ bool \hyperlink{classTCPClient_a3daf1addf9f9b21c05aeae58c443476a}{Listen} ()
 {}
 \end{DoxyParamCaption}
 )}}\label{classTCPClient_ad37bba4f2ebcc899b9871656802dcbe9}
+
+
+Default value constructor. 
+
 
 \begin{DoxyCode}
 16                      :
@@ -54,6 +66,18 @@ bool \hyperlink{classTCPClient_a3daf1addf9f9b21c05aeae58c443476a}{Listen} ()
 \item[{{\bf Address}}]{server\-\_\-addr}
 \end{DoxyParamCaption}
 )}}\label{classTCPClient_adb1706d816b7810d28ef9eeab77a423b}
+
+
+Connect to a specified server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\-\_\-addr} & The address of the server to connect to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-C\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-U\-C\-C\-E\-S\-S on success, T\-C\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-A\-D\-D\-R\-E\-S\-S\-\_\-\-N\-O\-T\-\_\-\-F\-O\-U\-N\-D when the specified address could not be found, or T\-C\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-O\-C\-K\-E\-T\-\_\-\-N\-O\-T\-\_\-\-O\-P\-E\-N\-E\-D if a socket could not be opened. 
+\end{DoxyReturn}
 
 \begin{DoxyCode}
 112 \{
@@ -126,6 +150,10 @@ bool \hyperlink{classTCPClient_a3daf1addf9f9b21c05aeae58c443476a}{Listen} ()
 \end{DoxyParamCaption}
 )}}\label{classTCPClient_aeef43b15ef57aefead37ff7300ebc779}
 
+
+Disconnect from the server. 
+
+
 \begin{DoxyCode}
 174 \{
 175 \textcolor{preprocessor}{#if defined(Q\_OS\_WIN32)}
@@ -153,6 +181,13 @@ bool \hyperlink{classTCPClient_a3daf1addf9f9b21c05aeae58c443476a}{Listen} ()
 \end{DoxyParamCaption}
 ) const}}\label{classTCPClient_a30054a07061dfe22e7a9a7783a843bcc}
 
+
+Whether or not the object is connected to a server. 
+
+\begin{DoxyReturn}{Returns}
+True if this object is connected to a server. 
+\end{DoxyReturn}
+
 \begin{DoxyCode}
 262 \{
 263     \textcolor{keywordflow}{return} this->m\_is\_connected;
@@ -165,6 +200,13 @@ bool \hyperlink{classTCPClient_a3daf1addf9f9b21c05aeae58c443476a}{Listen} ()
 {}
 \end{DoxyParamCaption}
 ) const}}\label{classTCPClient_a8c1298fab750438558a6d1e13afc3217}
+
+
+Whether or not the socket is open. 
+
+\begin{DoxyReturn}{Returns}
+True if the socket is open. 
+\end{DoxyReturn}
 
 \begin{DoxyCode}
 257 \{
@@ -284,6 +326,20 @@ bool \hyperlink{classTCPClient_a3daf1addf9f9b21c05aeae58c443476a}{Listen} ()
 \end{DoxyParamCaption}
 )}}\label{classTCPClient_aa070f44fa48f948931b2c49e31b5a149}
 
+
+Receive a response from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recv\-\_\-data} & A buffer to store the received data in. \\
+\hline
+{\em max} & The storage buffer size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-C\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-U\-C\-C\-E\-S\-S on success, T\-C\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-C\-L\-O\-S\-E\-D if not connected to a server, T\-C\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-C\-E\-I\-V\-E\-\_\-\-F\-A\-I\-L\-E\-D if failed to receive a packet, or T\-C\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-E\-R\-V\-E\-R\-\_\-\-D\-I\-S\-C\-O\-N\-N\-E\-C\-T\-E\-D if the connection is closed on the server side. 
+\end{DoxyReturn}
+
 \begin{DoxyCode}
 223 \{
 224     \textcolor{comment}{//See if we are connected}
@@ -328,9 +384,21 @@ bool \hyperlink{classTCPClient_a3daf1addf9f9b21c05aeae58c443476a}{Listen} ()
 )}}\label{classTCPClient_a23a640eac58e631288cdeb479416e0ed}
 
 
-Send function. 
+Send a request to the server. 
 
-Function to send data. 
+Function to send data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em send\-\_\-data} & The data to send to the server. \\
+\hline
+{\em size} & The size of the data to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-C\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-U\-C\-C\-E\-S\-S on success, T\-C\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-C\-L\-O\-S\-E\-D if not connected to a server, or T\-C\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-E\-N\-D\-\_\-\-F\-A\-I\-L\-E\-D if the message fails to send. 
+\end{DoxyReturn}
+
 \begin{DoxyCode}
 193 \{
 194     \textcolor{comment}{//Check if we have a connection}

@@ -1,3 +1,6 @@
+/**
+ *  @file Definition of a basic C++ wrapper to a UDP socket.
+ */
 #ifndef SOCKET_H
 #define SOCKET_H
 

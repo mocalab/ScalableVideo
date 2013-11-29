@@ -1,3 +1,7 @@
+/**
+ *  @file Constants for setting up basic sockets for testing.
+ */
+
 #ifndef SOCKETCONSTANTS_H
 #define SOCKETCONSTANTS_H
 

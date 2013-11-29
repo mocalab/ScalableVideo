@@ -58,7 +58,7 @@ bool \hyperlink{classVLCToQtInterface_a8d1084101000873c20c8ebd2b2bdfa13}{get\-Me
 \begin{DoxyCompactList}\small\item\em Retrieve the media statistics. \end{DoxyCompactList}\item 
 float \hyperlink{classVLCToQtInterface_a7536c3fb0c8cba454414426e2a81239d}{get\-Current\-Bitrate\-Avg} ()
 \begin{DoxyCompactList}\small\item\em Interface function to get the average bitrate for the current segment of video. \end{DoxyCompactList}\item 
-void \hyperlink{classVLCToQtInterface_ae97936d40e2bd1aaa9bee707353bb8a2}{reset\-Running\-Average} ()
+void \hyperlink{classVLCToQtInterface_a1ad5497252e2209730b2a112501f472b}{reset\-Stats} ()
 \begin{DoxyCompactList}\small\item\em Reset the running bitrate average. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -343,13 +343,13 @@ This interface function will inform the V\-L\-C client to begin playing, display
 74     \textcolor{keywordflow}{return} status;
 75 \}
 \end{DoxyCode}
-\hypertarget{classVLCToQtInterface_ae97936d40e2bd1aaa9bee707353bb8a2}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!reset\-Running\-Average@{reset\-Running\-Average}}
-\index{reset\-Running\-Average@{reset\-Running\-Average}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
-\subsubsection[{reset\-Running\-Average}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::reset\-Running\-Average (
+\hypertarget{classVLCToQtInterface_a1ad5497252e2209730b2a112501f472b}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!reset\-Stats@{reset\-Stats}}
+\index{reset\-Stats@{reset\-Stats}!VLCToQtInterface@{V\-L\-C\-To\-Qt\-Interface}}
+\subsubsection[{reset\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-To\-Qt\-Interface\-::reset\-Stats (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classVLCToQtInterface_ae97936d40e2bd1aaa9bee707353bb8a2}
+)}}\label{classVLCToQtInterface_a1ad5497252e2209730b2a112501f472b}
 
 
 Reset the running bitrate average. 
@@ -357,7 +357,7 @@ Reset the running bitrate average.
 Interface function to reset the running average of the video bitrate (as in when a new segment of video is started). 
 \begin{DoxyCode}
 141 \{
-142     m\_vlc.\hyperlink{classVLCWrapper_a5acd0eb82102874f09dacaa277a2f784}{resetRunningAverage}();
+142     m\_vlc.\hyperlink{classVLCWrapper_a3785c6d8fc70b19d66f90cda5dce360f}{resetStats}();
 143 \}
 \end{DoxyCode}
 \hypertarget{classVLCToQtInterface_aaf0ae5e8675efd6c039df97c4c24bd77}{\index{V\-L\-C\-To\-Qt\-Interface@{V\-L\-C\-To\-Qt\-Interface}!resize\-Frame@{resize\-Frame}}

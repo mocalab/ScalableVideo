@@ -8,6 +8,10 @@ namespace Ui {
 class ServerPropertiesDialog;
 }
 
+/**
+ * @brief Dialog box to set server properties.
+ * @deprecated This widget was used in an old version of the UI and is now no longer present.
+ */
 class ServerPropertiesDialog : public QDialog
 {
     Q_OBJECT

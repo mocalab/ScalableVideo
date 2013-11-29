@@ -3,6 +3,11 @@
 }
 
 
+This class defines the controls widget for a video window.  
+
+
+
+
 {\ttfamily \#include $<$videocontrolswidget.\-h$>$}
 
 Inheritance diagram for Video\-Controls\-Widget\-:\begin{figure}[H]
@@ -15,31 +20,34 @@ Inheritance diagram for Video\-Controls\-Widget\-:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classVideoControlsWidget_aff63e3d97d541cf8c05d53dd32e26292}{send\-Button\-Clicked} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Slot invoked when the send button is clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classVideoControlsWidget_a5d85d6628fdb2016d49228bffb569679}{send\-Clicked} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Send button clicked. \end{DoxyCompactList}\item 
 void \hyperlink{classVideoControlsWidget_a9c0561d628dd239a37d1a0d52ce3a475}{send\-Clicked} (Q\-String width, Q\-String height, Q\-String fps, Q\-String bps)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Send button clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classVideoControlsWidget_ac0873fb8672cefc5f6549cac23e57757}{Video\-Controls\-Widget} (Q\-Widget $\ast$parent=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Explicit value constructor. \end{DoxyCompactList}\item 
 \hyperlink{classVideoControlsWidget_a6b85a92f3e656f11f48cdc580c2b4e0a}{$\sim$\-Video\-Controls\-Widget} ()
 \item 
 void \hyperlink{classVideoControlsWidget_aa7a0e5cf6d96db502d1826ec9ed43afa}{fade\-Out} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Widget fade out. \end{DoxyCompactList}\item 
 void \hyperlink{classVideoControlsWidget_a6fee9a987ad66923a326754e227019cc}{fade\-In} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Widget fade in. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{classVideoControlsWidget_a733c88f42e0cdec6b6209c97cb2391ed}{paint\-Event} (Q\-Paint\-Event $\ast$e)
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+This class defines the controls widget for a video window. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classVideoControlsWidget_ac0873fb8672cefc5f6549cac23e57757}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!Video\-Controls\-Widget@{Video\-Controls\-Widget}}
@@ -49,6 +57,15 @@ virtual void \hyperlink{classVideoControlsWidget_a733c88f42e0cdec6b6209c97cb2391
 \item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classVideoControlsWidget_ac0873fb8672cefc5f6549cac23e57757}
+
+
+Explicit value constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent of this widget. \\
+\hline
+\end{DoxyParams}
 
 \begin{DoxyCode}
 14                                                         :
@@ -100,20 +117,26 @@ virtual void \hyperlink{classVideoControlsWidget_a733c88f42e0cdec6b6209c97cb2391
 \end{DoxyParamCaption}
 )}}\label{classVideoControlsWidget_a6fee9a987ad66923a326754e227019cc}
 
+
+Widget fade in. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000004}{Deprecated}]\end{DoxyRefDesc}
+
 \begin{DoxyCode}
-212 \{
-213     this->show();
-214     QGraphicsOpacityEffect *fade\_in\_effect = \textcolor{keyword}{new} QGraphicsOpacityEffect(\textcolor{keyword}{this});
-215     this->setGraphicsEffect(fade\_in\_effect);
-216     QPropertyAnimation *fade\_in\_animation = \textcolor{keyword}{new} QPropertyAnimation(fade\_in\_effect, \textcolor{stringliteral}{"opacity"});
-217     fade\_in\_animation->setEasingCurve(QEasingCurve::InOutQuad);
-218     fade\_in\_animation->setDuration(250);
-219     fade\_in\_animation->setStartValue(0.1);
-220     fade\_in\_animation->setEndValue(0.8);
-221 
-222     fade\_in\_animation->start(QPropertyAnimation::DeleteWhenStopped);
-223 
-224 \}
+216 \{
+217     this->show();
+218     QGraphicsOpacityEffect *fade\_in\_effect = \textcolor{keyword}{new} QGraphicsOpacityEffect(\textcolor{keyword}{this});
+219     this->setGraphicsEffect(fade\_in\_effect);
+220     QPropertyAnimation *fade\_in\_animation = \textcolor{keyword}{new} QPropertyAnimation(fade\_in\_effect, \textcolor{stringliteral}{"opacity"});
+221     fade\_in\_animation->setEasingCurve(QEasingCurve::InOutQuad);
+222     fade\_in\_animation->setDuration(250);
+223     fade\_in\_animation->setStartValue(0.1);
+224     fade\_in\_animation->setEndValue(0.8);
+225 
+226     fade\_in\_animation->start(QPropertyAnimation::DeleteWhenStopped);
+227 
+228 \}
 \end{DoxyCode}
 \hypertarget{classVideoControlsWidget_aa7a0e5cf6d96db502d1826ec9ed43afa}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!fade\-Out@{fade\-Out}}
 \index{fade\-Out@{fade\-Out}!VideoControlsWidget@{Video\-Controls\-Widget}}
@@ -123,21 +146,27 @@ virtual void \hyperlink{classVideoControlsWidget_a733c88f42e0cdec6b6209c97cb2391
 \end{DoxyParamCaption}
 )}}\label{classVideoControlsWidget_aa7a0e5cf6d96db502d1826ec9ed43afa}
 
+
+Widget fade out. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000003}{Deprecated}]\end{DoxyRefDesc}
+
 \begin{DoxyCode}
-195 \{
-196     QGraphicsOpacityEffect *fade\_out\_effect = \textcolor{keyword}{new} QGraphicsOpacityEffect(\textcolor{keyword}{this});
-197     this->setGraphicsEffect(fade\_out\_effect);
-198     QPropertyAnimation *fade\_out\_animation = \textcolor{keyword}{new} QPropertyAnimation(fade\_out\_effect, \textcolor{stringliteral}{"opacity"});
-199     fade\_out\_animation->setEasingCurve(QEasingCurve::InOutQuad);
-200     fade\_out\_animation->setDuration(175);
-201     fade\_out\_animation->setStartValue(0.8);
-202     fade\_out\_animation->setEndValue(0.0);
-203 
-204     fade\_out\_animation->start(QPropertyAnimation::DeleteWhenStopped);
-205     \textcolor{comment}{//this->hide();}
-206     QTimer::singleShot(225, \textcolor{keyword}{this}, SLOT(hideDelay()));
+199 \{
+200     QGraphicsOpacityEffect *fade\_out\_effect = \textcolor{keyword}{new} QGraphicsOpacityEffect(\textcolor{keyword}{this});
+201     this->setGraphicsEffect(fade\_out\_effect);
+202     QPropertyAnimation *fade\_out\_animation = \textcolor{keyword}{new} QPropertyAnimation(fade\_out\_effect, \textcolor{stringliteral}{"opacity"});
+203     fade\_out\_animation->setEasingCurve(QEasingCurve::InOutQuad);
+204     fade\_out\_animation->setDuration(175);
+205     fade\_out\_animation->setStartValue(0.8);
+206     fade\_out\_animation->setEndValue(0.0);
 207 
-208 \}
+208     fade\_out\_animation->start(QPropertyAnimation::DeleteWhenStopped);
+209     \textcolor{comment}{//this->hide();}
+210     QTimer::singleShot(225, \textcolor{keyword}{this}, SLOT(hideDelay()));
+211 
+212 \}
 \end{DoxyCode}
 \hypertarget{classVideoControlsWidget_a733c88f42e0cdec6b6209c97cb2391ed}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!paint\-Event@{paint\-Event}}
 \index{paint\-Event@{paint\-Event}!VideoControlsWidget@{Video\-Controls\-Widget}}
@@ -162,6 +191,10 @@ virtual void \hyperlink{classVideoControlsWidget_a733c88f42e0cdec6b6209c97cb2391
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVideoControlsWidget_aff63e3d97d541cf8c05d53dd32e26292}
+
+
+Slot invoked when the send button is clicked. 
+
 
 \begin{DoxyCode}
 67 \{
@@ -201,6 +234,10 @@ virtual void \hyperlink{classVideoControlsWidget_a733c88f42e0cdec6b6209c97cb2391
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [signal]}}}\label{classVideoControlsWidget_a5d85d6628fdb2016d49228bffb569679}
+
+
+Send button clicked. 
+
 \hypertarget{classVideoControlsWidget_a9c0561d628dd239a37d1a0d52ce3a475}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!send\-Clicked@{send\-Clicked}}
 \index{send\-Clicked@{send\-Clicked}!VideoControlsWidget@{Video\-Controls\-Widget}}
 \subsubsection[{send\-Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void Video\-Controls\-Widget\-::send\-Clicked (
@@ -211,6 +248,21 @@ virtual void \hyperlink{classVideoControlsWidget_a733c88f42e0cdec6b6209c97cb2391
 \item[{Q\-String}]{bps}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [signal]}}}\label{classVideoControlsWidget_a9c0561d628dd239a37d1a0d52ce3a475}
+
+
+Send button clicked. 
+
+This signal will pass to the subscriber the values of the width/height combo box, frame rate text box, and bitrate textbox. 
+\begin{DoxyParams}{Parameters}
+{\em width} & The value of the width in the width/height combo box. \\
+\hline
+{\em height} & The value of the height in the width/height combo box. \\
+\hline
+{\em fps} & The value of the frame rate text box. \\
+\hline
+{\em bps} & The value of the bitrate text box. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

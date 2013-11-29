@@ -3,6 +3,10 @@
 
 #include <QTextEdit>
 #include <Global/StdTypes.h>
+/**
+ * @brief A text edit widget that will keep track of command history.
+ * @deprecated This widget is no longer used and is part of an older version of the UI.
+ */
 class StreamerTextEdit : public QTextEdit
 {
     Q_OBJECT

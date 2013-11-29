@@ -1,3 +1,6 @@
+/**
+ *  @file Declaration of an interface class between Qt and the TCP client.
+ */
 #ifndef NETWORKTOQTINTERFACE_H
 #define NETWORKTOQTINTERFACE_H
 #include <QObject>

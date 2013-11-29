@@ -1,3 +1,6 @@
+/**
+ *  @file  Definition of the window which holds the VLC player and controls widget.
+ */
 #ifndef VIDEOWINDOW_H
 #define VIDEOWINDOW_H
 
@@ -68,12 +71,36 @@ protected:
     virtual void enterEvent(QEvent *e);
     virtual void leaveEvent(QEvent *e);
 public slots:
+    /**
+     * @brief Slot for resizing the window.
+     *When this slot is invoked, the window will resize itself based on the parameters width and height.
+     * @param width The new width to use for the window.
+     * @param height The new height to use for the window.
+     */
     void resizeWindow(int width, int height);
+    /**
+     * @brief A slot that will display a message in a message box.
+     *This slot will launch a message box with the response parameter as the displayed message.
+     * @param response The message to display in a message box.
+     */
     void receivedMessage(QString response);
+    /**
+     * @brief A slot to connect to the server.
+     *This slot is subscribed to by timers in order to delay connecting to the server specified by the camera object. The
+     *connection is delayed so that the user interface may load before blocking while attempting to connect.
+     */
     void delayServerConnect();
+    /**
+     * @brief Slot to disconnect from the server.
+     */
     void disconnect();
+    /**
+     * @brief Slot invoked when the send button of the VideoControlsWidget object is clicked.
+     */
     void sendButtonClicked();
-    //Slot to send message to server to resize the video
+    /**
+     * @brief Slot to send message to server to resize the video.
+     */
     void resizeVideo(QString width, QString height, QString fps, QString bps);
 
     /**
@@ -82,6 +109,10 @@ public slots:
      */
     void onBandwidth(QString bandwidth);
 signals:
+    /**
+     * @brief This signal is invoked when the window is destroyed in order to inform
+     *subscribers which camera was associated with this window.
+     */
     void sendCamera(Camera *);
 
 private:
@@ -96,6 +127,7 @@ private:
 
     //A file reader to get new bandwidths
     BandwidthFileReader         *m_bwfilereader;
+
     //A thread to run the reader loop in
     QThread                     *m_bwreaderthread;
 

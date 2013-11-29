@@ -24,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Intelligent Camera System Video Client
    </div>
-   <div id="projectbrief">ThevideoclientfortheintelligentcamerasystemdevelopedatSanDiegoStateUniversitybyDustinWrightinthecomputernetworkslaboratoryunderDr.YusufOzturk.</div>
+   <div id="projectbrief">The video client for the intelligent camera system developed at San Diego State University by Dustin Wright in the computer networks laboratory under Dr. Yusuf Ozturk.</div>
   </td>
  </tr>
  </tbody>
@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,73 +108,77 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span>QPushButton;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//class VLCToQtInterface;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classVLCVideoWidget.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classVLCVideoWidget.html">VLCVideoWidget</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">//Volume and position sliders</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">//QSlider                 *m_positionSlider;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//QSlider                 *m_volumeSlider;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">//Timer</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    QTimer                  *m_poller;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifdef Q_WS_X11</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span>    QX11EmbedContainer      *m_videoWidget;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span>    QFrame                  *m_videoWidget;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classVLCToQtInterface.html">VLCToQtInterface</a>         *m_vlc_interface;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//Utility methods</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> openMedia();</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classVLCVideoWidget.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classVLCVideoWidget.html">VLCVideoWidget</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">//Volume and position sliders</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//QSlider                 *m_positionSlider;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//QSlider                 *m_volumeSlider;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//Timer</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    QTimer                  *m_poller;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifdef Q_WS_X11</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span>    QX11EmbedContainer      *m_videoWidget;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span>    QFrame                  *m_videoWidget;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classVLCToQtInterface.html">VLCToQtInterface</a>         *m_vlc_interface;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#ae6a2d91395f32ad7c80fb1839557da4f">keyPressEvent</a>(QKeyEvent *e);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classVLCVideoWidget.html#a2ee422ecbf1d7c6a09c8c08461ae8f0d">VLCVideoWidget</a>(QWidget *parent = 0);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classVLCVideoWidget.html#a2ad9c4a037fdb833b1b1f9ba71075d86">~VLCVideoWidget</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#a7eb5395abd53f19c012fea779b6bac1e">playFile</a>(QString file);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#a1119aa3a41789fc1f4abe834e36c64df">playUrl</a>(QString url);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#aefa842a30cbb11522428597c1f0608a0">stopPlaying</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classVLCVideoWidget.html#a45fd49c0a63d1eeeaaff78ffd208ddad">isPlaying</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#a5fce57e1a69fd7371c7e0950d5bb14a8">setFps</a>(<span class="keywordtype">int</span> fps);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classVLCVideoWidget.html#ac80ca2be7b8f96631f32827ab06e70a1">getFps</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#aff2bdf48d08757e6b86aa5f21eb43fb5">setPlaybackRate</a>(<span class="keywordtype">int</span> fps);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;signals:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#aeff3477d9c077d45b0ff8caea2514150">resizeParent</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span> slots:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//    void updateInterface();</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//    void changeVolume(int newVolume);</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//    void changePosition(int newPosition);</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#aff4501569b0e46b3641625c3c9bbd5c6">videoResized</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#a2fb0969c2a4efa024038ce1e1cfe1e64">paintEvent</a>(QPaintEvent *e);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif // VLCVIDEOWIDGET_H</span></div>
-<div class="ttc" id="classVLCVideoWidget_html_a5fce57e1a69fd7371c7e0950d5bb14a8"><div class="ttname"><a href="classVLCVideoWidget.html#a5fce57e1a69fd7371c7e0950d5bb14a8">VLCVideoWidget::setFps</a></div><div class="ttdeci">void setFps(int fps)</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:90</div></div>
-<div class="ttc" id="classVLCVideoWidget_html"><div class="ttname"><a href="classVLCVideoWidget.html">VLCVideoWidget</a></div><div class="ttdef"><b>Definition:</b> vlcvideowidget.h:19</div></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//Utility methods</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> openMedia();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#ae6a2d91395f32ad7c80fb1839557da4f">keyPressEvent</a>(QKeyEvent *e);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classVLCVideoWidget.html#a2ee422ecbf1d7c6a09c8c08461ae8f0d">VLCVideoWidget</a>(QWidget *parent = 0);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classVLCVideoWidget.html#a2ad9c4a037fdb833b1b1f9ba71075d86">~VLCVideoWidget</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#a7eb5395abd53f19c012fea779b6bac1e">playFile</a>(QString file);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#a1119aa3a41789fc1f4abe834e36c64df">playUrl</a>(QString url);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#aefa842a30cbb11522428597c1f0608a0">stopPlaying</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classVLCVideoWidget.html#a45fd49c0a63d1eeeaaff78ffd208ddad">isPlaying</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#a5fce57e1a69fd7371c7e0950d5bb14a8">setFps</a>(<span class="keywordtype">int</span> fps);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classVLCVideoWidget.html#ac80ca2be7b8f96631f32827ab06e70a1">getFps</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#aff2bdf48d08757e6b86aa5f21eb43fb5">setPlaybackRate</a>(<span class="keywordtype">int</span> fps);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#af6bfaebcb882449195ea2a5e5918ee57">resetStats</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;signals:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#aeff3477d9c077d45b0ff8caea2514150">resizeParent</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">//    void updateInterface();</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">//    void changeVolume(int newVolume);</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">//    void changePosition(int newPosition);</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#aff4501569b0e46b3641625c3c9bbd5c6">videoResized</a>(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVLCVideoWidget.html#a2fb0969c2a4efa024038ce1e1cfe1e64">paintEvent</a>(QPaintEvent *e);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif // VLCVIDEOWIDGET_H</span></div>
+<div class="ttc" id="classVLCVideoWidget_html_af6bfaebcb882449195ea2a5e5918ee57"><div class="ttname"><a href="classVLCVideoWidget.html#af6bfaebcb882449195ea2a5e5918ee57">VLCVideoWidget::resetStats</a></div><div class="ttdeci">void resetStats()</div><div class="ttdoc">Reset the values of the statistics captured from the VLC client for the current video. </div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:105</div></div>
+<div class="ttc" id="classVLCVideoWidget_html_a5fce57e1a69fd7371c7e0950d5bb14a8"><div class="ttname"><a href="classVLCVideoWidget.html#a5fce57e1a69fd7371c7e0950d5bb14a8">VLCVideoWidget::setFps</a></div><div class="ttdeci">void setFps(int fps)</div><div class="ttdoc">Set the frame rate of the playing video. </div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:90</div></div>
+<div class="ttc" id="classVLCVideoWidget_html"><div class="ttname"><a href="classVLCVideoWidget.html">VLCVideoWidget</a></div><div class="ttdoc">This class defines a widget that uses a VLC client to display video. </div><div class="ttdef"><b>Definition:</b> vlcvideowidget.h:22</div></div>
 <div class="ttc" id="classVLCToQtInterface_html"><div class="ttname"><a href="classVLCToQtInterface.html">VLCToQtInterface</a></div><div class="ttdef"><b>Definition:</b> vlctoqtinterface.h:9</div></div>
-<div class="ttc" id="classVLCVideoWidget_html_ae6a2d91395f32ad7c80fb1839557da4f"><div class="ttname"><a href="classVLCVideoWidget.html#ae6a2d91395f32ad7c80fb1839557da4f">VLCVideoWidget::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *e)</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:134</div></div>
-<div class="ttc" id="classVLCVideoWidget_html_a2ee422ecbf1d7c6a09c8c08461ae8f0d"><div class="ttname"><a href="classVLCVideoWidget.html#a2ee422ecbf1d7c6a09c8c08461ae8f0d">VLCVideoWidget::VLCVideoWidget</a></div><div class="ttdeci">VLCVideoWidget(QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:15</div></div>
-<div class="ttc" id="classVLCVideoWidget_html_a7eb5395abd53f19c012fea779b6bac1e"><div class="ttname"><a href="classVLCVideoWidget.html#a7eb5395abd53f19c012fea779b6bac1e">VLCVideoWidget::playFile</a></div><div class="ttdeci">void playFile(QString file)</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:66</div></div>
-<div class="ttc" id="classVLCVideoWidget_html_aff2bdf48d08757e6b86aa5f21eb43fb5"><div class="ttname"><a href="classVLCVideoWidget.html#aff2bdf48d08757e6b86aa5f21eb43fb5">VLCVideoWidget::setPlaybackRate</a></div><div class="ttdeci">void setPlaybackRate(int fps)</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:100</div></div>
+<div class="ttc" id="classVLCVideoWidget_html_ae6a2d91395f32ad7c80fb1839557da4f"><div class="ttname"><a href="classVLCVideoWidget.html#ae6a2d91395f32ad7c80fb1839557da4f">VLCVideoWidget::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *e)</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:139</div></div>
+<div class="ttc" id="classVLCVideoWidget_html_a2ee422ecbf1d7c6a09c8c08461ae8f0d"><div class="ttname"><a href="classVLCVideoWidget.html#a2ee422ecbf1d7c6a09c8c08461ae8f0d">VLCVideoWidget::VLCVideoWidget</a></div><div class="ttdeci">VLCVideoWidget(QWidget *parent=0)</div><div class="ttdoc">Explicit value constructor. </div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:15</div></div>
+<div class="ttc" id="classVLCVideoWidget_html_a7eb5395abd53f19c012fea779b6bac1e"><div class="ttname"><a href="classVLCVideoWidget.html#a7eb5395abd53f19c012fea779b6bac1e">VLCVideoWidget::playFile</a></div><div class="ttdeci">void playFile(QString file)</div><div class="ttdoc">Play a video from a file on this widget. </div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:66</div></div>
+<div class="ttc" id="classVLCVideoWidget_html_aff2bdf48d08757e6b86aa5f21eb43fb5"><div class="ttname"><a href="classVLCVideoWidget.html#aff2bdf48d08757e6b86aa5f21eb43fb5">VLCVideoWidget::setPlaybackRate</a></div><div class="ttdeci">void setPlaybackRate(int fps)</div><div class="ttdoc">Set the VLC client playback rate. </div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:100</div></div>
 <div class="ttc" id="classVLCVideoWidget_html_aeff3477d9c077d45b0ff8caea2514150"><div class="ttname"><a href="classVLCVideoWidget.html#aeff3477d9c077d45b0ff8caea2514150">VLCVideoWidget::resizeParent</a></div><div class="ttdeci">void resizeParent(int width, int height)</div></div>
-<div class="ttc" id="classVLCVideoWidget_html_ac80ca2be7b8f96631f32827ab06e70a1"><div class="ttname"><a href="classVLCVideoWidget.html#ac80ca2be7b8f96631f32827ab06e70a1">VLCVideoWidget::getFps</a></div><div class="ttdeci">int getFps()</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:95</div></div>
-<div class="ttc" id="classVLCVideoWidget_html_a1119aa3a41789fc1f4abe834e36c64df"><div class="ttname"><a href="classVLCVideoWidget.html#a1119aa3a41789fc1f4abe834e36c64df">VLCVideoWidget::playUrl</a></div><div class="ttdeci">void playUrl(QString url)</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:72</div></div>
+<div class="ttc" id="classVLCVideoWidget_html_ac80ca2be7b8f96631f32827ab06e70a1"><div class="ttname"><a href="classVLCVideoWidget.html#ac80ca2be7b8f96631f32827ab06e70a1">VLCVideoWidget::getFps</a></div><div class="ttdeci">int getFps()</div><div class="ttdoc">Get the frame rate of the video. </div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:95</div></div>
+<div class="ttc" id="classVLCVideoWidget_html_a1119aa3a41789fc1f4abe834e36c64df"><div class="ttname"><a href="classVLCVideoWidget.html#a1119aa3a41789fc1f4abe834e36c64df">VLCVideoWidget::playUrl</a></div><div class="ttdeci">void playUrl(QString url)</div><div class="ttdoc">Stream the video at this URL. </div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:72</div></div>
 <div class="ttc" id="classVLCVideoWidget_html_a2ad9c4a037fdb833b1b1f9ba71075d86"><div class="ttname"><a href="classVLCVideoWidget.html#a2ad9c4a037fdb833b1b1f9ba71075d86">VLCVideoWidget::~VLCVideoWidget</a></div><div class="ttdeci">~VLCVideoWidget()</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:53</div></div>
-<div class="ttc" id="classVLCVideoWidget_html_aefa842a30cbb11522428597c1f0608a0"><div class="ttname"><a href="classVLCVideoWidget.html#aefa842a30cbb11522428597c1f0608a0">VLCVideoWidget::stopPlaying</a></div><div class="ttdeci">void stopPlaying()</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:79</div></div>
-<div class="ttc" id="classVLCVideoWidget_html_aff4501569b0e46b3641625c3c9bbd5c6"><div class="ttname"><a href="classVLCVideoWidget.html#aff4501569b0e46b3641625c3c9bbd5c6">VLCVideoWidget::videoResized</a></div><div class="ttdeci">void videoResized(int width, int height)</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:105</div></div>
+<div class="ttc" id="classVLCVideoWidget_html_aefa842a30cbb11522428597c1f0608a0"><div class="ttname"><a href="classVLCVideoWidget.html#aefa842a30cbb11522428597c1f0608a0">VLCVideoWidget::stopPlaying</a></div><div class="ttdeci">void stopPlaying()</div><div class="ttdoc">Stop playing the video. </div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:79</div></div>
+<div class="ttc" id="classVLCVideoWidget_html_aff4501569b0e46b3641625c3c9bbd5c6"><div class="ttname"><a href="classVLCVideoWidget.html#aff4501569b0e46b3641625c3c9bbd5c6">VLCVideoWidget::videoResized</a></div><div class="ttdeci">void videoResized(int width, int height)</div><div class="ttdoc">A slot invoked when the size of the video changes. </div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:110</div></div>
 <div class="ttc" id="vlctoqtinterface_8h_html"><div class="ttname"><a href="vlctoqtinterface_8h.html">vlctoqtinterface.h</a></div></div>
-<div class="ttc" id="classVLCVideoWidget_html_a2fb0969c2a4efa024038ce1e1cfe1e64"><div class="ttname"><a href="classVLCVideoWidget.html#a2fb0969c2a4efa024038ce1e1cfe1e64">VLCVideoWidget::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *e)</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:114</div></div>
-<div class="ttc" id="classVLCVideoWidget_html_a45fd49c0a63d1eeeaaff78ffd208ddad"><div class="ttname"><a href="classVLCVideoWidget.html#a45fd49c0a63d1eeeaaff78ffd208ddad">VLCVideoWidget::isPlaying</a></div><div class="ttdeci">bool isPlaying()</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:85</div></div>
+<div class="ttc" id="classVLCVideoWidget_html_a2fb0969c2a4efa024038ce1e1cfe1e64"><div class="ttname"><a href="classVLCVideoWidget.html#a2fb0969c2a4efa024038ce1e1cfe1e64">VLCVideoWidget::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *e)</div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:119</div></div>
+<div class="ttc" id="classVLCVideoWidget_html_a45fd49c0a63d1eeeaaff78ffd208ddad"><div class="ttname"><a href="classVLCVideoWidget.html#a45fd49c0a63d1eeeaaff78ffd208ddad">VLCVideoWidget::isPlaying</a></div><div class="ttdeci">bool isPlaying()</div><div class="ttdoc">Determine if the video is playing. </div><div class="ttdef"><b>Definition:</b> vlcvideowidget.cpp:85</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 21 2013 15:42:22 for Intelligent Camera System Video Client by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 28 2013 13:55:45 for Intelligent Camera System Video Client by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

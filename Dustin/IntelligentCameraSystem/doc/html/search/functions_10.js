@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['readline',['readLine',['../classFileReaderUtility.html#ab41fc317ab5f175f61a15f1c2dff20ab',1,'FileReaderUtility']]],
+  ['readloop',['readLoop',['../classBandwidthFileReader.html#a49c0d54f1342d5e9c89645ef4a8d6d50',1,'BandwidthFileReader']]],
   ['reallocate',['reallocate',['../classxpath__allocator.html#a4dd502389202ec8e7420832112a571e5',1,'xpath_allocator']]],
   ['receive',['Receive',['../classSocket.html#a24d0d17efdaab291e81d5d89b463a585',1,'Socket::Receive()'],['../classTCPClient.html#aa070f44fa48f948931b2c49e31b5a149',1,'TCPClient::Receive()']]],
   ['receivedmessage',['receivedMessage',['../classMainWindow.html#ab7ed8f9211b6a43151b645f94a019502',1,'MainWindow::receivedMessage(const char *)'],['../classMainWindow.html#a9e94a105f93d43505bd528088fd23846',1,'MainWindow::receivedMessage(QString response)'],['../classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f',1,'VideoWindow::receivedMessage()']]],
@@ -12,7 +14,7 @@ var searchData=
   ['remove_5fduplicates',['remove_duplicates',['../classxpath__node__set__raw.html#af82da6fa8d42f9dff9c55e7b93d96e26',1,'xpath_node_set_raw']]],
   ['reset',['reset',['../classpugi_1_1xml__document.html#acf2b9daf1d12e12048796118b7a7685d',1,'pugi::xml_document::reset()'],['../classpugi_1_1xml__document.html#a4230de3de88f4fe481c4c3d5312aa5cf',1,'pugi::xml_document::reset(const xml_document &amp;proto)']]],
   ['resetmedia',['resetMedia',['../classVLCWrapper.html#a7d2f4f7b0f796711b614f2d9f6ea63ee',1,'VLCWrapper']]],
-  ['resetrunningaverage',['resetRunningAverage',['../classVLCToQtInterface.html#ae97936d40e2bd1aaa9bee707353bb8a2',1,'VLCToQtInterface::resetRunningAverage()'],['../classVLCWrapper.html#a5acd0eb82102874f09dacaa277a2f784',1,'VLCWrapper::resetRunningAverage()']]],
+  ['resetstats',['resetStats',['../classVLCVideoWidget.html#af6bfaebcb882449195ea2a5e5918ee57',1,'VLCVideoWidget::resetStats()'],['../classVLCToQtInterface.html#a1ad5497252e2209730b2a112501f472b',1,'VLCToQtInterface::resetStats()'],['../classVLCWrapper.html#a3785c6d8fc70b19d66f90cda5dce360f',1,'VLCWrapper::resetStats()']]],
   ['resizeframe',['resizeFrame',['../classVLCToQtInterface.html#aaf0ae5e8675efd6c039df97c4c24bd77',1,'VLCToQtInterface']]],
   ['resizeparent',['resizeParent',['../classFFMPEGVideoWidget.html#a05576df29f811639d71cbed8b69ee233',1,'FFMPEGVideoWidget::resizeParent()'],['../classVLCVideoWidget.html#aeff3477d9c077d45b0ff8caea2514150',1,'VLCVideoWidget::resizeParent()']]],
   ['resizevideo',['resizeVideo',['../classVideoWindow.html#ac07f4db8a805849174cb129134708fd4',1,'VideoWindow']]],

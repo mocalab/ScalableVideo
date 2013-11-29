@@ -3,6 +3,11 @@
 }
 
 
+This class defines a widget that uses a V\-L\-C client to display video.  
+
+
+
+
 {\ttfamily \#include $<$vlcvideowidget.\-h$>$}
 
 Inheritance diagram for V\-L\-C\-Video\-Widget\-:\begin{figure}[H]
@@ -15,7 +20,7 @@ Inheritance diagram for V\-L\-C\-Video\-Widget\-:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classVLCVideoWidget_aff4501569b0e46b3641625c3c9bbd5c6}{video\-Resized} (int width, int height)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A slot invoked when the size of the video changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,23 +30,25 @@ void \hyperlink{classVLCVideoWidget_aeff3477d9c077d45b0ff8caea2514150}{resize\-P
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classVLCVideoWidget_a2ee422ecbf1d7c6a09c8c08461ae8f0d}{V\-L\-C\-Video\-Widget} (Q\-Widget $\ast$parent=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Explicit value constructor. \end{DoxyCompactList}\item 
 \hyperlink{classVLCVideoWidget_a2ad9c4a037fdb833b1b1f9ba71075d86}{$\sim$\-V\-L\-C\-Video\-Widget} ()
 \item 
 void \hyperlink{classVLCVideoWidget_a7eb5395abd53f19c012fea779b6bac1e}{play\-File} (Q\-String file)
-\item 
+\begin{DoxyCompactList}\small\item\em Play a video from a file on this widget. \end{DoxyCompactList}\item 
 void \hyperlink{classVLCVideoWidget_a1119aa3a41789fc1f4abe834e36c64df}{play\-Url} (Q\-String url)
-\item 
+\begin{DoxyCompactList}\small\item\em Stream the video at this U\-R\-L. \end{DoxyCompactList}\item 
 void \hyperlink{classVLCVideoWidget_aefa842a30cbb11522428597c1f0608a0}{stop\-Playing} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Stop playing the video. \end{DoxyCompactList}\item 
 bool \hyperlink{classVLCVideoWidget_a45fd49c0a63d1eeeaaff78ffd208ddad}{is\-Playing} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Determine if the video is playing. \end{DoxyCompactList}\item 
 void \hyperlink{classVLCVideoWidget_a5fce57e1a69fd7371c7e0950d5bb14a8}{set\-Fps} (int fps)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the frame rate of the playing video. \end{DoxyCompactList}\item 
 int \hyperlink{classVLCVideoWidget_ac80ca2be7b8f96631f32827ab06e70a1}{get\-Fps} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the frame rate of the video. \end{DoxyCompactList}\item 
 void \hyperlink{classVLCVideoWidget_aff2bdf48d08757e6b86aa5f21eb43fb5}{set\-Playback\-Rate} (int fps)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set the V\-L\-C client playback rate. \end{DoxyCompactList}\item 
+void \hyperlink{classVLCVideoWidget_af6bfaebcb882449195ea2a5e5918ee57}{reset\-Stats} ()
+\begin{DoxyCompactList}\small\item\em Reset the values of the statistics captured from the V\-L\-C client for the current video. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,6 +58,9 @@ void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Ev
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+This class defines a widget that uses a V\-L\-C client to display video. 
+
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classVLCVideoWidget_a2ee422ecbf1d7c6a09c8c08461ae8f0d}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}}
 \index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
@@ -59,6 +69,15 @@ void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Ev
 \item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classVLCVideoWidget_a2ee422ecbf1d7c6a09c8c08461ae8f0d}
+
+
+Explicit value constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget. \\
+\hline
+\end{DoxyParams}
 
 \begin{DoxyCode}
 15                                               :
@@ -134,6 +153,13 @@ void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Ev
 \end{DoxyParamCaption}
 )}}\label{classVLCVideoWidget_ac80ca2be7b8f96631f32827ab06e70a1}
 
+
+Get the frame rate of the video. 
+
+\begin{DoxyReturn}{Returns}
+The video frame rate. 
+\end{DoxyReturn}
+
 \begin{DoxyCode}
 96 \{
 97     \textcolor{keywordflow}{return} m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a197424c4ed7a829ee6d7d8afa9b377ef}{getFps}();
@@ -146,6 +172,13 @@ void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Ev
 {}
 \end{DoxyParamCaption}
 )}}\label{classVLCVideoWidget_a45fd49c0a63d1eeeaaff78ffd208ddad}
+
+
+Determine if the video is playing. 
+
+\begin{DoxyReturn}{Returns}
+True if the video is playing. 
+\end{DoxyReturn}
 
 \begin{DoxyCode}
 86 \{
@@ -161,12 +194,12 @@ void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Ev
 )\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVLCVideoWidget_ae6a2d91395f32ad7c80fb1839557da4f}
 
 \begin{DoxyCode}
-135 \{
-136     \textcolor{keywordflow}{if}(e->key() == Qt::Key\_Down)
-137     \{
-138         this->\hyperlink{classVLCVideoWidget_aefa842a30cbb11522428597c1f0608a0}{stopPlaying}();
-139     \}
-140 \}
+140 \{
+141     \textcolor{keywordflow}{if}(e->key() == Qt::Key\_Down)
+142     \{
+143         this->\hyperlink{classVLCVideoWidget_aefa842a30cbb11522428597c1f0608a0}{stopPlaying}();
+144     \}
+145 \}
 \end{DoxyCode}
 \hypertarget{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!paint\-Event@{paint\-Event}}
 \index{paint\-Event@{paint\-Event}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
@@ -177,12 +210,12 @@ void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Ev
 )\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}
 
 \begin{DoxyCode}
-115 \{
-116     QStyleOption opt;
-117     opt.init(\textcolor{keyword}{this});
-118     QPainter p(\textcolor{keyword}{this});
-119     style()->drawPrimitive(QStyle::PE\_Widget, &opt, &p, \textcolor{keyword}{this});
-120 \}
+120 \{
+121     QStyleOption opt;
+122     opt.init(\textcolor{keyword}{this});
+123     QPainter p(\textcolor{keyword}{this});
+124     style()->drawPrimitive(QStyle::PE\_Widget, &opt, &p, \textcolor{keyword}{this});
+125 \}
 \end{DoxyCode}
 \hypertarget{classVLCVideoWidget_a7eb5395abd53f19c012fea779b6bac1e}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!play\-File@{play\-File}}
 \index{play\-File@{play\-File}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
@@ -191,6 +224,15 @@ void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Ev
 \item[{Q\-String}]{file}
 \end{DoxyParamCaption}
 )}}\label{classVLCVideoWidget_a7eb5395abd53f19c012fea779b6bac1e}
+
+
+Play a video from a file on this widget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The path of the file to play. \\
+\hline
+\end{DoxyParams}
 
 \begin{DoxyCode}
 67 \{
@@ -206,11 +248,37 @@ void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Ev
 \end{DoxyParamCaption}
 )}}\label{classVLCVideoWidget_a1119aa3a41789fc1f4abe834e36c64df}
 
+
+Stream the video at this U\-R\-L. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\-R\-L to stream video from. \\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}
 73 \{
 74     m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a782ba1a8e8d174bd0fabc4d292b6e40e}{setMediaToUrl}(url.toStdString().c\_str());
 75     this->openMedia();
 76 \}
+\end{DoxyCode}
+\hypertarget{classVLCVideoWidget_af6bfaebcb882449195ea2a5e5918ee57}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!reset\-Stats@{reset\-Stats}}
+\index{reset\-Stats@{reset\-Stats}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{reset\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-Video\-Widget\-::reset\-Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCVideoWidget_af6bfaebcb882449195ea2a5e5918ee57}
+
+
+Reset the values of the statistics captured from the V\-L\-C client for the current video. 
+
+
+\begin{DoxyCode}
+106 \{
+107     this->m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a1ad5497252e2209730b2a112501f472b}{resetStats}();
+108 \}
 \end{DoxyCode}
 \hypertarget{classVLCVideoWidget_aeff3477d9c077d45b0ff8caea2514150}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!resize\-Parent@{resize\-Parent}}
 \index{resize\-Parent@{resize\-Parent}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
@@ -228,6 +296,15 @@ void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Ev
 \end{DoxyParamCaption}
 )}}\label{classVLCVideoWidget_a5fce57e1a69fd7371c7e0950d5bb14a8}
 
+
+Set the frame rate of the playing video. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fps} & The frame rate of the video. \\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}
 91 \{
 92     this->m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a1193d87a92a558d51efc62e6f5639f0a}{setFps}(fps);
@@ -241,6 +318,15 @@ void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Ev
 \end{DoxyParamCaption}
 )}}\label{classVLCVideoWidget_aff2bdf48d08757e6b86aa5f21eb43fb5}
 
+
+Set the V\-L\-C client playback rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fps} & The playback rate. \\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}
 101 \{
 102     this->m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a7928cd122995dd11f7128a768de6015c}{setPlaybackRate}(fps);
@@ -253,6 +339,10 @@ void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Ev
 {}
 \end{DoxyParamCaption}
 )}}\label{classVLCVideoWidget_aefa842a30cbb11522428597c1f0608a0}
+
+
+Stop playing the video. 
+
 
 \begin{DoxyCode}
 80 \{
@@ -269,13 +359,24 @@ void \hyperlink{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{paint\-Ev
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [slot]}}}\label{classVLCVideoWidget_aff4501569b0e46b3641625c3c9bbd5c6}
 
+
+A slot invoked when the size of the video changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The new width of the video. \\
+\hline
+{\em height} & The new height of the video. \\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}
-106 \{
-107     m\_videoWidget->resize(width, height);
-108     this->resize(width, height);
-109     \textcolor{comment}{//Signal to resize parent}
-110     emit \hyperlink{classVLCVideoWidget_aeff3477d9c077d45b0ff8caea2514150}{resizeParent}(width, height);
-111 \}
+111 \{
+112     m\_videoWidget->resize(width, height);
+113     this->resize(width, height);
+114     \textcolor{comment}{//Signal to resize parent}
+115     emit \hyperlink{classVLCVideoWidget_aeff3477d9c077d45b0ff8caea2514150}{resizeParent}(width, height);
+116 \}
 \end{DoxyCode}
 
 

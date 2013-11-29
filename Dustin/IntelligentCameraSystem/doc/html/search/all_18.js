@@ -1,8 +1,10 @@
 var searchData=
 [
+  ['_7ebandwidthfilereader',['~BandwidthFileReader',['../classBandwidthFileReader.html#a9ae6867549182c7bcf34718580bae864',1,'BandwidthFileReader']]],
   ['_7ebuffer_5fholder',['~buffer_holder',['../structbuffer__holder.html#a43e10af0ca501bfa9bd1c2a012937876',1,'buffer_holder']]],
   ['_7econtrolcenter',['~ControlCenter',['../classControlCenter.html#a9ac145ced26cf2002a9d12c4c20bdc75',1,'ControlCenter']]],
   ['_7effmpegvideowidget',['~FFMPEGVideoWidget',['../classFFMPEGVideoWidget.html#a5c083d5fdadead8ecae1e8c024e8bdb4',1,'FFMPEGVideoWidget']]],
+  ['_7efilereaderutility',['~FileReaderUtility',['../classFileReaderUtility.html#ae7cea9f17577620d7c678d8379ee103c',1,'FileReaderUtility']]],
   ['_7elogindialog',['~LoginDialog',['../classLoginDialog.html#aa5d012ebc424713ca0cbd82be1f81133',1,'LoginDialog']]],
   ['_7emainwindow',['~MainWindow',['../classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
   ['_7enetworktoqtinterface',['~NetworkToQtInterface',['../classNetworkToQtInterface.html#a1af69a269ee8405c5786696846786e09',1,'NetworkToQtInterface']]],

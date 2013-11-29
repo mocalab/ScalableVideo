@@ -1,3 +1,6 @@
+/**
+ *  @file Definition of a wrapper class to a VLC defined type, libvlc_media_statistics_t.
+ */
 #ifndef MEDIASTATISTICS_H
 #define MEDIASTATISTICS_H
 

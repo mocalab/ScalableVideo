@@ -14,6 +14,10 @@ typedef std::list<Address>::iterator            AddressListIter;
 
 using namespace pugi;
 
+/**
+ * @brief This class defines a utility for reading a configuration file for a server configuration.
+ * @deprecated This class was used in the old version of the UI.
+ */
 class ServerConfigFileUtil
 {
 public:

@@ -26,6 +26,7 @@ var searchData=
   ['demuxer',['Demuxer',['../classDemuxer.html',1,'Demuxer'],['../classDemuxer.html#a266feb24cfea87bee1883b480694478d',1,'Demuxer::Demuxer()']]],
   ['demuxer_2ecpp',['demuxer.cpp',['../demuxer_8cpp.html',1,'']]],
   ['demuxer_2eh',['demuxer.h',['../demuxer_8h.html',1,'']]],
+  ['deprecated_20list',['Deprecated List',['../deprecated.html',1,'']]],
   ['depth',['depth',['../classpugi_1_1xml__tree__walker.html#acb27ca9fea177b0741f29274cb0c805a',1,'pugi::xml_tree_walker']]],
   ['description',['description',['../structpugi_1_1xml__parse__result.html#add183854c1798f4c8ae74f40def79b03',1,'pugi::xml_parse_result::description()'],['../structpugi_1_1xpath__parse__result.html#a3de342b3c2c13db7ba9dafba73c06228',1,'pugi::xpath_parse_result::description()']]],
   ['destroy',['destroy',['../structxml__stream__chunk.html#a4b812901d59950d48d539e5c8726a0e8',1,'xml_stream_chunk::destroy()'],['../structxpath__query__impl.html#a9b7194b1356cca3f3b62f4cdb8d8960f',1,'xpath_query_impl::destroy()']]],

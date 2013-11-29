@@ -44,7 +44,9 @@ bool \hyperlink{classVLCWrapper_a6c7a053f255e2976ab3cbe8cb9ee2ac8}{get\-Media\-S
 \begin{DoxyCompactList}\small\item\em Retrieve the current media statistics. \end{DoxyCompactList}\item 
 float \hyperlink{classVLCWrapper_aff24a01fa335af7febc084c446620070}{get\-Current\-Bitrate\-Avg} ()
 \begin{DoxyCompactList}\small\item\em Get the average bitrate for the current segment of video. \end{DoxyCompactList}\item 
-void \hyperlink{classVLCWrapper_a5acd0eb82102874f09dacaa277a2f784}{reset\-Running\-Average} ()
+float \hyperlink{classVLCWrapper_a7e71f1d96c38fdda74a445750cbcde35}{get\-Current\-Max\-Bitrate} ()
+\begin{DoxyCompactList}\small\item\em Get the maximum bitrate for th current segment of video. \end{DoxyCompactList}\item 
+void \hyperlink{classVLCWrapper_a3785c6d8fc70b19d66f90cda5dce360f}{reset\-Stats} ()
 \begin{DoxyCompactList}\small\item\em Reset the running bitrate average. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -75,10 +77,10 @@ void \hyperlink{classVLCWrapper_a5acd0eb82102874f09dacaa277a2f784}{reset\-Runnin
 )}}\label{classVLCWrapper_a3afc6e20a87b76c2e8e7e7bd4da68987}
 
 \begin{DoxyCode}
-41 \{
-42     \textcolor{comment}{//call the teardown function}
-43     this->\hyperlink{classVLCWrapper_a58462a6c083affe4ac09e057d2303565}{freeResources}();
-44 \}
+44 \{
+45     \textcolor{comment}{//call the teardown function}
+46     this->\hyperlink{classVLCWrapper_a58462a6c083affe4ac09e057d2303565}{freeResources}();
+47 \}
 \end{DoxyCode}
 
 
@@ -96,11 +98,11 @@ Delete all V\-L\-C resources.
 
 Deletes any resources allocated by the V\-L\-C client. 
 \begin{DoxyCode}
-48 \{
-49     libvlc\_media\_player\_stop(m\_mp);
-50     libvlc\_media\_player\_release(m\_mp);
-51     libvlc\_release(m\_vlc);
-52 \}
+51 \{
+52     libvlc\_media\_player\_stop(m\_mp);
+53     libvlc\_media\_player\_release(m\_mp);
+54     libvlc\_release(m\_vlc);
+55 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_aff24a01fa335af7febc084c446620070}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!get\-Current\-Bitrate\-Avg@{get\-Current\-Bitrate\-Avg}}
 \index{get\-Current\-Bitrate\-Avg@{get\-Current\-Bitrate\-Avg}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -118,16 +120,42 @@ The average bitrate.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-227 \{
-228     \textcolor{keywordtype}{float} avg = 0.0;
-229     \textcolor{comment}{//Lock the mutex}
-230     m\_avgmutex.lock();
-231     avg = this->m\_bravg;
-232     m\_avgmutex.unlock();
-233 
-234     \textcolor{keywordflow}{return} avg;
-235 
-236 \}
+238 \{
+239     \textcolor{keywordtype}{float} avg = 0.0;
+240     \textcolor{comment}{//Lock the mutex}
+241     m\_avgmutex.lock();
+242     avg = this->m\_bravg;
+243     m\_avgmutex.unlock();
+244 
+245     \textcolor{keywordflow}{return} avg;
+246 
+247 \}
+\end{DoxyCode}
+\hypertarget{classVLCWrapper_a7e71f1d96c38fdda74a445750cbcde35}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!get\-Current\-Max\-Bitrate@{get\-Current\-Max\-Bitrate}}
+\index{get\-Current\-Max\-Bitrate@{get\-Current\-Max\-Bitrate}!VLCWrapper@{V\-L\-C\-Wrapper}}
+\subsubsection[{get\-Current\-Max\-Bitrate}]{\setlength{\rightskip}{0pt plus 5cm}float V\-L\-C\-Wrapper\-::get\-Current\-Max\-Bitrate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCWrapper_a7e71f1d96c38fdda74a445750cbcde35}
+
+
+Get the maximum bitrate for th current segment of video. 
+
+\begin{DoxyReturn}{Returns}
+The maximum bitrate; 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+250 \{
+251     \textcolor{keywordtype}{float} max = 0.0;
+252     \textcolor{comment}{//Lock the mutex}
+253     m\_maxmutex.lock();
+254     max = this->m\_maxbitrate;
+255     m\_maxmutex.unlock();
+256 
+257     \textcolor{keywordflow}{return} max;
+258 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a696fd0d152c68c757f9135669cbcbe56}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!get\-Fps@{get\-Fps}}
 \index{get\-Fps@{get\-Fps}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -145,9 +173,9 @@ The current video frame rate.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-173 \{
-174     \textcolor{keywordflow}{return} m\_fps;
-175 \}
+176 \{
+177     \textcolor{keywordflow}{return} m\_fps;
+178 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a743fecb30b118eb999780cc4559eba86}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!get\-Media\-Stats@{get\-Media\-Stats}}
 \index{get\-Media\-Stats@{get\-Media\-Stats}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -162,36 +190,45 @@ Retrieve the current media statistics.
 
 Retrieves the current media statistics and prints their values to the log. Obtain the current media statistics i.\-e. bitrate of the video. 
 \begin{DoxyCode}
-179 \{
-180     libvlc\_media\_stats\_t stats;
-181 
-182     \textcolor{keywordtype}{int} err = libvlc\_media\_get\_stats(m\_media, &stats);
-183 
-184     \textcolor{keywordflow}{if}(err)
-185     \{
-186         \textcolor{comment}{//Compute the running average}
-187 
-188         \textcolor{comment}{//Lock the mutex}
-189         m\_avgmutex.lock();
-190         \textcolor{comment}{//Increment average counter}
-191         m\_current++;
-192         \textcolor{comment}{//Get the new average}
-193         m\_bravg = (m\_bravg * (m\_current-1) + stats.f\_input\_bitrate) / m\_current;
-194         \textcolor{comment}{//Unlock the mutex}
-195         m\_avgmutex.unlock();
-196 
-197         \textcolor{comment}{//Print}
-198         \hyperlink{Log_8h_aba6772a53f37234ac4fa7570b4d49c5a}{DEBUG}() << stats.f\_demux\_bitrate << \textcolor{stringliteral}{"    "} << stats.f\_input\_bitrate << \textcolor{stringliteral}{"    "} << m\_bravg;
+182 \{
+183     libvlc\_media\_stats\_t stats;
+184 
+185     \textcolor{keywordtype}{int} err = libvlc\_media\_get\_stats(m\_media, &stats);
+186 
+187     \textcolor{keywordflow}{if}(err)
+188     \{
+189         \textcolor{comment}{//Compute the running average}
+190 
+191         \textcolor{comment}{//Lock the mutex}
+192         m\_avgmutex.lock();
+193         \textcolor{comment}{//Increment average counter}
+194         m\_current++;
+195         \textcolor{comment}{//Get the new average}
+196         m\_bravg = (m\_bravg * (m\_current-1) + stats.f\_input\_bitrate) / m\_current;
+197         \textcolor{comment}{//Unlock the mutex}
+198         m\_avgmutex.unlock();
 199 
-200     \}
-201     \textcolor{keywordflow}{else}
-202     \{
-203 
-204         \hyperlink{Log_8h_aba6772a53f37234ac4fa7570b4d49c5a}{DEBUG}() << \textcolor{stringliteral}{"FAILED TO GET STATISTICS: "} << err;
-205     \}
-206 
+200         \textcolor{comment}{//Get the maximum}
+201         m\_maxmutex.lock();
+202 
+203         \textcolor{keywordflow}{if}(m\_maxbitrate == 0.0 || stats.f\_input\_bitrate > m\_maxbitrate)
+204             m\_maxbitrate = stats.f\_input\_bitrate;
+205 
+206         m\_maxmutex.unlock();
 207 
-208 \}
+208         \textcolor{comment}{//Print}
+209         \hyperlink{Log_8h_aba6772a53f37234ac4fa7570b4d49c5a}{DEBUG}() << stats.f\_demux\_bitrate << \textcolor{stringliteral}{"    "} << stats.f\_input\_bitrate << \textcolor{stringliteral}{"    "} << m\_bravg << \textcolor{stringliteral}{" 
+         "} << m\_maxbitrate;
+210 
+211     \}
+212     \textcolor{keywordflow}{else}
+213     \{
+214 
+215         \hyperlink{Log_8h_aba6772a53f37234ac4fa7570b4d49c5a}{DEBUG}() << \textcolor{stringliteral}{"FAILED TO GET STATISTICS: "} << err;
+216     \}
+217 
+218 
+219 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a6c7a053f255e2976ab3cbe8cb9ee2ac8}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!get\-Media\-Stats@{get\-Media\-Stats}}
 \index{get\-Media\-Stats@{get\-Media\-Stats}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -214,18 +251,18 @@ true if the stats are available and the media is playing, false otherwise
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-212 \{
-213     \textcolor{keywordtype}{bool} status = \textcolor{keyword}{true};
-214     \textcolor{comment}{//See if media is playing}
-215     status = this->\hyperlink{classVLCWrapper_a52d4cde1548105d10d1b8906fac68dac}{isPlaying}();
-216     \textcolor{comment}{//Get the statistics}
-217     \textcolor{keywordflow}{if}(status)
-218     \{
-219        status = libvlc\_media\_get\_stats(m\_media, stats);
-220     \}
-221 
-222     \textcolor{keywordflow}{return} status;
-223 \}
+223 \{
+224     \textcolor{keywordtype}{bool} status = \textcolor{keyword}{true};
+225     \textcolor{comment}{//See if media is playing}
+226     status = this->\hyperlink{classVLCWrapper_a52d4cde1548105d10d1b8906fac68dac}{isPlaying}();
+227     \textcolor{comment}{//Get the statistics}
+228     \textcolor{keywordflow}{if}(status)
+229     \{
+230        status = libvlc\_media\_get\_stats(m\_media, stats);
+231     \}
+232 
+233     \textcolor{keywordflow}{return} status;
+234 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a806ad002020aaba2f471ee948226cb0c}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!get\-Video\-Size@{get\-Video\-Size}}
 \index{get\-Video\-Size@{get\-Video\-Size}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -251,17 +288,17 @@ true if the video is playing, false otherwise.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-140 \{
-141     \textcolor{keywordtype}{bool} playing = this->m\_isPlaying;
-142     \textcolor{comment}{//Only get width and height if video is playing}
-143     \textcolor{keywordflow}{if}(playing)
-144     \{
-145         \textcolor{comment}{//*width = libvlc\_video\_get\_width(m\_mp);}
-146         \textcolor{comment}{//*height = libvlc\_video\_get\_height(m\_mp);}
-147         libvlc\_video\_get\_size(m\_mp, 0, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)width, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)height);
-148     \}
-149     \textcolor{keywordflow}{return} playing;
-150 \}
+143 \{
+144     \textcolor{keywordtype}{bool} playing = this->m\_isPlaying;
+145     \textcolor{comment}{//Only get width and height if video is playing}
+146     \textcolor{keywordflow}{if}(playing)
+147     \{
+148         \textcolor{comment}{//*width = libvlc\_video\_get\_width(m\_mp);}
+149         \textcolor{comment}{//*height = libvlc\_video\_get\_height(m\_mp);}
+150         libvlc\_video\_get\_size(m\_mp, 0, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)width, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)height);
+151     \}
+152     \textcolor{keywordflow}{return} playing;
+153 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a23af9a9003d74b012967e72947141241}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!initialize@{initialize}}
 \index{initialize@{initialize}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -285,21 +322,24 @@ This function will initialize the V\-L\-C instance and media player.
 21 \textcolor{comment}{//        "",}
 22 \textcolor{comment}{//        "--file-logging",}
 23 \textcolor{comment}{//        "--logfile=../logs/videostreamer-vlc.log"}
-24         \textcolor{stringliteral}{"--udp-caching=0"},
-25         \textcolor{stringliteral}{"--h264-fps=40"}
-26     \};
+24         \textcolor{stringliteral}{"--no-osd"},
+25         \textcolor{stringliteral}{"--clock-jitter=200"},
+26         \textcolor{stringliteral}{"--ffmpeg-threads=1"}
 27 
-28     \textcolor{comment}{//Instantiate vlc}
-29     \textcolor{comment}{//m\_vlc = libvlc\_new(sizeof(vlc\_args) / sizeof(vlc\_args[0]), vlc\_args);}
-30     m\_vlc = libvlc\_new(0, 0);
-31     \textcolor{comment}{//Instantiate a media player}
-32     m\_mp = libvlc\_media\_player\_new(m\_vlc);
-33 
-34     \textcolor{comment}{//Logging callback -- HAVE TO UPGRADE UBUNTU TO GET LATEST VERSION OF LIBVLC}
-35     \textcolor{comment}{//libvlc\_log\_set(m\_vlc, log\_msg, (void *)this->m\_data);}
+28     \};
+29 
+30     \textcolor{comment}{//Instantiate vlc}
+31     m\_vlc = libvlc\_new(\textcolor{keyword}{sizeof}(vlc\_args) / \textcolor{keyword}{sizeof}(vlc\_args[0]), vlc\_args);
+32     \textcolor{comment}{//m\_vlc = libvlc\_new(0,0);}
+33     \textcolor{comment}{//Instantiate a media player}
+34     m\_mp = libvlc\_media\_player\_new(m\_vlc);
+35 
 36 
-37 
-38 \}
+37     \textcolor{comment}{//Logging callback -- HAVE TO UPGRADE UBUNTU TO GET LATEST VERSION OF LIBVLC}
+38     \textcolor{comment}{//libvlc\_log\_set(m\_vlc, log\_msg, (void *)this->m\_data);}
+39 
+40 
+41 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a52d4cde1548105d10d1b8906fac68dac}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!is\-Playing@{is\-Playing}}
 \index{is\-Playing@{is\-Playing}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -317,10 +357,10 @@ true if playing, false otherwise.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-167 \{
-168     \textcolor{keywordflow}{return} (1 == libvlc\_media\_player\_is\_playing(m\_mp));
-169     \textcolor{comment}{//return this->m\_isPlaying;}
-170 \}
+170 \{
+171     \textcolor{keywordflow}{return} (1 == libvlc\_media\_player\_is\_playing(m\_mp));
+172     \textcolor{comment}{//return this->m\_isPlaying;}
+173 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a8dadd74aef3a683cf73b677bc98db70c}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!pause@{pause}}
 \index{pause@{pause}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -335,9 +375,9 @@ Pause function.
 
 
 \begin{DoxyCode}
-134 \{
-135     libvlc\_media\_player\_pause(m\_mp);
-136 \}
+137 \{
+138     libvlc\_media\_player\_pause(m\_mp);
+139 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a75bc08d5b5d25ebcbdd50d3ecd1301bd}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!play@{play}}
 \index{play@{play}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -360,24 +400,24 @@ Play the media and display the video on the widget using a handle to an X\-Windo
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-80 \{
-81     \textcolor{keywordtype}{int} status = 0;
-82     \textcolor{comment}{//Set media player element}
-83     libvlc\_media\_player\_set\_media(m\_mp, m\_media);
-84     \textcolor{comment}{//Non-windows}
-85     libvlc\_media\_player\_set\_xwindow(m\_mp, winId);
-86 
-87     \textcolor{comment}{//Set the media options we desire}
-88     this->setMediaOptions();
+83 \{
+84     \textcolor{keywordtype}{int} status = 0;
+85     \textcolor{comment}{//Set media player element}
+86     libvlc\_media\_player\_set\_media(m\_mp, m\_media);
+87     \textcolor{comment}{//Non-windows}
+88     libvlc\_media\_player\_set\_xwindow(m\_mp, winId);
 89 
-90     \textcolor{comment}{//Play media}
-91     status = libvlc\_media\_player\_play(m\_mp);
+90     \textcolor{comment}{//Set the media options we desire}
+91     this->setMediaOptions();
 92 
-93     \textcolor{keywordflow}{if}(status != -1)
-94         this->m\_isPlaying = \textcolor{keyword}{true};
+93     \textcolor{comment}{//Play media}
+94     status = libvlc\_media\_player\_play(m\_mp);
 95 
-96     \textcolor{keywordflow}{return} status;
-97 \}
+96     \textcolor{keywordflow}{if}(status != -1)
+97         this->m\_isPlaying = \textcolor{keyword}{true};
+98 
+99     \textcolor{keywordflow}{return} status;
+100 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a954f054bc8ff9259427d368a6e4700d1}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!play@{play}}
 \index{play@{play}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -400,24 +440,24 @@ Play the media and display the video on the widget using an H\-W\-N\-D handle. U
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-101 \{
-102     \textcolor{keywordtype}{int} status = 0;
-103     \textcolor{comment}{//Set media player element}
-104     libvlc\_media\_player\_set\_media(m\_mp, m\_media);
-105     \textcolor{comment}{//Windows specific}
-106     libvlc\_media\_player\_set\_hwnd(m\_mp, winId);
-107 
-108     \textcolor{comment}{//Set the media options we desire}
-109     this->setMediaOptions();
+104 \{
+105     \textcolor{keywordtype}{int} status = 0;
+106     \textcolor{comment}{//Set media player element}
+107     libvlc\_media\_player\_set\_media(m\_mp, m\_media);
+108     \textcolor{comment}{//Windows specific}
+109     libvlc\_media\_player\_set\_hwnd(m\_mp, winId);
 110 
-111     \textcolor{comment}{//Play media}
-112     status = libvlc\_media\_player\_play(m\_mp);
+111     \textcolor{comment}{//Set the media options we desire}
+112     this->setMediaOptions();
 113 
-114     \textcolor{keywordflow}{if}(status != -1)
-115         this->m\_isPlaying = \textcolor{keyword}{true};
+114     \textcolor{comment}{//Play media}
+115     status = libvlc\_media\_player\_play(m\_mp);
 116 
-117     \textcolor{keywordflow}{return} status;
-118 \}
+117     \textcolor{keywordflow}{if}(status != -1)
+118         this->m\_isPlaying = \textcolor{keyword}{true};
+119 
+120     \textcolor{keywordflow}{return} status;
+121 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a7d2f4f7b0f796711b614f2d9f6ea63ee}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!reset\-Media@{reset\-Media}}
 \index{reset\-Media@{reset\-Media}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -437,39 +477,44 @@ Reset the media.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-153 \{
-154     \textcolor{comment}{//int ret = libvlc\_media\_player\_set\_rate(m\_mp, ((float)fps) / 30);}
-155     \textcolor{comment}{//Set the media options we desire}
-156     this->setMediaOptions();
-157 
-158     \textcolor{comment}{//Set media player element}
-159     libvlc\_media\_player\_set\_media(m\_mp, m\_media);
+156 \{
+157     \textcolor{comment}{//int ret = libvlc\_media\_player\_set\_rate(m\_mp, ((float)fps) / 30);}
+158     \textcolor{comment}{//Set the media options we desire}
+159     this->setMediaOptions();
 160 
-161     \textcolor{comment}{//Play media}
-162     \textcolor{keywordtype}{int} status = libvlc\_media\_player\_play(m\_mp);
-163 \}
+161     \textcolor{comment}{//Set media player element}
+162     libvlc\_media\_player\_set\_media(m\_mp, m\_media);
+163 
+164     \textcolor{comment}{//Play media}
+165     \textcolor{keywordtype}{int} status = libvlc\_media\_player\_play(m\_mp);
+166 \}
 \end{DoxyCode}
-\hypertarget{classVLCWrapper_a5acd0eb82102874f09dacaa277a2f784}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!reset\-Running\-Average@{reset\-Running\-Average}}
-\index{reset\-Running\-Average@{reset\-Running\-Average}!VLCWrapper@{V\-L\-C\-Wrapper}}
-\subsubsection[{reset\-Running\-Average}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-Wrapper\-::reset\-Running\-Average (
+\hypertarget{classVLCWrapper_a3785c6d8fc70b19d66f90cda5dce360f}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!reset\-Stats@{reset\-Stats}}
+\index{reset\-Stats@{reset\-Stats}!VLCWrapper@{V\-L\-C\-Wrapper}}
+\subsubsection[{reset\-Stats}]{\setlength{\rightskip}{0pt plus 5cm}void V\-L\-C\-Wrapper\-::reset\-Stats (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classVLCWrapper_a5acd0eb82102874f09dacaa277a2f784}
+)}}\label{classVLCWrapper_a3785c6d8fc70b19d66f90cda5dce360f}
 
 
 Reset the running bitrate average. 
 
 This function will reset the running average of the video bitrate (as in when a new segment of video is started). 
 \begin{DoxyCode}
-240 \{
-241     \textcolor{comment}{//Lock the mutex}
-242     m\_avgmutex.lock();
-243     m\_bravg = 0.0;
-244     m\_current = 0;
-245     m\_avgmutex.unlock();
-246 
-247 \}
+262 \{
+263     \textcolor{comment}{//Lock the mutex}
+264     m\_avgmutex.lock();
+265     m\_bravg = 0.0;
+266     m\_current = 0;
+267     m\_avgmutex.unlock();
+268 
+269     \textcolor{comment}{//Reset the maximum}
+270     m\_maxmutex.lock();
+271     m\_maxbitrate = 0.0;
+272     m\_maxmutex.unlock();
+273 
+274 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_abb027f9dfb30636141f85a1292885634}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!set\-Fps@{set\-Fps}}
 \index{set\-Fps@{set\-Fps}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -489,9 +534,9 @@ Set the frame rate of the video to be played.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-129 \{
-130     this->m\_fps = fps;
-131 \}
+132 \{
+133     this->m\_fps = fps;
+134 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a9f5993525559efb2fbdd434c79f040c7}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!set\-Media\-To\-File@{set\-Media\-To\-File}}
 \index{set\-Media\-To\-File@{set\-Media\-To\-File}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -511,15 +556,15 @@ Sets the media object to the file whose full name is file\-\_\-name.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-56 \{
-57     \textcolor{keywordflow}{if}(m\_isPlaying)
-58     \{
-59         \textcolor{comment}{//Stop current video}
-60         this->\hyperlink{classVLCWrapper_a2ddae6b4fb05cd9cd149c6769d8fa7a9}{stop}();
-61     \}
-62     \textcolor{comment}{//Open the file specified in the open string}
-63     this->m\_media = libvlc\_media\_new\_path(m\_vlc, file\_name);
-64 \}
+59 \{
+60     \textcolor{keywordflow}{if}(m\_isPlaying)
+61     \{
+62         \textcolor{comment}{//Stop current video}
+63         this->\hyperlink{classVLCWrapper_a2ddae6b4fb05cd9cd149c6769d8fa7a9}{stop}();
+64     \}
+65     \textcolor{comment}{//Open the file specified in the open string}
+66     this->m\_media = libvlc\_media\_new\_path(m\_vlc, file\_name);
+67 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a82c02b12dbcb832abb26cd5c578aa180}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!set\-Media\-To\-Url@{set\-Media\-To\-Url}}
 \index{set\-Media\-To\-Url@{set\-Media\-To\-Url}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -539,15 +584,15 @@ Set the media object to stream from the U\-R\-L specified.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-68 \{
-69     \textcolor{keywordflow}{if}(m\_isPlaying)
-70     \{
-71         \textcolor{comment}{//Stop current video}
-72         this->\hyperlink{classVLCWrapper_a2ddae6b4fb05cd9cd149c6769d8fa7a9}{stop}();
-73     \}
-74     \textcolor{comment}{//Open specified url}
-75     this->m\_media = libvlc\_media\_new\_location(m\_vlc, url);
-76 \}
+71 \{
+72     \textcolor{keywordflow}{if}(m\_isPlaying)
+73     \{
+74         \textcolor{comment}{//Stop current video}
+75         this->\hyperlink{classVLCWrapper_a2ddae6b4fb05cd9cd149c6769d8fa7a9}{stop}();
+76     \}
+77     \textcolor{comment}{//Open specified url}
+78     this->m\_media = libvlc\_media\_new\_location(m\_vlc, url);
+79 \}
 \end{DoxyCode}
 \hypertarget{classVLCWrapper_a2ddae6b4fb05cd9cd149c6769d8fa7a9}{\index{V\-L\-C\-Wrapper@{V\-L\-C\-Wrapper}!stop@{stop}}
 \index{stop@{stop}!VLCWrapper@{V\-L\-C\-Wrapper}}
@@ -562,12 +607,12 @@ Stop playing.
 
 
 \begin{DoxyCode}
-121 \{
-122     libvlc\_media\_player\_stop(m\_mp);
-123     \textcolor{comment}{//Release the media}
-124     libvlc\_media\_release(m\_media);
-125     this->m\_isPlaying = \textcolor{keyword}{false};
-126 \}
+124 \{
+125     libvlc\_media\_player\_stop(m\_mp);
+126     \textcolor{comment}{//Release the media}
+127     libvlc\_media\_release(m\_media);
+128     this->m\_isPlaying = \textcolor{keyword}{false};
+129 \}
 \end{DoxyCode}
 
 

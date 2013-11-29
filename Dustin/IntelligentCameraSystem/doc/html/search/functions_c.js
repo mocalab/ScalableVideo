@@ -5,6 +5,7 @@ var searchData=
   ['namespace_5furi_5fpredicate',['namespace_uri_predicate',['../structnamespace__uri__predicate.html#a25bef9c1e12b0fdc908275ae7ab7c202',1,'namespace_uri_predicate']]],
   ['networktoqtinterface',['NetworkToQtInterface',['../classNetworkToQtInterface.html#a35d74d050d8317ad3643f56ca51dd400',1,'NetworkToQtInterface::NetworkToQtInterface()'],['../classNetworkToQtInterface.html#aa979e45a30e3fd430b5bc4298aa1831e',1,'NetworkToQtInterface::NetworkToQtInterface(Address server_address)']]],
   ['new_5fxpath_5fvariable',['new_xpath_variable',['../pugixml_8cpp.html#a2ed6395c5799a328db6790347795af68',1,'new_xpath_variable(const char_t *name):&#160;pugixml.cpp'],['../pugixml_8cpp.html#a6301d8a3514e0f724a51d9c38fa1cfec',1,'new_xpath_variable(xpath_value_type type, const char_t *name):&#160;pugixml.cpp']]],
+  ['newbandwidth',['newBandwidth',['../classBandwidthFileReader.html#abd0490c2362d76086fd6b2c741357a44',1,'BandwidthFileReader']]],
   ['newimage',['newImage',['../classDemuxer.html#a0a8254e06b4450d65428e9d1f641c8cd',1,'Demuxer::newImage()'],['../classFFMPEGWrapper.html#a91a7fbecacc6d1b82661accd2126f846',1,'FFMPEGWrapper::newImage()']]],
   ['next',['next',['../classxpath__lexer.html#a32684b3097fccb4d626da620b44b72ad',1,'xpath_lexer']]],
   ['next_5fattribute',['next_attribute',['../classpugi_1_1xml__attribute.html#a71b0ee33f833781a94d6d35adfc0daac',1,'pugi::xml_attribute']]],

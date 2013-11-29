@@ -1,0 +1,221 @@
+\hypertarget{classBandwidthFileReader}{\section{Bandwidth\-File\-Reader Class Reference}
+\label{classBandwidthFileReader}\index{Bandwidth\-File\-Reader@{Bandwidth\-File\-Reader}}
+}
+
+
+A T\-E\-S\-T class to read a file that will contain bandwidth information.  
+
+
+
+
+{\ttfamily \#include $<$bandwidthfilereader.\-h$>$}
+
+Inheritance diagram for Bandwidth\-File\-Reader\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBandwidthFileReader}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classBandwidthFileReader_a49c0d54f1342d5e9c89645ef4a8d6d50}{read\-Loop} ()
+\begin{DoxyCompactList}\small\item\em The read\-Loop slot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classBandwidthFileReader_abd0490c2362d76086fd6b2c741357a44}{new\-Bandwidth} (Q\-String bandwidth)
+\begin{DoxyCompactList}\small\item\em Slot to signal a new bandwidth is available. \end{DoxyCompactList}\item 
+void \hyperlink{classBandwidthFileReader_a1d2d50deda4271b620377958bf756d9f}{finished} ()
+\begin{DoxyCompactList}\small\item\em Signal emitted when work has completed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBandwidthFileReader_a916d76632b3cb458331f86ec3101a4d4}{Bandwidth\-File\-Reader} (Q\-String \&filename)
+\begin{DoxyCompactList}\small\item\em Explicit value contructor. \end{DoxyCompactList}\item 
+\hyperlink{classBandwidthFileReader_a9ae6867549182c7bcf34718580bae864}{$\sim$\-Bandwidth\-File\-Reader} ()
+\item 
+void \hyperlink{classBandwidthFileReader_a0301d713d44225001bd87e7f423bd753}{set\-Ready\-Flag} (bool val)
+\begin{DoxyCompactList}\small\item\em Set the value of the ready flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A T\-E\-S\-T class to read a file that will contain bandwidth information. 
+
+This class is used for testing purposes for reading a file that will contain information about available channel bandwidth. The class will open the file and read lines as they become available that will write the new value of the bandiwdth in Kbps. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBandwidthFileReader_a916d76632b3cb458331f86ec3101a4d4}{\index{Bandwidth\-File\-Reader@{Bandwidth\-File\-Reader}!Bandwidth\-File\-Reader@{Bandwidth\-File\-Reader}}
+\index{Bandwidth\-File\-Reader@{Bandwidth\-File\-Reader}!BandwidthFileReader@{Bandwidth\-File\-Reader}}
+\subsubsection[{Bandwidth\-File\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}Bandwidth\-File\-Reader\-::\-Bandwidth\-File\-Reader (
+\begin{DoxyParamCaption}
+\item[{Q\-String \&}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classBandwidthFileReader_a916d76632b3cb458331f86ec3101a4d4}
+
+
+Explicit value contructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the bandwidth information file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+4                                                           :
+5     m\_filereader(\hyperlink{classFileReaderUtility}{FileReaderUtility}())
+6 \{
+7     \textcolor{comment}{//Create the fifo and set the path}
+8     QString fifo\_name(\hyperlink{Constants_8h_a5dcb1c9f587abfbe92034f35420f9ba4}{BWFILE\_PATH});
+9     fifo\_name += filename;
+10 
+11     \textcolor{comment}{//Create the fifo}
+12     \textcolor{keywordtype}{int} ready = mkfifo(fifo\_name.toStdString().c\_str(), S\_IRUSR | S\_IWUSR | S\_IRGRP | S\_IWGRP | S\_IROTH);
+13 
+14     \textcolor{comment}{//Set the ready flag}
+15     \textcolor{keywordflow}{if}(ready == 0)
+16     \{
+17         \textcolor{comment}{//Set the file reader file}
+18         m\_filereader.\hyperlink{classFileReaderUtility_a8d4984a9b7f18c589906d6e26956402b}{setFile}(fifo\_name);
+19         m\_ready = \textcolor{keyword}{true};
+20     \}
+21     \textcolor{keywordflow}{else}
+22         m\_ready = \textcolor{keyword}{false};
+23 \}
+\end{DoxyCode}
+\hypertarget{classBandwidthFileReader_a9ae6867549182c7bcf34718580bae864}{\index{Bandwidth\-File\-Reader@{Bandwidth\-File\-Reader}!$\sim$\-Bandwidth\-File\-Reader@{$\sim$\-Bandwidth\-File\-Reader}}
+\index{$\sim$\-Bandwidth\-File\-Reader@{$\sim$\-Bandwidth\-File\-Reader}!BandwidthFileReader@{Bandwidth\-File\-Reader}}
+\subsubsection[{$\sim$\-Bandwidth\-File\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}Bandwidth\-File\-Reader\-::$\sim$\-Bandwidth\-File\-Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBandwidthFileReader_a9ae6867549182c7bcf34718580bae864}
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{comment}{//Destroy the fifo}
+28     unlink(m\_filereader.\hyperlink{classFileReaderUtility_a9a871c01eeb7336d5d2cbc90d1550d3d}{getFile}().toStdString().c\_str());
+29 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBandwidthFileReader_a1d2d50deda4271b620377958bf756d9f}{\index{Bandwidth\-File\-Reader@{Bandwidth\-File\-Reader}!finished@{finished}}
+\index{finished@{finished}!BandwidthFileReader@{Bandwidth\-File\-Reader}}
+\subsubsection[{finished}]{\setlength{\rightskip}{0pt plus 5cm}void Bandwidth\-File\-Reader\-::finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classBandwidthFileReader_a1d2d50deda4271b620377958bf756d9f}
+
+
+Signal emitted when work has completed. 
+
+\hypertarget{classBandwidthFileReader_abd0490c2362d76086fd6b2c741357a44}{\index{Bandwidth\-File\-Reader@{Bandwidth\-File\-Reader}!new\-Bandwidth@{new\-Bandwidth}}
+\index{new\-Bandwidth@{new\-Bandwidth}!BandwidthFileReader@{Bandwidth\-File\-Reader}}
+\subsubsection[{new\-Bandwidth}]{\setlength{\rightskip}{0pt plus 5cm}void Bandwidth\-File\-Reader\-::new\-Bandwidth (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{bandwidth}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classBandwidthFileReader_abd0490c2362d76086fd6b2c741357a44}
+
+
+Slot to signal a new bandwidth is available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bandwidth} & The new bandwidth. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classBandwidthFileReader_a49c0d54f1342d5e9c89645ef4a8d6d50}{\index{Bandwidth\-File\-Reader@{Bandwidth\-File\-Reader}!read\-Loop@{read\-Loop}}
+\index{read\-Loop@{read\-Loop}!BandwidthFileReader@{Bandwidth\-File\-Reader}}
+\subsubsection[{read\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}void Bandwidth\-File\-Reader\-::read\-Loop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classBandwidthFileReader_a49c0d54f1342d5e9c89645ef4a8d6d50}
+
+
+The read\-Loop slot. 
+
+This function will continuously read the bandwidth information file until E\-O\-F is found or the ready flag is set to false. 
+\begin{DoxyCode}
+41 \{
+42     \textcolor{comment}{//Loop while the ready flag is set}
+43 
+44     \textcolor{comment}{//Try to open the file}
+45     \textcolor{keywordtype}{bool} isReady = m\_filereader.\hyperlink{classFileReaderUtility_a77c879620e0ddcc16e966649a73aa5c5}{open\_file}();
+46 
+47     m\_readymutex.lock();
+48     this->m\_ready = isReady;
+49     m\_readymutex.unlock();
+50 
+51     \textcolor{keywordflow}{while}(isReady)
+52     \{
+53         \textcolor{comment}{//Read another line}
+54         QString line = m\_filereader.\hyperlink{classFileReaderUtility_ab41fc317ab5f175f61a15f1c2dff20ab}{readLine}();
+55 
+56         \textcolor{comment}{//If a null string}
+57         \textcolor{keywordflow}{if}(!m\_filereader.\hyperlink{classFileReaderUtility_a0e8f0a86678ed4690758abad92d08520}{isOpen}() || line == \textcolor{stringliteral}{"-1"})
+58         \{
+59             \textcolor{comment}{//We've reached EOF}
+60             m\_readymutex.lock();
+61             this->m\_ready = \textcolor{keyword}{false};
+62             m\_readymutex.unlock();
+63         \}
+64         \textcolor{keywordflow}{else}
+65         \{
+66             \textcolor{comment}{//Signal we have a new bandwidth}
+67             \textcolor{keywordflow}{if}(line != \textcolor{stringliteral}{""})
+68                 emit \hyperlink{classBandwidthFileReader_abd0490c2362d76086fd6b2c741357a44}{newBandwidth}(line);
+69         \}
+70 
+71         \textcolor{comment}{//Set the new value of isReady}
+72         \textcolor{comment}{//Lock the mutex}
+73         m\_readymutex.lock();
+74         \textcolor{comment}{//Set}
+75         isReady = this->m\_ready;
+76         \textcolor{comment}{//Unlock}
+77         m\_readymutex.unlock();
+78     \}
+79 
+80     m\_filereader.\hyperlink{classFileReaderUtility_ab8c0f909bc4d5325ad062a35451442a5}{close}();
+81 
+82     \textcolor{comment}{//Destroy the fifo}
+83     unlink(m\_filereader.\hyperlink{classFileReaderUtility_a9a871c01eeb7336d5d2cbc90d1550d3d}{getFile}().toStdString().c\_str());
+84 
+85     \textcolor{comment}{//Finished}
+86     emit \hyperlink{classBandwidthFileReader_a1d2d50deda4271b620377958bf756d9f}{finished}();
+87 \}
+\end{DoxyCode}
+\hypertarget{classBandwidthFileReader_a0301d713d44225001bd87e7f423bd753}{\index{Bandwidth\-File\-Reader@{Bandwidth\-File\-Reader}!set\-Ready\-Flag@{set\-Ready\-Flag}}
+\index{set\-Ready\-Flag@{set\-Ready\-Flag}!BandwidthFileReader@{Bandwidth\-File\-Reader}}
+\subsubsection[{set\-Ready\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}void Bandwidth\-File\-Reader\-::set\-Ready\-Flag (
+\begin{DoxyParamCaption}
+\item[{bool}]{val}
+\end{DoxyParamCaption}
+)}}\label{classBandwidthFileReader_a0301d713d44225001bd87e7f423bd753}
+
+
+Set the value of the ready flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The new value of the read flag. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+33 \{
+34     m\_readymutex.lock();
+35     this->m\_ready = val;
+36     m\_readymutex.unlock();
+37 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Util/\-File\-Util/\hyperlink{bandwidthfilereader_8h}{bandwidthfilereader.\-h}\item 
+Util/\-File\-Util/\hyperlink{bandwidthfilereader_8cpp}{bandwidthfilereader.\-cpp}\end{DoxyCompactItemize}

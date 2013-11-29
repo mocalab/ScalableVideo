@@ -2,6 +2,7 @@ var searchData=
 [
   ['offset_5fdebug',['offset_debug',['../classpugi_1_1xml__node.html#a77b819bd87978bebefe75d421a793cf3',1,'pugi::xml_node']]],
   ['on_5fbsend_5fclicked',['on_bSend_clicked',['../classMainWindow.html#a2605ed0a3de91bd4e13316d16887fd60',1,'MainWindow']]],
+  ['onbandwidth',['onBandwidth',['../classVideoWindow.html#ac8f9d111de984604f029eec9d71ced83',1,'VideoWindow']]],
   ['open',['Open',['../classSocket.html#a7d7e4c8274e8028cc56f5778f98936b1',1,'Socket']]],
   ['open_5ffile',['open_file',['../classFileReaderUtility.html#a77c879620e0ddcc16e966649a73aa5c5',1,'FileReaderUtility']]],
   ['open_5ffile_5fwide',['open_file_wide',['../pugixml_8cpp.html#a6a347080c51ac7c992a32cde66a43801',1,'pugixml.cpp']]],

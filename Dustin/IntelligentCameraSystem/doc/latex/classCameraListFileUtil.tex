@@ -1,0 +1,160 @@
+\hypertarget{classCameraListFileUtil}{\section{Camera\-List\-File\-Util Class Reference}
+\label{classCameraListFileUtil}\index{Camera\-List\-File\-Util@{Camera\-List\-File\-Util}}
+}
+
+
+An X\-M\-L file reading utility.  
+
+
+
+
+{\ttfamily \#include $<$cameralistfileutil.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCameraListFileUtil_a8966248618d4fbd76c573dfaf009f42a}{Camera\-List\-File\-Util} ()
+\begin{DoxyCompactList}\small\item\em Default value constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classCameraListFileUtil_abb70006319c1301e47e02bd17d2098e2}{load\-Document} (Q\-String \&filename)
+\begin{DoxyCompactList}\small\item\em Load the xml document. \end{DoxyCompactList}\item 
+\hyperlink{camera_8h_a4e5cc6bdc5723a4d61f3aac69dbb083a}{Camera\-List} \hyperlink{classCameraListFileUtil_a8ea7a7091551688c46f5077d2fe632e9}{get\-Camera\-List} ()
+\begin{DoxyCompactList}\small\item\em Get the camera list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An X\-M\-L file reading utility. 
+
+This class defines a utility for reading and writing an xml configuration file containing a list of saved camera servers. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCameraListFileUtil_a8966248618d4fbd76c573dfaf009f42a}{\index{Camera\-List\-File\-Util@{Camera\-List\-File\-Util}!Camera\-List\-File\-Util@{Camera\-List\-File\-Util}}
+\index{Camera\-List\-File\-Util@{Camera\-List\-File\-Util}!CameraListFileUtil@{Camera\-List\-File\-Util}}
+\subsubsection[{Camera\-List\-File\-Util}]{\setlength{\rightskip}{0pt plus 5cm}Camera\-List\-File\-Util\-::\-Camera\-List\-File\-Util (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCameraListFileUtil_a8966248618d4fbd76c573dfaf009f42a}
+
+
+Default value constructor. 
+
+
+\begin{DoxyCode}
+5                                        :
+6     m\_is\_loaded(\textcolor{keyword}{false}),
+7     m\_open\_document(\textcolor{stringliteral}{""})
+8 \{
+9 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCameraListFileUtil_a8ea7a7091551688c46f5077d2fe632e9}{\index{Camera\-List\-File\-Util@{Camera\-List\-File\-Util}!get\-Camera\-List@{get\-Camera\-List}}
+\index{get\-Camera\-List@{get\-Camera\-List}!CameraListFileUtil@{Camera\-List\-File\-Util}}
+\subsubsection[{get\-Camera\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Camera\-List} Camera\-List\-File\-Util\-::get\-Camera\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCameraListFileUtil_a8ea7a7091551688c46f5077d2fe632e9}
+
+
+Get the camera list. 
+
+Parses the loaded xml document and returns a list of cameras. \begin{DoxyReturn}{Returns}
+A list of cameras specified by the X\-M\-L document. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+38 \{
+39     \hyperlink{camera_8h_a4e5cc6bdc5723a4d61f3aac69dbb083a}{CameraList} cameras;
+40 
+41     \textcolor{comment}{//See if document is loaded}
+42     \textcolor{keywordflow}{if}(!m\_is\_loaded)
+43         \textcolor{keywordflow}{return} cameras;
+44 
+45     \textcolor{comment}{//Parse the XML}
+46 
+47     \textcolor{comment}{//Load all cameras}
+48     \hyperlink{classpugi_1_1xml__node}{xml\_node} cams = m\_root.\hyperlink{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{child}(\textcolor{stringliteral}{"cameraList"}).\hyperlink{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{child}(\textcolor{stringliteral}{"camera"});
+49 
+50     \textcolor{comment}{//Iterate through all cameras}
+51     \textcolor{keywordflow}{for}(\hyperlink{classpugi_1_1xml__node}{xml\_node} cam = cams; cam; cam = cam.\hyperlink{classpugi_1_1xml__node_a713159ab981fb3f0a325434106dc94f5}{next\_sibling}())
+52     \{
+53         \textcolor{comment}{//NOTE --- RELYING ON THE UI TO DELETE ALLOCATED RESOURCES}
+54         \hyperlink{classCamera}{Camera} *next\_camera = \textcolor{keyword}{new} \hyperlink{classCamera}{Camera}();
+55         \textcolor{comment}{//Get the name}
+56         \hyperlink{classpugi_1_1xml__attribute}{xml\_attribute} name = cam.attribute(\textcolor{stringliteral}{"name"});
+57         next\_camera->\hyperlink{classCamera_a4f009de64587caa5e2a91a2cdd18fd32}{setName}(QString(name.\hyperlink{classpugi_1_1xml__attribute_a583f470d768f5f8a4df0ebb2e016a88d}{as\_string}()));
+58 
+59 
+60 
+61         \textcolor{comment}{//Get the address}
+62         \hyperlink{classAddress}{Address} next\_addr;
+63         \hyperlink{classpugi_1_1xml__node}{xml\_node} addr = cam.\hyperlink{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{child}(\textcolor{stringliteral}{"address"});
+64         \hyperlink{classpugi_1_1xml__attribute}{xml\_attribute} port = addr.\hyperlink{classpugi_1_1xml__node_a19fc1a285c0f751f52c0e151a727de97}{attribute}(\textcolor{stringliteral}{"port"});
+65         next\_addr.\hyperlink{classAddress_a43ba5f8001b7e729b83b1b9299294495}{setAddress}(std::string(addr.\hyperlink{classpugi_1_1xml__node_aafe1c1c7cd27f3c9c758b517abc7886a}{text}().\hyperlink{classpugi_1_1xml__text_ac817e480d7ab09b3c6390622423a701b}{as\_string}()));
+66         next\_addr.\hyperlink{classAddress_ad73c29200f7d63641e48ebfc16efaf75}{setPort}(port.\hyperlink{classpugi_1_1xml__attribute_afe009e964b9cec96c77495ef1ae6d91f}{as\_int}());
+67 
+68         next\_camera->\hyperlink{classCamera_a678d67d964307ffc9e323d74c7a28ca1}{setServer\_address}(next\_addr);
+69         \textcolor{comment}{//Get the content type}
+70         \hyperlink{classpugi_1_1xml__node}{xml\_node} content\_type = cam.\hyperlink{classpugi_1_1xml__node_af3aa192b114a289640110c9e4da020ca}{child}(\textcolor{stringliteral}{"contentType"});
+71         next\_camera->\hyperlink{classCamera_a1277a5aceff1a947a5a048b8edacd1cf}{setContent\_type}((\hyperlink{camera_8h_a10395294162cb49637e9c8f6efdb10ea}{CameraContentType})content\_type.
+      \hyperlink{classpugi_1_1xml__node_a19fc1a285c0f751f52c0e151a727de97}{attribute}(\textcolor{stringliteral}{"enum"}).\hyperlink{classpugi_1_1xml__attribute_afe009e964b9cec96c77495ef1ae6d91f}{as\_int}());
+72 
+73         \textcolor{comment}{//Add to camera list}
+74         cameras.push\_front(next\_camera);
+75     \}
+76 
+77     \textcolor{keywordflow}{return} cameras;
+78 \}
+\end{DoxyCode}
+\hypertarget{classCameraListFileUtil_abb70006319c1301e47e02bd17d2098e2}{\index{Camera\-List\-File\-Util@{Camera\-List\-File\-Util}!load\-Document@{load\-Document}}
+\index{load\-Document@{load\-Document}!CameraListFileUtil@{Camera\-List\-File\-Util}}
+\subsubsection[{load\-Document}]{\setlength{\rightskip}{0pt plus 5cm}bool Camera\-List\-File\-Util\-::load\-Document (
+\begin{DoxyParamCaption}
+\item[{Q\-String \&}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classCameraListFileUtil_abb70006319c1301e47e02bd17d2098e2}
+
+
+Load the xml document. 
+
+This function will load the xml document into the pugixml backend. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the xml file to load. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the document loaded, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+13 \{
+14     \textcolor{keywordtype}{bool} is\_loaded = \textcolor{keyword}{false};
+15 
+16     \textcolor{comment}{//Load the file}
+17     \hyperlink{structpugi_1_1xml__parse__result}{xml\_parse\_result} result = m\_root.\hyperlink{classpugi_1_1xml__document_aad350209a4a91589fbd7e8cdaf79e010}{load\_file}(filename.toStdString().c\_str());
+18 
+19     \textcolor{keywordflow}{if}(result)
+20     \{
+21         \textcolor{comment}{//Success}
+22         is\_loaded = \textcolor{keyword}{true};
+23         this->m\_is\_loaded = \textcolor{keyword}{true};
+24 
+25         this->m\_open\_document = filename;
+26     \}
+27     \textcolor{keywordflow}{else}
+28     \{
+29         \hyperlink{Log_8h_a1a242c34c5066fb0c62d909f22d3716d}{L\_ERROR}() << \textcolor{stringliteral}{"Unable to load XML file: "} << filename;
+30     \}
+31 
+32     \textcolor{keywordflow}{return} is\_loaded;
+33 
+34 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Util/\-File\-Util/\hyperlink{cameralistfileutil_8h}{cameralistfileutil.\-h}\item 
+Util/\-File\-Util/\hyperlink{cameralistfileutil_8cpp}{cameralistfileutil.\-cpp}\end{DoxyCompactItemize}

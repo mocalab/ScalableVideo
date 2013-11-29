@@ -13,22 +13,55 @@ A class to parse a file, specifically to generate a list of strings which are th
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{classFileReaderUtility_a6cabb02a585207c222063e17c23bc345}{File\-Reader\-Utility} ()
+\begin{DoxyCompactList}\small\item\em Default value contructor. \end{DoxyCompactList}\item 
 \hyperlink{classFileReaderUtility_a470ee17457de07fe519aaf8e607a82bc}{File\-Reader\-Utility} (Q\-String filename)
+\begin{DoxyCompactList}\small\item\em Explicit value constructor. \end{DoxyCompactList}\item 
+\hyperlink{classFileReaderUtility_ae7cea9f17577620d7c678d8379ee103c}{$\sim$\-File\-Reader\-Utility} ()
 \item 
 void \hyperlink{classFileReaderUtility_a8d4984a9b7f18c589906d6e26956402b}{set\-File} (const Q\-String \&filename)
 \begin{DoxyCompactList}\small\item\em set\-File Sets the current filename to open in the \hyperlink{classFileReaderUtility_a77c879620e0ddcc16e966649a73aa5c5}{open\-\_\-file()} call \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classFileReaderUtility_a9a871c01eeb7336d5d2cbc90d1550d3d}{get\-File} () const 
+\begin{DoxyCompactList}\small\item\em Get the file path. \end{DoxyCompactList}\item 
 bool \hyperlink{classFileReaderUtility_a77c879620e0ddcc16e966649a73aa5c5}{open\-\_\-file} ()
-\begin{DoxyCompactList}\small\item\em open\-\_\-file This function will open the file specified by the m\-\_\-filename field. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Open the file. \end{DoxyCompactList}\item 
+void \hyperlink{classFileReaderUtility_ab8c0f909bc4d5325ad062a35451442a5}{close} ()
+\begin{DoxyCompactList}\small\item\em Close the file. \end{DoxyCompactList}\item 
 bool \hyperlink{classFileReaderUtility_a0e8f0a86678ed4690758abad92d08520}{is\-Open} ()
 \begin{DoxyCompactList}\small\item\em is\-Open Whether or not a file is open. \end{DoxyCompactList}\item 
 Q\-String\-List \& \hyperlink{classFileReaderUtility_af0efa92dc11188682345ba1d587993a7}{parse} ()
-\begin{DoxyCompactList}\small\item\em parse This function will parse the opened file and return a list of strings (each line in the file) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em parse This function will parse the opened file and return a list of strings (each line in the file) \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classFileReaderUtility_ab41fc317ab5f175f61a15f1c2dff20ab}{read\-Line} ()
+\begin{DoxyCompactList}\small\item\em Read one line of the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 A class to parse a file, specifically to generate a list of strings which are the lines of that file. 
 
 \subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFileReaderUtility_a6cabb02a585207c222063e17c23bc345}{\index{File\-Reader\-Utility@{File\-Reader\-Utility}!File\-Reader\-Utility@{File\-Reader\-Utility}}
+\index{File\-Reader\-Utility@{File\-Reader\-Utility}!FileReaderUtility@{File\-Reader\-Utility}}
+\subsubsection[{File\-Reader\-Utility}]{\setlength{\rightskip}{0pt plus 5cm}File\-Reader\-Utility\-::\-File\-Reader\-Utility (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFileReaderUtility_a6cabb02a585207c222063e17c23bc345}
+
+
+Default value contructor. 
+
+
+\begin{DoxyCode}
+4                                      :
+5     m\_filename(\textcolor{stringliteral}{""}),
+6     m\_isOpen(\textcolor{keyword}{false}),
+7     m\_lines(QStringList()),
+8     m\_infile(NULL),
+9     m\_stream(NULL)
+10 \{
+11 
+12 \}
+\end{DoxyCode}
 \hypertarget{classFileReaderUtility_a470ee17457de07fe519aaf8e607a82bc}{\index{File\-Reader\-Utility@{File\-Reader\-Utility}!File\-Reader\-Utility@{File\-Reader\-Utility}}
 \index{File\-Reader\-Utility@{File\-Reader\-Utility}!FileReaderUtility@{File\-Reader\-Utility}}
 \subsubsection[{File\-Reader\-Utility}]{\setlength{\rightskip}{0pt plus 5cm}File\-Reader\-Utility\-::\-File\-Reader\-Utility (
@@ -37,17 +70,88 @@ A class to parse a file, specifically to generate a list of strings which are th
 \end{DoxyParamCaption}
 )}}\label{classFileReaderUtility_a470ee17457de07fe519aaf8e607a82bc}
 
+
+Explicit value constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file to read from. \\
+\hline
+\end{DoxyParams}
+
 \begin{DoxyCode}
-4                                                      :
-5     m\_filename(filename),
-6     m\_isOpen(\textcolor{keyword}{false}),
-7     m\_lines(QStringList())
-8 \{
-9 \}
+14                                                      :
+15     m\_filename(filename),
+16     m\_isOpen(\textcolor{keyword}{false}),
+17     m\_lines(QStringList()),
+18     m\_infile(NULL),
+19     m\_stream(NULL)
+20 \{
+21 \}
+\end{DoxyCode}
+\hypertarget{classFileReaderUtility_ae7cea9f17577620d7c678d8379ee103c}{\index{File\-Reader\-Utility@{File\-Reader\-Utility}!$\sim$\-File\-Reader\-Utility@{$\sim$\-File\-Reader\-Utility}}
+\index{$\sim$\-File\-Reader\-Utility@{$\sim$\-File\-Reader\-Utility}!FileReaderUtility@{File\-Reader\-Utility}}
+\subsubsection[{$\sim$\-File\-Reader\-Utility}]{\setlength{\rightskip}{0pt plus 5cm}File\-Reader\-Utility\-::$\sim$\-File\-Reader\-Utility (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFileReaderUtility_ae7cea9f17577620d7c678d8379ee103c}
+
+\begin{DoxyCode}
+24 \{
+25     this->\hyperlink{classFileReaderUtility_ab8c0f909bc4d5325ad062a35451442a5}{close}();
+26 \}
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classFileReaderUtility_ab8c0f909bc4d5325ad062a35451442a5}{\index{File\-Reader\-Utility@{File\-Reader\-Utility}!close@{close}}
+\index{close@{close}!FileReaderUtility@{File\-Reader\-Utility}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-Utility\-::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFileReaderUtility_ab8c0f909bc4d5325ad062a35451442a5}
+
+
+Close the file. 
+
+
+\begin{DoxyCode}
+57 \{
+58     \textcolor{keywordflow}{if}(this->\hyperlink{classFileReaderUtility_a0e8f0a86678ed4690758abad92d08520}{isOpen}())
+59     \{
+60         m\_infile->close();
+61         m\_isOpen = \textcolor{keyword}{false};
+62 
+63         \textcolor{comment}{//Delete resources}
+64         \textcolor{keyword}{delete} m\_infile;
+65         m\_infile = NULL;
+66         \textcolor{keyword}{delete} m\_stream;
+67         m\_stream = NULL;
+68     \}
+69 \}
+\end{DoxyCode}
+\hypertarget{classFileReaderUtility_a9a871c01eeb7336d5d2cbc90d1550d3d}{\index{File\-Reader\-Utility@{File\-Reader\-Utility}!get\-File@{get\-File}}
+\index{get\-File@{get\-File}!FileReaderUtility@{File\-Reader\-Utility}}
+\subsubsection[{get\-File}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String File\-Reader\-Utility\-::get\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classFileReaderUtility_a9a871c01eeb7336d5d2cbc90d1550d3d}
+
+
+Get the file path. 
+
+\begin{DoxyReturn}{Returns}
+The path to the file in use. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+34 \{
+35     \textcolor{keywordflow}{return} this->m\_filename;
+36 \}
+\end{DoxyCode}
 \hypertarget{classFileReaderUtility_a0e8f0a86678ed4690758abad92d08520}{\index{File\-Reader\-Utility@{File\-Reader\-Utility}!is\-Open@{is\-Open}}
 \index{is\-Open@{is\-Open}!FileReaderUtility@{File\-Reader\-Utility}}
 \subsubsection[{is\-Open}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Reader\-Utility\-::is\-Open (
@@ -64,9 +168,9 @@ true if the file is open
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-27 \{
-28     \textcolor{keywordflow}{return} m\_isOpen;
-29 \}
+72 \{
+73     \textcolor{keywordflow}{return} m\_isOpen;
+74 \}
 \end{DoxyCode}
 \hypertarget{classFileReaderUtility_a77c879620e0ddcc16e966649a73aa5c5}{\index{File\-Reader\-Utility@{File\-Reader\-Utility}!open\-\_\-file@{open\-\_\-file}}
 \index{open\-\_\-file@{open\-\_\-file}!FileReaderUtility@{File\-Reader\-Utility}}
@@ -77,21 +181,28 @@ true if the file is open
 )}}\label{classFileReaderUtility_a77c879620e0ddcc16e966649a73aa5c5}
 
 
-open\-\_\-file This function will open the file specified by the m\-\_\-filename field. 
+Open the file. 
 
-\begin{DoxyReturn}{Returns}
+This function will open the file specified by the m\-\_\-filename field. \begin{DoxyReturn}{Returns}
 true if the file successfully opened, false otherwise. 
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-17 \{
-18     \textcolor{comment}{//Open the file}
-19     m\_infile = \textcolor{keyword}{new} QFile(m\_filename);
-20 
-21     \textcolor{comment}{//Open read only}
-22     \textcolor{keywordflow}{return} (m\_isOpen = m\_infile->open(QIODevice::ReadOnly));
-23 
-24 \}
+39 \{
+40     \textcolor{comment}{//Open the file}
+41     m\_infile = \textcolor{keyword}{new} QFile(m\_filename);
+42     m\_isOpen = m\_infile->open(QIODevice::ReadOnly);
+43 
+44     \textcolor{keywordflow}{if}(m\_isOpen)
+45     \{
+46         \textcolor{comment}{//Open a text stream;}
+47         m\_stream = \textcolor{keyword}{new} QTextStream(m\_infile);
+48     \}
+49 
+50     \textcolor{comment}{//Open read only}
+51     \textcolor{keywordflow}{return} m\_isOpen;
+52 
+53 \}
 \end{DoxyCode}
 \hypertarget{classFileReaderUtility_af0efa92dc11188682345ba1d587993a7}{\index{File\-Reader\-Utility@{File\-Reader\-Utility}!parse@{parse}}
 \index{parse@{parse}!FileReaderUtility@{File\-Reader\-Utility}}
@@ -109,29 +220,67 @@ A list of strings (each line in the file)
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-32 \{
-33     \textcolor{comment}{//See if the file is open}
-34     \textcolor{keywordflow}{if}(!m\_isOpen)
-35         \textcolor{keywordflow}{return} m\_lines;
-36 
-37     \textcolor{comment}{//Create an input stream}
-38     QTextStream input\_stream(m\_infile);
-39 
-40     \textcolor{comment}{//Parse each line}
-41     \textcolor{keywordflow}{while}(!input\_stream.atEnd())
-42     \{
-43         \textcolor{comment}{//Get next line}
-44         QString next = input\_stream.readLine();
-45         m\_lines << next;
-46 
-47     \}
-48 
-49     m\_infile->close();
-50     m\_isOpen = \textcolor{keyword}{false};
-51 
-52     \textcolor{keywordflow}{return} m\_lines;
-53 
-54 \}
+77 \{
+78     \textcolor{comment}{//See if the file is open}
+79     \textcolor{keywordflow}{if}(!m\_isOpen)
+80         \textcolor{keywordflow}{return} m\_lines;
+81 
+82     \textcolor{comment}{//Create an input stream}
+83     QTextStream input\_stream(m\_infile);
+84 
+85     \textcolor{comment}{//Parse each line}
+86     \textcolor{keywordflow}{while}(!input\_stream.atEnd())
+87     \{
+88         \textcolor{comment}{//Get next line}
+89         QString next = input\_stream.readLine();
+90         m\_lines << next;
+91 
+92     \}
+93 
+94     this->\hyperlink{classFileReaderUtility_ab8c0f909bc4d5325ad062a35451442a5}{close}();
+95 
+96     \textcolor{keywordflow}{return} m\_lines;
+97 
+98 \}
+\end{DoxyCode}
+\hypertarget{classFileReaderUtility_ab41fc317ab5f175f61a15f1c2dff20ab}{\index{File\-Reader\-Utility@{File\-Reader\-Utility}!read\-Line@{read\-Line}}
+\index{read\-Line@{read\-Line}!FileReaderUtility@{File\-Reader\-Utility}}
+\subsubsection[{read\-Line}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String File\-Reader\-Utility\-::read\-Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFileReaderUtility_ab41fc317ab5f175f61a15f1c2dff20ab}
+
+
+Read one line of the file. 
+
+\begin{DoxyReturn}{Returns}
+The next line of the file to read. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+102 \{
+103     QString next(\textcolor{stringliteral}{""});
+104     \textcolor{comment}{//See if the file is open}
+105     \textcolor{keywordflow}{if}(!m\_isOpen)
+106         \textcolor{keywordflow}{return} next;
+107 
+108     \textcolor{comment}{//Create an input stream}
+109     \textcolor{comment}{//QTextStream input\_stream(m\_infile);}
+110 
+111     \textcolor{keywordflow}{if}(this->\hyperlink{classFileReaderUtility_a0e8f0a86678ed4690758abad92d08520}{isOpen}())
+112     \{
+113         \textcolor{comment}{//Read the next line}
+114         next = m\_stream->readLine();
+115         m\_lines << next;
+116 
+117     \}
+118     \textcolor{keywordflow}{else}
+119         this->\hyperlink{classFileReaderUtility_ab8c0f909bc4d5325ad062a35451442a5}{close}();
+120 
+121     \textcolor{keywordflow}{return} next;
+122 
+123 \}
 \end{DoxyCode}
 \hypertarget{classFileReaderUtility_a8d4984a9b7f18c589906d6e26956402b}{\index{File\-Reader\-Utility@{File\-Reader\-Utility}!set\-File@{set\-File}}
 \index{set\-File@{set\-File}!FileReaderUtility@{File\-Reader\-Utility}}
@@ -151,9 +300,9 @@ set\-File Sets the current filename to open in the \hyperlink{classFileReaderUti
 \end{DoxyParams}
 
 \begin{DoxyCode}
-12 \{
-13     m\_filename = filename;
-14 \}
+29 \{
+30     m\_filename = filename;
+31 \}
 \end{DoxyCode}
 
 

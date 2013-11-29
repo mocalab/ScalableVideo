@@ -6,6 +6,7 @@
 {\ttfamily \#include \char`\"{}mainwindow.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}controlcenter.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}logindialog.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Global/\-Constants.\-h\char`\"{}}\\*
 {\ttfamily \#include $<$Q\-Application$>$}\\*
 {\ttfamily \#include $<$Q\-Dir$>$}\\*
 \subsection*{Functions}
@@ -26,25 +27,30 @@ int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, cha
 )}}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
 
 \begin{DoxyCode}
-10 \{
-11     QApplication a(argc, argv);
-12     \textcolor{comment}{//INITIALIZE LOGGER}
-13     QsLogging::Logger& logger = QsLogging::Logger::instance();
-14     logger.setLoggingLevel(QsLogging::DebugLevel);
-15 
-16     \textcolor{keyword}{const} QString path(QDir(a.applicationDirPath()).filePath(\textcolor{stringliteral}{"../logs/videostreamer.log"}));
-17     QsLogging::DestinationPtr dest(QsLogging::DestinationFactory::MakeFileDestination(path));
-18     logger.addDestination(dest.get());
-19     QLOG\_INFO() << \_\_FILE\_\_ << \textcolor{stringliteral}{":"} << \_\_LINE\_\_ << \textcolor{stringliteral}{" -- "} << \textcolor{stringliteral}{"Program init."};
-20     \textcolor{comment}{//MainWindow *w = new MainWindow;}
-21     \textcolor{comment}{//w->show();}
-22 \textcolor{comment}{//    ControlCenter *w = new ControlCenter;}
-23 \textcolor{comment}{//    w->show();}
-24     \hyperlink{classLoginDialog}{LoginDialog} *w = \textcolor{keyword}{new} \hyperlink{classLoginDialog}{LoginDialog};
-25     w->show();
-26 
-27     \textcolor{keywordtype}{int} ret = a.exec();
-28     \textcolor{keyword}{delete} w;
-29     \textcolor{keywordflow}{return} ret;
-30 \}
+11 \{
+12     QApplication a(argc, argv);
+13     \textcolor{comment}{//INITIALIZE LOGGER}
+14     QsLogging::Logger& logger = QsLogging::Logger::instance();
+15     logger.setLoggingLevel(QsLogging::DebugLevel);
+16 
+17     \textcolor{comment}{//Get path to the logging directory; Developer should set this environment variable}
+18     QByteArray pathname = qgetenv(\textcolor{stringliteral}{"INTELLIGENT\_CAMERA\_SYSTEM\_ROOT\_DIR"});
+19     QString filename(pathname);
+20     filename += \textcolor{stringliteral}{"/"};
+21     filename += \hyperlink{Constants_8h_a456f72fbe9e6baf998125cfec71d6cfd}{LOGFILE\_PATH};
+22     \textcolor{keyword}{const} QString path(QDir(a.applicationDirPath()).filePath(filename));
+23     QsLogging::DestinationPtr dest(QsLogging::DestinationFactory::MakeFileDestination(path));
+24     logger.addDestination(dest.get());
+25     QLOG\_INFO() << \_\_FILE\_\_ << \textcolor{stringliteral}{":"} << \_\_LINE\_\_ << \textcolor{stringliteral}{" -- "} << \textcolor{stringliteral}{"Program init."};
+26     \textcolor{comment}{//MainWindow *w = new MainWindow;}
+27     \textcolor{comment}{//w->show();}
+28 \textcolor{comment}{//    ControlCenter *w = new ControlCenter;}
+29 \textcolor{comment}{//    w->show();}
+30     \hyperlink{classLoginDialog}{LoginDialog} *w = \textcolor{keyword}{new} \hyperlink{classLoginDialog}{LoginDialog};
+31     w->show();
+32 
+33     \textcolor{keywordtype}{int} ret = a.exec();
+34     \textcolor{keyword}{delete} w;
+35     \textcolor{keywordflow}{return} ret;
+36 \}
 \end{DoxyCode}
