@@ -2,6 +2,9 @@ var searchData=
 [
   ['fadein',['fadeIn',['../classVideoControlsWidget.html#a6fee9a987ad66923a326754e227019cc',1,'VideoControlsWidget']]],
   ['fadeout',['fadeOut',['../classVideoControlsWidget.html#aa7a0e5cf6d96db502d1826ec9ed43afa',1,'VideoControlsWidget']]],
+  ['featureset',['FeatureSet',['../classFeatureSet.html',1,'FeatureSet'],['../classFeatureSet.html#ad6569f9f2143e38bf9c1378d55cd2989',1,'FeatureSet::FeatureSet()'],['../classFeatureSet.html#a53ceec8da14074eab01394ecef16d105',1,'FeatureSet::FeatureSet(FeatureSet &amp;cpy)'],['../classFeatureSet.html#afb3fe8535abb9373a71eeb44e0462ca0',1,'FeatureSet::FeatureSet(int bandwidth, int contentType)']]],
+  ['featureset_2ecpp',['featureset.cpp',['../featureset_8cpp.html',1,'']]],
+  ['featureset_2eh',['featureset.h',['../featureset_8h.html',1,'']]],
   ['ffmpegvideowidget',['FFMPEGVideoWidget',['../classFFMPEGVideoWidget.html',1,'FFMPEGVideoWidget'],['../classFFMPEGVideoWidget.html#af50a9f43743bfd96959a4ed57c7dd9c9',1,'FFMPEGVideoWidget::FFMPEGVideoWidget()']]],
   ['ffmpegvideowidget_2ecpp',['ffmpegvideowidget.cpp',['../ffmpegvideowidget_8cpp.html',1,'']]],
   ['ffmpegvideowidget_2eh',['ffmpegvideowidget.h',['../ffmpegvideowidget_8h.html',1,'']]],
@@ -33,6 +36,8 @@ var searchData=
   ['format_5fraw',['format_raw',['../namespacepugi.html#a2dd811716b1c0a6a2431ceca43bc649e',1,'pugi']]],
   ['format_5fsave_5ffile_5ftext',['format_save_file_text',['../namespacepugi.html#ab0aae01dc0b870a2673c32ca6623ae09',1,'pugi']]],
   ['format_5fwrite_5fbom',['format_write_bom',['../namespacepugi.html#ab863bcafd203aeaa98953df3a998243f',1,'pugi']]],
+  ['fps',['fps',['../classEncodingParameters.html#aaae058a54aa6b2381047170d199a5131',1,'EncodingParameters']]],
+  ['fpsasint',['fpsAsInt',['../classEncodingParameters.html#ad6dd43bc2267ca979ed0df18163dabdf',1,'EncodingParameters']]],
   ['framequeue',['FrameQueue',['../ffmpegvideowidget_8h.html#a04aa2ff1b58d448ec543ae12167bbcfc',1,'ffmpegvideowidget.h']]],
   ['freed_5fsize',['freed_size',['../structxml__memory__page.html#ab4c29645546530a0e1938b53979890a8',1,'xml_memory_page']]],
   ['freeresources',['freeResources',['../classVLCToQtInterface.html#af0941bf47aa0a581545f7a367e24185f',1,'VLCToQtInterface::freeResources()'],['../classVLCWrapper.html#a58462a6c083affe4ac09e057d2303565',1,'VLCWrapper::freeResources()']]],

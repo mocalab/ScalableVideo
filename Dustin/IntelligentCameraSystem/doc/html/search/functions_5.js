@@ -2,6 +2,7 @@ var searchData=
 [
   ['fadein',['fadeIn',['../classVideoControlsWidget.html#a6fee9a987ad66923a326754e227019cc',1,'VideoControlsWidget']]],
   ['fadeout',['fadeOut',['../classVideoControlsWidget.html#aa7a0e5cf6d96db502d1826ec9ed43afa',1,'VideoControlsWidget']]],
+  ['featureset',['FeatureSet',['../classFeatureSet.html#ad6569f9f2143e38bf9c1378d55cd2989',1,'FeatureSet::FeatureSet()'],['../classFeatureSet.html#a53ceec8da14074eab01394ecef16d105',1,'FeatureSet::FeatureSet(FeatureSet &amp;cpy)'],['../classFeatureSet.html#afb3fe8535abb9373a71eeb44e0462ca0',1,'FeatureSet::FeatureSet(int bandwidth, int contentType)']]],
   ['ffmpegvideowidget',['FFMPEGVideoWidget',['../classFFMPEGVideoWidget.html#af50a9f43743bfd96959a4ed57c7dd9c9',1,'FFMPEGVideoWidget']]],
   ['ffmpegwrapper',['FFMPEGWrapper',['../classFFMPEGWrapper.html#a5dece5b4d3637569611eaa1bc0a4bfcf',1,'FFMPEGWrapper']]],
   ['fifo',['fifo',['../classDemuxer.html#a4bd7bbc10d0c5356ac541b5f168fde93',1,'Demuxer']]],
@@ -19,5 +20,7 @@ var searchData=
   ['first_5felement_5fby_5fpath',['first_element_by_path',['../classpugi_1_1xml__node.html#ae701cc3920f4a779610f94219bb41fe1',1,'pugi::xml_node']]],
   ['flush',['flush',['../structgap.html#a176c58ee8d57c41b91ae9f00d5e8cab5',1,'gap::flush()'],['../classxml__buffered__writer.html#a74192d6bbee5ea387377537ede483b4f',1,'xml_buffered_writer::flush()'],['../classxml__buffered__writer.html#aa733cb2cd0d5fcacec92c67a7f26c553',1,'xml_buffered_writer::flush(const char_t *data, size_t size)']]],
   ['for_5feach',['for_each',['../classpugi_1_1xml__tree__walker.html#a309363c9d17ef3fc8cacc6f71fcbea88',1,'pugi::xml_tree_walker']]],
+  ['fps',['fps',['../classEncodingParameters.html#aaae058a54aa6b2381047170d199a5131',1,'EncodingParameters']]],
+  ['fpsasint',['fpsAsInt',['../classEncodingParameters.html#ad6dd43bc2267ca979ed0df18163dabdf',1,'EncodingParameters']]],
   ['freeresources',['freeResources',['../classVLCToQtInterface.html#af0941bf47aa0a581545f7a367e24185f',1,'VLCToQtInterface::freeResources()'],['../classVLCWrapper.html#a58462a6c083affe4ac09e057d2303565',1,'VLCWrapper::freeResources()']]]
 ];

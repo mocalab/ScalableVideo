@@ -7,6 +7,7 @@ var searchData=
   ['mainwindow_2eh',['mainwindow.h',['../mainwindow_8h.html',1,'']]],
   ['mainwindowui',['MainWindowUI',['../namespaceMainWindowUI.html',1,'']]],
   ['make_5fparse_5fresult',['make_parse_result',['../pugixml_8cpp.html#a9081c36df7470451a2a067677ee9e423',1,'pugixml.cpp']]],
+  ['makedecision',['makeDecision',['../classDecisionInterface.html#afd67dc2e1710da83987ad842d6b0a69a',1,'DecisionInterface']]],
   ['median',['median',['../pugixml_8cpp.html#a499b0ece1124e9db443c633394439b0c',1,'pugixml.cpp']]],
   ['median3',['median3',['../pugixml_8cpp.html#aed4d651cf1c41b688ffc70804b49c6b0',1,'pugixml.cpp']]],
   ['mediastatistics',['MediaStatistics',['../classMediaStatistics.html',1,'MediaStatistics'],['../classMediaStatistics.html#a5b768a2e4c481a3e630ea88f1d7e6540',1,'MediaStatistics::MediaStatistics()']]],

@@ -4,6 +4,7 @@ var searchData=
   ['deallocate_5fmemory',['deallocate_memory',['../structxml__allocator.html#a5df417155487cce4e0460b123ac33dc6',1,'xml_allocator']]],
   ['deallocate_5fpage',['deallocate_page',['../structxml__allocator.html#a1c6bfe15a257a094f55659f8d71c209e',1,'xml_allocator']]],
   ['deallocate_5fstring',['deallocate_string',['../structxml__allocator.html#af32c538db4d562c2d0bfe15f7c0aa879',1,'xml_allocator']]],
+  ['decisioninterface',['DecisionInterface',['../classDecisionInterface.html#a744aa227199e0b12c4009836fe342f05',1,'DecisionInterface']]],
   ['decode_5flatin1_5fblock',['decode_latin1_block',['../structutf__decoder.html#a3f728755fa7cc552e30e8d8776cad1ce',1,'utf_decoder']]],
   ['decode_5futf16_5fblock',['decode_utf16_block',['../structutf__decoder.html#ac22afd983ac79318f0e7d07669bda8d1',1,'utf_decoder']]],
   ['decode_5futf32_5fblock',['decode_utf32_block',['../structutf__decoder.html#a8bed41cc707328e8d8ab91fd7c3c943e',1,'utf_decoder']]],

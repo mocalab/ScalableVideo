@@ -93,6 +93,13 @@ public:
      * @brief Reset the values of the statistics captured from the VLC client for the current video.
      */
     void resetStats();
+
+    /**
+     * @brief Get the current running average of the input bitrate.
+     * @return The averate data rate.
+     */
+    float getAverageBitrate();
+
 signals:
     void resizeParent(int width, int height);
 public slots:

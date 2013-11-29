@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['send_5fport',['SEND_PORT',['../SocketConstants_8h.html#a92df38b61b193ac6bf60131babe08614',1,'SocketConstants.h']]],
-  ['source_5fpugixml_5fcpp',['SOURCE_PUGIXML_CPP',['../pugixml_8cpp.html#af68359a5202c930fd4beb740e86b6e96',1,'pugixml.cpp']]],
-  ['str_5fsend_5fport',['STR_SEND_PORT',['../SocketConstants_8h.html#a12d15f06e320c26324ec45934324faf6',1,'SocketConstants.h']]]
+  ['receiver_5faddress',['RECEIVER_ADDRESS',['../SocketConstants_8h.html#abcacfe0cacacfd5ec6a24b96e49715c3',1,'SocketConstants.h']]],
+  ['receiver_5fport',['RECEIVER_PORT',['../SocketConstants_8h.html#a714d0c166e470fe1d95e17305a084931',1,'SocketConstants.h']]],
+  ['resolutions_5ffile',['RESOLUTIONS_FILE',['../Constants_8h.html#ab4a334fc8f853017d86f4fd4db79b6de',1,'Constants.h']]]
 ];

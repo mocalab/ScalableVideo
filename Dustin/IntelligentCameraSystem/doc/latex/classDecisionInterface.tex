@@ -1,0 +1,102 @@
+\hypertarget{classDecisionInterface}{\section{Decision\-Interface Class Reference}
+\label{classDecisionInterface}\index{Decision\-Interface@{Decision\-Interface}}
+}
+
+
+This class defines the interface for making a decision about the correct encoding parameters to use for a stream of video.  
+
+
+
+
+{\ttfamily \#include $<$decisioninterface.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDecisionInterface_a744aa227199e0b12c4009836fe342f05}{Decision\-Interface} ()
+\begin{DoxyCompactList}\small\item\em Default value constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classDecisionInterface_afd67dc2e1710da83987ad842d6b0a69a}{make\-Decision} (int bandwidth, int datarate, \hyperlink{classEncodingParameters}{Encoding\-Parameters} \&old\-\_\-params, \hyperlink{classFeatureSet}{Feature\-Set} \&features, \hyperlink{classEncodingParameters}{Encoding\-Parameters} \&new\-\_\-params)
+\begin{DoxyCompactList}\small\item\em Make a decision about the encoding parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the interface for making a decision about the correct encoding parameters to use for a stream of video. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDecisionInterface_a744aa227199e0b12c4009836fe342f05}{\index{Decision\-Interface@{Decision\-Interface}!Decision\-Interface@{Decision\-Interface}}
+\index{Decision\-Interface@{Decision\-Interface}!DecisionInterface@{Decision\-Interface}}
+\subsubsection[{Decision\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}Decision\-Interface\-::\-Decision\-Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDecisionInterface_a744aa227199e0b12c4009836fe342f05}
+
+
+Default value constructor. 
+
+
+\begin{DoxyCode}
+4 \{
+5 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDecisionInterface_afd67dc2e1710da83987ad842d6b0a69a}{\index{Decision\-Interface@{Decision\-Interface}!make\-Decision@{make\-Decision}}
+\index{make\-Decision@{make\-Decision}!DecisionInterface@{Decision\-Interface}}
+\subsubsection[{make\-Decision}]{\setlength{\rightskip}{0pt plus 5cm}void Decision\-Interface\-::make\-Decision (
+\begin{DoxyParamCaption}
+\item[{int}]{bandwidth, }
+\item[{int}]{datarate, }
+\item[{{\bf Encoding\-Parameters} \&}]{old\-\_\-params, }
+\item[{{\bf Feature\-Set} \&}]{features, }
+\item[{{\bf Encoding\-Parameters} \&}]{new\-\_\-params}
+\end{DoxyParamCaption}
+)}}\label{classDecisionInterface_afd67dc2e1710da83987ad842d6b0a69a}
+
+
+Make a decision about the encoding parameters. 
+
+This function will determine what the new encoding parameters should be based on the available bandwidth, the current video bitrate, the current encoding parameters, and a set of features related to the video. 
+\begin{DoxyParams}{Parameters}
+{\em bandwidth} & The current channel bandwidth. \\
+\hline
+{\em datarate} & The current average data rate of the video. \\
+\hline
+{\em old\-\_\-params} & The old encoding parameters. \\
+\hline
+{\em feature\-\_\-set} & The features of the current video for predictions. \\
+\hline
+{\em new\-\_\-params} & Object to hold the new encoding parameters. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+9 \{
+10     \textcolor{comment}{//Get the ratio of bandwidth to data rate;}
+11     \textcolor{keywordtype}{float} ratio = (float) datarate / bandwidth;
+12 
+13     \textcolor{comment}{//This determines the next course of action}
+14     \textcolor{keywordflow}{if}(ratio < 1)
+15     \{
+16         \textcolor{comment}{//We can optimize the parameters based on the available bandwidth}
+17         upConvert(ratio, old\_params, new\_params);
+18     \}
+19     \textcolor{keywordflow}{else}
+20     \{
+21         \textcolor{comment}{//We must determine the best parameters using the machine learning decision function we have}
+22         \textcolor{comment}{//created while the application was learning}
+23 
+24         \textcolor{comment}{//For now, just keep the old parameters}
+25         new\_params = old\_params;
+26     \}
+27 
+28     \textcolor{keywordflow}{return};
+29 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Decision\-Module/\hyperlink{decisioninterface_8h}{decisioninterface.\-h}\item 
+Decision\-Module/\hyperlink{decisioninterface_8cpp}{decisioninterface.\-cpp}\end{DoxyCompactItemize}

@@ -13,7 +13,9 @@ VideoWindow::VideoWindow(Camera *camera, QWidget *parent) :
     ui(new Ui::VideoWindow),
     m_controls_revealed(false),
     m_is_inside(false),
-    m_currentbw_kbps(5000)
+    m_currentbw_kbps(5000),
+    m_current_params(),
+    m_pending_parameters()
 {   
 
     ui->setupUi(this);
@@ -174,6 +176,14 @@ void VideoWindow::receivedMessage(QString response)
     msgBox->setWindowModality(Qt::NonModal);
     msgBox->setAttribute(Qt::WA_DeleteOnClose);
     msgBox->show();
+
+    //Check if the response is an acceptance of the parameters
+    if(response.contains("Updating"))
+    {
+        m_current_params = m_pending_parameters;
+        DEBUG() << m_current_params.widthAsInt() << " " << m_current_params.heightAsInt() << " " << m_current_params.fpsAsInt() << " " << m_current_params.bitrateAsInt();
+        ui->video_player->resetStats();
+    }
 }
 
 void VideoWindow::delayServerConnect()
@@ -301,7 +311,7 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
     //Send it to server
     this->sendRequest(msg);
 
-    ui->video_player->resetStats();
+
 #if PLAY_WITH_VLC
     int fps_int = fps.toInt();
     //If FPS has changed we need to restart playback (limit to 15 and 30 fps for now... very poor and hacky method)
@@ -313,6 +323,14 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
     }
 #endif
 
+    //Set new encoding parameters
+    EncodingParameters next(width, height, fps, bps);
+    if(next.bitrateAsInt() == 0)
+    {
+        next.setBitrate(QString::number(next.widthAsInt() * next.heightAsInt() * 3) + (next.bitrate().endsWith('\'') ? "'" : ""));
+    }
+    m_pending_parameters = next;
+
 }
 
 //Change the current bandwidth of the channel
@@ -322,6 +340,16 @@ void VideoWindow::onBandwidth(QString bandwidth)
     int iBW = bandwidth.toInt(&success, 10);
     receivedMessage(bandwidth);
     if(success)
+    {
         this->m_currentbw_kbps = iBW;
+
+        //Determine the new encoding parameters
+        EncodingParameters new_params;
+        float dr_avg_kbps = ui->video_player->getAverageBitrate() * 10000;
+        FeatureSet fs;
+        m_decision_interface.makeDecision(m_currentbw_kbps, dr_avg_kbps, m_current_params, fs, new_params);
+
+        this->resizeVideo(new_params.width(), new_params.height(), new_params.fps(), new_params.bitrate());
+    }
 }
 

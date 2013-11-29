@@ -1,71 +1,37 @@
- INFO 2013-11-28T11:42:56.649 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/main.cpp : 25  --  Program init. 
- INFO 2013-11-28T11:43:06.380 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 168 -- In slot 'receivedPacket' Message: "Connected!" 
-DEBUG 2013-11-28T11:43:07.953 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0      0      0      3.36312e-44 
-DEBUG 2013-11-28T11:43:08.478 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0      0.0428183      0.0214092      0.0428183 
-DEBUG 2013-11-28T11:43:09.003 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0      0.0428183      0.0285455      0.0428183 
-DEBUG 2013-11-28T11:43:09.528 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0463459      0.0469555      0.033148      0.0469555 
-DEBUG 2013-11-28T11:43:10.053 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0463459      0.0469555      0.0359095      0.0469555 
-DEBUG 2013-11-28T11:43:10.578 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0463957      0.0468626      0.037735      0.0469555 
-DEBUG 2013-11-28T11:43:11.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0463957      0.0468626      0.039039      0.0469555 
-DEBUG 2013-11-28T11:43:11.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0462843      0.0431942      0.0395584      0.0469555 
-DEBUG 2013-11-28T11:43:12.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0462843      0.0431942      0.0399624      0.0469555 
-DEBUG 2013-11-28T11:43:12.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0453097      0.0445085      0.040417      0.0469555 
-DEBUG 2013-11-28T11:43:13.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0453097      0.0445085      0.0407889      0.0469555 
-DEBUG 2013-11-28T11:43:13.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0422623      0.0465244      0.0412669      0.0469555 
-DEBUG 2013-11-28T11:43:14.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0422623      0.0465244      0.0416713      0.0469555 
-DEBUG 2013-11-28T11:43:14.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0465908      0.0463744      0.0420072      0.0469555 
-DEBUG 2013-11-28T11:43:15.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0465908      0.0463744      0.0422984      0.0469555 
-DEBUG 2013-11-28T11:43:15.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0454714      0.0423775      0.0423033      0.0469555 
-DEBUG 2013-11-28T11:43:16.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0454714      0.0423775      0.0423077      0.0469555 
-DEBUG 2013-11-28T11:43:16.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0454714      0.0423775      0.0423116      0.0469555 
-DEBUG 2013-11-28T11:43:17.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0475438      0.046323      0.0425227      0.0469555 
-DEBUG 2013-11-28T11:43:17.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0475438      0.046323      0.0427127      0.0469555 
-DEBUG 2013-11-28T11:43:18.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0421006      0.0470784      0.0429206      0.0470784 
-DEBUG 2013-11-28T11:43:18.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0421006      0.0470784      0.0431096      0.0470784 
-DEBUG 2013-11-28T11:43:19.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0459297      0.0448417      0.0431849      0.0470784 
-DEBUG 2013-11-28T11:43:19.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0459297      0.0448417      0.0432539      0.0470784 
-DEBUG 2013-11-28T11:43:20.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0456349      0.0475039      0.0434239      0.0475039 
-DEBUG 2013-11-28T11:43:20.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0456349      0.0475039      0.0435809      0.0475039 
-DEBUG 2013-11-28T11:43:21.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0456064      0.040032      0.0434494      0.0475039 
-DEBUG 2013-11-28T11:43:21.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0456064      0.040032      0.0433274      0.0475039 
-DEBUG 2013-11-28T11:43:22.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0409335      0.0462645      0.0434286      0.0475039 
-DEBUG 2013-11-28T11:43:22.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0409335      0.0462645      0.0435232      0.0475039 
-DEBUG 2013-11-28T11:43:23.090 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0477117      0.0466004      0.0436224      0.0475039 
-DEBUG 2013-11-28T11:43:23.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0477117      0.0466004      0.0437155      0.0475039 
-DEBUG 2013-11-28T11:43:24.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0466539      0.0474205      0.0438278      0.0475039 
-DEBUG 2013-11-28T11:43:24.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0466539      0.0474205      0.0439334      0.0475039 
-DEBUG 2013-11-28T11:43:25.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0471091      0.0413904      0.0438608      0.0475039 
-DEBUG 2013-11-28T11:43:25.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0471091      0.0413904      0.0437922      0.0475039 
-DEBUG 2013-11-28T11:43:26.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0407733      0.045367      0.0438347      0.0475039 
-DEBUG 2013-11-28T11:43:26.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0407733      0.045367      0.043875      0.0475039 
-DEBUG 2013-11-28T11:43:27.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0460222      0.0468596      0.0439516      0.0475039 
-DEBUG 2013-11-28T11:43:27.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0460222      0.0468596      0.0440243      0.0475039 
-DEBUG 2013-11-28T11:43:28.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0460699      0.0468982      0.0440944      0.0475039 
-DEBUG 2013-11-28T11:43:28.590 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0460699      0.0468982      0.0441611      0.0475039 
-DEBUG 2013-11-28T11:43:29.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0479399      0.041747      0.044105      0.0475039 
-DEBUG 2013-11-28T11:43:29.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0479399      0.041747      0.0440514      0.0475039 
-DEBUG 2013-11-28T11:43:30.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0468016      0.0464135      0.0441039      0.0475039 
-DEBUG 2013-11-28T11:43:30.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0468016      0.0464135      0.0441541      0.0475039 
-DEBUG 2013-11-28T11:43:31.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0402479      0.0469599      0.0442138      0.0475039 
-DEBUG 2013-11-28T11:43:31.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0402479      0.0469599      0.044271      0.0475039 
-DEBUG 2013-11-28T11:43:32.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0474786      0.0463192      0.0443128      0.0475039 
-DEBUG 2013-11-28T11:43:32.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0474786      0.0463192      0.0443529      0.0475039 
-DEBUG 2013-11-28T11:43:33.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0454836      0.0417647      0.0443022      0.0475039 
-DEBUG 2013-11-28T11:43:33.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0454836      0.0417647      0.0442534      0.0475039 
-DEBUG 2013-11-28T11:43:34.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0463307      0.0461323      0.0442888      0.0475039 
-DEBUG 2013-11-28T11:43:34.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0463307      0.0461323      0.044323      0.0475039 
-DEBUG 2013-11-28T11:43:35.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0427944      0.046627      0.0443649      0.0475039 
-DEBUG 2013-11-28T11:43:35.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0427944      0.046627      0.0444053      0.0475039 
-DEBUG 2013-11-28T11:43:36.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0464084      0.0470968      0.0444525      0.0475039 
-DEBUG 2013-11-28T11:43:36.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0464084      0.0470968      0.0444981      0.0475039 
-DEBUG 2013-11-28T11:43:37.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.046821      0.0414874      0.044447      0.0475039 
-DEBUG 2013-11-28T11:43:37.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.046821      0.0414874      0.0443977      0.0475039 
-DEBUG 2013-11-28T11:43:38.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0459857      0.0459615      0.0444234      0.0475039 
-DEBUG 2013-11-28T11:43:38.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0459857      0.0459615      0.0444482      0.0475039 
-DEBUG 2013-11-28T11:43:39.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0412462      0.0465163      0.044481      0.0475039 
-DEBUG 2013-11-28T11:43:39.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0412462      0.0465163      0.0445128      0.0475039 
-DEBUG 2013-11-28T11:43:40.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0466704      0.0455091      0.0445281      0.0475039 
-DEBUG 2013-11-28T11:43:40.590 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0466704      0.0455091      0.044543      0.0475039 
-DEBUG 2013-11-28T11:43:41.089 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Video/vlcwrapper.cpp : 209 -- 0.0466704      0.0455091      0.0445574      0.0475039 
- INFO 2013-11-28T11:43:41.398 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 100 -- Video window destructor called. 
- INFO 2013-11-28T11:43:41.398 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 
+ INFO 2013-11-29T15:36:57.468 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/main.cpp : 25  --  Program init. 
+ INFO 2013-11-29T15:37:03.266 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "Connected!" 
+ INFO 2013-11-29T15:37:09.651 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 310 -- Sent:  "start 320 240 15 0" 
+ INFO 2013-11-29T15:37:09.651 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 70 -- After send. STATUS:  0 
+ INFO 2013-11-29T15:37:09.651 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 30 -- Setting up timer... 
+ INFO 2013-11-29T15:37:10.127 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 87 -- Response tick... 
+ INFO 2013-11-29T15:37:10.127 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 94 -- Received response: Updating the camera 
+ INFO 2013-11-29T15:37:10.708 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2013-11-29T15:37:10.711 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 184 -- 320   240   15   230400 
+ INFO 2013-11-29T15:37:14.543 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 102 -- Video window destructor called. 
+ INFO 2013-11-29T15:37:14.543 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 
+ INFO 2013-11-29T15:37:18.728 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "Connected!" 
+ INFO 2013-11-29T15:37:24.352 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 310 -- Sent:  "start 320 240 15 0" 
+ INFO 2013-11-29T15:37:24.353 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 70 -- After send. STATUS:  0 
+ INFO 2013-11-29T15:37:24.353 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 30 -- Setting up timer... 
+ INFO 2013-11-29T15:37:24.878 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 87 -- Response tick... 
+ INFO 2013-11-29T15:37:24.879 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 94 -- Received response: Updating the camera 
+ INFO 2013-11-29T15:37:24.879 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2013-11-29T15:37:24.882 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 184 -- 320   240   15   230400 
+ INFO 2013-11-29T15:37:31.483 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "2000" 
+ INFO 2013-11-29T15:37:31.491 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 310 -- Sent:  "start 320 240 30 904462" 
+ INFO 2013-11-29T15:37:31.492 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 70 -- After send. STATUS:  0 
+ INFO 2013-11-29T15:37:31.492 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 30 -- Setting up timer... 
+ INFO 2013-11-29T15:37:32.018 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 87 -- Response tick... 
+ INFO 2013-11-29T15:37:32.018 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 94 -- Received response: Updating the camera 
+ INFO 2013-11-29T15:37:32.018 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2013-11-29T15:37:32.021 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 184 -- 320   240   30   904462 
+ INFO 2013-11-29T15:37:58.320 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "200" 
+ INFO 2013-11-29T15:37:58.322 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 310 -- Sent:  "start 320 240 30 230400" 
+ INFO 2013-11-29T15:37:58.323 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 70 -- After send. STATUS:  0 
+ INFO 2013-11-29T15:37:58.323 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 30 -- Setting up timer... 
+ INFO 2013-11-29T15:37:58.849 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 87 -- Response tick... 
+ INFO 2013-11-29T15:37:58.849 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 94 -- Received response: Updating the camera 
+ INFO 2013-11-29T15:37:58.849 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2013-11-29T15:37:58.851 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 184 -- 320   240   30   230400 
+ INFO 2013-11-29T15:38:16.153 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 102 -- Video window destructor called. 
+ INFO 2013-11-29T15:38:16.153 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 

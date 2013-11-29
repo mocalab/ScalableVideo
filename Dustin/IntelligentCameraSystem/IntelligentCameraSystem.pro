@@ -48,7 +48,10 @@ SOURCES += main.cpp \
     Util/FileUtil/filereaderutility.cpp \
     Types/mediastatistics.cpp \
     Util/FileUtil/bandwidthfilereader.cpp \
-    Util/FileUtil/cameralistfileutil.cpp
+    Util/FileUtil/cameralistfileutil.cpp \
+    DecisionModule/decisioninterface.cpp \
+    Types/encodingparameters.cpp \
+    Types/featureset.cpp
 
 HEADERS  += \
     mainwindow.h \
@@ -84,7 +87,10 @@ HEADERS  += \
     Types/mediastatistics.h \
     Util/FileUtil/bandwidthfilereader.h \
     Global/Constants.h \
-    Util/FileUtil/cameralistfileutil.h
+    Util/FileUtil/cameralistfileutil.h \
+    DecisionModule/decisioninterface.h \
+    Types/encodingparameters.h \
+    Types/featureset.h
 
 FORMS    += \
     mainwindow.ui \

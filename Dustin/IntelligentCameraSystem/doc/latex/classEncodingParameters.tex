@@ -1,0 +1,333 @@
+\hypertarget{classEncodingParameters}{\section{Encoding\-Parameters Class Reference}
+\label{classEncodingParameters}\index{Encoding\-Parameters@{Encoding\-Parameters}}
+}
+
+
+A type encapsulating the tunable parameters of the encoder.  
+
+
+
+
+{\ttfamily \#include $<$encodingparameters.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEncodingParameters_a4a588b84a8470dd246ad21c13e1c7c52}{Encoding\-Parameters} ()
+\begin{DoxyCompactList}\small\item\em Default value constructor. \end{DoxyCompactList}\item 
+\hyperlink{classEncodingParameters_a7e6b691f010a04b9cc2808a370df4f3b}{Encoding\-Parameters} (\hyperlink{classEncodingParameters}{Encoding\-Parameters} \&cpy)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classEncodingParameters}{Encoding\-Parameters} \& \hyperlink{classEncodingParameters_a122c1cfb7456b687ae79e38244f7c5d0}{operator=} (\hyperlink{classEncodingParameters}{Encoding\-Parameters} \&rhs)
+\begin{DoxyCompactList}\small\item\em Overloaded assignment operator. \end{DoxyCompactList}\item 
+\hyperlink{classEncodingParameters_a1a17c69e916dd0fc2322e9264129e12c}{Encoding\-Parameters} (Q\-String \hyperlink{classEncodingParameters_ad784bc5e0a14e537f1bef3340a5a816f}{width}, Q\-String \hyperlink{classEncodingParameters_a65eeab477e176c521ad2aab0e46606b6}{height}, Q\-String \hyperlink{classEncodingParameters_aaae058a54aa6b2381047170d199a5131}{fps}, Q\-String \hyperlink{classEncodingParameters_a62e5d236efaa9594bd8706d9b6e79ba3}{bitrate})
+\begin{DoxyCompactList}\small\item\em Explicit value constructor. \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classEncodingParameters_ad784bc5e0a14e537f1bef3340a5a816f}{width} () const 
+\item 
+void \hyperlink{classEncodingParameters_ad27a6d060f6c2cef8edae95c34ff6057}{set\-Width} (const Q\-String \&\hyperlink{classEncodingParameters_ad784bc5e0a14e537f1bef3340a5a816f}{width})
+\item 
+Q\-String \hyperlink{classEncodingParameters_a65eeab477e176c521ad2aab0e46606b6}{height} () const 
+\item 
+void \hyperlink{classEncodingParameters_a698b345c916c82afacbd754342e54c85}{set\-Height} (const Q\-String \&\hyperlink{classEncodingParameters_a65eeab477e176c521ad2aab0e46606b6}{height})
+\item 
+Q\-String \hyperlink{classEncodingParameters_aaae058a54aa6b2381047170d199a5131}{fps} () const 
+\item 
+void \hyperlink{classEncodingParameters_a373d758f8877691d2cf4c311ea8a4033}{set\-Fps} (const Q\-String \&\hyperlink{classEncodingParameters_aaae058a54aa6b2381047170d199a5131}{fps})
+\item 
+Q\-String \hyperlink{classEncodingParameters_a62e5d236efaa9594bd8706d9b6e79ba3}{bitrate} () const 
+\item 
+void \hyperlink{classEncodingParameters_afd3313d4a7dbbe7a41809f9538dea583}{set\-Bitrate} (const Q\-String \&\hyperlink{classEncodingParameters_a62e5d236efaa9594bd8706d9b6e79ba3}{bitrate})
+\item 
+int \hyperlink{classEncodingParameters_aee18788ce89380ed62cdb14bb63d5bc2}{width\-As\-Int} () const 
+\item 
+int \hyperlink{classEncodingParameters_a98c078933c042bd7350025f15cd45d9f}{height\-As\-Int} () const 
+\item 
+int \hyperlink{classEncodingParameters_ad6dd43bc2267ca979ed0df18163dabdf}{fps\-As\-Int} () const 
+\item 
+int \hyperlink{classEncodingParameters_aefccfdee4e2f60522637066501b0258c}{bitrate\-As\-Int} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A type encapsulating the tunable parameters of the encoder. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classEncodingParameters_a4a588b84a8470dd246ad21c13e1c7c52}{\index{Encoding\-Parameters@{Encoding\-Parameters}!Encoding\-Parameters@{Encoding\-Parameters}}
+\index{Encoding\-Parameters@{Encoding\-Parameters}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{Encoding\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}Encoding\-Parameters\-::\-Encoding\-Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEncodingParameters_a4a588b84a8470dd246ad21c13e1c7c52}
+
+
+Default value constructor. 
+
+
+\begin{DoxyCode}
+3                                        :
+4     m\_width(QString::number(320)),
+5     m\_height(QString::number(240)),
+6     m\_fps(QString::number(30)),
+7     m\_bitrate(QString::number(320*240*3))
+8 \{
+9 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_a7e6b691f010a04b9cc2808a370df4f3b}{\index{Encoding\-Parameters@{Encoding\-Parameters}!Encoding\-Parameters@{Encoding\-Parameters}}
+\index{Encoding\-Parameters@{Encoding\-Parameters}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{Encoding\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}Encoding\-Parameters\-::\-Encoding\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf Encoding\-Parameters} \&}]{cpy}
+\end{DoxyParamCaption}
+)}}\label{classEncodingParameters_a7e6b691f010a04b9cc2808a370df4f3b}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpy} & The parameters to copy. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+13 \{
+14     this->m\_width = cpy.m\_width;
+15     this->m\_height = cpy.m\_height;
+16     this->m\_fps = cpy.m\_fps;
+17     this->m\_bitrate = cpy.m\_bitrate;
+18 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_a1a17c69e916dd0fc2322e9264129e12c}{\index{Encoding\-Parameters@{Encoding\-Parameters}!Encoding\-Parameters@{Encoding\-Parameters}}
+\index{Encoding\-Parameters@{Encoding\-Parameters}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{Encoding\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}Encoding\-Parameters\-::\-Encoding\-Parameters (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{width, }
+\item[{Q\-String}]{height, }
+\item[{Q\-String}]{fps, }
+\item[{Q\-String}]{bitrate}
+\end{DoxyParamCaption}
+)}}\label{classEncodingParameters_a1a17c69e916dd0fc2322e9264129e12c}
+
+
+Explicit value constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+{\em fps} & \\
+\hline
+{\em bitrate} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+31 \{
+32     this->m\_width = \hyperlink{classEncodingParameters_ad784bc5e0a14e537f1bef3340a5a816f}{width};
+33     this->m\_height = \hyperlink{classEncodingParameters_a65eeab477e176c521ad2aab0e46606b6}{height};
+34     this->m\_fps = \hyperlink{classEncodingParameters_aaae058a54aa6b2381047170d199a5131}{fps};
+35     this->m\_bitrate = \hyperlink{classEncodingParameters_a62e5d236efaa9594bd8706d9b6e79ba3}{bitrate};
+36 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classEncodingParameters_a62e5d236efaa9594bd8706d9b6e79ba3}{\index{Encoding\-Parameters@{Encoding\-Parameters}!bitrate@{bitrate}}
+\index{bitrate@{bitrate}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{bitrate}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Encoding\-Parameters\-::bitrate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEncodingParameters_a62e5d236efaa9594bd8706d9b6e79ba3}
+
+\begin{DoxyCode}
+57 \{
+58     \textcolor{keywordflow}{return} m\_bitrate;
+59 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_aefccfdee4e2f60522637066501b0258c}{\index{Encoding\-Parameters@{Encoding\-Parameters}!bitrate\-As\-Int@{bitrate\-As\-Int}}
+\index{bitrate\-As\-Int@{bitrate\-As\-Int}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{bitrate\-As\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int Encoding\-Parameters\-::bitrate\-As\-Int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEncodingParameters_aefccfdee4e2f60522637066501b0258c}
+
+\begin{DoxyCode}
+82 \{
+83     QString \hyperlink{classEncodingParameters_a62e5d236efaa9594bd8706d9b6e79ba3}{bitrate} = this->m\_bitrate;
+84 
+85     \textcolor{keywordflow}{if}(this->m\_bitrate.contains(\textcolor{charliteral}{'\(\backslash\)''}))
+86         bitrate.chop(1);
+87 
+88     \textcolor{keywordflow}{return} bitrate.toInt();
+89 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_aaae058a54aa6b2381047170d199a5131}{\index{Encoding\-Parameters@{Encoding\-Parameters}!fps@{fps}}
+\index{fps@{fps}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{fps}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Encoding\-Parameters\-::fps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEncodingParameters_aaae058a54aa6b2381047170d199a5131}
+
+\begin{DoxyCode}
+91 \{
+92     \textcolor{keywordflow}{return} m\_fps;
+93 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_ad6dd43bc2267ca979ed0df18163dabdf}{\index{Encoding\-Parameters@{Encoding\-Parameters}!fps\-As\-Int@{fps\-As\-Int}}
+\index{fps\-As\-Int@{fps\-As\-Int}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{fps\-As\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int Encoding\-Parameters\-::fps\-As\-Int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEncodingParameters_ad6dd43bc2267ca979ed0df18163dabdf}
+
+\begin{DoxyCode}
+77 \{
+78     \textcolor{keywordflow}{return} this->m\_fps.toInt();
+79 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_a65eeab477e176c521ad2aab0e46606b6}{\index{Encoding\-Parameters@{Encoding\-Parameters}!height@{height}}
+\index{height@{height}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Encoding\-Parameters\-::height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEncodingParameters_a65eeab477e176c521ad2aab0e46606b6}
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordflow}{return} m\_height;
+50 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_a98c078933c042bd7350025f15cd45d9f}{\index{Encoding\-Parameters@{Encoding\-Parameters}!height\-As\-Int@{height\-As\-Int}}
+\index{height\-As\-Int@{height\-As\-Int}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{height\-As\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int Encoding\-Parameters\-::height\-As\-Int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEncodingParameters_a98c078933c042bd7350025f15cd45d9f}
+
+\begin{DoxyCode}
+72 \{
+73     \textcolor{keywordflow}{return} this->m\_height.toInt();
+74 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_a122c1cfb7456b687ae79e38244f7c5d0}{\index{Encoding\-Parameters@{Encoding\-Parameters}!operator=@{operator=}}
+\index{operator=@{operator=}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Encoding\-Parameters} \& Encoding\-Parameters\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Encoding\-Parameters} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classEncodingParameters_a122c1cfb7456b687ae79e38244f7c5d0}
+
+
+Overloaded assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{classEncodingParameters}{Encoding\-Parameters} object to copy over. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this object. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+21 \{
+22     this->m\_width = rhs.m\_width;
+23     this->m\_height = rhs.m\_height;
+24     this->m\_fps = rhs.m\_fps;
+25     this->m\_bitrate = rhs.m\_bitrate;
+26 
+27     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+28 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_afd3313d4a7dbbe7a41809f9538dea583}{\index{Encoding\-Parameters@{Encoding\-Parameters}!set\-Bitrate@{set\-Bitrate}}
+\index{set\-Bitrate@{set\-Bitrate}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{set\-Bitrate}]{\setlength{\rightskip}{0pt plus 5cm}void Encoding\-Parameters\-::set\-Bitrate (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{bitrate}
+\end{DoxyParamCaption}
+)}}\label{classEncodingParameters_afd3313d4a7dbbe7a41809f9538dea583}
+
+\begin{DoxyCode}
+62 \{
+63     m\_bitrate = \hyperlink{classEncodingParameters_a62e5d236efaa9594bd8706d9b6e79ba3}{bitrate};
+64 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_a373d758f8877691d2cf4c311ea8a4033}{\index{Encoding\-Parameters@{Encoding\-Parameters}!set\-Fps@{set\-Fps}}
+\index{set\-Fps@{set\-Fps}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{set\-Fps}]{\setlength{\rightskip}{0pt plus 5cm}void Encoding\-Parameters\-::set\-Fps (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{fps}
+\end{DoxyParamCaption}
+)}}\label{classEncodingParameters_a373d758f8877691d2cf4c311ea8a4033}
+
+\begin{DoxyCode}
+96 \{
+97     m\_fps = \hyperlink{classEncodingParameters_aaae058a54aa6b2381047170d199a5131}{fps};
+98 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_a698b345c916c82afacbd754342e54c85}{\index{Encoding\-Parameters@{Encoding\-Parameters}!set\-Height@{set\-Height}}
+\index{set\-Height@{set\-Height}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{set\-Height}]{\setlength{\rightskip}{0pt plus 5cm}void Encoding\-Parameters\-::set\-Height (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{height}
+\end{DoxyParamCaption}
+)}}\label{classEncodingParameters_a698b345c916c82afacbd754342e54c85}
+
+\begin{DoxyCode}
+53 \{
+54     m\_height = \hyperlink{classEncodingParameters_a65eeab477e176c521ad2aab0e46606b6}{height};
+55 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_ad27a6d060f6c2cef8edae95c34ff6057}{\index{Encoding\-Parameters@{Encoding\-Parameters}!set\-Width@{set\-Width}}
+\index{set\-Width@{set\-Width}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{set\-Width}]{\setlength{\rightskip}{0pt plus 5cm}void Encoding\-Parameters\-::set\-Width (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{width}
+\end{DoxyParamCaption}
+)}}\label{classEncodingParameters_ad27a6d060f6c2cef8edae95c34ff6057}
+
+\begin{DoxyCode}
+44 \{
+45     m\_width = \hyperlink{classEncodingParameters_ad784bc5e0a14e537f1bef3340a5a816f}{width};
+46 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_ad784bc5e0a14e537f1bef3340a5a816f}{\index{Encoding\-Parameters@{Encoding\-Parameters}!width@{width}}
+\index{width@{width}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String Encoding\-Parameters\-::width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEncodingParameters_ad784bc5e0a14e537f1bef3340a5a816f}
+
+\begin{DoxyCode}
+39 \{
+40     \textcolor{keywordflow}{return} m\_width;
+41 \}
+\end{DoxyCode}
+\hypertarget{classEncodingParameters_aee18788ce89380ed62cdb14bb63d5bc2}{\index{Encoding\-Parameters@{Encoding\-Parameters}!width\-As\-Int@{width\-As\-Int}}
+\index{width\-As\-Int@{width\-As\-Int}!EncodingParameters@{Encoding\-Parameters}}
+\subsubsection[{width\-As\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int Encoding\-Parameters\-::width\-As\-Int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEncodingParameters_aee18788ce89380ed62cdb14bb63d5bc2}
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{keywordflow}{return} this->m\_width.toInt();
+69 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Types/\hyperlink{encodingparameters_8h}{encodingparameters.\-h}\item 
+Types/\hyperlink{encodingparameters_8cpp}{encodingparameters.\-cpp}\end{DoxyCompactItemize}

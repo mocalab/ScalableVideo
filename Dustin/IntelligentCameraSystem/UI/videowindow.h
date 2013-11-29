@@ -12,6 +12,8 @@
 #include <Network/networktoqtinterface.h>
 #include <QThread>
 #include <Util/FileUtil/bandwidthfilereader.h>
+#include <Types/encodingparameters.h>
+#include <DecisionModule/decisioninterface.h>
 
 #define VIDEO_URL "udp/h264://@:39082"
 
@@ -136,6 +138,15 @@ private:
 
     bool                m_controls_revealed;
     bool                m_is_inside;
+
+    //Pending parameters when a request is sent but we are unsure if they are acceptable
+    EncodingParameters              m_pending_parameters;
+
+    //The current encoding parameters
+    EncodingParameters              m_current_params;
+
+    //Object to make decisions about encoding parameters
+    DecisionInterface               m_decision_interface;
 
     //Functions
     //Connect to the camera server

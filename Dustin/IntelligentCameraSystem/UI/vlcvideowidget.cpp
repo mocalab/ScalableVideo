@@ -106,6 +106,11 @@ void VLCVideoWidget::resetStats()
 {
     this->m_vlc_interface->resetStats();
 }
+
+float VLCVideoWidget::getAverageBitrate()
+{
+    return this->m_vlc_interface->getCurrentBitrateAvg();
+}
 //Resize the video frame when this signal is called
 void VLCVideoWidget::videoResized(int width, int height)
 {

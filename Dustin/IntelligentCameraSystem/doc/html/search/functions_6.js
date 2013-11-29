@@ -27,6 +27,7 @@ var searchData=
   ['get_5fwrite_5fencoding',['get_write_encoding',['../pugixml_8cpp.html#aa7c85cfc84db7ee4b4eb887366365479',1,'pugixml.cpp']]],
   ['get_5fwrite_5fnative_5fencoding',['get_write_native_encoding',['../pugixml_8cpp.html#a12b9d6cff4d37c68755263d0687c62b1',1,'pugixml.cpp']]],
   ['getaddress',['getAddress',['../classAddress.html#aa84d076d4adf5cac8381146fcf261af7',1,'Address']]],
+  ['getaveragebitrate',['getAverageBitrate',['../classVLCVideoWidget.html#a61dcea162c69c8e831dc193ccf8271e6',1,'VLCVideoWidget']]],
   ['getbuffer',['getBuffer',['../classPacketSender.html#adf62a2c7ff2bbac54990764630705ce5',1,'PacketSender']]],
   ['getcameralist',['getCameraList',['../classCameraListFileUtil.html#a8ea7a7091551688c46f5077d2fe632e9',1,'CameraListFileUtil']]],
   ['getcurrentbitrateavg',['getCurrentBitrateAvg',['../classVLCToQtInterface.html#a7536c3fb0c8cba454414426e2a81239d',1,'VLCToQtInterface::getCurrentBitrateAvg()'],['../classVLCWrapper.html#aff24a01fa335af7febc084c446620070',1,'VLCWrapper::getCurrentBitrateAvg()']]],

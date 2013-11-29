@@ -48,7 +48,9 @@ int \hyperlink{classVLCVideoWidget_ac80ca2be7b8f96631f32827ab06e70a1}{get\-Fps} 
 void \hyperlink{classVLCVideoWidget_aff2bdf48d08757e6b86aa5f21eb43fb5}{set\-Playback\-Rate} (int fps)
 \begin{DoxyCompactList}\small\item\em Set the V\-L\-C client playback rate. \end{DoxyCompactList}\item 
 void \hyperlink{classVLCVideoWidget_af6bfaebcb882449195ea2a5e5918ee57}{reset\-Stats} ()
-\begin{DoxyCompactList}\small\item\em Reset the values of the statistics captured from the V\-L\-C client for the current video. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reset the values of the statistics captured from the V\-L\-C client for the current video. \end{DoxyCompactList}\item 
+float \hyperlink{classVLCVideoWidget_a61dcea162c69c8e831dc193ccf8271e6}{get\-Average\-Bitrate} ()
+\begin{DoxyCompactList}\small\item\em Get the current running average of the input bitrate. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -145,6 +147,26 @@ Explicit value constructor.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classVLCVideoWidget_a61dcea162c69c8e831dc193ccf8271e6}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!get\-Average\-Bitrate@{get\-Average\-Bitrate}}
+\index{get\-Average\-Bitrate@{get\-Average\-Bitrate}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
+\subsubsection[{get\-Average\-Bitrate}]{\setlength{\rightskip}{0pt plus 5cm}float V\-L\-C\-Video\-Widget\-::get\-Average\-Bitrate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVLCVideoWidget_a61dcea162c69c8e831dc193ccf8271e6}
+
+
+Get the current running average of the input bitrate. 
+
+\begin{DoxyReturn}{Returns}
+The averate data rate. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+111 \{
+112     \textcolor{keywordflow}{return} this->m\_vlc\_interface->\hyperlink{classVLCToQtInterface_a7536c3fb0c8cba454414426e2a81239d}{getCurrentBitrateAvg}();
+113 \}
+\end{DoxyCode}
 \hypertarget{classVLCVideoWidget_ac80ca2be7b8f96631f32827ab06e70a1}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!get\-Fps@{get\-Fps}}
 \index{get\-Fps@{get\-Fps}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
 \subsubsection[{get\-Fps}]{\setlength{\rightskip}{0pt plus 5cm}int V\-L\-C\-Video\-Widget\-::get\-Fps (
@@ -194,12 +216,12 @@ True if the video is playing.
 )\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVLCVideoWidget_ae6a2d91395f32ad7c80fb1839557da4f}
 
 \begin{DoxyCode}
-140 \{
-141     \textcolor{keywordflow}{if}(e->key() == Qt::Key\_Down)
-142     \{
-143         this->\hyperlink{classVLCVideoWidget_aefa842a30cbb11522428597c1f0608a0}{stopPlaying}();
-144     \}
-145 \}
+145 \{
+146     \textcolor{keywordflow}{if}(e->key() == Qt::Key\_Down)
+147     \{
+148         this->\hyperlink{classVLCVideoWidget_aefa842a30cbb11522428597c1f0608a0}{stopPlaying}();
+149     \}
+150 \}
 \end{DoxyCode}
 \hypertarget{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!paint\-Event@{paint\-Event}}
 \index{paint\-Event@{paint\-Event}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
@@ -210,12 +232,12 @@ True if the video is playing.
 )\hspace{0.3cm}{\ttfamily [protected]}}}\label{classVLCVideoWidget_a2fb0969c2a4efa024038ce1e1cfe1e64}
 
 \begin{DoxyCode}
-120 \{
-121     QStyleOption opt;
-122     opt.init(\textcolor{keyword}{this});
-123     QPainter p(\textcolor{keyword}{this});
-124     style()->drawPrimitive(QStyle::PE\_Widget, &opt, &p, \textcolor{keyword}{this});
-125 \}
+125 \{
+126     QStyleOption opt;
+127     opt.init(\textcolor{keyword}{this});
+128     QPainter p(\textcolor{keyword}{this});
+129     style()->drawPrimitive(QStyle::PE\_Widget, &opt, &p, \textcolor{keyword}{this});
+130 \}
 \end{DoxyCode}
 \hypertarget{classVLCVideoWidget_a7eb5395abd53f19c012fea779b6bac1e}{\index{V\-L\-C\-Video\-Widget@{V\-L\-C\-Video\-Widget}!play\-File@{play\-File}}
 \index{play\-File@{play\-File}!VLCVideoWidget@{V\-L\-C\-Video\-Widget}}
@@ -371,12 +393,12 @@ A slot invoked when the size of the video changes.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-111 \{
-112     m\_videoWidget->resize(width, height);
-113     this->resize(width, height);
-114     \textcolor{comment}{//Signal to resize parent}
-115     emit \hyperlink{classVLCVideoWidget_aeff3477d9c077d45b0ff8caea2514150}{resizeParent}(width, height);
-116 \}
+116 \{
+117     m\_videoWidget->resize(width, height);
+118     this->resize(width, height);
+119     \textcolor{comment}{//Signal to resize parent}
+120     emit \hyperlink{classVLCVideoWidget_aeff3477d9c077d45b0ff8caea2514150}{resizeParent}(width, height);
+121 \}
 \end{DoxyCode}
 
 

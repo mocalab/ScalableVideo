@@ -1,0 +1,196 @@
+\hypertarget{classFeatureSet}{\section{Feature\-Set Class Reference}
+\label{classFeatureSet}\index{Feature\-Set@{Feature\-Set}}
+}
+
+
+This class defines a type encapsulating the features we are interested in tracking.  
+
+
+
+
+{\ttfamily \#include $<$featureset.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFeatureSet_ad6569f9f2143e38bf9c1378d55cd2989}{Feature\-Set} ()
+\begin{DoxyCompactList}\small\item\em Default value constructor. \end{DoxyCompactList}\item 
+\hyperlink{classFeatureSet_a53ceec8da14074eab01394ecef16d105}{Feature\-Set} (\hyperlink{classFeatureSet}{Feature\-Set} \&cpy)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classFeatureSet}{Feature\-Set} \& \hyperlink{classFeatureSet_a6a2c0ba84a4cbe182b68909e58ab094b}{operator=} (\hyperlink{classFeatureSet}{Feature\-Set} \&rhs)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\hyperlink{classFeatureSet_afb3fe8535abb9373a71eeb44e0462ca0}{Feature\-Set} (int \hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth}, int \hyperlink{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{content\-Type})
+\begin{DoxyCompactList}\small\item\em Explicit value constructor. \end{DoxyCompactList}\item 
+int \hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth} () const 
+\item 
+void \hyperlink{classFeatureSet_a95eb00f3b683d127d43dd8cc5e846852}{set\-Bandwidth} (int \hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth})
+\item 
+int \hyperlink{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{content\-Type} () const 
+\item 
+void \hyperlink{classFeatureSet_a49aae68970a9837fab07caf49b92837b}{set\-Content\-Type} (int \hyperlink{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{content\-Type})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines a type encapsulating the features we are interested in tracking. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFeatureSet_ad6569f9f2143e38bf9c1378d55cd2989}{\index{Feature\-Set@{Feature\-Set}!Feature\-Set@{Feature\-Set}}
+\index{Feature\-Set@{Feature\-Set}!FeatureSet@{Feature\-Set}}
+\subsubsection[{Feature\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Feature\-Set\-::\-Feature\-Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFeatureSet_ad6569f9f2143e38bf9c1378d55cd2989}
+
+
+Default value constructor. 
+
+
+\begin{DoxyCode}
+3                        :
+4     m\_bandwidth(5000),
+5     m\_contentType(0)
+6 \{
+7 \}
+\end{DoxyCode}
+\hypertarget{classFeatureSet_a53ceec8da14074eab01394ecef16d105}{\index{Feature\-Set@{Feature\-Set}!Feature\-Set@{Feature\-Set}}
+\index{Feature\-Set@{Feature\-Set}!FeatureSet@{Feature\-Set}}
+\subsubsection[{Feature\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Feature\-Set\-::\-Feature\-Set (
+\begin{DoxyParamCaption}
+\item[{{\bf Feature\-Set} \&}]{cpy}
+\end{DoxyParamCaption}
+)}}\label{classFeatureSet_a53ceec8da14074eab01394ecef16d105}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpy} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+10 \{
+11     this->m\_bandwidth = cpy.m\_bandwidth;
+12     this->m\_contentType = cpy.m\_contentType;
+13 \}
+\end{DoxyCode}
+\hypertarget{classFeatureSet_afb3fe8535abb9373a71eeb44e0462ca0}{\index{Feature\-Set@{Feature\-Set}!Feature\-Set@{Feature\-Set}}
+\index{Feature\-Set@{Feature\-Set}!FeatureSet@{Feature\-Set}}
+\subsubsection[{Feature\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Feature\-Set\-::\-Feature\-Set (
+\begin{DoxyParamCaption}
+\item[{int}]{bandwidth, }
+\item[{int}]{content\-Type}
+\end{DoxyParamCaption}
+)}}\label{classFeatureSet_afb3fe8535abb9373a71eeb44e0462ca0}
+
+
+Explicit value constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bandwidth} & \\
+\hline
+{\em content\-Type} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+23                                                      :
+24     m\_bandwidth(\hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth}),
+25     m\_contentType(\hyperlink{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{contentType})
+26 \{
+27 
+28 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{\index{Feature\-Set@{Feature\-Set}!bandwidth@{bandwidth}}
+\index{bandwidth@{bandwidth}!FeatureSet@{Feature\-Set}}
+\subsubsection[{bandwidth}]{\setlength{\rightskip}{0pt plus 5cm}int Feature\-Set\-::bandwidth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}
+
+\begin{DoxyCode}
+30 \{
+31     \textcolor{keywordflow}{return} m\_bandwidth;
+32 \}
+\end{DoxyCode}
+\hypertarget{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{\index{Feature\-Set@{Feature\-Set}!content\-Type@{content\-Type}}
+\index{content\-Type@{content\-Type}!FeatureSet@{Feature\-Set}}
+\subsubsection[{content\-Type}]{\setlength{\rightskip}{0pt plus 5cm}int Feature\-Set\-::content\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}
+
+\begin{DoxyCode}
+39 \{
+40     \textcolor{keywordflow}{return} m\_contentType;
+41 \}
+\end{DoxyCode}
+\hypertarget{classFeatureSet_a6a2c0ba84a4cbe182b68909e58ab094b}{\index{Feature\-Set@{Feature\-Set}!operator=@{operator=}}
+\index{operator=@{operator=}!FeatureSet@{Feature\-Set}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Feature\-Set} \& Feature\-Set\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Feature\-Set} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{classFeatureSet_a6a2c0ba84a4cbe182b68909e58ab094b}
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this object. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+16 \{
+17     this->m\_bandwidth = rhs.m\_bandwidth;
+18     this->m\_contentType = rhs.m\_contentType;
+19 
+20     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+21 \}
+\end{DoxyCode}
+\hypertarget{classFeatureSet_a95eb00f3b683d127d43dd8cc5e846852}{\index{Feature\-Set@{Feature\-Set}!set\-Bandwidth@{set\-Bandwidth}}
+\index{set\-Bandwidth@{set\-Bandwidth}!FeatureSet@{Feature\-Set}}
+\subsubsection[{set\-Bandwidth}]{\setlength{\rightskip}{0pt plus 5cm}void Feature\-Set\-::set\-Bandwidth (
+\begin{DoxyParamCaption}
+\item[{int}]{bandwidth}
+\end{DoxyParamCaption}
+)}}\label{classFeatureSet_a95eb00f3b683d127d43dd8cc5e846852}
+
+\begin{DoxyCode}
+35 \{
+36     m\_bandwidth = \hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth};
+37 \}
+\end{DoxyCode}
+\hypertarget{classFeatureSet_a49aae68970a9837fab07caf49b92837b}{\index{Feature\-Set@{Feature\-Set}!set\-Content\-Type@{set\-Content\-Type}}
+\index{set\-Content\-Type@{set\-Content\-Type}!FeatureSet@{Feature\-Set}}
+\subsubsection[{set\-Content\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void Feature\-Set\-::set\-Content\-Type (
+\begin{DoxyParamCaption}
+\item[{int}]{content\-Type}
+\end{DoxyParamCaption}
+)}}\label{classFeatureSet_a49aae68970a9837fab07caf49b92837b}
+
+\begin{DoxyCode}
+44 \{
+45     m\_contentType = \hyperlink{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{contentType};
+46 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Types/\hyperlink{featureset_8h}{featureset.\-h}\item 
+Types/\hyperlink{featureset_8cpp}{featureset.\-cpp}\end{DoxyCompactItemize}
