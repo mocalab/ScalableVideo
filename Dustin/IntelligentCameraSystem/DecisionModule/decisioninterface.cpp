@@ -23,7 +23,7 @@ void DecisionInterface::makeDecision(int bandwidth, int datarate, EncodingParame
         //created while the application was learning
 
         //For now, just keep the old parameters
-        new_params = old_params;
+        downConvert(ratio, old_params, new_params);
     }
 
     return;
@@ -51,7 +51,7 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
     int optimum_bitrate = width * height * 3.5;
 
     //Determine the max bitrate available
-    int max_bitrate = (int)((in.bitrateAsInt() / ratio) * ceiling);
+    int max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
 
     //Choose the least of these two bitrates
     int bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
@@ -61,5 +61,10 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
 //Down convert the encoding parameters
 void DecisionInterface::downConvert(float ratio, EncodingParameters &in, EncodingParameters &out)
 {
+    //For now, just lower the bitrate to fit the channel
+    float ceiling = OPTIMUM_CEILING;
 
+    int max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
+
+    out.setBitrate(QString::number(max_bitrate));
 }
