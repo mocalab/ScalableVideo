@@ -5,14 +5,19 @@
 #include <QMainWindow>
 #include <Types/camera.h>
 #include "UI/videowindow.h"
+#include "UI/icontrolcentermanager.h"
 #include "Video/ffmpegwrapper.h"
 #include <QThread>
+
 
 namespace Ui {
 class ControlCenter;
 }
 
-class ControlCenter : public QMainWindow
+/**
+ * @brief This class defines the control center for the video client.
+ */
+class ControlCenter : public QMainWindow, public IControlCenterManager
 {
     Q_OBJECT
     
@@ -30,6 +35,12 @@ private slots:
     void quitActionClicked();
 
     void on_b_demux_test_clicked();
+
+    /**
+     * @brief Determine if the application is in learning mode or not.
+     * @return True if in learning mode, false is not.
+     */
+    virtual bool inLearningMode();
 
 private:
     Ui::ControlCenter *ui;

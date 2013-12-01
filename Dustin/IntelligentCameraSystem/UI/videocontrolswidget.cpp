@@ -127,7 +127,10 @@ void VideoControlsWidget::setUpUI()
     filename += RESOLUTIONS_FILE;
     FileReaderUtility reader(filename);
     if(reader.open_file())
-        this->cbResolution->addItems(reader.parse());
+    {
+        this->all_sizes = reader.parse();
+        this->cbResolution->addItems(all_sizes);
+    }
     else
     {
         //If file fails to open... do something (will determine)
@@ -225,4 +228,9 @@ void VideoControlsWidget::fadeIn()
 
     fade_in_animation->start(QPropertyAnimation::DeleteWhenStopped);
 
+}
+
+QStringList &VideoControlsWidget::getSizes()
+{
+    return this->all_sizes;
 }

@@ -90,7 +90,9 @@ HEADERS  += \
     Util/FileUtil/cameralistfileutil.h \
     DecisionModule/decisioninterface.h \
     Types/encodingparameters.h \
-    Types/featureset.h
+    Types/featureset.h \
+    UI/ivideowindowmanager.h \
+    UI/icontrolcentermanager.h
 
 FORMS    += \
     mainwindow.ui \

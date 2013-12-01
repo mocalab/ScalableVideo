@@ -44,7 +44,7 @@ void ControlCenter::on_bOpen_clicked()
 
         //Open up a new camera window
         Camera *cam = (Camera *)selected;
-        VideoWindow *openCamera = new VideoWindow(cam);
+        VideoWindow *openCamera = new VideoWindow(cam, this);
         openCamera->setAttribute(Qt::WA_DeleteOnClose);
         openCamera->show();
 
@@ -79,4 +79,11 @@ void ControlCenter::addCameras(CameraList cameras)
 void ControlCenter::on_b_demux_test_clicked()
 {
     m_ffmpeg_thread->start();
+}
+
+bool ControlCenter::inLearningMode()
+{
+    //For now, just return the value of the learning mode check box. In the future, we will also use the number
+    //of training samples we have
+    return this->ui->cbLearningMode->isChecked();
 }

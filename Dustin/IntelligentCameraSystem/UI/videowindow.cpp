@@ -7,13 +7,15 @@
 #include "videowindow.h"
 #include "ui_videowindow.h"
 
-VideoWindow::VideoWindow(Camera *camera, QWidget *parent) :
+VideoWindow::VideoWindow(Camera *camera, IControlCenterManager *control_center, QWidget *parent) :
     QDialog(parent),
+    m_control_center_manager(control_center),
     m_camera(camera),
     ui(new Ui::VideoWindow),
     m_controls_revealed(false),
     m_is_inside(false),
     m_currentbw_kbps(5000),
+    m_decision_interface(this),
     m_current_params(),
     m_pending_parameters()
 {   
@@ -181,8 +183,14 @@ void VideoWindow::receivedMessage(QString response)
     if(response.contains("Updating"))
     {
         m_current_params = m_pending_parameters;
-        DEBUG() << m_current_params.widthAsInt() << " " << m_current_params.heightAsInt() << " " << m_current_params.fpsAsInt() << " " << m_current_params.bitrateAsInt();
+
         ui->video_player->resetStats();
+
+        //If we are in learning mode
+        if(m_control_center_manager->inLearningMode())
+        {
+            //Add this to the training set
+        }
     }
 }
 
@@ -284,6 +292,11 @@ bool VideoWindow::operator ==(const VideoWindow &rhs)
 {
     return *(this->camera()) == *(rhs.camera());
 }
+
+QStringList VideoWindow::getVideoSizes()
+{
+    return this->ui->video_controls->getSizes();
+}
 //Function to disconnect from camera server
 void VideoWindow::disconnect()
 {
@@ -337,19 +350,29 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
 void VideoWindow::onBandwidth(QString bandwidth)
 {
     bool success = false;
+
     int iBW = bandwidth.toInt(&success, 10);
-    receivedMessage(bandwidth);
+
     if(success)
     {
         this->m_currentbw_kbps = iBW;
 
-        //Determine the new encoding parameters
-        EncodingParameters new_params;
-        float dr_avg_kbps = ui->video_player->getAverageBitrate() * 10000;
-        FeatureSet fs;
-        m_decision_interface.makeDecision(m_currentbw_kbps, dr_avg_kbps, m_current_params, fs, new_params);
+        //Are we in learning mode?
+        if(m_control_center_manager->inLearningMode())
+        {
+            //Add training example to training set and determine the decision function
+        }
+        else
+        {
+            //Determine the new encoding parameters
+            EncodingParameters new_params;
+            float dr_avg_kbps = ui->video_player->getAverageBitrate() * 10000;
+            FeatureSet fs;
+            m_decision_interface.makeDecision(m_currentbw_kbps, dr_avg_kbps, m_current_params, fs, new_params);
 
-        this->resizeVideo(new_params.width(), new_params.height(), new_params.fps(), new_params.bitrate());
+            this->resizeVideo(new_params.width(), new_params.height(), new_params.fps(), new_params.bitrate());
+
+        }
     }
 }
 

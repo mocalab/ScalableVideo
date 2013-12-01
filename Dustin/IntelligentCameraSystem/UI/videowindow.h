@@ -14,6 +14,8 @@
 #include <Util/FileUtil/bandwidthfilereader.h>
 #include <Types/encodingparameters.h>
 #include <DecisionModule/decisioninterface.h>
+#include "ivideowindowmanager.h"
+#include "icontrolcentermanager.h"
 
 #define VIDEO_URL "udp/h264://@:39082"
 
@@ -25,7 +27,7 @@ class VideoWindow;
  * @brief The VideoWindow class.
  *A window that contains the media player and media controls for a particular camera or stremaing server.
  */
-class VideoWindow : public QDialog
+class VideoWindow : public QDialog, public IVideoWindowManager
 {
     Q_OBJECT
     
@@ -35,7 +37,7 @@ public:
      * @param camera The camera or streaming server whose video this window will play.
      * @param parent The parent widget of the window.
      */
-    explicit VideoWindow(Camera *camera, QWidget *parent = 0);
+    explicit VideoWindow(Camera *camera, IControlCenterManager *control_center = 0, QWidget *parent = 0);
     ~VideoWindow();
     //FOR TESTING PURPOSES
     void streamVideo(QString url);
@@ -68,6 +70,12 @@ public:
      * @return True if the two cameras are the same, false otherwise.
      */
     bool operator==(const VideoWindow& rhs);
+
+    /**
+     * @brief Get the list of video sizes from the combo box.
+     * @return The video size list.
+     */
+    virtual QStringList getVideoSizes();
 
 protected:
     virtual void enterEvent(QEvent *e);
@@ -119,6 +127,9 @@ signals:
 
 private:
     Ui::VideoWindow *ui;
+    //A handle to the control center
+    IControlCenterManager               *m_control_center_manager;
+
     //TCP connection
     NetworkToQtInterface    *m_tcp_interface;
     //TCP request/response thread

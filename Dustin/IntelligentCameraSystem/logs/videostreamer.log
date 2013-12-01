@@ -1,37 +1,14 @@
- INFO 2013-11-29T15:36:57.468 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/main.cpp : 25  --  Program init. 
- INFO 2013-11-29T15:37:03.266 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "Connected!" 
- INFO 2013-11-29T15:37:09.651 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 310 -- Sent:  "start 320 240 15 0" 
- INFO 2013-11-29T15:37:09.651 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 70 -- After send. STATUS:  0 
- INFO 2013-11-29T15:37:09.651 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 30 -- Setting up timer... 
- INFO 2013-11-29T15:37:10.127 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 87 -- Response tick... 
- INFO 2013-11-29T15:37:10.127 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 94 -- Received response: Updating the camera 
- INFO 2013-11-29T15:37:10.708 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "Updating the camera" 
-DEBUG 2013-11-29T15:37:10.711 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 184 -- 320   240   15   230400 
- INFO 2013-11-29T15:37:14.543 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 102 -- Video window destructor called. 
- INFO 2013-11-29T15:37:14.543 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 
- INFO 2013-11-29T15:37:18.728 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "Connected!" 
- INFO 2013-11-29T15:37:24.352 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 310 -- Sent:  "start 320 240 15 0" 
- INFO 2013-11-29T15:37:24.353 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 70 -- After send. STATUS:  0 
- INFO 2013-11-29T15:37:24.353 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 30 -- Setting up timer... 
- INFO 2013-11-29T15:37:24.878 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 87 -- Response tick... 
- INFO 2013-11-29T15:37:24.879 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 94 -- Received response: Updating the camera 
- INFO 2013-11-29T15:37:24.879 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "Updating the camera" 
-DEBUG 2013-11-29T15:37:24.882 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 184 -- 320   240   15   230400 
- INFO 2013-11-29T15:37:31.483 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "2000" 
- INFO 2013-11-29T15:37:31.491 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 310 -- Sent:  "start 320 240 30 904462" 
- INFO 2013-11-29T15:37:31.492 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 70 -- After send. STATUS:  0 
- INFO 2013-11-29T15:37:31.492 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 30 -- Setting up timer... 
- INFO 2013-11-29T15:37:32.018 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 87 -- Response tick... 
- INFO 2013-11-29T15:37:32.018 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 94 -- Received response: Updating the camera 
- INFO 2013-11-29T15:37:32.018 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "Updating the camera" 
-DEBUG 2013-11-29T15:37:32.021 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 184 -- 320   240   30   904462 
- INFO 2013-11-29T15:37:58.320 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "200" 
- INFO 2013-11-29T15:37:58.322 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 310 -- Sent:  "start 320 240 30 230400" 
- INFO 2013-11-29T15:37:58.323 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 70 -- After send. STATUS:  0 
- INFO 2013-11-29T15:37:58.323 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 30 -- Setting up timer... 
- INFO 2013-11-29T15:37:58.849 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 87 -- Response tick... 
- INFO 2013-11-29T15:37:58.849 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 94 -- Received response: Updating the camera 
- INFO 2013-11-29T15:37:58.849 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 170 -- In slot 'receivedPacket' Message: "Updating the camera" 
-DEBUG 2013-11-29T15:37:58.851 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 184 -- 320   240   30   230400 
- INFO 2013-11-29T15:38:16.153 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 102 -- Video window destructor called. 
- INFO 2013-11-29T15:38:16.153 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 
+ INFO 2013-11-30T16:31:41.768 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/main.cpp : 25  --  Program init. 
+ INFO 2013-11-30T16:31:49.215 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 172 -- In slot 'receivedPacket' Message: "Connected!" 
+ INFO 2013-11-30T16:32:00.488 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 104 -- Video window destructor called. 
+ INFO 2013-11-30T16:32:00.488 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 
+ INFO 2013-11-30T16:32:05.134 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 172 -- In slot 'receivedPacket' Message: "Connected!" 
+ INFO 2013-11-30T16:32:24.663 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 317 -- Sent:  "start 800 480 30 1018046" 
+ INFO 2013-11-30T16:32:24.663 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 70 -- After send. STATUS:  0 
+ INFO 2013-11-30T16:32:24.663 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 30 -- Setting up timer... 
+ INFO 2013-11-30T16:32:25.139 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 87 -- Response tick... 
+ INFO 2013-11-30T16:32:25.139 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 94 -- Received response: Updating the camera 
+ INFO 2013-11-30T16:32:25.139 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 172 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2013-11-30T16:32:25.143 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 186 -- 800   480   30   1018046 
+ INFO 2013-11-30T16:32:37.101 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 104 -- Video window destructor called. 
+ INFO 2013-11-30T16:32:37.102 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 

@@ -10,6 +10,7 @@
 
 #include <Types/encodingparameters.h>
 #include <Types/featureset.h>
+#include <UI/ivideowindowmanager.h>
 /**
  * @brief This class defines the interface for making a decision about the correct encoding parameters to use for a stream of video.
  */
@@ -19,7 +20,7 @@ public:
     /**
      * @brief Default value constructor.
      */
-    DecisionInterface();
+    DecisionInterface(IVideoWindowManager *manager = 0);
 
     /**
      * @brief Make a decision about the encoding parameters.
@@ -43,6 +44,19 @@ private:
      * @param out An object to hold the up converted parameters.
      */
     void upConvert(float ratio, EncodingParameters &in, EncodingParameters &out);
+
+    /**
+     * @brief Down convert the encoding parameters.
+     *If the available bandwidth is less than the data rate, we can optimize the encoding parameters by decreasing desired
+     *parameters.
+     * @param ratio The ratio of datarate / bandwidth.
+     * @param in The pre-converted parameters.
+     * @param out An object to hold the up converted parameters.
+     */
+    void downConvert(float ratio, EncodingParameters &in, EncodingParameters &out);
+
+    //The video window manager
+    IVideoWindowManager                         *m_window_interface;
 };
 
 #endif // DECISIONINTERFACE_H

@@ -40,6 +40,12 @@ public:
      */
     void fadeIn();
 
+    /**
+     * @brief Get the video sizes from the combo box.
+     * @return The video sizes available.
+     */
+    QStringList &getSizes();
+
 protected:
 //    virtual void enterEvent(QEvent *e);
 //    virtual void leaveEvent(QEvent *e);
@@ -87,6 +93,7 @@ private:
 
     //Combo box for Width x Height
     QComboBox           *cbResolution;
+    QStringList          all_sizes;
 
     //Button
     QPushButton         *bSend;

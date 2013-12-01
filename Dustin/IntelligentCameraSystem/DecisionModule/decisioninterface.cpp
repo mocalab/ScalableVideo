@@ -1,6 +1,7 @@
 #include "decisioninterface.h"
 
-DecisionInterface::DecisionInterface()
+DecisionInterface::DecisionInterface(IVideoWindowManager *manager) :
+    m_window_interface(manager)
 {
 }
 
@@ -39,6 +40,26 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
         out.setFps(QString::number(30));
         ratio *= 2;
     }
-    int bitrate = (int)((in.bitrateAsInt() / ratio) * ceiling);
+    //Determine what the video size should be
+
+    //WILL HAVE TO INTELLIGENTLY DECIDE THIS
+    int width = in.widthAsInt();
+    int height = in.heightAsInt();
+    out.setWidth(QString::number(width));
+    out.setHeight(QString::number(height));
+    //Decide the optimum bitrate that can be used
+    int optimum_bitrate = width * height * 3.5;
+
+    //Determine the max bitrate available
+    int max_bitrate = (int)((in.bitrateAsInt() / ratio) * ceiling);
+
+    //Choose the least of these two bitrates
+    int bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
     out.setBitrate(QString::number(bitrate));
+}
+
+//Down convert the encoding parameters
+void DecisionInterface::downConvert(float ratio, EncodingParameters &in, EncodingParameters &out)
+{
+
 }
