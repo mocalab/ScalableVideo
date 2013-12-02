@@ -66,7 +66,7 @@ void FFMPEGVideoWidget::timerTick()
     //Delete first frame
     if(!first_frame)
     {
-        if(!m_buffer.empty()) ;
+        if(!m_buffer.empty())
             delete current_frame;
     }
 

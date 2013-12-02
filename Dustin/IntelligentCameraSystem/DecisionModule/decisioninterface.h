@@ -8,9 +8,9 @@
 ///and acceptable value is determined
 #define OPTIMUM_CEILING         0.95
 
-#include <Types/encodingparameters.h>
-#include <Types/featureset.h>
-#include <UI/ivideowindowmanager.h>
+#include "Types/encodingparameters.h"
+#include "Types/featureset.h"
+#include "UI/ivideowindowmanager.h"
 /**
  * @brief This class defines the interface for making a decision about the correct encoding parameters to use for a stream of video.
  */

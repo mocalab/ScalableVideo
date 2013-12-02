@@ -3,10 +3,11 @@
 
 #include <list>
 #include <QMainWindow>
-#include <Types/camera.h>
+#include "Types/camera.h"
 #include "UI/videowindow.h"
 #include "UI/icontrolcentermanager.h"
 #include "Video/ffmpegwrapper.h"
+#include "LearningModule/learninginterface.h"
 #include <QThread>
 
 
@@ -24,7 +25,32 @@ class ControlCenter : public QMainWindow, public IControlCenterManager
 public:
     explicit ControlCenter(CameraList cameras, QWidget *parent = 0);
     ~ControlCenter();
-    
+    /**
+     * @brief Determine if the application is in learning mode or not.
+     * @return True if in learning mode, false is not.
+     */
+    virtual bool inLearningMode();
+
+    /**
+     * @brief Add a training example to the training set of the learning module managed by this
+     *control center window.
+     * @param fs The feature set.
+     * @param lbl_fps_br_priority The label for the FPS vs. Bitrate trainer.
+     * @param lbl_size_quality_priority The label for the size vs. quality trainer.
+     */
+    virtual void addTrainingExample(FeatureSet &fs, double lbl_fps_br_priority, double lbl_size_quality_priority);
+
+    /**
+     * @brief Train the trainers.
+     */
+    virtual void train();
+
+    /**
+     * @brief Make a prediction using the given feature set.
+     * @param fs The feature set to make a prediction on.
+     * @return A bitmask indicating the classes chosen from the trainers used.
+     */
+    virtual int predict(FeatureSet &fs);
 private slots:
     void on_bOpen_clicked();
 
@@ -36,11 +62,7 @@ private slots:
 
     void on_b_demux_test_clicked();
 
-    /**
-     * @brief Determine if the application is in learning mode or not.
-     * @return True if in learning mode, false is not.
-     */
-    virtual bool inLearningMode();
+
 
 private:
     Ui::ControlCenter *ui;
@@ -52,6 +74,16 @@ private:
     //To test the demuxer
     FFMPEGWrapper           *m_ffmpeg;
     QThread                 *m_ffmpeg_thread;
+
+    //Machine learning interface
+    //FPS vs. Bitrate priority learner
+    LearningInterface       m_fps_bitrate_learning_module;
+
+    //Size vs. Quality priority learner
+    LearningInterface       m_size_quality_learning_module;
+
+    //FOR TESTING
+    void testLearning();
 
 };
 

@@ -15,6 +15,8 @@ TEMPLATE = app
 #Linux includes
 linux:INCLUDEPATH += "/home/dustin/Downloads/boost_1_53_0/"
 linux:include("/home/dustin/Downloads/QsLog/QsLog.pri")
+#DLIB
+linux:INCLUDEPATH += "/home/dustin/Downloads/dlib-18.5"
 
 #windows includes
 win32:INCLUDEPATH += "C:\tools\vlc-2.0.7\vlc-2.0.7\include"
@@ -51,7 +53,8 @@ SOURCES += main.cpp \
     Util/FileUtil/cameralistfileutil.cpp \
     DecisionModule/decisioninterface.cpp \
     Types/encodingparameters.cpp \
-    Types/featureset.cpp
+    Types/featureset.cpp \
+    LearningModule/learninginterface.cpp
 
 HEADERS  += \
     mainwindow.h \
@@ -92,7 +95,8 @@ HEADERS  += \
     Types/encodingparameters.h \
     Types/featureset.h \
     UI/ivideowindowmanager.h \
-    UI/icontrolcentermanager.h
+    UI/icontrolcentermanager.h \
+    LearningModule/learninginterface.h
 
 FORMS    += \
     mainwindow.ui \
