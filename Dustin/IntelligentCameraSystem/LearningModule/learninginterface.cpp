@@ -1,5 +1,5 @@
 #include "learninginterface.h"
-
+#include "Global/Log.h"
 LearningInterface::LearningInterface() :
     m_trainer(svm_c_trainer<kernel_type>()),
     m_is_trained(false)
@@ -29,13 +29,47 @@ void LearningInterface::trainCurrent()
     for (unsigned long i = 0; i < m_training_set.size(); ++i)
         m_training_set[i] = m_normalizer(m_training_set[i]);
 
+    //Perform cross-validation over a range of values of C and gamma
+    //to determine the best parameters
+    double C_best = 0;
+    double gamma_best = 0;
+    double best_accuracy = 0.0;
+
+    //Different values, simple implementation
+    //Could look into better methods of doing this but this is a nice
+    //and simple implementation at the cost of speed and efficiency
+    for(double gamma = 0.0001; gamma < 3; gamma *= 5)
+    {
+        for(double C = 0.0001; C < 3; C *= 5)
+        {
+            //Set a new kernel
+            m_trainer.set_kernel(kernel_type(gamma));
+
+            //Set a new C
+            m_trainer.set_c(C);
+
+            //Perform 3-fold cross validation and look at the accuracy
+            matrix<double, 1, 2> accuracy = cross_validate_trainer(m_trainer, m_training_set, m_labels, 3);
+            DEBUG() << " cross-validation accuracy: " << accuracy(0,0) << " " << accuracy(0,1);
+            //See if this has the best accuracy so far by multiplying the 0 class accuracy and 1 class accuracy
+            double curr_accuracy = accuracy(0,0) * accuracy(0,1);
+            if(curr_accuracy > best_accuracy)
+            {
+                best_accuracy = curr_accuracy;
+                C_best = C;
+                gamma_best = gamma;
+            }
+
+        }
+    }
+
     //Set C, epsilon and cache size
-    m_trainer.set_c(0.5);
+    m_trainer.set_c(C_best);
     m_trainer.set_epsilon(0.0001);
     //For now just leave defaults
 
     //Determine a good value for gamma (TODO)
-    m_trainer.set_kernel(kernel_type(0.1));
+    m_trainer.set_kernel(kernel_type(gamma_best));
     m_decision_function.normalizer = m_normalizer;
 
     //Train

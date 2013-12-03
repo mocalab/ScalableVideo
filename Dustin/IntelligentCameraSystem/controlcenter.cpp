@@ -83,71 +83,71 @@ void ControlCenter::addCameras(CameraList cameras)
 void ControlCenter::testLearning()
 {
     //TESTING
-    FeatureSet fs1(20000, 1);
-    FeatureSet fs2(700000, 1);
-    FeatureSet fs3(100000, 1);
-    FeatureSet fs4(600000, 1);
-    FeatureSet fs5(900000, 1);
-    FeatureSet fs6(800000, 1);
-    FeatureSet fs7(100000, 1);
-    FeatureSet fs8(200000, 1);
-    FeatureSet fs9(400000, 1);
-    FeatureSet fs10(500000, 1);
-    FeatureSet fs11(100000, 1);
-    FeatureSet fs12(700000, 1);
-    FeatureSet fs13(100000, 1);
-    FeatureSet fs14(600000, 1);
-    FeatureSet fs15(700000, 1);
-    FeatureSet fs16(500000, 1);
-    FeatureSet fs17(100000, 1);
-    FeatureSet fs18(200000, 1);
-    FeatureSet fs19(100000, 1);
-    FeatureSet fs20(900000, 1);
+//    FeatureSet fs1(20000, 1);
+//    FeatureSet fs2(700000, 1);
+//    FeatureSet fs3(100000, 1);
+//    FeatureSet fs4(600000, 1);
+//    FeatureSet fs5(900000, 1);
+//    FeatureSet fs6(800000, 1);
+//    FeatureSet fs7(100000, 1);
+//    FeatureSet fs8(200000, 1);
+//    FeatureSet fs9(400000, 1);
+//    FeatureSet fs10(500000, 1);
+//    FeatureSet fs11(100000, 1);
+//    FeatureSet fs12(700000, 1);
+//    FeatureSet fs13(100000, 1);
+//    FeatureSet fs14(600000, 1);
+//    FeatureSet fs15(700000, 1);
+//    FeatureSet fs16(500000, 1);
+//    FeatureSet fs17(100000, 1);
+//    FeatureSet fs18(200000, 1);
+//    FeatureSet fs19(100000, 1);
+//    FeatureSet fs20(900000, 1);
 
-    m_fps_bitrate_learning_module.addTrainingSample(fs1, 1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs2, -1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs3, 1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs4, -1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs5, -1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs6, -1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs7, 1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs8, 1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs9, 1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs10, -1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs11, 1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs12, -1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs13, 1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs14, -1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs15, -1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs16, -1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs17, 1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs18, 1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs19, 1.0);
-    m_fps_bitrate_learning_module.addTrainingSample(fs20, -1.0);
-//    for (int r = -20; r <= 20; ++r)
-//       {
-//           for (int c = -20; c <= 20; ++c)
-//           {
-//               FeatureSet fs(r,c);
-//               double label = 0.0;
-//               // if this point is less than 10 from the origin
-//               if (sqrt((double)r*r + c*c) <= 10)
-//                   label = 1.0;
-//               else
-//                   label = -1.0;
-//                m_learning_module.addTrainingSample(fs, label);
-//           }
-//       }
+//    m_fps_bitrate_learning_module.addTrainingSample(fs1, 1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs2, -1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs3, 1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs4, -1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs5, -1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs6, -1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs7, 1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs8, 1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs9, 1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs10, -1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs11, 1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs12, -1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs13, 1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs14, -1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs15, -1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs16, -1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs17, 1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs18, 1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs19, 1.0);
+//    m_fps_bitrate_learning_module.addTrainingSample(fs20, -1.0);
+    for (int r = -20; r <= 20; ++r)
+       {
+           for (int c = -20; c <= 20; ++c)
+           {
+               FeatureSet fs(r,c);
+               double label = 0.0;
+               // if this point is less than 10 from the origin
+               if (sqrt((double)r*r + c*c) <= 10)
+                   label = 1.0;
+               else
+                   label = -1.0;
+                m_fps_bitrate_learning_module.addTrainingSample(fs, label);
+           }
+       }
 
 
     m_fps_bitrate_learning_module.trainCurrent();
 
     //TEST SOME EXAMPLES
     double out = -10.0;
-    FeatureSet tst1(100000, 1);
+    FeatureSet tst1(1, 1);
     out = m_fps_bitrate_learning_module.predict(tst1);
 
-    FeatureSet tst2(400000, 1);
+    FeatureSet tst2(10, 10);
     out = m_fps_bitrate_learning_module.predict(tst2);
     out = 5.0;
     return;
