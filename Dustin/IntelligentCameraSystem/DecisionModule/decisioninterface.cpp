@@ -6,7 +6,11 @@ DecisionInterface::DecisionInterface(IVideoWindowManager *manager) :
 }
 
 //Determine what the new encoding parameters should be
-void DecisionInterface::makeDecision(int bandwidth, int datarate, EncodingParameters &old_params, FeatureSet &features, EncodingParameters &new_params)
+void DecisionInterface::makeDecision(int bandwidth,
+                                     int &datarate,
+                                     EncodingParameters &old_params,
+                                     FeatureSet &features,
+                                     EncodingParameters &new_params)
 {
     //Get the ratio of bandwidth to data rate;
     float ratio = (float) datarate / bandwidth;
@@ -27,6 +31,32 @@ void DecisionInterface::makeDecision(int bandwidth, int datarate, EncodingParame
     }
 
     return;
+}
+
+//This is the default action (as in when in learning mode)
+void DecisionInterface::defaultAdjustBitrate(int bandwidth,
+                                             int &datarate,
+                                             EncodingParameters &in,
+                                             EncodingParameters &out)
+{
+    float ceiling = OPTIMUM_CEILING;
+    float ratio = (float)datarate / bandwidth;
+
+    int max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
+
+    int width = in.widthAsInt();
+    int height = in.heightAsInt();
+    out.setWidth(QString::number(width));
+    out.setHeight(QString::number(height));
+    //Decide the optimum bitrate that can be used
+    int optimum_bitrate = width * height * 3.5;
+
+    int bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
+
+    out.setBitrate(QString::number(bitrate));
+
+    //Set the new bitrate for the caller
+    datarate /= ratio;
 }
 
 //Up convert the encoding parameters

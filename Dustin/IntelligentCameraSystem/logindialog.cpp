@@ -2,7 +2,8 @@
 #include "ui_logindialog.h"
 #include <QMessageBox>
 #include "controlcenter.h"
-#include <Util/FileUtil/cameralistfileutil.h>
+#include "Util/FileUtil/cameralistfileutil.h"
+#include "Global/Constants.h"
 
 LoginDialog::LoginDialog(QWidget *parent) :
     QDialog(parent),

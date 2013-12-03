@@ -49,7 +49,6 @@ SOURCES += main.cpp \
     UI/ffmpegvideowidget.cpp \
     Util/FileUtil/filereaderutility.cpp \
     Types/mediastatistics.cpp \
-    Util/FileUtil/bandwidthfilereader.cpp \
     Util/FileUtil/cameralistfileutil.cpp \
     DecisionModule/decisioninterface.cpp \
     Types/encodingparameters.cpp \
@@ -88,7 +87,6 @@ HEADERS  += \
     UI/ffmpegvideowidget.h \
     Util/FileUtil/filereaderutility.h \
     Types/mediastatistics.h \
-    Util/FileUtil/bandwidthfilereader.h \
     Global/Constants.h \
     Util/FileUtil/cameralistfileutil.h \
     DecisionModule/decisioninterface.h \

@@ -3,6 +3,7 @@
 #include "ui_controlcenter.h"
 #include <QShortcut>
 #include "Types/featureset.h"
+#include <QMessageBox>
 
 ControlCenter::ControlCenter(CameraList cameras, QWidget *parent) :
     QMainWindow(parent),
@@ -173,6 +174,14 @@ void ControlCenter::addTrainingExample(FeatureSet &fs, double lbl_fps_br_priorit
 
     //Add to quality trainer
     this->m_size_quality_learning_module.addTrainingSample(fs, lbl_size_quality_priority);
+
+    if((m_size_quality_learning_module.getNumberOfSamples() % 60) == 0)
+    {
+        this->train();
+
+        if(!this->ui->cbLearningMode->isEnabled())
+            this->ui->cbLearningMode->setEnabled(true);
+    }
 }
 
 //Train the learning modules

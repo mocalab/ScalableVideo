@@ -32,7 +32,23 @@ public:
      * @param feature_set The features of the current video for predictions.
      * @param new_params Object to hold the new encoding parameters.
      */
-     void makeDecision(int bandwidth, int datarate, EncodingParameters &old_params, FeatureSet &features, EncodingParameters &new_params);
+     void makeDecision(int bandwidth,
+                       int &datarate,
+                       EncodingParameters &old_params,
+                       FeatureSet &features,
+                       EncodingParameters &new_params);
+
+     /**
+      * @brief By default, adjust the bitrate to fit the channel.
+      * @param bandwidth The video bandwidth.
+      * @param datarate The old data rate of the video.
+      * @param in The old encoding parameters.
+      * @param out The new encoding parameters.
+      */
+     void defaultAdjustBitrate(int bandwidth,
+                               int &datarate,
+                               EncodingParameters &in,
+                               EncodingParameters &out);
 
 private:
     /**

@@ -87,6 +87,13 @@ int EncodingParameters::bitrateAsInt() const
 
     return bitrate.toInt();
 }
+
+//Equivalence operator
+bool EncodingParameters::operator==(const EncodingParameters &rhs)
+{
+    return (this->m_width == rhs.m_width && this->m_height == rhs.m_height
+            && this->m_fps == rhs.m_fps && this->m_bitrate == rhs.m_bitrate);
+}
 QString EncodingParameters::fps() const
 {
     return m_fps;

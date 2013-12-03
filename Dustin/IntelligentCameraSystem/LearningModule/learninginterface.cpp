@@ -2,7 +2,8 @@
 #include "Global/Log.h"
 LearningInterface::LearningInterface() :
     m_trainer(svm_c_trainer<kernel_type>()),
-    m_is_trained(false)
+    m_is_trained(false),
+    m_num_training_samples(0)
 {
 }
 
@@ -20,6 +21,8 @@ void LearningInterface::addTrainingSample(FeatureSet &features, double label)
         m_labels.push_back(+1);
     else
         m_labels.push_back(-1);
+
+    m_num_training_samples++;
 }
 
 void LearningInterface::trainCurrent()
@@ -91,4 +94,9 @@ double LearningInterface::predict(FeatureSet &features)
 
     return m_decision_function(sample);
 
+}
+
+int LearningInterface::getNumberOfSamples() const
+{
+    return this->m_num_training_samples;
 }

@@ -61,9 +61,6 @@ private slots:
     void quitActionClicked();
 
     void on_b_demux_test_clicked();
-
-
-
 private:
     Ui::ControlCenter *ui;
     Camera *c;

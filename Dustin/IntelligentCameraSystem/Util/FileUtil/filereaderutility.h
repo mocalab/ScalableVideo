@@ -72,6 +72,7 @@ public:
      */
     QString readLine();
 
+
 private:
     ///The name of the file
     QString                 m_filename;

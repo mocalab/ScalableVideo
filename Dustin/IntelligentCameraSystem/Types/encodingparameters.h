@@ -61,6 +61,12 @@ public:
 
     int bitrateAsInt() const;
 
+    /**
+     * @brief Overloaded equivalence operator.
+     * @param rhs The object for comparison.
+     * @return True if all of the fields are equal, false otherwise.
+     */
+    bool operator==(const EncodingParameters &rhs);
 
 
 private:

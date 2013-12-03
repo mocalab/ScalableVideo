@@ -56,6 +56,12 @@ public:
      */
     double predict(FeatureSet &features);
 
+    /**
+     * @brief Get the total number of training samples.
+     * @return The number of training samples.
+     */
+    int getNumberOfSamples() const;
+
 private:
 
     //Training set
@@ -74,6 +80,9 @@ private:
     learned_function                            m_decision_function;
     //Indicate if the trainer has been trained and we have a decision function
     bool                                        m_is_trained;
+
+    //The total number of training samples
+    int                                         m_num_training_samples;
 
 };
 

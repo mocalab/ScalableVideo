@@ -8,12 +8,13 @@
 #define CONNECTION_MULTIPLE_ATTEMPTS 0
 
 #include <QDialog>
-#include <Types/camera.h>
-#include <Network/networktoqtinterface.h>
 #include <QThread>
-#include <Util/FileUtil/bandwidthfilereader.h>
-#include <Types/encodingparameters.h>
-#include <DecisionModule/decisioninterface.h>
+#include <QTimer>
+#include "Types/camera.h"
+#include "Network/networktoqtinterface.h"
+#include "Util/FileUtil/filereaderutility.h"
+#include "Types/encodingparameters.h"
+#include "DecisionModule/decisioninterface.h"
 #include "ivideowindowmanager.h"
 #include "icontrolcentermanager.h"
 
@@ -118,6 +119,14 @@ public slots:
      * @param bandwidth The new bandwidth.
      */
     void onBandwidth(QString bandwidth);
+
+    /**
+     * @brief Take a sample of user's choices.
+     *This slot will take a sample of the user's choices and add it to the training set.
+     */
+    void takeSample();
+
+    void pollBandwidthFile();
 signals:
     /**
      * @brief This signal is invoked when the window is destroyed in order to inform
@@ -139,10 +148,10 @@ private:
     Camera              *m_camera;
 
     //A file reader to get new bandwidths
-    BandwidthFileReader         *m_bwfilereader;
+//    BandwidthFileReader         *m_bwfilereader;
 
-    //A thread to run the reader loop in
-    QThread                     *m_bwreaderthread;
+//    //A thread to run the reader loop in
+//    QThread                     *m_bwreaderthread;
 
     //The current bandwidth of the video
     int                         m_currentbw_kbps;
@@ -158,6 +167,18 @@ private:
 
     //Object to make decisions about encoding parameters
     DecisionInterface               m_decision_interface;
+
+    //A timer to take samples of the user's choices
+    QTimer                          *m_poller;
+
+    //A poller to read a file containing bandwidth information
+    QTimer                          *m_bw_file_poller;
+
+    //A file reader for the bandwidth file
+    FileReaderUtility               m_bandwidth_filereader;
+
+    //Keep track of the data rate
+    int                             m_effective_rate;
 
     //Functions
     //Connect to the camera server

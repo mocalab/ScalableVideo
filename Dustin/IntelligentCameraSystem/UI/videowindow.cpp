@@ -17,7 +17,9 @@ VideoWindow::VideoWindow(Camera *camera, IControlCenterManager *control_center, 
     m_currentbw_kbps(5000),
     m_decision_interface(this),
     m_current_params(),
-    m_pending_parameters()
+    m_pending_parameters(),
+    m_bandwidth_filereader(QString(BWFILE_PATH).append(QString(m_camera->name())).append("_bandwidth")),
+    m_effective_rate(400)
 {   
 
     ui->setupUi(this);
@@ -46,9 +48,15 @@ VideoWindow::VideoWindow(Camera *camera, IControlCenterManager *control_center, 
     QTimer::singleShot(500, this, SLOT(delayServerConnect()));
 #endif
 
-
-
+    //Set up the timer
+    m_poller = new QTimer(this);
+    connect(m_poller, SIGNAL(timeout()), this, SLOT(takeSample()));
+    m_poller->start(2000);
     //qApp->installEventFilter(this);
+
+    m_bw_file_poller = new QTimer(this);
+    connect(m_bw_file_poller, SIGNAL(timeout()), this, SLOT(pollBandwidthFile()));
+    this->m_bw_file_poller->start(500);
 }
 
 //Set up request/response thread
@@ -63,17 +71,17 @@ void VideoWindow::setUpThreads()
     connect(m_tcp_interface, SIGNAL(finished()), m_request_thread, SLOT(quit()));
 
     //Set up and run bandwidth determination thread
-    QString file = m_camera->name() + "_bandwidth";
-    m_bwfilereader = new BandwidthFileReader(file);
-    m_bwreaderthread = new QThread(this);
-    m_bwfilereader->moveToThread(m_bwreaderthread);
-    //Set up thread connections
-    connect(m_bwreaderthread, SIGNAL(started()), m_bwfilereader, SLOT(readLoop()));
-    connect(m_bwfilereader, SIGNAL(finished()), m_bwreaderthread, SLOT(quit()));
+//    QString file = m_camera->name() + "_bandwidth";
+//    m_bwfilereader = new BandwidthFileReader(file);
+//    m_bwreaderthread = new QThread(this);
+//    m_bwfilereader->moveToThread(m_bwreaderthread);
+//    //Set up thread connections
+//    connect(m_bwreaderthread, SIGNAL(started()), m_bwfilereader, SLOT(readLoop()));
+//    connect(m_bwfilereader, SIGNAL(finished()), m_bwreaderthread, SLOT(quit()));
 
-    connect(m_bwfilereader, SIGNAL(newBandwidth(QString)), this, SLOT(onBandwidth(QString)));
-    //Start the read loop
-    m_bwreaderthread->start();
+//    connect(m_bwfilereader, SIGNAL(newBandwidth(QString)), this, SLOT(onBandwidth(QString)));
+//    //Start the read loop
+//    m_bwreaderthread->start();
 
 }
 //Event filter
@@ -102,7 +110,7 @@ VideoWindow::~VideoWindow()
 {
     delete ui;
     INFO() << "Video window destructor called.";
-    //Must determine why server is not seeing us disconnect
+
     this->disconnect();
     //ui->video_player->stopPlaying();
 
@@ -114,12 +122,16 @@ VideoWindow::~VideoWindow()
 
     delete m_request_thread;
 
-    m_bwfilereader->setReadyFlag(false);
+//    m_bwfilereader->setReadyFlag(false);
+//    m_bwreaderthread->wait();
+//    m_bwreaderthread->terminate();
 
-    m_bwreaderthread->terminate();
+//    delete m_bwfilereader;
+//    delete m_bwreaderthread;
 
-    delete m_bwfilereader;
-    delete m_bwreaderthread;
+    delete m_poller;
+
+    m_bandwidth_filereader.close();
 
     //Camera object should be managed by creating class
     //delete m_camera;
@@ -182,6 +194,11 @@ void VideoWindow::receivedMessage(QString response)
     //Check if the response is an acceptance of the parameters
     if(response.contains("Updating"))
     {
+        //Set the new effective data rate by taking ratios of the new params to old params
+        float rate = m_effective_rate;
+        rate *= (((float)m_pending_parameters.fpsAsInt() / m_current_params.fpsAsInt()) * ((float)m_pending_parameters.bitrateAsInt() / m_current_params.bitrateAsInt()));
+        m_effective_rate = (int)rate;
+        DEBUG() << "Effective bitrate: " << m_effective_rate;
         m_current_params = m_pending_parameters;
 
         ui->video_player->resetStats();
@@ -319,6 +336,32 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
 {
     //Create the message
     QString msg = QString("start ");
+    //See if we should change the bitrate
+    if(bps == "0")
+    {
+        //Get the old bitrate
+        float old_bitrate = (float)m_current_params.bitrateAsInt();
+        int bitrate = 0;
+        //Figure out how to fit the channel
+        float fps_ratio = (float)fps.toInt() / m_current_params.fpsAsInt();
+
+        //Bitrate will be updated as such due to framerate
+        float ratio = m_effective_rate * fps_ratio;
+
+        //Get the ratio of new datarate to channel bandwidth
+        ratio = ratio / m_currentbw_kbps;
+
+        //Find the maximum and optimal bitrates
+        int max_bitrate = (int)((float)width.toInt() * (float)height.toInt() * 3.5);
+        int opt_bitrate = (int)(old_bitrate * ratio * 0.95);
+
+        //Choose the lease of these
+        bitrate = max_bitrate < opt_bitrate ? max_bitrate : opt_bitrate;
+
+        bps = QString::number(bitrate);
+
+
+    }
     msg += width + QString(" ") + height + QString(" ") + fps + QString(" ") + bps;
     INFO() << "Sent: " << msg;
     //Send it to server
@@ -355,64 +398,104 @@ void VideoWindow::onBandwidth(QString bandwidth)
 
     if(success)
     {
-        int oldbw = m_currentbw_kbps;
-        this->m_currentbw_kbps = iBW;
-
+        //Wait until the pending parameters and current parameters are equal
+        while(!(m_pending_parameters == m_current_params))
+            ;
+        EncodingParameters new_params = m_current_params;
+        int dr_avg_kbps = (int)(m_effective_rate == 0 ? ui->video_player->getAverageBitrate() * 10000 : m_effective_rate);
+        DEBUG() << dr_avg_kbps;
         //Are we in learning mode?
         if(m_control_center_manager->inLearningMode())
         {
-            //Add training example to training set and determine the decision function
 
-            //Create the feature set object
-            FeatureSet next_fs(oldbw * 1000, (int)this->m_camera->content_type());
-            //Get the labels
+            this->takeSample();
+            this->m_currentbw_kbps = iBW;
+            //Knee-jerk reaction
+            m_decision_interface.defaultAdjustBitrate(m_currentbw_kbps, dr_avg_kbps, m_current_params, new_params);
+        }
+        //USE ML ALGORITHM TO DETERMINE WHAT THE PARAMETERS SHOULD BE
+        else
+        {
+            this->m_currentbw_kbps = iBW;
+            //Determine the new encoding parameters
+            FeatureSet fs;
+            m_decision_interface.makeDecision(m_currentbw_kbps, dr_avg_kbps, m_current_params, fs, new_params);
+        }
+        //m_effective_rate = (float)dr_avg_kbps;
+        //DEBUG() << m_effective_rate;
+        this->resizeVideo(new_params.width(), new_params.height(), new_params.fps(), new_params.bitrate());
+    }
+}
 
-            //We use simple implicit feedback to determine the two classes.
+//Take a sample and add it to the training set
+void VideoWindow::takeSample()
+{
+    if(m_control_center_manager->inLearningMode())
+    {
+        //Add training example to training set to determine the decision function
 
-            //If the video is playing at framerate 15fps and enhanced bitrate, the user prefers bitrate over framerate (+1 class)
-            //If the video is playing at framerate 30fps and lower bitrate, the user prefers temporal quality over bitrate (-1 class)
-            double lbl_fps_bitrate = 0.0;
-            if(ui->video_player->getFps() < 30)
-            {
-                lbl_fps_bitrate = 1.0;
-            }
-            else
-            {
-                lbl_fps_bitrate = -1.0;
-            }
+        //Create the feature set object
+        FeatureSet next_fs(m_currentbw_kbps * 1000, (int)this->m_camera->content_type());
+        //Get the labels
 
-            //To determine the label for size over quality, we have to look at available bandwidth and the bandwidth of
-            //the video. If there is a significant enough difference between the available bandwidth and the data rate of
-            //the video the user most likely prefers quality to size. In order to confirm this we will look at the dimensions of
-            //the video and check if the current encoding bitrate constitutes high quality video. This will be defined as the +1
-            //class. If the data rate is at the maximum that the bandwidth will allow, we will look at the video size, and if the
-            //dimensions are large enough, then the user most likely prefers size over video quality. This will be defined as the -1
-            //class.
-            double lbl_size_quality = 0.0;
-            //For now, a trivial solution; will determine using empricial evidence
-            if((float)m_current_params.bitrateAsInt() > (float)ui->video_player->width() * ui->video_player->height() * 1.75)
-            {
-                //Preference to quality
-                lbl_size_quality = 1.0;
-            }
-            else
-            {
-                lbl_size_quality = -1.0;
-            }
+        //We use simple implicit feedback to determine the two classes.
 
-            //Add this new training example
-            this->m_control_center_manager->addTrainingExample(next_fs, lbl_fps_bitrate, lbl_size_quality);
-
+        //If the video is playing at framerate 15fps and enhanced bitrate, the user prefers bitrate over framerate (+1 class)
+        //If the video is playing at framerate 30fps and lower bitrate, the user prefers temporal quality over bitrate (-1 class)
+        double lbl_fps_bitrate = 0.0;
+        if(ui->video_player->getFps() < 30)
+        {
+            lbl_fps_bitrate = 1.0;
         }
         else
         {
-            //Determine the new encoding parameters
-            EncodingParameters new_params;
-            float dr_avg_kbps = ui->video_player->getAverageBitrate() * 10000;
-            FeatureSet fs;
-            m_decision_interface.makeDecision(m_currentbw_kbps, dr_avg_kbps, m_current_params, fs, new_params);
+            lbl_fps_bitrate = -1.0;
+        }
 
-            this->resizeVideo(new_params.width(), new_params.height(), new_params.fps(), new_params.bitrate());
+        //To determine the label for size over quality, we have to look at available bandwidth and the bandwidth of
+        //the video. If there is a significant enough difference between the available bandwidth and the data rate of
+        //the video the user most likely prefers quality to size. In order to confirm this we will look at the dimensions of
+        //the video and check if the current encoding bitrate constitutes high quality video. This will be defined as the +1
+        //class. If the data rate is at the maximum that the bandwidth will allow, we will look at the video size, and if the
+        //dimensions are large enough, then the user most likely prefers size over video quality. This will be defined as the -1
+        //class.
+        double lbl_size_quality = 0.0;
+        //For now, a trivial solution; will determine using empricial evidence
+        if((float)m_current_params.bitrateAsInt() > (float)ui->video_player->width() * ui->video_player->height() * 1.75)
+        {
+            //Preference to quality
+            lbl_size_quality = 1.0;
+        }
+        else
+        {
+            lbl_size_quality = -1.0;
+        }
+
+        //Add this new training example
+        this->m_control_center_manager->addTrainingExample(next_fs, lbl_fps_bitrate, lbl_size_quality);
+    }
+
+}
+
+//TO TEST BANDWIDTH ---
+//Use the test script created, specify the dummynet pipe and tick interval, redirect output to the bandwidth file for this camera.
+//MAKE SURE TO DELETE THE BANDWIDTH FILE AFTER TESTING!!! OTHERWISE THIS WILL READ EVERY LINE IN THAT FILE AND WILL
+//SCREW UP RESULTS!!!
+void VideoWindow::pollBandwidthFile()
+{
+    if(!m_bandwidth_filereader.isOpen())
+    {
+        //Attempt to open the file
+        m_bandwidth_filereader.open_file();
+    }
+    else
+    {
+        //Read the next line
+        QString line = m_bandwidth_filereader.readLine();
+        if(line != QString(""))
+        {
+            //Indicate new bandwidth
+            this->onBandwidth(line);
 
         }
     }
