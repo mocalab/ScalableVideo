@@ -21,6 +21,8 @@ This class defines a type encapsulating the features we are interested in tracki
 \begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
 \hyperlink{classFeatureSet_afb3fe8535abb9373a71eeb44e0462ca0}{Feature\-Set} (int \hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth}, int \hyperlink{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{content\-Type})
 \begin{DoxyCompactList}\small\item\em Explicit value constructor. \end{DoxyCompactList}\item 
+double \hyperlink{classFeatureSet_ae52a10b96e8ec9e7251ca0afea8953dc}{get\-Feature\-By\-Index} (\hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138f}{Feature\-Set\-Index\-Type} idx)
+\begin{DoxyCompactList}\small\item\em Get the feature specified by its index in the feature set array. \end{DoxyCompactList}\item 
 int \hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth} () const 
 \item 
 void \hyperlink{classFeatureSet_a95eb00f3b683d127d43dd8cc5e846852}{set\-Bandwidth} (int \hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth})
@@ -52,7 +54,9 @@ Default value constructor.
 4     m\_bandwidth(5000),
 5     m\_contentType(0)
 6 \{
-7 \}
+7     m\_feature\_array[\hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138faf52e88019583e652c0a083b8c612dcfb}{FEATURE\_SET\_idxBandwidth}] = (double) m\_bandwidth;
+8     m\_feature\_array[\hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138fa53997946f52b2312511fa6f857187f4b}{FEATURE\_SET\_idxContentType}] = (double) m\_contentType;
+9 \}
 \end{DoxyCode}
 \hypertarget{classFeatureSet_a53ceec8da14074eab01394ecef16d105}{\index{Feature\-Set@{Feature\-Set}!Feature\-Set@{Feature\-Set}}
 \index{Feature\-Set@{Feature\-Set}!FeatureSet@{Feature\-Set}}
@@ -72,10 +76,13 @@ Copy constructor.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-10 \{
-11     this->m\_bandwidth = cpy.m\_bandwidth;
-12     this->m\_contentType = cpy.m\_contentType;
-13 \}
+12 \{
+13     this->m\_bandwidth = cpy.m\_bandwidth;
+14     this->m\_contentType = cpy.m\_contentType;
+15 
+16     m\_feature\_array[\hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138faf52e88019583e652c0a083b8c612dcfb}{FEATURE\_SET\_idxBandwidth}] = (double) cpy.m\_bandwidth;
+17     m\_feature\_array[\hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138fa53997946f52b2312511fa6f857187f4b}{FEATURE\_SET\_idxContentType}] = (\textcolor{keywordtype}{double}) cpy.m\_contentType;
+18 \}
 \end{DoxyCode}
 \hypertarget{classFeatureSet_afb3fe8535abb9373a71eeb44e0462ca0}{\index{Feature\-Set@{Feature\-Set}!Feature\-Set@{Feature\-Set}}
 \index{Feature\-Set@{Feature\-Set}!FeatureSet@{Feature\-Set}}
@@ -98,12 +105,13 @@ Explicit value constructor.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-23                                                      :
-24     m\_bandwidth(\hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth}),
-25     m\_contentType(\hyperlink{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{contentType})
-26 \{
-27 
-28 \}
+30                                                      :
+31     m\_bandwidth(\hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth}),
+32     m\_contentType(\hyperlink{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{contentType})
+33 \{
+34     m\_feature\_array[\hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138faf52e88019583e652c0a083b8c612dcfb}{FEATURE\_SET\_idxBandwidth}] = (double) m\_bandwidth;
+35     m\_feature\_array[\hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138fa53997946f52b2312511fa6f857187f4b}{FEATURE\_SET\_idxContentType}] = (double) m\_contentType;
+36 \}
 \end{DoxyCode}
 
 
@@ -117,9 +125,9 @@ Explicit value constructor.
 ) const}}\label{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}
 
 \begin{DoxyCode}
-30 \{
-31     \textcolor{keywordflow}{return} m\_bandwidth;
-32 \}
+44 \{
+45     \textcolor{keywordflow}{return} m\_bandwidth;
+46 \}
 \end{DoxyCode}
 \hypertarget{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{\index{Feature\-Set@{Feature\-Set}!content\-Type@{content\-Type}}
 \index{content\-Type@{content\-Type}!FeatureSet@{Feature\-Set}}
@@ -130,9 +138,35 @@ Explicit value constructor.
 ) const}}\label{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}
 
 \begin{DoxyCode}
-39 \{
-40     \textcolor{keywordflow}{return} m\_contentType;
-41 \}
+54 \{
+55     \textcolor{keywordflow}{return} m\_contentType;
+56 
+57 \}
+\end{DoxyCode}
+\hypertarget{classFeatureSet_ae52a10b96e8ec9e7251ca0afea8953dc}{\index{Feature\-Set@{Feature\-Set}!get\-Feature\-By\-Index@{get\-Feature\-By\-Index}}
+\index{get\-Feature\-By\-Index@{get\-Feature\-By\-Index}!FeatureSet@{Feature\-Set}}
+\subsubsection[{get\-Feature\-By\-Index}]{\setlength{\rightskip}{0pt plus 5cm}double Feature\-Set\-::get\-Feature\-By\-Index (
+\begin{DoxyParamCaption}
+\item[{{\bf Feature\-Set\-Index\-Type}}]{idx}
+\end{DoxyParamCaption}
+)}}\label{classFeatureSet_ae52a10b96e8ec9e7251ca0afea8953dc}
+
+
+Get the feature specified by its index in the feature set array. 
+
+This creates a simpler mechanism for retrieving the entire list of features. A caller can simply iterate over all possible features instead of having to make individual calls to each feature's accessor. 
+\begin{DoxyParams}{Parameters}
+{\em idx} & The index of the feature to ve retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the specific feature. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+40 \{
+41     \textcolor{keywordflow}{return} m\_feature\_array[idx];
+42 \}
 \end{DoxyCode}
 \hypertarget{classFeatureSet_a6a2c0ba84a4cbe182b68909e58ab094b}{\index{Feature\-Set@{Feature\-Set}!operator=@{operator=}}
 \index{operator=@{operator=}!FeatureSet@{Feature\-Set}}
@@ -155,12 +189,14 @@ A reference to this object.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-16 \{
-17     this->m\_bandwidth = rhs.m\_bandwidth;
-18     this->m\_contentType = rhs.m\_contentType;
-19 
-20     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
-21 \}
+21 \{
+22     this->m\_bandwidth = rhs.m\_bandwidth;
+23     this->m\_contentType = rhs.m\_contentType;
+24 
+25     m\_feature\_array[\hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138faf52e88019583e652c0a083b8c612dcfb}{FEATURE\_SET\_idxBandwidth}] = (double) rhs.m\_bandwidth;
+26     m\_feature\_array[\hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138fa53997946f52b2312511fa6f857187f4b}{FEATURE\_SET\_idxContentType}] = (\textcolor{keywordtype}{double}) rhs.m\_contentType;
+27     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+28 \}
 \end{DoxyCode}
 \hypertarget{classFeatureSet_a95eb00f3b683d127d43dd8cc5e846852}{\index{Feature\-Set@{Feature\-Set}!set\-Bandwidth@{set\-Bandwidth}}
 \index{set\-Bandwidth@{set\-Bandwidth}!FeatureSet@{Feature\-Set}}
@@ -171,9 +207,11 @@ A reference to this object.
 )}}\label{classFeatureSet_a95eb00f3b683d127d43dd8cc5e846852}
 
 \begin{DoxyCode}
-35 \{
-36     m\_bandwidth = \hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth};
-37 \}
+49 \{
+50     m\_bandwidth = \hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth};
+51     m\_feature\_array[\hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138faf52e88019583e652c0a083b8c612dcfb}{FEATURE\_SET\_idxBandwidth}] = (double) 
+      \hyperlink{classFeatureSet_a53c3d1d1d34efe2cd249f51af1a3857b}{bandwidth};
+52 \}
 \end{DoxyCode}
 \hypertarget{classFeatureSet_a49aae68970a9837fab07caf49b92837b}{\index{Feature\-Set@{Feature\-Set}!set\-Content\-Type@{set\-Content\-Type}}
 \index{set\-Content\-Type@{set\-Content\-Type}!FeatureSet@{Feature\-Set}}
@@ -184,9 +222,11 @@ A reference to this object.
 )}}\label{classFeatureSet_a49aae68970a9837fab07caf49b92837b}
 
 \begin{DoxyCode}
-44 \{
-45     m\_contentType = \hyperlink{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{contentType};
-46 \}
+60 \{
+61     m\_contentType = \hyperlink{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{contentType};
+62     m\_feature\_array[\hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138fa53997946f52b2312511fa6f857187f4b}{FEATURE\_SET\_idxContentType}] = (double) 
+      \hyperlink{classFeatureSet_a9501ef16be4a0d58f1b9ac1834dbfad8}{contentType};
+63 \}
 \end{DoxyCode}
 
 

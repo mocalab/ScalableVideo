@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['log_2eh',['Log.h',['../Log_8h.html',1,'']]],
-  ['logindialog_2ecpp',['logindialog.cpp',['../logindialog_8cpp.html',1,'']]],
-  ['logindialog_2eh',['logindialog.h',['../logindialog_8h.html',1,'']]]
+  ['icontrolcentermanager_2eh',['icontrolcentermanager.h',['../icontrolcentermanager_8h.html',1,'']]],
+  ['ivideowindowmanager_2eh',['ivideowindowmanager.h',['../ivideowindowmanager_8h.html',1,'']]]
 ];

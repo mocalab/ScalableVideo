@@ -2,6 +2,7 @@ var searchData=
 [
   ['last_5fattribute',['last_attribute',['../classpugi_1_1xml__node.html#a10695e006b24e726ba313d5554086802',1,'pugi::xml_node']]],
   ['last_5fchild',['last_child',['../classpugi_1_1xml__node.html#a076b2868a97458d5abeeec9e6c433244',1,'pugi::xml_node']]],
+  ['learninginterface',['LearningInterface',['../classLearningInterface.html#a96651ae0d66b5d2516957c94accc4faa',1,'LearningInterface']]],
   ['leaveevent',['leaveEvent',['../classVideoWindow.html#a58ad769fa96f197fd1212a9cbf5984d1',1,'VideoWindow']]],
   ['length',['length',['../classxpath__string.html#a1238d6fdad0766a21965cfeb668f5a5b',1,'xpath_string']]],
   ['listen',['Listen',['../classTCPClient.html#a3daf1addf9f9b21c05aeae58c443476a',1,'TCPClient']]],

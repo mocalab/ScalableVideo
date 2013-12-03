@@ -38,6 +38,7 @@ var searchData=
   ['getdemuxdiscontinuity',['getDemuxDiscontinuity',['../classMediaStatistics.html#ad3c91e75dd165e0ca308dc40990ecc87',1,'MediaStatistics']]],
   ['getdemuxreadbytes',['getDemuxReadBytes',['../classMediaStatistics.html#ac48baa2b782e0dbcadd5d69914f9e80c',1,'MediaStatistics']]],
   ['getdisplayedpictures',['getDisplayedPictures',['../classMediaStatistics.html#a2b1143b0060a9a21ba6ea5a881fa76c1',1,'MediaStatistics']]],
+  ['getfeaturebyindex',['getFeatureByIndex',['../classFeatureSet.html#ae52a10b96e8ec9e7251ca0afea8953dc',1,'FeatureSet']]],
   ['getfile',['getFile',['../classFileReaderUtility.html#a9a871c01eeb7336d5d2cbc90d1550d3d',1,'FileReaderUtility']]],
   ['getfps',['getFps',['../classVLCVideoWidget.html#ac80ca2be7b8f96631f32827ab06e70a1',1,'VLCVideoWidget::getFps()'],['../classVLCToQtInterface.html#a197424c4ed7a829ee6d7d8afa9b377ef',1,'VLCToQtInterface::getFps()'],['../classVLCWrapper.html#a696fd0d152c68c757f9135669cbcbe56',1,'VLCWrapper::getFps()']]],
   ['gethostname',['getHostName',['../classServerPropertiesDialog.html#ae2fe6ffc4e0c04a9043a14a96f6aa5e9',1,'ServerPropertiesDialog']]],
@@ -48,10 +49,12 @@ var searchData=
   ['getport',['getPort',['../classAddress.html#aa7d7e4b33ab75aa3ca146341a5e74472',1,'Address::getPort()'],['../classServerPropertiesDialog.html#a00869f1fe5e8418017acfa6f351020d1',1,'ServerPropertiesDialog::getPort()']]],
   ['getreadbytes',['getReadBytes',['../classMediaStatistics.html#a93b33f4ac072547f33b6a5be0d47f1d2',1,'MediaStatistics']]],
   ['getserverinfo',['getServerInfo',['../classServerConfigFileUtil.html#a1eaba4990950df8f21ee8ae99b638a9d',1,'ServerConfigFileUtil']]],
+  ['getsizes',['getSizes',['../classVideoControlsWidget.html#a81dd786a6a95c6a5ed0ad9ea06c06f70',1,'VideoControlsWidget']]],
   ['getstringport',['getStringPort',['../classAddress.html#a7e29bafabaff50823ac432f74e5232be',1,'Address']]],
   ['getticklimit',['getTickLimit',['../classTickingTimer.html#a152763464d2d7be6b8a7877409ae1d24',1,'TickingTimer']]],
   ['getticks',['getTicks',['../classTickingTimer.html#aaddf41adb8a5dbe0346c44caf3fb0102',1,'TickingTimer']]],
   ['getvideosize',['getVideoSize',['../classVLCWrapper.html#a806ad002020aaba2f471ee948226cb0c',1,'VLCWrapper']]],
+  ['getvideosizes',['getVideoSizes',['../classIVideoWindowManager.html#a40fe14abdb6a7ffba05841ac9be08179',1,'IVideoWindowManager::getVideoSizes()'],['../classVideoWindow.html#a194af961938fb7a0482932dc6787ec6f',1,'VideoWindow::getVideoSizes()']]],
   ['gotimage',['gotImage',['../classFFMPEGWrapper.html#a649288e95daaf556db954729d479589d',1,'FFMPEGWrapper']]],
   ['guess_5fbuffer_5fencoding',['guess_buffer_encoding',['../pugixml_8cpp.html#ac4aca43b7a1cc8918a214f00c7c9af47',1,'pugixml.cpp']]]
 ];

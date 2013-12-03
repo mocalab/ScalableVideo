@@ -64,6 +64,7 @@ var searchData=
   ['pointer',['pointer',['../classpugi_1_1xml__node__iterator.html#a8e5476d1f854eb64f92f42dac648acf1',1,'pugi::xml_node_iterator::pointer()'],['../classpugi_1_1xml__attribute__iterator.html#a6ed6fb3197abb02ffa848ad6b9b7a1be',1,'pugi::xml_attribute_iterator::pointer()'],['../classpugi_1_1xml__named__node__iterator.html#aebf72c68ded20cf483a10c6b94aa3f57',1,'pugi::xml_named_node_iterator::pointer()']]],
   ['position',['position',['../structxpath__context.html#add1fc9bd16b21d3a8d7a4bd63c60af07',1,'xpath_context']]],
   ['position_5fresolution',['POSITION_RESOLUTION',['../vlcvideowidget_8cpp.html#a4ac9d859242f6619b061b06b3d3eb6a5',1,'vlcvideowidget.cpp']]],
+  ['predict',['predict',['../classControlCenter.html#a3ef143b96207ec1165357cd98cd927e8',1,'ControlCenter::predict()'],['../classLearningInterface.html#aa4ef0ef5a70ee33dbc5a9bcf67ba98a3',1,'LearningInterface::predict()'],['../classIControlCenterManager.html#ac71a65d30f0b796d87859c60caa6c20f',1,'IControlCenterManager::predict()']]],
   ['prefix',['prefix',['../structnamespace__uri__predicate.html#a80a2c051b9e57b8895c28d8fcc32e051',1,'namespace_uri_predicate']]],
   ['prefix_5flength',['prefix_length',['../structnamespace__uri__predicate.html#aa48279192e8d48b9c798f5485a2a9170',1,'namespace_uri_predicate']]],
   ['prepend_5fattribute',['prepend_attribute',['../classpugi_1_1xml__node.html#a7d70631d6cb3624cdfc4cf9ef4abad06',1,'pugi::xml_node']]],

@@ -41,7 +41,7 @@ void \hyperlink{classVideoWindow_a726415adc7cbeb8ed1ac0892929ecfaf}{send\-Camera
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classVideoWindow_a6867be437aebded8b690a9b95216df07}{Video\-Window} (\hyperlink{classCamera}{Camera} $\ast$\hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera}, Q\-Widget $\ast$parent=0)
+\hyperlink{classVideoWindow_a1230a803d626de946e9fa67ebcafe1c2}{Video\-Window} (\hyperlink{classCamera}{Camera} $\ast$\hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera}, \hyperlink{classIControlCenterManager}{I\-Control\-Center\-Manager} $\ast$control\-\_\-center=0, Q\-Widget $\ast$parent=0)
 \begin{DoxyCompactList}\small\item\em Explicit value constructor. \end{DoxyCompactList}\item 
 \hyperlink{classVideoWindow_a3c5b83ed86071f9210388f0e06ac4876}{$\sim$\-Video\-Window} ()
 \item 
@@ -54,7 +54,9 @@ void \hyperlink{classVideoWindow_af5830c7faa6e46a69be02c93abc28d3a}{send\-Reques
 void \hyperlink{classVideoWindow_a612b1b179b04ccebce717ff2fd95879e}{set\-Camera} (\hyperlink{classCamera}{Camera} $\ast$\hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera})
 \begin{DoxyCompactList}\small\item\em The camera setter. \end{DoxyCompactList}\item 
 bool \hyperlink{classVideoWindow_af11854a41b4e79c396c04bc40789b46d}{operator==} (const \hyperlink{classVideoWindow}{Video\-Window} \&rhs)
-\begin{DoxyCompactList}\small\item\em Overloaded equivalence operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Overloaded equivalence operator. \end{DoxyCompactList}\item 
+virtual Q\-String\-List \hyperlink{classVideoWindow_a194af961938fb7a0482932dc6787ec6f}{get\-Video\-Sizes} ()
+\begin{DoxyCompactList}\small\item\em Get the list of video sizes from the combo box. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -70,14 +72,15 @@ The \hyperlink{classVideoWindow}{Video\-Window} class.
 A window that contains the media player and media controls for a particular camera or stremaing server. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classVideoWindow_a6867be437aebded8b690a9b95216df07}{\index{Video\-Window@{Video\-Window}!Video\-Window@{Video\-Window}}
+\hypertarget{classVideoWindow_a1230a803d626de946e9fa67ebcafe1c2}{\index{Video\-Window@{Video\-Window}!Video\-Window@{Video\-Window}}
 \index{Video\-Window@{Video\-Window}!VideoWindow@{Video\-Window}}
 \subsubsection[{Video\-Window}]{\setlength{\rightskip}{0pt plus 5cm}Video\-Window\-::\-Video\-Window (
 \begin{DoxyParamCaption}
 \item[{{\bf Camera} $\ast$}]{camera, }
+\item[{{\bf I\-Control\-Center\-Manager} $\ast$}]{control\-\_\-center = {\ttfamily 0}, }
 \item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classVideoWindow_a6867be437aebded8b690a9b95216df07}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classVideoWindow_a1230a803d626de946e9fa67ebcafe1c2}
 
 
 Explicit value constructor. 
@@ -91,54 +94,56 @@ Explicit value constructor.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-10                                                         :
+10                                                                                                :
 11     QDialog(parent),
-12     m\_camera(camera),
-13     ui(\textcolor{keyword}{new} Ui::VideoWindow),
-14     m\_controls\_revealed(\textcolor{keyword}{false}),
-15     m\_is\_inside(\textcolor{keyword}{false}),
-16     m\_currentbw\_kbps(5000),
-17     m\_current\_params(),
-18     m\_pending\_parameters()
-19 \{   
-20 
-21     ui->setupUi(\textcolor{keyword}{this});
-22     this->setWindowTitle(m\_camera->\hyperlink{classCamera_a5763757e8d6adb6437dde2502072a3b1}{name}());
-23     \textcolor{comment}{//this->setFixedSize(this->size());}
-24     this->setFixedSize(ui->video\_player->width() + 10, ui->video\_player->height() + ui->video\_controls->
+12     m\_control\_center\_manager(control\_center),
+13     m\_camera(camera),
+14     ui(\textcolor{keyword}{new} Ui::VideoWindow),
+15     m\_controls\_revealed(\textcolor{keyword}{false}),
+16     m\_is\_inside(\textcolor{keyword}{false}),
+17     m\_currentbw\_kbps(5000),
+18     m\_decision\_interface(\textcolor{keyword}{this}),
+19     m\_current\_params(),
+20     m\_pending\_parameters()
+21 \{   
+22 
+23     ui->setupUi(\textcolor{keyword}{this});
+24     this->setWindowTitle(m\_camera->\hyperlink{classCamera_a5763757e8d6adb6437dde2502072a3b1}{name}());
+25     \textcolor{comment}{//this->setFixedSize(this->size());}
+26     this->setFixedSize(ui->video\_player->width() + 10, ui->video\_player->height() + ui->video\_controls->
       height() + 5);
-25 
-26     connect(ui->video\_player, SIGNAL(resizeParent(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+27 
+28     connect(ui->video\_player, SIGNAL(resizeParent(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
       \hyperlink{classVideoWindow_a5035f10be178cfc311d637c19938a344}{resizeWindow}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})));
-27     connect(ui->video\_controls, SIGNAL(sendClicked()), \textcolor{keyword}{this}, SLOT(
+29     connect(ui->video\_controls, SIGNAL(sendClicked()), \textcolor{keyword}{this}, SLOT(
       \hyperlink{classVideoWindow_a655194e6449c76e200135c88f8fafd7d}{sendButtonClicked}()));
-28     connect(ui->video\_controls, SIGNAL(sendClicked(QString,QString,QString, QString)), \textcolor{keyword}{this}, SLOT(
+30     connect(ui->video\_controls, SIGNAL(sendClicked(QString,QString,QString, QString)), \textcolor{keyword}{this}, SLOT(
       \hyperlink{classVideoWindow_ac07f4db8a805849174cb129134708fd4}{resizeVideo}(QString,QString,QString, QString)));
-29 
-30     ui->video\_controls->resize(this->width(), ui->video\_controls->height());
-31     ui->video\_controls->move((this->width() / 2) - (ui->video\_controls->width() / 2),0);
-32 
-33     ui->video\_player->move((this->width() / 2) - (ui->video\_player->width() / 2),ui->video\_controls->height
-      ());
+31 
+32     ui->video\_controls->resize(this->width(), ui->video\_controls->height());
+33     ui->video\_controls->move((this->width() / 2) - (ui->video\_controls->width() / 2),0);
 34 
-35     \textcolor{comment}{//Try to connect to server}
-36     m\_tcp\_interface = \textcolor{keyword}{new} \hyperlink{classNetworkToQtInterface}{NetworkToQtInterface}(m\_camera->
+35     ui->video\_player->move((this->width() / 2) - (ui->video\_player->width() / 2),ui->video\_controls->height
+      ());
+36 
+37     \textcolor{comment}{//Try to connect to server}
+38     m\_tcp\_interface = \textcolor{keyword}{new} \hyperlink{classNetworkToQtInterface}{NetworkToQtInterface}(m\_camera->
       \hyperlink{classCamera_aa93654bec9b65adfb95e192ac9c71e80}{server\_address}());
-37     connect(m\_tcp\_interface, SIGNAL(messageDispatch(QString)), \textcolor{keyword}{this}, SLOT(
+39     connect(m\_tcp\_interface, SIGNAL(messageDispatch(QString)), \textcolor{keyword}{this}, SLOT(
       \hyperlink{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}{receivedMessage}(QString)));
-38     connect(m\_tcp\_interface, SIGNAL(serverDisconnected()), \textcolor{keyword}{this}, SLOT(\hyperlink{classVideoWindow_a68b4f26c999360c30b12cc70347393c7}{disconnect}()));
-39     \textcolor{comment}{//connect(m\_request\_thread, SIGNAL(destroyed()), m\_tcp\_interface, SLOT(close()));}
-40 
-41     this->setUpThreads();
-42     \textcolor{comment}{//Delay server connect}
-43 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
-44 \textcolor{preprocessor}{}    QTimer::singleShot(500, \textcolor{keyword}{this}, SLOT(\hyperlink{classVideoWindow_a55220de4b6b3b8e2575201c933932059}{delayServerConnect}()));
-45 \textcolor{preprocessor}{#endif}
-46 \textcolor{preprocessor}{}
-47 
-48 
-49     \textcolor{comment}{//qApp->installEventFilter(this);}
-50 \}
+40     connect(m\_tcp\_interface, SIGNAL(serverDisconnected()), \textcolor{keyword}{this}, SLOT(\hyperlink{classVideoWindow_a68b4f26c999360c30b12cc70347393c7}{disconnect}()));
+41     \textcolor{comment}{//connect(m\_request\_thread, SIGNAL(destroyed()), m\_tcp\_interface, SLOT(close()));}
+42 
+43     this->setUpThreads();
+44     \textcolor{comment}{//Delay server connect}
+45 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+46 \textcolor{preprocessor}{}    QTimer::singleShot(500, \textcolor{keyword}{this}, SLOT(\hyperlink{classVideoWindow_a55220de4b6b3b8e2575201c933932059}{delayServerConnect}()));
+47 \textcolor{preprocessor}{#endif}
+48 \textcolor{preprocessor}{}
+49 
+50 
+51     \textcolor{comment}{//qApp->installEventFilter(this);}
+52 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_a3c5b83ed86071f9210388f0e06ac4876}{\index{Video\-Window@{Video\-Window}!$\sim$\-Video\-Window@{$\sim$\-Video\-Window}}
 \index{$\sim$\-Video\-Window@{$\sim$\-Video\-Window}!VideoWindow@{Video\-Window}}
@@ -149,35 +154,35 @@ Explicit value constructor.
 )}}\label{classVideoWindow_a3c5b83ed86071f9210388f0e06ac4876}
 
 \begin{DoxyCode}
-100 \{
-101     \textcolor{keyword}{delete} ui;
-102     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Video window destructor called."};
-103     \textcolor{comment}{//Must determine why server is not seeing us disconnect}
-104     this->\hyperlink{classVideoWindow_a68b4f26c999360c30b12cc70347393c7}{disconnect}();
-105     \textcolor{comment}{//ui->video\_player->stopPlaying();}
-106 
-107 
-108     m\_request\_thread->terminate();
+102 \{
+103     \textcolor{keyword}{delete} ui;
+104     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Video window destructor called."};
+105     \textcolor{comment}{//Must determine why server is not seeing us disconnect}
+106     this->\hyperlink{classVideoWindow_a68b4f26c999360c30b12cc70347393c7}{disconnect}();
+107     \textcolor{comment}{//ui->video\_player->stopPlaying();}
+108 
 109 
-110 
-111     \textcolor{keyword}{delete} m\_tcp\_interface;
+110     m\_request\_thread->terminate();
+111 
 112 
-113     \textcolor{keyword}{delete} m\_request\_thread;
+113     \textcolor{keyword}{delete} m\_tcp\_interface;
 114 
-115     m\_bwfilereader->\hyperlink{classBandwidthFileReader_a0301d713d44225001bd87e7f423bd753}{setReadyFlag}(\textcolor{keyword}{false});
+115     \textcolor{keyword}{delete} m\_request\_thread;
 116 
-117     m\_bwreaderthread->terminate();
+117     m\_bwfilereader->\hyperlink{classBandwidthFileReader_a0301d713d44225001bd87e7f423bd753}{setReadyFlag}(\textcolor{keyword}{false});
 118 
-119     \textcolor{keyword}{delete} m\_bwfilereader;
-120     \textcolor{keyword}{delete} m\_bwreaderthread;
-121 
-122     \textcolor{comment}{//Camera object should be managed by creating class}
-123     \textcolor{comment}{//delete m\_camera;}
-124     emit \hyperlink{classVideoWindow_a726415adc7cbeb8ed1ac0892929ecfaf}{sendCamera}(m\_camera);
-125 
-126 
+119     m\_bwreaderthread->terminate();
+120 
+121     \textcolor{keyword}{delete} m\_bwfilereader;
+122     \textcolor{keyword}{delete} m\_bwreaderthread;
+123 
+124     \textcolor{comment}{//Camera object should be managed by creating class}
+125     \textcolor{comment}{//delete m\_camera;}
+126     emit \hyperlink{classVideoWindow_a726415adc7cbeb8ed1ac0892929ecfaf}{sendCamera}(m\_camera);
 127 
-128 \}
+128 
+129 
+130 \}
 \end{DoxyCode}
 
 
@@ -198,9 +203,9 @@ The camera this video window streams from.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-274 \{
-275     \textcolor{keywordflow}{return} m\_camera;
-276 \}
+282 \{
+283     \textcolor{keywordflow}{return} m\_camera;
+284 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_a55220de4b6b3b8e2575201c933932059}{\index{Video\-Window@{Video\-Window}!delay\-Server\-Connect@{delay\-Server\-Connect}}
 \index{delay\-Server\-Connect@{delay\-Server\-Connect}!VideoWindow@{Video\-Window}}
@@ -215,9 +220,9 @@ A slot to connect to the server.
 
 This slot is subscribed to by timers in order to delay connecting to the server specified by the camera object. The connection is delayed so that the user interface may load before blocking while attempting to connect. 
 \begin{DoxyCode}
-190 \{
-191     connectToServer();
-192 \}
+198 \{
+199     connectToServer();
+200 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_a68b4f26c999360c30b12cc70347393c7}{\index{Video\-Window@{Video\-Window}!disconnect@{disconnect}}
 \index{disconnect@{disconnect}!VideoWindow@{Video\-Window}}
@@ -232,10 +237,10 @@ Slot to disconnect from the server.
 
 
 \begin{DoxyCode}
-289 \{
-290     m\_tcp\_interface->\hyperlink{classNetworkToQtInterface_ac4889eb9f3c5b5e4509252481335200f}{close}();
-291     
-292 \}
+302 \{
+303     m\_tcp\_interface->\hyperlink{classNetworkToQtInterface_ac4889eb9f3c5b5e4509252481335200f}{close}();
+304     
+305 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_aba663642b1a2911fc83c366c50fc1378}{\index{Video\-Window@{Video\-Window}!enter\-Event@{enter\-Event}}
 \index{enter\-Event@{enter\-Event}!VideoWindow@{Video\-Window}}
@@ -246,10 +251,34 @@ Slot to disconnect from the server.
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classVideoWindow_aba663642b1a2911fc83c366c50fc1378}
 
 \begin{DoxyCode}
-139 \{
-140 \textcolor{comment}{//    QDialog::enterEvent(e);}
-141 \textcolor{comment}{//    m\_is\_inside = true;}
-142 \}
+141 \{
+142 \textcolor{comment}{//    QDialog::enterEvent(e);}
+143 \textcolor{comment}{//    m\_is\_inside = true;}
+144 \}
+\end{DoxyCode}
+\hypertarget{classVideoWindow_a194af961938fb7a0482932dc6787ec6f}{\index{Video\-Window@{Video\-Window}!get\-Video\-Sizes@{get\-Video\-Sizes}}
+\index{get\-Video\-Sizes@{get\-Video\-Sizes}!VideoWindow@{Video\-Window}}
+\subsubsection[{get\-Video\-Sizes}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List Video\-Window\-::get\-Video\-Sizes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classVideoWindow_a194af961938fb7a0482932dc6787ec6f}
+
+
+Get the list of video sizes from the combo box. 
+
+\begin{DoxyReturn}{Returns}
+The video size list. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classIVideoWindowManager_a40fe14abdb6a7ffba05841ac9be08179}{I\-Video\-Window\-Manager}.
+
+
+\begin{DoxyCode}
+297 \{
+298     \textcolor{keywordflow}{return} this->ui->video\_controls->getSizes();
+299 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_a58ad769fa96f197fd1212a9cbf5984d1}{\index{Video\-Window@{Video\-Window}!leave\-Event@{leave\-Event}}
 \index{leave\-Event@{leave\-Event}!VideoWindow@{Video\-Window}}
@@ -260,16 +289,16 @@ Slot to disconnect from the server.
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classVideoWindow_a58ad769fa96f197fd1212a9cbf5984d1}
 
 \begin{DoxyCode}
-145 \{
-146 \textcolor{comment}{//    QDialog::leaveEvent(e);}
-147 \textcolor{comment}{//    m\_is\_inside = false;}
-148 \textcolor{comment}{//    //Make sure we hide the controls if revealed}
-149 \textcolor{comment}{//    if(m\_controls\_revealed)}
-150 \textcolor{comment}{//    \{}
-151 \textcolor{comment}{//        ui->video\_controls->fadeOut();}
-152 \textcolor{comment}{//        m\_controls\_revealed = false;}
-153 \textcolor{comment}{//    \}}
-154 \}
+147 \{
+148 \textcolor{comment}{//    QDialog::leaveEvent(e);}
+149 \textcolor{comment}{//    m\_is\_inside = false;}
+150 \textcolor{comment}{//    //Make sure we hide the controls if revealed}
+151 \textcolor{comment}{//    if(m\_controls\_revealed)}
+152 \textcolor{comment}{//    \{}
+153 \textcolor{comment}{//        ui->video\_controls->fadeOut();}
+154 \textcolor{comment}{//        m\_controls\_revealed = false;}
+155 \textcolor{comment}{//    \}}
+156 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_ac8f9d111de984604f029eec9d71ced83}{\index{Video\-Window@{Video\-Window}!on\-Bandwidth@{on\-Bandwidth}}
 \index{on\-Bandwidth@{on\-Bandwidth}!VideoWindow@{Video\-Window}}
@@ -289,25 +318,88 @@ A slot invoked when the bandwidth has changed.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-338 \{
-339     \textcolor{keywordtype}{bool} success = \textcolor{keyword}{false};
-340     \textcolor{keywordtype}{int} iBW = bandwidth.toInt(&success, 10);
-341     \hyperlink{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}{receivedMessage}(bandwidth);
-342     \textcolor{keywordflow}{if}(success)
-343     \{
-344         this->m\_currentbw\_kbps = iBW;
-345 
-346         \textcolor{comment}{//Determine the new encoding parameters}
-347         \hyperlink{classEncodingParameters}{EncodingParameters} new\_params;
-348         \textcolor{keywordtype}{float} dr\_avg\_kbps = ui->video\_player->getAverageBitrate() * 10000;
-349         \hyperlink{classFeatureSet}{FeatureSet} fs;
-350         m\_decision\_interface.\hyperlink{classDecisionInterface_afd67dc2e1710da83987ad842d6b0a69a}{makeDecision}(m\_currentbw\_kbps, dr\_avg\_kbps, m\_current\_params, fs, 
-      new\_params);
-351 
-352         this->\hyperlink{classVideoWindow_ac07f4db8a805849174cb129134708fd4}{resizeVideo}(new\_params.\hyperlink{classEncodingParameters_ad784bc5e0a14e537f1bef3340a5a816f}{width}(), new\_params.\hyperlink{classEncodingParameters_a65eeab477e176c521ad2aab0e46606b6}{height}(), new\_params.
-      \hyperlink{classEncodingParameters_aaae058a54aa6b2381047170d199a5131}{fps}(), new\_params.\hyperlink{classEncodingParameters_a62e5d236efaa9594bd8706d9b6e79ba3}{bitrate}());
-353     \}
-354 \}
+351 \{
+352     \textcolor{keywordtype}{bool} success = \textcolor{keyword}{false};
+353 
+354     \textcolor{keywordtype}{int} iBW = bandwidth.toInt(&success, 10);
+355 
+356     \textcolor{keywordflow}{if}(success)
+357     \{
+358         \textcolor{keywordtype}{int} oldbw = m\_currentbw\_kbps;
+359         this->m\_currentbw\_kbps = iBW;
+360 
+361         \textcolor{comment}{//Are we in learning mode?}
+362         \textcolor{keywordflow}{if}(m\_control\_center\_manager->\hyperlink{classIControlCenterManager_ab4f6172f09c27b73254ed7fcfe716790}{inLearningMode}())
+363         \{
+364             \textcolor{comment}{//Add training example to training set and determine the decision function}
+365 
+366             \textcolor{comment}{//Create the feature set object}
+367             \hyperlink{classFeatureSet}{FeatureSet} next\_fs(oldbw * 1000, (\textcolor{keywordtype}{int})this->m\_camera->
+      \hyperlink{classCamera_aafe2614c711fb5465dacaeea55e12f64}{content\_type}());
+368             \textcolor{comment}{//Get the labels}
+369 
+370             \textcolor{comment}{//We use simple implicit feedback to determine the two classes.}
+371 
+372             \textcolor{comment}{//If the video is playing at framerate 15fps and enhanced bitrate, the user prefers bitrate
+       over framerate (+1 class)}
+373             \textcolor{comment}{//If the video is playing at framerate 30fps and lower bitrate, the user prefers temporal
+       quality over bitrate (-1 class)}
+374             \textcolor{keywordtype}{double} lbl\_fps\_bitrate = 0.0;
+375             \textcolor{keywordflow}{if}(ui->video\_player->getFps() < 30)
+376             \{
+377                 lbl\_fps\_bitrate = 1.0;
+378             \}
+379             \textcolor{keywordflow}{else}
+380             \{
+381                 lbl\_fps\_bitrate = -1.0;
+382             \}
+383 
+384             \textcolor{comment}{//To determine the label for size over quality, we have to look at available bandwidth and the
+       bandwidth of}
+385             \textcolor{comment}{//the video. If there is a significant enough difference between the available bandwidth and
+       the data rate of}
+386             \textcolor{comment}{//the video the user most likely prefers quality to size. In order to confirm this we will look
+       at the dimensions of}
+387             \textcolor{comment}{//the video and check if the current encoding bitrate constitutes high quality video. This will
+       be defined as the +1}
+388             \textcolor{comment}{//class. If the data rate is at the maximum that the bandwidth will allow, we will look at the
+       video size, and if the}
+389             \textcolor{comment}{//dimensions are large enough, then the user most likely prefers size over video quality. This
+       will be defined as the -1}
+390             \textcolor{comment}{//class.}
+391             \textcolor{keywordtype}{double} lbl\_size\_quality = 0.0;
+392             \textcolor{comment}{//For now, a trivial solution; will determine using empricial evidence}
+393             \textcolor{keywordflow}{if}((\textcolor{keywordtype}{float})m\_current\_params.\hyperlink{classEncodingParameters_aefccfdee4e2f60522637066501b0258c}{bitrateAsInt}() > (float)ui->video\_player->width() * ui->
+      video\_player->height() * 1.75)
+394             \{
+395                 \textcolor{comment}{//Preference to quality}
+396                 lbl\_size\_quality = 1.0;
+397             \}
+398             \textcolor{keywordflow}{else}
+399             \{
+400                 lbl\_size\_quality = -1.0;
+401             \}
+402 
+403             \textcolor{comment}{//Add this new training example}
+404             this->m\_control\_center\_manager->\hyperlink{classIControlCenterManager_ad223b7089a7196da4edbb70adc2d333e}{addTrainingExample}(next\_fs, lbl\_fps\_bitrate, 
+      lbl\_size\_quality);
+405 
+406         \}
+407         \textcolor{keywordflow}{else}
+408         \{
+409             \textcolor{comment}{//Determine the new encoding parameters}
+410             \hyperlink{classEncodingParameters}{EncodingParameters} new\_params;
+411             \textcolor{keywordtype}{float} dr\_avg\_kbps = ui->video\_player->getAverageBitrate() * 10000;
+412             \hyperlink{classFeatureSet}{FeatureSet} fs;
+413             m\_decision\_interface.\hyperlink{classDecisionInterface_afd67dc2e1710da83987ad842d6b0a69a}{makeDecision}(m\_currentbw\_kbps, dr\_avg\_kbps, m\_current\_params, 
+      fs, new\_params);
+414 
+415             this->\hyperlink{classVideoWindow_ac07f4db8a805849174cb129134708fd4}{resizeVideo}(new\_params.\hyperlink{classEncodingParameters_ad784bc5e0a14e537f1bef3340a5a816f}{width}(), new\_params.
+      \hyperlink{classEncodingParameters_a65eeab477e176c521ad2aab0e46606b6}{height}(), new\_params.\hyperlink{classEncodingParameters_aaae058a54aa6b2381047170d199a5131}{fps}(), new\_params.\hyperlink{classEncodingParameters_a62e5d236efaa9594bd8706d9b6e79ba3}{bitrate}());
+416 
+417         \}
+418     \}
+419 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_af11854a41b4e79c396c04bc40789b46d}{\index{Video\-Window@{Video\-Window}!operator==@{operator==}}
 \index{operator==@{operator==}!VideoWindow@{Video\-Window}}
@@ -330,9 +422,9 @@ True if the two cameras are the same, false otherwise.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-284 \{
-285     \textcolor{keywordflow}{return} *(this->\hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera}()) == *(rhs.\hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera}());
-286 \}
+292 \{
+293     \textcolor{keywordflow}{return} *(this->\hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera}()) == *(rhs.\hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera}());
+294 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}{\index{Video\-Window@{Video\-Window}!received\-Message@{received\-Message}}
 \index{received\-Message@{received\-Message}!VideoWindow@{Video\-Window}}
@@ -352,27 +444,31 @@ This slot will launch a message box with the response parameter as the displayed
 \end{DoxyParams}
 
 \begin{DoxyCode}
-169 \{
-170     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"In slot \(\backslash\)'receivedPacket\(\backslash\)' Message:"} << response;
-171     \textcolor{comment}{//Set non modal and allocate on heap so it does not block}
-172     \textcolor{comment}{//video from playing}
-173     QMessageBox *msgBox = \textcolor{keyword}{new} QMessageBox;
-174     msgBox->setWindowTitle(\textcolor{stringliteral}{"Server says..."});
-175     msgBox->setText(response);
-176     msgBox->setWindowModality(Qt::NonModal);
-177     msgBox->setAttribute(Qt::WA\_DeleteOnClose);
-178     msgBox->show();
-179 
-180     \textcolor{comment}{//Check if the response is an acceptance of the parameters}
-181     \textcolor{keywordflow}{if}(response.contains(\textcolor{stringliteral}{"Updating"}))
-182     \{
-183         m\_current\_params = m\_pending\_parameters;
-184         \hyperlink{Log_8h_aba6772a53f37234ac4fa7570b4d49c5a}{DEBUG}() << m\_current\_params.\hyperlink{classEncodingParameters_aee18788ce89380ed62cdb14bb63d5bc2}{widthAsInt}() << \textcolor{stringliteral}{" "} << m\_current\_params.
-      \hyperlink{classEncodingParameters_a98c078933c042bd7350025f15cd45d9f}{heightAsInt}() << \textcolor{stringliteral}{" "} << m\_current\_params.\hyperlink{classEncodingParameters_ad6dd43bc2267ca979ed0df18163dabdf}{fpsAsInt}() << \textcolor{stringliteral}{" "} << m\_current\_params.
-      \hyperlink{classEncodingParameters_aefccfdee4e2f60522637066501b0258c}{bitrateAsInt}();
-185         ui->video\_player->resetStats();
-186     \}
-187 \}
+171 \{
+172     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"In slot \(\backslash\)'receivedPacket\(\backslash\)' Message:"} << response;
+173     \textcolor{comment}{//Set non modal and allocate on heap so it does not block}
+174     \textcolor{comment}{//video from playing}
+175     QMessageBox *msgBox = \textcolor{keyword}{new} QMessageBox;
+176     msgBox->setWindowTitle(\textcolor{stringliteral}{"Server says..."});
+177     msgBox->setText(response);
+178     msgBox->setWindowModality(Qt::NonModal);
+179     msgBox->setAttribute(Qt::WA\_DeleteOnClose);
+180     msgBox->show();
+181 
+182     \textcolor{comment}{//Check if the response is an acceptance of the parameters}
+183     \textcolor{keywordflow}{if}(response.contains(\textcolor{stringliteral}{"Updating"}))
+184     \{
+185         m\_current\_params = m\_pending\_parameters;
+186 
+187         ui->video\_player->resetStats();
+188 
+189         \textcolor{comment}{//If we are in learning mode}
+190         \textcolor{keywordflow}{if}(m\_control\_center\_manager->\hyperlink{classIControlCenterManager_ab4f6172f09c27b73254ed7fcfe716790}{inLearningMode}())
+191         \{
+192             \textcolor{comment}{//Add this to the training set}
+193         \}
+194     \}
+195 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_ac07f4db8a805849174cb129134708fd4}{\index{Video\-Window@{Video\-Window}!resize\-Video@{resize\-Video}}
 \index{resize\-Video@{resize\-Video}!VideoWindow@{Video\-Window}}
@@ -390,37 +486,37 @@ Slot to send message to server to resize the video.
 
 
 \begin{DoxyCode}
-306 \{
-307     \textcolor{comment}{//Create the message}
-308     QString msg = QString(\textcolor{stringliteral}{"start "});
-309     msg += width + QString(\textcolor{stringliteral}{" "}) + height + QString(\textcolor{stringliteral}{" "}) + fps + QString(\textcolor{stringliteral}{" "}) + bps;
-310     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Sent: "} << msg;
-311     \textcolor{comment}{//Send it to server}
-312     this->\hyperlink{classVideoWindow_af5830c7faa6e46a69be02c93abc28d3a}{sendRequest}(msg);
-313 
-314 
-315 \textcolor{preprocessor}{#if PLAY\_WITH\_VLC}
-316 \textcolor{preprocessor}{}    \textcolor{keywordtype}{int} fps\_int = fps.toInt();
-317     \textcolor{comment}{//If FPS has changed we need to restart playback (limit to 15 and 30 fps for now... very poor and hacky
+319 \{
+320     \textcolor{comment}{//Create the message}
+321     QString msg = QString(\textcolor{stringliteral}{"start "});
+322     msg += width + QString(\textcolor{stringliteral}{" "}) + height + QString(\textcolor{stringliteral}{" "}) + fps + QString(\textcolor{stringliteral}{" "}) + bps;
+323     \hyperlink{Log_8h_a7cec51f4ce4b22e8c0f256485d57fca7}{INFO}() << \textcolor{stringliteral}{"Sent: "} << msg;
+324     \textcolor{comment}{//Send it to server}
+325     this->\hyperlink{classVideoWindow_af5830c7faa6e46a69be02c93abc28d3a}{sendRequest}(msg);
+326 
+327 
+328 \textcolor{preprocessor}{#if PLAY\_WITH\_VLC}
+329 \textcolor{preprocessor}{}    \textcolor{keywordtype}{int} fps\_int = fps.toInt();
+330     \textcolor{comment}{//If FPS has changed we need to restart playback (limit to 15 and 30 fps for now... very poor and hacky
        method)}
-318     \textcolor{keywordflow}{if}(fps\_int != ui->video\_player->getFps() && (fps\_int == 30 || fps\_int == 15))
-319     \{
-320         ui->video\_player->setFps(fps\_int);
-321         \textcolor{comment}{//ui->video\_player->setPlaybackRate(fps.toInt());}
-322         this->ui->video\_player->playUrl(QString(\hyperlink{videowindow_8h_a426bf7791468566b136608539264cc96}{VIDEO\_URL}));
-323     \}
-324 \textcolor{preprocessor}{#endif}
-325 \textcolor{preprocessor}{}
-326     \textcolor{comment}{//Set new encoding parameters}
-327     \hyperlink{classEncodingParameters}{EncodingParameters} next(width, height, fps, bps);
-328     \textcolor{keywordflow}{if}(next.bitrateAsInt() == 0)
-329     \{
-330         next.setBitrate(QString::number(next.widthAsInt() * next.heightAsInt() * 3) + (next.bitrate().
+331     \textcolor{keywordflow}{if}(fps\_int != ui->video\_player->getFps() && (fps\_int == 30 || fps\_int == 15))
+332     \{
+333         ui->video\_player->setFps(fps\_int);
+334         \textcolor{comment}{//ui->video\_player->setPlaybackRate(fps.toInt());}
+335         this->ui->video\_player->playUrl(QString(\hyperlink{videowindow_8h_a426bf7791468566b136608539264cc96}{VIDEO\_URL}));
+336     \}
+337 \textcolor{preprocessor}{#endif}
+338 \textcolor{preprocessor}{}
+339     \textcolor{comment}{//Set new encoding parameters}
+340     \hyperlink{classEncodingParameters}{EncodingParameters} next(width, height, fps, bps);
+341     \textcolor{keywordflow}{if}(next.bitrateAsInt() == 0)
+342     \{
+343         next.setBitrate(QString::number(next.widthAsInt() * next.heightAsInt() * 3) + (next.bitrate().
       endsWith(\textcolor{charliteral}{'\(\backslash\)''}) ? \textcolor{stringliteral}{"'"} : \textcolor{stringliteral}{""}));
-331     \}
-332     m\_pending\_parameters = next;
-333 
-334 \}
+344     \}
+345     m\_pending\_parameters = next;
+346 
+347 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_a5035f10be178cfc311d637c19938a344}{\index{Video\-Window@{Video\-Window}!resize\-Window@{resize\-Window}}
 \index{resize\-Window@{resize\-Window}!VideoWindow@{Video\-Window}}
@@ -443,14 +539,14 @@ When this slot is invoked, the window will resize itself based on the parameters
 \end{DoxyParams}
 
 \begin{DoxyCode}
-159 \{
-160     \textcolor{comment}{//this->setFixedSize(width, height);}
-161     this->setFixedSize(width + 10, height + ui->video\_controls->height() + 5);
-162     ui->video\_controls->resize(this->width(), ui->video\_controls->height());
-163     ui->video\_controls->move((this->width() / 2) - (ui->video\_controls->width() / 2),0);
-164     ui->video\_player->move((this->width() / 2) - (ui->video\_player->width() / 2),ui->video\_controls->height
+161 \{
+162     \textcolor{comment}{//this->setFixedSize(width, height);}
+163     this->setFixedSize(width + 10, height + ui->video\_controls->height() + 5);
+164     ui->video\_controls->resize(this->width(), ui->video\_controls->height());
+165     ui->video\_controls->move((this->width() / 2) - (ui->video\_controls->width() / 2),0);
+166     ui->video\_player->move((this->width() / 2) - (ui->video\_player->width() / 2),ui->video\_controls->height
       ());
-165 \}
+167 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_a655194e6449c76e200135c88f8fafd7d}{\index{Video\-Window@{Video\-Window}!send\-Button\-Clicked@{send\-Button\-Clicked}}
 \index{send\-Button\-Clicked@{send\-Button\-Clicked}!VideoWindow@{Video\-Window}}
@@ -465,15 +561,15 @@ Slot invoked when the send button of the \hyperlink{classVideoControlsWidget}{Vi
 
 
 \begin{DoxyCode}
-295 \{
-296     \textcolor{comment}{//bool playing = this->ui->video\_player->isPlaying();}
-297     QString str;
-298     \textcolor{comment}{//if(playing)}
-299         str = \textcolor{stringliteral}{"Playing"};
-300     \textcolor{comment}{//else}
-301         \textcolor{comment}{//str = "Not Playing";}
-302     \hyperlink{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}{receivedMessage}(str);
-303 \}
+308 \{
+309     \textcolor{comment}{//bool playing = this->ui->video\_player->isPlaying();}
+310     QString str;
+311     \textcolor{comment}{//if(playing)}
+312         str = \textcolor{stringliteral}{"Playing"};
+313     \textcolor{comment}{//else}
+314         \textcolor{comment}{//str = "Not Playing";}
+315     \hyperlink{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}{receivedMessage}(str);
+316 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_a726415adc7cbeb8ed1ac0892929ecfaf}{\index{Video\-Window@{Video\-Window}!send\-Camera@{send\-Camera}}
 \index{send\-Camera@{send\-Camera}!VideoWindow@{Video\-Window}}
@@ -504,15 +600,15 @@ Sends a request to the server and waits for a response.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-262 \{
-263     \textcolor{keywordflow}{if}(!m\_tcp\_interface->\hyperlink{classNetworkToQtInterface_a2584e2afdb435bd83b9bd9bbec6214c3}{isConnected}())
-264         \hyperlink{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}{receivedMessage}(\textcolor{stringliteral}{"Not connected!"});
-265     \textcolor{keywordflow}{else}
-266     \{
-267         m\_tcp\_interface->\hyperlink{classNetworkToQtInterface_aed3e3b56739941d40dd8f222f2bfc394}{setBuffer}(data);
-268         m\_request\_thread->start();
-269     \}
-270 \}
+270 \{
+271     \textcolor{keywordflow}{if}(!m\_tcp\_interface->\hyperlink{classNetworkToQtInterface_a2584e2afdb435bd83b9bd9bbec6214c3}{isConnected}())
+272         \hyperlink{classVideoWindow_ab25ad37e9dfdb92f46212d4309d4232f}{receivedMessage}(\textcolor{stringliteral}{"Not connected!"});
+273     \textcolor{keywordflow}{else}
+274     \{
+275         m\_tcp\_interface->\hyperlink{classNetworkToQtInterface_aed3e3b56739941d40dd8f222f2bfc394}{setBuffer}(data);
+276         m\_request\_thread->start();
+277     \}
+278 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_a612b1b179b04ccebce717ff2fd95879e}{\index{Video\-Window@{Video\-Window}!set\-Camera@{set\-Camera}}
 \index{set\-Camera@{set\-Camera}!VideoWindow@{Video\-Window}}
@@ -532,9 +628,9 @@ The camera setter.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-279 \{
-280     m\_camera = \hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera};
-281 \}
+287 \{
+288     m\_camera = \hyperlink{classVideoWindow_aa163a5850ff726c12f59562b993e4403}{camera};
+289 \}
 \end{DoxyCode}
 \hypertarget{classVideoWindow_ac71a3e790d6956a26369294d5fb36c93}{\index{Video\-Window@{Video\-Window}!stream\-Video@{stream\-Video}}
 \index{stream\-Video@{stream\-Video}!VideoWindow@{Video\-Window}}
@@ -545,12 +641,12 @@ The camera setter.
 )}}\label{classVideoWindow_ac71a3e790d6956a26369294d5fb36c93}
 
 \begin{DoxyCode}
-131 \{
-132 \textcolor{preprocessor}{#if PLAY\_WITH\_VLC}
-133 \textcolor{preprocessor}{}   ui->video\_player->playUrl(url);
-134     \textcolor{comment}{//ui->video\_player->preprocess();}
-135 \textcolor{preprocessor}{#endif}
-136 \textcolor{preprocessor}{}\}
+133 \{
+134 \textcolor{preprocessor}{#if PLAY\_WITH\_VLC}
+135 \textcolor{preprocessor}{}   ui->video\_player->playUrl(url);
+136     \textcolor{comment}{//ui->video\_player->preprocess();}
+137 \textcolor{preprocessor}{#endif}
+138 \textcolor{preprocessor}{}\}
 \end{DoxyCode}
 
 

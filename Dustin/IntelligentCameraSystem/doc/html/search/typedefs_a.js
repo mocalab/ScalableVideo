@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['unspecified_5fbool_5ftype',['unspecified_bool_type',['../classpugi_1_1xml__node.html#a5787a5097d439a75a335290cb6fcf2a8',1,'pugi::xml_node']]]
+  ['sample_5ftype',['sample_type',['../learninginterface_8h.html#a99f9c34c0e3947150d824dc10df5e41f',1,'learninginterface.h']]],
+  ['sock_5ftype_5fdata_5fbuffer',['SOCK_TYPE_data_buffer',['../SocketTypes_8h.html#a44dfeb3d24e205f47038cb0c772fec32',1,'SocketTypes.h']]],
+  ['strconv_5fattribute_5ft',['strconv_attribute_t',['../pugixml_8cpp.html#ab7ee7f946a7c5e9821fab22ef05fc0ed',1,'pugixml.cpp']]],
+  ['strconv_5fpcdata_5ft',['strconv_pcdata_t',['../pugixml_8cpp.html#aafccd3afb496514b0e76d81164955c28',1,'pugixml.cpp']]],
+  ['string_5ft',['string_t',['../namespacepugi.html#a053b39a84c8bb031ff3973d1954a876c',1,'pugi']]]
 ];

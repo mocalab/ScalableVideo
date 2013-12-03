@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['xml_5fencoding',['xml_encoding',['../namespacepugi.html#a03f708f86abeff5fce6842ffd6a0951e',1,'pugi']]],
-  ['xml_5fnode_5ftype',['xml_node_type',['../namespacepugi.html#a137e94a038e4ab0ada6477cf7f6153a9',1,'pugi']]],
-  ['xml_5fparse_5fstatus',['xml_parse_status',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555',1,'pugi']]],
-  ['xpath_5fvalue_5ftype',['xpath_value_type',['../namespacepugi.html#ae3820874caf240e9f311bfd2790a84d6',1,'pugi']]]
+  ['tcperror',['TCPError',['../tcpclient_8h.html#ab36b81f0daebbad95a533ea9951ee569',1,'tcpclient.h']]],
+  ['type_5ft',['type_t',['../classpugi_1_1xpath__node__set.html#a6c6899c8ecfbce9e42ec85540907080e',1,'pugi::xpath_node_set']]]
 ];

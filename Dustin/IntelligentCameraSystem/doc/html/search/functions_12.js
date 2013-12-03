@@ -10,6 +10,8 @@ var searchData=
   ['tickingtimer',['TickingTimer',['../classTickingTimer.html#abe9812a21ff1e231fa84041df5963a47',1,'TickingTimer']]],
   ['timertick',['timerTick',['../classFFMPEGVideoWidget.html#a25da9d4dcf34bfabffd09f968d1bf6fb',1,'FFMPEGVideoWidget']]],
   ['tolower_5fascii',['tolower_ascii',['../pugixml_8cpp.html#afeba7a7ade93e89bc9c83aa616ea7ad6',1,'pugixml.cpp']]],
+  ['train',['train',['../classControlCenter.html#a27c7a5e1ebd583354f2ceb0b1180e9ad',1,'ControlCenter::train()'],['../classIControlCenterManager.html#afa8cd51cefd2550330b22ff34497d90c',1,'IControlCenterManager::train()']]],
+  ['traincurrent',['trainCurrent',['../classLearningInterface.html#a47150d5bbe0918f695b359d2bc7e250f',1,'LearningInterface']]],
   ['translate',['translate',['../pugixml_8cpp.html#ad4a1dbcf50be703f147af6fa20c76ff7',1,'pugixml.cpp']]],
   ['traverse',['traverse',['../classpugi_1_1xml__node.html#a951d5d02987f75fabc4d575cfdeec8b4',1,'pugi::xml_node']]],
   ['truncate',['truncate',['../classxpath__node__set__raw.html#aba48d228f554065702f3e6d5059f701d',1,'xpath_node_set_raw']]],

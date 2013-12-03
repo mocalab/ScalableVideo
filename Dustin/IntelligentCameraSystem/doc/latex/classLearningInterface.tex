@@ -1,0 +1,197 @@
+\hypertarget{classLearningInterface}{\section{Learning\-Interface Class Reference}
+\label{classLearningInterface}\index{Learning\-Interface@{Learning\-Interface}}
+}
+
+
+This class encapsulates the machine learning mechanisms for determining user profiles.  
+
+
+
+
+{\ttfamily \#include $<$learninginterface.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLearningInterface_a96651ae0d66b5d2516957c94accc4faa}{Learning\-Interface} ()
+\begin{DoxyCompactList}\small\item\em Default value contructor. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningInterface_ac34bceb3772c7f5b02bd6561e9fab5d2}{add\-Training\-Sample} (\hyperlink{classFeatureSet}{Feature\-Set} \&features, double label)
+\begin{DoxyCompactList}\small\item\em Add a training sample. \end{DoxyCompactList}\item 
+void \hyperlink{classLearningInterface_a47150d5bbe0918f695b359d2bc7e250f}{train\-Current} ()
+\begin{DoxyCompactList}\small\item\em Train this learning interface and generate a decision function. \end{DoxyCompactList}\item 
+double \hyperlink{classLearningInterface_aa4ef0ef5a70ee33dbc5a9bcf67ba98a3}{predict} (\hyperlink{classFeatureSet}{Feature\-Set} \&features)
+\begin{DoxyCompactList}\small\item\em Predict the class based on the feature set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class encapsulates the machine learning mechanisms for determining user profiles. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLearningInterface_a96651ae0d66b5d2516957c94accc4faa}{\index{Learning\-Interface@{Learning\-Interface}!Learning\-Interface@{Learning\-Interface}}
+\index{Learning\-Interface@{Learning\-Interface}!LearningInterface@{Learning\-Interface}}
+\subsubsection[{Learning\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}Learning\-Interface\-::\-Learning\-Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearningInterface_a96651ae0d66b5d2516957c94accc4faa}
+
+
+Default value contructor. 
+
+
+\begin{DoxyCode}
+3                                      :
+4     m\_trainer(svm\_c\_trainer<kernel\_type>()),
+5     m\_is\_trained(\textcolor{keyword}{false})
+6 \{
+7 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLearningInterface_ac34bceb3772c7f5b02bd6561e9fab5d2}{\index{Learning\-Interface@{Learning\-Interface}!add\-Training\-Sample@{add\-Training\-Sample}}
+\index{add\-Training\-Sample@{add\-Training\-Sample}!LearningInterface@{Learning\-Interface}}
+\subsubsection[{add\-Training\-Sample}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Interface\-::add\-Training\-Sample (
+\begin{DoxyParamCaption}
+\item[{{\bf Feature\-Set} \&}]{features, }
+\item[{double}]{label}
+\end{DoxyParamCaption}
+)}}\label{classLearningInterface_ac34bceb3772c7f5b02bd6561e9fab5d2}
+
+
+Add a training sample. 
+
+Add a training sample with the specific features and label. 
+\begin{DoxyParams}{Parameters}
+{\em features} & The features of the sample. \\
+\hline
+{\em label} & The label for this sample. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+11 \{
+12     \hyperlink{learninginterface_8h_a99f9c34c0e3947150d824dc10df5e41f}{sample\_type} samp;
+13 \textcolor{comment}{//    samp(0) = (double)features.bandwidth();}
+14 \textcolor{comment}{//    samp(1) = (double)features.contentType();}
+15     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \hyperlink{featureset_8h_aa3635a61641dc670094618e037378b17}{FEATURE\_SET\_NUM\_FEATURES}; i++)
+16         samp(i) = features.\hyperlink{classFeatureSet_ae52a10b96e8ec9e7251ca0afea8953dc}{getFeatureByIndex}((
+      \hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138f}{FeatureSetIndexType}) i);
+17 
+18     m\_training\_set.push\_back(samp);
+19     \textcolor{keywordflow}{if}(label == 1.0)
+20         m\_labels.push\_back(+1);
+21     \textcolor{keywordflow}{else}
+22         m\_labels.push\_back(-1);
+23 \}
+\end{DoxyCode}
+\hypertarget{classLearningInterface_aa4ef0ef5a70ee33dbc5a9bcf67ba98a3}{\index{Learning\-Interface@{Learning\-Interface}!predict@{predict}}
+\index{predict@{predict}!LearningInterface@{Learning\-Interface}}
+\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}double Learning\-Interface\-::predict (
+\begin{DoxyParamCaption}
+\item[{{\bf Feature\-Set} \&}]{features}
+\end{DoxyParamCaption}
+)}}\label{classLearningInterface_aa4ef0ef5a70ee33dbc5a9bcf67ba98a3}
+
+
+Predict the class based on the feature set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em features} & The features. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or 1 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+84 \{
+85     \textcolor{comment}{//Get the sample}
+86     \hyperlink{learninginterface_8h_a99f9c34c0e3947150d824dc10df5e41f}{sample\_type} sample;
+87 \textcolor{comment}{//    sample(0) = (double)features.bandwidth();}
+88 \textcolor{comment}{//    sample(1) = (double)features.contentType();}
+89     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \hyperlink{featureset_8h_aa3635a61641dc670094618e037378b17}{FEATURE\_SET\_NUM\_FEATURES}; i++)
+90         sample(i) = features.\hyperlink{classFeatureSet_ae52a10b96e8ec9e7251ca0afea8953dc}{getFeatureByIndex}((
+      \hyperlink{featureset_8h_ac4bad40688e41b3e2de5f3684858138f}{FeatureSetIndexType}) i);
+91 
+92     \textcolor{keywordflow}{return} m\_decision\_function(sample);
+93 
+94 \}
+\end{DoxyCode}
+\hypertarget{classLearningInterface_a47150d5bbe0918f695b359d2bc7e250f}{\index{Learning\-Interface@{Learning\-Interface}!train\-Current@{train\-Current}}
+\index{train\-Current@{train\-Current}!LearningInterface@{Learning\-Interface}}
+\subsubsection[{train\-Current}]{\setlength{\rightskip}{0pt plus 5cm}void Learning\-Interface\-::train\-Current (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLearningInterface_a47150d5bbe0918f695b359d2bc7e250f}
+
+
+Train this learning interface and generate a decision function. 
+
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{comment}{//Normalize the training set.}
+28     m\_normalizer.train(m\_training\_set);
+29     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} i = 0; i < m\_training\_set.size(); ++i)
+30         m\_training\_set[i] = m\_normalizer(m\_training\_set[i]);
+31 
+32     \textcolor{comment}{//Perform cross-validation over a range of values of C and gamma}
+33     \textcolor{comment}{//to determine the best parameters}
+34     \textcolor{keywordtype}{double} C\_best = 0;
+35     \textcolor{keywordtype}{double} gamma\_best = 0;
+36     \textcolor{keywordtype}{double} best\_accuracy = 0.0;
+37 
+38     \textcolor{comment}{//Different values, simple implementation}
+39     \textcolor{comment}{//Could look into better methods of doing this but this is a nice}
+40     \textcolor{comment}{//and simple implementation at the cost of speed and efficiency}
+41     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{double} gamma = 0.0001; gamma < 3; gamma *= 5)
+42     \{
+43         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{double} C = 0.0001; C < 3; C *= 5)
+44         \{
+45             \textcolor{comment}{//Set a new kernel}
+46             m\_trainer.set\_kernel(\hyperlink{learninginterface_8h_adee5027f0e7876bad7c6a3a4886e8a12}{kernel\_type}(gamma));
+47 
+48             \textcolor{comment}{//Set a new C}
+49             m\_trainer.set\_c(C);
+50 
+51             \textcolor{comment}{//Perform 3-fold cross validation and look at the accuracy}
+52             matrix<double, 1, 2> accuracy = cross\_validate\_trainer(m\_trainer, m\_training\_set, m\_labels, 3);
+53             \hyperlink{Log_8h_aba6772a53f37234ac4fa7570b4d49c5a}{DEBUG}() << \textcolor{stringliteral}{" cross-validation accuracy: "} << accuracy(0,0) << \textcolor{stringliteral}{" "} << accuracy(0,1);
+54             \textcolor{comment}{//See if this has the best accuracy so far by multiplying the 0 class accuracy and 1 class
+       accuracy}
+55             \textcolor{keywordtype}{double} curr\_accuracy = accuracy(0,0) * accuracy(0,1);
+56             \textcolor{keywordflow}{if}(curr\_accuracy > best\_accuracy)
+57             \{
+58                 best\_accuracy = curr\_accuracy;
+59                 C\_best = C;
+60                 gamma\_best = gamma;
+61             \}
+62 
+63         \}
+64     \}
+65 
+66     \textcolor{comment}{//Set C, epsilon and cache size}
+67     m\_trainer.set\_c(C\_best);
+68 
+69     \textcolor{comment}{//For now just leave defaults}
+70 
+71     \textcolor{comment}{//Set gamma}
+72     m\_trainer.set\_kernel(\hyperlink{learninginterface_8h_adee5027f0e7876bad7c6a3a4886e8a12}{kernel\_type}(gamma\_best));
+73     m\_decision\_function.normalizer = m\_normalizer;
+74 
+75     \textcolor{comment}{//Train}
+76     m\_decision\_function.function = m\_trainer.train(m\_training\_set, m\_labels);
+77 
+78     m\_is\_trained = \textcolor{keyword}{true};
+79 
+80 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Learning\-Module/\hyperlink{learninginterface_8h}{learninginterface.\-h}\item 
+Learning\-Module/\hyperlink{learninginterface_8cpp}{learninginterface.\-cpp}\end{DoxyCompactItemize}

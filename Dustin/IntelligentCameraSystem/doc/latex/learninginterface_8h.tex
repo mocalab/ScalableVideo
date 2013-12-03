@@ -1,0 +1,40 @@
+\hypertarget{learninginterface_8h}{\section{Learning\-Module/learninginterface.h File Reference}
+\label{learninginterface_8h}\index{Learning\-Module/learninginterface.\-h@{Learning\-Module/learninginterface.\-h}}
+}
+{\ttfamily \#include \char`\"{}Types/featureset.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$dlib/svm.\-h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classLearningInterface}{Learning\-Interface}
+\begin{DoxyCompactList}\small\item\em This class encapsulates the machine learning mechanisms for determining user profiles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef matrix$<$ double, \\*
+\hyperlink{featureset_8h_aa3635a61641dc670094618e037378b17}{F\-E\-A\-T\-U\-R\-E\-\_\-\-S\-E\-T\-\_\-\-N\-U\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E\-S}, 1 $>$ \hyperlink{learninginterface_8h_a99f9c34c0e3947150d824dc10df5e41f}{sample\-\_\-type}
+\item 
+typedef radial\-\_\-basis\-\_\-kernel\\*
+$<$ \hyperlink{learninginterface_8h_a99f9c34c0e3947150d824dc10df5e41f}{sample\-\_\-type} $>$ \hyperlink{learninginterface_8h_adee5027f0e7876bad7c6a3a4886e8a12}{kernel\-\_\-type}
+\item 
+typedef decision\-\_\-function\\*
+$<$ \hyperlink{learninginterface_8h_adee5027f0e7876bad7c6a3a4886e8a12}{kernel\-\_\-type} $>$ \hyperlink{learninginterface_8h_ab05b1e7b1148438f54e76fe829b3f9a1}{dec\-\_\-func\-\_\-type}
+\item 
+typedef normalized\-\_\-function\\*
+$<$ \hyperlink{learninginterface_8h_ab05b1e7b1148438f54e76fe829b3f9a1}{dec\-\_\-func\-\_\-type} $>$ \hyperlink{learninginterface_8h_aca3ef587f0c3a51beaaaf89fc8e7dc40}{learned\-\_\-function}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{learninginterface_8h_ab05b1e7b1148438f54e76fe829b3f9a1}{\index{learninginterface.\-h@{learninginterface.\-h}!dec\-\_\-func\-\_\-type@{dec\-\_\-func\-\_\-type}}
+\index{dec\-\_\-func\-\_\-type@{dec\-\_\-func\-\_\-type}!learninginterface.h@{learninginterface.\-h}}
+\subsubsection[{dec\-\_\-func\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef decision\-\_\-function$<${\bf kernel\-\_\-type}$>$ {\bf dec\-\_\-func\-\_\-type}}}\label{learninginterface_8h_ab05b1e7b1148438f54e76fe829b3f9a1}
+\hypertarget{learninginterface_8h_adee5027f0e7876bad7c6a3a4886e8a12}{\index{learninginterface.\-h@{learninginterface.\-h}!kernel\-\_\-type@{kernel\-\_\-type}}
+\index{kernel\-\_\-type@{kernel\-\_\-type}!learninginterface.h@{learninginterface.\-h}}
+\subsubsection[{kernel\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef radial\-\_\-basis\-\_\-kernel$<${\bf sample\-\_\-type}$>$ {\bf kernel\-\_\-type}}}\label{learninginterface_8h_adee5027f0e7876bad7c6a3a4886e8a12}
+\hypertarget{learninginterface_8h_aca3ef587f0c3a51beaaaf89fc8e7dc40}{\index{learninginterface.\-h@{learninginterface.\-h}!learned\-\_\-function@{learned\-\_\-function}}
+\index{learned\-\_\-function@{learned\-\_\-function}!learninginterface.h@{learninginterface.\-h}}
+\subsubsection[{learned\-\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}typedef normalized\-\_\-function$<${\bf dec\-\_\-func\-\_\-type}$>$ {\bf learned\-\_\-function}}}\label{learninginterface_8h_aca3ef587f0c3a51beaaaf89fc8e7dc40}
+\hypertarget{learninginterface_8h_a99f9c34c0e3947150d824dc10df5e41f}{\index{learninginterface.\-h@{learninginterface.\-h}!sample\-\_\-type@{sample\-\_\-type}}
+\index{sample\-\_\-type@{sample\-\_\-type}!learninginterface.h@{learninginterface.\-h}}
+\subsubsection[{sample\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef matrix$<$double, {\bf F\-E\-A\-T\-U\-R\-E\-\_\-\-S\-E\-T\-\_\-\-N\-U\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E\-S}, 1$>$ {\bf sample\-\_\-type}}}\label{learninginterface_8h_a99f9c34c0e3947150d824dc10df5e41f}

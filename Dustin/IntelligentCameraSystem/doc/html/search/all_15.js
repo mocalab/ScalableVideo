@@ -10,7 +10,7 @@ var searchData=
   ['videoresized',['videoResized',['../classVLCVideoWidget.html#aff4501569b0e46b3641625c3c9bbd5c6',1,'VLCVideoWidget']]],
   ['videowidget_5fdefault_5fheight',['VIDEOWIDGET_DEFAULT_HEIGHT',['../vlcvideowidget_8h.html#afea1bcfd5eabc718d60a92aee2cd7f50',1,'vlcvideowidget.h']]],
   ['videowidget_5fdefault_5fwidth',['VIDEOWIDGET_DEFAULT_WIDTH',['../vlcvideowidget_8h.html#a2deec7650a0c6caf3c17a5ddf36d6460',1,'vlcvideowidget.h']]],
-  ['videowindow',['VideoWindow',['../classVideoWindow.html',1,'VideoWindow'],['../classVideoWindow.html#a6867be437aebded8b690a9b95216df07',1,'VideoWindow::VideoWindow()']]],
+  ['videowindow',['VideoWindow',['../classVideoWindow.html',1,'VideoWindow'],['../classVideoWindow.html#a1230a803d626de946e9fa67ebcafe1c2',1,'VideoWindow::VideoWindow()']]],
   ['videowindow_2ecpp',['videowindow.cpp',['../videowindow_8cpp.html',1,'']]],
   ['videowindow_2eh',['videowindow.h',['../videowindow_8h.html',1,'']]],
   ['vlctoqtinterface',['VLCToQtInterface',['../classVLCToQtInterface.html',1,'VLCToQtInterface'],['../classVLCToQtInterface.html#a782cd983a96f40d16c1f4ba12872e7a1',1,'VLCToQtInterface::VLCToQtInterface()'],['../classVLCToQtInterface.html#ac475e173dea8665cab256a9d8ac59fb2',1,'VLCToQtInterface::VLCToQtInterface(int width, int height)']]],

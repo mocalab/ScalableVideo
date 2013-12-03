@@ -1,0 +1,124 @@
+\hypertarget{classIControlCenterManager}{\section{I\-Control\-Center\-Manager Class Reference}
+\label{classIControlCenterManager}\index{I\-Control\-Center\-Manager@{I\-Control\-Center\-Manager}}
+}
+
+
+This class defines an interface to the control center window.  
+
+
+
+
+{\ttfamily \#include $<$icontrolcentermanager.\-h$>$}
+
+Inheritance diagram for I\-Control\-Center\-Manager\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classIControlCenterManager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classIControlCenterManager_ab4f6172f09c27b73254ed7fcfe716790}{in\-Learning\-Mode} ()=0
+\begin{DoxyCompactList}\small\item\em Determine if the application is in learning mode or not. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classIControlCenterManager_ad223b7089a7196da4edbb70adc2d333e}{add\-Training\-Example} (\hyperlink{classFeatureSet}{Feature\-Set} \&fs, double lbl\-\_\-fps\-\_\-br\-\_\-priority, double lbl\-\_\-size\-\_\-quality\-\_\-priority)=0
+\begin{DoxyCompactList}\small\item\em Add a training example to the training set of the learning module managed by this control center window. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classIControlCenterManager_afa8cd51cefd2550330b22ff34497d90c}{train} ()=0
+\begin{DoxyCompactList}\small\item\em Train on the current training set. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classIControlCenterManager_ac71a65d30f0b796d87859c60caa6c20f}{predict} (\hyperlink{classFeatureSet}{Feature\-Set} \&fs)=0
+\begin{DoxyCompactList}\small\item\em Make a prediction using the given feature set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines an interface to the control center window. 
+
+Any external modules that wish to obtain data from the control center window should access them through this interface. Therefore, any data that should be made available to external modules should be accessible via this interface. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classIControlCenterManager_ad223b7089a7196da4edbb70adc2d333e}{\index{I\-Control\-Center\-Manager@{I\-Control\-Center\-Manager}!add\-Training\-Example@{add\-Training\-Example}}
+\index{add\-Training\-Example@{add\-Training\-Example}!IControlCenterManager@{I\-Control\-Center\-Manager}}
+\subsubsection[{add\-Training\-Example}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\-Control\-Center\-Manager\-::add\-Training\-Example (
+\begin{DoxyParamCaption}
+\item[{{\bf Feature\-Set} \&}]{fs, }
+\item[{double}]{lbl\-\_\-fps\-\_\-br\-\_\-priority, }
+\item[{double}]{lbl\-\_\-size\-\_\-quality\-\_\-priority}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classIControlCenterManager_ad223b7089a7196da4edbb70adc2d333e}
+
+
+Add a training example to the training set of the learning module managed by this control center window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs} & The feature set. \\
+\hline
+{\em lbl\-\_\-fps\-\_\-br\-\_\-priority} & The label for the F\-P\-S vs. Bitrate trainer. \\
+\hline
+{\em lbl\-\_\-size\-\_\-quality\-\_\-priority} & The label for the size vs. quality trainer. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classControlCenter_afac0b42e4af9070671cd58f3bc2374d1}{Control\-Center}.
+
+\hypertarget{classIControlCenterManager_ab4f6172f09c27b73254ed7fcfe716790}{\index{I\-Control\-Center\-Manager@{I\-Control\-Center\-Manager}!in\-Learning\-Mode@{in\-Learning\-Mode}}
+\index{in\-Learning\-Mode@{in\-Learning\-Mode}!IControlCenterManager@{I\-Control\-Center\-Manager}}
+\subsubsection[{in\-Learning\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool I\-Control\-Center\-Manager\-::in\-Learning\-Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classIControlCenterManager_ab4f6172f09c27b73254ed7fcfe716790}
+
+
+Determine if the application is in learning mode or not. 
+
+\begin{DoxyReturn}{Returns}
+True if the application is in learning mode, false if not. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classControlCenter_ae266db4d72a14ca7e44918b1ed23e90d}{Control\-Center}.
+
+\hypertarget{classIControlCenterManager_ac71a65d30f0b796d87859c60caa6c20f}{\index{I\-Control\-Center\-Manager@{I\-Control\-Center\-Manager}!predict@{predict}}
+\index{predict@{predict}!IControlCenterManager@{I\-Control\-Center\-Manager}}
+\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}virtual int I\-Control\-Center\-Manager\-::predict (
+\begin{DoxyParamCaption}
+\item[{{\bf Feature\-Set} \&}]{fs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classIControlCenterManager_ac71a65d30f0b796d87859c60caa6c20f}
+
+
+Make a prediction using the given feature set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs} & The feature set to make a prediction on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bitmask indicating the classes chosen from the trainers used. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classControlCenter_a3ef143b96207ec1165357cd98cd927e8}{Control\-Center}.
+
+\hypertarget{classIControlCenterManager_afa8cd51cefd2550330b22ff34497d90c}{\index{I\-Control\-Center\-Manager@{I\-Control\-Center\-Manager}!train@{train}}
+\index{train@{train}!IControlCenterManager@{I\-Control\-Center\-Manager}}
+\subsubsection[{train}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\-Control\-Center\-Manager\-::train (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classIControlCenterManager_afa8cd51cefd2550330b22ff34497d90c}
+
+
+Train on the current training set. 
+
+
+
+Implemented in \hyperlink{classControlCenter_a27c7a5e1ebd583354f2ceb0b1180e9ad}{Control\-Center}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+U\-I/\hyperlink{icontrolcentermanager_8h}{icontrolcentermanager.\-h}\end{DoxyCompactItemize}

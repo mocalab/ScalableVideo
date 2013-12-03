@@ -91,6 +91,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>This class defines the control center for the video client.  
+ <a href="classControlCenter.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="controlcenter_8h_source.html">controlcenter.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ControlCenter:</div>
@@ -98,6 +101,7 @@ Inheritance diagram for ControlCenter:</div>
  <div class="center">
   <img src="classControlCenter.png" usemap="#ControlCenter_map" alt=""/>
   <map id="ControlCenter_map" name="ControlCenter_map">
+<area href="classIControlCenterManager.html" title="This class defines an interface to the control center window. " alt="IControlCenterManager" shape="rect" coords="155,0,300,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -107,8 +111,22 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aba3b5aafd3a4ee5c611d134b5d28d353"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ac145ced26cf2002a9d12c4c20bdc75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlCenter.html#a9ac145ced26cf2002a9d12c4c20bdc75">~ControlCenter</a> ()</td></tr>
 <tr class="separator:a9ac145ced26cf2002a9d12c4c20bdc75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae266db4d72a14ca7e44918b1ed23e90d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlCenter.html#ae266db4d72a14ca7e44918b1ed23e90d">inLearningMode</a> ()</td></tr>
+<tr class="memdesc:ae266db4d72a14ca7e44918b1ed23e90d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if the application is in learning mode or not.  <a href="#ae266db4d72a14ca7e44918b1ed23e90d">More...</a><br/></td></tr>
+<tr class="separator:ae266db4d72a14ca7e44918b1ed23e90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afac0b42e4af9070671cd58f3bc2374d1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlCenter.html#afac0b42e4af9070671cd58f3bc2374d1">addTrainingExample</a> (<a class="el" href="classFeatureSet.html">FeatureSet</a> &amp;fs, double lbl_fps_br_priority, double lbl_size_quality_priority)</td></tr>
+<tr class="memdesc:afac0b42e4af9070671cd58f3bc2374d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a training example to the training set of the learning module managed by this control center window.  <a href="#afac0b42e4af9070671cd58f3bc2374d1">More...</a><br/></td></tr>
+<tr class="separator:afac0b42e4af9070671cd58f3bc2374d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c7a5e1ebd583354f2ceb0b1180e9ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlCenter.html#a27c7a5e1ebd583354f2ceb0b1180e9ad">train</a> ()</td></tr>
+<tr class="memdesc:a27c7a5e1ebd583354f2ceb0b1180e9ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Train the trainers.  <a href="#a27c7a5e1ebd583354f2ceb0b1180e9ad">More...</a><br/></td></tr>
+<tr class="separator:a27c7a5e1ebd583354f2ceb0b1180e9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef143b96207ec1165357cd98cd927e8"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlCenter.html#a3ef143b96207ec1165357cd98cd927e8">predict</a> (<a class="el" href="classFeatureSet.html">FeatureSet</a> &amp;fs)</td></tr>
+<tr class="memdesc:a3ef143b96207ec1165357cd98cd927e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a prediction using the given feature set.  <a href="#a3ef143b96207ec1165357cd98cd927e8">More...</a><br/></td></tr>
+<tr class="separator:a3ef143b96207ec1165357cd98cd927e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class defines the control center for the video client. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aba3b5aafd3a4ee5c611d134b5d28d353"></a>
 <div class="memitem">
 <div class="memproto">
@@ -140,29 +158,32 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                                                                :</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    QMainWindow(parent),</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    ui(<span class="keyword">new</span> Ui::ControlCenter)</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    ui-&gt;setupUi(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    this-&gt;setFixedSize(this-&gt;size());</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">//c = new Camera(q, a);</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    this-&gt;addCameras(cameras);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    connect(ui-&gt;actionQuit, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(quitActionClicked()));</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    QShortcut *quitHotkey = <span class="keyword">new</span> QShortcut(QKeySequence(<span class="stringliteral">&quot;Ctrl+Q&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    connect(quitHotkey, SIGNAL(activated()), <span class="keyword">this</span>, SLOT(quitActionClicked()));</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">//Set up demuxer test</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    m_ffmpeg = <span class="keyword">new</span> <a class="code" href="classFFMPEGWrapper.html">FFMPEGWrapper</a>(39082);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    m_ffmpeg_thread = <span class="keyword">new</span> QThread(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    m_ffmpeg-&gt;moveToThread(m_ffmpeg_thread);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    connect(m_ffmpeg_thread, SIGNAL(started()), m_ffmpeg, SLOT(demux()));</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    connect(m_ffmpeg, SIGNAL(finished()), m_ffmpeg_thread, SLOT(quit()));</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                                :</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    QMainWindow(parent),</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    ui(<span class="keyword">new</span> Ui::ControlCenter)</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    ui-&gt;setupUi(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    this-&gt;setFixedSize(this-&gt;size());</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">//c = new Camera(q, a);</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    this-&gt;addCameras(cameras);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    connect(ui-&gt;actionQuit, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(quitActionClicked()));</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    QShortcut *quitHotkey = <span class="keyword">new</span> QShortcut(QKeySequence(<span class="stringliteral">&quot;Ctrl+Q&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    connect(quitHotkey, SIGNAL(activated()), <span class="keyword">this</span>, SLOT(quitActionClicked()));</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">//Set up demuxer test</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    m_ffmpeg = <span class="keyword">new</span> <a class="code" href="classFFMPEGWrapper.html">FFMPEGWrapper</a>(39082);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    m_ffmpeg_thread = <span class="keyword">new</span> QThread(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    m_ffmpeg-&gt;moveToThread(m_ffmpeg_thread);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    connect(m_ffmpeg_thread, SIGNAL(started()), m_ffmpeg, SLOT(demux()));</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    connect(m_ffmpeg, SIGNAL(finished()), m_ffmpeg_thread, SLOT(quit()));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//Uncomment to run learning algorithm tests</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   <span class="comment">//this-&gt;testLearning();</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 <div class="ttc" id="classFFMPEGWrapper_html"><div class="ttname"><a href="classFFMPEGWrapper.html">FFMPEGWrapper</a></div><div class="ttdef"><b>Definition:</b> ffmpegwrapper.h:12</div></div>
 </div><!-- fragment -->
 </div>
@@ -179,10 +200,181 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">delete</span> ui;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">delete</span> ui;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="afac0b42e4af9070671cd58f3bc2374d1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControlCenter::addTrainingExample </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFeatureSet.html">FeatureSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>fs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lbl_fps_br_priority</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lbl_size_quality_priority</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a training example to the training set of the learning module managed by this control center window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>The feature set. </td></tr>
+    <tr><td class="paramname">lbl_fps_br_priority</td><td>The label for the FPS vs. Bitrate trainer. </td></tr>
+    <tr><td class="paramname">lbl_size_quality_priority</td><td>The label for the size vs. quality trainer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classIControlCenterManager.html#ad223b7089a7196da4edbb70adc2d333e">IControlCenterManager</a>.</p>
+<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">//Add to fps/br trainer</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    this-&gt;m_fps_bitrate_learning_module.<a class="code" href="classLearningInterface.html#ac34bceb3772c7f5b02bd6561e9fab5d2">addTrainingSample</a>(fs, lbl_fps_br_priority);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">//Add to quality trainer</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    this-&gt;m_size_quality_learning_module.<a class="code" href="classLearningInterface.html#ac34bceb3772c7f5b02bd6561e9fab5d2">addTrainingSample</a>(fs, lbl_size_quality_priority);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="ttc" id="classLearningInterface_html_ac34bceb3772c7f5b02bd6561e9fab5d2"><div class="ttname"><a href="classLearningInterface.html#ac34bceb3772c7f5b02bd6561e9fab5d2">LearningInterface::addTrainingSample</a></div><div class="ttdeci">void addTrainingSample(FeatureSet &amp;features, double label)</div><div class="ttdoc">Add a training sample. </div><div class="ttdef"><b>Definition:</b> learninginterface.cpp:10</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae266db4d72a14ca7e44918b1ed23e90d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ControlCenter::inLearningMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determine if the application is in learning mode or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if in learning mode, false is not. </dd></dl>
+
+<p>Implements <a class="el" href="classIControlCenterManager.html#ab4f6172f09c27b73254ed7fcfe716790">IControlCenterManager</a>.</p>
+<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">//For now, just return the value of the learning mode check box. In the future, we will also use the number</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">//of training samples we have</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">return</span> this-&gt;ui-&gt;cbLearningMode-&gt;isChecked();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a3ef143b96207ec1165357cd98cd927e8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ControlCenter::predict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classFeatureSet.html">FeatureSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>fs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make a prediction using the given feature set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>The feature set to make a prediction on. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A bitmask indicating the classes chosen from the trainers used. </dd></dl>
+
+<p>Implements <a class="el" href="classIControlCenterManager.html#ac71a65d30f0b796d87859c60caa6c20f">IControlCenterManager</a>.</p>
+<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">//Run the prediction on both trainers and create a bitmask</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">int</span> fps_bitrate = this-&gt;m_fps_bitrate_learning_module.<a class="code" href="classLearningInterface.html#aa4ef0ef5a70ee33dbc5a9bcf67ba98a3">predict</a>(fs) &gt;= 0.0 ? 1 : 0;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">int</span> quality_size = this-&gt;m_size_quality_learning_module.<a class="code" href="classLearningInterface.html#aa4ef0ef5a70ee33dbc5a9bcf67ba98a3">predict</a>(fs) &gt;= 0.0 ? 1 : 0;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">return</span> quality_size | (fps_bitrate &lt;&lt; 1);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
+<div class="ttc" id="classLearningInterface_html_aa4ef0ef5a70ee33dbc5a9bcf67ba98a3"><div class="ttname"><a href="classLearningInterface.html#aa4ef0ef5a70ee33dbc5a9bcf67ba98a3">LearningInterface::predict</a></div><div class="ttdeci">double predict(FeatureSet &amp;features)</div><div class="ttdoc">Predict the class based on the feature set. </div><div class="ttdef"><b>Definition:</b> learninginterface.cpp:83</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a27c7a5e1ebd583354f2ceb0b1180e9ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControlCenter::train </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Train the trainers. </p>
+
+<p>Implements <a class="el" href="classIControlCenterManager.html#afa8cd51cefd2550330b22ff34497d90c">IControlCenterManager</a>.</p>
+<div class="fragment"><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">//Train fps/br</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    this-&gt;m_fps_bitrate_learning_module.<a class="code" href="classLearningInterface.html#a47150d5bbe0918f695b359d2bc7e250f">trainCurrent</a>();</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">//Train quality</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    this-&gt;m_size_quality_learning_module.<a class="code" href="classLearningInterface.html#a47150d5bbe0918f695b359d2bc7e250f">trainCurrent</a>();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
+<div class="ttc" id="classLearningInterface_html_a47150d5bbe0918f695b359d2bc7e250f"><div class="ttname"><a href="classLearningInterface.html#a47150d5bbe0918f695b359d2bc7e250f">LearningInterface::trainCurrent</a></div><div class="ttdeci">void trainCurrent()</div><div class="ttdoc">Train this learning interface and generate a decision function. </div><div class="ttdef"><b>Definition:</b> learninginterface.cpp:25</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -193,7 +385,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 29 2013 15:42:07 for Intelligent Camera System Video Client by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 2 2013 22:23:26 for Intelligent Camera System Video Client by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

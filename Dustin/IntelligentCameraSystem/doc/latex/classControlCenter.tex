@@ -3,6 +3,11 @@
 }
 
 
+This class defines the control center for the video client.  
+
+
+
+
 {\ttfamily \#include $<$controlcenter.\-h$>$}
 
 Inheritance diagram for Control\-Center\-:\begin{figure}[H]
@@ -17,8 +22,19 @@ Inheritance diagram for Control\-Center\-:\begin{figure}[H]
 \hyperlink{classControlCenter_aba3b5aafd3a4ee5c611d134b5d28d353}{Control\-Center} (\hyperlink{camera_8h_a4e5cc6bdc5723a4d61f3aac69dbb083a}{Camera\-List} cameras, Q\-Widget $\ast$parent=0)
 \item 
 \hyperlink{classControlCenter_a9ac145ced26cf2002a9d12c4c20bdc75}{$\sim$\-Control\-Center} ()
-\end{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classControlCenter_ae266db4d72a14ca7e44918b1ed23e90d}{in\-Learning\-Mode} ()
+\begin{DoxyCompactList}\small\item\em Determine if the application is in learning mode or not. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classControlCenter_afac0b42e4af9070671cd58f3bc2374d1}{add\-Training\-Example} (\hyperlink{classFeatureSet}{Feature\-Set} \&fs, double lbl\-\_\-fps\-\_\-br\-\_\-priority, double lbl\-\_\-size\-\_\-quality\-\_\-priority)
+\begin{DoxyCompactList}\small\item\em Add a training example to the training set of the learning module managed by this control center window. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classControlCenter_a27c7a5e1ebd583354f2ceb0b1180e9ad}{train} ()
+\begin{DoxyCompactList}\small\item\em Train the trainers. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classControlCenter_a3ef143b96207ec1165357cd98cd927e8}{predict} (\hyperlink{classFeatureSet}{Feature\-Set} \&fs)
+\begin{DoxyCompactList}\small\item\em Make a prediction using the given feature set. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+This class defines the control center for the video client. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classControlCenter_aba3b5aafd3a4ee5c611d134b5d28d353}{\index{Control\-Center@{Control\-Center}!Control\-Center@{Control\-Center}}
@@ -31,29 +47,32 @@ Inheritance diagram for Control\-Center\-:\begin{figure}[H]
 )\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classControlCenter_aba3b5aafd3a4ee5c611d134b5d28d353}
 
 \begin{DoxyCode}
-6                                                                 :
-7     QMainWindow(parent),
-8     ui(\textcolor{keyword}{new} Ui::ControlCenter)
-9 \{
-10     ui->setupUi(\textcolor{keyword}{this});
-11     this->setFixedSize(this->size());
-12 
-13     \textcolor{comment}{//c = new Camera(q, a);}
-14 
-15     this->addCameras(cameras);
-16 
-17     connect(ui->actionQuit, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(quitActionClicked()));
-18     QShortcut *quitHotkey = \textcolor{keyword}{new} QShortcut(QKeySequence(\textcolor{stringliteral}{"Ctrl+Q"}), \textcolor{keyword}{this});
-19     connect(quitHotkey, SIGNAL(activated()), \textcolor{keyword}{this}, SLOT(quitActionClicked()));
-20 
-21     \textcolor{comment}{//Set up demuxer test}
-22     m\_ffmpeg = \textcolor{keyword}{new} \hyperlink{classFFMPEGWrapper}{FFMPEGWrapper}(39082);
-23     m\_ffmpeg\_thread = \textcolor{keyword}{new} QThread(\textcolor{keyword}{this});
-24     m\_ffmpeg->moveToThread(m\_ffmpeg\_thread);
-25     connect(m\_ffmpeg\_thread, SIGNAL(started()), m\_ffmpeg, SLOT(demux()));
-26     connect(m\_ffmpeg, SIGNAL(finished()), m\_ffmpeg\_thread, SLOT(quit()));
-27 
-28 \}
+7                                                                 :
+8     QMainWindow(parent),
+9     ui(\textcolor{keyword}{new} Ui::ControlCenter)
+10 \{
+11     ui->setupUi(\textcolor{keyword}{this});
+12     this->setFixedSize(this->size());
+13 
+14     \textcolor{comment}{//c = new Camera(q, a);}
+15 
+16     this->addCameras(cameras);
+17 
+18     connect(ui->actionQuit, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(quitActionClicked()));
+19     QShortcut *quitHotkey = \textcolor{keyword}{new} QShortcut(QKeySequence(\textcolor{stringliteral}{"Ctrl+Q"}), \textcolor{keyword}{this});
+20     connect(quitHotkey, SIGNAL(activated()), \textcolor{keyword}{this}, SLOT(quitActionClicked()));
+21 
+22     \textcolor{comment}{//Set up demuxer test}
+23     m\_ffmpeg = \textcolor{keyword}{new} \hyperlink{classFFMPEGWrapper}{FFMPEGWrapper}(39082);
+24     m\_ffmpeg\_thread = \textcolor{keyword}{new} QThread(\textcolor{keyword}{this});
+25     m\_ffmpeg->moveToThread(m\_ffmpeg\_thread);
+26     connect(m\_ffmpeg\_thread, SIGNAL(started()), m\_ffmpeg, SLOT(demux()));
+27     connect(m\_ffmpeg, SIGNAL(finished()), m\_ffmpeg\_thread, SLOT(quit()));
+28 
+29     \textcolor{comment}{//Uncomment to run learning algorithm tests}
+30    \textcolor{comment}{//this->testLearning();}
+31 
+32 \}
 \end{DoxyCode}
 \hypertarget{classControlCenter_a9ac145ced26cf2002a9d12c4c20bdc75}{\index{Control\-Center@{Control\-Center}!$\sim$\-Control\-Center@{$\sim$\-Control\-Center}}
 \index{$\sim$\-Control\-Center@{$\sim$\-Control\-Center}!ControlCenter@{Control\-Center}}
@@ -64,10 +83,133 @@ Inheritance diagram for Control\-Center\-:\begin{figure}[H]
 )}}\label{classControlCenter_a9ac145ced26cf2002a9d12c4c20bdc75}
 
 \begin{DoxyCode}
-31 \{
-32     \textcolor{keyword}{delete} ui;
-33 
-34 \}
+35 \{
+36     \textcolor{keyword}{delete} ui;
+37 
+38 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classControlCenter_afac0b42e4af9070671cd58f3bc2374d1}{\index{Control\-Center@{Control\-Center}!add\-Training\-Example@{add\-Training\-Example}}
+\index{add\-Training\-Example@{add\-Training\-Example}!ControlCenter@{Control\-Center}}
+\subsubsection[{add\-Training\-Example}]{\setlength{\rightskip}{0pt plus 5cm}void Control\-Center\-::add\-Training\-Example (
+\begin{DoxyParamCaption}
+\item[{{\bf Feature\-Set} \&}]{fs, }
+\item[{double}]{lbl\-\_\-fps\-\_\-br\-\_\-priority, }
+\item[{double}]{lbl\-\_\-size\-\_\-quality\-\_\-priority}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classControlCenter_afac0b42e4af9070671cd58f3bc2374d1}
+
+
+Add a training example to the training set of the learning module managed by this control center window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs} & The feature set. \\
+\hline
+{\em lbl\-\_\-fps\-\_\-br\-\_\-priority} & The label for the F\-P\-S vs. Bitrate trainer. \\
+\hline
+{\em lbl\-\_\-size\-\_\-quality\-\_\-priority} & The label for the size vs. quality trainer. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classIControlCenterManager_ad223b7089a7196da4edbb70adc2d333e}{I\-Control\-Center\-Manager}.
+
+
+\begin{DoxyCode}
+170 \{
+171     \textcolor{comment}{//Add to fps/br trainer}
+172     this->m\_fps\_bitrate\_learning\_module.\hyperlink{classLearningInterface_ac34bceb3772c7f5b02bd6561e9fab5d2}{addTrainingSample}(fs, lbl\_fps\_br\_priority);
+173 
+174     \textcolor{comment}{//Add to quality trainer}
+175     this->m\_size\_quality\_learning\_module.\hyperlink{classLearningInterface_ac34bceb3772c7f5b02bd6561e9fab5d2}{addTrainingSample}(fs, lbl\_size\_quality\_priority);
+176 \}
+\end{DoxyCode}
+\hypertarget{classControlCenter_ae266db4d72a14ca7e44918b1ed23e90d}{\index{Control\-Center@{Control\-Center}!in\-Learning\-Mode@{in\-Learning\-Mode}}
+\index{in\-Learning\-Mode@{in\-Learning\-Mode}!ControlCenter@{Control\-Center}}
+\subsubsection[{in\-Learning\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool Control\-Center\-::in\-Learning\-Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classControlCenter_ae266db4d72a14ca7e44918b1ed23e90d}
+
+
+Determine if the application is in learning mode or not. 
+
+\begin{DoxyReturn}{Returns}
+True if in learning mode, false is not. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classIControlCenterManager_ab4f6172f09c27b73254ed7fcfe716790}{I\-Control\-Center\-Manager}.
+
+
+\begin{DoxyCode}
+162 \{
+163     \textcolor{comment}{//For now, just return the value of the learning mode check box. In the future, we will also use the
+       number}
+164     \textcolor{comment}{//of training samples we have}
+165     \textcolor{keywordflow}{return} this->ui->cbLearningMode->isChecked();
+166 \}
+\end{DoxyCode}
+\hypertarget{classControlCenter_a3ef143b96207ec1165357cd98cd927e8}{\index{Control\-Center@{Control\-Center}!predict@{predict}}
+\index{predict@{predict}!ControlCenter@{Control\-Center}}
+\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}int Control\-Center\-::predict (
+\begin{DoxyParamCaption}
+\item[{{\bf Feature\-Set} \&}]{fs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classControlCenter_a3ef143b96207ec1165357cd98cd927e8}
+
+
+Make a prediction using the given feature set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs} & The feature set to make a prediction on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bitmask indicating the classes chosen from the trainers used. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classIControlCenterManager_ac71a65d30f0b796d87859c60caa6c20f}{I\-Control\-Center\-Manager}.
+
+
+\begin{DoxyCode}
+190 \{
+191     \textcolor{comment}{//Run the prediction on both trainers and create a bitmask}
+192     \textcolor{keywordtype}{int} fps\_bitrate = this->m\_fps\_bitrate\_learning\_module.\hyperlink{classLearningInterface_aa4ef0ef5a70ee33dbc5a9bcf67ba98a3}{predict}(fs) >= 0.0 ? 1 : 0;
+193     \textcolor{keywordtype}{int} quality\_size = this->m\_size\_quality\_learning\_module.\hyperlink{classLearningInterface_aa4ef0ef5a70ee33dbc5a9bcf67ba98a3}{predict}(fs) >= 0.0 ? 1 : 0;
+194     \textcolor{keywordflow}{return} quality\_size | (fps\_bitrate << 1);
+195 \}
+\end{DoxyCode}
+\hypertarget{classControlCenter_a27c7a5e1ebd583354f2ceb0b1180e9ad}{\index{Control\-Center@{Control\-Center}!train@{train}}
+\index{train@{train}!ControlCenter@{Control\-Center}}
+\subsubsection[{train}]{\setlength{\rightskip}{0pt plus 5cm}void Control\-Center\-::train (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classControlCenter_a27c7a5e1ebd583354f2ceb0b1180e9ad}
+
+
+Train the trainers. 
+
+
+
+Implements \hyperlink{classIControlCenterManager_afa8cd51cefd2550330b22ff34497d90c}{I\-Control\-Center\-Manager}.
+
+
+\begin{DoxyCode}
+180 \{
+181     \textcolor{comment}{//Train fps/br}
+182     this->m\_fps\_bitrate\_learning\_module.\hyperlink{classLearningInterface_a47150d5bbe0918f695b359d2bc7e250f}{trainCurrent}();
+183 
+184     \textcolor{comment}{//Train quality}
+185     this->m\_size\_quality\_learning\_module.\hyperlink{classLearningInterface_a47150d5bbe0918f695b359d2bc7e250f}{trainCurrent}();
+186 \}
 \end{DoxyCode}
 
 

@@ -135,6 +135,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6fee9a987ad66923a326754e227019cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVideoControlsWidget.html#a6fee9a987ad66923a326754e227019cc">fadeIn</a> ()</td></tr>
 <tr class="memdesc:a6fee9a987ad66923a326754e227019cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Widget fade in.  <a href="#a6fee9a987ad66923a326754e227019cc">More...</a><br/></td></tr>
 <tr class="separator:a6fee9a987ad66923a326754e227019cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81dd786a6a95c6a5ed0ad9ea06c06f70"><td class="memItemLeft" align="right" valign="top">QStringList &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVideoControlsWidget.html#a81dd786a6a95c6a5ed0ad9ea06c06f70">getSizes</a> ()</td></tr>
+<tr class="memdesc:a81dd786a6a95c6a5ed0ad9ea06c06f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the video sizes from the combo box.  <a href="#a81dd786a6a95c6a5ed0ad9ea06c06f70">More...</a><br/></td></tr>
+<tr class="separator:a81dd786a6a95c6a5ed0ad9ea06c06f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -234,19 +237,19 @@ Protected Member Functions</h2></td></tr>
 
 <p>Widget fade in. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd></dd></dl>
-<div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;{</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    this-&gt;show();</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    QGraphicsOpacityEffect *fade_in_effect = <span class="keyword">new</span> QGraphicsOpacityEffect(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    this-&gt;setGraphicsEffect(fade_in_effect);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    QPropertyAnimation *fade_in_animation = <span class="keyword">new</span> QPropertyAnimation(fade_in_effect, <span class="stringliteral">&quot;opacity&quot;</span>);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    fade_in_animation-&gt;setEasingCurve(QEasingCurve::InOutQuad);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    fade_in_animation-&gt;setDuration(250);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    fade_in_animation-&gt;setStartValue(0.1);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    fade_in_animation-&gt;setEndValue(0.8);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    fade_in_animation-&gt;start(QPropertyAnimation::DeleteWhenStopped);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;{</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    this-&gt;show();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    QGraphicsOpacityEffect *fade_in_effect = <span class="keyword">new</span> QGraphicsOpacityEffect(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    this-&gt;setGraphicsEffect(fade_in_effect);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    QPropertyAnimation *fade_in_animation = <span class="keyword">new</span> QPropertyAnimation(fade_in_effect, <span class="stringliteral">&quot;opacity&quot;</span>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    fade_in_animation-&gt;setEasingCurve(QEasingCurve::InOutQuad);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    fade_in_animation-&gt;setDuration(250);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    fade_in_animation-&gt;setStartValue(0.1);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    fade_in_animation-&gt;setEndValue(0.8);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    fade_in_animation-&gt;start(QPropertyAnimation::DeleteWhenStopped);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -265,20 +268,41 @@ Protected Member Functions</h2></td></tr>
 
 <p>Widget fade out. </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd></dd></dl>
-<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;{</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    QGraphicsOpacityEffect *fade_out_effect = <span class="keyword">new</span> QGraphicsOpacityEffect(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    this-&gt;setGraphicsEffect(fade_out_effect);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    QPropertyAnimation *fade_out_animation = <span class="keyword">new</span> QPropertyAnimation(fade_out_effect, <span class="stringliteral">&quot;opacity&quot;</span>);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    fade_out_animation-&gt;setEasingCurve(QEasingCurve::InOutQuad);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    fade_out_animation-&gt;setDuration(175);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    fade_out_animation-&gt;setStartValue(0.8);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    fade_out_animation-&gt;setEndValue(0.0);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    fade_out_animation-&gt;start(QPropertyAnimation::DeleteWhenStopped);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">//this-&gt;hide();</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    QTimer::singleShot(225, <span class="keyword">this</span>, SLOT(hideDelay()));</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    QGraphicsOpacityEffect *fade_out_effect = <span class="keyword">new</span> QGraphicsOpacityEffect(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    this-&gt;setGraphicsEffect(fade_out_effect);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    QPropertyAnimation *fade_out_animation = <span class="keyword">new</span> QPropertyAnimation(fade_out_effect, <span class="stringliteral">&quot;opacity&quot;</span>);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    fade_out_animation-&gt;setEasingCurve(QEasingCurve::InOutQuad);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    fade_out_animation-&gt;setDuration(175);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    fade_out_animation-&gt;setStartValue(0.8);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    fade_out_animation-&gt;setEndValue(0.0);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    fade_out_animation-&gt;start(QPropertyAnimation::DeleteWhenStopped);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="comment">//this-&gt;hide();</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    QTimer::singleShot(225, <span class="keyword">this</span>, SLOT(hideDelay()));</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a81dd786a6a95c6a5ed0ad9ea06c06f70"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList &amp; VideoControlsWidget::getSizes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the video sizes from the combo box. </p>
+<dl class="section return"><dt>Returns</dt><dd>The video sizes available. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;{</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">return</span> this-&gt;all_sizes;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -457,7 +481,7 @@ Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 29 2013 15:42:07 for Intelligent Camera System Video Client by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 2 2013 22:23:26 for Intelligent Camera System Video Client by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -115,58 +115,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVideoControlsWidget.html#a6fee9a987ad66923a326754e227019cc">fadeIn</a>();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//    virtual void enterEvent(QEvent *e);</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//    virtual void leaveEvent(QEvent *e);</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classVideoControlsWidget.html#a733c88f42e0cdec6b6209c97cb2391ed">paintEvent</a>(QPaintEvent *e);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;signals:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVideoControlsWidget.html#a5d85d6628fdb2016d49228bffb569679">sendClicked</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVideoControlsWidget.html#a5d85d6628fdb2016d49228bffb569679">sendClicked</a>(QString width, QString height, QString fps, QString bps);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">public</span> slots:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVideoControlsWidget.html#aff63e3d97d541cf8c05d53dd32e26292">sendButtonClicked</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">//To delay the hide on a timer</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> hideDelay();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> setUpUI();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">//UI Elements</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">//Labels</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    QLabel              *lblWidth;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    QLabel              *lblHeight;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    QLabel              *lblWidthHeight;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    QLabel              *lblFPS;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    QLabel              *lblbitRate;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">//Line Edits</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    QLineEdit           *leWidth;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    QLineEdit           *leHeight;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    QLineEdit           *leFPS;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    QLineEdit           *lebitRate;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    QStringList &amp;<a class="code" href="classVideoControlsWidget.html#a81dd786a6a95c6a5ed0ad9ea06c06f70">getSizes</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//    virtual void enterEvent(QEvent *e);</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//    virtual void leaveEvent(QEvent *e);</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classVideoControlsWidget.html#a733c88f42e0cdec6b6209c97cb2391ed">paintEvent</a>(QPaintEvent *e);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;signals:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVideoControlsWidget.html#a5d85d6628fdb2016d49228bffb569679">sendClicked</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVideoControlsWidget.html#a5d85d6628fdb2016d49228bffb569679">sendClicked</a>(QString width, QString height, QString fps, QString bps);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVideoControlsWidget.html#aff63e3d97d541cf8c05d53dd32e26292">sendButtonClicked</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">//To delay the hide on a timer</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> hideDelay();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> setUpUI();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">//UI Elements</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//Labels</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    QLabel              *lblWidth;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    QLabel              *lblHeight;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    QLabel              *lblWidthHeight;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    QLabel              *lblFPS;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    QLabel              *lblbitRate;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">//Combo box for Width x Height</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    QComboBox           *cbResolution;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">//Button</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    QPushButton         *bSend;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif // VIDEOCONTROLSWIDGET_H</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">//Line Edits</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    QLineEdit           *leWidth;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    QLineEdit           *leHeight;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    QLineEdit           *leFPS;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    QLineEdit           *lebitRate;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">//Combo box for Width x Height</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    QComboBox           *cbResolution;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    QStringList          all_sizes;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">//Button</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    QPushButton         *bSend;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif // VIDEOCONTROLSWIDGET_H</span></div>
 <div class="ttc" id="classVideoControlsWidget_html_ac0873fb8672cefc5f6549cac23e57757"><div class="ttname"><a href="classVideoControlsWidget.html#ac0873fb8672cefc5f6549cac23e57757">VideoControlsWidget::VideoControlsWidget</a></div><div class="ttdeci">VideoControlsWidget(QWidget *parent=0)</div><div class="ttdoc">Explicit value constructor. </div><div class="ttdef"><b>Definition:</b> videocontrolswidget.cpp:14</div></div>
 <div class="ttc" id="classVideoControlsWidget_html_a733c88f42e0cdec6b6209c97cb2391ed"><div class="ttname"><a href="classVideoControlsWidget.html#a733c88f42e0cdec6b6209c97cb2391ed">VideoControlsWidget::paintEvent</a></div><div class="ttdeci">virtual void paintEvent(QPaintEvent *e)</div><div class="ttdef"><b>Definition:</b> videocontrolswidget.cpp:58</div></div>
-<div class="ttc" id="classVideoControlsWidget_html_a6fee9a987ad66923a326754e227019cc"><div class="ttname"><a href="classVideoControlsWidget.html#a6fee9a987ad66923a326754e227019cc">VideoControlsWidget::fadeIn</a></div><div class="ttdeci">void fadeIn()</div><div class="ttdoc">Widget fade in. </div><div class="ttdef"><b>Definition:</b> videocontrolswidget.cpp:215</div></div>
+<div class="ttc" id="classVideoControlsWidget_html_a6fee9a987ad66923a326754e227019cc"><div class="ttname"><a href="classVideoControlsWidget.html#a6fee9a987ad66923a326754e227019cc">VideoControlsWidget::fadeIn</a></div><div class="ttdeci">void fadeIn()</div><div class="ttdoc">Widget fade in. </div><div class="ttdef"><b>Definition:</b> videocontrolswidget.cpp:218</div></div>
 <div class="ttc" id="classVideoControlsWidget_html_aff63e3d97d541cf8c05d53dd32e26292"><div class="ttname"><a href="classVideoControlsWidget.html#aff63e3d97d541cf8c05d53dd32e26292">VideoControlsWidget::sendButtonClicked</a></div><div class="ttdeci">void sendButtonClicked()</div><div class="ttdoc">Slot invoked when the send button is clicked. </div><div class="ttdef"><b>Definition:</b> videocontrolswidget.cpp:66</div></div>
 <div class="ttc" id="classVideoControlsWidget_html"><div class="ttname"><a href="classVideoControlsWidget.html">VideoControlsWidget</a></div><div class="ttdoc">This class defines the controls widget for a video window. </div><div class="ttdef"><b>Definition:</b> videocontrolswidget.h:21</div></div>
 <div class="ttc" id="classVideoControlsWidget_html_a5d85d6628fdb2016d49228bffb569679"><div class="ttname"><a href="classVideoControlsWidget.html#a5d85d6628fdb2016d49228bffb569679">VideoControlsWidget::sendClicked</a></div><div class="ttdeci">void sendClicked()</div><div class="ttdoc">Send button clicked. </div></div>
 <div class="ttc" id="Constants_8h_html"><div class="ttname"><a href="Constants_8h.html">Constants.h</a></div></div>
-<div class="ttc" id="classVideoControlsWidget_html_aa7a0e5cf6d96db502d1826ec9ed43afa"><div class="ttname"><a href="classVideoControlsWidget.html#aa7a0e5cf6d96db502d1826ec9ed43afa">VideoControlsWidget::fadeOut</a></div><div class="ttdeci">void fadeOut()</div><div class="ttdoc">Widget fade out. </div><div class="ttdef"><b>Definition:</b> videocontrolswidget.cpp:198</div></div>
+<div class="ttc" id="classVideoControlsWidget_html_aa7a0e5cf6d96db502d1826ec9ed43afa"><div class="ttname"><a href="classVideoControlsWidget.html#aa7a0e5cf6d96db502d1826ec9ed43afa">VideoControlsWidget::fadeOut</a></div><div class="ttdeci">void fadeOut()</div><div class="ttdoc">Widget fade out. </div><div class="ttdef"><b>Definition:</b> videocontrolswidget.cpp:201</div></div>
 <div class="ttc" id="classVideoControlsWidget_html_a6b85a92f3e656f11f48cdc580c2b4e0a"><div class="ttname"><a href="classVideoControlsWidget.html#a6b85a92f3e656f11f48cdc580c2b4e0a">VideoControlsWidget::~VideoControlsWidget</a></div><div class="ttdeci">~VideoControlsWidget()</div><div class="ttdef"><b>Definition:</b> videocontrolswidget.cpp:25</div></div>
+<div class="ttc" id="classVideoControlsWidget_html_a81dd786a6a95c6a5ed0ad9ea06c06f70"><div class="ttname"><a href="classVideoControlsWidget.html#a81dd786a6a95c6a5ed0ad9ea06c06f70">VideoControlsWidget::getSizes</a></div><div class="ttdeci">QStringList &amp; getSizes()</div><div class="ttdoc">Get the video sizes from the combo box. </div><div class="ttdef"><b>Definition:</b> videocontrolswidget.cpp:233</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 29 2013 15:42:07 for Intelligent Camera System Video Client by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 2 2013 22:23:25 for Intelligent Camera System Video Client by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

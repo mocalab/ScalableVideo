@@ -104,6 +104,7 @@ Inheritance diagram for VideoWindow:</div>
  <div class="center">
   <img src="classVideoWindow.png" usemap="#VideoWindow_map" alt=""/>
   <map id="VideoWindow_map" name="VideoWindow_map">
+<area href="classIVideoWindowManager.html" title="This class defines an interface for external modules to access specific features of video windows..." alt="IVideoWindowManager" shape="rect" coords="153,0,296,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -139,9 +140,9 @@ Signals</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6867be437aebded8b690a9b95216df07"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVideoWindow.html#a6867be437aebded8b690a9b95216df07">VideoWindow</a> (<a class="el" href="classCamera.html">Camera</a> *<a class="el" href="classVideoWindow.html#aa163a5850ff726c12f59562b993e4403">camera</a>, QWidget *parent=0)</td></tr>
-<tr class="memdesc:a6867be437aebded8b690a9b95216df07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicit value constructor.  <a href="#a6867be437aebded8b690a9b95216df07">More...</a><br/></td></tr>
-<tr class="separator:a6867be437aebded8b690a9b95216df07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1230a803d626de946e9fa67ebcafe1c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVideoWindow.html#a1230a803d626de946e9fa67ebcafe1c2">VideoWindow</a> (<a class="el" href="classCamera.html">Camera</a> *<a class="el" href="classVideoWindow.html#aa163a5850ff726c12f59562b993e4403">camera</a>, <a class="el" href="classIControlCenterManager.html">IControlCenterManager</a> *control_center=0, QWidget *parent=0)</td></tr>
+<tr class="memdesc:a1230a803d626de946e9fa67ebcafe1c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicit value constructor.  <a href="#a1230a803d626de946e9fa67ebcafe1c2">More...</a><br/></td></tr>
+<tr class="separator:a1230a803d626de946e9fa67ebcafe1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c5b83ed86071f9210388f0e06ac4876"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVideoWindow.html#a3c5b83ed86071f9210388f0e06ac4876">~VideoWindow</a> ()</td></tr>
 <tr class="separator:a3c5b83ed86071f9210388f0e06ac4876"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac71a3e790d6956a26369294d5fb36c93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVideoWindow.html#ac71a3e790d6956a26369294d5fb36c93">streamVideo</a> (QString url)</td></tr>
@@ -158,6 +159,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af11854a41b4e79c396c04bc40789b46d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVideoWindow.html#af11854a41b4e79c396c04bc40789b46d">operator==</a> (const <a class="el" href="classVideoWindow.html">VideoWindow</a> &amp;rhs)</td></tr>
 <tr class="memdesc:af11854a41b4e79c396c04bc40789b46d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded equivalence operator.  <a href="#af11854a41b4e79c396c04bc40789b46d">More...</a><br/></td></tr>
 <tr class="separator:af11854a41b4e79c396c04bc40789b46d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a194af961938fb7a0482932dc6787ec6f"><td class="memItemLeft" align="right" valign="top">virtual QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVideoWindow.html#a194af961938fb7a0482932dc6787ec6f">getVideoSizes</a> ()</td></tr>
+<tr class="memdesc:a194af961938fb7a0482932dc6787ec6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of video sizes from the combo box.  <a href="#a194af961938fb7a0482932dc6787ec6f">More...</a><br/></td></tr>
+<tr class="separator:a194af961938fb7a0482932dc6787ec6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -170,7 +174,7 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock"><p>The <a class="el" href="classVideoWindow.html" title="The VideoWindow class. ">VideoWindow</a> class. </p>
 <p>A window that contains the media player and media controls for a particular camera or stremaing server. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a6867be437aebded8b690a9b95216df07"></a>
+<a class="anchor" id="a1230a803d626de946e9fa67ebcafe1c2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -182,6 +186,12 @@ Protected Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classCamera.html">Camera</a> *&#160;</td>
           <td class="paramname"><em>camera</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classIControlCenterManager.html">IControlCenterManager</a> *&#160;</td>
+          <td class="paramname"><em>control_center</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -210,56 +220,58 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                                        :</div>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                                                                               :</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    QDialog(parent),</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    m_camera(camera),</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    ui(<span class="keyword">new</span> Ui::VideoWindow),</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    m_controls_revealed(<span class="keyword">false</span>),</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    m_is_inside(<span class="keyword">false</span>),</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    m_currentbw_kbps(5000),</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    m_current_params(),</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    m_pending_parameters()</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{   </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    ui-&gt;setupUi(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    this-&gt;setWindowTitle(m_camera-&gt;<a class="code" href="classCamera.html#a5763757e8d6adb6437dde2502072a3b1">name</a>());</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">//this-&gt;setFixedSize(this-&gt;size());</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    this-&gt;setFixedSize(ui-&gt;video_player-&gt;width() + 10, ui-&gt;video_player-&gt;height() + ui-&gt;video_controls-&gt;height() + 5);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    connect(ui-&gt;video_player, SIGNAL(resizeParent(<span class="keywordtype">int</span>,<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="classVideoWindow.html#a5035f10be178cfc311d637c19938a344">resizeWindow</a>(<span class="keywordtype">int</span>,<span class="keywordtype">int</span>)));</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    connect(ui-&gt;video_controls, SIGNAL(sendClicked()), <span class="keyword">this</span>, SLOT(<a class="code" href="classVideoWindow.html#a655194e6449c76e200135c88f8fafd7d">sendButtonClicked</a>()));</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    connect(ui-&gt;video_controls, SIGNAL(sendClicked(QString,QString,QString, QString)), <span class="keyword">this</span>, SLOT(<a class="code" href="classVideoWindow.html#ac07f4db8a805849174cb129134708fd4">resizeVideo</a>(QString,QString,QString, QString)));</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    ui-&gt;video_controls-&gt;resize(this-&gt;width(), ui-&gt;video_controls-&gt;height());</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ui-&gt;video_controls-&gt;move((this-&gt;width() / 2) - (ui-&gt;video_controls-&gt;width() / 2),0);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ui-&gt;video_player-&gt;move((this-&gt;width() / 2) - (ui-&gt;video_player-&gt;width() / 2),ui-&gt;video_controls-&gt;height());</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    m_control_center_manager(control_center),</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    m_camera(camera),</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    ui(<span class="keyword">new</span> Ui::VideoWindow),</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    m_controls_revealed(<span class="keyword">false</span>),</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    m_is_inside(<span class="keyword">false</span>),</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    m_currentbw_kbps(5000),</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    m_decision_interface(<span class="keyword">this</span>),</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    m_current_params(),</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    m_pending_parameters()</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{   </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ui-&gt;setupUi(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    this-&gt;setWindowTitle(m_camera-&gt;<a class="code" href="classCamera.html#a5763757e8d6adb6437dde2502072a3b1">name</a>());</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//this-&gt;setFixedSize(this-&gt;size());</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    this-&gt;setFixedSize(ui-&gt;video_player-&gt;width() + 10, ui-&gt;video_player-&gt;height() + ui-&gt;video_controls-&gt;height() + 5);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    connect(ui-&gt;video_player, SIGNAL(resizeParent(<span class="keywordtype">int</span>,<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="classVideoWindow.html#a5035f10be178cfc311d637c19938a344">resizeWindow</a>(<span class="keywordtype">int</span>,<span class="keywordtype">int</span>)));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    connect(ui-&gt;video_controls, SIGNAL(sendClicked()), <span class="keyword">this</span>, SLOT(<a class="code" href="classVideoWindow.html#a655194e6449c76e200135c88f8fafd7d">sendButtonClicked</a>()));</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    connect(ui-&gt;video_controls, SIGNAL(sendClicked(QString,QString,QString, QString)), <span class="keyword">this</span>, SLOT(<a class="code" href="classVideoWindow.html#ac07f4db8a805849174cb129134708fd4">resizeVideo</a>(QString,QString,QString, QString)));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ui-&gt;video_controls-&gt;resize(this-&gt;width(), ui-&gt;video_controls-&gt;height());</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ui-&gt;video_controls-&gt;move((this-&gt;width() / 2) - (ui-&gt;video_controls-&gt;width() / 2),0);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//Try to connect to server</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    m_tcp_interface = <span class="keyword">new</span> <a class="code" href="classNetworkToQtInterface.html">NetworkToQtInterface</a>(m_camera-&gt;<a class="code" href="classCamera.html#aa93654bec9b65adfb95e192ac9c71e80">server_address</a>());</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    connect(m_tcp_interface, SIGNAL(messageDispatch(QString)), <span class="keyword">this</span>, SLOT(<a class="code" href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">receivedMessage</a>(QString)));</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    connect(m_tcp_interface, SIGNAL(serverDisconnected()), <span class="keyword">this</span>, SLOT(<a class="code" href="classVideoWindow.html#a68b4f26c999360c30b12cc70347393c7">disconnect</a>()));</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//connect(m_request_thread, SIGNAL(destroyed()), m_tcp_interface, SLOT(close()));</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    this-&gt;setUpThreads();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//Delay server connect</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifdef Q_OS_LINUX</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span>    QTimer::singleShot(500, <span class="keyword">this</span>, SLOT(<a class="code" href="classVideoWindow.html#a55220de4b6b3b8e2575201c933932059">delayServerConnect</a>()));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//qApp-&gt;installEventFilter(this);</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="ttc" id="classVideoWindow_html_a55220de4b6b3b8e2575201c933932059"><div class="ttname"><a href="classVideoWindow.html#a55220de4b6b3b8e2575201c933932059">VideoWindow::delayServerConnect</a></div><div class="ttdeci">void delayServerConnect()</div><div class="ttdoc">A slot to connect to the server. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:189</div></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ui-&gt;video_player-&gt;move((this-&gt;width() / 2) - (ui-&gt;video_player-&gt;width() / 2),ui-&gt;video_controls-&gt;height());</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//Try to connect to server</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    m_tcp_interface = <span class="keyword">new</span> <a class="code" href="classNetworkToQtInterface.html">NetworkToQtInterface</a>(m_camera-&gt;<a class="code" href="classCamera.html#aa93654bec9b65adfb95e192ac9c71e80">server_address</a>());</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    connect(m_tcp_interface, SIGNAL(messageDispatch(QString)), <span class="keyword">this</span>, SLOT(<a class="code" href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">receivedMessage</a>(QString)));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    connect(m_tcp_interface, SIGNAL(serverDisconnected()), <span class="keyword">this</span>, SLOT(<a class="code" href="classVideoWindow.html#a68b4f26c999360c30b12cc70347393c7">disconnect</a>()));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">//connect(m_request_thread, SIGNAL(destroyed()), m_tcp_interface, SLOT(close()));</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    this-&gt;setUpThreads();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//Delay server connect</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifdef Q_OS_LINUX</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span>    QTimer::singleShot(500, <span class="keyword">this</span>, SLOT(<a class="code" href="classVideoWindow.html#a55220de4b6b3b8e2575201c933932059">delayServerConnect</a>()));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">//qApp-&gt;installEventFilter(this);</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="ttc" id="classVideoWindow_html_a55220de4b6b3b8e2575201c933932059"><div class="ttname"><a href="classVideoWindow.html#a55220de4b6b3b8e2575201c933932059">VideoWindow::delayServerConnect</a></div><div class="ttdeci">void delayServerConnect()</div><div class="ttdoc">A slot to connect to the server. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:197</div></div>
 <div class="ttc" id="classCamera_html_a5763757e8d6adb6437dde2502072a3b1"><div class="ttname"><a href="classCamera.html#a5763757e8d6adb6437dde2502072a3b1">Camera::name</a></div><div class="ttdeci">QString name() const </div><div class="ttdoc">Accessor for the camera name field. </div><div class="ttdef"><b>Definition:</b> camera.cpp:32</div></div>
-<div class="ttc" id="classVideoWindow_html_ab25ad37e9dfdb92f46212d4309d4232f"><div class="ttname"><a href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">VideoWindow::receivedMessage</a></div><div class="ttdeci">void receivedMessage(QString response)</div><div class="ttdoc">A slot that will display a message in a message box. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:168</div></div>
-<div class="ttc" id="classVideoWindow_html_ac07f4db8a805849174cb129134708fd4"><div class="ttname"><a href="classVideoWindow.html#ac07f4db8a805849174cb129134708fd4">VideoWindow::resizeVideo</a></div><div class="ttdeci">void resizeVideo(QString width, QString height, QString fps, QString bps)</div><div class="ttdoc">Slot to send message to server to resize the video. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:305</div></div>
+<div class="ttc" id="classVideoWindow_html_ab25ad37e9dfdb92f46212d4309d4232f"><div class="ttname"><a href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">VideoWindow::receivedMessage</a></div><div class="ttdeci">void receivedMessage(QString response)</div><div class="ttdoc">A slot that will display a message in a message box. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:170</div></div>
+<div class="ttc" id="classVideoWindow_html_ac07f4db8a805849174cb129134708fd4"><div class="ttname"><a href="classVideoWindow.html#ac07f4db8a805849174cb129134708fd4">VideoWindow::resizeVideo</a></div><div class="ttdeci">void resizeVideo(QString width, QString height, QString fps, QString bps)</div><div class="ttdoc">Slot to send message to server to resize the video. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:318</div></div>
 <div class="ttc" id="classNetworkToQtInterface_html"><div class="ttname"><a href="classNetworkToQtInterface.html">NetworkToQtInterface</a></div><div class="ttdoc">The NetworkToQtInterface class. </div><div class="ttdef"><b>Definition:</b> networktoqtinterface.h:17</div></div>
 <div class="ttc" id="classCamera_html_aa93654bec9b65adfb95e192ac9c71e80"><div class="ttname"><a href="classCamera.html#aa93654bec9b65adfb95e192ac9c71e80">Camera::server_address</a></div><div class="ttdeci">Address server_address() const </div><div class="ttdoc">Accessor for the server address field. </div><div class="ttdef"><b>Definition:</b> camera.cpp:16</div></div>
-<div class="ttc" id="classVideoWindow_html_a655194e6449c76e200135c88f8fafd7d"><div class="ttname"><a href="classVideoWindow.html#a655194e6449c76e200135c88f8fafd7d">VideoWindow::sendButtonClicked</a></div><div class="ttdeci">void sendButtonClicked()</div><div class="ttdoc">Slot invoked when the send button of the VideoControlsWidget object is clicked. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:294</div></div>
-<div class="ttc" id="classVideoWindow_html_a5035f10be178cfc311d637c19938a344"><div class="ttname"><a href="classVideoWindow.html#a5035f10be178cfc311d637c19938a344">VideoWindow::resizeWindow</a></div><div class="ttdeci">void resizeWindow(int width, int height)</div><div class="ttdoc">Slot for resizing the window. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:158</div></div>
-<div class="ttc" id="classVideoWindow_html_a68b4f26c999360c30b12cc70347393c7"><div class="ttname"><a href="classVideoWindow.html#a68b4f26c999360c30b12cc70347393c7">VideoWindow::disconnect</a></div><div class="ttdeci">void disconnect()</div><div class="ttdoc">Slot to disconnect from the server. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:288</div></div>
+<div class="ttc" id="classVideoWindow_html_a655194e6449c76e200135c88f8fafd7d"><div class="ttname"><a href="classVideoWindow.html#a655194e6449c76e200135c88f8fafd7d">VideoWindow::sendButtonClicked</a></div><div class="ttdeci">void sendButtonClicked()</div><div class="ttdoc">Slot invoked when the send button of the VideoControlsWidget object is clicked. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:307</div></div>
+<div class="ttc" id="classVideoWindow_html_a5035f10be178cfc311d637c19938a344"><div class="ttname"><a href="classVideoWindow.html#a5035f10be178cfc311d637c19938a344">VideoWindow::resizeWindow</a></div><div class="ttdeci">void resizeWindow(int width, int height)</div><div class="ttdoc">Slot for resizing the window. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:160</div></div>
+<div class="ttc" id="classVideoWindow_html_a68b4f26c999360c30b12cc70347393c7"><div class="ttname"><a href="classVideoWindow.html#a68b4f26c999360c30b12cc70347393c7">VideoWindow::disconnect</a></div><div class="ttdeci">void disconnect()</div><div class="ttdoc">Slot to disconnect from the server. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:301</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -275,39 +287,39 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">delete</span> ui;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="Log_8h.html#a7cec51f4ce4b22e8c0f256485d57fca7">INFO</a>() &lt;&lt; <span class="stringliteral">&quot;Video window destructor called.&quot;</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">//Must determine why server is not seeing us disconnect</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    this-&gt;<a class="code" href="classVideoWindow.html#a68b4f26c999360c30b12cc70347393c7">disconnect</a>();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">//ui-&gt;video_player-&gt;stopPlaying();</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    m_request_thread-&gt;terminate();</div>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">delete</span> ui;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="Log_8h.html#a7cec51f4ce4b22e8c0f256485d57fca7">INFO</a>() &lt;&lt; <span class="stringliteral">&quot;Video window destructor called.&quot;</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">//Must determine why server is not seeing us disconnect</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    this-&gt;<a class="code" href="classVideoWindow.html#a68b4f26c999360c30b12cc70347393c7">disconnect</a>();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">//ui-&gt;video_player-&gt;stopPlaying();</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">delete</span> m_tcp_interface;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    m_request_thread-&gt;terminate();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">delete</span> m_request_thread;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">delete</span> m_tcp_interface;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    m_bwfilereader-&gt;<a class="code" href="classBandwidthFileReader.html#a0301d713d44225001bd87e7f423bd753">setReadyFlag</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">delete</span> m_request_thread;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    m_bwreaderthread-&gt;terminate();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    m_bwfilereader-&gt;<a class="code" href="classBandwidthFileReader.html#a0301d713d44225001bd87e7f423bd753">setReadyFlag</a>(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">delete</span> m_bwfilereader;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">delete</span> m_bwreaderthread;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">//Camera object should be managed by creating class</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">//delete m_camera;</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    emit <a class="code" href="classVideoWindow.html#a726415adc7cbeb8ed1ac0892929ecfaf">sendCamera</a>(m_camera);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    m_bwreaderthread-&gt;terminate();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">delete</span> m_bwfilereader;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">delete</span> m_bwreaderthread;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">//Camera object should be managed by creating class</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">//delete m_camera;</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    emit <a class="code" href="classVideoWindow.html#a726415adc7cbeb8ed1ac0892929ecfaf">sendCamera</a>(m_camera);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 <div class="ttc" id="Log_8h_html_a7cec51f4ce4b22e8c0f256485d57fca7"><div class="ttname"><a href="Log_8h.html#a7cec51f4ce4b22e8c0f256485d57fca7">INFO</a></div><div class="ttdeci">#define INFO()</div><div class="ttdoc">Info logging level. </div><div class="ttdef"><b>Definition:</b> Log.h:18</div></div>
 <div class="ttc" id="classBandwidthFileReader_html_a0301d713d44225001bd87e7f423bd753"><div class="ttname"><a href="classBandwidthFileReader.html#a0301d713d44225001bd87e7f423bd753">BandwidthFileReader::setReadyFlag</a></div><div class="ttdeci">void setReadyFlag(bool val)</div><div class="ttdoc">Set the value of the ready flag. </div><div class="ttdef"><b>Definition:</b> bandwidthfilereader.cpp:32</div></div>
 <div class="ttc" id="classVideoWindow_html_a726415adc7cbeb8ed1ac0892929ecfaf"><div class="ttname"><a href="classVideoWindow.html#a726415adc7cbeb8ed1ac0892929ecfaf">VideoWindow::sendCamera</a></div><div class="ttdeci">void sendCamera(Camera *)</div><div class="ttdoc">This signal is invoked when the window is destroyed in order to inform subscribers which camera was a...</div></div>
-<div class="ttc" id="classVideoWindow_html_a68b4f26c999360c30b12cc70347393c7"><div class="ttname"><a href="classVideoWindow.html#a68b4f26c999360c30b12cc70347393c7">VideoWindow::disconnect</a></div><div class="ttdeci">void disconnect()</div><div class="ttdoc">Slot to disconnect from the server. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:288</div></div>
+<div class="ttc" id="classVideoWindow_html_a68b4f26c999360c30b12cc70347393c7"><div class="ttname"><a href="classVideoWindow.html#a68b4f26c999360c30b12cc70347393c7">VideoWindow::disconnect</a></div><div class="ttdeci">void disconnect()</div><div class="ttdoc">Slot to disconnect from the server. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:301</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -327,9 +339,9 @@ Protected Member Functions</h2></td></tr>
 
 <p>Getter for the camera object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The camera this video window streams from. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">return</span> m_camera;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;{</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">return</span> m_camera;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -356,9 +368,9 @@ Protected Member Functions</h2></td></tr>
 
 <p>A slot to connect to the server. </p>
 <p>This slot is subscribed to by timers in order to delay connecting to the server specified by the camera object. The connection is delayed so that the user interface may load before blocking while attempting to connect. </p>
-<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    connectToServer();</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    connectToServer();</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -384,10 +396,10 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Slot to disconnect from the server. </p>
-<div class="fragment"><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;{</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    m_tcp_interface-&gt;<a class="code" href="classNetworkToQtInterface.html#ac4889eb9f3c5b5e4509252481335200f">close</a>();</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    m_tcp_interface-&gt;<a class="code" href="classNetworkToQtInterface.html#ac4889eb9f3c5b5e4509252481335200f">close</a>();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
 <div class="ttc" id="classNetworkToQtInterface_html_ac4889eb9f3c5b5e4509252481335200f"><div class="ttname"><a href="classNetworkToQtInterface.html#ac4889eb9f3c5b5e4509252481335200f">NetworkToQtInterface::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Disconnect from server. </div><div class="ttdef"><b>Definition:</b> networktoqtinterface.cpp:55</div></div>
 </div><!-- fragment -->
 </div>
@@ -413,10 +425,41 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">//    QDialog::enterEvent(e);</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">//    m_is_inside = true;</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">//    QDialog::enterEvent(e);</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">//    m_is_inside = true;</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a194af961938fb7a0482932dc6787ec6f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList VideoWindow::getVideoSizes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the list of video sizes from the combo box. </p>
+<dl class="section return"><dt>Returns</dt><dd>The video size list. </dd></dl>
+
+<p>Implements <a class="el" href="classIVideoWindowManager.html#a40fe14abdb6a7ffba05841ac9be08179">IVideoWindowManager</a>.</p>
+<div class="fragment"><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;{</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">return</span> this-&gt;ui-&gt;video_controls-&gt;getSizes();</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -441,16 +484,16 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">//    QDialog::leaveEvent(e);</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">//    m_is_inside = false;</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">//    //Make sure we hide the controls if revealed</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">//    if(m_controls_revealed)</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">//    {</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">//        ui-&gt;video_controls-&gt;fadeOut();</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">//        m_controls_revealed = false;</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">//    QDialog::leaveEvent(e);</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">//    m_is_inside = false;</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">//    //Make sure we hide the controls if revealed</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">//    if(m_controls_revealed)</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">//    {</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">//        ui-&gt;video_controls-&gt;fadeOut();</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">//        m_controls_revealed = false;</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -483,32 +526,87 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;{</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordtype">bool</span> success = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordtype">int</span> iBW = bandwidth.toInt(&amp;success, 10);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <a class="code" href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">receivedMessage</a>(bandwidth);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">if</span>(success)</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    {</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        this-&gt;m_currentbw_kbps = iBW;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="comment">//Determine the new encoding parameters</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <a class="code" href="classEncodingParameters.html">EncodingParameters</a> new_params;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordtype">float</span> dr_avg_kbps = ui-&gt;video_player-&gt;getAverageBitrate() * 10000;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <a class="code" href="classFeatureSet.html">FeatureSet</a> fs;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        m_decision_interface.<a class="code" href="classDecisionInterface.html#afd67dc2e1710da83987ad842d6b0a69a">makeDecision</a>(m_currentbw_kbps, dr_avg_kbps, m_current_params, fs, new_params);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        this-&gt;<a class="code" href="classVideoWindow.html#ac07f4db8a805849174cb129134708fd4">resizeVideo</a>(new_params.<a class="code" href="classEncodingParameters.html#ad784bc5e0a14e537f1bef3340a5a816f">width</a>(), new_params.<a class="code" href="classEncodingParameters.html#a65eeab477e176c521ad2aab0e46606b6">height</a>(), new_params.<a class="code" href="classEncodingParameters.html#aaae058a54aa6b2381047170d199a5131">fps</a>(), new_params.<a class="code" href="classEncodingParameters.html#a62e5d236efaa9594bd8706d9b6e79ba3">bitrate</a>());</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    }</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;}</div>
-<div class="ttc" id="classDecisionInterface_html_afd67dc2e1710da83987ad842d6b0a69a"><div class="ttname"><a href="classDecisionInterface.html#afd67dc2e1710da83987ad842d6b0a69a">DecisionInterface::makeDecision</a></div><div class="ttdeci">void makeDecision(int bandwidth, int datarate, EncodingParameters &amp;old_params, FeatureSet &amp;features, EncodingParameters &amp;new_params)</div><div class="ttdoc">Make a decision about the encoding parameters. </div><div class="ttdef"><b>Definition:</b> decisioninterface.cpp:8</div></div>
+<div class="fragment"><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;{</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">bool</span> success = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordtype">int</span> iBW = bandwidth.toInt(&amp;success, 10);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordflow">if</span>(success)</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordtype">int</span> oldbw = m_currentbw_kbps;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        this-&gt;m_currentbw_kbps = iBW;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="comment">//Are we in learning mode?</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">if</span>(m_control_center_manager-&gt;<a class="code" href="classIControlCenterManager.html#ab4f6172f09c27b73254ed7fcfe716790">inLearningMode</a>())</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        {</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="comment">//Add training example to training set and determine the decision function</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="comment">//Create the feature set object</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            <a class="code" href="classFeatureSet.html">FeatureSet</a> next_fs(oldbw * 1000, (<span class="keywordtype">int</span>)this-&gt;m_camera-&gt;<a class="code" href="classCamera.html#aafe2614c711fb5465dacaeea55e12f64">content_type</a>());</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            <span class="comment">//Get the labels</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="comment">//We use simple implicit feedback to determine the two classes.</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="comment">//If the video is playing at framerate 15fps and enhanced bitrate, the user prefers bitrate over framerate (+1 class)</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            <span class="comment">//If the video is playing at framerate 30fps and lower bitrate, the user prefers temporal quality over bitrate (-1 class)</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            <span class="keywordtype">double</span> lbl_fps_bitrate = 0.0;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="keywordflow">if</span>(ui-&gt;video_player-&gt;getFps() &lt; 30)</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            {</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                lbl_fps_bitrate = 1.0;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            }</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            {</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                lbl_fps_bitrate = -1.0;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            }</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <span class="comment">//To determine the label for size over quality, we have to look at available bandwidth and the bandwidth of</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            <span class="comment">//the video. If there is a significant enough difference between the available bandwidth and the data rate of</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            <span class="comment">//the video the user most likely prefers quality to size. In order to confirm this we will look at the dimensions of</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <span class="comment">//the video and check if the current encoding bitrate constitutes high quality video. This will be defined as the +1</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="comment">//class. If the data rate is at the maximum that the bandwidth will allow, we will look at the video size, and if the</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="comment">//dimensions are large enough, then the user most likely prefers size over video quality. This will be defined as the -1</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            <span class="comment">//class.</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="keywordtype">double</span> lbl_size_quality = 0.0;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="comment">//For now, a trivial solution; will determine using empricial evidence</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="keywordflow">if</span>((<span class="keywordtype">float</span>)m_current_params.<a class="code" href="classEncodingParameters.html#aefccfdee4e2f60522637066501b0258c">bitrateAsInt</a>() &gt; (float)ui-&gt;video_player-&gt;width() * ui-&gt;video_player-&gt;height() * 1.75)</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                <span class="comment">//Preference to quality</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                lbl_size_quality = 1.0;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            }</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            {</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                lbl_size_quality = -1.0;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            }</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            <span class="comment">//Add this new training example</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            this-&gt;m_control_center_manager-&gt;<a class="code" href="classIControlCenterManager.html#ad223b7089a7196da4edbb70adc2d333e">addTrainingExample</a>(next_fs, lbl_fps_bitrate, lbl_size_quality);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        }</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        {</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            <span class="comment">//Determine the new encoding parameters</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <a class="code" href="classEncodingParameters.html">EncodingParameters</a> new_params;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            <span class="keywordtype">float</span> dr_avg_kbps = ui-&gt;video_player-&gt;getAverageBitrate() * 10000;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            <a class="code" href="classFeatureSet.html">FeatureSet</a> fs;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            m_decision_interface.<a class="code" href="classDecisionInterface.html#afd67dc2e1710da83987ad842d6b0a69a">makeDecision</a>(m_currentbw_kbps, dr_avg_kbps, m_current_params, fs, new_params);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            this-&gt;<a class="code" href="classVideoWindow.html#ac07f4db8a805849174cb129134708fd4">resizeVideo</a>(new_params.<a class="code" href="classEncodingParameters.html#ad784bc5e0a14e537f1bef3340a5a816f">width</a>(), new_params.<a class="code" href="classEncodingParameters.html#a65eeab477e176c521ad2aab0e46606b6">height</a>(), new_params.<a class="code" href="classEncodingParameters.html#aaae058a54aa6b2381047170d199a5131">fps</a>(), new_params.<a class="code" href="classEncodingParameters.html#a62e5d236efaa9594bd8706d9b6e79ba3">bitrate</a>());</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        }</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    }</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;}</div>
+<div class="ttc" id="classDecisionInterface_html_afd67dc2e1710da83987ad842d6b0a69a"><div class="ttname"><a href="classDecisionInterface.html#afd67dc2e1710da83987ad842d6b0a69a">DecisionInterface::makeDecision</a></div><div class="ttdeci">void makeDecision(int bandwidth, int datarate, EncodingParameters &amp;old_params, FeatureSet &amp;features, EncodingParameters &amp;new_params)</div><div class="ttdoc">Make a decision about the encoding parameters. </div><div class="ttdef"><b>Definition:</b> decisioninterface.cpp:9</div></div>
 <div class="ttc" id="classEncodingParameters_html"><div class="ttname"><a href="classEncodingParameters.html">EncodingParameters</a></div><div class="ttdoc">A type encapsulating the tunable parameters of the encoder. </div><div class="ttdef"><b>Definition:</b> encodingparameters.h:11</div></div>
-<div class="ttc" id="classVideoWindow_html_ab25ad37e9dfdb92f46212d4309d4232f"><div class="ttname"><a href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">VideoWindow::receivedMessage</a></div><div class="ttdeci">void receivedMessage(QString response)</div><div class="ttdoc">A slot that will display a message in a message box. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:168</div></div>
-<div class="ttc" id="classVideoWindow_html_ac07f4db8a805849174cb129134708fd4"><div class="ttname"><a href="classVideoWindow.html#ac07f4db8a805849174cb129134708fd4">VideoWindow::resizeVideo</a></div><div class="ttdeci">void resizeVideo(QString width, QString height, QString fps, QString bps)</div><div class="ttdoc">Slot to send message to server to resize the video. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:305</div></div>
+<div class="ttc" id="classIControlCenterManager_html_ad223b7089a7196da4edbb70adc2d333e"><div class="ttname"><a href="classIControlCenterManager.html#ad223b7089a7196da4edbb70adc2d333e">IControlCenterManager::addTrainingExample</a></div><div class="ttdeci">virtual void addTrainingExample(FeatureSet &amp;fs, double lbl_fps_br_priority, double lbl_size_quality_priority)=0</div><div class="ttdoc">Add a training example to the training set of the learning module managed by this control center wind...</div></div>
+<div class="ttc" id="classCamera_html_aafe2614c711fb5465dacaeea55e12f64"><div class="ttname"><a href="classCamera.html#aafe2614c711fb5465dacaeea55e12f64">Camera::content_type</a></div><div class="ttdeci">CameraContentType content_type() const </div><div class="ttdoc">Accessor for the content type field. </div><div class="ttdef"><b>Definition:</b> camera.cpp:43</div></div>
+<div class="ttc" id="classVideoWindow_html_ac07f4db8a805849174cb129134708fd4"><div class="ttname"><a href="classVideoWindow.html#ac07f4db8a805849174cb129134708fd4">VideoWindow::resizeVideo</a></div><div class="ttdeci">void resizeVideo(QString width, QString height, QString fps, QString bps)</div><div class="ttdoc">Slot to send message to server to resize the video. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:318</div></div>
 <div class="ttc" id="classEncodingParameters_html_a62e5d236efaa9594bd8706d9b6e79ba3"><div class="ttname"><a href="classEncodingParameters.html#a62e5d236efaa9594bd8706d9b6e79ba3">EncodingParameters::bitrate</a></div><div class="ttdeci">QString bitrate() const </div><div class="ttdef"><b>Definition:</b> encodingparameters.cpp:56</div></div>
+<div class="ttc" id="classIControlCenterManager_html_ab4f6172f09c27b73254ed7fcfe716790"><div class="ttname"><a href="classIControlCenterManager.html#ab4f6172f09c27b73254ed7fcfe716790">IControlCenterManager::inLearningMode</a></div><div class="ttdeci">virtual bool inLearningMode()=0</div><div class="ttdoc">Determine if the application is in learning mode or not. </div></div>
 <div class="ttc" id="classEncodingParameters_html_ad784bc5e0a14e537f1bef3340a5a816f"><div class="ttname"><a href="classEncodingParameters.html#ad784bc5e0a14e537f1bef3340a5a816f">EncodingParameters::width</a></div><div class="ttdeci">QString width() const </div><div class="ttdef"><b>Definition:</b> encodingparameters.cpp:38</div></div>
+<div class="ttc" id="classEncodingParameters_html_aefccfdee4e2f60522637066501b0258c"><div class="ttname"><a href="classEncodingParameters.html#aefccfdee4e2f60522637066501b0258c">EncodingParameters::bitrateAsInt</a></div><div class="ttdeci">int bitrateAsInt() const </div><div class="ttdef"><b>Definition:</b> encodingparameters.cpp:81</div></div>
 <div class="ttc" id="classEncodingParameters_html_a65eeab477e176c521ad2aab0e46606b6"><div class="ttname"><a href="classEncodingParameters.html#a65eeab477e176c521ad2aab0e46606b6">EncodingParameters::height</a></div><div class="ttdeci">QString height() const </div><div class="ttdef"><b>Definition:</b> encodingparameters.cpp:47</div></div>
 <div class="ttc" id="classEncodingParameters_html_aaae058a54aa6b2381047170d199a5131"><div class="ttname"><a href="classEncodingParameters.html#aaae058a54aa6b2381047170d199a5131">EncodingParameters::fps</a></div><div class="ttdeci">QString fps() const </div><div class="ttdef"><b>Definition:</b> encodingparameters.cpp:90</div></div>
-<div class="ttc" id="classFeatureSet_html"><div class="ttname"><a href="classFeatureSet.html">FeatureSet</a></div><div class="ttdoc">This class defines a type encapsulating the features we are interested in tracking. </div><div class="ttdef"><b>Definition:</b> featureset.h:7</div></div>
+<div class="ttc" id="classFeatureSet_html"><div class="ttname"><a href="classFeatureSet.html">FeatureSet</a></div><div class="ttdoc">This class defines a type encapsulating the features we are interested in tracking. </div><div class="ttdef"><b>Definition:</b> featureset.h:17</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -535,10 +633,10 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the two cameras are the same, false otherwise. </dd></dl>
-<div class="fragment"><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;{</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">return</span> *(this-&gt;<a class="code" href="classVideoWindow.html#aa163a5850ff726c12f59562b993e4403">camera</a>()) == *(rhs.<a class="code" href="classVideoWindow.html#aa163a5850ff726c12f59562b993e4403">camera</a>());</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
-<div class="ttc" id="classVideoWindow_html_aa163a5850ff726c12f59562b993e4403"><div class="ttname"><a href="classVideoWindow.html#aa163a5850ff726c12f59562b993e4403">VideoWindow::camera</a></div><div class="ttdeci">Camera * camera() const </div><div class="ttdoc">Getter for the camera object. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:273</div></div>
+<div class="fragment"><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;{</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">return</span> *(this-&gt;<a class="code" href="classVideoWindow.html#aa163a5850ff726c12f59562b993e4403">camera</a>()) == *(rhs.<a class="code" href="classVideoWindow.html#aa163a5850ff726c12f59562b993e4403">camera</a>());</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
+<div class="ttc" id="classVideoWindow_html_aa163a5850ff726c12f59562b993e4403"><div class="ttname"><a href="classVideoWindow.html#aa163a5850ff726c12f59562b993e4403">VideoWindow::camera</a></div><div class="ttdeci">Camera * camera() const </div><div class="ttdoc">Getter for the camera object. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:281</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -572,31 +670,33 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="Log_8h.html#a7cec51f4ce4b22e8c0f256485d57fca7">INFO</a>() &lt;&lt; <span class="stringliteral">&quot;In slot \&#39;receivedPacket\&#39; Message:&quot;</span> &lt;&lt; response;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">//Set non modal and allocate on heap so it does not block</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="comment">//video from playing</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    QMessageBox *msgBox = <span class="keyword">new</span> QMessageBox;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    msgBox-&gt;setWindowTitle(<span class="stringliteral">&quot;Server says...&quot;</span>);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    msgBox-&gt;setText(response);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    msgBox-&gt;setWindowModality(Qt::NonModal);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    msgBox-&gt;setAttribute(Qt::WA_DeleteOnClose);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    msgBox-&gt;show();</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">//Check if the response is an acceptance of the parameters</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">if</span>(response.contains(<span class="stringliteral">&quot;Updating&quot;</span>))</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        m_current_params = m_pending_parameters;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="Log_8h.html#aba6772a53f37234ac4fa7570b4d49c5a">DEBUG</a>() &lt;&lt; m_current_params.<a class="code" href="classEncodingParameters.html#aee18788ce89380ed62cdb14bb63d5bc2">widthAsInt</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m_current_params.<a class="code" href="classEncodingParameters.html#a98c078933c042bd7350025f15cd45d9f">heightAsInt</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m_current_params.<a class="code" href="classEncodingParameters.html#ad6dd43bc2267ca979ed0df18163dabdf">fpsAsInt</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; m_current_params.<a class="code" href="classEncodingParameters.html#aefccfdee4e2f60522637066501b0258c">bitrateAsInt</a>();</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        ui-&gt;video_player-&gt;resetStats();</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;{</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="Log_8h.html#a7cec51f4ce4b22e8c0f256485d57fca7">INFO</a>() &lt;&lt; <span class="stringliteral">&quot;In slot \&#39;receivedPacket\&#39; Message:&quot;</span> &lt;&lt; response;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">//Set non modal and allocate on heap so it does not block</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">//video from playing</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    QMessageBox *msgBox = <span class="keyword">new</span> QMessageBox;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    msgBox-&gt;setWindowTitle(<span class="stringliteral">&quot;Server says...&quot;</span>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    msgBox-&gt;setText(response);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    msgBox-&gt;setWindowModality(Qt::NonModal);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    msgBox-&gt;setAttribute(Qt::WA_DeleteOnClose);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    msgBox-&gt;show();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="comment">//Check if the response is an acceptance of the parameters</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">if</span>(response.contains(<span class="stringliteral">&quot;Updating&quot;</span>))</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        m_current_params = m_pending_parameters;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        ui-&gt;video_player-&gt;resetStats();</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment">//If we are in learning mode</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">if</span>(m_control_center_manager-&gt;<a class="code" href="classIControlCenterManager.html#ab4f6172f09c27b73254ed7fcfe716790">inLearningMode</a>())</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="comment">//Add this to the training set</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 <div class="ttc" id="Log_8h_html_a7cec51f4ce4b22e8c0f256485d57fca7"><div class="ttname"><a href="Log_8h.html#a7cec51f4ce4b22e8c0f256485d57fca7">INFO</a></div><div class="ttdeci">#define INFO()</div><div class="ttdoc">Info logging level. </div><div class="ttdef"><b>Definition:</b> Log.h:18</div></div>
-<div class="ttc" id="Log_8h_html_aba6772a53f37234ac4fa7570b4d49c5a"><div class="ttname"><a href="Log_8h.html#aba6772a53f37234ac4fa7570b4d49c5a">DEBUG</a></div><div class="ttdeci">#define DEBUG()</div><div class="ttdoc">Debug logging level. </div><div class="ttdef"><b>Definition:</b> Log.h:16</div></div>
-<div class="ttc" id="classEncodingParameters_html_aefccfdee4e2f60522637066501b0258c"><div class="ttname"><a href="classEncodingParameters.html#aefccfdee4e2f60522637066501b0258c">EncodingParameters::bitrateAsInt</a></div><div class="ttdeci">int bitrateAsInt() const </div><div class="ttdef"><b>Definition:</b> encodingparameters.cpp:81</div></div>
-<div class="ttc" id="classEncodingParameters_html_aee18788ce89380ed62cdb14bb63d5bc2"><div class="ttname"><a href="classEncodingParameters.html#aee18788ce89380ed62cdb14bb63d5bc2">EncodingParameters::widthAsInt</a></div><div class="ttdeci">int widthAsInt() const </div><div class="ttdef"><b>Definition:</b> encodingparameters.cpp:66</div></div>
-<div class="ttc" id="classEncodingParameters_html_a98c078933c042bd7350025f15cd45d9f"><div class="ttname"><a href="classEncodingParameters.html#a98c078933c042bd7350025f15cd45d9f">EncodingParameters::heightAsInt</a></div><div class="ttdeci">int heightAsInt() const </div><div class="ttdef"><b>Definition:</b> encodingparameters.cpp:71</div></div>
-<div class="ttc" id="classEncodingParameters_html_ad6dd43bc2267ca979ed0df18163dabdf"><div class="ttname"><a href="classEncodingParameters.html#ad6dd43bc2267ca979ed0df18163dabdf">EncodingParameters::fpsAsInt</a></div><div class="ttdeci">int fpsAsInt() const </div><div class="ttdef"><b>Definition:</b> encodingparameters.cpp:76</div></div>
+<div class="ttc" id="classIControlCenterManager_html_ab4f6172f09c27b73254ed7fcfe716790"><div class="ttname"><a href="classIControlCenterManager.html#ab4f6172f09c27b73254ed7fcfe716790">IControlCenterManager::inLearningMode</a></div><div class="ttdeci">virtual bool inLearningMode()=0</div><div class="ttdoc">Determine if the application is in learning mode or not. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -645,38 +745,38 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Slot to send message to server to resize the video. </p>
-<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;{</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="comment">//Create the message</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    QString msg = QString(<span class="stringliteral">&quot;start &quot;</span>);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    msg += width + QString(<span class="stringliteral">&quot; &quot;</span>) + height + QString(<span class="stringliteral">&quot; &quot;</span>) + fps + QString(<span class="stringliteral">&quot; &quot;</span>) + bps;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <a class="code" href="Log_8h.html#a7cec51f4ce4b22e8c0f256485d57fca7">INFO</a>() &lt;&lt; <span class="stringliteral">&quot;Sent: &quot;</span> &lt;&lt; msg;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">//Send it to server</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    this-&gt;<a class="code" href="classVideoWindow.html#af5830c7faa6e46a69be02c93abc28d3a">sendRequest</a>(msg);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">#if PLAY_WITH_VLC</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> fps_int = fps.toInt();</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="comment">//If FPS has changed we need to restart playback (limit to 15 and 30 fps for now... very poor and hacky method)</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">if</span>(fps_int != ui-&gt;video_player-&gt;getFps() &amp;&amp; (fps_int == 30 || fps_int == 15))</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        ui-&gt;video_player-&gt;setFps(fps_int);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="comment">//ui-&gt;video_player-&gt;setPlaybackRate(fps.toInt());</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        this-&gt;ui-&gt;video_player-&gt;playUrl(QString(<a class="code" href="videowindow_8h.html#a426bf7791468566b136608539264cc96">VIDEO_URL</a>));</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    }</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="comment">//Set new encoding parameters</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <a class="code" href="classEncodingParameters.html">EncodingParameters</a> next(width, height, fps, bps);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">if</span>(next.bitrateAsInt() == 0)</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    {</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        next.setBitrate(QString::number(next.widthAsInt() * next.heightAsInt() * 3) + (next.bitrate().endsWith(<span class="charliteral">&#39;\&#39;&#39;</span>) ? <span class="stringliteral">&quot;&#39;&quot;</span> : <span class="stringliteral">&quot;&quot;</span>));</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    m_pending_parameters = next;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;}</div>
-<div class="ttc" id="classVideoWindow_html_af5830c7faa6e46a69be02c93abc28d3a"><div class="ttname"><a href="classVideoWindow.html#af5830c7faa6e46a69be02c93abc28d3a">VideoWindow::sendRequest</a></div><div class="ttdeci">void sendRequest(QString data)</div><div class="ttdoc">Send a request. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:261</div></div>
+<div class="fragment"><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;{</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="comment">//Create the message</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    QString msg = QString(<span class="stringliteral">&quot;start &quot;</span>);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    msg += width + QString(<span class="stringliteral">&quot; &quot;</span>) + height + QString(<span class="stringliteral">&quot; &quot;</span>) + fps + QString(<span class="stringliteral">&quot; &quot;</span>) + bps;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="Log_8h.html#a7cec51f4ce4b22e8c0f256485d57fca7">INFO</a>() &lt;&lt; <span class="stringliteral">&quot;Sent: &quot;</span> &lt;&lt; msg;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">//Send it to server</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    this-&gt;<a class="code" href="classVideoWindow.html#af5830c7faa6e46a69be02c93abc28d3a">sendRequest</a>(msg);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="preprocessor">#if PLAY_WITH_VLC</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> fps_int = fps.toInt();</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="comment">//If FPS has changed we need to restart playback (limit to 15 and 30 fps for now... very poor and hacky method)</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">if</span>(fps_int != ui-&gt;video_player-&gt;getFps() &amp;&amp; (fps_int == 30 || fps_int == 15))</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    {</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        ui-&gt;video_player-&gt;setFps(fps_int);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="comment">//ui-&gt;video_player-&gt;setPlaybackRate(fps.toInt());</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        this-&gt;ui-&gt;video_player-&gt;playUrl(QString(<a class="code" href="videowindow_8h.html#a426bf7791468566b136608539264cc96">VIDEO_URL</a>));</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">//Set new encoding parameters</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <a class="code" href="classEncodingParameters.html">EncodingParameters</a> next(width, height, fps, bps);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">if</span>(next.bitrateAsInt() == 0)</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        next.setBitrate(QString::number(next.widthAsInt() * next.heightAsInt() * 3) + (next.bitrate().endsWith(<span class="charliteral">&#39;\&#39;&#39;</span>) ? <span class="stringliteral">&quot;&#39;&quot;</span> : <span class="stringliteral">&quot;&quot;</span>));</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    }</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    m_pending_parameters = next;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
+<div class="ttc" id="classVideoWindow_html_af5830c7faa6e46a69be02c93abc28d3a"><div class="ttname"><a href="classVideoWindow.html#af5830c7faa6e46a69be02c93abc28d3a">VideoWindow::sendRequest</a></div><div class="ttdeci">void sendRequest(QString data)</div><div class="ttdoc">Send a request. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:269</div></div>
 <div class="ttc" id="classEncodingParameters_html"><div class="ttname"><a href="classEncodingParameters.html">EncodingParameters</a></div><div class="ttdoc">A type encapsulating the tunable parameters of the encoder. </div><div class="ttdef"><b>Definition:</b> encodingparameters.h:11</div></div>
-<div class="ttc" id="videowindow_8h_html_a426bf7791468566b136608539264cc96"><div class="ttname"><a href="videowindow_8h.html#a426bf7791468566b136608539264cc96">VIDEO_URL</a></div><div class="ttdeci">#define VIDEO_URL</div><div class="ttdef"><b>Definition:</b> videowindow.h:18</div></div>
+<div class="ttc" id="videowindow_8h_html_a426bf7791468566b136608539264cc96"><div class="ttname"><a href="videowindow_8h.html#a426bf7791468566b136608539264cc96">VIDEO_URL</a></div><div class="ttdeci">#define VIDEO_URL</div><div class="ttdef"><b>Definition:</b> videowindow.h:20</div></div>
 <div class="ttc" id="Log_8h_html_a7cec51f4ce4b22e8c0f256485d57fca7"><div class="ttname"><a href="Log_8h.html#a7cec51f4ce4b22e8c0f256485d57fca7">INFO</a></div><div class="ttdeci">#define INFO()</div><div class="ttdoc">Info logging level. </div><div class="ttdef"><b>Definition:</b> Log.h:18</div></div>
 </div><!-- fragment -->
 </div>
@@ -722,13 +822,13 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">//this-&gt;setFixedSize(width, height);</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    this-&gt;setFixedSize(width + 10, height + ui-&gt;video_controls-&gt;height() + 5);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    ui-&gt;video_controls-&gt;resize(this-&gt;width(), ui-&gt;video_controls-&gt;height());</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    ui-&gt;video_controls-&gt;move((this-&gt;width() / 2) - (ui-&gt;video_controls-&gt;width() / 2),0);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    ui-&gt;video_player-&gt;move((this-&gt;width() / 2) - (ui-&gt;video_player-&gt;width() / 2),ui-&gt;video_controls-&gt;height());</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">//this-&gt;setFixedSize(width, height);</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    this-&gt;setFixedSize(width + 10, height + ui-&gt;video_controls-&gt;height() + 5);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    ui-&gt;video_controls-&gt;resize(this-&gt;width(), ui-&gt;video_controls-&gt;height());</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    ui-&gt;video_controls-&gt;move((this-&gt;width() / 2) - (ui-&gt;video_controls-&gt;width() / 2),0);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    ui-&gt;video_player-&gt;move((this-&gt;width() / 2) - (ui-&gt;video_player-&gt;width() / 2),ui-&gt;video_controls-&gt;height());</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -754,16 +854,16 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Slot invoked when the send button of the <a class="el" href="classVideoControlsWidget.html" title="This class defines the controls widget for a video window. ">VideoControlsWidget</a> object is clicked. </p>
-<div class="fragment"><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;{</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">//bool playing = this-&gt;ui-&gt;video_player-&gt;isPlaying();</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    QString str;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="comment">//if(playing)</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        str = <span class="stringliteral">&quot;Playing&quot;</span>;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="comment">//else</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="comment">//str = &quot;Not Playing&quot;;</span></div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">receivedMessage</a>(str);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
-<div class="ttc" id="classVideoWindow_html_ab25ad37e9dfdb92f46212d4309d4232f"><div class="ttname"><a href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">VideoWindow::receivedMessage</a></div><div class="ttdeci">void receivedMessage(QString response)</div><div class="ttdoc">A slot that will display a message in a message box. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:168</div></div>
+<div class="fragment"><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">//bool playing = this-&gt;ui-&gt;video_player-&gt;isPlaying();</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    QString str;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">//if(playing)</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        str = <span class="stringliteral">&quot;Playing&quot;</span>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="comment">//else</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="comment">//str = &quot;Not Playing&quot;;</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">receivedMessage</a>(str);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
+<div class="ttc" id="classVideoWindow_html_ab25ad37e9dfdb92f46212d4309d4232f"><div class="ttname"><a href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">VideoWindow::receivedMessage</a></div><div class="ttdeci">void receivedMessage(QString response)</div><div class="ttdoc">A slot that will display a message in a message box. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:170</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -815,16 +915,16 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;{</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">if</span>(!m_tcp_interface-&gt;<a class="code" href="classNetworkToQtInterface.html#a2584e2afdb435bd83b9bd9bbec6214c3">isConnected</a>())</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <a class="code" href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">receivedMessage</a>(<span class="stringliteral">&quot;Not connected!&quot;</span>);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        m_tcp_interface-&gt;<a class="code" href="classNetworkToQtInterface.html#aed3e3b56739941d40dd8f222f2bfc394">setBuffer</a>(data);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        m_request_thread-&gt;start();</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;}</div>
-<div class="ttc" id="classVideoWindow_html_ab25ad37e9dfdb92f46212d4309d4232f"><div class="ttname"><a href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">VideoWindow::receivedMessage</a></div><div class="ttdeci">void receivedMessage(QString response)</div><div class="ttdoc">A slot that will display a message in a message box. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:168</div></div>
+<div class="fragment"><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;{</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">if</span>(!m_tcp_interface-&gt;<a class="code" href="classNetworkToQtInterface.html#a2584e2afdb435bd83b9bd9bbec6214c3">isConnected</a>())</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <a class="code" href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">receivedMessage</a>(<span class="stringliteral">&quot;Not connected!&quot;</span>);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        m_tcp_interface-&gt;<a class="code" href="classNetworkToQtInterface.html#aed3e3b56739941d40dd8f222f2bfc394">setBuffer</a>(data);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        m_request_thread-&gt;start();</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
+<div class="ttc" id="classVideoWindow_html_ab25ad37e9dfdb92f46212d4309d4232f"><div class="ttname"><a href="classVideoWindow.html#ab25ad37e9dfdb92f46212d4309d4232f">VideoWindow::receivedMessage</a></div><div class="ttdeci">void receivedMessage(QString response)</div><div class="ttdoc">A slot that will display a message in a message box. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:170</div></div>
 <div class="ttc" id="classNetworkToQtInterface_html_aed3e3b56739941d40dd8f222f2bfc394"><div class="ttname"><a href="classNetworkToQtInterface.html#aed3e3b56739941d40dd8f222f2bfc394">NetworkToQtInterface::setBuffer</a></div><div class="ttdeci">void setBuffer(QString &amp;data)</div><div class="ttdoc">Set the internal message buffer. </div><div class="ttdef"><b>Definition:</b> networktoqtinterface.cpp:131</div></div>
 <div class="ttc" id="classNetworkToQtInterface_html_a2584e2afdb435bd83b9bd9bbec6214c3"><div class="ttname"><a href="classNetworkToQtInterface.html#a2584e2afdb435bd83b9bd9bbec6214c3">NetworkToQtInterface::isConnected</a></div><div class="ttdeci">bool isConnected() const </div><div class="ttdoc">Connection status. </div><div class="ttdef"><b>Definition:</b> networktoqtinterface.cpp:126</div></div>
 </div><!-- fragment -->
@@ -851,10 +951,10 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    m_camera = <a class="code" href="classVideoWindow.html#aa163a5850ff726c12f59562b993e4403">camera</a>;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
-<div class="ttc" id="classVideoWindow_html_aa163a5850ff726c12f59562b993e4403"><div class="ttname"><a href="classVideoWindow.html#aa163a5850ff726c12f59562b993e4403">VideoWindow::camera</a></div><div class="ttdeci">Camera * camera() const </div><div class="ttdoc">Getter for the camera object. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:273</div></div>
+<div class="fragment"><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;{</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    m_camera = <a class="code" href="classVideoWindow.html#aa163a5850ff726c12f59562b993e4403">camera</a>;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}</div>
+<div class="ttc" id="classVideoWindow_html_aa163a5850ff726c12f59562b993e4403"><div class="ttname"><a href="classVideoWindow.html#aa163a5850ff726c12f59562b993e4403">VideoWindow::camera</a></div><div class="ttdeci">Camera * camera() const </div><div class="ttdoc">Getter for the camera object. </div><div class="ttdef"><b>Definition:</b> videowindow.cpp:281</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -871,12 +971,12 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#if PLAY_WITH_VLC</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor"></span>   ui-&gt;video_player-&gt;playUrl(url);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">//ui-&gt;video_player-&gt;preprocess();</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#if PLAY_WITH_VLC</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor"></span>   ui-&gt;video_player-&gt;playUrl(url);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">//ui-&gt;video_player-&gt;preprocess();</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor"></span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -887,7 +987,7 @@ Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 29 2013 15:42:07 for Intelligent Camera System Video Client by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 2 2013 22:23:26 for Intelligent Camera System Video Client by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

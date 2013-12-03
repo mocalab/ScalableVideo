@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['mainwindow',['MainWindow',['../classMainWindow.html',1,'']]],
-  ['mediastatistics',['MediaStatistics',['../classMediaStatistics.html',1,'']]],
-  ['messagedispatcher',['MessageDispatcher',['../classMessageDispatcher.html',1,'']]]
+  ['latin1_5fwriter',['latin1_writer',['../structlatin1__writer.html',1,'']]],
+  ['learninginterface',['LearningInterface',['../classLearningInterface.html',1,'']]],
+  ['less',['less',['../structless.html',1,'']]],
+  ['less_5fequal',['less_equal',['../structless__equal.html',1,'']]],
+  ['logindialog',['LoginDialog',['../classLoginDialog.html',1,'']]]
 ];

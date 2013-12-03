@@ -38,7 +38,9 @@ void \hyperlink{classVideoControlsWidget_a9c0561d628dd239a37d1a0d52ce3a475}{send
 void \hyperlink{classVideoControlsWidget_aa7a0e5cf6d96db502d1826ec9ed43afa}{fade\-Out} ()
 \begin{DoxyCompactList}\small\item\em Widget fade out. \end{DoxyCompactList}\item 
 void \hyperlink{classVideoControlsWidget_a6fee9a987ad66923a326754e227019cc}{fade\-In} ()
-\begin{DoxyCompactList}\small\item\em Widget fade in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Widget fade in. \end{DoxyCompactList}\item 
+Q\-String\-List \& \hyperlink{classVideoControlsWidget_a81dd786a6a95c6a5ed0ad9ea06c06f70}{get\-Sizes} ()
+\begin{DoxyCompactList}\small\item\em Get the video sizes from the combo box. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -124,19 +126,19 @@ Widget fade in.
 \item[\hyperlink{deprecated__deprecated000004}{Deprecated}]\end{DoxyRefDesc}
 
 \begin{DoxyCode}
-216 \{
-217     this->show();
-218     QGraphicsOpacityEffect *fade\_in\_effect = \textcolor{keyword}{new} QGraphicsOpacityEffect(\textcolor{keyword}{this});
-219     this->setGraphicsEffect(fade\_in\_effect);
-220     QPropertyAnimation *fade\_in\_animation = \textcolor{keyword}{new} QPropertyAnimation(fade\_in\_effect, \textcolor{stringliteral}{"opacity"});
-221     fade\_in\_animation->setEasingCurve(QEasingCurve::InOutQuad);
-222     fade\_in\_animation->setDuration(250);
-223     fade\_in\_animation->setStartValue(0.1);
-224     fade\_in\_animation->setEndValue(0.8);
-225 
-226     fade\_in\_animation->start(QPropertyAnimation::DeleteWhenStopped);
-227 
-228 \}
+219 \{
+220     this->show();
+221     QGraphicsOpacityEffect *fade\_in\_effect = \textcolor{keyword}{new} QGraphicsOpacityEffect(\textcolor{keyword}{this});
+222     this->setGraphicsEffect(fade\_in\_effect);
+223     QPropertyAnimation *fade\_in\_animation = \textcolor{keyword}{new} QPropertyAnimation(fade\_in\_effect, \textcolor{stringliteral}{"opacity"});
+224     fade\_in\_animation->setEasingCurve(QEasingCurve::InOutQuad);
+225     fade\_in\_animation->setDuration(250);
+226     fade\_in\_animation->setStartValue(0.1);
+227     fade\_in\_animation->setEndValue(0.8);
+228 
+229     fade\_in\_animation->start(QPropertyAnimation::DeleteWhenStopped);
+230 
+231 \}
 \end{DoxyCode}
 \hypertarget{classVideoControlsWidget_aa7a0e5cf6d96db502d1826ec9ed43afa}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!fade\-Out@{fade\-Out}}
 \index{fade\-Out@{fade\-Out}!VideoControlsWidget@{Video\-Controls\-Widget}}
@@ -153,20 +155,40 @@ Widget fade out.
 \item[\hyperlink{deprecated__deprecated000003}{Deprecated}]\end{DoxyRefDesc}
 
 \begin{DoxyCode}
-199 \{
-200     QGraphicsOpacityEffect *fade\_out\_effect = \textcolor{keyword}{new} QGraphicsOpacityEffect(\textcolor{keyword}{this});
-201     this->setGraphicsEffect(fade\_out\_effect);
-202     QPropertyAnimation *fade\_out\_animation = \textcolor{keyword}{new} QPropertyAnimation(fade\_out\_effect, \textcolor{stringliteral}{"opacity"});
-203     fade\_out\_animation->setEasingCurve(QEasingCurve::InOutQuad);
-204     fade\_out\_animation->setDuration(175);
-205     fade\_out\_animation->setStartValue(0.8);
-206     fade\_out\_animation->setEndValue(0.0);
-207 
-208     fade\_out\_animation->start(QPropertyAnimation::DeleteWhenStopped);
-209     \textcolor{comment}{//this->hide();}
-210     QTimer::singleShot(225, \textcolor{keyword}{this}, SLOT(hideDelay()));
-211 
-212 \}
+202 \{
+203     QGraphicsOpacityEffect *fade\_out\_effect = \textcolor{keyword}{new} QGraphicsOpacityEffect(\textcolor{keyword}{this});
+204     this->setGraphicsEffect(fade\_out\_effect);
+205     QPropertyAnimation *fade\_out\_animation = \textcolor{keyword}{new} QPropertyAnimation(fade\_out\_effect, \textcolor{stringliteral}{"opacity"});
+206     fade\_out\_animation->setEasingCurve(QEasingCurve::InOutQuad);
+207     fade\_out\_animation->setDuration(175);
+208     fade\_out\_animation->setStartValue(0.8);
+209     fade\_out\_animation->setEndValue(0.0);
+210 
+211     fade\_out\_animation->start(QPropertyAnimation::DeleteWhenStopped);
+212     \textcolor{comment}{//this->hide();}
+213     QTimer::singleShot(225, \textcolor{keyword}{this}, SLOT(hideDelay()));
+214 
+215 \}
+\end{DoxyCode}
+\hypertarget{classVideoControlsWidget_a81dd786a6a95c6a5ed0ad9ea06c06f70}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!get\-Sizes@{get\-Sizes}}
+\index{get\-Sizes@{get\-Sizes}!VideoControlsWidget@{Video\-Controls\-Widget}}
+\subsubsection[{get\-Sizes}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String\-List \& Video\-Controls\-Widget\-::get\-Sizes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVideoControlsWidget_a81dd786a6a95c6a5ed0ad9ea06c06f70}
+
+
+Get the video sizes from the combo box. 
+
+\begin{DoxyReturn}{Returns}
+The video sizes available. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+234 \{
+235     \textcolor{keywordflow}{return} this->all\_sizes;
+236 \}
 \end{DoxyCode}
 \hypertarget{classVideoControlsWidget_a733c88f42e0cdec6b6209c97cb2391ed}{\index{Video\-Controls\-Widget@{Video\-Controls\-Widget}!paint\-Event@{paint\-Event}}
 \index{paint\-Event@{paint\-Event}!VideoControlsWidget@{Video\-Controls\-Widget}}

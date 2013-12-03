@@ -355,12 +355,54 @@ void VideoWindow::onBandwidth(QString bandwidth)
 
     if(success)
     {
+        int oldbw = m_currentbw_kbps;
         this->m_currentbw_kbps = iBW;
 
         //Are we in learning mode?
         if(m_control_center_manager->inLearningMode())
         {
             //Add training example to training set and determine the decision function
+
+            //Create the feature set object
+            FeatureSet next_fs(oldbw * 1000, (int)this->m_camera->content_type());
+            //Get the labels
+
+            //We use simple implicit feedback to determine the two classes.
+
+            //If the video is playing at framerate 15fps and enhanced bitrate, the user prefers bitrate over framerate (+1 class)
+            //If the video is playing at framerate 30fps and lower bitrate, the user prefers temporal quality over bitrate (-1 class)
+            double lbl_fps_bitrate = 0.0;
+            if(ui->video_player->getFps() < 30)
+            {
+                lbl_fps_bitrate = 1.0;
+            }
+            else
+            {
+                lbl_fps_bitrate = -1.0;
+            }
+
+            //To determine the label for size over quality, we have to look at available bandwidth and the bandwidth of
+            //the video. If there is a significant enough difference between the available bandwidth and the data rate of
+            //the video the user most likely prefers quality to size. In order to confirm this we will look at the dimensions of
+            //the video and check if the current encoding bitrate constitutes high quality video. This will be defined as the +1
+            //class. If the data rate is at the maximum that the bandwidth will allow, we will look at the video size, and if the
+            //dimensions are large enough, then the user most likely prefers size over video quality. This will be defined as the -1
+            //class.
+            double lbl_size_quality = 0.0;
+            //For now, a trivial solution; will determine using empricial evidence
+            if((float)m_current_params.bitrateAsInt() > (float)ui->video_player->width() * ui->video_player->height() * 1.75)
+            {
+                //Preference to quality
+                lbl_size_quality = 1.0;
+            }
+            else
+            {
+                lbl_size_quality = -1.0;
+            }
+
+            //Add this new training example
+            this->m_control_center_manager->addTrainingExample(next_fs, lbl_fps_bitrate, lbl_size_quality);
+
         }
         else
         {

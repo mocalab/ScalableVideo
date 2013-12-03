@@ -98,9 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a744aa227199e0b12c4009836fe342f05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDecisionInterface.html#a744aa227199e0b12c4009836fe342f05">DecisionInterface</a> ()</td></tr>
-<tr class="memdesc:a744aa227199e0b12c4009836fe342f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default value constructor.  <a href="#a744aa227199e0b12c4009836fe342f05">More...</a><br/></td></tr>
-<tr class="separator:a744aa227199e0b12c4009836fe342f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6805979ca909974aa06e40ff0c5d12f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDecisionInterface.html#ae6805979ca909974aa06e40ff0c5d12f">DecisionInterface</a> (<a class="el" href="classIVideoWindowManager.html">IVideoWindowManager</a> *manager=0)</td></tr>
+<tr class="memdesc:ae6805979ca909974aa06e40ff0c5d12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default value constructor.  <a href="#ae6805979ca909974aa06e40ff0c5d12f">More...</a><br/></td></tr>
+<tr class="separator:ae6805979ca909974aa06e40ff0c5d12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd67dc2e1710da83987ad842d6b0a69a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDecisionInterface.html#afd67dc2e1710da83987ad842d6b0a69a">makeDecision</a> (int bandwidth, int datarate, <a class="el" href="classEncodingParameters.html">EncodingParameters</a> &amp;old_params, <a class="el" href="classFeatureSet.html">FeatureSet</a> &amp;features, <a class="el" href="classEncodingParameters.html">EncodingParameters</a> &amp;new_params)</td></tr>
 <tr class="memdesc:afd67dc2e1710da83987ad842d6b0a69a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a decision about the encoding parameters.  <a href="#afd67dc2e1710da83987ad842d6b0a69a">More...</a><br/></td></tr>
 <tr class="separator:afd67dc2e1710da83987ad842d6b0a69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,22 +108,25 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class defines the interface for making a decision about the correct encoding parameters to use for a stream of video. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a744aa227199e0b12c4009836fe342f05"></a>
+<a class="anchor" id="ae6805979ca909974aa06e40ff0c5d12f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">DecisionInterface::DecisionInterface </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classIVideoWindowManager.html">IVideoWindowManager</a> *&#160;</td>
+          <td class="paramname"><em>manager</em> = <code>0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Default value constructor. </p>
-<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                                                                 :</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    m_window_interface(manager)</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -182,27 +185,27 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">//Get the ratio of bandwidth to data rate;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">float</span> ratio = (float) datarate / bandwidth;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">//This determines the next course of action</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span>(ratio &lt; 1)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="comment">//We can optimize the parameters based on the available bandwidth</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        upConvert(ratio, old_params, new_params);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">//We must determine the best parameters using the machine learning decision function we have</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">//created while the application was learning</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">//For now, just keep the old parameters</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        new_params = old_params;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">//Get the ratio of bandwidth to data rate;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">float</span> ratio = (float) datarate / bandwidth;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">//This determines the next course of action</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span>(ratio &lt; 1)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="comment">//We can optimize the parameters based on the available bandwidth</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        upConvert(ratio, old_params, new_params);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">//We must determine the best parameters using the machine learning decision function we have</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">//created while the application was learning</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">//For now, just keep the old parameters</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        downConvert(ratio, old_params, new_params);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -213,7 +216,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 29 2013 15:42:07 for Intelligent Camera System Video Client by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 2 2013 22:23:26 for Intelligent Camera System Video Client by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

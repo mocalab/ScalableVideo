@@ -8,6 +8,8 @@ var searchData=
   ['address_2eh',['address.h',['../address_8h.html',1,'']]],
   ['addresslist',['AddressList',['../serverconfigfileutil_8h.html#a90d1af3762c28656b0507bb3a650f96e',1,'serverconfigfileutil.h']]],
   ['addresslistiter',['AddressListIter',['../serverconfigfileutil_8h.html#aa849a66e29fe72431879f7d9d8ccda63',1,'serverconfigfileutil.h']]],
+  ['addtrainingexample',['addTrainingExample',['../classControlCenter.html#afac0b42e4af9070671cd58f3bc2374d1',1,'ControlCenter::addTrainingExample()'],['../classIControlCenterManager.html#ad223b7089a7196da4edbb70adc2d333e',1,'IControlCenterManager::addTrainingExample()']]],
+  ['addtrainingsample',['addTrainingSample',['../classLearningInterface.html#ac34bceb3772c7f5b02bd6561e9fab5d2',1,'LearningInterface']]],
   ['alloc',['alloc',['../structxml__parser.html#a213cf019cbf45f5049acdcae296a2976',1,'xml_parser::alloc()'],['../structxpath__query__impl.html#ae568b8642d48e729f2ccc2a50467c847',1,'xpath_query_impl::alloc()']]],
   ['alloc_5fnode',['alloc_node',['../structxpath__parser.html#ae33adcc8eb125124967d95297daff351',1,'xpath_parser']]],
   ['alloc_5fstring',['alloc_string',['../structxpath__parser.html#a109e4c472bb76911a2b49ee741d400af',1,'xpath_parser']]],

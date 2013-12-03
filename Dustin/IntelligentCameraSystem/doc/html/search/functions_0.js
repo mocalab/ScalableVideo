@@ -4,6 +4,8 @@ var searchData=
   ['addcommandtolist',['addCommandToList',['../classStreamerTextEdit.html#ac89b399e38a953a0a1835259e91881df',1,'StreamerTextEdit']]],
   ['addimage',['addImage',['../classFFMPEGVideoWidget.html#aa1c7cfdbf973cc553b4aca82f683df2a',1,'FFMPEGVideoWidget']]],
   ['address',['Address',['../classAddress.html#a63f910c09d93bdd16d3744e47d13dc0e',1,'Address::Address()'],['../classAddress.html#a4addfdd8b8f27c995536e7c4df8e4b63',1,'Address::Address(string address, int port)']]],
+  ['addtrainingexample',['addTrainingExample',['../classControlCenter.html#afac0b42e4af9070671cd58f3bc2374d1',1,'ControlCenter::addTrainingExample()'],['../classIControlCenterManager.html#ad223b7089a7196da4edbb70adc2d333e',1,'IControlCenterManager::addTrainingExample()']]],
+  ['addtrainingsample',['addTrainingSample',['../classLearningInterface.html#ac34bceb3772c7f5b02bd6561e9fab5d2',1,'LearningInterface']]],
   ['alloc_5fnode',['alloc_node',['../structxpath__parser.html#ae33adcc8eb125124967d95297daff351',1,'xpath_parser']]],
   ['alloc_5fstring',['alloc_string',['../structxpath__parser.html#a109e4c472bb76911a2b49ee741d400af',1,'xpath_parser']]],
   ['allocate',['allocate',['../classxpath__allocator.html#aad95aa445f2fdc7c3d1c19b1f3d67cb1',1,'xpath_allocator']]],

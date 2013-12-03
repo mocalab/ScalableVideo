@@ -27,7 +27,7 @@ ControlCenter::ControlCenter(CameraList cameras, QWidget *parent) :
     connect(m_ffmpeg, SIGNAL(finished()), m_ffmpeg_thread, SLOT(quit()));
 
     //Uncomment to run learning algorithm tests
-   this->testLearning();
+   //this->testLearning();
 
 }
 
@@ -168,22 +168,28 @@ bool ControlCenter::inLearningMode()
 //Add a training example
 void ControlCenter::addTrainingExample(FeatureSet &fs, double lbl_fps_br_priority, double lbl_size_quality_priority)
 {
-    //For now we just have one trainer to add this to example to that trainer.
+    //Add to fps/br trainer
     this->m_fps_bitrate_learning_module.addTrainingSample(fs, lbl_fps_br_priority);
+
+    //Add to quality trainer
+    this->m_size_quality_learning_module.addTrainingSample(fs, lbl_size_quality_priority);
 }
 
 //Train the learning modules
 void ControlCenter::train()
 {
-    //For now train the one learning module
+    //Train fps/br
     this->m_fps_bitrate_learning_module.trainCurrent();
+
+    //Train quality
+    this->m_size_quality_learning_module.trainCurrent();
 }
 
 //Predict the class based on the given feature set
 int ControlCenter::predict(FeatureSet &fs)
 {
-    //In the future we will have two trainers to predict both priorities
-    //and will bitwise OR these together to determine the correct optimizations
-    //to make. For now, just return the class for our one trainer.
-    return (this->m_fps_bitrate_learning_module.predict(fs) >= 0.0 ? 1 : 0);
+    //Run the prediction on both trainers and create a bitmask
+    int fps_bitrate = this->m_fps_bitrate_learning_module.predict(fs) >= 0.0 ? 1 : 0;
+    int quality_size = this->m_size_quality_learning_module.predict(fs) >= 0.0 ? 1 : 0;
+    return quality_size | (fps_bitrate << 1);
 }

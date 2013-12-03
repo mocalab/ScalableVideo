@@ -1,13 +1,18 @@
 var searchData=
 [
-  ['tcp_5fstatus_5faddress_5fnot_5ffound',['TCP_STATUS_ADDRESS_NOT_FOUND',['../tcpclient_8h.html#ab36b81f0daebbad95a533ea9951ee569a677e05a70195600d99f343ac4d080f12',1,'tcpclient.h']]],
-  ['tcp_5fstatus_5fconnection_5fclosed',['TCP_STATUS_CONNECTION_CLOSED',['../tcpclient_8h.html#ab36b81f0daebbad95a533ea9951ee569a31579e5845f194f359afdb50b2f85a86',1,'tcpclient.h']]],
-  ['tcp_5fstatus_5freceive_5ffailed',['TCP_STATUS_RECEIVE_FAILED',['../tcpclient_8h.html#ab36b81f0daebbad95a533ea9951ee569a9b5153de6f52108f95fe6f5ccec7e05d',1,'tcpclient.h']]],
-  ['tcp_5fstatus_5fsend_5ffailed',['TCP_STATUS_SEND_FAILED',['../tcpclient_8h.html#ab36b81f0daebbad95a533ea9951ee569a0fbe81dbe6a6972d6c80cecad3ee0d73',1,'tcpclient.h']]],
-  ['tcp_5fstatus_5fserver_5fdisconnected',['TCP_STATUS_SERVER_DISCONNECTED',['../tcpclient_8h.html#ab36b81f0daebbad95a533ea9951ee569a1f2b9b8cedc20d11900f30d9df9c8b1f',1,'tcpclient.h']]],
-  ['tcp_5fstatus_5fsocket_5fnot_5fopened',['TCP_STATUS_SOCKET_NOT_OPENED',['../tcpclient_8h.html#ab36b81f0daebbad95a533ea9951ee569afbc7ac61946e52ae324b1c658cf45e3a',1,'tcpclient.h']]],
-  ['tcp_5fstatus_5fsuccess',['TCP_STATUS_SUCCESS',['../tcpclient_8h.html#ab36b81f0daebbad95a533ea9951ee569a12de2815c3e64df634ac4d26a0bb2007',1,'tcpclient.h']]],
-  ['type_5fsorted',['type_sorted',['../classpugi_1_1xpath__node__set.html#a6c6899c8ecfbce9e42ec85540907080ea9d5ce5e6194ac2003da0d86d9af87437',1,'pugi::xpath_node_set']]],
-  ['type_5fsorted_5freverse',['type_sorted_reverse',['../classpugi_1_1xpath__node__set.html#a6c6899c8ecfbce9e42ec85540907080ea7035df3be16759292de59850d6c0b9be',1,'pugi::xpath_node_set']]],
-  ['type_5funsorted',['type_unsorted',['../classpugi_1_1xpath__node__set.html#a6c6899c8ecfbce9e42ec85540907080ea7636fa164710ab9b069850ea3b3e4924',1,'pugi::xpath_node_set']]]
+  ['status_5fbad_5fattribute',['status_bad_attribute',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555a2b34aa9968d63b28a6d51b30575ff95a',1,'pugi']]],
+  ['status_5fbad_5fcdata',['status_bad_cdata',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555aa2ebdaf5e8bf5414bec3004270e102b8',1,'pugi']]],
+  ['status_5fbad_5fcomment',['status_bad_comment',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555a563327f534e9b3ce55f9f7364aa746b2',1,'pugi']]],
+  ['status_5fbad_5fdoctype',['status_bad_doctype',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555a58d1b0d8787e97fc1b5b31ec5e4fabcf',1,'pugi']]],
+  ['status_5fbad_5fend_5felement',['status_bad_end_element',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555a261cbf22c7da45388bcc1e6759020790',1,'pugi']]],
+  ['status_5fbad_5fpcdata',['status_bad_pcdata',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555ac5257467a3d1a971134c457066b21ee5',1,'pugi']]],
+  ['status_5fbad_5fpi',['status_bad_pi',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555ad7a57e8554aabea52ed8b0d6a0891622',1,'pugi']]],
+  ['status_5fbad_5fstart_5felement',['status_bad_start_element',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555a3cf4e84a5b433ce50e6f3037df5c1bdd',1,'pugi']]],
+  ['status_5fend_5felement_5fmismatch',['status_end_element_mismatch',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555a07a5f6f8392474ccb2d5dc10fe2307a2',1,'pugi']]],
+  ['status_5ffile_5fnot_5ffound',['status_file_not_found',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555a32e05bc1b1356846e6a5fb0ec097d36b',1,'pugi']]],
+  ['status_5finternal_5ferror',['status_internal_error',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555a37a3c224657a16f27c950ec70954c981',1,'pugi']]],
+  ['status_5fio_5ferror',['status_io_error',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555a28bb6318a65eec5abcf1ef8174b92246',1,'pugi']]],
+  ['status_5fok',['status_ok',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555a46ddc2abb6a54fdac07cf9086b45f10f',1,'pugi']]],
+  ['status_5fout_5fof_5fmemory',['status_out_of_memory',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555a59e75d024e9f5c213ca6f4db8102b978',1,'pugi']]],
+  ['status_5funrecognized_5ftag',['status_unrecognized_tag',['../namespacepugi.html#a9054ca609e12afb8f3e5892fc6c0b555a71a555b91e80b6d8f84aeb6a93904d28',1,'pugi']]]
 ];

@@ -65,10 +65,10 @@ void LearningInterface::trainCurrent()
 
     //Set C, epsilon and cache size
     m_trainer.set_c(C_best);
-    m_trainer.set_epsilon(0.0001);
+
     //For now just leave defaults
 
-    //Determine a good value for gamma (TODO)
+    //Set gamma
     m_trainer.set_kernel(kernel_type(gamma_best));
     m_decision_function.normalizer = m_normalizer;
 
