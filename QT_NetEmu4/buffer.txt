@@ -1,0 +1,133 @@
+
+#include "buffer.h"
+#include <iostream>
+using namespace std;
+
+Buffer::Buffer(void)
+{
+        Buffer(1000);
+}
+
+Buffer::Buffer(int size)
+: bufferSize(size)
+{
+
+
+        hSemAvailable = CreateSemaphore(
+                NULL,   // no security attributes
+                bufferSize,   // initial count
+                bufferSize,   // maximum count
+                NULL);  // unnamed semaphore
+
+        if (hSemAvailable == NULL)
+        {
+                // Check for error.
+        }
+        hSemFIFO = CreateSemaphore(
+                NULL,   // no security attributes
+                1,   // initial count
+                1,   // maximum count
+                NULL);  // unnamed semaphore
+        if (hSemFIFO == NULL)
+        {
+                // Check for error.
+        }
+        hSemUnconsumed = CreateSemaphore(
+                NULL,   // no security attributes
+                0,   // initial count
+                bufferSize,   // maximum count
+                NULL);  // unnamed semaphore
+        if (hSemUnconsumed == NULL)
+        {
+                // Check for error.
+        }
+}
+
+Buffer::~Buffer(void)
+{
+
+}
+
+void Buffer::addPacket(const u_char* packet, int size)
+{
+
+        // Try to enter the semaphore gate.
+
+        DWORD dwWaitResult = WaitForSingleObject(
+        hSemAvailable,   // handle to semaphore
+        INFINITE);          // zero-second time-out interval
+
+        // Get exclusive access to FIFO
+
+        dwWaitResult = WaitForSingleObject(
+                hSemFIFO,   // handle to semaphore
+        INFINITE);          // infinite time-out interval
+
+        FIFO.push(packet);
+        sizeFIFO.push(size);
+
+        // Release Exclusive Access
+        if (!ReleaseSemaphore(
+        hSemFIFO,   // handle to semaphore
+        1,           // increase count by one
+        NULL) )      // not interested in previous count
+        {
+                // Deal with the error.
+        }
+
+        // Tell Consumer that item is ready to consume
+        if (!ReleaseSemaphore(
+        hSemUnconsumed,   // handle to semaphore
+        1,           // increase count by one
+        NULL) )      // not interested in previous count
+        {
+                // Deal with the error.
+        }
+
+
+}
+
+int Buffer::removePacket(const u_char** packet)
+{
+
+
+//cout << "packet to be removed: before hSemUnconsumed\n";
+        DWORD dwWaitResult = WaitForSingleObject(
+                hSemUnconsumed,   // handle to semaphore
+        INFINITE);          // infinite time-out interval
+
+//cout << "packet to be removed: after hSemUnconsumed\n";
+        // Get exclusive access to FIFO
+
+        dwWaitResult = WaitForSingleObject(
+                hSemFIFO,   // handle to semaphore
+        INFINITE);          // infinite time-out interval
+
+        *packet = (u_char*) FIFO.front();
+        FIFO.pop();
+        int size = (int) sizeFIFO.front();
+        sizeFIFO.pop();
+
+//cout << "packet removed\n";
+        // Release Exclusive Access
+        if (!ReleaseSemaphore(
+        hSemFIFO,   // handle to semaphore
+        1,           // increase count by one
+        NULL) )      // not interested in previous count
+        {
+                // Deal with the error.
+        }
+
+        // Tell producer that space is available
+        if (!ReleaseSemaphore(
+        hSemAvailable,   // handle to semaphore
+        1,           // increase count by one
+        NULL) )      // not interested in previous count
+        {
+                // Deal with the error.
+        }
+//cout << "packet removed with size " << size << endl;
+        return size;
+}
+
+
