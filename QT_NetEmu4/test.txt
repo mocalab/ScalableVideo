@@ -1,0 +1,780 @@
+// Emulator.cpp : Defines the entry point for the console application.
+//
+
+#define HAVE_REMOTE
+
+#include "stdafx.h"
+#include <sys/types.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include <iostream>
+#include "pcap.h"
+#include "Buffer.h"
+#include "PerformanceTimers.h"
+
+#include "InputForm.h"
+
+#define PACKET_CAPTURE_SIZE 65536
+#define BUFFERSIZE 1000
+
+
+float  lossRateOne;
+float  lossRateTwo;
+
+float  maxBandwidthOne = 200000000;
+float  maxBandwidthTwo = 200000000;
+
+char   nameOne[256];
+char   nameTwo[256];
+
+
+// semaphore to control access to loss rate var
+HANDLE hSemRateOne;
+HANDLE hSemRateTwo;
+
+
+ pcap_t *pAdapterOne, *pAdapterTwo;
+
+/* prototype of the packet handler */
+
+void packet_printer(const struct pcap_pkthdr *header, const u_char *pkt_data);
+void packet_handler_interface_one(u_char *param, const struct pcap_pkthdr *header, const u_char *pkt_data);
+void packet_handler_interface_two(u_char *param, const struct pcap_pkthdr *header, const u_char *pkt_data);
+
+int setUpAdapters();
+int setupWinPcapFilter(pcap_t** fp, char* filter);
+
+void SetupInterfaceOne();
+void SendTrafficInterfaceOne();
+void ReceiveTrafficInterfaceOne();
+
+
+void SetupInterfaceTwo();
+void SendTrafficInterfaceTwo();
+void ReceiveTrafficInterfaceTwo();
+
+
+Buffer *pBuffer;
+Buffer *rBuffer;
+bool readStoped;
+
+void launchInputFormOne()
+{
+        // pass form a pointer to the loss rate var and a handle to control access to it
+        using namespace NetEmu;
+        Application::Run(gcnew InputForm(&lossRateOne, &maxBandwidthOne, 1, hSemRateOne));
+}
+
+void launchInputFormTwo()
+{
+        // pass form a pointer to the loss rate var and a handle to control access to it
+        using namespace NetEmu;
+        Application::Run(gcnew InputForm(&lossRateTwo,&maxBandwidthTwo, 2, hSemRateTwo));
+}
+
+
+
+//int _tmain(int argc, _TCHAR* argv[])
+void _tmain(int argc, char **argv)
+{
+        // create semaphore to control access to loss rate var
+    hSemRateOne = CreateSemaphore(
+                NULL,   // no security attributes
+                1,   // initial count
+                1,   // maximum count
+                NULL);  // unnamed semaphore
+
+         hSemRateTwo = CreateSemaphore(
+                NULL,   // no security attributes
+                1,   // initial count
+                1,   // maximum count
+                NULL);  // unnamed semaphore
+
+
+
+        int res;
+        struct pcap_pkthdr *header;
+        const u_char *pkt_data;
+        int size;
+        int i;
+        HANDLE ReceiveTrafficInterfaceOneHandle;
+        DWORD  ReceiveTrafficInterfaceOneThreadID;
+
+        HANDLE ReceiveTrafficInterfaceTwoHandle;
+        DWORD  ReceiveTrafficInterfaceTwoThreadID;
+
+        HANDLE SendTrafficInterfaceOneHandle;
+        DWORD  SendTrafficInterfaceOneThreadID;
+
+        HANDLE SendTrafficInterfaceTwoHandle;
+        DWORD  SendTrafficInterfaceTwoThreadID;
+
+
+        HANDLE GUIHandle;
+        DWORD  GUIThreadID;
+
+
+
+
+        readStoped = false;
+
+        setUpAdapters();	// Will setup the two adapters and install callback functions
+                                                                                                        // To read from the two adapters
+
+        pBuffer = new Buffer(BUFFERSIZE);
+        rBuffer = new Buffer(BUFFERSIZE);
+
+
+
+        // Start the thread that handles traffice from adapter #2 to #1
+        ReceiveTrafficInterfaceOneHandle = CreateThread(
+                                                                                                 0, 0, (LPTHREAD_START_ROUTINE) ReceiveTrafficInterfaceOne,
+                                                                                     0, 0, &ReceiveTrafficInterfaceOneThreadID
+                                                                                   );
+
+
+        if (ReceiveTrafficInterfaceOneHandle == NULL)
+        {
+                cout << "CreateThread Failed for 'ReceiveTrafficInterfaceOneHandle'. Error code: "
+                         << GetLastError() << endl;
+
+                exit(1);
+        }
+
+
+
+        // Start the thread that handles traffice from adapter #2 to #1
+        ReceiveTrafficInterfaceTwoHandle = CreateThread(
+                                                                                                 0, 0, (LPTHREAD_START_ROUTINE) ReceiveTrafficInterfaceTwo,
+                                                                                     0, 0, &ReceiveTrafficInterfaceTwoThreadID
+                                                                                   );
+
+
+        if (ReceiveTrafficInterfaceTwoHandle == NULL)
+        {
+                cout << "CreateThread Failed for 'ReceiveTrafficInterfaceTwoHandle'. Error code: "
+                         << GetLastError() << endl;
+
+                exit(1);
+        }
+
+
+
+
+        // Start the thread that handles traffice from adapter #2 to #1
+        SendTrafficInterfaceOneHandle = CreateThread(
+                                                                                                 0, 0, (LPTHREAD_START_ROUTINE) SendTrafficInterfaceOne,
+                                                                                     0, 0, &SendTrafficInterfaceOneThreadID
+                                                                                   );
+
+
+        if (SendTrafficInterfaceOneHandle == NULL)
+        {
+                cout << "CreateThread Failed for 'SendTrafficInterfaceOneHandle'. Error code: "
+                        << GetLastError() << endl;
+
+                exit(1);
+        }
+
+
+
+// Start the thread that handles traffice from adapter #2 to #1
+SendTrafficInterfaceTwoHandle = CreateThread(
+                                                                                         0, 0, (LPTHREAD_START_ROUTINE) SendTrafficInterfaceTwo,
+                                                                                     0, 0, &SendTrafficInterfaceTwoThreadID
+                                                                                   );
+
+        if (SendTrafficInterfaceTwoHandle == NULL)
+        {
+                cout << "CreateThread Failed for 'SendTrafficInterfaceTwoHandle'. Error code: "
+                         << GetLastError() << endl;
+
+                exit(1);
+        }
+
+
+        while (true)
+        {
+                // ReceiveTrafficInterfaceOne();
+                Sleep(3000);
+        }
+
+}
+
+
+// Open 'pAdapterOne' for the first adapter in the list,
+// and open 'pAdapterTwo' for the second adapter in the list.
+
+
+int setUpAdapters()
+{
+        pcap_if_t *d;
+        pcap_if_t *alldevs;
+
+        u_int i = 0;
+        u_int inum;
+        char errbuf[PCAP_ERRBUF_SIZE];
+//	char buff[1560];
+
+
+        printf("Choose the  interface number for the first interface :\n");
+
+        /* Retrieve the device list from the local machine */
+    if (pcap_findalldevs_ex(PCAP_SRC_IF_STRING, NULL /* auth is not needed */, &alldevs, errbuf) == -1)
+    {
+        fprintf(stderr,"Error in pcap_findalldevs_ex: %s\n", errbuf);
+        exit(1);
+    }
+
+    /* Print the list */
+    for(d= alldevs; d != NULL; d= d->next)
+    {
+        printf("%d. %s", ++i, d->name);
+        if (d->description)
+            printf(" (%s)\n", d->description);
+
+        else
+            printf(" (No description available)\n");
+    }
+
+    if (i == 0)
+    {
+        printf("\nNo interfaces found! Make sure WinPcap is installed.\n");
+        return -1;
+    }
+
+
+        printf("The first interface (1-%d):",i);
+    scanf("%d", &inum);
+
+    if(inum < 1 || inum > i)
+    {
+        printf("\nInterface number out of range.\n");
+        /* Free the device list */
+        pcap_freealldevs(alldevs);
+        return -1;
+    }
+
+    /* Jump to the selected adapter */
+    for(d=alldevs, i=0; i< inum-1 ;d=d->next, i++);
+
+        sprintf(nameOne,"%s",d->name);
+    /* Open the device */
+    if ( (pAdapterOne= pcap_open(d->name,						// name of the device
+                              PACKET_CAPTURE_SIZE,			// portion of the packet to capture
+                                                                                                                        // 65536 guarantees that the whole packet will be captured on all the link layers
+                              PCAP_OPENFLAG_PROMISCUOUS,    // promiscuous mode
+                              100,							// read timeout
+                              NULL,							// authentication on the remote machine
+                              errbuf						// error buffer
+                              ) ) == NULL)
+    {
+        fprintf(stderr,"\nUnable to open the adapter. %s is not supported by WinPcap\n", d->name);
+        /* Free the device list */
+        pcap_freealldevs(alldevs);
+        return -1;
+    }
+
+
+        printf("\n\nChoose the  interface number for the second interface :\n");
+
+        /* Retrieve the device list from the local machine */
+    if (pcap_findalldevs_ex(PCAP_SRC_IF_STRING, NULL /* auth is not needed */, &alldevs, errbuf) == -1)
+    {
+        fprintf(stderr,"Error in pcap_findalldevs_ex: %s\n", errbuf);
+        exit(1);
+    }
+
+        i = 0;
+    /* Print the list */
+    for(d= alldevs; d != NULL; d= d->next)
+    {
+        printf("%d. %s", ++i, d->name);
+        if (d->description)
+            printf(" (%s)\n", d->description);
+        else
+            printf(" (No description available)\n");
+    }
+
+    if (i == 0)
+    {
+        printf("\nNo interfaces found! Make sure WinPcap is installed.\n");
+        return -1;
+    }
+
+        printf("The second interface (1-%d):",i);
+    scanf("%d", &inum);
+
+    if(inum < 1 || inum > i)
+    {
+        printf("\nInterface number out of range.\n");
+        /* Free the device list */
+        pcap_freealldevs(alldevs);
+        return -1;
+    }
+
+    /* Jump to the selected adapter */
+    for(d=alldevs, i=0; i< inum-1 ;d=d->next, i++);
+        sprintf(nameTwo,"%s",d->name);
+
+
+    /* Open the device */
+    if ( (pAdapterTwo = pcap_open(d->name,						// name of the device
+                              PACKET_CAPTURE_SIZE,			// portion of the packet to capture
+                                                                                                                        // 65536 guarantees that the whole packet will be captured on all the link layers
+                              PCAP_OPENFLAG_PROMISCUOUS,    // promiscuous mode
+                              100,							// read timeout
+                              NULL,							// authentication on the remote machine
+                              errbuf						// error buffer
+                              ) ) == NULL)
+    {
+       fprintf(stderr,"\nUnable to open the adapter. %s is not supported by WinPcap\n", d->name);
+        /* Free the device list */
+        pcap_freealldevs(alldevs);
+        return -1;
+    }
+
+    printf("\nlistening on %s...\n", d->description);
+
+    /* start the capture */
+    // Call back function
+        //pcap_loop(*pAdapterTwo, 0, packet_handler_interface_two, (u_char *) *pAdapterOne);
+        //pcap_loop(*pAdapterOne, 0, packet_handler_interface_one, (u_char *) *pAdapterTwo);
+
+         // Release resources used by the critical section object.
+        //DeleteCriticalSection(&CriticalSection);
+
+    return 0;
+}
+
+
+
+
+void packet_handler_interface_one(u_char  *param, const struct pcap_pkthdr *header, const u_char *pkt_data)
+{
+    struct tm *ltime;
+    char timestr[16];
+        time_t local_tv_sec;
+
+
+    local_tv_sec = header->ts.tv_sec;
+        ltime=localtime(&local_tv_sec);
+    strftime( timestr, sizeof timestr, "%H:%M:%S", ltime);
+        int status = pcap_sendpacket((pcap_t *) param, pkt_data, header->caplen);
+    printf("Interface one Capture  : %s,%.6d len:%d\n", timestr, header->ts.tv_usec, header->len);
+}
+
+
+
+void packet_handler_interface_two(u_char *param, const struct pcap_pkthdr *header, const u_char *pkt_data)
+{
+    struct tm *ltime;
+    char timestr[16];
+        time_t local_tv_sec;
+
+
+    local_tv_sec = header->ts.tv_sec;
+        ltime=localtime(&local_tv_sec);
+    strftime( timestr, sizeof timestr, "%H:%M:%S", ltime);
+
+        printf("Interface two Capture  : %s,%.6d len:%d\n", timestr, header->ts.tv_usec, header->len);
+    int status = pcap_sendpacket((pcap_t *) param, pkt_data, header->caplen);
+
+}
+
+
+
+void ReceiveTrafficInterfaceOne()
+{
+        printf("Starting to Receive traffic on interface one\n");
+
+        pcap_t *pAdapter_Read, *pAdapter_Write;
+        int res;
+        struct pcap_pkthdr *header;
+        const u_char *pkt_data;
+
+        pAdapter_Read = pAdapterOne;
+        pAdapter_Write = pAdapterTwo;
+
+        int   istobelost;
+        float randomnum;
+        int   lossnum;
+        int		totalBytes;
+        int		early;
+        pTimer loopTimer; // timer for 3 second loop
+        pTimer sendTimer; // packet timer
+
+
+        HANDLE GUIHandle;
+        DWORD  GUIThreadID;
+
+// setupWinPcapFilter(&pAdapter_Read, "ether dst 00:22:19:19:83:87");
+
+//	setupWinPcapFilter(&pAdapter_Read, "ether src 00:00:0c:07:ac:03");
+//	setupWinPcapFilter(&pAdapter_Read, "ether src 00:18:f8:ef:40:28");
+//	setupWinPcapFilter(&pAdapter_Read, "ether src 00:21:70:AE:EB:BC");
+
+        GUIHandle = CreateThread(
+                                        0, 0, (LPTHREAD_START_ROUTINE) launchInputFormOne,
+                                        0, 0, &GUIThreadID
+                                );
+
+        printf("\n\n");
+
+        // Read the packets
+        int timeForReport;
+
+        InitializeTimers();
+
+        loopTimer = StartTimer();
+        sendTimer = StartTimer();
+    int k = 0;
+        int l = 0;
+        srand ( time(NULL) );
+        lossRateOne = 0;
+
+        early = GetMicrosecondsElapsed(loopTimer);
+        totalBytes = 0;
+
+        while((res = pcap_next_ex( pAdapter_Read , &header, &pkt_data)) >= 0)
+        {
+                if(res == 0)
+                        // Timeout elapsed
+                        continue;
+
+                //enter critical section...
+                WaitForSingleObject( hSemRateOne, INFINITE);
+                lossnum = 100;
+                if (lossRateOne > 0)
+                        {
+                        randomnum = rand()/(float ) RAND_MAX;
+
+                        lossnum = 100 / lossRateOne;
+
+                        //istobelost = (int ) ((float ) randomnum *lossnum );
+                        }
+                //else istobelost = 100;
+                //...leave critical section
+                ReleaseSemaphore( hSemRateOne, 1, NULL);
+
+        totalBytes +=header->caplen;
+        k++;
+        if (lossRateOne != 0 ) l++;
+
+        //if ( istobelost > 1 )
+        if ( l <  lossnum )
+        {
+
+             pBuffer->addPacket(pkt_data, header->caplen);
+            //int status = pcap_sendpacket(pAdapter_Write, pkt_data, header->caplen);
+            //printf("\nOne Received: %d\t%d\t%f\t%d\t%d\t%f ", k,RAND_MAX,randomnum, lossnum,totalBytes,maxBandwidthOne);
+        }
+         else{
+            l = 0;
+            printf("\n Int One : packet dropped ");
+        }
+
+        //printf("\n %d \t %d\n", GetMicrosecondsElapsed(loopTimer),early);
+        if (GetMicrosecondsElapsed(loopTimer)-early > 1000000)
+        {
+                early = GetMicrosecondsElapsed(loopTimer);
+                printf("\n\n Downlink Bandwidth   : %d\t%d \t Loss Rate : %f\t Maximum Bandwidth : %f" , totalBytes*8,k,lossRateOne,maxBandwidthOne);
+                totalBytes= 0;
+                k = 0;
+
+        }
+
+        }
+
+
+}
+
+
+
+
+
+void ReceiveTrafficInterfaceTwo()
+{
+        printf("Starting to Receive traffic on interface Two\n");
+
+        pcap_t *pAdapter_Read, *pAdapter_Write;
+        int res;
+        struct pcap_pkthdr *header;
+        const u_char *pkt_data;
+
+        int   istobelost;
+        float randomnum;
+        int   lossnum;
+        int		totalBytes;
+        int		early;
+        pTimer loopTimer; // timer for 3 second loop
+        pTimer sendTimer; // packet timer
+
+        pAdapter_Read = pAdapterTwo;
+        pAdapter_Write = pAdapterOne;
+
+        HANDLE GUIHandle;
+        DWORD  GUIThreadID;
+
+
+        //	setupWinPcapFilter(&pAdapter_Read, "ether src 00:12:17:F0:B1:C7");
+    //	setupWinPcapFilter(&pAdapter_Read, "ether src 00:21:70:bf:20:d5");
+    //	setupWinPcapFilter(&pAdapter_Read, "ether src 00:21:70:ae:eb:bc");
+        //	setupWinPcapFilter(&pAdapter_Read, "ether src 00:0e:c6:87:8d:af");
+
+        setupWinPcapFilter(&pAdapter_Read, "ether src 00:22:19:19:83:87");
+
+
+        GUIHandle = CreateThread(
+                                        0, 0, (LPTHREAD_START_ROUTINE) launchInputFormTwo,
+                                        0, 0, &GUIThreadID
+                                );
+
+
+        //setupWinPcapFilter(&pAdapter_Read, "ether src 00:0e:c6:87:8d:af");
+
+        printf("\n");
+        // Read the packets
+
+        int timeForReport;
+        InitializeTimers();
+
+        loopTimer = StartTimer();
+        sendTimer = StartTimer();
+
+        int k = 0;
+        int l = 0;
+
+        srand ( time(NULL) );
+
+        lossRateTwo = 0;
+        early = GetMicrosecondsElapsed(loopTimer);
+        totalBytes = 0;
+
+        while((res = pcap_next_ex( pAdapter_Read , &header, &pkt_data)) >= 0)
+        {
+            if(res == 0) 	// Timeout elapsed
+                             continue;
+
+            //enter critical section...
+            WaitForSingleObject( hSemRateTwo, INFINITE);
+            lossnum = 100;
+            if (lossRateTwo > 0)
+                    {
+                    randomnum = rand()/(float ) RAND_MAX;
+
+                    lossnum = 100 / lossRateTwo;
+
+                    istobelost = (int ) ((float ) randomnum *lossnum );
+                    }
+
+            else istobelost = 100;
+
+            //...leave critical section
+            ReleaseSemaphore( hSemRateTwo, 1, NULL);
+
+            totalBytes +=header->caplen;
+            k++;
+
+            if (lossRateTwo != 0 )
+                l++;
+
+            if ( l <  lossnum )
+            {
+                rBuffer->addPacket(pkt_data, header->caplen);
+                //int status = pcap_sendpacket(pAdapter_Write, pkt_data, header->caplen);
+                //printf("\n Int Two receive: %d\t%f\t%d  \t %d ", RAND_MAX,randomnum, lossnum,istobelost);
+            }
+            else{ l = 0;
+                printf("\n Int Two : packet dropped ");
+            }
+
+            //printf("\n %d \t %d\n", GetMicrosecondsElapsed(loopTimer),early);
+            if (GetMicrosecondsElapsed(loopTimer)-early > 1000000)
+            {
+                early = GetMicrosecondsElapsed(loopTimer);
+                printf("\n Uplink Bandwidth   : %d\t%d \t Loss Rate : %f\t Maximum Bandwidth : %f" , totalBytes*8,k,lossRateTwo,maxBandwidthTwo);
+                totalBytes= 0;
+                k = 0;
+            }
+        }
+
+//	readStoped = true;
+}
+
+
+
+void SendTrafficInterfaceOne()
+{
+
+
+        pcap_t *pAdapter_Read, *pAdapter_Write;
+        int res;
+        struct pcap_pkthdr *header;
+        const u_char *pkt_data;
+        int size;
+        int i;
+
+        int totalBytes;
+        int bandConsumed;
+        int early;
+        pTimer loopTimer; // timer for 3 second loop
+        pTimer sendTimer; // packet timer
+
+
+        pAdapter_Read = pAdapterTwo;
+        pAdapter_Write = pAdapterOne;
+
+        InitializeTimers();
+
+        loopTimer = StartTimer();
+        sendTimer = StartTimer();
+    int k = 0;
+        int l = 0;
+
+        early = GetMicrosecondsElapsed(loopTimer);
+        totalBytes = 0;
+
+    i = 0;
+
+        bandConsumed = 0;
+        totalBytes = 0;
+        maxBandwidthOne = 200000000;
+
+    i = 0;
+        while(!readStoped)
+                {
+                // Read packet from FIFO
+                i++;
+
+                if (GetMicrosecondsElapsed(loopTimer)-early <  1000000 && bandConsumed < maxBandwidthTwo )
+                {
+                        //printf("Sending packet on Interface Two: %d\t%d\t%f\n",i,size,maxBandwidthOne);
+                        size = rBuffer->removePacket(&pkt_data);
+                        int status = pcap_sendpacket(pAdapter_Write, pkt_data, size);
+                        totalBytes +=size;
+                        bandConsumed = totalBytes * 8;
+                }
+
+                if ( bandConsumed >= maxBandwidthTwo)
+                {
+                  // 	printf("\n Waiting ");
+                }
+
+                if (GetMicrosecondsElapsed(loopTimer)-early > 1000000 )
+                {
+                        //printf(" \nTotal Send : %d", totalBytes * 8);
+                        early = GetMicrosecondsElapsed(loopTimer);
+                        totalBytes = 0;
+                        bandConsumed = 0;
+                }
+
+
+
+                }
+        }
+
+
+void SendTrafficInterfaceTwo()
+{
+        pcap_t *pAdapter_Read, *pAdapter_Write;
+        int res;
+        struct pcap_pkthdr *header;
+        const u_char *pkt_data;
+        int size;
+        int i;
+        int totalBytes;
+        int bandConsumed;
+        int early;
+        pTimer loopTimer; // timer for 3 second loop
+        pTimer sendTimer; // packet timer
+
+        pAdapter_Read = pAdapterOne;
+        pAdapter_Write = pAdapterTwo;
+
+        InitializeTimers();
+
+        loopTimer = StartTimer();
+        sendTimer = StartTimer();
+        int k = 0;
+        int l = 0;
+
+        early = GetMicrosecondsElapsed(loopTimer);
+        totalBytes = 0;
+
+        i = 0;
+
+        bandConsumed = 0;
+        totalBytes = 0;
+        maxBandwidthOne = 200000000;
+        while(!readStoped)
+                {
+                // Read packet from FIFO
+                // send packet
+
+                i++;
+
+                if (GetMicrosecondsElapsed(loopTimer)-early <  1000000 && bandConsumed < maxBandwidthOne )
+                {
+                        //printf("Sending packet on Interface Two: %d\t%d\t%f\n",i,size,maxBandwidthOne);
+                        size = pBuffer->removePacket(&pkt_data);
+                        int status = pcap_sendpacket(pAdapter_Write, pkt_data, size);
+
+                        totalBytes +=size;
+                        bandConsumed = totalBytes * 8;
+                }
+
+                if ( bandConsumed >= maxBandwidthOne)
+                {
+                  // 	printf("\n Waiting ");
+                }
+
+                if (GetMicrosecondsElapsed(loopTimer)-early > 1000000 )
+                {
+                        //printf(" \nTotal Send : %d", totalBytes * 8);
+                        early = GetMicrosecondsElapsed(loopTimer);
+                        totalBytes = 0;
+                        bandConsumed = 0;
+                }
+
+
+
+        }
+
+
+
+        }
+
+
+
+
+
+
+
+int setupWinPcapFilter(pcap_t** fp, char* filter)
+{
+        // Filtering variables
+        bpf_u_int32 NetMask;
+        struct bpf_program fcode;
+        NetMask=0xffffff;
+
+        //GetPrivateProfileString("FILTERS", "main", "tcp", filter, 120, g_fullPathToConfigFile);
+
+        cout << "\n\nwpcap Filter is: " << filter << endl;
+
+        if(pcap_compile(*fp, &fcode, filter, 1, NetMask) < 0)
+        {
+                fprintf(stderr,"\nError compiling filter: wrong syntax.\n");
+                return -1;
+        }
+
+        //set the filter
+        if(pcap_setfilter(*fp, &fcode)<0)
+        {
+                fprintf(stderr,"\nError setting the filter\n");
+                return -1;
+        }
+
+        return 1;
+}
