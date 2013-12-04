@@ -180,6 +180,9 @@ private:
     //Keep track of the data rate
     int                             m_effective_rate;
 
+    //Use one object to maintain the current feature set
+    FeatureSet                      m_video_features;
+
     //Functions
     //Connect to the camera server
     void connectToServer();

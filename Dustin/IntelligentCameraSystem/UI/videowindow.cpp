@@ -57,6 +57,9 @@ VideoWindow::VideoWindow(Camera *camera, IControlCenterManager *control_center, 
     m_bw_file_poller = new QTimer(this);
     connect(m_bw_file_poller, SIGNAL(timeout()), this, SLOT(pollBandwidthFile()));
     this->m_bw_file_poller->start(500);
+
+    //Initialize feature set values
+    m_video_features.setContentType(this->m_camera->content_type());
 }
 
 //Set up request/response thread
@@ -398,12 +401,14 @@ void VideoWindow::onBandwidth(QString bandwidth)
 
     if(success)
     {
-        //Wait until the pending parameters and current parameters are equal
-        while(!(m_pending_parameters == m_current_params))
-            ;
         EncodingParameters new_params = m_current_params;
+        //Wait until the pending parameters and current parameters are equal
+        if(!(m_pending_parameters == m_current_params))
+            new_params = m_pending_parameters;
+
         int dr_avg_kbps = (int)(m_effective_rate == 0 ? ui->video_player->getAverageBitrate() * 10000 : m_effective_rate);
-        DEBUG() << dr_avg_kbps;
+        //Set the new bandwidth for the feature set
+        m_video_features.setBandwidth(iBW);
         //Are we in learning mode?
         if(m_control_center_manager->inLearningMode())
         {
