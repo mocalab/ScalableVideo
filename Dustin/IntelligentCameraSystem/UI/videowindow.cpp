@@ -14,7 +14,7 @@ VideoWindow::VideoWindow(Camera *camera, IControlCenterManager *control_center, 
     ui(new Ui::VideoWindow),
     m_controls_revealed(false),
     m_is_inside(false),
-    m_currentbw_kbps(5000),
+    m_currentbw_kbps(0),
     m_decision_interface(this),
     m_current_params(),
     m_pending_parameters(),
@@ -182,7 +182,7 @@ void VideoWindow::resizeWindow(int width, int height)
 }
 
 //Slot to handle packet data received
-void VideoWindow::receivedMessage(QString response)
+void VideoWindow::receivedMessage(QString response, bool show_message)
 {
     INFO() << "In slot \'receivedPacket\' Message:" << response;
     //Set non modal and allocate on heap so it does not block
@@ -340,7 +340,7 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
     //Create the message
     QString msg = QString("start ");
     //See if we should change the bitrate
-    if(bps == "0")
+    if(bps == "0" && m_currentbw_kbps != 0)
     {
         //Get the old bitrate
         float old_bitrate = (float)m_current_params.bitrateAsInt();

@@ -94,7 +94,7 @@ public slots:
      *This slot will launch a message box with the response parameter as the displayed message.
      * @param response The message to display in a message box.
      */
-    void receivedMessage(QString response);
+    void receivedMessage(QString response, bool show_message = true);
     /**
      * @brief A slot to connect to the server.
      *This slot is subscribed to by timers in order to delay connecting to the server specified by the camera object. The
