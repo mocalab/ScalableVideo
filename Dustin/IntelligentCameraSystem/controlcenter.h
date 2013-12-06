@@ -6,7 +6,9 @@
 #include "Types/camera.h"
 #include "UI/videowindow.h"
 #include "UI/icontrolcentermanager.h"
+#if !PLAY_WITH_VLC
 #include "Video/ffmpegwrapper.h"
+#endif
 #include "LearningModule/learninginterface.h"
 #include <QThread>
 
@@ -69,7 +71,9 @@ private:
     void addCameras(CameraList cameras);
 
     //To test the demuxer
+#if !PLAY_WITH_VLC
     FFMPEGWrapper           *m_ffmpeg;
+#endif
     QThread                 *m_ffmpeg_thread;
 
     //Machine learning interface

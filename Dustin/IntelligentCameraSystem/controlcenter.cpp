@@ -20,13 +20,14 @@ ControlCenter::ControlCenter(CameraList cameras, QWidget *parent) :
     QShortcut *quitHotkey = new QShortcut(QKeySequence("Ctrl+Q"), this);
     connect(quitHotkey, SIGNAL(activated()), this, SLOT(quitActionClicked()));
 
+#if !PLAY_WITH_VLC
     //Set up demuxer test
     m_ffmpeg = new FFMPEGWrapper(39082);
     m_ffmpeg_thread = new QThread(this);
     m_ffmpeg->moveToThread(m_ffmpeg_thread);
     connect(m_ffmpeg_thread, SIGNAL(started()), m_ffmpeg, SLOT(demux()));
     connect(m_ffmpeg, SIGNAL(finished()), m_ffmpeg_thread, SLOT(quit()));
-
+#endif
     //Uncomment to run learning algorithm tests
    //this->testLearning();
 

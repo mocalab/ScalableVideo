@@ -13,10 +13,11 @@ TEMPLATE = app
 
 
 #Linux includes
-linux:INCLUDEPATH += "/home/dustin/Downloads/boost_1_53_0/"
 linux:include("/home/dustin/Downloads/QsLog/QsLog.pri")
 #DLIB
-linux:INCLUDEPATH += "/home/dustin/Downloads/dlib-18.5"
+#linux:INCLUDEPATH += "/home/dustin/Downloads/dlib-18.5"
+
+linux:INCLUDEPATH += "libs/linux/include"
 
 #windows includes
 win32:INCLUDEPATH += "C:\tools\vlc-2.0.7\vlc-2.0.7\include"
@@ -44,9 +45,6 @@ SOURCES += main.cpp \
     UI/videocontrolswidget.cpp \
     controlcenter.cpp \
     Types/camera.cpp \
-    Video/ffmpegwrapper.cpp \
-    Video/demuxer.cpp \
-    UI/ffmpegvideowidget.cpp \
     Util/FileUtil/filereaderutility.cpp \
     Types/mediastatistics.cpp \
     Util/FileUtil/cameralistfileutil.cpp \
@@ -82,9 +80,6 @@ HEADERS  += \
     UI/videocontrolswidget.h \
     controlcenter.h \
     Types/camera.h \
-    Video/ffmpegwrapper.h \
-    Video/demuxer.h \
-    UI/ffmpegvideowidget.h \
     Util/FileUtil/filereaderutility.h \
     Types/mediastatistics.h \
     Global/Constants.h \
@@ -105,9 +100,10 @@ FORMS    += \
 
 
 #Linux libraries
-linux:LIBS += -L/usr/local/lib/
-linux:LIBS += -lglog
-linux:LIBS += -L/usr/lib/
+#linux:LIBS += -L/usr/local/lib/
+#linux:LIBS += -lglog
+#linux:LIBS += -L/usr/lib/
+linux:LIBS += -Llibs/linux/lib
 linux:LIBS += -lvlc
 linux:LIBS += -lavformat -lavcodec -lavutil -lswscale
 
