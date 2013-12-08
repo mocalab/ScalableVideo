@@ -10,9 +10,9 @@ the end user's received video bitrate will vary depending on channel conditions.
 While functional, this implementation fails to allow the user to select their 
 own options for video scaling such as temporal or spatial scalability. Our 
 system allows the user to select different scalability options to provide the 
-user felxibility in various contexts. Future work will create a profile for the 
-user in order to determine the user's priority for scaling options and decide
-for the user when channel conditions change.
+felxibility in various contexts. Future work will create a profile for the 
+user in order to determine the priority for scaling options and make intelligent
+decisions when channel conditions change.
 
 2) Project Hierarchy
 ====================
@@ -47,7 +47,7 @@ The build is dependent on the following libraries:
     LibVLC
     Dlib
     ffmpeg
-LibVLC and Dlib (for linux) are packaged in the git repository under the 
+LibVLC and Dlib (for linux) are packaged in this git repository under the 
 directory 'IntelligentCameraSystem/libs/linux/'. For best results, the developer
 may want to acquire LibVLC and ffmpeg for themself. On Ubuntu, to get LibVLC,
 execute the following command:
@@ -81,4 +81,54 @@ The video client has not been recently tested on Windows, so instructions for
 setting up the environment on windows will come at a later time.
 
     b) Camera Server
+    ----------------
+    Developers should have installed both the Android SDK and Android NDK. You 
+can either download the SDK tools and integrate them with an existing version of
+Eclipse or download the ADT bundle provided by Google. The SDK version that this
+application uses is version 4.0.3 (API level 16). The NDK is necessary for 
+compiling the JNI code used in the application. JNI is necessary in order to 
+interface with the IOMX software stack that allows us to use hardware codecs.
+
+    One must also have compatible hardware in order to run the application 
+successfully. In our lab we are using a DragonBoard APQ8060A manufactured by 
+Intrinsyc. Theoretically any device using a Qualcomm APQ8060A processor (msm8960)
+should be compatible, but we have not tested on other devices yet so cannot say
+definitively.
+
+4) Project Structure
+====================
+
+    a) Video Client
+    ---------------
+    The video client contains deprecated code that was used in the original 
+implementation of the user interface but is no longer relevant to know about in
+the current version; for this reason we will only discuss relevant modules and 
+files. All file paths given will be relative to the video client root directory
+('IntelligentCameraSystem').
+
+        i) User Interface
+        -----------------
+    There are three main windows currently used in the application; a login window,
+a control center window, and an unspecified amount of video windows. The code for
+the login and control center windows can be found in the root directory of the 
+video client and the code for the video window can be found under the directory UI.
+The login window simply contains two line edits (for username and password) and
+two buttons (for login and quit). For now, users can log in by providing the following
+credentials:
+    username: test
+    password: password
+The control center window contains two list boxes (for available and open cameras)
+and a button for opening a camera. A note on how to populate the available cameras
+list box: there is a simple xml parser utility class (defined under the directory
+Util) which retrieves the camera server information from an xml file. To add/remove
+cameras, one can edit the file Config/camera_list_example.xml, following the 
+structure that is already in place. This file path is hardcoded in the application
+in the file Global/Constants.h. 
+
+    A video window contains two custom widgets; VLCVideoWidget and VideoControls.
+The VideoControls widget contains a combo box for video resolution, two line edits
+for frame rate and bitrate, and a send button which will inform the video window to
+send a request to the server to scale the video. The VLCVideoWidget contains the
+actual media player and provides a wrapper around VLC. The actual implementation 
+of our VLC wrapper can be found under the directory Video.
     
