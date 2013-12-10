@@ -380,14 +380,14 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 					//Toast.makeText(m_context, message, Toast.LENGTH_LONG).show();
 					
 					m_recordingStatus = false;
-					closeSocket();
+					
 					break;
 				case 2: 
 					if(message.equals("TOGGLE"))
 						updateRecordingStatus();
 					break;
 				case 3:
-					closeSocket();
+					
 					//Restart the camera -- this message is passed when scaling the video
 					restartCamera();
 					break;
@@ -444,6 +444,7 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 			}
 			//TURN OFF ENCODER
 			String result = encoderFinish();
+			closeSocket();
 			//Toast.makeText(m_context, result, Toast.LENGTH_LONG).show();
 			Message msg = new Message();
 			msg.what = 1;
@@ -462,7 +463,7 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 			// TODO Auto-generated method stub
 			try
 			{
-				Thread.sleep(10);				
+				Thread.sleep(50);				
 			}
 			catch(Exception ex)
 			{
@@ -471,6 +472,7 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 			//Stop and tear down current encoder
 			//m_recordingStatus = false;
 			String result = encoderFinish();
+			closeSocket();
 			//Toast.makeText(m_context, result, Toast.LENGTH_LONG).show();
 			Message msg = new Message();
 			msg.what = 3;
@@ -479,15 +481,15 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 			Log.v("H264 STREAMER", "Encoder finished");
 			
 			//TODO: Potentially wait before beginning again
-//			try{
-//				Thread.sleep(50);
-//				
-//			}
-//			catch(Exception ex)
-//			{
-//				
-//				
-//			}
+			try{
+				Thread.sleep(50);
+				
+			}
+			catch(Exception ex)
+			{
+				
+				
+			}
 			//Start new instance of encoder
 			int var_rate = m_variableRate ? 1 : 0;
 			String result1 = encoderStart(m_previewWidth, m_previewHeight, m_frameRate, m_bps, var_rate);
