@@ -47,6 +47,9 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 	public native String encoderFinish();
 	//Update the encoder bitrate
 	public native String updateBitrate(int rate, int vary_rate);
+	//Shut down client socket
+	public native void closeSocket();
+	
 
 	//Camera elements
 	private static Camera			m_camera = null;
@@ -377,13 +380,14 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 					//Toast.makeText(m_context, message, Toast.LENGTH_LONG).show();
 					
 					m_recordingStatus = false;
-					
+					closeSocket();
 					break;
 				case 2: 
 					if(message.equals("TOGGLE"))
 						updateRecordingStatus();
 					break;
 				case 3:
+					closeSocket();
 					//Restart the camera -- this message is passed when scaling the video
 					restartCamera();
 					break;

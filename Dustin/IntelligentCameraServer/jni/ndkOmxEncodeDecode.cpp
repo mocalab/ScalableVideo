@@ -269,8 +269,7 @@ jstring Java_edu_sdsu_server_util_EncoderActivationInterface_encoderStart
 jstring Java_edu_sdsu_server_util_EncoderActivationInterface_encoderFinish
   	(JNIEnv *env, jclass cls) {
   	//fclose(f);
-	//Close socket
-	close(g_sockfd);
+
 	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "ABOUT TO FINISH ENCODER");
 
 	int status = 0;
@@ -299,7 +298,17 @@ jstring Java_edu_sdsu_server_util_EncoderActivationInterface_encoderFinish
 	const char *result = resultDescription(status);
 
 	__android_log_print(ANDROID_LOG_ERROR,"QCOMOMXINTERFACE", "FINISHED");
+
+
+
 	return env->NewStringUTF(result);
+}
+
+//Shut down client socket
+void Java_edu_sdsu_server_util_EncoderActivationInterface_closeSocket
+  	(JNIEnv *env, jclass cls) {
+	//Close socket
+	close(g_sockfd);
 }
 
 //SEND FRAMES TO ENCODER
