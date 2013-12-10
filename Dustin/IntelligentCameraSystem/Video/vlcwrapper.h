@@ -52,6 +52,11 @@ public:
     int play(void *winId);
 
     /**
+     * @brief Resume video playback.
+     */
+    void resume();
+
+    /**
      * @brief Stop playing.
      */
     void stop();
@@ -128,6 +133,11 @@ public:
      */
     void resetStats();
 
+    /**
+     *  This function will set up the media options prior to playing.
+     */
+    void setMediaOptions();
+
 //private members
 private:
     libvlc_instance_t       *m_vlc;
@@ -158,10 +168,7 @@ private:
     QMutex                  m_maxmutex;
 
     //Private functions
-    /**
-     *  This function will set up the media options prior to playing.
-     */
-    void setMediaOptions();
+
 
 };
 

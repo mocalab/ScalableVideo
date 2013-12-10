@@ -121,6 +121,11 @@ public:
      */
     void resetStats();
 
+    /**
+     * @brief Interface to set VLC's media playback options.
+     */
+    void setMediaOptions();
+
 public slots:
     /**
      * @brief Update video size slot.

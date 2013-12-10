@@ -120,6 +120,16 @@ int VLCWrapper::play(void *winId)
     return status;
 }
 
+void VLCWrapper::resume()
+{
+    if(!this->m_isPlaying)
+    {
+        libvlc_media_player_set_media(m_mp, m_media);
+        libvlc_media_player_play(m_mp);
+        this->m_isPlaying = true;
+    }
+}
+
 void VLCWrapper::stop()
 {
     libvlc_media_player_stop(m_mp);
@@ -136,6 +146,7 @@ void VLCWrapper::setFps(int fps)
 void VLCWrapper::pause()
 {
     libvlc_media_player_pause(m_mp);
+    this->m_isPlaying = false;
 }
 
 //Determine widht and height of video; returns false if video is not playing

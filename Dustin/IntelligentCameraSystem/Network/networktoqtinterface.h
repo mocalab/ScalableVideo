@@ -65,6 +65,12 @@ public:
     void setBuffer(QString &data);
 
     /**
+     * @brief Set flag for whether or not to show the response.
+     * @param show_msg Value to set flag to.
+     */
+    void setShowMessage(bool &show_msg);
+
+    /**
      * @brief Set the server address.
      *Set the server address that this object should connect to when the Connect() call is made.
      * @param addr The address to set.
@@ -118,7 +124,7 @@ signals:
      *containing information about the current state of execution (i.e. server response, error messages)
      * @param msg The message to send to connected handlers.
      */
-    void messageDispatch(QString msg);
+    void messageDispatch(QString msg, bool show_response);
     //Finish thread signal
     /**
      * @brief Finish thread execution.
@@ -148,6 +154,8 @@ private:
                                                  determine when the response wait loop should time out.*/
 
     int                          m_ticks; /**< Keeps track of timer ticks*/
+
+    bool                        m_show_response; /**< Whether or not to show the response to the user. */
     //Functions
     /**
      * @brief Set up an internal timer.

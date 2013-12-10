@@ -50,7 +50,7 @@ public:
      *Sends a request to the server and waits for a response.
      * @param data The data to send in the request.
      */
-    void sendRequest(QString data);
+    void sendRequest(QString data, bool show_message);
 
     //Camera getter/setter
     /**
@@ -112,7 +112,7 @@ public slots:
     /**
      * @brief Slot to send message to server to resize the video.
      */
-    void resizeVideo(QString width, QString height, QString fps, QString bps);
+    void resizeVideo(QString width, QString height, QString fps, QString bps, bool show_message = true);
 
     /**
      * @brief A slot invoked when the bandwidth has changed.

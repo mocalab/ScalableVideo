@@ -142,6 +142,14 @@ void VLCToQtInterface::resetStats()
     m_vlc.resetStats();
 }
 
+void VLCToQtInterface::setMediaOptions()
+{
+    m_vlc.pause();
+    m_vlc.setMediaOptions();
+    m_vlc.resume();
+
+}
+
 //---------------------SLOTS---------------------------------
 //Check to update frame size, called from timer
 void VLCToQtInterface::updateVideoSize()

@@ -100,6 +100,11 @@ public:
      */
     float getAverageBitrate();
 
+    /**
+     * @brief Reset VLC client's media options.
+     */
+    void setMediaOptions();
+
 signals:
     void resizeParent(int width, int height);
 public slots:

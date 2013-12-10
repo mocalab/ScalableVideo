@@ -38,7 +38,7 @@ VideoWindow::VideoWindow(Camera *camera, IControlCenterManager *control_center, 
 
     //Try to connect to server
     m_tcp_interface = new NetworkToQtInterface(m_camera->server_address());
-    connect(m_tcp_interface, SIGNAL(messageDispatch(QString)), this, SLOT(receivedMessage(QString)));
+    connect(m_tcp_interface, SIGNAL(messageDispatch(QString, bool)), this, SLOT(receivedMessage(QString, bool)));
     connect(m_tcp_interface, SIGNAL(serverDisconnected()), this, SLOT(disconnect()));
     //connect(m_request_thread, SIGNAL(destroyed()), m_tcp_interface, SLOT(close()));
 
@@ -49,9 +49,9 @@ VideoWindow::VideoWindow(Camera *camera, IControlCenterManager *control_center, 
 #endif
 
     //Set up the timer
-    m_poller = new QTimer(this);
-    connect(m_poller, SIGNAL(timeout()), this, SLOT(takeSample()));
-    m_poller->start(2000);
+//    m_poller = new QTimer(this);
+//    connect(m_poller, SIGNAL(timeout()), this, SLOT(takeSample()));
+//    m_poller->start(2000);
     //qApp->installEventFilter(this);
 
     m_bw_file_poller = new QTimer(this);
@@ -132,7 +132,7 @@ VideoWindow::~VideoWindow()
 //    delete m_bwfilereader;
 //    delete m_bwreaderthread;
 
-    delete m_poller;
+    //delete m_poller;
 
     m_bandwidth_filereader.close();
 
@@ -187,12 +187,15 @@ void VideoWindow::receivedMessage(QString response, bool show_message)
     INFO() << "In slot \'receivedPacket\' Message:" << response;
     //Set non modal and allocate on heap so it does not block
     //video from playing
-    QMessageBox *msgBox = new QMessageBox;
-    msgBox->setWindowTitle("Server says...");
-    msgBox->setText(response);
-    msgBox->setWindowModality(Qt::NonModal);
-    msgBox->setAttribute(Qt::WA_DeleteOnClose);
-    msgBox->show();
+    if(show_message)
+    {
+        QMessageBox *msgBox = new QMessageBox;
+        msgBox->setWindowTitle("Server says...");
+        msgBox->setText(response);
+        msgBox->setWindowModality(Qt::NonModal);
+        msgBox->setAttribute(Qt::WA_DeleteOnClose);
+        msgBox->show();
+    }
 
     //Check if the response is an acceptance of the parameters
     if(response.contains("Updating"))
@@ -286,13 +289,14 @@ void VideoWindow::connectToServer()
 }
 
 //Function to send a request to the server
-void VideoWindow::sendRequest(QString data)
+void VideoWindow::sendRequest(QString data, bool show_message)
 {
     if(!m_tcp_interface->isConnected())
         receivedMessage("Not connected!");
     else
     {
         m_tcp_interface->setBuffer(data);
+        m_tcp_interface->setShowMessage(show_message);
         m_request_thread->start();
     }
 }
@@ -335,8 +339,10 @@ void VideoWindow::sendButtonClicked()
     receivedMessage(str);
 }
 //Slot to send message to server to resize the video
-void VideoWindow::resizeVideo(QString width, QString height, QString fps, QString bps)
+void VideoWindow::resizeVideo(QString width, QString height, QString fps, QString bps, bool show_message)
 {
+    //Take a training sample
+    this->takeSample();
     //Create the message
     QString msg = QString("start ");
     //See if we should change the bitrate
@@ -365,10 +371,20 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
 
 
     }
+    //Set new encoding parameters
+    EncodingParameters next(width, height, fps, bps);
+    if(next.bitrateAsInt() == 0)
+    {
+        next.setBitrate(QString::number(next.widthAsInt() * next.heightAsInt() * 3) + (next.bitrate().endsWith('\'') ? "'" : ""));
+    }
+    m_pending_parameters = next;
+
     msg += width + QString(" ") + height + QString(" ") + fps + QString(" ") + bps;
     INFO() << "Sent: " << msg;
+
+
     //Send it to server
-    this->sendRequest(msg);
+    this->sendRequest(msg, show_message);
 
 
 #if PLAY_WITH_VLC
@@ -379,16 +395,11 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
         ui->video_player->setFps(fps_int);
         //ui->video_player->setPlaybackRate(fps.toInt());
         this->ui->video_player->playUrl(QString(VIDEO_URL));
+        //this->ui->video_player->setMediaOptions();
     }
 #endif
 
-    //Set new encoding parameters
-    EncodingParameters next(width, height, fps, bps);
-    if(next.bitrateAsInt() == 0)
-    {
-        next.setBitrate(QString::number(next.widthAsInt() * next.heightAsInt() * 3) + (next.bitrate().endsWith('\'') ? "'" : ""));
-    }
-    m_pending_parameters = next;
+
 
 }
 
@@ -413,7 +424,7 @@ void VideoWindow::onBandwidth(QString bandwidth)
         if(m_control_center_manager->inLearningMode())
         {
 
-            this->takeSample();
+            //this->takeSample();
             this->m_currentbw_kbps = iBW;
             //Knee-jerk reaction
             m_decision_interface.defaultAdjustBitrate(m_currentbw_kbps, dr_avg_kbps, m_current_params, new_params);
@@ -428,7 +439,7 @@ void VideoWindow::onBandwidth(QString bandwidth)
         }
         //m_effective_rate = (float)dr_avg_kbps;
         //DEBUG() << m_effective_rate;
-        this->resizeVideo(new_params.width(), new_params.height(), new_params.fps(), new_params.bitrate());
+        this->resizeVideo(new_params.width(), new_params.height(), new_params.fps(), new_params.bitrate(), false);
     }
 }
 

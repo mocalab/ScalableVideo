@@ -6,7 +6,8 @@
 #include "address.h"
 NetworkToQtInterface::NetworkToQtInterface() :
     m_connection_timeout(false),
-    m_buffer("Buffer")
+    m_buffer("Buffer"),
+    m_show_response(true)
 {
 
 }
@@ -14,7 +15,8 @@ NetworkToQtInterface::NetworkToQtInterface() :
 NetworkToQtInterface::NetworkToQtInterface(Address server_address) :
     m_server_address(server_address),
     m_connection_timeout(false),
-    m_buffer("Buffer")
+    m_buffer("Buffer"),
+    m_show_response(true)
 {
 
 }
@@ -95,7 +97,7 @@ void NetworkToQtInterface::listenForResponse()
         m_response_loop->stop();
         QString resp(response);
         resp.append('\0');
-        this->messageDispatch(resp);
+        this->messageDispatch(resp, m_show_response);
         delete m_response_loop;
         emit finished();
     }
@@ -104,7 +106,7 @@ void NetworkToQtInterface::listenForResponse()
     {
         INFO() << "Server disconnected";
         m_response_loop->stop();
-        this->messageDispatch("Server disconnected!");
+        this->messageDispatch("Server disconnected!", true);
         //Close the server connection
         this->close();
         delete m_response_loop;
@@ -116,7 +118,7 @@ void NetworkToQtInterface::listenForResponse()
     {
         INFO() << "Timed out";
         m_response_loop->stop();
-        this->messageDispatch("Failed to get a response from the server.");
+        this->messageDispatch("Failed to get a response from the server.", true);
         delete m_response_loop;
         emit finished();
     }
@@ -131,6 +133,11 @@ bool NetworkToQtInterface::isConnected() const
 void NetworkToQtInterface::setBuffer(QString& data)
 {
     m_buffer = data;
+}
+
+void NetworkToQtInterface::setShowMessage(bool &show_msg)
+{
+    m_show_response = show_msg;
 }
 
 void NetworkToQtInterface::setServerAddress(Address &addr)
