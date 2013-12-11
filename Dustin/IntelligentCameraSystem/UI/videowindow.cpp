@@ -60,6 +60,8 @@ VideoWindow::VideoWindow(Camera *camera, IControlCenterManager *control_center, 
 
     //Initialize feature set values
     m_video_features.setContentType(this->m_camera->content_type());
+
+    m_decision_interface.setResolutionsList(ui->video_controls->getSizes());
 }
 
 //Set up request/response thread
@@ -435,7 +437,10 @@ void VideoWindow::onBandwidth(QString bandwidth)
             this->m_currentbw_kbps = iBW;
             //Determine the new encoding parameters
             FeatureSet fs;
-            m_decision_interface.makeDecision(m_currentbw_kbps, dr_avg_kbps, m_current_params, fs, new_params);
+            //Predict what the user will prefer
+            int class_mask = this->m_control_center_manager->predict(this->m_video_features);
+
+            m_decision_interface.makeDecision(m_currentbw_kbps, dr_avg_kbps, m_current_params, class_mask, new_params);
         }
         //m_effective_rate = (float)dr_avg_kbps;
         //DEBUG() << m_effective_rate;
@@ -461,11 +466,11 @@ void VideoWindow::takeSample()
         double lbl_fps_bitrate = 0.0;
         if(ui->video_player->getFps() < 30)
         {
-            lbl_fps_bitrate = 1.0;
+            lbl_fps_bitrate = ML_USER_PREFERS_BITRATE;
         }
         else
         {
-            lbl_fps_bitrate = -1.0;
+            lbl_fps_bitrate = ML_USER_PREFERS_FPS;
         }
 
         //To determine the label for size over quality, we have to look at available bandwidth and the bandwidth of
@@ -480,11 +485,11 @@ void VideoWindow::takeSample()
         if((float)m_current_params.bitrateAsInt() > (float)ui->video_player->width() * ui->video_player->height() * 1.75)
         {
             //Preference to quality
-            lbl_size_quality = 1.0;
+            lbl_size_quality = ML_USER_PREFERS_QUALITY;
         }
         else
         {
-            lbl_size_quality = -1.0;
+            lbl_size_quality = ML_USER_PREFERS_SIZE;
         }
 
         //Add this new training example

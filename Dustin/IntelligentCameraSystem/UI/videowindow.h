@@ -7,6 +7,12 @@
 #define PLAY_WITH_VLC 01
 #define CONNECTION_MULTIPLE_ATTEMPTS 0
 
+///Macros for machine learning
+#define ML_USER_PREFERS_BITRATE         1.0
+#define ML_USER_PREFERS_FPS             -1.0
+#define ML_USER_PREFERS_QUALITY         1.0
+#define ML_USER_PREFERS_SIZE            -1.0
+
 #include <QDialog>
 #include <QThread>
 #include <QTimer>

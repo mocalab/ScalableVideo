@@ -1,19 +1,38 @@
 #include "decisioninterface.h"
+#include <QString>
 
 DecisionInterface::DecisionInterface(IVideoWindowManager *manager) :
-    m_window_interface(manager)
+    m_window_interface(manager),
+    m_resolutions(NULL)
 {
+
+}
+
+DecisionInterface::~DecisionInterface()
+{
+    if(m_resolutions != NULL)
+        delete m_resolutions;
 }
 
 //Determine what the new encoding parameters should be
 void DecisionInterface::makeDecision(int bandwidth,
                                      int &datarate,
                                      EncodingParameters &old_params,
-                                     FeatureSet &features,
+                                     int class_mask,
                                      EncodingParameters &new_params)
 {
     //Get the ratio of bandwidth to data rate;
     float ratio = (float) datarate / bandwidth;
+
+    //Functionality depends on the user's preferences
+//    if(ratio < 1)
+//    {
+//        upConvert(ratio, old_params, new_params, class_mask);
+//    }
+//    else
+//    {
+//        downConvert(ratio, old_params, new_params, class_mask);
+//    }
 
     //This determines the next course of action
     if(ratio < 1)
@@ -59,6 +78,26 @@ void DecisionInterface::defaultAdjustBitrate(int bandwidth,
     datarate /= ratio;
 }
 
+void DecisionInterface::setResolutionsList(QStringList &resolutions)
+{
+    if(m_resolutions != NULL)
+        delete m_resolutions;
+    int list_size = resolutions.count();
+    this->m_resolutions = new int[list_size];
+    for(int i = 0; i < list_size; i++)
+    {
+        QString next = resolutions[i];
+        QStringList width_by_height = next.split('x');
+
+        int width = width_by_height[0].toInt();
+        int height = width_by_height[1].toInt();
+
+        m_resolutions[i] = width * height;
+    }
+
+    m_possible_resolutions = resolutions;
+}
+
 //Up convert the encoding parameters
 void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingParameters &out)
 {
@@ -88,6 +127,131 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
     out.setBitrate(QString::number(bitrate));
 }
 
+//Optimize parameters in the order specified by the class mask
+void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingParameters &out, int class_mask)
+{
+    int width = 0, height = 0, max_bitrate = 0, optimum_bitrate = 0, bitrate = 0, i = 0;
+    float ceiling = 0.0;
+    QStringList split;
+    QString res;
+    //Use class mask to determine order
+    switch(class_mask)
+    {
+    //User prefers frame rate and size
+    case 0:
+        //Increase frame rate if possible
+        ceiling = OPTIMUM_CEILING;
+        if(in.fpsAsInt() < 30 && (2*ratio) < ceiling)
+        {
+            //Optimize the framerate
+            out.setFps(QString::number(30));
+            ratio *= 2;
+        }
+
+        //Increase bitrate if possible
+        //Decide the optimum bitrate that can be used
+        width = in.widthAsInt();
+        height = in.heightAsInt();
+        optimum_bitrate = width * height * 3.5;
+
+        //Determine the max bitrate available
+        max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
+
+        //Choose the least of these two bitrates
+        bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
+        out.setBitrate(QString::number(bitrate));
+
+        //Increase size to max user desired
+        //WILL HAVE TO INTELLIGENTLY DECIDE THIS
+
+        out.setWidth(QString::number(800));
+        out.setHeight(QString::number(480));
+
+        break;
+    //User prefers frame rate and quality
+    case 1:
+        //Increase frame rate if possible
+        ceiling = OPTIMUM_CEILING;
+        if(in.fpsAsInt() < 30 && (2*ratio) < ceiling)
+        {
+            //Optimize the framerate
+            out.setFps(QString::number(30));
+            ratio *= 2;
+        }
+        //Increase bitrate if possible
+        //Decide the optimum bitrate that can be used
+        width = in.widthAsInt();
+        height = in.heightAsInt();
+        optimum_bitrate = width * height * 3.5;
+
+        //Determine the max bitrate available
+        max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
+
+        //Choose the least of these two bitrates
+        bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
+        out.setBitrate(QString::number(bitrate));
+
+        //Change size to smallest necessary to provide best quality
+        for(i = 0; i < m_possible_resolutions.count(); i++)
+        {
+            if(bitrate < m_resolutions[i] * 3.5)
+                break;
+        }
+        res = m_possible_resolutions[i];
+        split = res.split('x');
+        out.setWidth(split[0]);
+        out.setHeight(split[1]);
+        break;
+    //User prefers bitrate and size
+    case 2:
+        //Increase bitrate
+        width = in.widthAsInt();
+        height = in.heightAsInt();
+        optimum_bitrate = width * height * 3.5;
+
+        //Determine the max bitrate available
+        max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
+
+        //Choose the least of these two bitrates
+        bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
+        out.setBitrate(QString::number(bitrate));
+        //Increase size to max user desired
+        //WILL HAVE TO INTELLIGENTLY DECIDE THIS
+
+        out.setWidth(QString::number(800));
+        out.setHeight(QString::number(480));
+        break;
+    //User prefers bitrate and quality
+    case 3:
+        //Increase bitrate
+        //Decide the optimum bitrate that can be used
+        width = in.widthAsInt();
+        height = in.heightAsInt();
+        optimum_bitrate = width * height * 3.5;
+
+        //Determine the max bitrate available
+        max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
+
+        //Choose the least of these two bitrates
+        bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
+        out.setBitrate(QString::number(bitrate));
+
+
+        //Change size to smallest necessary to provide best quality
+        for(i = 0; i < m_possible_resolutions.count(); i++)
+        {
+            if(bitrate < m_resolutions[i] * 3.5)
+                break;
+        }
+        res = m_possible_resolutions[i];
+        split = res.split('x');
+        out.setWidth(split[0]);
+        out.setHeight(split[1]);
+
+        break;
+    }
+}
+
 //Down convert the encoding parameters
 void DecisionInterface::downConvert(float ratio, EncodingParameters &in, EncodingParameters &out)
 {
@@ -97,4 +261,109 @@ void DecisionInterface::downConvert(float ratio, EncodingParameters &in, Encodin
     int max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
 
     out.setBitrate(QString::number(max_bitrate));
+}
+
+//Minimize parameters in the order specified by the class mask
+void DecisionInterface::downConvert(float ratio, EncodingParameters &in, EncodingParameters &out, int class_mask)
+{
+    int bitrate = 0, width = 0, height = 0, max_bitrate = 0, optimum_bitrate = 0, i = 0;
+    float ceiling = 0.0;
+    QStringList split;
+    QString res;
+    //Use class mask to determine order
+    switch(class_mask)
+    {
+    //User prefers frame rate and size
+    case 0:
+        //Decrease bitrate to fit channel
+        ceiling = OPTIMUM_CEILING;
+
+        bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
+
+        out.setBitrate(QString::number(max_bitrate));
+        //Keep size constant
+        out.setWidth(in.width());
+        out.setHeight(in.height());
+        break;
+
+    //User prefers frame rate and quality
+    case 1:
+        //Decrease bitrate to fit channel
+        ceiling = OPTIMUM_CEILING;
+
+        bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
+
+        out.setBitrate(QString::number(max_bitrate));
+        //Decrease size to increase quality
+
+        //Change size to smallest necessary to provide best quality
+        for(i = 0; i < m_possible_resolutions.count(); i++)
+        {
+            if(bitrate < m_resolutions[i] * 3.5)
+                break;
+        }
+        res = m_possible_resolutions[i];
+        split = res.split('x');
+        out.setWidth(split[0]);
+        out.setHeight(split[1]);
+        break;
+
+    //User prefers bitrate and size
+    case 2:
+        //Decrease frame rate if possible
+        if(in.fpsAsInt() > 15)
+        {
+            out.setFps(QString::number(15));
+            ratio /= 2;
+        }
+        //Fit bitrate to channel
+        width = in.widthAsInt();
+        height = in.heightAsInt();
+        optimum_bitrate = width * height * 3.5;
+
+        //Determine the max bitrate available
+        max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
+
+        //Choose the least of these two bitrates
+        bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
+        out.setBitrate(QString::number(bitrate));
+
+        //Keep size constant?
+
+        break;
+    //User prefers bitrate and quality
+    case 3:
+        //Decrese frame rate if possible
+
+        if(in.fpsAsInt() > 15)
+        {
+            out.setFps(QString::number(15));
+            ratio /= 2;
+        }
+        //Fit bitrate to channel
+        width = in.widthAsInt();
+        height = in.heightAsInt();
+        optimum_bitrate = width * height * 3.5;
+
+        //Determine the max bitrate available
+        max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
+
+        //Choose the least of these two bitrates
+        bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
+        out.setBitrate(QString::number(bitrate));
+
+
+        //Decrease size to increase quality
+        //Change size to smallest necessary to provide best quality
+        for(i = 0; i < m_possible_resolutions.count(); i++)
+        {
+            if(bitrate < m_resolutions[i] * 3.5)
+                break;
+        }
+        res = m_possible_resolutions[i];
+        split = res.split('x');
+        out.setWidth(split[0]);
+        out.setHeight(split[1]);
+        break;
+    }
 }
