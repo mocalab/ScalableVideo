@@ -174,7 +174,7 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 	public void scaleVideo()
 	{
 		m_recordingStatus = false;
-		new SmartSwitch().run();
+		new EncoderResetThread().run();
 	}
 	
 	//Update the bitrate of the already playing video
@@ -455,7 +455,7 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 	}
 	
 	//CLASS TO RESET ENCODER PARAMETERS
-	private class SmartSwitch extends Thread
+	private class EncoderResetThread extends Thread
 	{
 
 		@Override

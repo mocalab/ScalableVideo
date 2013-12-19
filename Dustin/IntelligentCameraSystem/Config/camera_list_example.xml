@@ -14,4 +14,9 @@
 		<address port="37986">localhost</address>
 		<contentType enum="0">CONTENT_TYPE_NONE</contentType>
 	</camera>
+	
+	<camera name="DragonBoard-Gen1">
+		<address port="7744">140.154.1.29</address>
+		<contentType enum="0">CONTENT_TYPE_PERSONAL</contentType>
+	</camera>
 </cameraList>

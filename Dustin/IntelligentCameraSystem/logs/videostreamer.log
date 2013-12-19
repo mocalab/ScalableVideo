@@ -1,6 +1,4 @@
- INFO 2013-12-10T16:24:54.510 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/main.cpp : 25  --  Program init. 
-ERROR 2013-12-10T16:25:00.166 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 150 -- Could not bind to socket:  Connection refused 
-ERROR 2013-12-10T16:25:00.166 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 163 -- Could not find any sockets. 
- INFO 2013-12-10T16:25:00.166 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 189 -- In slot 'receivedPacket' Message: "Unable to connect!" 
- INFO 2013-12-10T16:25:02.661 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 117 -- Video window destructor called. 
- INFO 2013-12-10T16:25:02.662 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 
+ INFO 2013-12-11T12:28:41.770 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/main.cpp : 25  --  Program init. 
+ INFO 2013-12-11T12:28:48.056 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 189 -- In slot 'receivedPacket' Message: "Connected!" 
+ INFO 2013-12-11T12:29:21.407 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 117 -- Video window destructor called. 
+ INFO 2013-12-11T12:29:21.407 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 
