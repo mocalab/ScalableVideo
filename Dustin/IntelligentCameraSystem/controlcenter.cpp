@@ -176,7 +176,7 @@ void ControlCenter::addTrainingExample(FeatureSet &fs, double lbl_fps_br_priorit
     //Add to quality trainer
     this->m_size_quality_learning_module.addTrainingSample(fs, lbl_size_quality_priority);
 
-    if((m_size_quality_learning_module.getNumberOfSamples() % 60) == 0)
+    if((m_size_quality_learning_module.getNumberOfSamples() % 20) == 0)
     {
         this->train();
 

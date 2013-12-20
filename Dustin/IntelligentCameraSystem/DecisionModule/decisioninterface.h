@@ -78,8 +78,9 @@ private:
      * @param in The pre-converted parameters.
      * @param out An object to hold the up converted parameters.
      * @param class_mask Determines the order in which we optimize parameters.
+     * @param datarate Reference to the old datarate which needs to be updated.
      */
-    void upConvert(float ratio, EncodingParameters &in, EncodingParameters &out, int class_mask);
+    void upConvert(float ratio, EncodingParameters &in, EncodingParameters &out, int class_mask, int &datarate);
 
     /**
      * @brief Down convert the encoding parameters.
@@ -98,9 +99,10 @@ private:
      * @param ratio The ratio of datarate / bandwidth.
      * @param in The pre-converted parameters.
      * @param out An object to hold the up converted parameters.
-     * @param Determines the order in which we minimize parameters.
+     * @param class_mask Determines the order in which we minimize parameters.
+     * @param datarate Reference to the old datarate which needs to be updated.
      */
-    void downConvert(float ratio, EncodingParameters &in, EncodingParameters &out, int class_mask);
+    void downConvert(float ratio, EncodingParameters &in, EncodingParameters &out, int class_mask, int &datarate);
 
     //The video window manager
     IVideoWindowManager                         *m_window_interface;

@@ -25,29 +25,29 @@ void DecisionInterface::makeDecision(int bandwidth,
     float ratio = (float) datarate / bandwidth;
 
     //Functionality depends on the user's preferences
-//    if(ratio < 1)
-//    {
-//        upConvert(ratio, old_params, new_params, class_mask);
-//    }
-//    else
-//    {
-//        downConvert(ratio, old_params, new_params, class_mask);
-//    }
-
-    //This determines the next course of action
     if(ratio < 1)
     {
-        //We can optimize the parameters based on the available bandwidth
-        upConvert(ratio, old_params, new_params);
+        upConvert(ratio, old_params, new_params, class_mask, datarate);
     }
     else
     {
-        //We must determine the best parameters using the machine learning decision function we have
-        //created while the application was learning
-
-        //For now, just keep the old parameters
-        downConvert(ratio, old_params, new_params);
+        downConvert(ratio, old_params, new_params, class_mask, datarate);
     }
+
+    //This determines the next course of action
+//    if(ratio < 1)
+//    {
+//        //We can optimize the parameters based on the available bandwidth
+//        upConvert(ratio, old_params, new_params);
+//    }
+//    else
+//    {
+//        //We must determine the best parameters using the machine learning decision function we have
+//        //created while the application was learning
+
+//        //For now, just keep the old parameters
+//        downConvert(ratio, old_params, new_params);
+//    }
 
     return;
 }
@@ -128,7 +128,7 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
 }
 
 //Optimize parameters in the order specified by the class mask
-void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingParameters &out, int class_mask)
+void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingParameters &out, int class_mask, int& datarate)
 {
     int width = 0, height = 0, max_bitrate = 0, optimum_bitrate = 0, bitrate = 0, i = 0;
     float ceiling = 0.0;
@@ -205,8 +205,8 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
     //User prefers bitrate and size
     case 2:
         //Increase bitrate
-        width = in.widthAsInt();
-        height = in.heightAsInt();
+        width = 800;
+        height = 480;
         optimum_bitrate = width * height * 3.5;
 
         //Determine the max bitrate available
@@ -250,6 +250,9 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
 
         break;
     }
+
+    //Set the new datarate
+    datarate = (int)(datarate * ((float)out.bitrateAsInt() / (float)in.bitrateAsInt()) * ((float)out.fpsAsInt() / (float)in.fpsAsInt()));
 }
 
 //Down convert the encoding parameters
@@ -264,7 +267,7 @@ void DecisionInterface::downConvert(float ratio, EncodingParameters &in, Encodin
 }
 
 //Minimize parameters in the order specified by the class mask
-void DecisionInterface::downConvert(float ratio, EncodingParameters &in, EncodingParameters &out, int class_mask)
+void DecisionInterface::downConvert(float ratio, EncodingParameters &in, EncodingParameters &out, int class_mask, int &datarate)
 {
     int bitrate = 0, width = 0, height = 0, max_bitrate = 0, optimum_bitrate = 0, i = 0;
     float ceiling = 0.0;
@@ -366,4 +369,6 @@ void DecisionInterface::downConvert(float ratio, EncodingParameters &in, Encodin
         out.setHeight(split[1]);
         break;
     }
+    //Set the new datarate
+    datarate = (int)(datarate * ((float)out.bitrateAsInt() / (float)in.bitrateAsInt()) * ((float)out.fpsAsInt() / (float)in.fpsAsInt()));
 }

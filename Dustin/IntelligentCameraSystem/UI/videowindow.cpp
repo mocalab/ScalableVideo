@@ -332,13 +332,9 @@ void VideoWindow::disconnect()
 
 void VideoWindow::sendButtonClicked()
 {
-    //bool playing = this->ui->video_player->isPlaying();
-    QString str;
-    //if(playing)
-        str = "Playing";
-    //else
-        //str = "Not Playing";
-    receivedMessage(str);
+    //Take a training sample
+    this->takeSample();
+
 }
 //Slot to send message to server to resize the video
 void VideoWindow::resizeVideo(QString width, QString height, QString fps, QString bps, bool show_message)
@@ -364,7 +360,7 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
 
         //Find the maximum and optimal bitrates
         int max_bitrate = (int)((float)width.toInt() * (float)height.toInt() * 3.5);
-        int opt_bitrate = (int)(old_bitrate * ratio * 0.95);
+        int opt_bitrate = (int)((old_bitrate / ratio) * 0.95);
 
         //Choose the lease of these
         bitrate = max_bitrate < opt_bitrate ? max_bitrate : opt_bitrate;
