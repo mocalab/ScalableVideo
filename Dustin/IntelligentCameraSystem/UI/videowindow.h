@@ -194,6 +194,9 @@ private:
     void connectToServer();
     void setUpThreads();
 
+    //Function to ask a user if they find the video quality acceptable
+    void pollUser();
+
 };
 
 #endif // VIDEOWINDOW_H

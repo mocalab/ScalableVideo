@@ -1,4 +1,5 @@
 #include "decisioninterface.h"
+#include "Global/Log.h"
 #include <QString>
 
 DecisionInterface::DecisionInterface(IVideoWindowManager *manager) :
@@ -23,7 +24,7 @@ void DecisionInterface::makeDecision(int bandwidth,
 {
     //Get the ratio of bandwidth to data rate;
     float ratio = (float) datarate / bandwidth;
-
+    DEBUG() << "Ratio: " << ratio;
     //Functionality depends on the user's preferences
     if(ratio < 1)
     {
@@ -75,7 +76,7 @@ void DecisionInterface::defaultAdjustBitrate(int bandwidth,
     out.setBitrate(QString::number(bitrate));
 
     //Set the new bitrate for the caller
-    datarate /= ratio;
+    //datarate /= ratio;
 }
 
 void DecisionInterface::setResolutionsList(QStringList &resolutions)
@@ -180,23 +181,25 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
         }
         //Increase bitrate if possible
         //Decide the optimum bitrate that can be used
-        width = in.widthAsInt();
-        height = in.heightAsInt();
-        optimum_bitrate = width * height * 3.5;
+//        width = in.widthAsInt();
+//        height = in.heightAsInt();
+//        optimum_bitrate = width * height * 3.5;
 
         //Determine the max bitrate available
         max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
 
         //Choose the least of these two bitrates
-        bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
+        bitrate = max_bitrate;// < optimum_bitrate ? max_bitrate : optimum_bitrate;
         out.setBitrate(QString::number(bitrate));
 
         //Change size to smallest necessary to provide best quality
         for(i = 0; i < m_possible_resolutions.count(); i++)
         {
-            if(bitrate < m_resolutions[i] * 3.5)
+            if(bitrate > m_resolutions[i] * 3.5)
                 break;
         }
+        if(i == m_possible_resolutions.count())
+            i--;
         res = m_possible_resolutions[i];
         split = res.split('x');
         out.setWidth(split[0]);
@@ -225,24 +228,26 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
     case 3:
         //Increase bitrate
         //Decide the optimum bitrate that can be used
-        width = in.widthAsInt();
-        height = in.heightAsInt();
-        optimum_bitrate = width * height * 3.5;
+//        width = in.widthAsInt();
+//        height = in.heightAsInt();
+//        optimum_bitrate = width * height * 3.5;
 
         //Determine the max bitrate available
         max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
 
         //Choose the least of these two bitrates
-        bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
+        bitrate = max_bitrate;// < optimum_bitrate ? max_bitrate : optimum_bitrate;
         out.setBitrate(QString::number(bitrate));
 
 
         //Change size to smallest necessary to provide best quality
         for(i = 0; i < m_possible_resolutions.count(); i++)
         {
-            if(bitrate < m_resolutions[i] * 3.5)
+            if(bitrate > m_resolutions[i] * 3.5)
                 break;
         }
+        if(i == m_possible_resolutions.count())
+            i--;
         res = m_possible_resolutions[i];
         split = res.split('x');
         out.setWidth(split[0]);
@@ -252,7 +257,7 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
     }
 
     //Set the new datarate
-    datarate = (int)(datarate * ((float)out.bitrateAsInt() / (float)in.bitrateAsInt()) * ((float)out.fpsAsInt() / (float)in.fpsAsInt()));
+    //datarate = (int)(datarate * ((float)out.bitrateAsInt() / (float)in.bitrateAsInt()) * ((float)out.fpsAsInt() / (float)in.fpsAsInt()));
 }
 
 //Down convert the encoding parameters
@@ -296,15 +301,17 @@ void DecisionInterface::downConvert(float ratio, EncodingParameters &in, Encodin
 
         bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
 
-        out.setBitrate(QString::number(max_bitrate));
+        out.setBitrate(QString::number(bitrate));
         //Decrease size to increase quality
 
         //Change size to smallest necessary to provide best quality
         for(i = 0; i < m_possible_resolutions.count(); i++)
         {
-            if(bitrate < m_resolutions[i] * 3.5)
+            if(bitrate > m_resolutions[i] * 3.5)
                 break;
         }
+        if(i == m_possible_resolutions.count())
+            i--;
         res = m_possible_resolutions[i];
         split = res.split('x');
         out.setWidth(split[0]);
@@ -344,15 +351,15 @@ void DecisionInterface::downConvert(float ratio, EncodingParameters &in, Encodin
             ratio /= 2;
         }
         //Fit bitrate to channel
-        width = in.widthAsInt();
-        height = in.heightAsInt();
-        optimum_bitrate = width * height * 3.5;
+//        width = in.widthAsInt();
+//        height = in.heightAsInt();
+//        optimum_bitrate = width * height * 3.5;
 
         //Determine the max bitrate available
         max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
 
         //Choose the least of these two bitrates
-        bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
+        bitrate = max_bitrate;// < optimum_bitrate ? max_bitrate : optimum_bitrate;
         out.setBitrate(QString::number(bitrate));
 
 
@@ -360,9 +367,11 @@ void DecisionInterface::downConvert(float ratio, EncodingParameters &in, Encodin
         //Change size to smallest necessary to provide best quality
         for(i = 0; i < m_possible_resolutions.count(); i++)
         {
-            if(bitrate < m_resolutions[i] * 3.5)
+            if(bitrate > m_resolutions[i] * 3.5)
                 break;
         }
+        if(i == m_possible_resolutions.count())
+            i--;
         res = m_possible_resolutions[i];
         split = res.split('x');
         out.setWidth(split[0]);
@@ -370,5 +379,5 @@ void DecisionInterface::downConvert(float ratio, EncodingParameters &in, Encodin
         break;
     }
     //Set the new datarate
-    datarate = (int)(datarate * ((float)out.bitrateAsInt() / (float)in.bitrateAsInt()) * ((float)out.fpsAsInt() / (float)in.fpsAsInt()));
+    //datarate = (int)(datarate * ((float)out.bitrateAsInt() / (float)in.bitrateAsInt()) * ((float)out.fpsAsInt() / (float)in.fpsAsInt()));
 }

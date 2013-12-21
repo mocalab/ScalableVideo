@@ -6,7 +6,7 @@
 
 ///Keep any optimum at 95% of the average bandwidth in order to be resistant against fluctuations. This macro should be toggled until
 ///and acceptable value is determined
-#define OPTIMUM_CEILING         0.95
+#define OPTIMUM_CEILING         0.85
 #include <QStringList>
 #include "Types/encodingparameters.h"
 #include "Types/featureset.h"

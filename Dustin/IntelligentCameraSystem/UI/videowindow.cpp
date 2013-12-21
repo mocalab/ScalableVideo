@@ -89,6 +89,16 @@ void VideoWindow::setUpThreads()
 //    m_bwreaderthread->start();
 
 }
+//Ask the user if they find the video acceptable
+void VideoWindow::pollUser()
+{
+    //Their response
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Feedback", "Video quality acceptable?",
+                                  QMessageBox::Yes | QMessageBox::No);
+    if(reply == QMessageBox::Yes)
+        this->takeSample();
+}
 //Event filter
 //bool VideoWindow::eventFilter(QObject *obj, QEvent *event)
 //{
@@ -189,15 +199,7 @@ void VideoWindow::receivedMessage(QString response, bool show_message)
     INFO() << "In slot \'receivedPacket\' Message:" << response;
     //Set non modal and allocate on heap so it does not block
     //video from playing
-    if(show_message)
-    {
-        QMessageBox *msgBox = new QMessageBox;
-        msgBox->setWindowTitle("Server says...");
-        msgBox->setText(response);
-        msgBox->setWindowModality(Qt::NonModal);
-        msgBox->setAttribute(Qt::WA_DeleteOnClose);
-        msgBox->show();
-    }
+
 
     //Check if the response is an acceptance of the parameters
     if(response.contains("Updating"))
@@ -214,8 +216,18 @@ void VideoWindow::receivedMessage(QString response, bool show_message)
         //If we are in learning mode
         if(m_control_center_manager->inLearningMode())
         {
-            //Add this to the training set
+            //See if the user wants to add this to the training set
+            this->pollUser();
         }
+    }
+    else if(show_message)
+    {
+        QMessageBox *msgBox = new QMessageBox;
+        msgBox->setWindowTitle("Server says...");
+        msgBox->setText(response);
+        msgBox->setWindowModality(Qt::NonModal);
+        msgBox->setAttribute(Qt::WA_DeleteOnClose);
+        msgBox->show();
     }
 }
 
@@ -340,7 +352,7 @@ void VideoWindow::sendButtonClicked()
 void VideoWindow::resizeVideo(QString width, QString height, QString fps, QString bps, bool show_message)
 {
     //Take a training sample
-    this->takeSample();
+    //this->takeSample();
     //Create the message
     QString msg = QString("start ");
     //See if we should change the bitrate
@@ -360,9 +372,9 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
 
         //Find the maximum and optimal bitrates
         int max_bitrate = (int)((float)width.toInt() * (float)height.toInt() * 3.5);
-        int opt_bitrate = (int)((old_bitrate / ratio) * 0.95);
+        int opt_bitrate = (int)((old_bitrate / ratio) * 0.85);
 
-        //Choose the lease of these
+        //Choose the least of these
         bitrate = max_bitrate < opt_bitrate ? max_bitrate : opt_bitrate;
 
         bps = QString::number(bitrate);
@@ -381,10 +393,6 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
     INFO() << "Sent: " << msg;
 
 
-    //Send it to server
-    this->sendRequest(msg, show_message);
-
-
 #if PLAY_WITH_VLC
     int fps_int = fps.toInt();
     //If FPS has changed we need to restart playback (limit to 15 and 30 fps for now... very poor and hacky method)
@@ -392,10 +400,18 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
     {
         ui->video_player->setFps(fps_int);
         //ui->video_player->setPlaybackRate(fps.toInt());
-        this->ui->video_player->playUrl(QString(VIDEO_URL));
-        //this->ui->video_player->setMediaOptions();
+        if(fps_int == 30)
+            this->ui->video_player->playUrl(QString(VIDEO_URL));
+        else
+            this->ui->video_player->setMediaOptions();
     }
 #endif
+
+    //Send it to server
+    this->sendRequest(msg, show_message);
+
+
+
 
 
 
@@ -415,7 +431,7 @@ void VideoWindow::onBandwidth(QString bandwidth)
         if(!(m_pending_parameters == m_current_params))
             new_params = m_pending_parameters;
 
-        int dr_avg_kbps = (int)(m_effective_rate == 0 ? ui->video_player->getAverageBitrate() * 10000 : m_effective_rate);
+        m_effective_rate = (int)(m_effective_rate == 0 ? ui->video_player->getAverageBitrate() * 10000 : m_effective_rate);
         //Set the new bandwidth for the feature set
         m_video_features.setBandwidth(iBW);
         //Are we in learning mode?
@@ -425,7 +441,7 @@ void VideoWindow::onBandwidth(QString bandwidth)
             //this->takeSample();
             this->m_currentbw_kbps = iBW;
             //Knee-jerk reaction
-            m_decision_interface.defaultAdjustBitrate(m_currentbw_kbps, dr_avg_kbps, m_current_params, new_params);
+            m_decision_interface.defaultAdjustBitrate(m_currentbw_kbps, m_effective_rate, m_current_params, new_params);
         }
         //USE ML ALGORITHM TO DETERMINE WHAT THE PARAMETERS SHOULD BE
         else
@@ -436,7 +452,9 @@ void VideoWindow::onBandwidth(QString bandwidth)
             //Predict what the user will prefer
             int class_mask = this->m_control_center_manager->predict(this->m_video_features);
 
-            m_decision_interface.makeDecision(m_currentbw_kbps, dr_avg_kbps, m_current_params, class_mask, new_params);
+            DEBUG() << "Class mask value: " << class_mask;
+
+            m_decision_interface.makeDecision(m_currentbw_kbps, m_effective_rate, m_current_params, class_mask, new_params);
         }
         //m_effective_rate = (float)dr_avg_kbps;
         //DEBUG() << m_effective_rate;
