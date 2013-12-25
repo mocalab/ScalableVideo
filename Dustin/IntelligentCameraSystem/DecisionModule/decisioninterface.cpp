@@ -132,7 +132,7 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
 void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingParameters &out, int class_mask, int& datarate)
 {
     int width = 0, height = 0, max_bitrate = 0, optimum_bitrate = 0, bitrate = 0, i = 0;
-    float ceiling = 0.0;
+    float ceiling = OPTIMUM_CEILING;
     QStringList split;
     QString res;
     //Use class mask to determine order
@@ -141,7 +141,7 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
     //User prefers frame rate and size
     case 0:
         //Increase frame rate if possible
-        ceiling = OPTIMUM_CEILING;
+
         if(in.fpsAsInt() < 30 && (2*ratio) < ceiling)
         {
             //Optimize the framerate
@@ -151,8 +151,8 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
 
         //Increase bitrate if possible
         //Decide the optimum bitrate that can be used
-        width = in.widthAsInt();
-        height = in.heightAsInt();
+        width = 800;//in.widthAsInt();
+        height = 480;//in.heightAsInt();
         optimum_bitrate = width * height * 3.5;
 
         //Determine the max bitrate available
@@ -223,6 +223,12 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
 
         out.setWidth(QString::number(800));
         out.setHeight(QString::number(480));
+
+        //See if we should increase frame rate (if possible)
+        if(((float)bitrate / in.bitrateAsInt()) * ratio < (0.5 * ceiling) && in.fpsAsInt() < 30)
+        {
+            out.setFps(QString::number(30));
+        }
         break;
     //User prefers bitrate and quality
     case 3:
@@ -275,7 +281,7 @@ void DecisionInterface::downConvert(float ratio, EncodingParameters &in, Encodin
 void DecisionInterface::downConvert(float ratio, EncodingParameters &in, EncodingParameters &out, int class_mask, int &datarate)
 {
     int bitrate = 0, width = 0, height = 0, max_bitrate = 0, optimum_bitrate = 0, i = 0;
-    float ceiling = 0.0;
+    float ceiling = OPTIMUM_CEILING;
     QStringList split;
     QString res;
     //Use class mask to determine order
@@ -284,8 +290,6 @@ void DecisionInterface::downConvert(float ratio, EncodingParameters &in, Encodin
     //User prefers frame rate and size
     case 0:
         //Decrease bitrate to fit channel
-        ceiling = OPTIMUM_CEILING;
-
         bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
 
         out.setBitrate(QString::number(max_bitrate));
