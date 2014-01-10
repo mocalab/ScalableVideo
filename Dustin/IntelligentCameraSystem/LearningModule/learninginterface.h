@@ -84,6 +84,10 @@ private:
     //The total number of training samples
     int                                         m_num_training_samples;
 
+    //Need to know if there is only one class being reported
+    bool                                        m_one_class_only;
+    int                                         m_single_class_val;
+
 };
 
 #endif // LEARNINGINTERFACE_H
