@@ -87,6 +87,8 @@ public:
 protected:
     virtual void enterEvent(QEvent *e);
     virtual void leaveEvent(QEvent *e);
+    virtual void keyReleaseEvent(QKeyEvent *e);
+    virtual void keyPressEvent(QKeyEvent *e);
 public slots:
     /**
      * @brief Slot for resizing the window.
@@ -189,6 +191,11 @@ private:
     //Use one object to maintain the current feature set
     FeatureSet                      m_video_features;
 
+    //To get key combinations
+    bool                            m_ctrl_key_down;
+    bool                            m_s_key_down;
+
+
     //Functions
     //Connect to the camera server
     void connectToServer();
@@ -196,6 +203,9 @@ private:
 
     //Function to ask a user if they find the video quality acceptable
     void pollUser();
+
+    //Take a screenshot
+    void takeScreenshot();
 
 };
 

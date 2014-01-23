@@ -298,6 +298,18 @@ void VLCWrapper::setMediaOptions()
     //libvlc_media_add_option(m_media, "no-osd");
 }
 
+//Take a screenshot
+bool VLCWrapper::takeSnapshot(const char *filepath)
+{
+    //Use the API
+    int ret = libvlc_video_take_snapshot(m_mp,
+                                         0,
+                                         filepath,
+                                         0,
+                                         0);
+    return (ret == 0);
+}
+
 
 //C Functions
 
