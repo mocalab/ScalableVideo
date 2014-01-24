@@ -1,0 +1,11 @@
+-Show the effect on video bandwidth of scaling the spatial resolution.
+-Take screenshots at 800x480, 480x320, 320x240 and juxtapose images with 
+ wireshark capture.
+	 
+-Show adaptation to changes in channel bandwidth of quality resolution.
+-Take screenshots at 1.6Mbps, 800Kbps, and 400Kbps; juxtapose with wireshark
+ capture.
+	 
+-Show combined adaptation of temporal, spatial, and quality resolution.
+
+-Show adaptation when a user profile is generated.	 

@@ -215,7 +215,7 @@ void VideoWindow::takeScreenshot()
     QByteArray pathname = qgetenv("INTELLIGENT_CAMERA_SYSTEM_ROOT_DIR");
     QString path(pathname);
     path = path + "/" + SCREENSHOT_PATH + this->m_camera->name() +
-            "_" + QDate::currentDate().toString() + "-" + QTime::currentTime().toString();
+            "_" + QDate::currentDate().toString() + "-" + QTime::currentTime().toString() + ".png";
     path = path.simplified().replace(" ", "-");
     bool ret = this->ui->video_player->takeSnapshot(path);
 
