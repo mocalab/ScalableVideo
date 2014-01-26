@@ -126,6 +126,13 @@ public:
      */
     void setMediaOptions();
 
+    /**
+     * @brief Take a snapshot of the video currently being played.
+     * @param filepath The file into which the screenshot should be saved.
+     * @return True if successful, false otherwise.
+     */
+    bool takeSnapshot(QString &filepath);
+
 public slots:
     /**
      * @brief Update video size slot.

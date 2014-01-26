@@ -3,6 +3,8 @@
 #include <QMessageBox>
 #include <QProgressBar>
 #include <QProgressDialog>
+#include <QDate>
+#include <QTime>
 #include "Global/Log.h"
 #include "videowindow.h"
 #include "ui_videowindow.h"
@@ -19,7 +21,9 @@ VideoWindow::VideoWindow(Camera *camera, IControlCenterManager *control_center, 
     m_current_params(),
     m_pending_parameters(),
     m_bandwidth_filereader(QString(BWFILE_PATH).append(QString(m_camera->name())).append("_bandwidth")),
-    m_effective_rate(400)
+    m_effective_rate(400),
+    m_ctrl_key_down(false),
+    m_s_key_down(false)
 {   
 
     ui->setupUi(this);
@@ -179,10 +183,45 @@ void VideoWindow::leaveEvent(QEvent *e)
 //    {
 //        ui->video_controls->fadeOut();
 //        m_controls_revealed = false;
-//    }
+    //    }
 }
 
+void VideoWindow::keyReleaseEvent(QKeyEvent *e)
+{
+    //Take a screenshot if the key entered was tab
+    if((m_ctrl_key_down && e->key() == Qt::Key_S) || (e->key() == Qt::Key_Control && m_s_key_down))
+    {
+        takeScreenshot();
+    }
 
+}
+
+void VideoWindow::keyPressEvent(QKeyEvent *e)
+{
+    if(e->key() == Qt::Key_Control)
+    {
+        m_ctrl_key_down = true;
+    }
+    else if(e->key() == Qt::Key_S && m_ctrl_key_down)
+    {
+        m_s_key_down = true;
+    }
+
+}
+
+void VideoWindow::takeScreenshot()
+{
+    //Get the file path
+    QByteArray pathname = qgetenv("INTELLIGENT_CAMERA_SYSTEM_ROOT_DIR");
+    QString path(pathname);
+    path = path + "/" + SCREENSHOT_PATH + this->m_camera->name() +
+            "_" + QDate::currentDate().toString() + "-" + QTime::currentTime().toString() + ".png";
+    path = path.simplified().replace(" ", "-");
+    bool ret = this->ui->video_player->takeSnapshot(path);
+
+    m_s_key_down = false;
+    m_ctrl_key_down = false;
+}
 
 void VideoWindow::resizeWindow(int width, int height)
 {

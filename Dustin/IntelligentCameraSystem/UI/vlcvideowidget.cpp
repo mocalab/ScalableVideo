@@ -116,6 +116,11 @@ void VLCVideoWidget::setMediaOptions()
 {
     this->m_vlc_interface->setMediaOptions();
 }
+
+bool VLCVideoWidget::takeSnapshot(QString &filepath)
+{
+    return this->m_vlc_interface->takeSnapshot(filepath);
+}
 //Resize the video frame when this signal is called
 void VLCVideoWidget::videoResized(int width, int height)
 {

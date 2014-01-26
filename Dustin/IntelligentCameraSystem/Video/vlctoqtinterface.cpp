@@ -150,6 +150,12 @@ void VLCToQtInterface::setMediaOptions()
 
 }
 
+//Take a screenshot
+bool VLCToQtInterface::takeSnapshot(QString &filepath)
+{
+    return m_vlc.takeSnapshot(filepath.toStdString().c_str());
+}
+
 //---------------------SLOTS---------------------------------
 //Check to update frame size, called from timer
 void VLCToQtInterface::updateVideoSize()

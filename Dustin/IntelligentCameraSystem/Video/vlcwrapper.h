@@ -138,6 +138,13 @@ public:
      */
     void setMediaOptions();
 
+    /**
+     * @brief Take a snapshot of the video currently being played.
+     * @param filepath The file into which the screenshot should be saved.
+     * @return True if successful, false otherwise.
+     */
+    bool takeSnapshot(const char *filepath);
+
 //private members
 private:
     libvlc_instance_t       *m_vlc;
