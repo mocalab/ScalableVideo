@@ -65,7 +65,7 @@ void LearningInterface::trainCurrent()
         //and simple implementation at the cost of speed and efficiency
         for(double gamma = 0.0001; gamma < 3; gamma *= 5)
         {
-            for(double C = 0.0001; C < 3; C *= 5)
+            for(double C = 0.0001; C < 30; C *= 5)
             {
                 //Set a new kernel
                 m_trainer.set_kernel(kernel_type(gamma));

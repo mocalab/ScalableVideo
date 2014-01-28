@@ -8,4 +8,7 @@
 	 
 -Show combined adaptation of temporal, spatial, and quality resolution.
 
--Show adaptation when a user profile is generated.	 
+-Show adaptation when a user profile is generated.
+	bandwidth cutoff: 800Kbps
+	Above cutoff: frame rate high, quality high (00 or 01)
+	below: frame rate low, quality low	 (10

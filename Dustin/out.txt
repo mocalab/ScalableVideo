@@ -1,0 +1,1233 @@
+<6>[    0.000000] Booting Linux on physical CPU 0
+<6>[    0.000000] Initializing cgroup subsys cpu
+<5>[    0.000000] Linux version 3.4.0-gecb99a8-00057-gfff5fce (e202f-krupa@e202f-krupa-desktop) (gcc version 4.6.x-google 20120106 (prerelease) (GCC) ) #1 SMP PREEMPT Wed Sep 4 12:51:12 PDT 2013
+<4>[    0.000000] CPU: ARMv7 Processor [511f04d4] revision 4 (ARMv7), cr=10c5387d
+<4>[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+<4>[    0.000000] Machine: APQ8060A Dragonboard
+<6>[    0.000000] WLAN init with mac address: 00d0caf1b40f
+<6>[    0.000000] WLAN convert to 00:d0:ca:f1:b4:0f
+<6>[    0.000000] memory pool 3 (start bed00000 size 1300000) initialized
+<4>[    0.000000] Memory policy: ECC disabled, Data cache writealloc
+<3>[    0.000000] smem_find(137, 80): wrong size 72
+<6>[    0.000000] socinfo_init: v6, id=124, ver=4.1, raw_id=1920, raw_ver=7, hw_plat=1,  hw_plat_ver=65536
+<6>[    0.000000]  accessory_chip=0 hw_plat_subtype=0
+<7>[    0.000000] On node 0 totalpages: 212480
+<7>[    0.000000]   Normal zone: 1967 pages used for memmap
+<7>[    0.000000]   Normal zone: 0 pages reserved
+<7>[    0.000000]   Normal zone: 177489 pages, LIFO batch:31
+<7>[    0.000000]   HighMem zone: 333 pages used for memmap
+<7>[    0.000000]   HighMem zone: 32691 pages, LIFO batch:7
+<6>[    0.000000] allocating 28016640 bytes at c2052000 (82252000 physical) for fb
+<6>[    0.000000] PERCPU: Embedded 9 pages/cpu @c3b0d000 s16256 r8192 d12416 u36864
+<7>[    0.000000] pcpu-alloc: s16256 r8192 d12416 u36864 alloc=9*4096
+<7>[    0.000000] pcpu-alloc: [0] 0 [0] 1 
+<4>[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 210180
+<5>[    0.000000] Kernel command line: console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 maxcpus=2 wlan_mac=00d0caf1b40f androidboot.emmc=true androidboot.serialno=188020004261300707 androidboot.authorized_kernel=true androidboot.baseband=msm
+<6>[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+<6>[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+<6>[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+<6>[    0.000000] Memory: 140MB 254MB 436MB = 830MB total
+<5>[    0.000000] Memory: 795888k/875760k available, 54032k reserved, 132096K highmem
+<5>[    0.000000] Virtual kernel memory layout:
+<5>[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+<5>[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+<5>[    0.000000]     vmalloc : 0xf0000000 - 0xff000000   ( 240 MB)
+<5>[    0.000000]     lowmem  : 0xc0000000 - 0xef800000   ( 760 MB)
+<5>[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+<5>[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+<5>[    0.000000]       .text : 0xc0008000 - 0xc0b7fa14   (11743 kB)
+<5>[    0.000000]       .init : 0xc0c00000 - 0xc0d03f80   (1040 kB)
+<5>[    0.000000]       .data : 0xc0d04000 - 0xc0e6f6d0   (1454 kB)
+<5>[    0.000000]        .bss : 0xc0e6f6f4 - 0xc10c6720   (2397 kB)
+<6>[    0.000000] SLUB: Genslabs=11, HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+<6>[    0.000000] Preemptible hierarchical RCU implementation.
+<6>[    0.000000] NR_IRQS:1177
+<6>[    0.000000] kmemleak: Kernel memory leak detector disabled
+<6>[    0.000000] sched_clock: 32 bits at 32kHz, resolution 30520ns, wraps every 131084001ms
+<6>[    0.000000] Console: colour dummy device 80x30
+<6>[    0.150190] Calibrating delay using timer specific routine.. 13.53 BogoMIPS (lpj=67677)
+<6>[    0.150221] pid_max: default: 32768 minimum: 301
+<6>[    0.150709] Mount-cache hash table entries: 512
+<6>[    0.152449] Initializing cgroup subsys debug
+<6>[    0.152479] Initializing cgroup subsys cpuacct
+<6>[    0.152479] Initializing cgroup subsys freezer
+<6>[    0.152540] CPU: Testing write buffer coherency: ok
+<6>[    0.153059] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+<6>[    0.153059] hw perfevents: enabled with ARMv7 Krait PMU driver, 5 counters available
+<6>[    0.153212] Setting up static identity map for 0x80980270 - 0x809802f8
+<6>[    0.156600] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+<6>[    0.156905] Brought up 2 CPUs
+<6>[    0.156935] SMP: Total of 2 processors activated (27.07 BogoMIPS).
+<6>[    0.174912] dummy: 
+<6>[    0.175492] NET: Registered protocol family 16
+<3>[    0.176285] AXI: msm_bus_fabric_init_driver(): msm_bus_fabric_init_driver
+<6>[    0.177414] gpiochip_add: registered GPIOs 0 to 151 on device: msmgpio
+<6>[    0.180009] meminfo_init: smem ram ptable found: ver: 0 len: 5
+<6>[    0.180009] Found 1 memory banks grouped into 8 memory regions
+<6>[    0.180405] msm_rpm_init: RPM firmware 3.0.16842893
+<3>[    0.207263] msm_rpm_get_status(): Status id 341 not defined for target
+<3>[    0.207263] msm_rpm_get_status(): Status id 341 not defined for target
+<3>[    0.207294] msm_rpm_get_status(): Status id 341 not defined for target
+<3>[    0.207294] msm_rpm_get_status(): Status id 341 not defined for target
+<3>[    0.207324] msm_rpm_get_status(): Status id 341 not defined for target
+<3>[    0.207324] msm_rpm_get_status(): Status id 341 not defined for target
+<6>[    0.211292] saw_probe: id=0, name=8921_s5
+<6>[    0.211780] saw_probe: id=1, name=8921_s6
+<6>[    0.212299] gpio_vreg_probe: id=202, name=ext_5v, gpio=202, gpio_label=ext_5v_en
+<6>[    0.212635] pm8921_probe: PMIC revision 1: F4
+<6>[    0.212635] pm8921_probe: PMIC revision 2: 06
+<6>[    0.212665] pm8921_probe: PMIC version: PM8921 rev 3.0
+<6>[    0.212665] pm8921_probe: PMIC Restart Reason: Triggered from CHG (usb charger insertion)
+<6>[    0.214314] gpiochip_add: registered GPIOs 152 to 195 on device: pm-gpio
+<6>[    0.214832] pm_gpio_probe: OK: base=152, ngpio=44
+<6>[    0.215168] gpiochip_add: registered GPIOs 196 to 207 on device: pm8xxx-mpp
+<6>[    0.215260] pm8xxx_mpp_probe: OK: base=196, ngpio=12
+<6>[    0.222218] gpio_vreg_probe: id=193, name=ext_otg_sw, gpio=193, gpio_label=ext_otg_sw_en
+<6>[    0.247825] sps:REVISION of BAM 0xf0028000 is 0x5.
+<6>[    0.247855] sps:BAM 0x12244000 is registered.
+<6>[    0.248313] sps:sps is ready.
+<6>[    0.248588] QDSS arch initialized
+<6>[    0.297512] bio: create slab <bio-0> at 0
+<6>[    0.298489] vgaarb: loaded
+<6>[    0.298794] ION heap vmalloc created
+<6>[    0.298855] ION heap mm created at a0000000 with size 3800000
+<6>[    0.298916] ION heap mm_fw created at 9fe00000 with size 1e0000
+<6>[    0.298977] ION heap mfc created at a3800000 with size 2000
+<6>[    0.299038] ION heap iommu created
+<6>[    0.299099] ION heap qsecom created at bed03000 with size 780000
+<6>[    0.299160] ION heap audio created at bf483000 with size 4cf000
+<3>[    0.413245] qup_i2c qup_i2c.10: QUP: I2C status flags :0x1121d0, irq:224
+<3>[    0.413276] msm_smsc_hub msm_smsc_hub: failed to connect to smsc_hubthrough I2C
+<5>[    0.414741] pm8xxx_pwm_probe: OK
+<5>[    0.415595] SCSI subsystem initialized
+<6>[    0.415809] sps:REVISION of BAM 0xf0034000 is 0x12.
+<6>[    0.415931] sps:BAM 0x28084000 is registered.
+<6>[    0.417396] usbcore: registered new interface driver usbfs
+<6>[    0.417579] usbcore: registered new interface driver hub
+<6>[    0.417762] usbcore: registered new device driver usb
+<6>[    0.417976] Linux media interface: v0.10
+<6>[    0.418129] Linux video capture interface: v2.00
+<7>[    0.419136] Registered led device: led:battery_charging
+<7>[    0.420051] Registered led device: led:battery_full
+<6>[    0.420998] msm_iommu_dev: device vpe mapped at f0400000, with 2 ctx banks
+<6>[    0.421211] msm_iommu_dev: device mdp0 mapped at f0600000, with 2 ctx banks
+<6>[    0.421394] msm_iommu_dev: device mdp1 mapped at f0800000, with 2 ctx banks
+<6>[    0.421577] msm_iommu_dev: device rot mapped at f0a00000, with 2 ctx banks
+<6>[    0.421730] msm_iommu_dev: device ijpeg mapped at f0c00000, with 2 ctx banks
+<6>[    0.421913] msm_iommu_dev: device vfe mapped at f0e00000, with 2 ctx banks
+<6>[    0.422096] msm_iommu_dev: device vcodec_a mapped at f1000000, with 2 ctx banks
+<6>[    0.422249] msm_iommu_dev: device vcodec_b mapped at f1200000, with 2 ctx banks
+<6>[    0.422462] msm_iommu_dev: device gfx3d mapped at f1400000, with 3 ctx banks
+<6>[    0.422676] msm_iommu_dev: device jpegd mapped at f1600000, with 2 ctx banks
+<6>[    0.422890] msm_iommu_dev: device gfx2d0 mapped at f1800000, with 2 ctx banks
+<6>[    0.423103] msm_iommu_dev: device gfx2d1 mapped at f1a00000, with 2 ctx banks
+<6>[    0.423622] msm_iommu_ctx msm_iommu_ctx.2: context vpe_src using bank 0
+<6>[    0.423836] msm_iommu_ctx msm_iommu_ctx.3: context vpe_dst using bank 1
+<6>[    0.424080] msm_iommu_ctx msm_iommu_ctx.4: context mdp_port0_cb0 using bank 0
+<6>[    0.424355] msm_iommu_ctx msm_iommu_ctx.5: context mdp_port0_cb1 using bank 1
+<6>[    0.424599] msm_iommu_ctx msm_iommu_ctx.6: context mdp_port1_cb0 using bank 0
+<6>[    0.424843] msm_iommu_ctx msm_iommu_ctx.7: context mdp_port1_cb1 using bank 1
+<6>[    0.425057] msm_iommu_ctx msm_iommu_ctx.8: context rot_src using bank 0
+<6>[    0.425240] msm_iommu_ctx msm_iommu_ctx.9: context rot_dst using bank 1
+<6>[    0.425453] msm_iommu_ctx msm_iommu_ctx.10: context ijpeg_src using bank 0
+<6>[    0.425637] msm_iommu_ctx msm_iommu_ctx.11: context ijpeg_dst using bank 1
+<6>[    0.425881] msm_iommu_ctx msm_iommu_ctx.12: context vfe_imgwr using bank 0
+<6>[    0.426094] msm_iommu_ctx msm_iommu_ctx.13: context vfe_misc using bank 1
+<6>[    0.426278] msm_iommu_ctx msm_iommu_ctx.14: context vcodec_a_stream using bank 0
+<6>[    0.426552] msm_iommu_ctx msm_iommu_ctx.15: context vcodec_a_mm1 using bank 1
+<6>[    0.426888] msm_iommu_ctx msm_iommu_ctx.16: context vcodec_b_mm2 using bank 0
+<6>[    0.427285] msm_iommu_ctx msm_iommu_ctx.17: context gfx3d_user using bank 0
+<6>[    0.427620] msm_iommu_ctx msm_iommu_ctx.18: context gfx3d_priv using bank 1
+<6>[    0.427834] msm_iommu_ctx msm_iommu_ctx.0: context jpegd_src using bank 0
+<6>[    0.428017] msm_iommu_ctx msm_iommu_ctx.1: context jpegd_dst using bank 1
+<6>[    0.428292] msm_iommu_ctx msm_iommu_ctx.19: context gfx2d0_2d0 using bank 0
+<6>[    0.428567] msm_iommu_ctx msm_iommu_ctx.20: context gfx2d1_2d1 using bank 0
+<6>[    0.428841] Advanced Linux Sound Architecture Driver Version 1.0.25.
+<6>[    0.429665] Bluetooth: Core ver 2.16
+<6>[    0.429757] NET: Registered protocol family 31
+<6>[    0.429757] Bluetooth: HCI device and connection manager initialized
+<6>[    0.429787] Bluetooth: HCI socket layer initialized
+<6>[    0.429787] Bluetooth: L2CAP socket layer initialized
+<6>[    0.430093] Bluetooth: SCO socket layer initialized
+<6>[    0.430917] Switching to clocksource gp_timer
+<6>[    0.478467] NET: Registered protocol family 2
+<6>[    0.479139] IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+<6>[    0.482954] TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+<6>[    0.490553] TCP bind hash table entries: 65536 (order: 8, 1310720 bytes)
+<6>[    0.491652] TCP: Hash tables configured (established 131072 bind 65536)
+<6>[    0.491652] TCP: reno registered
+<6>[    0.491805] UDP hash table entries: 512 (order: 2, 24576 bytes)
+<6>[    0.491927] UDP-Lite hash table entries: 512 (order: 2, 24576 bytes)
+<6>[    0.492385] NET: Registered protocol family 1
+<6>[    0.493026] RPC: Registered named UNIX socket transport module.
+<6>[    0.493026] RPC: Registered udp transport module.
+<6>[    0.493026] RPC: Registered tcp transport module.
+<6>[    0.493056] RPC: Registered tcp NFSv4.1 backchannel transport module.
+<7>[    0.493056] PCI: CLS 0 bytes, default 64
+<6>[    0.493453] Trying to unpack rootfs image as initramfs...
+<6>[    0.520219] Freeing initrd memory: 324K
+<6>[    0.521715] Detected 5 counters on the L2CC PMU.
+<6>[    0.523729] pil_qdsp6v4 pil_qdsp6v4.0: using secure boot
+<6>[    0.526415] pil_riva pil_riva: using secure boot
+<6>[    0.530688] pil_dsps pil_dsps: using secure boot
+<3>[    0.534137] smd_channel_probe_worker: allocation table not initialized
+<6>[    0.545521] NET: Registered protocol family 27
+<6>[    0.546680] dspcrashd_probe: Platform driver values: Base = 0x8da00000, Size = 0x1800000,pdata = 0xdeaddead
+<6>[    0.551381] lpass_fatal_init: lpass SSR driver init'ed.
+<6>[    0.551625] wcnss_8960: module initialized
+<6>[    0.551777] acpuclk-8960 acpuclk-8960: ACPU PVS: Nominal
+<6>[    0.553486] acpuclk-8960 acpuclk-8960: CPU0: 12 frequencies supported
+<6>[    0.553547] acpuclk-8960 acpuclk-8960: CPU1: 12 frequencies supported
+<5>[    0.557240] msm_rpm_log_probe: OK
+<6>[    0.566397] usbcore: registered new interface driver hsic_sysmon
+<4>[    0.908133] highmem bounce pool size: 64 pages
+<5>[    0.935479] NFS: Registering the id_resolver key type
+<6>[    0.939508] fuse init (API version 7.18)
+<6>[    0.940820] msgmni has been set to 1297
+<4>[    0.941828] cryptomgr_test used greatest stack depth: 7088 bytes left
+<6>[    0.946650] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 249)
+<6>[    0.946680] io scheduler noop registered
+<6>[    0.946711] io scheduler deadline registered
+<6>[    0.947291] io scheduler cfq registered (default)
+<6>[    0.953059] mipi_dsi base phy_addr = 0x4700000 virt = 0xf1e00000
+<6>[    0.953120] mmss_sfpb  base phy_addr = 0x5700000,virt = 0xf0094000
+<4>[    0.954372] msm_fb_detect_panel: not supported 'mipi_video_toshiba_wvga'
+<4>[    0.954402] msm_fb_detect_panel: not supported 'mipi_video_toshiba_wsvga'
+<4>[    0.954433] msm_fb_detect_panel: not supported 'mipi_video_toshiba_wuxga'
+<4>[    0.954463] msm_fb_detect_panel: not supported 'mipi_video_novatek_qhd'
+<4>[    0.954494] msm_fb_detect_panel: not supported 'mipi_cmd_novatek_qhd'
+<4>[    0.954524] msm_fb_detect_panel: not supported 'mipi_video_orise_720p'
+<4>[    0.954555] msm_fb_detect_panel: not supported 'mipi_cmd_orise_720p'
+<4>[    0.954585] msm_fb_detect_panel: not supported 'mipi_video_renesas_fwvga'
+<4>[    0.954585] msm_fb_detect_panel: not supported 'mipi_cmd_renesas_fwvga'
+<4>[    0.954616] msm_fb_detect_panel: not supported 'mipi_video_nt35510_wvga'
+<4>[    0.954646] msm_fb_detect_panel: not supported 'mipi_cmd_nt35510_wvga'
+<4>[    0.954677] msm_fb_detect_panel: not supported 'mipi_video_truly_qhd'
+<4>[    0.954707] msm_fb_detect_panel: not supported 'mipi_cmd_truly_qhd'
+<4>[    0.954738] msm_fb_detect_panel: not supported 'mipi_video_chimei_wxga'
+<4>[    0.954768] msm_fb_detect_panel: not supported 'mipi_video_chimei_wuxga'
+<4>[    0.954768] msm_fb_detect_panel: not supported 'mipi_video_truly_wvga'
+<6>[    0.955714] setting pdata->panel_info.fb_num to 3. type: 8
+<6>[    0.965145] FrameBuffer[0] 480x800 size=4608000 bytes is registered successfully!
+<7>[    0.965786] Registered led device: lcd-backlight
+<4>[    0.966976] hdmi_msm hdmi_msm.1: WARNING: HDCP disabled
+<6>[    0.967190] setting pdata->panel_info.fb_num to 1. type: 7
+<6>[    0.971524] FrameBuffer[1] 1920x1080 size=4149248 bytes is registered successfully!
+<6>[    0.972104] mdp4_dtv_vsync_init: ndx=0
+<3>[    0.972287] hdmi_msm hdmi_msm.1: external_common_state_create: sysfs group eedb1208
+<6>[    0.972348] hdmi_msm hdmi_msm.1: hdmi_msm_config_hdcp_feature: HDCP Feature: Disabled
+<6>[    0.973355] setting pdata->panel_info.fb_num to 1. type: 10
+<3>[    0.973599] Inside writeback_driver_init
+<3>[    0.973905] Inside writeback_probe
+<6>[    0.976224] FrameBuffer[2] 1280x720 size=1843200 bytes is registered successfully!
+<6>[    0.978574] 
+<6>[    0.978574]  msm_vidc_enc: Inside vid_enc_init()
+<6>[    0.978910] 
+<6>[    0.978940]  msm_vidc_enc: Inside vid_enc_vcd_init()
+<6>[    0.982481] msm_serial_hs.0: ttyHS0 at MMIO 0x16540000 (irq = 188) is a MSM HS UART
+<6>[    0.983641] msm_serial_hs.1: ttyHS1 at MMIO 0x1a140000 (irq = 221) is a MSM HS UART
+<6>[    0.984495] msm_serial_hs module loaded
+<6>[    0.984739] msm_serial_hsl: detected port #0
+<6>[    0.985106] msm_serial_hsl.0: ttyHSL0 at MMIO 0x16440000 (irq = 186) is a MSM
+<6>[    0.985289] msm_serial_hsl: console setup on port #0
+<6>[    2.275843] console [ttyHSL0] enabled
+<6>[    2.280024] msm_serial_hsl: driver initialized
+<6>[    2.286464] msm_rotator_probe: rotator_hw_revision=2
+<6>[    2.294796] diagchar initialized now
+<6>[    2.298977] kgsl kgsl-3d0: |kgsl_iommu_init| MMU type set for device is IOMMU
+<6>[    2.309140] kgsl kgsl-2d0: |kgsl_iommu_init| MMU type set for device is IOMMU
+<6>[    2.318419] kgsl kgsl-2d1: |kgsl_iommu_init| MMU type set for device is IOMMU
+<6>[    2.338959] brd: module loaded
+<6>[    2.347169] loop: module loaded
+<4>[    2.349763] i2c-core: driver [isa1200] using legacy suspend method
+<4>[    2.355531] i2c-core: driver [isa1200] using legacy resume method
+<6>[    2.363436] tabla-slim tabla-slim: Initialized slim device tabla-slim
+<3>[    2.461834] fail to get slimbus logical address -6
+<6>[    2.469555] tabla2x-slim tabla2x-slim: Initialized slim device tabla2x-slim
+<6>[    2.569510] wcd9xxx_device_init : Codec version 2 initialized
+<6>[    2.574332] idbyte_0[00000002] idbyte_1[00000000] idbyte_2[00000000] idbyte_3[00000001]
+<4>[    2.583213] i2c-core: driver [tabla-i2c-core] using legacy suspend method
+<4>[    2.589012] i2c-core: driver [tabla-i2c-core] using legacy resume method
+<4>[    2.596154] i2c-core: driver [sitar-i2c-core] using legacy suspend method
+<4>[    2.602533] i2c-core: driver [sitar-i2c-core] using legacy resume method
+<6>[    2.612391] SCSI Media Changer driver v0.25 
+<6>[    2.616938] spi_qsd spi_qsd.0: master is unqueued, this is deprecated
+<6>[    2.625545] tun: Universal TUN/TAP device driver, 1.6
+<6>[    2.629574] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+<6>[    2.636136] rmnet_init: BAM devices[8]
+<6>[    2.656645] SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic channels, max=256) (6 bit encapsulation enabled).
+<6>[    2.665344] CSLIP: code copyright 1989 Regents of the University of California.
+<6>[    2.672821] wcnss_wlan probed in built-in mode
+<6>[    2.680115] usbcore: registered new interface driver asix
+<6>[    2.684785] usbcore: registered new interface driver cdc_ether
+<6>[    2.690553] usbcore: registered new interface driver smsc95xx
+<6>[    2.696291] usbcore: registered new interface driver net1080
+<6>[    2.701938] usbcore: registered new interface driver cdc_subset
+<6>[    2.707767] usbcore: registered new interface driver zaurus
+<6>[    2.713749] usbcore: registered new interface driver cdc_ncm
+<6>[    2.718998] usbcore: registered new interface driver rmnet_usb
+<6>[    2.726140] rmnet usb ctrl Initialized.
+<6>[    2.729314] msm_otg msm_otg: msm_otg probe
+<6>[    2.733343] msm_otg msm_otg: OTG regs = f00e8000
+<6>[    2.741278] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+<6>[    2.760964] msm_hsic_host msm_hsic_host: Qualcomm EHCI Host Controller using HSIC
+<6>[    2.768075] msm_hsic_host msm_hsic_host: new USB bus registered, assigned bus number 1
+<6>[    2.801892] msm_hsic_host msm_hsic_host: irq 261, io mem 0x12520000
+<6>[    2.821822] msm_hsic_host msm_hsic_host: USB 2.0 started, EHCI 1.00
+<6>[    2.827437] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+<6>[    2.833908] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+<6>[    2.841049] usb usb1: Product: Qualcomm EHCI Host Controller using HSIC
+<6>[    2.847703] usb usb1: Manufacturer: Linux 3.4.0-gecb99a8-00057-gfff5fce ehci_hcd
+<6>[    2.855089] usb usb1: SerialNumber: msm_hsic_host
+<6>[    2.860888] hub 1-0:1.0: USB hub found
+<6>[    2.863757] hub 1-0:1.0: 1 port detected
+<6>[    2.869922] usbcore: registered new interface driver cdc_acm
+<6>[    2.874652] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+<6>[    2.882618] Initializing USB Mass Storage driver...
+<6>[    2.887746] usbcore: registered new interface driver usb-storage
+<6>[    2.893483] USB Mass Storage support registered.
+<6>[    2.898184] usbcore: registered new interface driver ums-alauda
+<6>[    2.904166] usbcore: registered new interface driver ums-cypress
+<6>[    2.910056] usbcore: registered new interface driver ums-datafab
+<6>[    2.916099] usbcore: registered new interface driver ums-freecom
+<6>[    2.922081] usbcore: registered new interface driver ums-isd200
+<6>[    2.927941] usbcore: registered new interface driver ums-jumpshot
+<6>[    2.934075] usbcore: registered new interface driver ums-karma
+<6>[    2.939844] usbcore: registered new interface driver ums-onetouch
+<6>[    2.945978] usbcore: registered new interface driver ums-sddr09
+<6>[    2.951869] usbcore: registered new interface driver ums-sddr55
+<6>[    2.957729] usbcore: registered new interface driver ums-usbat
+<6>[    2.964047] usbcore: registered new interface driver usbserial
+<6>[    2.969204] usbserial: USB Serial Driver core
+<6>[    2.973782] usbcore: registered new interface driver qc_csvt
+<6>[    2.979337] USB Serial support registered for qc_csvt
+<6>[    2.984465] usbcore: registered new interface driver usb_ehset_test
+<6>[    2.990691] usbcore: registered new interface driver diag_bridge
+<6>[    2.996825] usbcore: registered new interface driver mdm_bridge
+<6>[    3.004028] usbcore: registered new interface driver ks_bridge
+<6>[    3.008850] ksb_init: init done
+<6>[    3.014314] msm_hsusb msm_hsusb: [ci13xxx_start] hw_ep_max = 32
+<6>[    3.019716] mbim_init: initialize 1 instances
+<6>[    3.023958] mbim_init: Initialized 1 ports
+<6>[    3.034640] android_usb gadget: Mass Storage Function, version: 2009/09/11
+<6>[    3.040561] msm_otg msm_otg: phy_reset: success
+<6>[    3.045109] android_usb gadget: Number of LUNs=8
+<6>[    3.049626]  lun0: LUN: removable file: (no medium)
+<6>[    3.054539]  lun1: LUN: removable file: (no medium)
+<6>[    3.059331]  lun2: LUN: removable file: (no medium)
+<6>[    3.064336]  lun3: LUN: removable file: (no medium)
+<6>[    3.069678]  lun4: LUN: removable file: (no medium)
+<6>[    3.074011]  lun5: LUN: removable file: (no medium)
+<6>[    3.078803]  lun6: LUN: removable file: (no medium)
+<6>[    3.083717]  lun7: LUN: removable file: (no medium)
+<6>[    3.089638] android_usb gadget: android_usb ready
+<6>[    3.094796] mousedev: PS/2 mouse device common for all mice
+<6>[    3.101663] input: keypad_8960 as /devices/platform/msm_ssbi.0/pm8921-core/pm8xxx-keypad/input/input0
+<6>[    3.111613] usbcore: registered new interface driver xpad
+<6>[    3.116282] cyttsp_init:Cypress TrueTouch(R) Standard Product
+<6>[    3.124736] cyttsp_init:I2C Touchscreen Driver (Built Sep  4 2013 @ 12:49:15)
+<4>[    3.131023] Sitronix touch driver 2.9.10
+<4>[    3.134808] Release date: 20120911
+<4>[    3.138837] sitronix_ts_reset_ic
+<6>[    3.241782] usb 1-1: new high-speed USB device number 2 using msm_hsic_host
+<6>[    3.272730] usb 1-1: New USB device found, idVendor=0424, idProduct=2640
+<6>[    3.278406] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+<6>[    3.286311] hub 1-1:1.0: USB hub found
+<6>[    3.289485] hub 1-1:1.0: 3 ports detected
+<4>[    3.299221] status reg = 0 
+<4>[    3.301968] resolution = 480 x 800
+<4>[    3.305386] Chip ID = 0
+<4>[    3.306790] Num_X = 10
+<4>[    3.309140] Num_Y = 17
+<4>[    3.312437] fw revision (hex) = 5 4 0 8
+<4>[    3.316007] i2c protocol = 1 
+<4>[    3.318266] sensing mode = 0 
+<4>[    3.321776] max touches = 5 
+<6>[    3.324401] input: sitronix-i2c-touch-key as /devices/i2c-3/3-0055/input/input1
+<6>[    3.331848] input: sitronix-i2c-touch-mt as /devices/i2c-3/3-0055/input/input2
+<6>[    3.338867] sitronix 3-0055: irq = 334
+<6>[    3.343079] input: pmic8xxx_pwrkey as /devices/platform/msm_ssbi.0/pm8921-core/pm8xxx-pwrkey/input/input3
+<6>[    3.354158] using rtc device, pm8xxx_rtc, for alarms
+<6>[    3.357973] rtc-pm8xxx rtc-pm8xxx: rtc core: registered pm8xxx_rtc as rtc0
+<6>[    3.365450] i2c /dev entries driver
+<6>[    3.369327] lirc_dev: IR Remote Control driver registered, major 236 
+<6>[    3.374912] IR NEC protocol handler initialized
+<6>[    3.379368] IR RC5(x) protocol handler initialized
+<6>[    3.384190] IR RC6 protocol handler initialized
+<6>[    3.388676] IR JVC protocol handler initialized
+<6>[    3.393316] IR Sony protocol handler initialized
+<6>[    3.397894] IR RC5 (streamzap) protocol handler initialized
+<6>[    3.403479] IR SANYO protocol handler initialized
+<6>[    3.408118] IR MCE Keyboard/mouse protocol handler initialized
+<6>[    3.413978] IR LIRC bridge handler initialized
+<3>[    3.433236] qup_i2c qup_i2c.4: QUP: I2C status flags :0x1363c8, irq:185
+<3>[    3.438882] qup_i2c qup_i2c.4: I2C slave addr:0x1a not connected
+<3>[    3.444864] msm_sensor_match_id: imx074: read id failed
+<3>[    3.450053] msm_sensor_i2c_probe imx074_i2c_probe failed
+<4>[    3.457958] imx074: probe of 4-001a failed with error -107
+<3>[    3.473950] qup_i2c qup_i2c.4: QUP: I2C status flags :0x1363c8, irq:185
+<3>[    3.479566] qup_i2c qup_i2c.4: I2C slave addr:0x37 not connected
+<3>[    3.485579] msm_sensor_match_id: s5k3l1yx: read id failed
+<3>[    3.490920] msm_sensor_i2c_probe s5k3l1yx_i2c_probe failed
+<4>[    3.498977] s5k3l1yx: probe of 4-0020 failed with error -107
+<3>[    3.515946] qup_i2c qup_i2c.4: QUP: I2C status flags :0x1363c8, irq:185
+<3>[    3.521562] qup_i2c qup_i2c.4: I2C slave addr:0x1a not connected
+<3>[    3.527575] msm_sensor_match_id: imx091: read id failed
+<3>[    3.532916] msm_sensor_i2c_probe imx091_i2c_probe failed
+<4>[    3.540637] imx091: probe of 4-0034 failed with error -107
+<3>[    3.556691] qup_i2c qup_i2c.4: QUP: I2C status flags :0x1363c8, irq:185
+<3>[    3.562337] qup_i2c qup_i2c.4: I2C slave addr:0x36 not connected
+<3>[    3.568289] msm_sensor_match_id: ov2720: read id failed
+<3>[    3.573508] msm_sensor_i2c_probe ov2720_i2c_probe failed
+<4>[    3.580650] ov2720: probe of 4-006c failed with error -107
+<6>[    3.591942] usb 1-1.1: new high-speed USB device number 3 using msm_hsic_host
+<3>[    3.600366] qup_i2c qup_i2c.4: QUP: I2C status flags :0x1363c8, irq:185
+<3>[    3.606012] qup_i2c qup_i2c.4: I2C slave addr:0x48 not connected
+<3>[    3.612025] msm_sensor_match_id: mt9m114: read id failed
+<3>[    3.617244] msm_sensor_i2c_probe mt9m114_i2c_probe failed
+<4>[    3.625270] mt9m114: probe of 4-0048 failed with error -107
+<6>[    3.648893] usb 1-1.1: New USB device found, idVendor=0424, idProduct=4040
+<6>[    3.654814] usb 1-1.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+<6>[    3.662749] usb 1-1.1: Product: Ultra Fast Media Reader
+<6>[    3.667327] usb 1-1.1: Manufacturer: Generic
+<6>[    3.671570] usb 1-1.1: SerialNumber: 000000264001
+<6>[    3.678040] scsi0 : usb-storage 1-1.1:1.0
+<3>[    3.686616] msm_eeprom_probe probe_fail
+<6>[    3.690004] msm_sensor_register mctl_node_name[0] = video1
+<3>[    3.729986] Error: Driver 'msm_vidc' is already registered, aborting...
+<3>[    3.735632] Failed to register platform driver
+<6>[    3.762276] usb 1-1.2: new high-speed USB device number 4 using msm_hsic_host
+<6>[    3.771432] pm8xxx_tm_probe: OK
+<6>[    3.775003] device-mapper: ioctl: 4.22.0-ioctl (2011-10-19) initialised: dm-devel@redhat.com
+<6>[    3.783457] cpuidle: using governor ladder
+<6>[    3.786571] cpuidle: using governor menu
+<6>[    3.791393] mmc0: SDCC Version: 0x00000018
+<6>[    3.792827] usb 1-1.2: New USB device found, idVendor=0424, idProduct=9514
+<6>[    3.792827] usb 1-1.2: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+<6>[    3.793651] hub 1-1.2:1.0: USB hub found
+<6>[    3.793926] hub 1-1.2:1.0: 5 ports detected
+<6>[    3.818739] mmc0: bam physical base=0x12402000
+<6>[    3.822310] mmc0: bam virtual base=0xf00f8000
+<6>[    3.826552] sps:BAM 0x12402000 is registered.
+<6>[    3.830672] mmc0: BAM device registered. bam_handle=0xeeb62000
+<6>[    3.836899] sps:REVISION of BAM 0xf00f8000 is 0x5.
+<6>[    3.842972] mmc0: Qualcomm MSM SDCC-BAM at 0x0000000012402000 irq 130
+<6>[    3.848435] mmc0: Qualcomm MSM SDCC-DML at 0x0000000012400800
+<3>[    3.854356] mmc0: No card detect facilities available
+<6>[    3.861193] mmc0: Qualcomm MSM SDCC-core at 0x0000000012400000 irq 136,0 dma -1 dmacrcri -1
+<6>[    3.868792] mmc0: Controller capabilities: 0x0000039e
+<6>[    3.874103] mmc0: 8 bit data mode enabled
+<6>[    3.877704] mmc0: 4 bit data mode disabled
+<6>[    3.881886] mmc0: polling status mode disabled
+<6>[    3.886159] mmc0: MMC clock 400000 -> 96000000 Hz, PCLK 0 Hz
+<6>[    3.891835] mmc0: Slot eject status = 0
+<6>[    3.895681] mmc0: Power save feature enable = 1
+<6>[    3.900289] mmc0: SPS-BAM data transfer mode available
+<6>[    3.905814] mmc1: SDCC Version: 0x00000018
+<6>[    3.911551] mmc1: bam physical base=0x12182000
+<6>[    3.920219] mmc1: bam virtual base=0xf01f4000
+<6>[    3.929803] sps:BAM 0x12182000 is registered.
+<6>[    3.935174] mmc1: BAM device registered. bam_handle=0xeeb62600
+<6>[    3.950618] sps:REVISION of BAM 0xf01f4000 is 0x5.
+<6>[    3.981840] mmc1: Qualcomm MSM SDCC-BAM at 0x0000000012182000 irq 128
+<6>[    3.992461] mmc1: Qualcomm MSM SDCC-DML at 0x0000000012180800
+<6>[    4.009644] mmc1: Qualcomm MSM SDCC-core at 0x0000000012180000 irq 134,657 dma -1 dmacrcri -1
+<6>[    4.017244] mmc1: Controller capabilities: 0x0000039e
+<6>[    4.022432] mmc1: 8 bit data mode disabled
+<6>[    4.026552] mmc1: 4 bit data mode enabled
+<6>[    4.030398] mmc1: polling status mode disabled
+<6>[    4.034945] mmc1: MMC clock 400000 -> 96000000 Hz, PCLK 0 Hz
+<6>[    4.040470] mmc1: Slot eject status = 1
+<6>[    4.044285] mmc1: Power save feature enable = 1
+<6>[    4.048649] mmc1: SPS-BAM data transfer mode available
+<6>[    4.054295] mmc2: SDCC Version: 0x00000018
+<6>[    4.060705] mmc2: bam physical base=0x121c2000
+<6>[    4.064459] mmc2: bam virtual base=0xf0368000
+<6>[    4.068609] sps:BAM 0x121c2000 is registered.
+<6>[    4.073767] mmc2: BAM device registered. bam_handle=0xeeb62e00
+<6>[    4.081214] mmc0: new HS200 MMC card at address 0001
+<6>[    4.085670] usb 1-1.2.1: new high-speed USB device number 5 using msm_hsic_host
+<6>[    4.092965] sps:REVISION of BAM 0xf0368000 is 0x5.
+<6>[    4.098886] mmc2: Qualcomm MSM SDCC-BAM at 0x00000000121c2000 irq 127
+<6>[    4.106241] mmcblk0: mmc0:0001 MMC16G 14.6 GiB 
+<6>[    4.106302] mmc2: Qualcomm MSM SDCC-DML at 0x00000000121c0800
+<3>[    4.106638] mmc2: No card detect facilities available
+<6>[    4.121867] mmc2: Qualcomm MSM SDCC-core at 0x00000000121c0000 irq 133,0 dma -1 dmacrcri -1
+<6>[    4.129223] mmc2: Controller capabilities: 0x0000039e
+<6>[    4.134289] mmc2: 8 bit data mode disabled
+<6>[    4.138318] mmc2: 4 bit data mode enabled
+<4>[    4.142438] fail to execute sys_fchmodat, ret = -2
+<6>[    4.147108] mmc2: polling status mode disabled
+<6>[    4.151533] mmc2: MMC clock 400000 -> 48000000 Hz, PCLK 0 Hz
+<6>[    4.152052] usb 1-1.2.1: New USB device found, idVendor=0424, idProduct=ec00
+<6>[    4.152083] usb 1-1.2.1: New USB device strings: Mfr=1, Product=0, SerialNumber=0
+<6>[    4.152083] usb 1-1.2.1: Manufacturer: SMSC
+<4>[    4.152601] GPT:Primary header thinks Alt. header is not at the end of the disk.
+<4>[    4.152632] GPT:30212095 != 30801919
+<4>[    4.152632] GPT:Alternate GPT header not at the end of the disk.
+<4>[    4.152632] GPT:30212095 != 30801919
+<4>[    4.152662] GPT: Use GNU Parted to correct GPT errors.
+<6>[    4.152754]  mmcblk0: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p20 p21
+<6>[    4.158522] smsc95xx v1.0.4
+<6>[    4.213093] mmc2: Slot eject status = 0
+<6>[    4.216816] mmc2: Power save feature enable = 1
+<6>[    4.221333] mmc2: SPS-BAM data transfer mode available
+<6>[    4.228139] usbcore: registered new interface driver usbhid
+<6>[    4.232748] usbhid: USB HID core driver
+<6>[    4.238394] ashmem: initialized
+<6>[    4.240775] logger: created 256K log 'log_main'
+<6>[    4.245353] logger: created 256K log 'log_events'
+<6>[    4.249961] logger: created 256K log 'log_radio'
+<6>[    4.254661] logger: created 256K log 'log_system'
+<4>[    4.259819] >>Probing GYRO<<
+<6>[    4.359804] smsc95xx 1-1.2.1:1.0: eth0: register 'smsc95xx' at usb-msm_hsic_host-1.2.1, smsc95xx USB 2.0 Ethernet, 00:d0:ca:f1:b5:bc
+<5>[    4.684114] scsi 0:0:0:0: Direct-Access     Generic  Ultra HS-COMBO   2.01 PQ: 0 ANSI: 0
+<5>[    4.700717] sd 0:0:0:0: Attached scsi generic sg0 type 0
+<5>[    4.702884] sd 0:0:0:0: [sda] Attached SCSI removable disk
+<4>[    4.711033] scsi_scan_0 used greatest stack depth: 5992 bytes left
+<6>[    4.773142] input: gyro_sensor as /devices/virtual/input/input4
+<6>[    4.778727] Registered sensors device: gyro_sensor
+<3>[    4.782969] >>>lsm303dlhc magnetometer driver<<<
+<3>[    4.787486] lsm303dlhc_mag: probe start
+<6>[    5.003296] input: lsm303dlhc_mag as /devices/virtual/input/input5
+<6>[    5.008728] Registered sensors device: magnetometer
+<4>[    5.151869] fail to execute sys_fchmodat, ret = -2
+<6>[    5.221699] lsm303dlhc_mag 12-001e: lsm303dlh_mag probed
+<6>[    5.226064] lsm303dlhc_acc accelerometer driver: init
+<6>[    5.231100] lsm303dlhc_acc: probe start.
+<6>[    5.235281] lsm303dlhc_acc: lsm303dlhc_acc_probe has set irq1 to irq: 328 mapped on gpio:40
+<6>[    5.243308] lsm303dlhc_acc: lsm303dlhc_acc_probe has set irq2 to irq: 355 mapped on gpio:67
+<6>[    5.251762] Registered sensors device: accelerometer
+<6>[    5.256554] lsm303dlhc_acc: hw init start
+<6>[    5.264642] lsm303dlhc_acc: hw init done
+<6>[    5.269037] input: accelerometer as /devices/virtual/input/input6
+<6>[    5.275751] lsm303dlhc_acc 12-0019: lsm303dlhc_acc: probed
+<4>[    5.280512] i2c-core: driver [lsm303dlhc_acc] using legacy suspend method
+<4>[    5.287196] i2c-core: driver [lsm303dlhc_acc] using legacy resume method
+<3>[    5.293911] lps331ap: probe start.
+<3>[    5.298397] lps331ap I2C driver registered!
+<6>[    5.306699] input: barometer_sensor as /devices/virtual/input/input7
+<6>[    5.315275] Registered sensors device: barometer_sensor
+<6>[    5.319517] lps331ap 12-005d: lps331ap: probed
+<4>[    5.324095] i2c-core: driver [lps331ap] using legacy suspend method
+<4>[    5.330169] i2c-core: driver [lps331ap] using legacy resume method
+<6>[    5.336517] QDSS module initialized
+<6>[    5.340668] msm_etb msm_etb.0: ETB initialized
+<6>[    5.345002] msm_tpiu msm_tpiu.0: TPIU initialized
+<6>[    5.349549] msm_funnel msm_funnel.0: FUNNEL initialized
+<6>[    5.356661] msm_etm msm_etm.0: ETM initialized
+<6>[    5.360598] msm_tpiu msm_tpiu.0: TPIU disabled
+<6>[    5.370425] msm_etb msm_etb.0: ETB enabled
+<6>[    5.373569] msm_funnel msm_funnel.0: FUNNEL port mask 0x3 enabled
+<6>[    5.379795] msm_etm msm_etm.0: ETM tracing enabled
+<6>[    5.385777] usbcore: registered new interface driver snd-usb-audio
+<3>[    5.393712] tabla_probe
+<6>[    5.398290] msm_pcm_probe: dev name msm-voip-dsp
+<6>[    5.404730] msm_pcm_probe: dev name msm-pcm-dsp
+<6>[    5.408820] msm_pcm_probe: dev name msm-multi-ch-pcm-dsp
+<6>[    5.414191] msm_pcm_probe: dev name msm-lowlatency-pcm-dsp
+<6>[    5.420906] msm_compr_probe: dev name msm-compr-dsp
+<6>[    5.425881] msm-pcm-lpa msm-pcm-lpa: msm_pcm_probe: dev name msm-pcm-lpa
+<3>[    5.435189] msm_audio_init: Not the right machine type
+<3>[    5.439310] msm8930_audio_init: Not the right machine type
+<3>[    5.444864] msm_audio_init: Not the right machine type
+<6>[    5.533648] asoc: snd-soc-dummy-dai <-> MultiMedia1 mapping ok
+<6>[    5.539478] asoc: snd-soc-dummy-dai <-> MultiMedia2 mapping ok
+<6>[    5.545338] asoc: snd-soc-dummy-dai <-> CS-VOICE mapping ok
+<6>[    5.550709] asoc: snd-soc-dummy-dai <-> VoIP mapping ok
+<6>[    5.555898] asoc: snd-soc-dummy-dai <-> MultiMedia3 mapping ok
+<6>[    5.561727] asoc: snd-soc-dummy-dai <-> SLIMBUS0_HOSTLESS mapping ok
+<6>[    5.568228] asoc: snd-soc-dummy-dai <-> INT_FM_HOSTLESS mapping ok
+<6>[    5.574149] asoc: msm-stub-rx <-> msm-dai-q6.241 mapping ok
+<6>[    5.579673] asoc: msm-stub-tx <-> msm-dai-q6.240 mapping ok
+<6>[    5.585502] asoc: snd-soc-dummy-dai <-> MultiMedia4 mapping ok
+<6>[    5.591301] asoc: snd-soc-dummy-dai <-> AUXPCM_HOSTLESS mapping ok
+<6>[    5.597436] asoc: snd-soc-dummy-dai <-> HDMI_HOSTLESS mapping ok
+<6>[    5.603418] asoc: snd-soc-dummy-dai <-> VoLTE mapping ok
+<6>[    5.608637] asoc: snd-soc-dummy-dai <-> SGLTE mapping ok
+<6>[    5.613978] asoc: snd-soc-dummy-dai <-> MultiMedia5 mapping ok
+<6>[    5.619533] asoc: msm-stub-rx <-> msm-dai-q6.12288 mapping ok
+<6>[    5.625423] asoc: msm-stub-tx <-> msm-dai-q6.12289 mapping ok
+<6>[    5.631100] asoc: msm-stub-rx <-> msm-dai-q6.12292 mapping ok
+<6>[    5.636868] asoc: msm-stub-tx <-> msm-dai-q6.12293 mapping ok
+<6>[    5.642453] asoc: msm-stub-rx <-> msm-dai-q6-hdmi.8 mapping ok
+<6>[    5.648283] asoc: msm-stub-rx <-> msm-dai-q6.224 mapping ok
+<6>[    5.653868] asoc: msm-stub-tx <-> msm-dai-q6.225 mapping ok
+<6>[    5.659331] asoc: msm-stub-rx <-> msm-dai-q6.2 mapping ok
+<6>[    5.664794] asoc: msm-stub-tx <-> msm-dai-q6.3 mapping ok
+<6>[    5.670105] asoc: msm-stub-rx <-> msm-dai-q6.32773 mapping ok
+<6>[    5.675965] asoc: msm-stub-tx <-> msm-dai-q6.32772 mapping ok
+<6>[    5.681580] asoc: msm-stub-tx <-> msm-dai-q6.32771 mapping ok
+<6>[    5.731909] asoc: tabla_rx1 <-> msm-dai-q6.16384 mapping ok
+<4>[    5.736761] tabla_codec tabla_codec: ASoC: Failed to create Digital Mic1 debugfs file
+<6>[    5.750862] asoc: tabla_tx1 <-> msm-dai-q6.16385 mapping ok
+<6>[    5.757424] asoc: tabla_tx2 <-> msm-dai-q6.16389 mapping ok
+<6>[    5.764016] asoc: tabla_rx3 <-> msm-dai-q6.16388 mapping ok
+<6>[    5.775064] input: msm8960-snd-card Button Jack as /devices/platform/soc-audio.0/sound/card0/input8
+<6>[    5.784068] input: msm8960-snd-card Headset Jack as /devices/platform/soc-audio.0/sound/card0/input9
+<6>[    5.804272] oprofile: using arm/armv7-krait
+<6>[    5.807752] u32 classifier
+<6>[    5.810132]     Actions configured
+<6>[    5.813612] Netfilter messages via NETLINK v0.30.
+<6>[    5.818373] nf_conntrack version 0.5.0 (12440 buckets, 49760 max)
+<6>[    5.826644] ctnetlink v0.93: registering with nfnetlink.
+<6>[    5.832351] NF_TPROXY: Transparent proxy support initialized, version 4.1.0
+<6>[    5.838303] NF_TPROXY: Copyright (c) 2006-2007 BalaBit IT Ltd.
+<6>[    5.844987] xt_time: kernel timezone is -0000
+<6>[    5.849870] ip_tables: (C) 2000-2006 Netfilter Core Team
+<6>[    5.855028] arp_tables: (C) 2002 David S. Miller
+<6>[    5.858995] TCP: cubic registered
+<6>[    5.864520] NET: Registered protocol family 10
+<6>[    5.873737] Mobile IPv6
+<6>[    5.875263] ip6_tables: (C) 2000-2006 Netfilter Core Team
+<6>[    5.880940] IPv6 over IPv4 tunneling driver
+<6>[    5.886525] NET: Registered protocol family 17
+<6>[    5.890462] Bluetooth: RFCOMM TTY layer initialized
+<6>[    5.894918] Bluetooth: RFCOMM socket layer initialized
+<6>[    5.899954] Bluetooth: RFCOMM ver 1.11
+<6>[    5.903738] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+<6>[    5.908988] Bluetooth: BNEP filters: protocol multicast
+<6>[    5.914237] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+<6>[    5.921501] rfkill_gpio rfkill_gpio.0: dragon-wlan device registered.
+<6>[    5.927605] rfkill_gpio rfkill_gpio.1: dragon-bluetooth device registered.
+<5>[    5.934228] Registering the dns_resolver key type
+<6>[    5.939752] VFP support v0.3: implementor 51 architecture 64 part 4d variant 1 rev 4
+<5>[    5.946558] Registering SWP/SWPB emulation handler
+<6>[    5.992308] clock_late_init: Removing enables held for handed-off clocks
+<6>[    6.011475] MSM Watchdog Initialized
+<6>[    6.023927] rtc-pm8xxx rtc-pm8xxx: setting system clock to 1970-01-01 00:00:03 UTC (3)
+<6>[    6.030886] set_battery_data: Using Dragonboard ICR18650 Battery Data
+<3>[    6.038150] read_ocv_trim: program rev reg is 0x32
+<3>[    6.042026] read_ocv_trim: trim reg is 0x42
+<3>[    6.046177] read_ocv_trim: trim delta is 7
+<3>[    6.050297] pm8921_is_usb_chg_plugged_in: called before init
+<3>[    6.058354] pm8921_is_usb_chg_plugged_in: called before init
+<3>[    6.064275] pm8921_is_usb_chg_plugged_in: called before init
+<3>[    6.069037] pm8921_is_batfet_closed: called before init
+<3>[    6.101907] pm8921_is_usb_chg_plugged_in: called before init
+<6>[    6.108866] pm8921_bms_probe: OK battery_capacity_at_boot=0 volt = 46914 ocv = 3498000
+<3>[    6.116801] power_supply usb: driver failed to report `present' property: 4294967274
+<3>[    6.123607] power_supply usb: driver failed to report `present' property: 4294967274
+<3>[    6.131329] power_supply pm8921-dc: driver failed to report `present' property: 4294967274
+<3>[    6.139539] power_supply pm8921-dc: driver failed to report `present' property: 4294967274
+<4>[    6.150221] get_prop_batt_capacity: low battery charge = 0%
+<4>[    6.159682] get_prop_batt_capacity: low battery charge = 0%
+<4>[    6.164291] fail to execute sys_fchmodat, ret = -2
+<6>[    6.172775] ALSA device list:
+<6>[    6.174698]   #0: msm8960-snd-card
+<6>[    6.179154] Freeing init memory: 1036K
+<3>[    6.185716] init: /init.qcom.rc: 560: invalid command '/system/bin/log'
+<4>[    6.193316] init (1): /proc/1/oom_adj is deprecated, please use /proc/1/oom_score_adj instead.
+<6>[    6.346345] msm_hsusb msm_hsusb: CI13XXX_CONTROLLER_RESET_EVENT received
+<4>[    6.367709] get_prop_batt_capacity: low battery charge = 0%
+<3>[    6.404974] init: cannot open '/initlogo.rle'
+<6>[    6.515702] EXT4-fs (mmcblk0p12): mounted filesystem with ordered data mode. Opts: barrier=1
+<6>[    6.849870] EXT4-fs (mmcblk0p13): recovery complete
+<6>[    6.854875] EXT4-fs (mmcblk0p13): mounted filesystem with ordered data mode. Opts: nomblk_io_submit,errors=remount-ro
+<6>[    6.922234] fs_mgr: Running /system/bin/e2fsck on /dev/block/platform/msm_sdcc.1/by-name/userdata
+<4>[    6.978605] e2fsck used greatest stack depth: 5464 bytes left
+<6>[    6.991118] EXT4-fs (mmcblk0p13): mounted filesystem with ordered data mode. Opts: barrier=1,noauto_da_alloc
+<6>[    7.012025] EXT4-fs (mmcblk0p15): recovery complete
+<6>[    7.016908] EXT4-fs (mmcblk0p15): mounted filesystem with ordered data mode. Opts: barrier=1
+<6>[    7.033908] EXT4-fs (mmcblk0p14): recovery complete
+<6>[    7.038730] EXT4-fs (mmcblk0p14): mounted filesystem with ordered data mode. Opts: barrier=1
+<6>[    7.085029] Bluetooth: HCI UART driver ver 2.2
+<6>[    7.088448] Bluetooth: HCI H4 protocol initialized
+<6>[    7.093239] Bluetooth: HCI BCSP protocol initialized
+<6>[    7.098153] Bluetooth: HCILL protocol initialized
+<6>[    7.102914] Bluetooth: HCIATH3K protocol initialized
+<6>[    7.107797] Bluetooth: HCI_IBS protocol initialized
+<6>[    7.188188] EXT4-fs (mmcblk0p12): re-mounted. Opts: barrier=1
+<3>[    7.236654] init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+<3>[    7.279627] enable_store: android_usb: already disabled
+<3>[    7.292293] init: using deprecated syntax for specifying property 'sys.usb.config', use ${name} instead
+<6>[    7.311094] adb_open
+<6>[    7.312253] adb_bind_config
+<6>[    7.327453] frmnet_bind: RmNet(0) dual Speed, IN:ep7in OUT:ep5out
+<3>[    7.360231] init: cannot find '/system/bin/gpsone_daemon', disabling 'gpsone_daemon'
+<6>[    7.432626] warning: `qrngd' uses 32-bit capabilities (legacy support in use)
+<6>[    7.646635] android_work: android_work: did not send uevent (0 0   (null))
+<6>[    7.716984] android_work: android_work: sent uevent USB_STATE=CONNECTED
+<6>[    7.723912] android_work: android_work: sent uevent USB_STATE=DISCONNECTED
+<3>[    7.769021] init: cannot find '/system/bin/battery_monitor', disabling 'battery_monitor'
+<6>[    7.809217] android_work: android_work: sent uevent USB_STATE=CONNECTED
+<6>[    7.816297] android_usb gadget: high-speed config #1: android
+<6>[    7.821120] msm_otg msm_otg: Avail curr from USB = 500
+<7>[    7.827376] diag: USB connected
+<6>[    7.882557] android_work: android_work: sent uevent USB_STATE=CONFIGURED
+<6>[    7.888264] msm_thermal: enabled = 0
+<6>[    7.930047] alarm_set_rtc: Failed to set RTC, time will be lost on reboot
+<6>[    8.461468] wcnss_wlan triggered by userspace
+<3>[    8.463146] 8921_l10: requested voltage range [2900000, 3000000] does not fit within constraints: [3300000, 3300000]
+<3>[    8.463177] regulator_set_voltage(iris_vddpa) failed (-22)
+<3>[    8.464825] wcnss_wlan wcnss_wlan.0: WCNSS Power-up failed.
+<3>[    8.465313] mipi_dsi_clk_enable: dsi_esc_clk - clk_set_rate failed
+<6>[    9.093087] mdp4_dtv_start: <ID=0 1920x1080 (88,44,148), (4,5,36) 148MHz>
+<6>[    9.104013] dtv_on: tv_src_clk=148500kHz, pm_qos_rate=148500kHz, [0]
+<3>[    9.110117] hdmi_msm hdmi_msm.1: hdmi_msm_power_on: HDMI/HPD not initialized
+<6>[    9.116648] mdp4_dtv_on:
+<3>[    9.143079] mdp4_mixer_blend_setup: Error: no bg_pipe at mixer=1
+<6>[    9.148329] mdp4_dtv_off:
+<3>[    9.148329] hdmi_msm hdmi_msm.1: hdmi_msm_power_off: HDMI/HPD not initialized
+<6>[    9.148329] dtv_off_sub
+<6>[    9.202777] EXT4-fs (mmcblk0p12): re-mounted. Opts: barrier=1
+<6>[   10.038394] hdmi_msm hdmi_msm.1: hdmi_msm_hpd_feature: 1
+<6>[   10.309781] mdp4_overlay_mdp_perf_upd mdp clk is changed [1] from 0 to 34910000
+<6>[   10.852189] pil pil0: q6: Brought out of reset
+<6>[   10.882801] apr_tal:Q6 Is Up
+<6>[   10.884907] apr_tal: SMD_EVENT_OPEN
+<3>[   10.904745] diag: proc 2, msg mask update fail -12, tried 419
+<6>[   12.147138] alarm_set_rtc: Failed to set RTC, time will be lost on reboot
+<6>[   13.103952] msm_hsic_host msm_hsic_host: HSIC-USB in low power mode
+<6>[   15.015443] lpa331ap_set_enable
+<6>[   15.017549] lps331ap_prs_disable
+<6>[   15.020814] l3gd20_gyro_set_enable, 552 enable : 0.
+<4>[   15.573325] BatteryStats-Wr used greatest stack depth: 5248 bytes left
+<3>[   16.034915] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<6>[   16.042850] eoc_worker: Charging not in progress
+<4>[   16.045078] get_prop_batt_capacity: low battery charge = 0%
+<4>[   16.604394] get_prop_batt_capacity: low battery charge = 0%
+<6>[   16.700595] lsm303dlhc_acc: hw init start
+<6>[   16.707462] lsm303dlhc_acc: hw init done
+<4>[   16.770456] lowmem_shrink: convert oom_adj to oom_score_adj:
+<4>[   16.775125] oom_adj 0 => oom_score_adj 0
+<4>[   16.779307] oom_adj 1 => oom_score_adj 58
+<4>[   16.783274] oom_adj 2 => oom_score_adj 117
+<4>[   16.787395] oom_adj 4 => oom_score_adj 235
+<4>[   16.791301] oom_adj 9 => oom_score_adj 529
+<4>[   16.795299] oom_adj 15 => oom_score_adj 1000
+<6>[   17.390965] msm_hsic_host msm_hsic_host: HSIC-USB exited from low power mode
+<6>[   17.621791] ADDRCONF(NETDEV_UP): eth0: link is not ready
+<6>[   18.366488] apr_tal: SMD_EVENT_OPEN
+<6>[   18.380802] acc_open
+<6>[   18.381962] acc_release
+<6>[   19.218098] ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+<6>[   19.224202] smsc95xx 1-1.2.1:1.0: eth0: link up, 100Mbps, full-duplex, lpa 0xCDE1
+<4>[   21.401312] ------------[ cut here ]------------
+<4>[   21.401342] WARNING: at /home/e202f-krupa/AOSP/DragonBoard8060A-Gen2-JB/Source_Package/APQ8060A_M8960AAAAANLYA1744J_Gen2_JB_V20/kernel/kernel/rcutree.c:454 rcu_idle_exit_common.isra.26+0x4c/0xdc()
+<4>[   21.401342] Modules linked in: hci_uart
+<4>[   21.401373] [<c00148e8>] (unwind_backtrace+0x0/0x11c) from [<c007b4ac>] (warn_slowpath_common+0x4c/0x64)
+<4>[   21.401373] [<c007b4ac>] (warn_slowpath_common+0x4c/0x64) from [<c007b4dc>] (warn_slowpath_null+0x18/0x1c)
+<4>[   21.401403] [<c007b4dc>] (warn_slowpath_null+0x18/0x1c) from [<c00d2cdc>] (rcu_idle_exit_common.isra.26+0x4c/0xdc)
+<4>[   21.401403] [<c00d2cdc>] (rcu_idle_exit_common.isra.26+0x4c/0xdc) from [<c00d2e0c>] (rcu_idle_exit+0xa0/0xb8)
+<4>[   21.401434] [<c00d2e0c>] (rcu_idle_exit+0xa0/0xb8) from [<c074174c>] (cpu_die+0x24/0x5c)
+<4>[   21.401434] [<c074174c>] (cpu_die+0x24/0x5c) from [<c000f418>] (cpu_idle+0xdc/0xf0)
+<4>[   21.401464] [<c000f418>] (cpu_idle+0xdc/0xf0) from [<80208160>] (0x80208160)
+<4>[   21.401464] ---[ end trace bfbb17d416972420 ]---
+<4>[   21.401464] ------------[ cut here ]------------
+<4>[   21.401464] WARNING: at /home/e202f-krupa/AOSP/DragonBoard8060A-Gen2-JB/Source_Package/APQ8060A_M8960AAAAANLYA1744J_Gen2_JB_V20/kernel/kernel/rcutree.c:362 rcu_idle_enter_common.isra.28+0xcc/0xe8()
+<4>[   21.401495] Modules linked in: hci_uart
+<4>[   21.401495] [<c00148e8>] (unwind_backtrace+0x0/0x11c) from [<c007b4ac>] (warn_slowpath_common+0x4c/0x64)
+<4>[   21.401495] [<c007b4ac>] (warn_slowpath_common+0x4c/0x64) from [<c007b4dc>] (warn_slowpath_null+0x18/0x1c)
+<4>[   21.401526] [<c007b4dc>] (warn_slowpath_null+0x18/0x1c) from [<c00d2ef0>] (rcu_idle_enter_common.isra.28+0xcc/0xe8)
+<4>[   21.401526] [<c00d2ef0>] (rcu_idle_enter_common.isra.28+0xcc/0xe8) from [<c00d2fb0>] (rcu_idle_enter+0xa4/0xbc)
+<4>[   21.401556] [<c00d2fb0>] (rcu_idle_enter+0xa4/0xbc) from [<c0741758>] (cpu_die+0x30/0x5c)
+<4>[   21.401556] [<c0741758>] (cpu_die+0x30/0x5c) from [<c000f418>] (cpu_idle+0xdc/0xf0)
+<4>[   21.401556] [<c000f418>] (cpu_idle+0xdc/0xf0) from [<80208160>] (0x80208160)
+<4>[   21.401587] ---[ end trace bfbb17d416972421 ]---
+<3>[   22.433786] init: sys_prop: permission denied uid:1003  name:service.bootanim.exit
+<4>[   22.463604] BootAnimation used greatest stack depth: 4848 bytes left
+<3>[   22.954127] mdp_histogram_stop histogram already stopped
+<4>[   26.079505] get_prop_batt_capacity: low battery charge = 0%
+<4>[   26.089943] get_prop_batt_capacity: low battery charge = 0%
+<4>[   28.086738] ------------[ cut here ]------------
+<4>[   28.090309] WARNING: at /home/e202f-krupa/AOSP/DragonBoard8060A-Gen2-JB/Source_Package/APQ8060A_M8960AAAAANLYA1744J_Gen2_JB_V20/kernel/kernel/mutex.c:198 __mutex_lock_slowpath+0x130/0x3c4()
+<4>[   28.107157] Modules linked in: hci_uart
+<4>[   28.110972] [<c00148e8>] (unwind_backtrace+0x0/0x11c) from [<c007b4ac>] (warn_slowpath_common+0x4c/0x64)
+<4>[   28.120433] [<c007b4ac>] (warn_slowpath_common+0x4c/0x64) from [<c007b4dc>] (warn_slowpath_null+0x18/0x1c)
+<4>[   28.130077] [<c007b4dc>] (warn_slowpath_null+0x18/0x1c) from [<c07796dc>] (__mutex_lock_slowpath+0x130/0x3c4)
+<4>[   28.139966] [<c07796dc>] (__mutex_lock_slowpath+0x130/0x3c4) from [<c0779990>] (mutex_lock+0x20/0x3c)
+<4>[   28.149183] [<c0779990>] (mutex_lock+0x20/0x3c) from [<c0520c2c>] (cpufreq_governor_dbs+0x3c4/0x464)
+<4>[   28.158278] [<c0520c2c>] (cpufreq_governor_dbs+0x3c4/0x464) from [<c051d824>] (__cpufreq_governor+0x90/0xe0)
+<4>[   28.168106] [<c051d824>] (__cpufreq_governor+0x90/0xe0) from [<c051da98>] (__cpufreq_set_policy+0x224/0x258)
+<4>[   28.177903] [<c051da98>] (__cpufreq_set_policy+0x224/0x258) from [<c051dd7c>] (cpufreq_add_dev_interface+0x2b0/0x308)
+<4>[   28.188493] [<c051dd7c>] (cpufreq_add_dev_interface+0x2b0/0x308) from [<c051eaa8>] (cpufreq_add_dev+0x500/0x56c)
+<4>[   28.198657] [<c051eaa8>] (cpufreq_add_dev+0x500/0x56c) from [<c076e844>] (cpufreq_cpu_callback+0x88/0x9c)
+<4>[   28.208209] [<c076e844>] (cpufreq_cpu_callback+0x88/0x9c) from [<c077d4a8>] (notifier_call_chain+0x38/0x68)
+<4>[   28.217945] [<c077d4a8>] (notifier_call_chain+0x38/0x68) from [<c007d35c>] (__cpu_notify+0x28/0x40)
+<4>[   28.226980] [<c007d35c>] (__cpu_notify+0x28/0x40) from [<c076c3ec>] (_cpu_up+0xe4/0x118)
+<4>[   28.235037] [<c076c3ec>] (_cpu_up+0xe4/0x118) from [<c076c484>] (cpu_up+0x64/0x80)
+<4>[   28.242606] [<c076c484>] (cpu_up+0x64/0x80) from [<c0743b20>] (store_online+0x48/0x78)
+<4>[   28.250511] [<c0743b20>] (store_online+0x48/0x78) from [<c0387644>] (dev_attr_store+0x18/0x24)
+<4>[   28.259087] [<c0387644>] (dev_attr_store+0x18/0x24) from [<c017a3c0>] (sysfs_write_file+0x108/0x13c)
+<4>[   28.268213] [<c017a3c0>] (sysfs_write_file+0x108/0x13c) from [<c012b470>] (vfs_write+0xb0/0x128)
+<4>[   28.276972] [<c012b470>] (vfs_write+0xb0/0x128) from [<c012b6a8>] (sys_write+0x38/0x64)
+<4>[   28.284968] [<c012b6a8>] (sys_write+0x38/0x64) from [<c000dec0>] (ret_fast_syscall+0x0/0x30)
+<4>[   28.293361] ---[ end trace bfbb17d416972422 ]---
+<7>[   30.163833] eth0: no IPv6 routers present
+<4>[   46.078956] get_prop_batt_capacity: low battery charge = 0%
+<4>[   46.088448] get_prop_batt_capacity: low battery charge = 0%
+<3>[   66.075049] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[   66.086372] get_prop_batt_capacity: low battery charge = 0%
+<4>[   66.094704] get_prop_batt_capacity: low battery charge = 0%
+<4>[   66.096902] get_prop_batt_capacity: low battery charge = 0%
+<4>[   66.112345] get_prop_batt_capacity: low battery charge = 0%
+<4>[   66.124034] get_prop_batt_capacity: low battery charge = 0%
+<4>[   66.145734] get_prop_batt_capacity: low battery charge = 0%
+<3>[   86.074927] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[   86.085792] get_prop_batt_capacity: low battery charge = 0%
+<4>[   86.096780] get_prop_batt_capacity: low battery charge = 0%
+<4>[   86.270318] get_prop_batt_capacity: low battery charge = 0%
+<4>[   86.299404] get_prop_batt_capacity: low battery charge = 0%
+<4>[   86.338501] get_prop_batt_capacity: low battery charge = 0%
+<4>[   86.351503] get_prop_batt_capacity: low battery charge = 0%
+<3>[  106.074927] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  106.092598] get_prop_batt_capacity: low battery charge = 0%
+<4>[  106.102426] get_prop_batt_capacity: low battery charge = 0%
+<4>[  106.108225] get_prop_batt_capacity: low battery charge = 0%
+<4>[  106.132092] get_prop_batt_capacity: low battery charge = 0%
+<4>[  106.152021] get_prop_batt_capacity: low battery charge = 0%
+<4>[  106.174973] get_prop_batt_capacity: low battery charge = 0%
+<6>[  115.182603] SLIM_CL: skip reconfig sequence
+<3>[  126.074896] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  126.093300] get_prop_batt_capacity: low battery charge = 0%
+<4>[  126.099191] get_prop_batt_capacity: low battery charge = 0%
+<4>[  126.108866] get_prop_batt_capacity: low battery charge = 0%
+<4>[  126.136273] get_prop_batt_capacity: low battery charge = 0%
+<4>[  126.156386] get_prop_batt_capacity: low battery charge = 0%
+<4>[  126.181840] get_prop_batt_capacity: low battery charge = 0%
+<3>[  146.075171] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  146.087410] get_prop_batt_capacity: low battery charge = 0%
+<4>[  146.093544] get_prop_batt_capacity: low battery charge = 0%
+<4>[  146.103891] get_prop_batt_capacity: low battery charge = 0%
+<4>[  146.126964] get_prop_batt_capacity: low battery charge = 0%
+<4>[  146.146894] get_prop_batt_capacity: low battery charge = 0%
+<4>[  146.166000] get_prop_batt_capacity: low battery charge = 0%
+<3>[  166.075202] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  166.092842] get_prop_batt_capacity: low battery charge = 0%
+<4>[  166.102578] get_prop_batt_capacity: low battery charge = 0%
+<4>[  166.108377] get_prop_batt_capacity: low battery charge = 0%
+<4>[  166.130535] get_prop_batt_capacity: low battery charge = 0%
+<4>[  166.150495] get_prop_batt_capacity: low battery charge = 0%
+<4>[  166.170975] get_prop_batt_capacity: low battery charge = 0%
+<3>[  186.075110] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  186.086616] get_prop_batt_capacity: low battery charge = 0%
+<4>[  186.094704] get_prop_batt_capacity: low battery charge = 0%
+<4>[  186.096902] get_prop_batt_capacity: low battery charge = 0%
+<4>[  186.116770] get_prop_batt_capacity: low battery charge = 0%
+<4>[  186.130932] get_prop_batt_capacity: low battery charge = 0%
+<4>[  186.144636] get_prop_batt_capacity: low battery charge = 0%
+<3>[  206.075232] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  206.094124] get_prop_batt_capacity: low battery charge = 0%
+<4>[  206.099862] get_prop_batt_capacity: low battery charge = 0%
+<4>[  206.109384] get_prop_batt_capacity: low battery charge = 0%
+<4>[  206.129833] get_prop_batt_capacity: low battery charge = 0%
+<4>[  206.148664] get_prop_batt_capacity: low battery charge = 0%
+<4>[  206.167739] get_prop_batt_capacity: low battery charge = 0%
+<6>[  222.210926] ADDRCONF(NETDEV_UP): eth0: link is not ready
+<6>[  223.810590] ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+<6>[  223.811933] smsc95xx 1-1.2.1:1.0: eth0: link up, 100Mbps, full-duplex, lpa 0xCDE1
+<6>[  225.380527] SLIM_CL: skip reconfig sequence
+<3>[  226.074896] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  226.088570] get_prop_batt_capacity: low battery charge = 0%
+<4>[  226.093789] get_prop_batt_capacity: low battery charge = 0%
+<4>[  226.104715] get_prop_batt_capacity: low battery charge = 0%
+<4>[  226.116404] get_prop_batt_capacity: low battery charge = 0%
+<4>[  226.129864] get_prop_batt_capacity: low battery charge = 0%
+<4>[  226.142285] get_prop_batt_capacity: low battery charge = 0%
+<7>[  233.993804] eth0: no IPv6 routers present
+<3>[  246.075171] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  246.091652] get_prop_batt_capacity: low battery charge = 0%
+<4>[  246.101571] get_prop_batt_capacity: low battery charge = 0%
+<4>[  246.108499] get_prop_batt_capacity: low battery charge = 0%
+<4>[  246.128765] get_prop_batt_capacity: low battery charge = 0%
+<4>[  246.147932] get_prop_batt_capacity: low battery charge = 0%
+<4>[  246.166671] get_prop_batt_capacity: low battery charge = 0%
+<3>[  266.074927] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  266.091591] get_prop_batt_capacity: low battery charge = 0%
+<4>[  266.096444] get_prop_batt_capacity: low battery charge = 0%
+<4>[  266.108927] get_prop_batt_capacity: low battery charge = 0%
+<4>[  266.113840] get_prop_batt_capacity: low battery charge = 0%
+<4>[  266.125957] get_prop_batt_capacity: low battery charge = 0%
+<4>[  266.141217] get_prop_batt_capacity: low battery charge = 0%
+<3>[  286.075202] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  286.086708] get_prop_batt_capacity: low battery charge = 0%
+<4>[  286.092446] get_prop_batt_capacity: low battery charge = 0%
+<4>[  286.102151] get_prop_batt_capacity: low battery charge = 0%
+<4>[  286.124401] get_prop_batt_capacity: low battery charge = 0%
+<4>[  286.145948] get_prop_batt_capacity: low battery charge = 0%
+<4>[  286.167953] get_prop_batt_capacity: low battery charge = 0%
+<6>[  289.721318] msm_enqueue: queue eventdata new max is 1
+<6>[  289.881886] msm_enqueue: queue control new max is 1
+<6>[  290.103280] vfe32_proc_general: cmdID = RESET
+<6>[  290.107462] msm_mctl_set_vfe_output_mode: mctl=0xc0fb6950, vfe output mode =0x40
+<6>[  290.326903] vfe32_proc_general: cmdID = START
+<6>[  290.330688] vfe32_configure_pingpong_buffers Configure ping/pong address for 26
+<3>[  306.114970] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  306.124706] get_prop_batt_capacity: low battery charge = 0%
+<4>[  306.129955] get_prop_batt_capacity: low battery charge = 0%
+<4>[  306.137005] get_prop_batt_capacity: low battery charge = 0%
+<4>[  306.143445] get_prop_batt_capacity: low battery charge = 0%
+<4>[  306.153486] get_prop_batt_capacity: low battery charge = 0%
+<4>[  306.159652] get_prop_batt_capacity: low battery charge = 0%
+<4>[  306.173508] get_prop_batt_capacity: low battery charge = 0%
+<4>[  306.190294] get_prop_batt_capacity: low battery charge = 0%
+<6>[  307.115824] 
+<6>[  307.115824]  msm_vidc_enc: Inside vid_enc_open()
+<4>[  307.120708] 
+<4>[  307.120708] res_trk_download_firmware(): Request firmware download
+<6>[  307.174423] fw_version 10:31:2012
+<6>[  307.354738] 
+<6>[  307.354738]  vid_enc_ioctl(): Executing VEN_IOCTL_CMD_START
+<6>[  307.356172] 
+<6>[  307.356172]  msm_vidc_enc: Sending VCD_EVT_RESP_START to client
+<3>[  326.034945] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  326.047001] get_prop_batt_capacity: low battery charge = 0%
+<4>[  326.052037] get_prop_batt_capacity: low battery charge = 0%
+<4>[  326.057164] get_prop_batt_capacity: low battery charge = 0%
+<4>[  326.076484] get_prop_batt_capacity: low battery charge = 0%
+<4>[  326.095620] get_prop_batt_capacity: low battery charge = 0%
+<4>[  326.118022] get_prop_batt_capacity: low battery charge = 0%
+<6>[  329.666168] 
+<6>[  329.666168]  vid_enc_ioctl(): Calling vid_enc_flush with mode = 1
+<6>[  329.672668] 
+<6>[  329.672668]  msm_vidc_enc: Sending VCD_EVT_RESP_FLUSH_INPUT_DONE to client
+<6>[  329.682496] 
+<6>[  329.682496]  vid_enc_ioctl(): Calling vid_enc_flush with mode = 2
+<6>[  329.682557] 
+<6>[  329.682557]  msm_vidc_enc: Sending VCD_EVT_RESP_FLUSH_OUTPUT_DONE to client
+<3>[  329.682649]  vid_enc_free_recon_buffers() address  43d53000
+<6>[  329.682679] ddl_set_enc_property:Fails_as_not_in_open_state
+<6>[  329.682679] ddl_set_prop:FAILED
+<3>[  329.682679] Failed: ddl_set_property
+<3>[  329.683045]  vid_enc_free_recon_buffers() address  43d7c000
+<6>[  329.683045] ddl_set_enc_property:Fails_as_not_in_open_state
+<6>[  329.683045] ddl_set_prop:FAILED
+<3>[  329.683045] Failed: ddl_set_property
+<6>[  329.683137] 
+<6>[  329.683137]  vid_enc_ioctl(): Executing VEN_IOCTL_CMD_STOP
+<6>[  329.683503] 
+<6>[  329.683534]  msm_vidc_enc: Sending VCD_EVT_RESP_STOP to client
+<3>[  329.684510] vidc_delete_addr_table() : client_ctx = eedd8088. user_virt_addr = 0x43c5c000 NOT found
+<3>[  329.684938] vidc_delete_addr_table() : client_ctx = eedd8088. user_virt_addr = 0x43bc3000 NOT found
+<3>[  329.685762] vidc_delete_addr_table() : client_ctx = eedd8088. user_virt_addr = 0x43ae2000 NOT found
+<3>[  329.686586] vidc_delete_addr_table() : client_ctx = eedd8088. user_virt_addr = 0x439d4000 NOT found
+<3>[  329.687898] vidc_delete_addr_table() : client_ctx = eedd8088. user_virt_addr = 0x43762000 NOT found
+<3>[  329.688570] vidc_delete_addr_table() : client_ctx = eedd8088. user_virt_addr = 0x43710000 NOT found
+<3>[  329.689302]  vid_enc_free_recon_buffers() address    (null)
+<3>[  329.689302]  vid_enc_free_recon_buffers() address    (null)
+<6>[  329.689333] 
+<6>[  329.689333]  vid_enc_ioctl(): Executing VEN_IOCTL_CMD_STOP
+<6>[  329.689333] 
+<6>[  329.689333]  msm_vidc_enc: Sending VCD_EVT_RESP_STOP to client
+<6>[  329.690614] 
+<6>[  329.690614]  msm_vidc_enc: Inside vid_enc_release()
+<6>[  329.690645] 
+<6>[  329.690645]  msm_vidc_enc: Inside vid_enc_close_client()
+<6>[  329.864336] 
+<6>[  329.864336]  msm_vidc_enc: Return from vid_enc_release()
+<6>[  329.896413] vfe32_proc_general: cmdID = STOP
+<4>[  329.915977] mm-qcamera-daem used greatest stack depth: 4736 bytes left
+<6>[  329.924431] 
+<6>[  329.924431]  msm_vidc_enc: Inside vid_enc_open()
+<6>[  329.954127] fw_version 10:31:2012
+<6>[  329.966366] 
+<6>[  329.966366]  vid_enc_ioctl(): Executing VEN_IOCTL_CMD_START
+<3>[  329.973050] msm_release_ion_client Calling ion_client_destroy
+<6>[  329.974179] 
+<6>[  329.974179]  msm_vidc_enc: Sending VCD_EVT_RESP_START to client
+<6>[  330.038608] msm_enqueue: queue eventdata new max is 1
+<6>[  330.186601] msm_enqueue: queue control new max is 1
+<6>[  330.286738] vfe32_proc_general: cmdID = RESET
+<6>[  330.290523] msm_mctl_set_vfe_output_mode: mctl=0xc0fb6950, vfe output mode =0x40
+<6>[  330.514665] vfe32_proc_general: cmdID = START
+<6>[  330.518419] vfe32_configure_pingpong_buffers Configure ping/pong address for 26
+<6>[  330.587669] mdp4_overlay_mdp_perf_upd mdp clk is changed [1] from 34910000 to 38400000
+<6>[  330.712223] mdp4_overlay_mdp_perf_upd mdp clk is changed [0] from 38400000 to 34910000
+<6>[  331.188921] mdp4_overlay_mdp_perf_upd mdp clk is changed [1] from 34910000 to 38400000
+<6>[  333.850755] mdp4_overlay_mdp_perf_upd mdp clk is changed [0] from 38400000 to 34910000
+<6>[  334.315000] mdp4_overlay_mdp_perf_upd mdp clk is changed [1] from 34910000 to 38400000
+<3>[  346.035037] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  346.046116] get_prop_batt_capacity: low battery charge = 0%
+<4>[  346.056859] get_prop_batt_capacity: low battery charge = 0%
+<4>[  346.062566] get_prop_batt_capacity: low battery charge = 0%
+<4>[  346.088966] get_prop_batt_capacity: low battery charge = 0%
+<4>[  346.100534] get_prop_batt_capacity: low battery charge = 0%
+<4>[  346.112284] get_prop_batt_capacity: low battery charge = 0%
+<3>[  366.035006] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  366.046604] get_prop_batt_capacity: low battery charge = 0%
+<4>[  366.051457] get_prop_batt_capacity: low battery charge = 0%
+<4>[  366.065405] get_prop_batt_capacity: low battery charge = 0%
+<4>[  366.074927] get_prop_batt_capacity: low battery charge = 0%
+<4>[  366.099526] get_prop_batt_capacity: low battery charge = 0%
+<4>[  366.119914] get_prop_batt_capacity: low battery charge = 0%
+<3>[  386.035098] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  386.046421] get_prop_batt_capacity: low battery charge = 0%
+<4>[  386.047733] get_prop_batt_capacity: low battery charge = 0%
+<4>[  386.053898] get_prop_batt_capacity: low battery charge = 0%
+<4>[  386.068060] get_prop_batt_capacity: low battery charge = 0%
+<4>[  386.081580] get_prop_batt_capacity: low battery charge = 0%
+<4>[  386.092995] get_prop_batt_capacity: low battery charge = 0%
+<3>[  406.035006] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  406.047367] get_prop_batt_capacity: low battery charge = 0%
+<4>[  406.048588] get_prop_batt_capacity: low battery charge = 0%
+<4>[  406.055394] get_prop_batt_capacity: low battery charge = 0%
+<4>[  406.078010] get_prop_batt_capacity: low battery charge = 0%
+<4>[  406.098641] get_prop_batt_capacity: low battery charge = 0%
+<4>[  406.126201] get_prop_batt_capacity: low battery charge = 0%
+<3>[  426.035037] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  426.045566] get_prop_batt_capacity: low battery charge = 0%
+<4>[  426.050755] get_prop_batt_capacity: low battery charge = 0%
+<4>[  426.056584] get_prop_batt_capacity: low battery charge = 0%
+<4>[  426.075537] get_prop_batt_capacity: low battery charge = 0%
+<4>[  426.096291] get_prop_batt_capacity: low battery charge = 0%
+<4>[  426.120006] get_prop_batt_capacity: low battery charge = 0%
+<3>[  446.034915] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  446.046482] get_prop_batt_capacity: low battery charge = 0%
+<4>[  446.057164] get_prop_batt_capacity: low battery charge = 0%
+<4>[  446.058263] get_prop_batt_capacity: low battery charge = 0%
+<4>[  446.080421] get_prop_batt_capacity: low battery charge = 0%
+<4>[  446.098794] get_prop_batt_capacity: low battery charge = 0%
+<4>[  446.115092] get_prop_batt_capacity: low battery charge = 0%
+<4>[  462.721165] amix used greatest stack depth: 4656 bytes left
+<3>[  466.035037] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  466.046665] get_prop_batt_capacity: low battery charge = 0%
+<4>[  466.048008] get_prop_batt_capacity: low battery charge = 0%
+<4>[  466.052861] get_prop_batt_capacity: low battery charge = 0%
+<4>[  466.081062] get_prop_batt_capacity: low battery charge = 0%
+<4>[  466.105386] get_prop_batt_capacity: low battery charge = 0%
+<4>[  466.135388] get_prop_batt_capacity: low battery charge = 0%
+<3>[  486.035067] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  486.046970] get_prop_batt_capacity: low battery charge = 0%
+<4>[  486.048100] get_prop_batt_capacity: low battery charge = 0%
+<4>[  486.054326] get_prop_batt_capacity: low battery charge = 0%
+<4>[  486.076880] get_prop_batt_capacity: low battery charge = 0%
+<4>[  486.091500] get_prop_batt_capacity: low battery charge = 0%
+<4>[  486.120616] get_prop_batt_capacity: low battery charge = 0%
+<3>[  506.035037] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  506.046360] get_prop_batt_capacity: low battery charge = 0%
+<4>[  506.051213] get_prop_batt_capacity: low battery charge = 0%
+<4>[  506.058446] get_prop_batt_capacity: low battery charge = 0%
+<4>[  506.083259] get_prop_batt_capacity: low battery charge = 0%
+<4>[  506.099008] get_prop_batt_capacity: low battery charge = 0%
+<4>[  506.111490] get_prop_batt_capacity: low battery charge = 0%
+<3>[  526.035037] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  526.046329] get_prop_batt_capacity: low battery charge = 0%
+<4>[  526.051152] get_prop_batt_capacity: low battery charge = 0%
+<4>[  526.064245] get_prop_batt_capacity: low battery charge = 0%
+<4>[  526.074011] get_prop_batt_capacity: low battery charge = 0%
+<4>[  526.094521] get_prop_batt_capacity: low battery charge = 0%
+<4>[  526.109201] get_prop_batt_capacity: low battery charge = 0%
+<3>[  546.035006] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  546.046299] get_prop_batt_capacity: low battery charge = 0%
+<4>[  546.047398] get_prop_batt_capacity: low battery charge = 0%
+<4>[  546.052525] get_prop_batt_capacity: low battery charge = 0%
+<4>[  546.075354] get_prop_batt_capacity: low battery charge = 0%
+<4>[  546.094491] get_prop_batt_capacity: low battery charge = 0%
+<4>[  546.112192] get_prop_batt_capacity: low battery charge = 0%
+<3>[  566.035006] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  566.046848] get_prop_batt_capacity: low battery charge = 0%
+<4>[  566.052494] get_prop_batt_capacity: low battery charge = 0%
+<4>[  566.059362] get_prop_batt_capacity: low battery charge = 0%
+<4>[  566.068518] get_prop_batt_capacity: low battery charge = 0%
+<4>[  566.081855] get_prop_batt_capacity: low battery charge = 0%
+<4>[  566.110910] get_prop_batt_capacity: low battery charge = 0%
+<3>[  586.034976] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  586.046360] get_prop_batt_capacity: low battery charge = 0%
+<4>[  586.047459] get_prop_batt_capacity: low battery charge = 0%
+<4>[  586.053105] get_prop_batt_capacity: low battery charge = 0%
+<4>[  586.073859] get_prop_batt_capacity: low battery charge = 0%
+<4>[  586.097512] get_prop_batt_capacity: low battery charge = 0%
+<4>[  586.115519] get_prop_batt_capacity: low battery charge = 0%
+<3>[  606.035098] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  606.046604] get_prop_batt_capacity: low battery charge = 0%
+<4>[  606.051548] get_prop_batt_capacity: low battery charge = 0%
+<4>[  606.056828] get_prop_batt_capacity: low battery charge = 0%
+<4>[  606.077704] get_prop_batt_capacity: low battery charge = 0%
+<4>[  606.098092] get_prop_batt_capacity: low battery charge = 0%
+<4>[  606.118480] get_prop_batt_capacity: low battery charge = 0%
+<3>[  626.034976] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  626.046207] get_prop_batt_capacity: low battery charge = 0%
+<4>[  626.054661] get_prop_batt_capacity: low battery charge = 0%
+<4>[  626.057011] get_prop_batt_capacity: low battery charge = 0%
+<4>[  626.078620] get_prop_batt_capacity: low battery charge = 0%
+<4>[  626.096993] get_prop_batt_capacity: low battery charge = 0%
+<4>[  626.121226] get_prop_batt_capacity: low battery charge = 0%
+<3>[  646.035037] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  646.046696] get_prop_batt_capacity: low battery charge = 0%
+<4>[  646.051701] get_prop_batt_capacity: low battery charge = 0%
+<4>[  646.064611] get_prop_batt_capacity: low battery charge = 0%
+<4>[  646.070227] get_prop_batt_capacity: low battery charge = 0%
+<4>[  646.086647] get_prop_batt_capacity: low battery charge = 0%
+<4>[  646.101937] get_prop_batt_capacity: low battery charge = 0%
+<3>[  666.035525] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  666.047520] get_prop_batt_capacity: low battery charge = 0%
+<4>[  666.052433] get_prop_batt_capacity: low battery charge = 0%
+<4>[  666.056096] get_prop_batt_capacity: low battery charge = 0%
+<4>[  666.066168] get_prop_batt_capacity: low battery charge = 0%
+<4>[  666.074744] get_prop_batt_capacity: low battery charge = 0%
+<4>[  666.084846] get_prop_batt_capacity: low battery charge = 0%
+<3>[  686.034976] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  686.047001] get_prop_batt_capacity: low battery charge = 0%
+<4>[  686.051945] get_prop_batt_capacity: low battery charge = 0%
+<4>[  686.065984] get_prop_batt_capacity: low battery charge = 0%
+<4>[  686.077155] get_prop_batt_capacity: low battery charge = 0%
+<4>[  686.099587] get_prop_batt_capacity: low battery charge = 0%
+<4>[  686.110270] get_prop_batt_capacity: low battery charge = 0%
+<3>[  706.035006] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  706.047001] get_prop_batt_capacity: low battery charge = 0%
+<4>[  706.048130] get_prop_batt_capacity: low battery charge = 0%
+<4>[  706.053074] get_prop_batt_capacity: low battery charge = 0%
+<4>[  706.080970] get_prop_batt_capacity: low battery charge = 0%
+<4>[  706.101724] get_prop_batt_capacity: low battery charge = 0%
+<4>[  706.127056] get_prop_batt_capacity: low battery charge = 0%
+<3>[  726.034945] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  726.046390] get_prop_batt_capacity: low battery charge = 0%
+<4>[  726.052128] get_prop_batt_capacity: low battery charge = 0%
+<4>[  726.063940] get_prop_batt_capacity: low battery charge = 0%
+<4>[  726.079841] get_prop_batt_capacity: low battery charge = 0%
+<4>[  726.093789] get_prop_batt_capacity: low battery charge = 0%
+<4>[  726.114024] get_prop_batt_capacity: low battery charge = 0%
+<3>[  746.034976] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  746.047062] get_prop_batt_capacity: low battery charge = 0%
+<4>[  746.052037] get_prop_batt_capacity: low battery charge = 0%
+<4>[  746.064519] get_prop_batt_capacity: low battery charge = 0%
+<4>[  746.068823] get_prop_batt_capacity: low battery charge = 0%
+<4>[  746.079749] get_prop_batt_capacity: low battery charge = 0%
+<4>[  746.090614] get_prop_batt_capacity: low battery charge = 0%
+<3>[  766.034976] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  766.046360] get_prop_batt_capacity: low battery charge = 0%
+<4>[  766.051579] get_prop_batt_capacity: low battery charge = 0%
+<4>[  766.058568] get_prop_batt_capacity: low battery charge = 0%
+<4>[  766.078284] get_prop_batt_capacity: low battery charge = 0%
+<4>[  766.097726] get_prop_batt_capacity: low battery charge = 0%
+<4>[  766.122874] get_prop_batt_capacity: low battery charge = 0%
+<3>[  786.035006] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  786.046573] get_prop_batt_capacity: low battery charge = 0%
+<4>[  786.054936] get_prop_batt_capacity: low battery charge = 0%
+<4>[  786.061925] get_prop_batt_capacity: low battery charge = 0%
+<4>[  786.079566] get_prop_batt_capacity: low battery charge = 0%
+<4>[  786.098458] get_prop_batt_capacity: low battery charge = 0%
+<4>[  786.113566] get_prop_batt_capacity: low battery charge = 0%
+<3>[  806.035006] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  806.046451] get_prop_batt_capacity: low battery charge = 0%
+<4>[  806.051487] get_prop_batt_capacity: low battery charge = 0%
+<4>[  806.057134] get_prop_batt_capacity: low battery charge = 0%
+<4>[  806.072424] get_prop_batt_capacity: low battery charge = 0%
+<4>[  806.079230] get_prop_batt_capacity: low battery charge = 0%
+<4>[  806.104989] get_prop_batt_capacity: low battery charge = 0%
+<3>[  826.035006] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  826.046604] get_prop_batt_capacity: low battery charge = 0%
+<4>[  826.051701] get_prop_batt_capacity: low battery charge = 0%
+<4>[  826.056676] get_prop_batt_capacity: low battery charge = 0%
+<4>[  826.076117] get_prop_batt_capacity: low battery charge = 0%
+<4>[  826.092964] get_prop_batt_capacity: low battery charge = 0%
+<4>[  826.108652] get_prop_batt_capacity: low battery charge = 0%
+<3>[  846.035037] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  846.047489] get_prop_batt_capacity: low battery charge = 0%
+<4>[  846.053380] get_prop_batt_capacity: low battery charge = 0%
+<4>[  846.058110] get_prop_batt_capacity: low battery charge = 0%
+<4>[  846.074439] get_prop_batt_capacity: low battery charge = 0%
+<4>[  846.096535] get_prop_batt_capacity: low battery charge = 0%
+<4>[  846.112864] get_prop_batt_capacity: low battery charge = 0%
+<3>[  866.035037] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  866.046207] get_prop_batt_capacity: low battery charge = 0%
+<4>[  866.051548] get_prop_batt_capacity: low battery charge = 0%
+<4>[  866.063940] get_prop_batt_capacity: low battery charge = 0%
+<4>[  866.069494] get_prop_batt_capacity: low battery charge = 0%
+<4>[  866.087166] get_prop_batt_capacity: low battery charge = 0%
+<4>[  866.101174] get_prop_batt_capacity: low battery charge = 0%
+<3>[  886.034976] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  886.049503] get_prop_batt_capacity: low battery charge = 0%
+<4>[  886.055119] get_prop_batt_capacity: low battery charge = 0%
+<4>[  886.067053] get_prop_batt_capacity: low battery charge = 0%
+<4>[  886.086830] get_prop_batt_capacity: low battery charge = 0%
+<4>[  886.112620] get_prop_batt_capacity: low battery charge = 0%
+<4>[  886.129955] get_prop_batt_capacity: low battery charge = 0%
+<3>[  906.034976] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  906.047398] get_prop_batt_capacity: low battery charge = 0%
+<4>[  906.052739] get_prop_batt_capacity: low battery charge = 0%
+<4>[  906.057805] get_prop_batt_capacity: low battery charge = 0%
+<4>[  906.072546] get_prop_batt_capacity: low battery charge = 0%
+<4>[  906.084327] get_prop_batt_capacity: low battery charge = 0%
+<4>[  906.101235] get_prop_batt_capacity: low battery charge = 0%
+<3>[  926.034915] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  926.046970] get_prop_batt_capacity: low battery charge = 0%
+<4>[  926.050419] get_prop_batt_capacity: low battery charge = 0%
+<4>[  926.052891] get_prop_batt_capacity: low battery charge = 0%
+<4>[  926.087593] get_prop_batt_capacity: low battery charge = 0%
+<4>[  926.103189] get_prop_batt_capacity: low battery charge = 0%
+<4>[  926.113169] get_prop_batt_capacity: low battery charge = 0%
+<3>[  946.035037] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  946.046390] get_prop_batt_capacity: low battery charge = 0%
+<4>[  946.047703] get_prop_batt_capacity: low battery charge = 0%
+<4>[  946.062444] get_prop_batt_capacity: low battery charge = 0%
+<4>[  946.075049] get_prop_batt_capacity: low battery charge = 0%
+<4>[  946.105295] get_prop_batt_capacity: low battery charge = 0%
+<4>[  946.127025] get_prop_batt_capacity: low battery charge = 0%
+<3>[  966.035037] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  966.045810] get_prop_batt_capacity: low battery charge = 0%
+<4>[  966.056615] get_prop_batt_capacity: low battery charge = 0%
+<4>[  966.062291] get_prop_batt_capacity: low battery charge = 0%
+<4>[  966.081031] get_prop_batt_capacity: low battery charge = 0%
+<4>[  966.094521] get_prop_batt_capacity: low battery charge = 0%
+<4>[  966.115763] get_prop_batt_capacity: low battery charge = 0%
+<3>[  986.035006] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[  986.046604] get_prop_batt_capacity: low battery charge = 0%
+<4>[  986.052098] get_prop_batt_capacity: low battery charge = 0%
+<4>[  986.057134] get_prop_batt_capacity: low battery charge = 0%
+<4>[  986.070624] get_prop_batt_capacity: low battery charge = 0%
+<4>[  986.090218] get_prop_batt_capacity: low battery charge = 0%
+<4>[  986.106790] get_prop_batt_capacity: low battery charge = 0%
+<3>[ 1006.034976] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[ 1006.046482] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1006.056157] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1006.057256] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1006.086708] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1006.102548] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1006.123576] get_prop_batt_capacity: low battery charge = 0%
+<6>[ 1007.116496] msm_otg msm_otg: Avail curr from USB = 2
+<6>[ 1007.120463] msm_hsusb msm_hsusb: CI13XXX_CONTROLLER_SUSPEND_EVENT received
+<3>[ 1007.127361] usbin_uv_irq_handler: USB UnderVoltage
+<3>[ 1007.132946] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<3>[ 1007.142682] msm_otg msm_otg: Failed notifying 0 charger type to PMIC
+<6>[ 1007.148725] msm_otg msm_otg: Avail curr from USB = 0
+<7>[ 1007.153120] diag: USB disconnected
+<6>[ 1007.156630] adb_release
+<6>[ 1007.156721] adb_open
+<3>[ 1007.160903] usbin_ov_irq_handler: USB OverVoltage
+<6>[ 1007.161635] msm_hsusb msm_hsusb: CI13XXX_CONTROLLER_DISCONNECT_EVENT received
+<4>[ 1007.162520] logcat used greatest stack depth: 4568 bytes left
+<6>[ 1007.163985] android_work: android_work: sent uevent USB_STATE=DISCONNECTED
+<4>[ 1007.164535] get_prop_batt_capacity: low battery charge = 0%
+<3>[ 1007.166213] msm_otg msm_otg: Failed notifying 0 charger type to PMIC
+<4>[ 1007.167251] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1007.182664] get_prop_batt_capacity: low battery charge = 0%
+<6>[ 1007.190385] msm_otg msm_otg: phy_reset: success
+<4>[ 1007.193010] get_prop_batt_capacity: low battery charge = 0%
+<6>[ 1007.297481] msm_otg msm_otg: USB in low power mode
+<3>[ 1008.158919] init: untracked pid 2779 exited
+<3>[ 1012.654539] usbin_uv_irq_handler: USB UnderVoltage
+<3>[ 1012.676056] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<6>[ 1012.686280] msm_otg msm_otg: USB exited from low power mode
+<4>[ 1012.691622] get_prop_batt_capacity: 1 callbacks suppressed
+<4>[ 1012.696657] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1012.704745] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1012.715244] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1012.727758] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1012.751319] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1012.763222] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1012.782969] get_prop_batt_capacity: low battery charge = 0%
+<6>[ 1012.867785] msm_hsusb msm_hsusb: CI13XXX_CONTROLLER_RESET_EVENT received
+<6>[ 1013.150404] android_work: android_work: did not send uevent (0 0   (null))
+<6>[ 1013.221058] android_work: android_work: sent uevent USB_STATE=CONNECTED
+<6>[ 1013.227163] android_work: android_work: sent uevent USB_STATE=DISCONNECTED
+<6>[ 1013.312925] android_work: android_work: sent uevent USB_STATE=CONNECTED
+<6>[ 1013.319578] android_usb gadget: high-speed config #1: android
+<6>[ 1013.324431] msm_otg msm_otg: Avail curr from USB = 500
+<7>[ 1013.329894] diag: USB connected
+<6>[ 1013.384037] android_work: android_work: sent uevent USB_STATE=CONFIGURED
+<3>[ 1026.034976] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[ 1026.046543] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1026.047672] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1026.053257] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1026.073431] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1026.089424] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1026.107858] get_prop_batt_capacity: low battery charge = 0%
+<3>[ 1046.034976] chgfail_irq_handler: batt_present = 1, batt_temp_ok = 1, state_changed_to=1
+<4>[ 1046.046085] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1046.050999] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1046.055943] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1046.074866] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1046.104318] get_prop_batt_capacity: low battery charge = 0%
+<4>[ 1046.122844] get_prop_batt_capacity: low battery charge = 0%

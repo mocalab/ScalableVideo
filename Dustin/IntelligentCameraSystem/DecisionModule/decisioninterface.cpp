@@ -142,7 +142,7 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
     case 0:
         //Increase frame rate if possible
 
-        if(in.fpsAsInt() < 30 && (2*ratio) < ceiling)
+        if(in.fpsAsInt() < 30 /*&& (2*ratio) < ceiling*/)
         {
             //Optimize the framerate
             out.setFps(QString::number(30));
@@ -173,7 +173,7 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
     case 1:
         //Increase frame rate if possible
         ceiling = OPTIMUM_CEILING;
-        if(in.fpsAsInt() < 30 && (2*ratio) < ceiling)
+        if(in.fpsAsInt() < 30 /*&& (2*ratio) < ceiling*/)
         {
             //Optimize the framerate
             out.setFps(QString::number(30));
@@ -289,6 +289,13 @@ void DecisionInterface::downConvert(float ratio, EncodingParameters &in, Encodin
     {
     //User prefers frame rate and size
     case 0:
+        //First, see if we should increase the frame rate
+        if(in.fpsAsInt() < 30 /*&& (2*ratio) < ceiling*/)
+        {
+            //Optimize the framerate
+            out.setFps(QString::number(30));
+            ratio *= 2;
+        }
         //Decrease bitrate to fit channel
         bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
 
@@ -300,6 +307,12 @@ void DecisionInterface::downConvert(float ratio, EncodingParameters &in, Encodin
 
     //User prefers frame rate and quality
     case 1:
+        if(in.fpsAsInt() < 30 /*&& (2*ratio) < ceiling*/)
+        {
+            //Optimize the framerate
+            out.setFps(QString::number(30));
+            ratio *= 2;
+        }
         //Decrease bitrate to fit channel
         ceiling = OPTIMUM_CEILING;
 

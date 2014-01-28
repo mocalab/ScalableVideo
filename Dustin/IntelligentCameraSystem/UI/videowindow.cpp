@@ -535,7 +535,8 @@ void VideoWindow::takeSample()
         //class.
         double lbl_size_quality = 0.0;
         //For now, a trivial solution; will determine using empricial evidence
-        if((float)m_current_params.bitrateAsInt() > (float)ui->video_player->width() * ui->video_player->height() * 1.75)
+        if((float)m_current_params.bitrateAsInt() > (float)ui->video_player->width() * ui->video_player->height() * 1.75
+                && ui->video_player->width() < 720)
         {
             //Preference to quality
             lbl_size_quality = ML_USER_PREFERS_QUALITY;

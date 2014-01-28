@@ -86,6 +86,9 @@ private:
     //FOR TESTING
     void testLearning();
 
+    //Get a training set from file
+    void loadTrainingSet();
+
 };
 
 #endif // CONTROLCENTER_H

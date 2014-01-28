@@ -30,6 +30,7 @@ ControlCenter::ControlCenter(CameraList cameras, QWidget *parent) :
 #endif
     //Uncomment to run learning algorithm tests
    //this->testLearning();
+    this->loadTrainingSet();
 
 }
 
@@ -153,6 +154,34 @@ void ControlCenter::testLearning()
     out = m_fps_bitrate_learning_module.predict(tst2);
     out = 5.0;
     return;
+}
+
+void ControlCenter::loadTrainingSet()
+{
+    //Get the file name
+    QByteArray pathname = qgetenv("INTELLIGENT_CAMERA_SYSTEM_ROOT_DIR");
+    QString filename(pathname);
+    filename += "/Config/training_set_test";
+    FileReaderUtility filereader(filename);
+    if(filereader.open_file())
+    {
+        //Parse results
+        QString line = filereader.readLine();
+        while(line != "")
+        {
+            QStringList words = line.split(" ");
+            FeatureSet nextfs;
+            nextfs.setBandwidth(words[0].toInt());
+            nextfs.setContentType(words[1].toInt());
+            float fps_br = 0.0, size_qual = 0.0;
+            int cls = words[2].toInt();
+            fps_br = cls & (1 << 1) ? 1.0 : -1.0;
+            size_qual = cls & 1 ? 1.0 : -1.0;
+            this->addTrainingExample(nextfs, fps_br, size_qual);
+            line = filereader.readLine();
+        }
+    }
+
 }
 
 void ControlCenter::on_b_demux_test_clicked()
