@@ -49,7 +49,15 @@ VideoWindow::VideoWindow(Camera *camera, IControlCenterManager *control_center, 
     this->setUpThreads();
     //Delay server connect
 #ifdef Q_OS_LINUX
-    QTimer::singleShot(500, this, SLOT(delayServerConnect()));
+    if(this->m_camera->name() != "NIB")
+        QTimer::singleShot(500, this, SLOT(delayServerConnect()));
+    else
+    {
+        this->receivedMessage("Starting raw video from network in a box");
+
+        this->ui->video_player->playUrl(QString("udp/h264://@146.244.168.51:39082"));
+
+    }
 #endif
 
     //Set up the timer

@@ -43,7 +43,7 @@ import android.widget.Toast;
  * */
 public class CameraServer extends Activity implements View.OnClickListener/*, PreviewCallback, Callback*/{
 
-	public static final byte[] RECIPIENT_IPADDRESS = {(byte)146, (byte)244, (byte)146, (byte)209};
+	public static final String RECIPIENT_IPADDRESS = "146.254.195.155";
 	
 	//LOAD SHARED LIBRARIES
 	static
@@ -131,11 +131,11 @@ public class CameraServer extends Activity implements View.OnClickListener/*, Pr
 		m_server.execute();
 		
 		//Some buttons for testing
-//		m_b_beginStream = (Button) findViewById(R.id.bBeginStream); 
-//		m_b_beginStream.setOnClickListener(this);
-//		
-//		m_b_smartSwitch = (Button) findViewById(R.id.bSwitchStream); 
-//		m_b_smartSwitch.setOnClickListener(this);
+		m_b_beginStream = (Button) findViewById(R.id.bBeginStream); 
+		m_b_beginStream.setOnClickListener(this);
+		
+		m_b_smartSwitch = (Button) findViewById(R.id.bSwitchStream); 
+		m_b_smartSwitch.setOnClickListener(this);
 		
 		
 		m_defaultPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
@@ -190,19 +190,23 @@ public class CameraServer extends Activity implements View.OnClickListener/*, Pr
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-//		switch(v.getId())
-//		{
-//			case R.id.bBeginStream: 
-//				//TODO: Begin streaming/Stop streaming logic
-//				m_recordingStatus = !m_recordingStatus;
-//				m_b_beginStream.setText(m_recordingStatus ? "End Stream" : "Begin Streaming");
-//				m_encoder.updateRecordingStatus();
-//				break;
-//			case R.id.bSwitchStream: 
-//				m_encoder.scaleVideo();
-//				break;
-//		
-//		}
+		switch(v.getId())
+		{
+			case R.id.bBeginStream: 
+				//TODO: Begin streaming/Stop streaming logic
+				m_recordingStatus = !m_recordingStatus;
+				m_b_beginStream.setText(m_recordingStatus ? "End Stream" : "Begin Streaming");
+				
+				if(m_recordingStatus)
+					m_encoder.startStreaming(RECIPIENT_IPADDRESS);
+				else
+					m_encoder.endStreaming();
+				break;
+			case R.id.bSwitchStream: 
+				m_encoder.scaleVideo();
+				break;
+		
+		}
 	}
 	/**
 	 * THE COMMENTED SECTIONS BELOW ARE FOR THE ENCODER AND THE CAMERA. THEY ARE NOW
