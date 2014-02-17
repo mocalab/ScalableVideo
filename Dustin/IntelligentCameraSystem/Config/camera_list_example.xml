@@ -19,4 +19,9 @@
 		<address port="7744">140.154.1.29</address>
 		<contentType enum="0">CONTENT_TYPE_PERSONAL</contentType>
 	</camera>
+	
+	<camera name="NIB">
+		<address port="7744">0.0.0.0</address>
+		<contentType enum="0">CONTENT_TYPE_PERSONAL</contentType>
+	</camera>
 </cameraList>
