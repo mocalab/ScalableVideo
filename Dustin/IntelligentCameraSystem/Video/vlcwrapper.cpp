@@ -217,7 +217,7 @@ void VLCWrapper::getMediaStats()
         m_maxmutex.unlock();
 
         //Print
-        DEBUG() << stats.f_demux_bitrate << "    " << stats.f_input_bitrate << "    " << m_bravg << "    " << m_maxbitrate;
+        //DEBUG() << stats.f_demux_bitrate << "    " << stats.f_input_bitrate << "    " << m_bravg << "    " << m_maxbitrate;
 
     }
     else

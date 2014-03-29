@@ -7,7 +7,15 @@
 	
 	<camera name="DragonBoard-Lab">
 		<address port="7744">140.154.1.28</address>
-		<contentType enum="1">CONTENT_TYPE_PERSONAL</contentType>
+		<contentType enum="0">CONTENT_TYPE_NONE</contentType>
+	</camera>
+	<camera name="DragonBoard-Lab-Medical-4">
+		<address port="7744">140.154.1.28</address>
+		<contentType enum="5">CONTENT_TYPE_BROADCAST</contentType>
+	</camera>
+	<camera name="DragonBoard-Lab-Sports-3">
+		<address port="7744">140.154.1.28</address>
+		<contentType enum="3">CONTENT_TYPE_SURVEILLANCE</contentType>
 	</camera>
 	
 	<camera name="Camera-A">

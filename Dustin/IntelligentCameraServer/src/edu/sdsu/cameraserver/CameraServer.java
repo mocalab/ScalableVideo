@@ -43,7 +43,7 @@ import android.widget.Toast;
  * */
 public class CameraServer extends Activity implements View.OnClickListener/*, PreviewCallback, Callback*/{
 
-	public static final String RECIPIENT_IPADDRESS = "146.254.195.155";
+	public static final String RECIPIENT_IPADDRESS = "146.244.195.30";
 	
 	//LOAD SHARED LIBRARIES
 	static
@@ -88,7 +88,7 @@ public class CameraServer extends Activity implements View.OnClickListener/*, Pr
 //	private int						m_actualFrameRate;
 	
 	//Actual server
-	private	ServerDaemon			m_server;
+	private	 ServerDaemon			m_server;
 	
 	//The main interface to activate and disable streaming -- defined in this class
 	//to provide a common interface between the UI (for testing) and the TCP server
