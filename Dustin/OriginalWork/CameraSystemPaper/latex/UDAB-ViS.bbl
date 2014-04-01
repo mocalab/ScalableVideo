@@ -1,0 +1,91 @@
+\begin{thebibliography}{10}
+
+\bibitem{LibSVM}
+C.~Chang and C.~Lin.
+\newblock Libsvm: A library for support vector machines.
+
+\bibitem{SVCOverview}
+D.~Marpe H.~Schwarz and T.~Wiegand.
+\newblock Overview of the scalable video coding extension of the h.264/avc
+  standard.
+\newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
+  September 2007.
+
+\bibitem{H264Spec}
+ITU-T~Recommendation H.264.
+\newblock Advanced video coding for generic audiovisual services.
+\newblock May 2003.
+
+\bibitem{SVCTutorial}
+I~Urteaga et.~al. I.~Unanue.
+\newblock A tutorial on h.264/svc scalable video coding and its tradeoff
+  between quality, coding, efficiency, and performance.
+
+\bibitem{FeedbackControl}
+S.~Mascolo L.~De~Cicco and V.~Palmisano.
+\newblock Feedback control for adaptive live video streaming.
+\newblock {\em MMSyss ’11 Proceedings of the Second Annual ACM Conference on
+  Multimedia Systems}, 2011.
+
+\bibitem{SVCAdvances}
+J.~Ohm.
+\newblock Advances in scalable video coding.
+\newblock {\em Proceedings of the IEEE}, 93, January 2005.
+
+\bibitem{HASQoE}
+O.~Oyman and S.~Singh.
+\newblock Quality of experience for http adaptive streaming services.
+\newblock {\em IEEE Communications Magazine}, April 2012.
+
+\bibitem{DIChirp}
+Y.~Ozturk.
+\newblock Dichirp.
+
+\bibitem{RTSP}
+H.~Schulzrinne.
+\newblock Rfc 2326 real time streaming protocol (rtsp).
+\newblock April 1998.
+
+\bibitem{DASH}
+T.~Einarsson et.~al T.~Lohmar.
+\newblock Dynamic adaptive http streaming of live content.
+\newblock 2011.
+
+\bibitem{WirelessH264}
+M.~Hannuksela T.~Stockhammer and T.~Wiegand.
+\newblock H.264/avc in wireless environments.
+\newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
+  July 2003.
+
+\bibitem{H264AVCOverview}
+G.~Bjontegaard T.~Wiegand, G. J.~Sullivan and A.~Luthra.
+\newblock Overview of the h.264/avc video coding standard.
+\newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
+  July 2003.
+
+\bibitem{Netflix}
+Y.~Guo et.~al V.~Adhikari.
+\newblock Unreeling netflix: Understanding and improving multi-cdn movie
+  delivery.
+
+\bibitem{H264OverIP}
+S.~Wenger.
+\newblock H.264/avc over ip.
+\newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
+  13, July 2003.
+
+\bibitem{RTP}
+S.~Wenger M.M. Hannuksela T. Stockhammer~M. Westerlund and D.~Singer.
+\newblock Rtp payload format for h.264 video.
+\newblock {\em Network Working Group}, February 2005.
+
+\bibitem{Apple}
+Apple whitepaper.
+\newblock Http live streaming overview.
+
+\bibitem{Microsoft}
+A.~Zambelli.
+\newblock Iis smooth streaming technical overview.
+\newblock {\em Microsoft whitepaper}, March 2009.
+
+\end{thebibliography}
