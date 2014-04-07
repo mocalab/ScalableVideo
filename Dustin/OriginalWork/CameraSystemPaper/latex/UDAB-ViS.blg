@@ -1,4 +1,5 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: UDAB-ViS.aux
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: UDAB-ViS.aux
 The style file: plain.bst
 Database file #1: references.bib
 Warning--empty journal in LibSVM
@@ -14,4 +15,45 @@ Warning--empty journal in Netflix
 Warning--empty year in Netflix
 Warning--empty journal in Apple
 Warning--empty year in Apple
+You've used 17 entries,
+            2118 wiz_defined-function locations,
+            579 strings with 5802 characters,
+and the built_in function-call counts, 3744 in all, are:
+= -- 345
+> -- 161
+< -- 0
++ -- 66
+- -- 48
+* -- 203
+:= -- 700
+add.period$ -- 46
+call.type$ -- 17
+change.case$ -- 75
+chr.to.int$ -- 0
+cite$ -- 30
+duplicate$ -- 170
+empty$ -- 290
+format.name$ -- 48
+if$ -- 731
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 17
+newline$ -- 83
+num.names$ -- 34
+pop$ -- 97
+preamble$ -- 1
+purify$ -- 58
+quote$ -- 0
+skip$ -- 122
+stack$ -- 0
+substring$ -- 86
+swap$ -- 9
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 68
+warning$ -- 13
+while$ -- 34
+width$ -- 19
+write$ -- 156
 (There were 13 warnings)
