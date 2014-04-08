@@ -1,91 +1,106 @@
 \begin{thebibliography}{10}
 
-\bibitem{LibSVM}
-C.~Chang and C.~Lin.
-\newblock Libsvm: A library for support vector machines.
-
-\bibitem{SVCOverview}
-D.~Marpe H.~Schwarz and T.~Wiegand.
-\newblock Overview of the scalable video coding extension of the h.264/avc
-  standard.
-\newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
-  September 2007.
-
-\bibitem{H264Spec}
-ITU-T~Recommendation H.264.
-\newblock Advanced video coding for generic audiovisual services.
-\newblock May 2003.
-
-\bibitem{SVCTutorial}
-I~Urteaga et.~al. I.~Unanue.
-\newblock A tutorial on h.264/svc scalable video coding and its tradeoff
-  between quality, coding, efficiency, and performance.
-
-\bibitem{FeedbackControl}
-S.~Mascolo L.~De~Cicco and V.~Palmisano.
-\newblock Feedback control for adaptive live video streaming.
-\newblock {\em MMSyss ’11 Proceedings of the Second Annual ACM Conference on
-  Multimedia Systems}, 2011.
-
-\bibitem{SVCAdvances}
-J.~Ohm.
-\newblock Advances in scalable video coding.
-\newblock {\em Proceedings of the IEEE}, 93, January 2005.
-
-\bibitem{HASQoE}
-O.~Oyman and S.~Singh.
-\newblock Quality of experience for http adaptive streaming services.
-\newblock {\em IEEE Communications Magazine}, April 2012.
-
-\bibitem{DIChirp}
-Y.~Ozturk.
-\newblock Dichirp.
-
-\bibitem{RTSP}
-H.~Schulzrinne.
-\newblock Rfc 2326 real time streaming protocol (rtsp).
-\newblock April 1998.
-
-\bibitem{DASH}
-T.~Einarsson et.~al T.~Lohmar.
-\newblock Dynamic adaptive http streaming of live content.
-\newblock 2011.
-
-\bibitem{WirelessH264}
-M.~Hannuksela T.~Stockhammer and T.~Wiegand.
-\newblock H.264/avc in wireless environments.
-\newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
-  July 2003.
-
-\bibitem{H264AVCOverview}
-G.~Bjontegaard T.~Wiegand, G. J.~Sullivan and A.~Luthra.
-\newblock Overview of the h.264/avc video coding standard.
-\newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
-  July 2003.
+\bibitem{Apple}
+Http live streaming overview.
+\newblock {\em Apple Inc.}
+\newblock Available from:
+  \url{https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StreamingMediaGuide/StreamingMediaGuide.pdf}.
 
 \bibitem{Netflix}
-Y.~Guo et.~al V.~Adhikari.
+Vijay~Kumar Adhikari, Yang Guo, Fang Hao, Matteo Varvello, Volker Hilt, Moritz
+  Steiner, and Zhi-Li Zhang.
 \newblock Unreeling netflix: Understanding and improving multi-cdn movie
   delivery.
+\newblock In {\em 2012 Proceedings IEEE INFOCOM}, pages 1620--1628. IEEE, 2012.
+
+\bibitem{LibSVM}
+Chih-Chung Chang and Chih-Jen Lin.
+\newblock Libsvm: a library for support vector machines.
+\newblock {\em ACM Transactions on Intelligent Systems and Technology (TIST)},
+  2(3):27, 2011.
+
+\bibitem{FeedbackControl}
+Luca De~Cicco, Saverio Mascolo, and Vittorio Palmisano.
+\newblock Feedback control for adaptive live video streaming.
+\newblock In {\em Proceedings of the second annual ACM conference on Multimedia
+  systems}, pages 145--156. ACM, 2011.
+
+\bibitem{H264Spec}
+H~ITU-T~RECOMMENDATION.
+\newblock 264 “advanced video coding for generic audiovisual services”.
+\newblock {\em ISO/IEC}, 14496, 2003.
+
+\bibitem{DASH}
+Thorsten Lohmar, Torbjorn Einarsson, Per Frojdh, Fr{\'e}d{\'e}ric Gabin, and
+  Markus Kampmann.
+\newblock Dynamic adaptive http streaming of live content.
+\newblock In {\em 2011 IEEE International Symposium on a World of Wireless,
+  Mobile and Multimedia Networks (WoWMoM)}, pages 1--8. IEEE, 2011.
+
+\bibitem{SVCAdvances}
+J-R Ohm.
+\newblock Advances in scalable video coding.
+\newblock {\em Proceedings of the IEEE}, 93(1):42--56, 2005.
+
+\bibitem{HASQoE}
+Ozgur Oyman and Sarabjot Singh.
+\newblock Quality of experience for http adaptive streaming services.
+\newblock {\em IEEE Communications Magazine}, 50(4):20--27, 2012.
+
+\bibitem{DIChirp}
+Yusuf Ozturk and Manish Kulkarni.
+\newblock Dichirp: direct injection bandwidth estimation.
+\newblock {\em International Journal of Network Management}, 18(5):377--394,
+  2008.
+
+\bibitem{RTSP}
+Henning Schulzrinne.
+\newblock Real time streaming protocol (rtsp).
+\newblock April 1998.
+
+\bibitem{SVCOverview}
+Heiko Schwarz, Detlev Marpe, and Thomas Wiegand.
+\newblock Overview of the scalable video coding extension of the h. 264/avc
+  standard.
+\newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
+  17(9):1103--1120, 2007.
+
+\bibitem{WirelessH264}
+Thomas Stockhammer, Miska~M Hannuksela, and Thomas Wiegand.
+\newblock H. 264/avc in wireless environments.
+\newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
+  13(7):657--673, 2003.
+
+\bibitem{SVCTutorial}
+Iraide Unane, Inigo Urteaga, Ronaldo Husemann, Javier Del~Ser, Valter Roseler,
+  Aitor Rodriguez, and Pedro Sanchez.
+\newblock A tutorial on h.264/svc scalable video coding and its tradeoff
+  between quality, coding, efficiency, and performance.
+\newblock In Javier Del~Ser Lorente, editor, {\em Recent Advances on Video
+  Coding}. InTech, 2011.
+\newblock Available from:
+  \url{http://www.intechopen.com/books/recent-advances-on-video-coding/}.
 
 \bibitem{H264OverIP}
-S.~Wenger.
-\newblock H.264/avc over ip.
+Stephan Wenger.
+\newblock H. 264/avc over ip.
 \newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
-  13, July 2003.
+  13(7):645--656, 2003.
 
 \bibitem{RTP}
-S.~Wenger M.M. Hannuksela T. Stockhammer~M. Westerlund and D.~Singer.
-\newblock Rtp payload format for h.264 video.
-\newblock {\em Network Working Group}, February 2005.
+Stephan Wenger and Thomas Stockhammer.
+\newblock Rtp payload format for h. 264 video.
+\newblock 2005.
 
-\bibitem{Apple}
-Apple whitepaper.
-\newblock Http live streaming overview.
+\bibitem{H264AVCOverview}
+Thomas Wiegand, Gary~J Sullivan, Gisle Bjontegaard, and Ajay Luthra.
+\newblock Overview of the h. 264/avc video coding standard.
+\newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
+  13(7):560--576, 2003.
 
 \bibitem{Microsoft}
-A.~Zambelli.
+Alex Zambelli.
 \newblock Iis smooth streaming technical overview.
-\newblock {\em Microsoft whitepaper}, March 2009.
+\newblock {\em Microsoft Corporation}, 3, 2009.
 
 \end{thebibliography}
