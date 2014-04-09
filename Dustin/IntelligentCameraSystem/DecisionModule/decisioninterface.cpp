@@ -352,7 +352,7 @@ void DecisionInterface::downConvert(float ratio, EncodingParameters &in, Encodin
         max_bitrate = (int)(((float)in.bitrateAsInt() / ratio) * ceiling);
 
         //Choose the least of these two bitrates
-        bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
+        bitrate = max_bitrate;// < optimum_bitrate ? max_bitrate : optimum_bitrate;
         out.setBitrate(QString::number(bitrate));
 
         //Keep size constant?
