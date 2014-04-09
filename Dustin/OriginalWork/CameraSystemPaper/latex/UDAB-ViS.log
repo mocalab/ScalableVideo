@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.31)  7 APR 2014 21:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.31)  8 APR 2014 19:43
 entering extended mode
 **UDAB-ViS.tex
 
@@ -367,15 +367,14 @@ Package pdftex.def Info: BandwidthChangeDecisionTree.png used on input line 309
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18]
+[18] [19 <C:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSys
+temPaper/latex/BandwidthChangeDecisionTree.png>]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
- [19 <C:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
-aper/latex/BandwidthChangeDecisionTree.png>]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
@@ -387,7 +386,7 @@ Missing character: There is no ™ in font cmr12!
 File: BandwidthDecisions.png Graphic file (type png)
 
 <use BandwidthDecisions.png>
-Package pdftex.def Info: BandwidthDecisions.png used on input line 351.
+Package pdftex.def Info: BandwidthDecisions.png used on input line 355.
 (pdftex.def)             Requested size: 272.99881pt x 299.02274pt.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
@@ -400,7 +399,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: CameraSystemTestbed.png Graphic file (type png)
 
 <use CameraSystemTestbed.png>
-Package pdftex.def Info: CameraSystemTestbed.png used on input line 364.
+Package pdftex.def Info: CameraSystemTestbed.png used on input line 368.
 (pdftex.def)             Requested size: 195.0pt x 74.40134pt.
 
 
@@ -410,7 +409,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: SpatialResolutionTest.png Graphic file (type png)
 
 <use SpatialResolutionTest.png>
-Package pdftex.def Info: SpatialResolutionTest.png used on input line 373.
+Package pdftex.def Info: SpatialResolutionTest.png used on input line 377.
 (pdftex.def)             Requested size: 195.0pt x 119.7352pt.
 
 
@@ -426,7 +425,7 @@ Missing character: There is no ™ in font cmr12!
 File: QualityResolutionTest.png Graphic file (type png)
 
 <use QualityResolutionTest.png>
-Package pdftex.def Info: QualityResolutionTest.png used on input line 385.
+Package pdftex.def Info: QualityResolutionTest.png used on input line 389.
 (pdftex.def)             Requested size: 195.0pt x 108.5752pt.
 
 
@@ -445,30 +444,30 @@ Missing character: There is no ™ in font cmr12!
 File: ClassDistribution.png Graphic file (type png)
 
 <use ClassDistribution.png>
-Package pdftex.def Info: ClassDistribution.png used on input line 433.
+Package pdftex.def Info: ClassDistribution.png used on input line 437.
 (pdftex.def)             Requested size: 195.0pt x 78.98553pt.
 
-<TrainingExperimentTalkingHead.png, id=100, 560.0925pt x 460.72125pt>
+<TrainingExperimentTalkingHead.png, id=100, 576.65437pt x 408.77719pt>
 File: TrainingExperimentTalkingHead.png Graphic file (type png)
 
 <use TrainingExperimentTalkingHead.png>
 Package pdftex.def Info: TrainingExperimentTalkingHead.png used on input line 4
-58.
-(pdftex.def)             Requested size: 195.0pt x 160.40422pt.
+62.
+(pdftex.def)             Requested size: 195.0pt x 138.2339pt.
 
-<TrainingExperimentSports.png, id=101, 551.81157pt x 478.78876pt>
+<TrainingExperimentSports.png, id=101, 731.73375pt x 529.22719pt>
 File: TrainingExperimentSports.png Graphic file (type png)
 
 <use TrainingExperimentSports.png>
-Package pdftex.def Info: TrainingExperimentSports.png used on input line 464.
-(pdftex.def)             Requested size: 195.0pt x 169.19313pt.
+Package pdftex.def Info: TrainingExperimentSports.png used on input line 468.
+(pdftex.def)             Requested size: 195.0pt x 141.03592pt.
 
-<TrainingExperimentMedical.png, id=102, 572.89032pt x 478.78876pt>
+<TrainingExperimentMedical.png, id=102, 749.80125pt x 525.46312pt>
 File: TrainingExperimentMedical.png Graphic file (type png)
 
 <use TrainingExperimentMedical.png>
-Package pdftex.def Info: TrainingExperimentMedical.png used on input line 470.
-(pdftex.def)             Requested size: 195.0pt x 162.96866pt.
+Package pdftex.def Info: TrainingExperimentMedical.png used on input line 474.
+(pdftex.def)             Requested size: 195.0pt x 136.64926pt.
  [22 <C:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
 aper/latex/CameraSystemTestbed.png> <C:/Users/Dustin.Dustin-PC/ScalableVideo/Du
 stin/OriginalWork/CameraSystemPaper/latex/SpatialResolutionTest.png>]
@@ -490,17 +489,16 @@ ustin/OriginalWork/CameraSystemPaper/latex/ClassDistribution.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
 [24 <C:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPa
 per/latex/TrainingExperimentTalkingHead.png> <C:/Users/Dustin.Dustin-PC/Scalabl
 eVideo/Dustin/OriginalWork/CameraSystemPaper/latex/TrainingExperimentSports.png
 >]
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
-
 (C:\Users\Dustin.Dustin-PC\ScalableVideo\Dustin\OriginalWork\CameraSystemPaper\
 latex\UDAB-ViS.bbl
 Underfull \hbox (badness 3769) in paragraph at lines 4--8
@@ -531,10 +529,10 @@ Missing character: There is no  in font cmr12!
 (C:\Users\Dustin.Dustin-PC\ScalableVideo\Dustin\OriginalWork\CameraSystemPaper\
 latex\UDAB-ViS.aux) ) 
 Here is how much of TeX's memory you used:
- 3618 strings out of 493921
- 50355 string characters out of 3144843
- 120693 words of memory out of 3000000
- 6883 multiletter control sequences out of 15000+200000
+ 3619 strings out of 493921
+ 50377 string characters out of 3144843
+ 120703 words of memory out of 3000000
+ 6884 multiletter control sequences out of 15000+200000
  11070 words of font info for 40 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,12n,42p,1933b,999s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -552,7 +550,7 @@ ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on UDAB-ViS.pdf (29 pages, 1191230 bytes).
+Output written on UDAB-ViS.pdf (29 pages, 1364589 bytes).
 PDF statistics:
  173 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

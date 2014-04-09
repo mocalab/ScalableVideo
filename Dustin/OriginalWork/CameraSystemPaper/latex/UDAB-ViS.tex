@@ -314,7 +314,7 @@ When a new user begins interacting with the system, they are initiated in ``lear
 \subsection{Video Bandwidth Determinations}
 The catalyst for video bandwidth recalculation is when the channel conditions have changed significantly enough to warrant scaling the video. Several methods, such as DIChirp \cite{DIChirp}, have been shown to estimate the bandwidth of the channel within a high degree of accuracy. We will now lay out how changing the various video resolutions will affect the video bandwidth in our system.
 
-In order to alter the quality resolution we change the compression bitrate of the video. We determine two possible rates, the minimum of which is selected as the final bitrate of the video: maximum rate and optimal rate. The maximum rate can simply be calculated as a function of the known channel bandwidth and an optimization constant:
+In order to alter the quality resolution we change the compression bitrate of the video. The maximum bitrate can simply be calculated as a function of the known channel bandwidth and an optimization constant:
 \begin{equation}
 \label{equ:BitrateCalculation}
 Bitrate_{max} = Bandwidth_{channel} * K
@@ -322,21 +322,25 @@ Bitrate_{max} = Bandwidth_{channel} * K
 where $Bitrate_{max}$  is the maximum allowable bitrate, $Bandwidth_{channel}$ is the bandwidth of the channel, and $K$ is the optimization constant determining the percentage of available bandwidth that is acceptable to fill. Due to limitations in our encoder, the max bitrate must be calculated as a function of the frame rate. We are using the following calculation: 
 \begin{equation}
 \label{equ:LimitedBitrateCalculation}
-Bitrate_{max} = \frac {Bandwidth_{channel}}{\frac {T} {15} } * K
+Bitrate_{max} = \frac {Bandwidth_{channel}}{\frac {T} {17.28} } * K
 \end{equation}
-where $T$ is the frame rate of the video. The optimal bitrate is found as a function of the spatial resolution and an optimization constant:
+where $T$ is the frame rate of the video. We can then find an optimal bitrate for a given spatial resolution as a function of the video dimensions and an optimization constant:
 \begin{equation}
 \label{equ:OptimalBitrate}
 Bitrate_{opt} = width * height * Q_{max}
 \end{equation}
-where $Bitrate_{opt}$ is the optimum bitrate for the given spatial resolution, $width$ and $height$ are the dimensions of the video, and $Q_{max}$ is the optimization constant which can be configured to find the highest necessary bitrate to deliver high quality video at a given spatial resolution. The best choice of bitrate is either the maximum allowable or maximum necessary bitrate for the given channel, spatial resolution, and temporal resolution.
+where $width$ and $height$ are the dimensions of the video, and $Q_{max}$ is the optimization constant which can be configured to find the highest necessary bitrate to deliver high quality video at a given spatial resolution. The output bitrate is then simply $Bitrate_{max}$ unless we wish to be conservative with channel bandwidth. In this case, the best choice of bitrate is either the maximum allowable bitrate or maximum necessary bitrate for the given channel, spatial resolution, and temporal resolution. We can select from equations (\ref{equ:SelectMaxBitrate}) and (\ref{equ:OutputBitrate}) when determining which output bitrate to use.
+\begin{equation}
+\label{equ:SelectMaxBitrate}
+Bitrate_{out} = Bitrate_{max}
+\end{equation}
 \begin{equation}
 \label{equ:OutputBitrate}
 Bitrate_{out} = \min (Bitrate_{max} , Bitrate_{opt})
 \end{equation}
-The highest achievable bitrate for delivering the best possible quality to the client is given in figure \ref{equ:OutputBitrate}.
+The highest necessary bitrate for delivering the best possible quality to the client is given in equation (\ref{equ:OutputBitrate}).
 
-Determining the temporal and spatial resolution will affect the quality resolution such that higher values will result in lower quality once the bitrate has reached $Bitrate_{max}$. We inspect the user’s class in order to set these two parameters, as the class tells us if the temporal/spatial resolution should be optimized or if the quality should be optimized. In this study, we limit the possible temporal resolution values to 30 and 15. In the case where the temporal resolution bit is set in the user’s class, we simply set the frame rate to 30fps, and if unset, we change the frame rate to 15 fps. If the spatial resolution bit is set, the spatial resolution is changed to the maximum value. When the bit is unset, we first calculate $Bitrate_{max}$, then reduce the spatial resolution until:
+Determining the temporal and spatial resolution will affect the quality resolution such that higher values will result in lower quality once the bitrate has reached $Bitrate_{max}$. We inspect the user’s class in order to set these two parameters, as the class tells us if the temporal/spatial resolution should be optimized or if the quality should be optimized. In this study, we limit the possible temporal resolution values to 30 and 15. In the case where the temporal resolution bit is set in the user’s class, we simply set the frame rate to 30 fps, and if unset, we change the frame rate to 15 fps. If the spatial resolution bit is set, the spatial resolution is changed to the maximum value. When the bit is unset, we first calculate $Bitrate_{max}$, then reduce the spatial resolution until:
 \begin{equation}
 \label{equ:OptMaxRelation}
 Bitrate_{opt} \le Bitrate_{max}
@@ -452,7 +456,7 @@ The ``Content Type'' feature is used to classify different scenes that are trans
 1700+&2&0
 \end{tabular}
 \end{table}
-We trained the support vector machines and tested the learning mechanism by setting the bandwidth to 1600Kbps, 800Kbps, and 400Kbps while viewing video streams with content types 0, 1, and 2. For equation (\ref{equ:BitrateCalculation}) we selected the $K$ parameter to be 0.85 and for equation (\ref{equ:OptimalBitrate}) we selected the $Q_{max}$ parameter to be 3.5. The resulting bandwidth changes, encoding parameter changes, and class predictions are given in Figures \ref{fig:TalkingHead}-\ref{fig:Medical}.
+We trained the support vector machines and tested the learning mechanism by setting the bandwidth to 1600Kbps, 800Kbps, and 400Kbps while viewing video streams with content types 0, 1, and 2. For equation (\ref{equ:BitrateCalculation}) we selected the $K$ parameter to be 0.85 and for equation (\ref{equ:OptimalBitrate}) we selected the $Q_{max}$ parameter to be 3.5. In all the experiments the output bitrates are selected from equation (\ref{equ:SelectMaxBitrate}). The resulting bandwidth changes, encoding parameter changes, and class predictions are given in Figures \ref{fig:TalkingHead}-\ref{fig:Medical}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\linewidth]{TrainingExperimentTalkingHead.png}
@@ -471,7 +475,7 @@ We trained the support vector machines and tested the learning mechanism by sett
 \caption{Predictions With Content Type 2}
 \label{fig:Medical}
 \end{figure}
-In all cases, the video bandwidth was adapted when the channel bandwidth changed. In addition, the video bandwidth was consistently kept at 85\% of the channel bandwidth (as a result of our selection of $K$). In order to validate the accuracy of the predictions, Table \ref{tab:PredictedClasses} compares the expected class values and the predicted class values at time instances $T_0$, $T_1$, and $T_2$, where $T_0$ is the instant when the channel bandwidth changes to 1600Kbps.
+In all cases, the video bandwidth was adapted when the channel bandwidth changed. In addition, the video bandwidth was consistently kept at 85\% of the channel bandwidth as a result of our selection of $K$. In order to validate the accuracy of the predictions, Table \ref{tab:PredictedClasses} compares the expected class values and the predicted class values at time instances $T_0$, $T_1$, and $T_2$, where $T_0$ is the instant when the channel bandwidth changes to 1600Kbps.
 \begin{table} [h]
 \caption{Expected vs. Predicted Classes}
 \label{tab:PredictedClasses}
