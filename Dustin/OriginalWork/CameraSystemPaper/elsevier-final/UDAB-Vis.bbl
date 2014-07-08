@@ -1,0 +1,87 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{HASQoE}
+O.~Oyman, S.~Singh, Quality of experience for http adaptive streaming services,
+  IEEE Communications Magazine 50~(4) (2012) 20--27.
+
+\bibitem{RTSP}
+H.~Schulzrinne, Real time streaming protocol (rtsp).
+
+\bibitem{Apple}
+Http live streaming overview, Apple Inc.Available from:
+  \url{https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StreamingMediaGuide/StreamingMediaGuide.pdf}.
+
+\bibitem{Microsoft}
+A.~Zambelli, Iis smooth streaming technical overview, Microsoft Corporation 3.
+
+\bibitem{Netflix}
+V.~K. Adhikari, Y.~Guo, F.~Hao, M.~Varvello, V.~Hilt, M.~Steiner, Z.-L. Zhang,
+  Unreeling netflix: Understanding and improving multi-cdn movie delivery, in:
+  2012 Proceedings IEEE INFOCOM, IEEE, 2012, pp. 1620--1628.
+
+\bibitem{FeedbackControl}
+L.~De~Cicco, S.~Mascolo, V.~Palmisano, Feedback control for adaptive live video
+  streaming, in: Proceedings of the second annual ACM conference on Multimedia
+  systems, ACM, 2011, pp. 145--156.
+
+\bibitem{SVCAdvances}
+J.-R. Ohm, Advances in scalable video coding, Proceedings of the IEEE 93~(1)
+  (2005) 42--56.
+
+\bibitem{SVCOverview}
+H.~Schwarz, D.~Marpe, T.~Wiegand, Overview of the scalable video coding
+  extension of the h. 264/avc standard, IEEE Transactions on Circuits and
+  Systems for Video Technology 17~(9) (2007) 1103--1120.
+
+\bibitem{SVCTutorial}
+I.~Unane, I.~Urteaga, R.~Husemann, J.~Del~Ser, V.~Roseler, A.~Rodriguez,
+  P.~Sanchez, A tutorial on h.264/svc scalable video coding and its tradeoff
+  between quality, coding, efficiency, and performance, in: J.~D.~S. Lorente
+  (Ed.), Recent Advances on Video Coding, InTech, 2011, available from:
+  \url{http://www.intechopen.com/books/recent-advances-on-video-coding/}.
+
+\bibitem{DASH}
+T.~Lohmar, T.~Einarsson, P.~Frojdh, F.~Gabin, M.~Kampmann, Dynamic adaptive
+  http streaming of live content, in: 2011 IEEE International Symposium on a
+  World of Wireless, Mobile and Multimedia Networks (WoWMoM), IEEE, 2011, pp.
+  1--8.
+
+\bibitem{H264AVCOverview}
+T.~Wiegand, G.~J. Sullivan, G.~Bjontegaard, A.~Luthra, Overview of the h.
+  264/avc video coding standard, IEEE Transactions on Circuits and Systems for
+  Video Technology 13~(7) (2003) 560--576.
+
+\bibitem{RTP}
+S.~Wenger, T.~Stockhammer, Rtp payload format for h. 264 video.
+
+\bibitem{H264OverIP}
+S.~Wenger, H. 264/avc over ip, IEEE Transactions on Circuits and Systems for
+  Video Technology 13~(7) (2003) 645--656.
+
+\bibitem{WirelessH264}
+T.~Stockhammer, M.~M. Hannuksela, T.~Wiegand, H. 264/avc in wireless
+  environments, IEEE Transactions on Circuits and Systems for Video Technology
+  13~(7) (2003) 657--673.
+
+\bibitem{H264Spec}
+H.~ITU-T~RECOMMENDATION, 264 “advanced video coding for generic audiovisual
+  services”, ISO/IEC 14496.
+
+\bibitem{DIChirp}
+Y.~Ozturk, M.~Kulkarni, \href{http://dx.doi.org/10.1002/nem.674}{Dichirp:
+  direct injection bandwidth estimation}, International Journal of Network
+  Management 18~(5) (2008) 377--394.
+\newblock \href {http://dx.doi.org/10.1002/nem.674}
+  {\path{doi:10.1002/nem.674}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1002/nem.674}
+
+\bibitem{LibSVM}
+C.-C. Chang, C.-J. Lin, Libsvm: a library for support vector machines, ACM
+  Transactions on Intelligent Systems and Technology (TIST) 2~(3) (2011) 27.
+
+\end{thebibliography}

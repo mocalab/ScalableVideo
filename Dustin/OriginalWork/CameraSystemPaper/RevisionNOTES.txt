@@ -1,0 +1,8 @@
+--FUNDAMENTAL DISCOVERY: To scale a video when the bandwidth changes, an SVM can be used to model the user's quality preferences.
+
+--Extensive literature on the application of machine learning to object detection
+--Look at "Providing QoS through machine-learning-driven adaptive multimedia applications" 
+		http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=1298889&queryText%3Dbandwidth+adaptation+machine+learning
+		
+--FOCUS ON THE USE OF THE SVM, NOT THE HEURISTIC (or, make note of the heuristic os number of training data in the limitations part) 
+--"The value of 17.28 was determined empirically by observing the behavior of the system when changing the temporal resolution of the video." (limitations section)

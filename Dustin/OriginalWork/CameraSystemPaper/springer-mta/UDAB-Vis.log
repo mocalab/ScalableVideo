@@ -1,0 +1,585 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.31)  7 JUL 2014 19:46
+entering extended mode
+**UDAB-ViS.tex
+
+(c:\Users\Dustin.Dustin-PC\ScalableVideo\Dustin\OriginalWork\CameraSystemPaper\
+springer-mta\UDAB-ViS.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+
+LaTeX Warning: File `example.eps' already exists on the system.
+               Not generating it from this source.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fix-cm.sty"
+Package: fix-cm 2006/09/13 v1.1m fixes to LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+))
+(c:\Users\Dustin.Dustin-PC\ScalableVideo\Dustin\OriginalWork\CameraSystemPaper\
+springer-mta\svjour3.cls
+Document Class: svjour3 2007/05/08 v3.2 
+LaTeX document class for Springer journals
+Class Springer-SVJour3 Info: extra/valid Springer sub-package (-> *.clo) 
+(Springer-SVJour3)           not found in option list of \documentclass
+(Springer-SVJour3)           - autoactivating "global" style.
+
+(c:\Users\Dustin.Dustin-PC\ScalableVideo\Dustin\OriginalWork\CameraSystemPaper\
+springer-mta\svglov3.clo
+File: svglov3.clo 2009/12/18 v3.2 style option for standardised journals
+
+SVJour Class option: svglov3.clo for standardised journals
+)
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 147.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 149.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 150.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 151.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 153.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 154.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 156.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 157.
+\logodepth=\dimen102
+\headerboxheight=\dimen103
+\betweenumberspace=\dimen104
+\aftertext=\dimen105
+\headlineindent=\dimen106
+\c@inst=\count79
+\c@auth=\count80
+\instindent=\dimen107
+\authrun=\box26
+\authorrunning=\toks14
+\titrun=\box27
+\titlerunning=\toks15
+\combirun=\box28
+\c@lastpage=\count81
+\rubricwidth=\dimen108
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\spthmsep=\dimen109
+\c@theorem=\count87
+\c@case=\count88
+\c@conjecture=\count89
+\c@corollary=\count90
+\c@definition=\count91
+\c@example=\count92
+\c@exercise=\count93
+\c@lemma=\count94
+\c@note=\count95
+\c@problem=\count96
+\c@property=\count97
+\c@proposition=\count98
+\c@question=\count99
+\c@solution=\count100
+\c@remark=\count101
+\c@figure=\count102
+\c@table=\count103
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\figcapgap=\dimen110
+\tabcapgap=\dimen111
+\figgap=\dimen112
+\bibindent=\dimen113
+\@tempcntc=\count104
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count105
+))
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count106
+\lst@gtempboxa=\box29
+\lst@token=\toks17
+\lst@length=\count107
+\lst@currlwidth=\dimen116
+\lst@column=\count108
+\lst@pos=\count109
+\lst@lostspace=\dimen117
+\lst@width=\dimen118
+\lst@newlines=\count110
+\lst@lineno=\count111
+\lst@maxwidth=\dimen119
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
+\c@lstnumber=\count112
+\lst@skipnumbers=\count113
+\lst@framebox=\box30
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2014/03/04 1.5c listings configuration
+))
+Package: listings 2014/03/04 1.5c (Carsten Heinz)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks18
+\ex@=\dimen120
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen121
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count114
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count115
+\leftroot@=\count116
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count117
+\DOTSCASE@=\count118
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box31
+\strutbox@=\box32
+\big@size=\dimen122
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+
+
+Package amsmath Warning: Unable to redefine math accent \vec.
+
+\macc@depth=\count119
+\c@MaxMatrixCols=\count120
+\dotsspace@=\muskip10
+\c@parentequation=\count121
+\dspbrk@lvl=\count122
+\tag@help=\toks19
+\row@=\count123
+\column@=\count124
+\maxfields@=\count125
+\andhelp@=\toks20
+\eqnshift@=\dimen123
+\alignsep@=\dimen124
+\tagshift@=\dimen125
+\tagwidth@=\dimen126
+\totwidth@=\dimen127
+\lineht@=\dimen128
+\@envbody=\toks21
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count126
+\float@exts=\toks23
+\float@box=\box33
+\@float@everytoks=\toks24
+\@floatcapt=\box34
+)
+(c:\Users\Dustin.Dustin-PC\ScalableVideo\Dustin\OriginalWork\CameraSystemPaper\
+springer-mta\UDAB-ViS.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+
+Unknown journal: specify \journalname{<name of your journal>} in preambel
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count127
+\scratchdimen=\dimen129
+\scratchbox=\box35
+\nofMPsegments=\count128
+\nofMParguments=\count129
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count130
+\MPscratchDim=\dimen130
+\MPnumerator=\count131
+\makeMPintoPDFobject=\count132
+\everyMPtoPDFconversion=\toks26
+)
+\c@lstlisting=\count133
+
+SVJour3 warning: Missing \journalname
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+Underfull \vbox (badness 8189) has occurred while \output is active []
+
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+LaTeX Warning: Citation ` Apple' on page 2 undefined on input line 142.
+
+
+LaTeX Warning: Citation ` Microsoft' on page 2 undefined on input line 142.
+
+
+LaTeX Warning: Citation ` Netflix' on page 2 undefined on input line 142.
+
+[2] <images/H264AVCEncoderStructure.png, id=14, 221.32687pt x 212.29312pt>
+File: images/H264AVCEncoderStructure.png Graphic file (type png)
+
+<use images/H264AVCEncoderStructure.png>
+Package pdftex.def Info: images/H264AVCEncoderStructure.png used on input line 
+164.
+(pdftex.def)             Requested size: 135.19794pt x 129.6865pt.
+ [3]
+<images/NALUnitHeader.png, id=19, 371.88937pt x 121.95563pt>
+File: images/NALUnitHeader.png Graphic file (type png)
+
+<use images/NALUnitHeader.png>
+Package pdftex.def Info: images/NALUnitHeader.png used on input line 173.
+(pdftex.def)             Requested size: 185.90103pt x 60.96461pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPa
+per/springer-mta/images/H264AVCEncoderStructure.png>] [5 <c:/Users/Dustin.Dusti
+n-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/images/NA
+LUnitHeader.png>] <images/SVCTemporalScalability.png, id=28, 759.58781pt x 168.
+63pt>
+File: images/SVCTemporalScalability.png Graphic file (type png)
+
+<use images/SVCTemporalScalability.png>
+Package pdftex.def Info: images/SVCTemporalScalability.png used on input line 2
+02.
+(pdftex.def)             Requested size: 304.19794pt x 67.53313pt.
+
+<images/SingleLayerParameterSwitching.png, id=29, 632.3625pt x 465.99094pt>
+File: images/SingleLayerParameterSwitching.png Graphic file (type png)
+
+<use images/SingleLayerParameterSwitching.png>
+Package pdftex.def Info: images/SingleLayerParameterSwitching.png used on input
+ line 211.
+(pdftex.def)             Requested size: 253.5pt x 186.80547pt.
+
+<images/ReceiverArchitecture.png, id=30, 444.15938pt x 124.21407pt>
+File: images/ReceiverArchitecture.png Graphic file (type png)
+
+<use images/ReceiverArchitecture.png>
+Package pdftex.def Info: images/ReceiverArchitecture.png used on input line 218
+.
+(pdftex.def)             Requested size: 202.80206pt x 56.71458pt.
+ [6 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPa
+per/springer-mta/images/SVCTemporalScalability.png>] [7 <c:/Users/Dustin.Dustin
+-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/images/Sin
+gleLayerParameterSwitching.png> <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin
+/OriginalWork/CameraSystemPaper/springer-mta/images/ReceiverArchitecture.png>]
+Overfull \hbox (3.25052pt too wide) in paragraph at lines 224--225
+[]\OT1/cmr/m/n/10 Delay on the en-coder side is greatly avoided by us-ing a har
+d-ware H.264/AVC
+ []
+
+<images/SystemArchitecture.png, id=40, 524.71031pt x 149.8097pt>
+File: images/SystemArchitecture.png Graphic file (type png)
+
+<use images/SystemArchitecture.png>
+Package pdftex.def Info: images/SystemArchitecture.png used on input line 232.
+(pdftex.def)             Requested size: 236.59897pt x 67.55087pt.
+
+
+LaTeX Warning: Reference `sec:NALandPacketization' on page 8 undefined on input
+ line 243.
+
+[8 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPap
+er/springer-mta/images/SystemArchitecture.png>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [9]
+<images/openmax.png, id=47, 380.17032pt x 434.37282pt>
+File: images/openmax.png Graphic file (type png)
+
+<use images/openmax.png>
+Package pdftex.def Info: images/openmax.png used on input line 282.
+(pdftex.def)             Requested size: 185.90103pt x 212.40709pt.
+ [10]
+
+LaTeX Warning: Reference `fig:Stagefright' on page 11 undefined on input line 2
+87.
+
+<images/QualcommAPI.png, id=52, 307.90031pt x 366.61969pt>
+File: images/QualcommAPI.png Graphic file (type png)
+
+<use images/QualcommAPI.png>
+Package pdftex.def Info: images/QualcommAPI.png used on input line 297.
+(pdftex.def)             Requested size: 135.19794pt x 160.9831pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/openmax.png>] [12 <c:/Users/Dustin.Dustin-PC/ScalableV
+ideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/images/QualcommAPI.png>
+]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [13]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+<images/BandwidthChangeDecisionTree.png, id=65, 512.66531pt x 487.06969pt>
+File: images/BandwidthChangeDecisionTree.png Graphic file (type png)
+
+<use images/BandwidthChangeDecisionTree.png>
+Package pdftex.def Info: images/BandwidthChangeDecisionTree.png used on input l
+ine 366.
+(pdftex.def)             Requested size: 169.0pt x 160.56255pt.
+ [14] [15 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSy
+stemPaper/springer-mta/images/BandwidthChangeDecisionTree.png>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+<images/BandwidthDecisions.png, id=75, 624.08156pt x 683.55376pt>
+File: images/BandwidthDecisions.png Graphic file (type png)
+
+<use images/BandwidthDecisions.png>
+Package pdftex.def Info: images/BandwidthDecisions.png used on input line 412.
+(pdftex.def)             Requested size: 219.69794pt x 240.63461pt.
+ [16]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+<images/CameraSystemTestbed.png, id=79, 489.32813pt x 186.6975pt>
+File: images/CameraSystemTestbed.png Graphic file (type png)
+
+<use images/CameraSystemTestbed.png>
+Package pdftex.def Info: images/CameraSystemTestbed.png used on input line 425.
+
+(pdftex.def)             Requested size: 236.59897pt x 90.27184pt.
+ [17 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/BandwidthDecisions.png> <c:/Users/Dustin.Dustin-PC/Sca
+lableVideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/images/CameraSyst
+emTestbed.png>]
+<images/SpatialResolutionTest.png, id=83, 514.92375pt x 316.18124pt>
+File: images/SpatialResolutionTest.png Graphic file (type png)
+
+<use images/SpatialResolutionTest.png>
+Package pdftex.def Info: images/SpatialResolutionTest.png used on input line 43
+4.
+(pdftex.def)             Requested size: 270.40103pt x 166.03622pt.
+ [18 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/SpatialResolutionTest.png>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+<images/QualityResolutionTest.png, id=87, 669.2503pt x 372.64218pt>
+File: images/QualityResolutionTest.png Graphic file (type png)
+
+<use images/QualityResolutionTest.png>
+Package pdftex.def Info: images/QualityResolutionTest.png used on input line 44
+6.
+(pdftex.def)             Requested size: 270.40103pt x 150.56671pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+<images/ClassDistribution.png, id=88, 400.8576pt x 162.3666pt>
+File: images/ClassDistribution.png Graphic file (type png)
+
+<use images/ClassDistribution.png>
+Package pdftex.def Info: images/ClassDistribution.png used on input line 495.
+(pdftex.def)             Requested size: 219.69794pt x 88.98973pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/QualityResolutionTest.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/ClassDistribution.png>]
+<images/TrainingExperimentTalkingHead.png, id=98, 576.65437pt x 408.77719pt>
+File: images/TrainingExperimentTalkingHead.png Graphic file (type png)
+
+<use images/TrainingExperimentTalkingHead.png>
+Package pdftex.def Info: images/TrainingExperimentTalkingHead.png used on input
+ line 521.
+(pdftex.def)             Requested size: 270.40103pt x 191.68867pt.
+
+<images/TrainingExperimentSports.png, id=99, 731.73375pt x 529.22719pt>
+File: images/TrainingExperimentSports.png Graphic file (type png)
+
+<use images/TrainingExperimentSports.png>
+Package pdftex.def Info: images/TrainingExperimentSports.png used on input line
+ 527.
+(pdftex.def)             Requested size: 270.40103pt x 195.56873pt.
+
+<images/TrainingExperimentMedical.png, id=100, 749.80125pt x 525.46312pt>
+File: images/TrainingExperimentMedical.png Graphic file (type png)
+
+<use images/TrainingExperimentMedical.png>
+Package pdftex.def Info: images/TrainingExperimentMedical.png used on input lin
+e 533.
+(pdftex.def)             Requested size: 270.40103pt x 189.49532pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/TrainingExperimentTalkingHead.png>] [22 <c:/Users/Dust
+in.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/i
+mages/TrainingExperimentSports.png> <c:/Users/Dustin.Dustin-PC/ScalableVideo/Du
+stin/OriginalWork/CameraSystemPaper/springer-mta/images/TrainingExperimentMedic
+al.png>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+(c:\Users\Dustin.Dustin-PC\ScalableVideo\Dustin\OriginalWork\CameraSystemPaper\
+springer-mta\UDAB-ViS.bbl
+Underfull \hbox (badness 1024) in paragraph at lines 10--13
+[]\OT1/cmr/m/n/8 Http live stream-ing overview.  Ap-ple Inc. Avail-able from: $
+\OT1/cmtt/m/n/8 https : / / developer .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--13
+\OT1/cmtt/m/n/8 apple . com / library / ios / documentation / NetworkingInterne
+t / Conceptual /
+ []
+
+[23]
+Missing character: There is no ‚ in font cmr8!
+Missing character: There is no Ä in font cmr8!
+Missing character: There is no ú in font cmr8!
+Missing character: There is no ‚ in font cmr8!
+Missing character: There is no Ä in font cmr8!
+Missing character: There is no ù in font cmr8!
+) [24]
+(c:\Users\Dustin.Dustin-PC\ScalableVideo\Dustin\OriginalWork\CameraSystemPaper\
+springer-mta\UDAB-ViS.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3975 strings out of 493921
+ 58232 string characters out of 3144843
+ 115093 words of memory out of 3000000
+ 7228 multiletter control sequences out of 15000+200000
+ 11032 words of font info for 40 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 27i,12n,42p,2040b,999s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmtt8.pfb>
+Output written on UDAB-ViS.pdf (24 pages, 1356571 bytes).
+PDF statistics:
+ 178 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+

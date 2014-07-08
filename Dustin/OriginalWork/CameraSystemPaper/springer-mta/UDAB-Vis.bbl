@@ -1,0 +1,106 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{Apple}
+Http live streaming overview.
+\newblock Apple Inc. Available from:
+  \url{https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StreamingMediaGuide/StreamingMediaGuide.pdf}
+
+\bibitem{Netflix}
+Adhikari, V.K., Guo, Y., Hao, F., Varvello, M., Hilt, V., Steiner, M., Zhang,
+  Z.L.: Unreeling netflix: Understanding and improving multi-cdn movie
+  delivery.
+\newblock In: 2012 Proceedings IEEE INFOCOM, pp. 1620--1628. IEEE (2012)
+
+\bibitem{LibSVM}
+Chang, C.C., Lin, C.J.: Libsvm: a library for support vector machines.
+\newblock ACM Transactions on Intelligent Systems and Technology (TIST)
+  \textbf{2}(3), 27 (2011)
+
+\bibitem{FeedbackControl}
+De~Cicco, L., Mascolo, S., Palmisano, V.: Feedback control for adaptive live
+  video streaming.
+\newblock In: Proceedings of the second annual ACM conference on Multimedia
+  systems, pp. 145--156. ACM (2011)
+
+\bibitem{H264Spec}
+ITU-T~RECOMMENDATION, H.: 264 “advanced video coding for generic audiovisual
+  services”.
+\newblock ISO/IEC \textbf{14496} (2003)
+
+\bibitem{DASH}
+Lohmar, T., Einarsson, T., Frojdh, P., Gabin, F., Kampmann, M.: Dynamic
+  adaptive http streaming of live content.
+\newblock In: 2011 IEEE International Symposium on a World of Wireless, Mobile
+  and Multimedia Networks (WoWMoM), pp. 1--8. IEEE (2011)
+
+\bibitem{SVCAdvances}
+Ohm, J.R.: Advances in scalable video coding.
+\newblock Proceedings of the IEEE \textbf{93}(1), 42--56 (2005)
+
+\bibitem{HASQoE}
+Oyman, O., Singh, S.: Quality of experience for http adaptive streaming
+  services.
+\newblock IEEE Communications Magazine \textbf{50}(4), 20--27 (2012)
+
+\bibitem{DIChirp}
+Ozturk, Y., Kulkarni, M.: Dichirp: direct injection bandwidth estimation.
+\newblock International Journal of Network Management \textbf{18}(5), 377--394
+  (2008).
+\newblock \doi{10.1002/nem.674}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1002/nem.674}
+
+\bibitem{pan2007quality}
+Pan, C.H., Lee, I.H., Huang, S.C., Lian, C.J., Chen, L.G.: A
+  quality-of-experience video adaptor for serving scalable video applications.
+\newblock Consumer Electronics, IEEE Transactions on \textbf{53}(3), 1130--1137
+  (2007)
+
+\bibitem{RTSP}
+Schulzrinne, H.: Real time streaming protocol (rtsp)  (1998)
+
+\bibitem{SVCOverview}
+Schwarz, H., Marpe, D., Wiegand, T.: Overview of the scalable video coding
+  extension of the h. 264/avc standard.
+\newblock IEEE Transactions on Circuits and Systems for Video Technology
+  \textbf{17}(9), 1103--1120 (2007)
+
+\bibitem{WirelessH264}
+Stockhammer, T., Hannuksela, M.M., Wiegand, T.: H. 264/avc in wireless
+  environments.
+\newblock IEEE Transactions on Circuits and Systems for Video Technology
+  \textbf{13}(7), 657--673 (2003)
+
+\bibitem{SVCTutorial}
+Unane, I., Urteaga, I., Husemann, R., Del~Ser, J., Roseler, V., Rodriguez, A.,
+  Sanchez, P.: A tutorial on h.264/svc scalable video coding and its tradeoff
+  between quality, coding, efficiency, and performance.
+\newblock In: J.D.S. Lorente (ed.) Recent Advances on Video Coding. InTech
+  (2011).
+\newblock Available from:
+  \url{http://www.intechopen.com/books/recent-advances-on-video-coding/}
+
+\bibitem{H264OverIP}
+Wenger, S.: H. 264/avc over ip.
+\newblock IEEE Transactions on Circuits and Systems for Video Technology
+  \textbf{13}(7), 645--656 (2003)
+
+\bibitem{RTP}
+Wenger, S., Stockhammer, T.: Rtp payload format for h. 264 video  (2005)
+
+\bibitem{H264AVCOverview}
+Wiegand, T., Sullivan, G.J., Bjontegaard, G., Luthra, A.: Overview of the h.
+  264/avc video coding standard.
+\newblock IEEE Transactions on Circuits and Systems for Video Technology
+  \textbf{13}(7), 560--576 (2003)
+
+\bibitem{Microsoft}
+Zambelli, A.: Iis smooth streaming technical overview.
+\newblock Microsoft Corporation \textbf{3} (2009)
+
+\end{thebibliography}

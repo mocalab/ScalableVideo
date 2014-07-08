@@ -1,0 +1,6 @@
+<request action="start">
+	<width>#</width>
+	<height>#</height>
+	<fps>#</fps>
+	<rate>#</rate>
+</request>
