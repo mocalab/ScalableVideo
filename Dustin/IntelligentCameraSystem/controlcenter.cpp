@@ -5,8 +5,9 @@
 #include "Types/featureset.h"
 #include <QMessageBox>
 
-ControlCenter::ControlCenter(CameraList cameras, QWidget *parent) :
+ControlCenter::ControlCenter(CameraList cameras, bool standard_videos, QWidget *parent) :
     QMainWindow(parent),
+    m_standard_video_experiment(standard_videos),
     ui(new Ui::ControlCenter)
 {
     ui->setupUi(this);
@@ -222,6 +223,11 @@ void ControlCenter::train()
 
     //Train quality
     this->m_size_quality_learning_module.trainCurrent();
+}
+
+bool ControlCenter::usingStandardVideo()
+{
+    return this->m_standard_video_experiment;
 }
 
 //Predict the class based on the given feature set

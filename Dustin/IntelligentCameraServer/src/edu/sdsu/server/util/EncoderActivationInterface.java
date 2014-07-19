@@ -1,8 +1,9 @@
 package edu.sdsu.server.util;
 
-import java.util.List;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
-import edu.sdsu.cameraserver.message.EncoderParams;
 import android.content.Context;
 import android.graphics.ImageFormat;
 import android.graphics.PixelFormat;
@@ -13,9 +14,9 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.SurfaceHolder.Callback;
 import android.widget.Toast;
+import edu.sdsu.cameraserver.message.EncoderParams;
 
 /**
  * This class provides an interface to activate recording and encoding frames
@@ -57,8 +58,8 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 	private boolean					m_cameraAlreadyCreated = false;
 	
 	//Encoder elements
-	private int						m_previewWidth = 320; 
-	private int						m_previewHeight = 240;
+	private int						m_previewWidth = USE_STANDARD_VIDEO ? 352 : 320; 
+	private int						m_previewHeight = USE_STANDARD_VIDEO ? 288 : 240;
 	private int						m_frameRate = 30;
 	private int						m_bps = m_previewWidth * m_previewHeight * 3;
 	private boolean					m_variableRate = false;
@@ -83,6 +84,22 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 	//Application context
 	private Context					m_context;
 	
+	//FOR GETTING FRAMES FROM A STANDARD VIDEO FILE
+	public static final boolean			USE_STANDARD_VIDEO = false;
+	private static final String			CIF_VIDEO_FILENAME = "/data/dustin/akiyo/akiyo_cif.nv21";
+	boolean									cif_video_file_open = false;
+	private FileInputStream					cifVideoFile;
+	private int 							standardVideoRateControl = 0;			
+	//CIF Buffer
+	private byte[] 						cifFrame = new byte[(int) (352*288*1.5)];	
+	
+	//QCIF
+	private static final String			QCIF_VIDEO_FILENAME = "/data/dustin/akiyo/akiyo_qcif.nv21";
+	boolean									qcif_video_file_open = false;
+	private FileInputStream					qcifVideoFile;		
+	//CIF Buffer
+	private byte[] 						qcifFrame = new byte[(int) (176*144*1.5)];	
+	
 	//Constructor
 	public EncoderActivationInterface(SurfaceHolder holder, Context context)
 	{	
@@ -97,6 +114,23 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 		m_sh_cameraHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 		
 		m_texture = new SurfaceTexture(1);
+		
+		//Open the video file 
+		try {
+			cifVideoFile = new FileInputStream(CIF_VIDEO_FILENAME);
+			//cifVideoFile.skip(1000);
+			cif_video_file_open = true;
+			
+			qcifVideoFile = new FileInputStream(QCIF_VIDEO_FILENAME);
+			//cifVideoFile.skip(1000);
+			qcif_video_file_open = true;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	//Set the new encoder parameters
 	public void setEncoderParams(EncoderParams params)
@@ -338,21 +372,81 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 			//COMMENT OUT IFS TO GO BACK TO ORIGINAL FUNCTIONALITY
 			if(m_frameRateControl % (m_actualFrameRate / m_frameRate) == 0)
 			{
-				int length = data.length;
-				int expectedLength = (this.m_previewWidth * this.m_previewHeight * 3)/2;
-				if (length >= expectedLength) {
-					for (int i = this.m_previewWidth * this.m_previewHeight; i < expectedLength - 1; i += 2) {
-						byte tmp = data[i];
-						data[i] = data[i+1];
-						data[i+1] = tmp;
+				if(!USE_STANDARD_VIDEO)
+				{
+					int length = data.length;
+					int expectedLength = (this.m_previewWidth * this.m_previewHeight * 3)/2;
+					if (length >= expectedLength) {
+						for (int i = this.m_previewWidth * this.m_previewHeight; i < expectedLength - 1; i += 2) {
+							byte tmp = data[i];
+							data[i] = data[i+1];
+							data[i+1] = tmp;
+						}
 					}
+	
+					encoderFrame(data, camera, m_frameRate);
+					m_frameRateControl = 0;
 				}
-
-				encoderFrame(data, camera, m_frameRate);
-				m_frameRateControl = 0;
+				else
+				{
+					//Get bytes from file
+					if(/*standardVideoRateControl % 2 == 0*/true)
+					{
+						try {
+							
+							if(cifVideoFile.available() < 10)
+							{
+								Log.e("NUM AVAILABLE", "RESETTING TO BEGINNING OF VIDEO" );
+								cifVideoFile = new FileInputStream(CIF_VIDEO_FILENAME);
+							}
+							if(qcifVideoFile.available() < 10)
+							{
+								Log.e("NUM AVAILABLE", "RESETTING TO BEGINNING OF VIDEO" );
+								qcifVideoFile = new FileInputStream(QCIF_VIDEO_FILENAME);
+							}
+//							byte[] Y = new byte[m_previewWidth * m_previewHeight];
+//							byte[] U = new byte[(m_previewWidth / 2) * (m_previewHeight / 2)];
+//							byte[] V = new byte[(m_previewWidth / 2) * (m_previewHeight / 2)];
+//							cifVideoFile.read(Y);
+//							cifVideoFile.read(U);
+//							cifVideoFile.read(V);
+//							System.arraycopy(Y, 0, cifFrame, 0, Y.length);
+//							System.arraycopy(V, 0, cifFrame, Y.length, V.length);
+//							System.arraycopy(U, 0, cifFrame, Y.length + V.length, U.length);
+							cifVideoFile.read(cifFrame);
+							qcifVideoFile.read(qcifFrame);
+							//Attempt to encode
+							if(m_previewWidth == 176)
+							{
+								for (int i = this.m_previewWidth * this.m_previewHeight; i < 176*144*1.5 - 1; i += 2) {
+									byte tmp = qcifFrame[i];
+									qcifFrame[i] = qcifFrame[i+1];
+									qcifFrame[i+1] = tmp;
+								}
+								encoderFrame(qcifFrame, camera, m_frameRate);
+							}
+							else
+							{
+								for (int i = this.m_previewWidth * this.m_previewHeight; i < 352*288*1.5 - 1; i += 2) {
+									byte tmp = cifFrame[i];
+									cifFrame[i] = cifFrame[i+1];
+									cifFrame[i+1] = tmp;
+								}
+								encoderFrame(cifFrame, camera, m_frameRate);
+							}
+							m_frameRateControl = 0;
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				
+					standardVideoRateControl++;
+				}
 			}
+			m_frameRateControl++;
 		}
-		m_frameRateControl++;
+		
 		//new MessageListener("TOGGLER").execute();
 		
 	}

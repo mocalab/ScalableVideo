@@ -124,7 +124,7 @@ void VideoControlsWidget::setUpUI()
     QByteArray pathname = qgetenv("INTELLIGENT_CAMERA_SYSTEM_ROOT_DIR");
     QString filename(pathname);
     filename += "/";
-    filename += RESOLUTIONS_FILE;
+    filename += STANDARD_RESOLUTIONS_FILE;
     FileReaderUtility reader(filename);
     if(reader.open_file())
     {

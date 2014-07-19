@@ -443,11 +443,11 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
 #if PLAY_WITH_VLC
     int fps_int = fps.toInt();
     //If FPS has changed we need to restart playback (limit to 15 and 30 fps for now... very poor and hacky method)
-    if(fps_int != ui->video_player->getFps() && (fps_int == 30 || fps_int == 15))
+    if(fps_int != ui->video_player->getFps() && (fps_int == 30 || fps_int == 15 || fps_int == 25))
     {
         ui->video_player->setFps(fps_int);
         //ui->video_player->setPlaybackRate(fps.toInt());
-        if(fps_int == 30)
+        if(fps_int == 30 || fps_int == 25)
             this->ui->video_player->playUrl(QString(VIDEO_URL));
         else
             this->ui->video_player->setMediaOptions();

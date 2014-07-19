@@ -103,7 +103,7 @@ FORMS    += \
 #linux:LIBS += -L/usr/local/lib/
 #linux:LIBS += -lglog
 #linux:LIBS += -L/usr/lib/
-linux:LIBS += -Llibs/linux/lib
+linux:LIBS += -Llibs/linux/lib -L/usr/local/lib
 linux:LIBS += -lvlc
 linux:LIBS += -lavformat -lavcodec -lavutil -lswscale
 
