@@ -151,7 +151,7 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
 
         //Increase bitrate if possible
         //Decide the optimum bitrate that can be used
-        res = m_possible_resolutions[m_possible_resolutions.count() - 1];
+        res = m_possible_resolutions[0];
         split = res.split('x');
         width = split[0].toInt();//in.widthAsInt();
         height = split[1].toInt();//in.heightAsInt();
@@ -210,7 +210,7 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
     //User prefers bitrate and size
     case 2:
         //Increase bitrate
-        res = m_possible_resolutions[m_possible_resolutions.count() - 1];
+        res = m_possible_resolutions[0];
         split = res.split('x');
         width = split[0].toInt();//in.widthAsInt();
         height = split[1].toInt();//in.heightAsInt();

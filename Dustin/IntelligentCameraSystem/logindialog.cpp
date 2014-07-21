@@ -49,7 +49,7 @@ void LoginDialog::on_bLogin_clicked()
         CameraList cameras = camera_list_reader.getCameraList();
 
 
-        ControlCenter *w = new ControlCenter(cameras, ui->cbStandardVideo->isChecked());
+        ControlCenter *w = new ControlCenter(cameras, ui->cbStandardVideo->isChecked(), ui->leTrainingSetFile->text(), ui->leTrainingOutfile->text());
         w->setAttribute(Qt::WA_DeleteOnClose);
         w->show();
 

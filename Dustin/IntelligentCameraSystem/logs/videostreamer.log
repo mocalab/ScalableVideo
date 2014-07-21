@@ -1,118 +1,279 @@
- INFO 2014-07-18T22:32:07.883 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/main.cpp : 25  --  Program init. 
-DEBUG 2014-07-18T22:32:15.316 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.319 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.321 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.322 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.323 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.325 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.326 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.327 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.328 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.330 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.331 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.332 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.334 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.335 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.336 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.338 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.339 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.340 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.342 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.343 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.344 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.346 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.347 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.348 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.866667   0.416667 
-DEBUG 2014-07-18T22:32:15.350 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.351 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.352 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.354 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.355 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.356 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.358 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.866667   0.25 
-DEBUG 2014-07-18T22:32:15.359 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.533333   0.666667 
-DEBUG 2014-07-18T22:32:15.360 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.361 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.363 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.364 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.365 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.367 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.368 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.533333   0.666667 
-DEBUG 2014-07-18T22:32:15.369 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.533333   0.666667 
-DEBUG 2014-07-18T22:32:15.370 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.372 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.373 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.374 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.376 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.377 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.666667   0.5 
-DEBUG 2014-07-18T22:32:15.379 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.466667   0.75 
-DEBUG 2014-07-18T22:32:15.380 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.533333   0.75 
-DEBUG 2014-07-18T22:32:15.381 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.383 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.384 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.385 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.387 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0 
-DEBUG 2014-07-18T22:32:15.388 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.866667   0.583333 
-DEBUG 2014-07-18T22:32:15.389 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.466667   0.833333 
-DEBUG 2014-07-18T22:32:15.391 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.466667   1 
-DEBUG 2014-07-18T22:32:15.392 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.393 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.394 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.396 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.397 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.398 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.399 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.400 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.401 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.402 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.403 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.404 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.405 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.406 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.407 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.408 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.409 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.410 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.411 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.412 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.413 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.414 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.415 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.416 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.0833333   1 
-DEBUG 2014-07-18T22:32:15.417 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.418 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.420 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.421 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.422 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.423 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.424 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.425 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0.944444 
-DEBUG 2014-07-18T22:32:15.426 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.427 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.428 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.429 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.430 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.431 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.432 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0.944444 
-DEBUG 2014-07-18T22:32:15.433 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0.944444 
-DEBUG 2014-07-18T22:32:15.434 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.435 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.436 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.437 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.439 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.440 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.75   0.944444 
-DEBUG 2014-07-18T22:32:15.441 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.833333   0.944444 
-DEBUG 2014-07-18T22:32:15.441 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.833333   0.944444 
-DEBUG 2014-07-18T22:32:15.442 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.443 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.444 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.446 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.447 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
-DEBUG 2014-07-18T22:32:15.448 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.583333   0.944444 
-DEBUG 2014-07-18T22:32:15.449 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.75   0.944444 
-DEBUG 2014-07-18T22:32:15.450 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.583333   0.944444 
-ERROR 2014-07-18T22:33:21.051 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 150 -- Could not bind to socket:  Connection timed out 
-ERROR 2014-07-18T22:33:21.051 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 163 -- Could not find any sockets. 
- INFO 2014-07-18T22:33:21.051 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 246 -- In slot 'receivedPacket' Message: "Unable to connect!" 
- INFO 2014-07-18T22:33:28.058 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 139 -- Video window destructor called. 
- INFO 2014-07-18T22:33:28.058 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 
+ INFO 2014-07-20T16:42:48.372 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/main.cpp : 25  --  Program init. 
+DEBUG 2014-07-20T16:43:03.542 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.544 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.546 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.546 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.547 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.548 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.548 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.549 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.550 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.550 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.551 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.552 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.552 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.553 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.554 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.554 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.555 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.556 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.557 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.558 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.559 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.559 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.560 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.561 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.561 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.562 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.563 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.563 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.564 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.565 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.566 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.566 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.567 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.568 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.568 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.569 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.570 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.570 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.573 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.573 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.574 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.575 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.576 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.576 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.577 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.578 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.578 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.579 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.580 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.580 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.581 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.582 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.582 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.583 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.584 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.584 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.585 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.333333   0.916667 
+DEBUG 2014-07-20T16:43:03.586 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.586 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.587 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.588 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.588 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.589 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.590 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.590 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.591 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.333333   0.916667 
+DEBUG 2014-07-20T16:43:03.592 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.666667   0.875 
+DEBUG 2014-07-20T16:43:03.592 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.593 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.594 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.594 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.595 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.596 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.596 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.597 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.333333   0.916667 
+DEBUG 2014-07-20T16:43:03.598 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.666667   0.875 
+DEBUG 2014-07-20T16:43:03.598 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.666667   0.875 
+DEBUG 2014-07-20T16:43:03.631 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.632 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.634 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.635 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.637 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.638 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.640 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   0.958333 
+DEBUG 2014-07-20T16:43:03.641 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.666667   0.833333 
+DEBUG 2014-07-20T16:43:03.642 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.666667   0.791667 
+DEBUG 2014-07-20T16:43:03.645 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.333333   0.791667 
+DEBUG 2014-07-20T16:43:03.645 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.646 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.647 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.647 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.648 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.649 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.650 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.666667   0.875 
+DEBUG 2014-07-20T16:43:03.651 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.333333   0.833333 
+DEBUG 2014-07-20T16:43:03.653 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.333333   0.833333 
+DEBUG 2014-07-20T16:43:03.656 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   0.875 
+DEBUG 2014-07-20T16:43:03.657 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.658 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.658 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.659 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.659 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.660 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.661 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.662 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.662 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.663 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.664 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.664 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.665 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.666 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.667 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.667 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.668 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.669 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.670 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.670 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.671 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.672 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.672 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.673 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.674 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.674 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.675 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.675 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.676 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.676 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.677 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.677 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.678 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.678 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.679 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.679 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.680 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.680 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.681 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.681 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.682 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.682 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.683 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.683 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.684 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.684 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.685 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.685 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.686 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.687 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.687 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.688 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.688 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.689 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.689 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.690 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.690 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.691 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.691 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.692 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.692 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.693 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.693 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.694 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.694 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.695 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.696 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.696 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.697 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.697 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.666667   0.958333 
+DEBUG 2014-07-20T16:43:03.698 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.698 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.699 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.699 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.700 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.700 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.701 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.701 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.702 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.666667   0.958333 
+DEBUG 2014-07-20T16:43:03.703 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0.916667 
+DEBUG 2014-07-20T16:43:03.703 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.704 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.704 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.705 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.705 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.706 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.706 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.707 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.666667   0.958333 
+DEBUG 2014-07-20T16:43:03.707 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0.875 
+DEBUG 2014-07-20T16:43:03.709 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0.875 
+DEBUG 2014-07-20T16:43:03.709 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.710 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.710 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.711 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.712 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.713 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0   1 
+DEBUG 2014-07-20T16:43:03.713 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  0.666667   0.958333 
+DEBUG 2014-07-20T16:43:03.714 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0.916667 
+DEBUG 2014-07-20T16:43:03.715 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0.916667 
+DEBUG 2014-07-20T16:43:03.716 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 78 --  cross-validation accuracy:  1   0.916667 
+ INFO 2014-07-20T16:43:23.459 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 249 -- In slot 'receivedPacket' Message: "Connected!" 
+DEBUG 2014-07-20T16:43:24.008 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 505 -- Class mask value:  0 
+DEBUG 2014-07-20T16:43:24.008 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/DecisionModule/decisioninterface.cpp : 27 -- Ratio:  2.5 
+ INFO 2014-07-20T16:43:24.008 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 443 -- Sent:  "start 320 240 30 78336" 
+ INFO 2014-07-20T16:43:24.008 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-07-20T16:43:24.008 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-07-20T16:43:24.534 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+DEBUG 2014-07-20T16:43:24.534 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 505 -- Class mask value:  0 
+ERROR 2014-07-20T16:43:24.534 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 243 -- Receiving:  Resource temporarily unavailable 
+DEBUG 2014-07-20T16:43:24.534 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/DecisionModule/decisioninterface.cpp : 27 -- Ratio:  0.25 
+ INFO 2014-07-20T16:43:24.534 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 443 -- Sent:  "start 352 288 30 354816" 
+ INFO 2014-07-20T16:43:25.059 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-07-20T16:43:25.059 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-07-20T16:43:25.059 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 249 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-07-20T16:43:25.059 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 261 -- Effective bitrate:  770 
+ INFO 2014-07-20T16:43:31.772 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 443 -- Sent:  "start 352 288 30 354816" 
+ INFO 2014-07-20T16:43:31.772 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-07-20T16:43:31.772 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-07-20T16:43:32.248 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-07-20T16:43:32.248 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-07-20T16:43:32.248 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 249 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-07-20T16:43:32.248 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 261 -- Effective bitrate:  770 
+DEBUG 2014-07-20T16:43:42.106 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 505 -- Class mask value:  0 
+DEBUG 2014-07-20T16:43:42.107 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/DecisionModule/decisioninterface.cpp : 27 -- Ratio:  3.85 
+ INFO 2014-07-20T16:43:42.107 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 443 -- Sent:  "start 352 288 30 78336" 
+ INFO 2014-07-20T16:43:42.107 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-07-20T16:43:42.107 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-07-20T16:43:42.606 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-07-20T16:43:42.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-07-20T16:43:42.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 249 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-07-20T16:43:42.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 261 -- Effective bitrate:  170 
+DEBUG 2014-07-20T16:43:56.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 505 -- Class mask value:  3 
+DEBUG 2014-07-20T16:43:56.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/DecisionModule/decisioninterface.cpp : 27 -- Ratio:  4.25 
+ INFO 2014-07-20T16:43:56.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 443 -- Sent:  "start 176 144 15 31334" 
+ INFO 2014-07-20T16:43:56.613 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-07-20T16:43:56.613 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-07-20T16:43:57.107 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-07-20T16:43:57.107 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-07-20T16:43:57.107 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 249 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-07-20T16:43:57.107 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 261 -- Effective bitrate:  33 
+DEBUG 2014-07-20T16:44:11.606 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 505 -- Class mask value:  0 
+DEBUG 2014-07-20T16:44:11.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/DecisionModule/decisioninterface.cpp : 27 -- Ratio:  0.4125 
+ INFO 2014-07-20T16:44:11.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 443 -- Sent:  "start 352 288 30 32283" 
+ INFO 2014-07-20T16:44:11.660 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-07-20T16:44:11.660 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-07-20T16:44:12.136 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-07-20T16:44:12.136 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-07-20T16:44:12.136 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 249 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-07-20T16:44:12.136 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 261 -- Effective bitrate:  67 
+DEBUG 2014-07-20T16:44:27.606 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 505 -- Class mask value:  3 
+DEBUG 2014-07-20T16:44:27.606 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/DecisionModule/decisioninterface.cpp : 27 -- Ratio:  1.11667 
+ INFO 2014-07-20T16:44:27.606 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 443 -- Sent:  "start 176 144 15 49147" 
+ INFO 2014-07-20T16:44:27.620 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-07-20T16:44:27.620 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-07-20T16:44:28.106 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-07-20T16:44:28.106 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-07-20T16:44:28.106 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 249 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-07-20T16:44:28.107 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 261 -- Effective bitrate:  50 
+DEBUG 2014-07-20T16:44:39.106 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 505 -- Class mask value:  2 
+DEBUG 2014-07-20T16:44:39.106 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/DecisionModule/decisioninterface.cpp : 27 -- Ratio:  0.714286 
+ INFO 2014-07-20T16:44:39.106 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 443 -- Sent:  "start 352 288 15 58484" 
+ INFO 2014-07-20T16:44:39.107 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-07-20T16:44:39.107 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-07-20T16:44:39.606 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-07-20T16:44:39.606 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-07-20T16:44:39.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 249 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-07-20T16:44:39.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 261 -- Effective bitrate:  59 
+DEBUG 2014-07-20T16:44:55.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 505 -- Class mask value:  0 
+DEBUG 2014-07-20T16:44:55.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/DecisionModule/decisioninterface.cpp : 27 -- Ratio:  0.655556 
+ INFO 2014-07-20T16:44:55.607 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 443 -- Sent:  "start 352 288 30 37915" 
+ INFO 2014-07-20T16:44:56.667 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-07-20T16:44:56.667 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-07-20T16:44:57.143 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-07-20T16:44:57.143 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-07-20T16:44:57.143 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 249 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-07-20T16:44:57.143 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 261 -- Effective bitrate:  76 
+ INFO 2014-07-20T16:45:05.147 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 142 -- Video window destructor called. 
+ INFO 2014-07-20T16:45:05.147 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 

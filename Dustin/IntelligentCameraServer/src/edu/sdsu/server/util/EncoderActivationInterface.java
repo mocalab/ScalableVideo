@@ -85,7 +85,7 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 	private Context					m_context;
 	
 	//FOR GETTING FRAMES FROM A STANDARD VIDEO FILE
-	public static final boolean			USE_STANDARD_VIDEO = false;
+	public static final boolean			USE_STANDARD_VIDEO = true;
 	private static final String			CIF_VIDEO_FILENAME = "/data/dustin/akiyo/akiyo_cif.nv21";
 	boolean									cif_video_file_open = false;
 	private FileInputStream					cifVideoFile;
