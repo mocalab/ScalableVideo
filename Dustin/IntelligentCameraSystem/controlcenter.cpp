@@ -5,8 +5,11 @@
 #include "Types/featureset.h"
 #include <QMessageBox>
 
-ControlCenter::ControlCenter(CameraList cameras, QWidget *parent) :
+ControlCenter::ControlCenter(CameraList cameras, bool standard_videos, QString trainingSetFile, QString trainingOutfile, QWidget *parent) :
     QMainWindow(parent),
+    m_standard_video_experiment(standard_videos),
+    m_training_set_file(trainingSetFile),
+    m_training_outfile(trainingOutfile),
     ui(new Ui::ControlCenter)
 {
     ui->setupUi(this);
@@ -30,8 +33,14 @@ ControlCenter::ControlCenter(CameraList cameras, QWidget *parent) :
 #endif
     //Uncomment to run learning algorithm tests
    //this->testLearning();
-    this->loadTrainingSet();
+    if(!trainingSetFile.length() == 0)
+        this->loadTrainingSet();
 
+    //Open the training sample output file
+    QByteArray pathname = qgetenv("INTELLIGENT_CAMERA_SYSTEM_ROOT_DIR");
+    QString filename(pathname);
+    filename += "/Config/" + m_training_outfile;
+    m_trainsample_file.open(filename.toStdString().c_str(), ios::out);
 }
 
 ControlCenter::~ControlCenter()
@@ -161,7 +170,7 @@ void ControlCenter::loadTrainingSet()
     //Get the file name
     QByteArray pathname = qgetenv("INTELLIGENT_CAMERA_SYSTEM_ROOT_DIR");
     QString filename(pathname);
-    filename += "/Config/training_set_test";
+    filename += "/Config/" + m_training_set_file;
     FileReaderUtility filereader(filename);
     if(filereader.open_file())
     {
@@ -199,6 +208,11 @@ bool ControlCenter::inLearningMode()
 //Add a training example
 void ControlCenter::addTrainingExample(FeatureSet &fs, double lbl_fps_br_priority, double lbl_size_quality_priority)
 {
+    //Write sample to file
+    int pref = lbl_fps_br_priority == 1.0 ? 2 : 0;
+    pref |= lbl_size_quality_priority == 1.0 ? 1 : 0;
+    if(m_trainsample_file.is_open())
+        m_trainsample_file << (int) fs.bandwidth() / 1000 << " " << fs.contentType() << " " << pref << endl;
     //Add to fps/br trainer
     this->m_fps_bitrate_learning_module.addTrainingSample(fs, lbl_fps_br_priority);
 
@@ -222,6 +236,11 @@ void ControlCenter::train()
 
     //Train quality
     this->m_size_quality_learning_module.trainCurrent();
+}
+
+bool ControlCenter::usingStandardVideo()
+{
+    return this->m_standard_video_experiment;
 }
 
 //Predict the class based on the given feature set

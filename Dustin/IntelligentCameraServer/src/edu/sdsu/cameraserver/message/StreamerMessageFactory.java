@@ -83,7 +83,7 @@ public class StreamerMessageFactory {
 			int bps = Integer.parseInt(msgs[4]);
 			
 			//Only allow 30fps and 15fps for now
-			if(fps != 30 && fps != 15)
+			if(fps != 30 && fps != 25 && fps != 15)
 			{
 				throw new MalformedMessageException("Invalid framerate. Acceptable frame rates: 30, 15");
 			}

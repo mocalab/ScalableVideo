@@ -151,8 +151,10 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
 
         //Increase bitrate if possible
         //Decide the optimum bitrate that can be used
-        width = 800;//in.widthAsInt();
-        height = 480;//in.heightAsInt();
+        res = m_possible_resolutions[0];
+        split = res.split('x');
+        width = split[0].toInt();//in.widthAsInt();
+        height = split[1].toInt();//in.heightAsInt();
         optimum_bitrate = width * height * 3.5;
 
         //Determine the max bitrate available
@@ -165,8 +167,8 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
         //Increase size to max user desired
         //WILL HAVE TO INTELLIGENTLY DECIDE THIS
 
-        out.setWidth(QString::number(800));
-        out.setHeight(QString::number(480));
+        out.setWidth(QString::number(width));
+        out.setHeight(QString::number(height));
 
         break;
     //User prefers frame rate and quality
@@ -208,8 +210,10 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
     //User prefers bitrate and size
     case 2:
         //Increase bitrate
-        width = 800;
-        height = 480;
+        res = m_possible_resolutions[0];
+        split = res.split('x');
+        width = split[0].toInt();//in.widthAsInt();
+        height = split[1].toInt();//in.heightAsInt();
         optimum_bitrate = width * height * 3.5;
 
         //Determine the max bitrate available
@@ -221,8 +225,8 @@ void DecisionInterface::upConvert(float ratio, EncodingParameters &in, EncodingP
         //Increase size to max user desired
         //WILL HAVE TO INTELLIGENTLY DECIDE THIS
 
-        out.setWidth(QString::number(800));
-        out.setHeight(QString::number(480));
+        out.setWidth(QString::number(width));
+        out.setHeight(QString::number(height));
 
         //See if we should increase frame rate (if possible)
         if(((float)bitrate / in.bitrateAsInt()) * ratio < (0.5 * ceiling) && in.fpsAsInt() < 30)

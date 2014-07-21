@@ -74,6 +74,9 @@ VideoWindow::VideoWindow(Camera *camera, IControlCenterManager *control_center, 
     m_video_features.setContentType(this->m_camera->content_type());
 
     m_decision_interface.setResolutionsList(ui->video_controls->getSizes());
+
+    if(m_control_center_manager->usingStandardVideo())
+        m_effective_rate = 500;
 }
 
 //Set up request/response thread
@@ -443,11 +446,11 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
 #if PLAY_WITH_VLC
     int fps_int = fps.toInt();
     //If FPS has changed we need to restart playback (limit to 15 and 30 fps for now... very poor and hacky method)
-    if(fps_int != ui->video_player->getFps() && (fps_int == 30 || fps_int == 15))
+    if(fps_int != ui->video_player->getFps() && (fps_int == 30 || fps_int == 15 || fps_int == 25))
     {
         ui->video_player->setFps(fps_int);
         //ui->video_player->setPlaybackRate(fps.toInt());
-        if(fps_int == 30)
+        if(fps_int == 30 || fps_int == 25)
             this->ui->video_player->playUrl(QString(VIDEO_URL));
         else
             this->ui->video_player->setMediaOptions();
@@ -543,8 +546,9 @@ void VideoWindow::takeSample()
         //class.
         double lbl_size_quality = 0.0;
         //For now, a trivial solution; will determine using empricial evidence
-        if((float)m_current_params.bitrateAsInt() > (float)ui->video_player->width() * ui->video_player->height() * 1.75
-                && ui->video_player->width() < 720)
+        int width_thresh = (m_control_center_manager->usingStandardVideo() ? 352 : 720);
+        if(/*(float)m_current_params.bitrateAsInt() > (float)ui->video_player->width() * ui->video_player->height()
+                &&*/ ui->video_player->width() < width_thresh)
         {
             //Preference to quality
             lbl_size_quality = ML_USER_PREFERS_QUALITY;

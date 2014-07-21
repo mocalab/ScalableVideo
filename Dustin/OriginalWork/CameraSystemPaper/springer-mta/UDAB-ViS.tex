@@ -145,7 +145,10 @@ In addition to protocol based approaches which tend to only allow for bitrate sc
 
 %A problem with many of these solutions is that only quality resolution is affected in order to control the video bandwidth, which may not be preferred in many applications. Numerous popularly used streaming solutions such as ,  will throttle the bitrate of a video stream in order to adapt to changes in channel bandwidth, which will result in a change in video quality. This behavior is exhibited by the widely used video content provider Netflix, which employs DASH (and thus ABR) to achieve bandwidth adaptability \cite{Netflix}. A prime example where this system will not be viable is in medical teleconferencing. A patient may wish to have a remote consultation with his or her doctor in order to quickly and efficiently receive feedback about a medical problem such as a burn or lesion they may have endured. Were the video bandwidth to be controlled by ABR and the quality resolution be affected in order to fit to the channel, the doctor may not be able to properly diagnose or provide valid feedback to the user because the visual quality is not sufficient. However, if the system were to scale the temporal resolution of the video instead of the quality, visual information would be kept intact and the less important temporal information would be sacrificed. The system we developed uses this kind of scalability in tandem with the generation of user profiles in order to make an intelligent determination of how to alter each resolution. In this approach, video context is taken into consideration to provide different video scalability options in different situations. This addresses the issue of how to control the different encoding parameters in such a way as to align with the user’s desires without requiring the user to change the parameters themself.
 
-A recent area of interest seen in the literature is the autmoation of video encoding parameter selection as a means to provide both exceptional quality of service (QoS) and quality of experience (QoE). Approaches to this problem include both cognitive and non-cognitive solutions, though fewer cognitive systems have yet been proposed. In \cite{FeedbackControl}, the authors propose a \emph{Quality Adaptation Controller} which uses a proportional-integral (PI) controller at the server to select an appropriate video stream for the client. The system uses stream switching and employs feedback control to maintain the video bandwidth below the available channel bandwidth. Examples of cognitive solutions are found in \cite{pan2007quality}, which use statistical models that adapt to user feedback in order to make encoding parameter selections on their behalf. %%%%%%%%%%%%%%MORE TO GO HERE AFTER REVIEWING ALL PAPERS%%%%%%%%%%%%
+A recent area of interest seen in the literature is the autmoation of video encoding parameter selection as a means to provide both exceptional quality of service (QoS) and quality of experience (QoE). Approaches to this problem include both cognitive and non-cognitive solutions, though fewer cognitive systems have yet been proposed. In \cite{FeedbackControl}, the authors propose a \emph{Quality Adaptation Controller} which uses a proportional-integral (PI) controller at the server to select an appropriate video stream for the client. The system uses stream switching and employs feedback control to maintain the video bandwidth below the available channel bandwidth. Examples of cognitive solutions are found in \cite{pan2007quality} and \cite{wang2005classification}. In \cite{pan2007quality}, the authors use statistical models that adapt to user feedback in order to make encoding parameter selections on their behalf.
+
+The authors of \cite{wang2005classification} propose a multidimensional adaptation (MDA) solution which uses the adaptation-resource-utility (A-R-U) model as a means to intelligently scale a video sequence. Their solution looks at a subjective quality evaluation and clustering in order to classify video sequences. This involves an offline training phase where metadata, video features, and domain specific knowlegde are extracted in order to cluster and label groups of video sequences, as well as an online prediction phase in which adaptation operations are applied to streamed video. The optimal adaptation operations are selected based on the class of the sequence in order to maximize the user experience while staying within the limits of constrained resources (i.e. network capacity). 
+   %%%%%%%%%%%%%%MORE TO GO HERE AFTER REVIEWING ALL PAPERS%%%%%%%%%%%%
 
 This study investigates a cognitive approach to video bandwidth control based on user preferences learned by C support vector machines (SVM). This has an advantage over previous cognitive solutions in that it takes into account multiple features related to the video, such as video content, and is scalable in that more features may be observed if needed. We present a solution that is novel in its application of machine learning as an accurate method to learn user preferences.
 
@@ -205,7 +208,7 @@ The Scalable Video Coding extension of H.264/AVC inherits all of the base functi
 \end{figure}
 In order to achieve spatial scalability, SVC uses multi-layer coding with inter-layer prediction \cite{SVCOverview}. Multiple layers are transmitted, each corresponding to a specific spatial resolution and referred to by an integer valued dependency identifier between $0$ and $d-1 $where $d$ is the number of spatial layers \cite{SVCOverview}. Quality scalability works on the same principle as spatial scalability with the layers transmitted being of the same spatial resolution. 
 
-In the proposed single-layer coded video stream, one bit stream is encoded and sent to the receiver. This bit stream is of a fixed spatial, temporal, and quality resolution for the entire sequence of video. There is no mechanism inherent to the codec to change the spatial, temporal, or quality resolution midstream. In this, the video bandwidth is controlled by switching encoding parameters at the source, effectively segmenting the video in time. The video stream is partitioned into multiple sequences labeled $T_k,k=0\ldots{n-1}$ where $n$ is the number of segments for the given session and $T_k$ is the time instance when the segment $k$ begins. The partitioning is determined on the fly as a function of the channel bandwidth, where channel bandwidth can be measured with a reasonable degree of accuracy; for example, using a method like DIChirp as laid out in \cite{DIChirp}. At each time instance $T_k$, the transmitter resets the encoding parameters in such a way that the bandwidth of the video is altered to fit to the channel. When this occurs, a new sequence parameter set is introduced into the stream to signal to the decoder the changes to the encoded video. A sample stream is depicted in Figure \ref{fig:SingleLayerSwitching}.
+In our proposed single-layer coded video stream, one bit stream is encoded and sent to the receiver. This bit stream is of a fixed spatial, temporal, and quality resolution for the entire sequence of video. There is no mechanism inherent to the codec to change the spatial, temporal, or quality resolution midstream. In this, the video bandwidth is controlled by switching encoding parameters at the source, effectively segmenting the video in time. The video stream is partitioned into multiple sequences labeled $T_k,k=0\ldots{n-1}$ where $n$ is the number of segments for the given session and $T_k$ is the time instance when the segment $k$ begins. The partitioning is determined on the fly as a function of the channel bandwidth, where channel bandwidth can be measured with a reasonable degree of accuracy; for example, using a method like DIChirp as laid out in \cite{DIChirp}. At each time instance $T_k$, the transmitter resets the encoding parameters in such a way that the bandwidth of the video is altered to fit to the channel. When this occurs, a new sequence parameter set is introduced into the stream to signal to the decoder the changes to the encoded video. A sample stream is depicted in Figure \ref{fig:SingleLayerSwitching}.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.75\linewidth]{images/SingleLayerParameterSwitching.png}
@@ -225,80 +228,6 @@ Delay on the encoder side is greatly avoided by using a hardware H.264/AVC encod
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{System Architecture}
-\label{sec:Architecture}
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.7\linewidth]{images/SystemArchitecture.png}
-\caption{System Architecture}
-\label{fig:SystemArchitecture}
-\end{figure}
-
-A basic outline of our system architecture is depicted in Figure \ref{fig:SystemArchitecture}, with the streaming clients, streaming server, and constituent components. The camera system developed in this study consists of a video client and a streaming server. The client connects to the server to request a new streaming session, displaying the video in a media player based on the VideoLAN VLC player. The streaming server is an Android application implemented on Qualcomm MSM8960 hardware. Video is encoded on the device using a hardware H.264/AVC encoder and streamed to the client using raw UDP packets with no higher level wrapper protocol (such as the Real-time Transfer Protocol (RTP) \cite{RTP} or the Real-Time Streaming Protocol (RTSP) \cite{RTSP}). The server is designed to send a unicast stream to the client connected to it, and a client can view any number of video streams from different servers. The client and server design is detailed in the following sections.
-
-\subsection{Client Design}
-
-The client, implemented as a desktop application, consists of a control center and one or more video windows. The video windows contain a media player for displaying the video, as well as necessary controls for the user to manipulate any of the encoding parameters of the stream. 
-
-The media player uses LibVLC, a library used in the popular VLC media player developed by the VideoLAN group. Encapsulated in the media player is the main functionality for configuring the playing a certain stream. Through configuration of the media player back end, we set up two decoder threads that are used to demultiplex a video stream, consistent with the architecture described in section \ref{sec:NALandPacketization}. This enables dynamic change of encoding parameters midstream without seeing a significant effect on video playback. In this, the video bandwidth is be controlled while user experience remains optimal.
-
-On top of the media player is a TCP client that provides interaction with the server. When a new video stream is requested, the client attempts to connect to the server, and upon successful connection, starts the media player. This client then sends all requests to the server and reacts appropriately to responses.
-
-The client is responsible for determining the correct choice of encoding parameters and for managing the bandwidth of the video based on the bandwidth of channel. In this, the client is equipped with the necessary tools to determine the current channel bandwidth and respond to fluctuations in channel conditions. These decisions are based on the user's preferences (if an accurate model of the user’s preferences has been developed) or a default decision function (when learning the user’s preferences). The client is also intelligent enough not to interfere with the user when they make their own decisions about how to scale the video. The method by which we develop user profiles and utilize them will be discussed in section \ref{sec:UserProfiles} of this study.
-
-\subsection{Server Design}
-
-Our camera server application runs on a DragonBoard APQ8060A development board utilizing a Qualcomm APQ8060A processor. The application captures live video from an 8MP camera, at varying spatial and temporal resolutions. A TCP server handles all incoming connections from clients and services any requests. On each connection request, a new thread is forked that acts as an interface between the client and server. A handle to the encoder is given to each of these threads to allow them control over the resolutions of the video streams. The handle is encapsulated in an object we call the ``encoder activation interface''. This object, as the name implies, acts as an interface to the encoder (as well as the camera). Via this interface a consumer may initialize, destroy, and alter an encoder for a certain video stream. This allows the clients full control over the parameters of the video, including the video bandwidth. The server remains agnostic of channel conditions and acts as a slave to the connected clients, reconfiguring the stream as necessary based on the request, because the client application learns the user’s preferences and therefore makes more intelligent decisions about the encoding parameters.
-
-\subsection{Session Management}
-
-The system contains a communication layer using TCP for messaging between the client and server. This communication layer acts as a session manager. TCP is used for reliable communication of messages between terminals as well as to signal the beginning and end of a streaming session. A streaming session begins once the server accepts a client's connection, and ends when one of the terminals disconnects. When a client wishes to receive a particular stream from a server, it first attempts to make a connection with the server. Upon connection, the server initializes a new thread to service the client's requests. The server thread first starts the encoder, which begins streaming packets containing the encoded H.264 frames. This thread then enters a loop in which it responds to the client's requests until it detects that the client has disconnected. We have defined a very simple protocol for submitting such requests in which the client either requests to alter encoding parameters or stop the video stream. The request to update encoding parameters also serves to start a stream again if it has been previously stopped. To update the encoder, the client sends the following message:
-%\lstinputlisting{start.xml}
-\begin{lstlisting}[language=xml, frame=single]
-<request action="start">
-	<width>#</width>
-	<height>#</height>
-	<fps>#</fps>
-	<rate>#</rate>
-</request>
-\end{lstlisting}
-where ``width'' is the new desired width, ``height'' is the new desired height, ``fps'' is the new desired frame rate, and ``rate'' is the new desired video bitrate. To stop the encoder, the following message is sent with the request action as stop:
-%\lstinputlisting{stop.xml}
-\begin{lstlisting}[language=xml, frame=single]
-<request action="stop" />
-\end{lstlisting}
-Upon disconnecting, the thread processing the client's requests will shut down the encoder, stop the video stream, and exit.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Snapdragon Video Framework}
-\label{sec:Snapdragon}
-
-The DragonBoard APQ8060A is equipped with numerous hardware based codecs for both audio and video. We decided to use the hardware encoder in order to encode frames in real time. In addition, the extra speed we acquire greatly assists in our video scaling method. We will now describe how the camera server works to capture video frames, encode them, and send them as raw UDP packets.
-
-To access the hardware components, Android provides a wrapper to the OpenMAX Integration Layer called IOMX which can interact with and utilize hardware media codecs. The OpenMAX Integration Layer is a component based API designed to provide a layer of abstraction on top of multimedia hardware and software architecture. It is also designed to give media components portability across a range of devices. Figure \ref{fig:OpenMAX} illustrates the various layers designed in OpenMAX. 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.55\linewidth]{images/openmax.png}
-\caption{OpenMAX Layers}
-\label{fig:OpenMAX}
-\end{figure}
-
-With the introduction of the stagefright media framework (Figure \ref{fig:Stagefright}), Google added the OpenMAX IL functionality to the Android operating system, allowing OEMs the ability to provide software hooks that serve as an interface to the hardware for developers.
-%\begin{figure}[ht]
-%\centering
-%\includegraphics[width=0.6\linewidth]{images/stagefright.png}
-%\caption{Stagefright Media Framework}
-%\label{fig:Stagefright}
-%\end{figure}
-In addition, Qualcomm has developed and provided a sample API that utilizes IOMX to encode and decode various audio and video formats. The server leverages this API to interact with the hardware H.264/AVC encoder present on the device. Qualcomm's implementation can be broken down into a few different levels, as depicted in Figure \ref{fig:QualcommAPI}. The lowest levels are the hardware, OpenMAX IL, and IOMX. The API consists of C++ classes which wrap around IOMX, as well as a public interface written in C, providing ease of use for higher level code. In this, one can query available codecs, activate and initialize a session, encode/decode frames, and perform cleanup when a session ends.
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\linewidth]{images/QualcommAPI.png}
-\caption{Encoder Hardware Abstraction}
-\label{fig:QualcommAPI}
-\end{figure}
-In this study, the Qualcomm API is used in an Android application via the Java Native Interface (JNI) which enables interaction with the public interface of the API. The application developed in this study utilizes this API to quickly and efficiently encode video in real time. In addition, the activation and tear down of an encoding session occurs with very minimal delay.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -415,7 +344,77 @@ The way that video bandwidth is optimized depends on the class that the user fal
 \end{figure}
 The client application can then successfully adapt to channel bandwidth changes and alter the encoding parameters in such a way that the user’s desires are fulfilled.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{System Architecture}
+\label{sec:Architecture}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.7\linewidth]{images/SystemArchitecture.png}
+\caption{System Architecture}
+\label{fig:SystemArchitecture}
+\end{figure}
 
+A basic outline of our system architecture is depicted in Figure \ref{fig:SystemArchitecture}, with the streaming clients, streaming server, and constituent components. The camera system developed in this study consists of a video client and a streaming server. The client connects to the server to request a new streaming session, at which time live video transmission begins. The streaming server is an Android application implemented on Qualcomm MSM8960 hardware. Video is encoded on the device using a hardware H.264/AVC encoder and streamed to the client using raw UDP packets. The client and server designs are detailed in the following sections.
+
+\subsection{Client Design}
+
+The client uses LibVLC, a library used in the popular VLC media player developed by the VideoLAN group. LibVLC is equipped with all major functionality required to play our live video streams and handles the decoding of H.264 frames. Through configuration of the media player back end, we set up two decoder threads that are used to demultiplex an H.264 stream, consistent with the architecture described in section \ref{sec:NALandPacketization}. This enables the dynamic change of encoding parameters midstream without seeing a significant effect on video playback.
+
+On top of the lower level streaming layer is a signaling layer utilizing TCP for communication between the server and client. When a new video stream is requested, the client attempts to this TCP connection with the server, and upon successful connection, starts the media player. This client then follows a simple protocol to interact with the server which will be discussed in section \ref{sec:SessionManagement}.
+
+The client is responsible for determining the correct choice of encoding parameters and for managing the bandwidth of the video based on the current network capacity. Encoding parameter decisions are based on the user's preferences using the proposed learning model. If an accurate model of the user’s preferences has been developed, this model drives the parameter selection. A default decision function is employed when learning the user’s preferences. The client is also intelligent enough not to interfere with the user when they make their own decisions about how to scale the video.
+
+\subsection{Server Design}
+
+Our camera server application captures live video from an 8MP camera, at varying spatial and temporal resolutions. A TCP server handles all incoming connections from clients and services any requests. On each connection request, a new thread is forked, creating an interface between the client and server. A handle to the encoder is given to each of these threads to allow them control over the resolutions of the video streams. The handle is encapsulated in an object we call the ``encoder activation interface''. This object, as the name implies, acts as an interface to the encoder (as well as the camera). Via this interface a consumer may initialize, destroy, and alter an encoder for a certain video stream. This allows the clients full control over the parameters of the video, including the video bandwidth. The server remains agnostic of channel conditions and acts as a slave to the connected clients, reconfiguring the stream as necessary based on the request, because the client application learns the user’s preferences and therefore makes more intelligent decisions about the encoding parameters.
+
+\subsection{Session Management}
+\label{sec:SessionManagement}
+The system contains a signaling layer using TCP for messaging between the client and server. This layer acts as a session manager. TCP is used for reliable communication of messages between terminals as well as to signal the beginning and end of a streaming session. A streaming session begins once the server accepts a client's connection, and ends when one of the terminals disconnects. When a client wishes to receive a particular stream from a server, it first attempts to make a connection with the server. Upon connection, the server initializes a new thread to service the client's requests. The server thread first starts the encoder, which begins streaming packets containing the encoded H.264 frames. This thread then enters a loop in which it responds to the client's requests until it detects that the client has disconnected. We have defined a very simple protocol for submitting such requests in which the client either requests to alter encoding parameters or stop the video stream. To update the encoder, the client sends the following message:
+%\lstinputlisting{start.xml}
+\begin{lstlisting}[language=xml, frame=single]
+<request action="start">
+	<width>#</width>
+	<height>#</height>
+	<fps>#</fps>
+	<rate>#</rate>
+</request>
+\end{lstlisting}
+where ``width'' is the new desired width, ``height'' is the new desired height, ``fps'' is the new desired frame rate, and ``rate'' is the new desired video bitrate. To stop the encoder, the following message is sent with the request action as stop:
+%\lstinputlisting{stop.xml}
+\begin{lstlisting}[language=xml, frame=single]
+<request action="stop" />
+\end{lstlisting}
+Upon disconnecting, the thread processing the client's requests will shut down the encoder, stop the video stream, and exit.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\subsection{Snapdragon Video Framework}
+%\label{sec:Snapdragon}
+%
+%The DragonBoard APQ8060A is equipped with numerous hardware based codecs for both audio and video. To access the hardware components, Android provides a wrapper to the OpenMAX Integration Layer called IOMX which can interact with and utilize hardware media codecs. The OpenMAX Integration Layer is a component based API designed to provide a layer of abstraction on top of multimedia hardware and software architecture. It is also designed to give media components portability across a range of devices. Figure \ref{fig:OpenMAX} illustrates the various layers designed in OpenMAX. 
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=0.55\linewidth]{images/openmax.png}
+%\caption{OpenMAX Layers}
+%\label{fig:OpenMAX}
+%\end{figure}
+%
+%With the introduction of the stagefright media framework (Figure \ref{fig:Stagefright}), Google added the OpenMAX IL functionality to the Android operating system, allowing OEMs the ability to provide software hooks that serve as an interface to the hardware for developers.
+%%\begin{figure}[ht]
+%%\centering
+%%\includegraphics[width=0.6\linewidth]{images/stagefright.png}
+%%\caption{Stagefright Media Framework}
+%%\label{fig:Stagefright}
+%%\end{figure}
+%In addition, Qualcomm has developed and provided a sample API that utilizes IOMX to encode and decode various audio and video formats. The server leverages this API to interact with the hardware H.264/AVC encoder present on the device. Qualcomm's implementation can be broken down into a few different levels, as depicted in Figure \ref{fig:QualcommAPI}. The lowest levels are the hardware, OpenMAX IL, and IOMX. The API consists of C++ classes which wrap around IOMX, as well as a public interface written in C, providing ease of use for higher level code. In this, one can query available codecs, activate and initialize a session, encode/decode frames, and perform cleanup when a session ends.
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=0.4\linewidth]{images/QualcommAPI.png}
+%\caption{Encoder Hardware Abstraction}
+%\label{fig:QualcommAPI}
+%\end{figure}
+%In this study, the Qualcomm API is used in an Android application via the Java Native Interface (JNI) which enables interaction with the public interface of the API. The application developed in this study utilizes this API to quickly and efficiently encode video in real time. In addition, the activation and tear down of an encoding session occurs with very minimal delay.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimental Results}
 \label{sec:Results}
 

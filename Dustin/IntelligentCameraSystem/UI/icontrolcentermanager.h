@@ -40,6 +40,12 @@ public:
      */
     virtual int predict(FeatureSet &fs) = 0;
 
+    /**
+     * @brief usingStandardVideo
+     * @return Whether or not this experiment is using standard video.
+     */
+    virtual bool usingStandardVideo() = 0;
+
 };
 
 #endif // ICONTROLCENTERMANAGER_H

@@ -116,8 +116,11 @@ public class ServerThread extends Thread{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			m_encoder.setEncoderParams(320, 240, 30);
+			if(EncoderActivationInterface.USE_STANDARD_VIDEO)
+				m_encoder.setEncoderParams(352, 288, 30);
+			else
+				m_encoder.setEncoderParams(320, 240, 30);
+				
 			m_encoder.externalThreadRestartCamera();
 			
 		}

@@ -8,6 +8,7 @@
 #define LOGFILE_PATH                    "logs/videostreamer.log"
 #define  BWFILE_PATH                    "/tmp/"
 #define RESOLUTIONS_FILE                "frame_size_options"
+#define STANDARD_RESOLUTIONS_FILE       "frame_size_options_STANDARD"
 #define CAMERAFILE_PATH                 "Config/camera_list_example.xml"
 #define SCREENSHOT_PATH                 "screenshots/"
 

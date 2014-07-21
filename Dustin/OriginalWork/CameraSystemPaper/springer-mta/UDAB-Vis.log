@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.31)  7 JUL 2014 19:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.31)  9 JUL 2014 23:08
 entering extended mode
 **UDAB-ViS.tex
 
@@ -280,6 +280,10 @@ Underfull \vbox (badness 8189) has occurred while \output is active []
 
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 
+LaTeX Warning: Reference `sec:Snapdragon' on page 2 undefined on input line 136
+.
+
+
 LaTeX Warning: Citation ` Apple' on page 2 undefined on input line 142.
 
 
@@ -342,73 +346,28 @@ Overfull \hbox (3.25052pt too wide) in paragraph at lines 224--225
 d-ware H.264/AVC
  []
 
-<images/SystemArchitecture.png, id=40, 524.71031pt x 149.8097pt>
-File: images/SystemArchitecture.png Graphic file (type png)
-
-<use images/SystemArchitecture.png>
-Package pdftex.def Info: images/SystemArchitecture.png used on input line 232.
-(pdftex.def)             Requested size: 236.59897pt x 67.55087pt.
-
-
-LaTeX Warning: Reference `sec:NALandPacketization' on page 8 undefined on input
- line 243.
-
-[8 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPap
-er/springer-mta/images/SystemArchitecture.png>]
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
+[8]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
  [9]
-<images/openmax.png, id=47, 380.17032pt x 434.37282pt>
-File: images/openmax.png Graphic file (type png)
-
-<use images/openmax.png>
-Package pdftex.def Info: images/openmax.png used on input line 282.
-(pdftex.def)             Requested size: 185.90103pt x 212.40709pt.
- [10]
-
-LaTeX Warning: Reference `fig:Stagefright' on page 11 undefined on input line 2
-87.
-
-<images/QualcommAPI.png, id=52, 307.90031pt x 366.61969pt>
-File: images/QualcommAPI.png Graphic file (type png)
-
-<use images/QualcommAPI.png>
-Package pdftex.def Info: images/QualcommAPI.png used on input line 297.
-(pdftex.def)             Requested size: 135.19794pt x 160.9831pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
-aper/springer-mta/images/openmax.png>] [12 <c:/Users/Dustin.Dustin-PC/ScalableV
-ideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/images/QualcommAPI.png>
-]
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
- [13]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-<images/BandwidthChangeDecisionTree.png, id=65, 512.66531pt x 487.06969pt>
+<images/BandwidthChangeDecisionTree.png, id=51, 512.66531pt x 487.06969pt>
 File: images/BandwidthChangeDecisionTree.png Graphic file (type png)
 
 <use images/BandwidthChangeDecisionTree.png>
 Package pdftex.def Info: images/BandwidthChangeDecisionTree.png used on input l
-ine 366.
+ine 292.
 (pdftex.def)             Requested size: 169.0pt x 160.56255pt.
- [14] [15 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSy
-stemPaper/springer-mta/images/BandwidthChangeDecisionTree.png>]
+ [10 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/BandwidthChangeDecisionTree.png>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
+ [11]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
@@ -416,48 +375,72 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-<images/BandwidthDecisions.png, id=75, 624.08156pt x 683.55376pt>
+<images/BandwidthDecisions.png, id=58, 624.08156pt x 683.55376pt>
 File: images/BandwidthDecisions.png Graphic file (type png)
 
 <use images/BandwidthDecisions.png>
-Package pdftex.def Info: images/BandwidthDecisions.png used on input line 412.
+Package pdftex.def Info: images/BandwidthDecisions.png used on input line 338.
 (pdftex.def)             Requested size: 219.69794pt x 240.63461pt.
- [16]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
+ [12 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/BandwidthDecisions.png>] <images/SystemArchitecture.pn
+g, id=62, 524.71031pt x 149.8097pt>
+File: images/SystemArchitecture.png Graphic file (type png)
 
-<images/CameraSystemTestbed.png, id=79, 489.32813pt x 186.6975pt>
+<use images/SystemArchitecture.png>
+Package pdftex.def Info: images/SystemArchitecture.png used on input line 348.
+(pdftex.def)             Requested size: 236.59897pt x 67.55087pt.
+
+
+LaTeX Warning: Reference `sec:NALandPacketization' on page 13 undefined on inpu
+t line 357.
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+[13 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPa
+per/springer-mta/images/SystemArchitecture.png>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [14]
+<images/CameraSystemTestbed.png, id=71, 489.32813pt x 186.6975pt>
 File: images/CameraSystemTestbed.png Graphic file (type png)
 
 <use images/CameraSystemTestbed.png>
-Package pdftex.def Info: images/CameraSystemTestbed.png used on input line 425.
+Package pdftex.def Info: images/CameraSystemTestbed.png used on input line 421.
 
 (pdftex.def)             Requested size: 236.59897pt x 90.27184pt.
- [17 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
-aper/springer-mta/images/BandwidthDecisions.png> <c:/Users/Dustin.Dustin-PC/Sca
-lableVideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/images/CameraSyst
-emTestbed.png>]
-<images/SpatialResolutionTest.png, id=83, 514.92375pt x 316.18124pt>
+
+<images/SpatialResolutionTest.png, id=72, 514.92375pt x 316.18124pt>
 File: images/SpatialResolutionTest.png Graphic file (type png)
 
 <use images/SpatialResolutionTest.png>
 Package pdftex.def Info: images/SpatialResolutionTest.png used on input line 43
-4.
+0.
 (pdftex.def)             Requested size: 270.40103pt x 166.03622pt.
- [18 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
-aper/springer-mta/images/SpatialResolutionTest.png>]
+ [15 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/CameraSystemTestbed.png>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
-
-<images/QualityResolutionTest.png, id=87, 669.2503pt x 372.64218pt>
+ <images/QualityResolutionTest.png, id=76, 669.2503pt x 372.64218pt>
 File: images/QualityResolutionTest.png Graphic file (type png)
 
 <use images/QualityResolutionTest.png>
 Package pdftex.def Info: images/QualityResolutionTest.png used on input line 44
-6.
+2.
 (pdftex.def)             Requested size: 270.40103pt x 150.56671pt.
+
+Underfull \vbox (badness 2080) has occurred while \output is active []
+
+ [16 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/SpatialResolutionTest.png>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
@@ -468,51 +451,46 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-<images/ClassDistribution.png, id=88, 400.8576pt x 162.3666pt>
+<images/ClassDistribution.png, id=80, 400.8576pt x 162.3666pt>
 File: images/ClassDistribution.png Graphic file (type png)
 
 <use images/ClassDistribution.png>
-Package pdftex.def Info: images/ClassDistribution.png used on input line 495.
+Package pdftex.def Info: images/ClassDistribution.png used on input line 491.
 (pdftex.def)             Requested size: 219.69794pt x 88.98973pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
-aper/springer-mta/images/QualityResolutionTest.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
-aper/springer-mta/images/ClassDistribution.png>]
-<images/TrainingExperimentTalkingHead.png, id=98, 576.65437pt x 408.77719pt>
+ [17 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/QualityResolutionTest.png> <c:/Users/Dustin.Dustin-PC/
+ScalableVideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/images/ClassDi
+stribution.png>]
+<images/TrainingExperimentTalkingHead.png, id=86, 576.65437pt x 408.77719pt>
 File: images/TrainingExperimentTalkingHead.png Graphic file (type png)
 
 <use images/TrainingExperimentTalkingHead.png>
 Package pdftex.def Info: images/TrainingExperimentTalkingHead.png used on input
- line 521.
+ line 517.
 (pdftex.def)             Requested size: 270.40103pt x 191.68867pt.
-
-<images/TrainingExperimentSports.png, id=99, 731.73375pt x 529.22719pt>
+ [18]
+<images/TrainingExperimentSports.png, id=90, 731.73375pt x 529.22719pt>
 File: images/TrainingExperimentSports.png Graphic file (type png)
 
 <use images/TrainingExperimentSports.png>
 Package pdftex.def Info: images/TrainingExperimentSports.png used on input line
- 527.
+ 523.
 (pdftex.def)             Requested size: 270.40103pt x 195.56873pt.
 
-<images/TrainingExperimentMedical.png, id=100, 749.80125pt x 525.46312pt>
+<images/TrainingExperimentMedical.png, id=91, 749.80125pt x 525.46312pt>
 File: images/TrainingExperimentMedical.png Graphic file (type png)
 
 <use images/TrainingExperimentMedical.png>
 Package pdftex.def Info: images/TrainingExperimentMedical.png used on input lin
-e 533.
+e 529.
 (pdftex.def)             Requested size: 270.40103pt x 189.49532pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6125) has occurred while \output is active []
 
- [21 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
-aper/springer-mta/images/TrainingExperimentTalkingHead.png>] [22 <c:/Users/Dust
-in.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/i
-mages/TrainingExperimentSports.png> <c:/Users/Dustin.Dustin-PC/ScalableVideo/Du
+ [19 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/TrainingExperimentTalkingHead.png> <c:/Users/Dustin.Du
+stin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/images
+/TrainingExperimentSports.png>] [20 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Du
 stin/OriginalWork/CameraSystemPaper/springer-mta/images/TrainingExperimentMedic
 al.png>]
 Missing character: There is no ‚ in font cmr10!
@@ -535,14 +513,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--13
 t / Conceptual /
  []
 
-[23]
 Missing character: There is no ‚ in font cmr8!
 Missing character: There is no Ä in font cmr8!
 Missing character: There is no ú in font cmr8!
 Missing character: There is no ‚ in font cmr8!
 Missing character: There is no Ä in font cmr8!
 Missing character: There is no ù in font cmr8!
-) [24]
+[21]) [22]
 (c:\Users\Dustin.Dustin-PC\ScalableVideo\Dustin\OriginalWork\CameraSystemPaper\
 springer-mta\UDAB-ViS.aux)
 
@@ -550,13 +527,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3975 strings out of 493921
- 58232 string characters out of 3144843
- 115093 words of memory out of 3000000
- 7228 multiletter control sequences out of 15000+200000
+ 3963 strings out of 493921
+ 57984 string characters out of 3144843
+ 116073 words of memory out of 3000000
+ 7218 multiletter control sequences out of 15000+200000
  11032 words of font info for 40 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,12n,42p,2040b,999s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,12n,42p,2040b,1611s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:
@@ -577,9 +554,9 @@ pe1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmtt8.pfb>
-Output written on UDAB-ViS.pdf (24 pages, 1356571 bytes).
+Output written on UDAB-ViS.pdf (22 pages, 1313840 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
+ 170 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

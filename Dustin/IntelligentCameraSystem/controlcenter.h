@@ -3,6 +3,7 @@
 
 #include <list>
 #include <QMainWindow>
+#include <fstream>
 #include "Types/camera.h"
 #include "UI/videowindow.h"
 #include "UI/icontrolcentermanager.h"
@@ -25,7 +26,7 @@ class ControlCenter : public QMainWindow, public IControlCenterManager
     Q_OBJECT
     
 public:
-    explicit ControlCenter(CameraList cameras, QWidget *parent = 0);
+    explicit ControlCenter(CameraList cameras, bool standard_videos, QString trainingSetFile, QString trainingOutfile, QWidget *parent = 0);
     ~ControlCenter();
     /**
      * @brief Determine if the application is in learning mode or not.
@@ -48,6 +49,12 @@ public:
     virtual void train();
 
     /**
+     * @brief usingStandardVideo
+     * @return Whether or not this experiment is using standard video.
+     */
+    virtual bool usingStandardVideo();
+
+    /**
      * @brief Make a prediction using the given feature set.
      * @param fs The feature set to make a prediction on.
      * @return A bitmask indicating the classes chosen from the trainers used.
@@ -67,6 +74,13 @@ private:
     Ui::ControlCenter *ui;
     Camera *c;
 
+    //Flag indicating what kind of test this is
+    bool                    m_standard_video_experiment;
+    //Name of training set file
+    QString                 m_training_set_file;
+    QString                 m_training_outfile;
+    //Filestream to write training samples to file
+    ofstream                m_trainsample_file;
     //Functions
     void addCameras(CameraList cameras);
 

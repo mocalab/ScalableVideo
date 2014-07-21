@@ -43,7 +43,7 @@ import android.widget.Toast;
  * */
 public class CameraServer extends Activity implements View.OnClickListener/*, PreviewCallback, Callback*/{
 
-	public static final String RECIPIENT_IPADDRESS = "146.244.195.30";
+	public static final String RECIPIENT_IPADDRESS = "140.154.1.1";
 	
 	//LOAD SHARED LIBRARIES
 	static
@@ -164,10 +164,15 @@ public class CameraServer extends Activity implements View.OnClickListener/*, Pr
 			m_previewWidth = Integer.parseInt(m_defaultPrefs.getString("width", "320"));
 			m_previewHeight = Integer.parseInt(m_defaultPrefs.getString("height", "240"));
 			m_frameRate = Integer.parseInt(m_defaultPrefs.getString("frame_rate", "30"));
+			if(EncoderActivationInterface.USE_STANDARD_VIDEO)
 			//Reset the camera preview 
-			m_encoder.setEncoderParams(Integer.parseInt(m_defaultPrefs.getString("width", "320")), 
-					Integer.parseInt(m_defaultPrefs.getString("height", "240")), 
-					Integer.parseInt(m_defaultPrefs.getString("frame_rate", "30")));
+			m_encoder.setEncoderParams(352, 
+					288, 
+					30);
+			else
+				m_encoder.setEncoderParams(Integer.parseInt(m_defaultPrefs.getString("width", "320")), 
+						Integer.parseInt(m_defaultPrefs.getString("height", "240")), 
+						Integer.parseInt(m_defaultPrefs.getString("frame_rate", "30")));
 		}
 		catch(NumberFormatException ex)
 		{
