@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.31)  9 JUL 2014 23:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.31)  27 JUL 2014 21:13
 entering extended mode
 **UDAB-ViS.tex
 
@@ -292,110 +292,85 @@ LaTeX Warning: Citation ` Microsoft' on page 2 undefined on input line 142.
 
 LaTeX Warning: Citation ` Netflix' on page 2 undefined on input line 142.
 
-[2] <images/H264AVCEncoderStructure.png, id=14, 221.32687pt x 212.29312pt>
+[2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+<images/H264AVCEncoderStructure.png, id=18, 221.32687pt x 212.29312pt>
 File: images/H264AVCEncoderStructure.png Graphic file (type png)
 
 <use images/H264AVCEncoderStructure.png>
 Package pdftex.def Info: images/H264AVCEncoderStructure.png used on input line 
-164.
+167.
 (pdftex.def)             Requested size: 135.19794pt x 129.6865pt.
- [3]
+
 <images/NALUnitHeader.png, id=19, 371.88937pt x 121.95563pt>
 File: images/NALUnitHeader.png Graphic file (type png)
 
 <use images/NALUnitHeader.png>
-Package pdftex.def Info: images/NALUnitHeader.png used on input line 173.
+Package pdftex.def Info: images/NALUnitHeader.png used on input line 176.
 (pdftex.def)             Requested size: 185.90103pt x 60.96461pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [4 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPa
 per/springer-mta/images/H264AVCEncoderStructure.png>] [5 <c:/Users/Dustin.Dusti
 n-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/images/NA
-LUnitHeader.png>] <images/SVCTemporalScalability.png, id=28, 759.58781pt x 168.
-63pt>
+LUnitHeader.png>]
+<images/SVCTemporalScalability.png, id=28, 759.58781pt x 168.63pt>
 File: images/SVCTemporalScalability.png Graphic file (type png)
 
 <use images/SVCTemporalScalability.png>
 Package pdftex.def Info: images/SVCTemporalScalability.png used on input line 2
-02.
+05.
 (pdftex.def)             Requested size: 304.19794pt x 67.53313pt.
-
-<images/SingleLayerParameterSwitching.png, id=29, 632.3625pt x 465.99094pt>
+ [6 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPa
+per/springer-mta/images/SVCTemporalScalability.png>]
+<images/SingleLayerParameterSwitching.png, id=34, 632.3625pt x 465.99094pt>
 File: images/SingleLayerParameterSwitching.png Graphic file (type png)
 
 <use images/SingleLayerParameterSwitching.png>
 Package pdftex.def Info: images/SingleLayerParameterSwitching.png used on input
- line 211.
+ line 214.
 (pdftex.def)             Requested size: 253.5pt x 186.80547pt.
 
-<images/ReceiverArchitecture.png, id=30, 444.15938pt x 124.21407pt>
+<images/ReceiverArchitecture.png, id=35, 444.15938pt x 124.21407pt>
 File: images/ReceiverArchitecture.png Graphic file (type png)
 
 <use images/ReceiverArchitecture.png>
-Package pdftex.def Info: images/ReceiverArchitecture.png used on input line 218
+Package pdftex.def Info: images/ReceiverArchitecture.png used on input line 221
 .
 (pdftex.def)             Requested size: 202.80206pt x 56.71458pt.
- [6 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPa
-per/springer-mta/images/SVCTemporalScalability.png>] [7 <c:/Users/Dustin.Dustin
--PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/images/Sin
-gleLayerParameterSwitching.png> <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin
-/OriginalWork/CameraSystemPaper/springer-mta/images/ReceiverArchitecture.png>]
-Overfull \hbox (3.25052pt too wide) in paragraph at lines 224--225
+ [7 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPa
+per/springer-mta/images/SingleLayerParameterSwitching.png>]
+Overfull \hbox (3.25052pt too wide) in paragraph at lines 227--228
 []\OT1/cmr/m/n/10 Delay on the en-coder side is greatly avoided by us-ing a har
 d-ware H.264/AVC
  []
 
-[8]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
- [9]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
-
-<images/BandwidthChangeDecisionTree.png, id=51, 512.66531pt x 487.06969pt>
+[8 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPap
+er/springer-mta/images/ReceiverArchitecture.png>]
+<images/BandwidthChangeDecisionTree.png, id=43, 512.66531pt x 487.06969pt>
 File: images/BandwidthChangeDecisionTree.png Graphic file (type png)
 
 <use images/BandwidthChangeDecisionTree.png>
 Package pdftex.def Info: images/BandwidthChangeDecisionTree.png used on input l
-ine 292.
+ine 285.
 (pdftex.def)             Requested size: 169.0pt x 160.56255pt.
+ [9]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
  [10 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
-aper/springer-mta/images/BandwidthChangeDecisionTree.png>]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
- [11]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
-
-<images/BandwidthDecisions.png, id=58, 624.08156pt x 683.55376pt>
-File: images/BandwidthDecisions.png Graphic file (type png)
-
-<use images/BandwidthDecisions.png>
-Package pdftex.def Info: images/BandwidthDecisions.png used on input line 338.
-(pdftex.def)             Requested size: 219.69794pt x 240.63461pt.
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
- [12 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
-aper/springer-mta/images/BandwidthDecisions.png>] <images/SystemArchitecture.pn
-g, id=62, 524.71031pt x 149.8097pt>
+aper/springer-mta/images/BandwidthChangeDecisionTree.png>] [11]
+<images/SystemArchitecture.png, id=58, 524.71031pt x 149.8097pt>
 File: images/SystemArchitecture.png Graphic file (type png)
 
 <use images/SystemArchitecture.png>
-Package pdftex.def Info: images/SystemArchitecture.png used on input line 348.
+Package pdftex.def Info: images/SystemArchitecture.png used on input line 344.
 (pdftex.def)             Requested size: 236.59897pt x 67.55087pt.
-
+ [12 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
+aper/springer-mta/images/SystemArchitecture.png>]
 
 LaTeX Warning: Reference `sec:NALandPacketization' on page 13 undefined on inpu
-t line 357.
+t line 353.
 
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
@@ -403,41 +378,42 @@ Missing character: There is no ™ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
-[13 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPa
-per/springer-mta/images/SystemArchitecture.png>]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- [14]
-<images/CameraSystemTestbed.png, id=71, 489.32813pt x 186.6975pt>
+[13] <images/CameraSystemTestbed.png, id=66, 489.32813pt x 186.6975pt>
 File: images/CameraSystemTestbed.png Graphic file (type png)
 
 <use images/CameraSystemTestbed.png>
-Package pdftex.def Info: images/CameraSystemTestbed.png used on input line 421.
+Package pdftex.def Info: images/CameraSystemTestbed.png used on input line 417.
 
 (pdftex.def)             Requested size: 236.59897pt x 90.27184pt.
-
-<images/SpatialResolutionTest.png, id=72, 514.92375pt x 316.18124pt>
+ [14]
+<images/SpatialResolutionTest.png, id=71, 514.92375pt x 316.18124pt>
 File: images/SpatialResolutionTest.png Graphic file (type png)
 
 <use images/SpatialResolutionTest.png>
-Package pdftex.def Info: images/SpatialResolutionTest.png used on input line 43
-0.
+Package pdftex.def Info: images/SpatialResolutionTest.png used on input line 42
+6.
 (pdftex.def)             Requested size: 270.40103pt x 166.03622pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [15 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
 aper/springer-mta/images/CameraSystemTestbed.png>]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- <images/QualityResolutionTest.png, id=76, 669.2503pt x 372.64218pt>
+
+<images/QualityResolutionTest.png, id=75, 669.2503pt x 372.64218pt>
 File: images/QualityResolutionTest.png Graphic file (type png)
 
 <use images/QualityResolutionTest.png>
-Package pdftex.def Info: images/QualityResolutionTest.png used on input line 44
-2.
+Package pdftex.def Info: images/QualityResolutionTest.png used on input line 43
+8.
 (pdftex.def)             Requested size: 270.40103pt x 150.56671pt.
 
-Underfull \vbox (badness 2080) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
 aper/springer-mta/images/SpatialResolutionTest.png>]
@@ -451,38 +427,50 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
-<images/ClassDistribution.png, id=80, 400.8576pt x 162.3666pt>
+<images/ClassDistribution.png, id=79, 400.8576pt x 162.3666pt>
 File: images/ClassDistribution.png Graphic file (type png)
 
 <use images/ClassDistribution.png>
-Package pdftex.def Info: images/ClassDistribution.png used on input line 491.
+Package pdftex.def Info: images/ClassDistribution.png used on input line 487.
 (pdftex.def)             Requested size: 219.69794pt x 88.98973pt.
  [17 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
 aper/springer-mta/images/QualityResolutionTest.png> <c:/Users/Dustin.Dustin-PC/
 ScalableVideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/images/ClassDi
 stribution.png>]
-<images/TrainingExperimentTalkingHead.png, id=86, 576.65437pt x 408.77719pt>
+
+LaTeX Warning: Reference `equ:BitrateCalculation' on page 18 undefined on input
+ line 510.
+
+
+LaTeX Warning: Reference `equ:OptimalBitrate' on page 18 undefined on input lin
+e 510.
+
+
+LaTeX Warning: Reference `equ:SelectMaxBitrate' on page 18 undefined on input l
+ine 510.
+
+<images/TrainingExperimentTalkingHead.png, id=85, 576.65437pt x 408.77719pt>
 File: images/TrainingExperimentTalkingHead.png Graphic file (type png)
 
 <use images/TrainingExperimentTalkingHead.png>
 Package pdftex.def Info: images/TrainingExperimentTalkingHead.png used on input
- line 517.
+ line 513.
 (pdftex.def)             Requested size: 270.40103pt x 191.68867pt.
  [18]
-<images/TrainingExperimentSports.png, id=90, 731.73375pt x 529.22719pt>
+<images/TrainingExperimentSports.png, id=89, 731.73375pt x 529.22719pt>
 File: images/TrainingExperimentSports.png Graphic file (type png)
 
 <use images/TrainingExperimentSports.png>
 Package pdftex.def Info: images/TrainingExperimentSports.png used on input line
- 523.
+ 519.
 (pdftex.def)             Requested size: 270.40103pt x 195.56873pt.
 
-<images/TrainingExperimentMedical.png, id=91, 749.80125pt x 525.46312pt>
+<images/TrainingExperimentMedical.png, id=90, 749.80125pt x 525.46312pt>
 File: images/TrainingExperimentMedical.png Graphic file (type png)
 
 <use images/TrainingExperimentMedical.png>
 Package pdftex.def Info: images/TrainingExperimentMedical.png used on input lin
-e 529.
+e 525.
 (pdftex.def)             Requested size: 270.40103pt x 189.49532pt.
 
 Underfull \vbox (badness 6125) has occurred while \output is active []
@@ -490,9 +478,13 @@ Underfull \vbox (badness 6125) has occurred while \output is active []
  [19 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemP
 aper/springer-mta/images/TrainingExperimentTalkingHead.png> <c:/Users/Dustin.Du
 stin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPaper/springer-mta/images
-/TrainingExperimentSports.png>] [20 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Du
-stin/OriginalWork/CameraSystemPaper/springer-mta/images/TrainingExperimentMedic
-al.png>]
+/TrainingExperimentSports.png>]
+
+LaTeX Warning: Reference `fig:ScalingDecisionChart' on page 20 undefined on inp
+ut line 550.
+
+[20 <c:/Users/Dustin.Dustin-PC/ScalableVideo/Dustin/OriginalWork/CameraSystemPa
+per/springer-mta/images/TrainingExperimentMedical.png>]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
@@ -527,13 +519,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3963 strings out of 493921
- 57984 string characters out of 3144843
- 116073 words of memory out of 3000000
- 7218 multiletter control sequences out of 15000+200000
+ 3958 strings out of 493921
+ 57823 string characters out of 3144843
+ 116028 words of memory out of 3000000
+ 7214 multiletter control sequences out of 15000+200000
  11032 words of font info for 40 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,12n,42p,2040b,1611s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,12n,42p,2040b,999s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:
@@ -554,9 +546,9 @@ pe1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmtt8.pfb>
-Output written on UDAB-ViS.pdf (22 pages, 1313840 bytes).
+Output written on UDAB-ViS.pdf (22 pages, 1294077 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
+ 169 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

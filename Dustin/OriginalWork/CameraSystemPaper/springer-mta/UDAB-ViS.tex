@@ -231,27 +231,17 @@ Delay on the encoder side is greatly avoided by using a hardware H.264/AVC encod
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{User Profiles and Bandwidth Optimization}
+\section{Video Parameter Adaptation}
 \label{sec:UserProfiles}
 
-The development of user profiles allows the client to make intelligent scaling decisions in line with how the user would have changed the video. This relieves the burden on the user to figure out how video should be scaled in different contexts, making it critical for a widely acceptable system. The learning and prediction mechanism proposed in this study offers a simple, yet effective way to provide dynamically adaptive video streams tailored to each individual.
+With our developed video scaling architecture, the need arises to be able to intelligently select encoding parameters for the user. When given many options, different users will have different needs when it comes to how video is presented. For example, in the context of viewing sports, a person may require that the frame rate and quality be kept high at all times, while in a medical consultation setting the frame rate may be negligible compared to spatial resolution. In this, we have investigated and present here a scheme for cognitive video parameter selection based on learned user preferences. The proposed learning and prediction mechanism offers a simple, yet effective way to provide dynamically adaptive video streams tailored to each individual.
 
-\subsection{Preferences and Profiles}
-A profile of the user is developed by the client application which will determine how video is scaled when it is no longer optimized to the transmission channel. In this, a developed profile places the user in one of four discrete classes which represent their preferences in relation to video quality:
-\begin{itemize}
-\item Class 0: User prefers high temporal and spatial resolution, no quality preference.
-\item Class 1: User prefers high temporal resolution; optimize spatial resolution for quality.
-\item Class 2: User prefers high spatial resolution; optimize temporal resolution for quality.
-\item Class 3: User prefers optimal quality; configure temporal and spatial resolution appropriately.
-\end{itemize}
-Knowing these preferences, the video bandwidth is optimized by weighing the video resolutions with higher or lower priority. This translates into the client treating lower priority parameters more harshly when determining the new encoding parameters.
+\subsection{Learning User Preferences}
+In our cognitive system, user peferences are learned using support vector machines (SVMs). A support vector machine is a commonly used tool in supervised learning which has applications in both classification and regression problems. We adopted the LibSVM implementation of a C support vector machine with a radial basis kernel \cite{LibSVM} which we utilize in user classification.
 
-Transforming these classes to their equivalent binary form we can represent them with a 2 bit value in which the first bit conveys the temporal resolution preference and the second bit conveys the spatial resolution preference. A set bit indicates the desire for a high weight given to this resolution at the expense of quality, and an unset bit indicates the desire to optimize quality resolution at the expense of the resolution in question. In this, we can find the best way to alter the spatial and temporal resolution such that the video bandwidth will fit the channel and align with the user's desires in terms of quality. The creation of these user profiles is accomplished using machine learning; in particular, by solving the classification problem using support vector machines.
+Classification starts with a set of training data consisting of a multidimensional set of features and associated known ground truths or labels. Support vector machines function by finding the optimal separation between clusters of training data, where the clusters are differentiated by their label. The result of this is a function used to predict the ground truth for new inputs. The SVM algorithm creates the separation by inserting a hyperplane between the border points of the clusters in the training set, known as the support vectors, and maximizing the margin between these support vectors. Nonlinear separations are found with the use of a kernel: a function which can map the feature space into higher dimensions, depending on the kernel type. Two C support vector machines with radial basis kernels are employed in this system to learn user preferences. For convenience, the C support vector machine implementation defined in \cite{LibSVM} is presented and briefly summarized below. 
 
-\subsection{Creating User Profiles}
-In order to create a profile for each user, we employed a supervised learning algorithm to create a decision function based on the user’s behavior to predict the class a user falls into. The decision function is calculated using the LibSVM implementation of a C support vector machine with a radial basis kernel \cite{LibSVM}.
-
-In supervised machine learning, a training set composed of a series of training samples is presented as input to the learning algorithm, the output of which is a set of coefficients for a decision function. In classification problems, the training samples are the values of a set of features which are relevant to the output, and a label for each of these vectors which denotes what class applies at the instant of the sample. The features used in this study are the channel bandwidth and the content type of the video (i.e. high quality medical, talking head, sporting event, etc.). Two C support vector machines with radial basis kernels are used to learn the two preferences. The C support vector machine classification algorithm used in this study is defined in \cite{LibSVM}. To use support vector machines to learn user preferences, a training set is defined as a feature vector $x_i \in \mathbf{R^n}  ,i=1\ldots{l}$ and the class label vector $y_i \in \lbrace 1,-1 \rbrace $ where 1 and -1 indicate the two distinct classes. The primal optimization problem in equation (\ref{equ:PrimalOpt}) is then solved \cite{LibSVM}
+A training set is defined as a feature vector $x_i \in \mathbf{R^n}  ,i=1\ldots{l}$ and the class label vector $y_i \in \lbrace 1,-1 \rbrace $ where 1 and -1 indicate the two distinct classes. The primal optimization problem in equation (\ref{equ:PrimalOpt}) is then solved
 \begin{equation}
 \begin{aligned}
 \label{equ:PrimalOpt}
@@ -287,9 +277,9 @@ w = \sum_{i=1}^{l} y_i \alpha_i \phi (x_i)
 \label{equ:DecisionFunction}
 sgn(w^T\phi (x) + b) = sgn(\sum_{i=1}^{l} y_i\alpha_i K(x_i, x_j) +b)
 \end{equation}
-Considering the graphical representation of $x_i$ and $y_i$, we have a multidimensional input space and class labels associated with each vector from $x$. The support vector machine attempts to find a hyperplane that separates the two classes with the widest margin, using kernels to support nonlinear separations. From this hyperplane comes the decision function in equation (\ref{equ:DecisionFunction}) that is used to predict class labels for new input vectors. In this study, we train the support vector machines to predict the user’s preferences using a combination of implicit and explicit feedback. 
+The final decision function is what our system uses in order to make predictions, and our primary controls over the accuracy of this function are the tuning parameters $C$ and $\gamma$.
 
-When a new user begins interacting with the system, they are initiated in ``learning mode.'' In learning mode, a change in channel bandwidth will result in a knee-jerk reaction by the system to simply alter the quality resolution of the video, leaving spatial and temporal resolution unchanged. Explicit feedback is obtained from the user. The user's interaction with the system is recorded and forms the training data set for the support vector machines. When the training set is sufficiently large enough to accurately train the support vector machines, 3-fold cross validation is performed to ensure accurate selection of $C$ in equation (\ref{equ:PrimalOpt}) and $\gamma$ in equation (\ref{equ:Gaussian}) \cite{LibSVM}. From this, a decision function is created which is used to make predictions. The explicit feedback process is shown in Figure \ref{fig:Feedback}.
+In order to use the SVMs, we must first develop a pool of training data for a given user. When a new user begins interacting with the system, they are initiated in ``learning mode.'' In learning mode, a change in channel bandwidth will result in a knee-jerk reaction by the system to simply alter the quality resolution of the video, leaving spatial and temporal resolution unchanged. Explicit feedback is obtained from the user by asking if the video quality is acceptable. A training sample is then recorded and added to the SVM training data. For experimental purposes, we collect at least 30 samples from the user before training. When the training set is sufficiently large enough it is split in half, with one half used for training and one half used for testing. We iterate through different values of the SVM tuning parameters $C$ and $\gamma$, training the support vector machines and checking the prediction accuracy using the testing data on each iteration. The final values of $C$ and $\gamma$ are then selected from the most accurate test. Finally, the decision function is created using our selection of tuning parameters and is used to make class predictions. An overview of the process is shown in Figure \ref{fig:Feedback}.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\linewidth]{images/BandwidthChangeDecisionTree.png}
@@ -297,52 +287,55 @@ When a new user begins interacting with the system, they are initiated in ``lear
 \label{fig:Feedback}
 \end{figure}
 
-\subsection{Video Bandwidth Determinations}
-The catalyst for video bandwidth recalculation is when the channel conditions have changed significantly enough to warrant scaling the video. Several methods, such as DIChirp \cite{DIChirp}, have been shown to estimate the bandwidth of the channel within a high degree of accuracy. We will now lay out how changing the various video resolutions will affect the video bandwidth in our system.
+Next, we discuss our application of classification in multidimensional video parameter adaption. 
 
-The compression bitrate of the video changes in order to change the quality of the video. The maximum bitrate can simply be calculated as a function of the known channel bandwidth and an optimization constant:
-\begin{equation}
-\label{equ:BitrateCalculation}
-Bitrate_{max} = Bandwidth_{channel} * K
-\end{equation}
-where $Bitrate_{max}$  is the maximum allowable bitrate, $Bandwidth_{channel}$ is the bandwidth of the channel, and $K$ is the optimization constant determining the percentage of available bandwidth that is acceptable to fill. Due to limitations in our encoder, the max bitrate must be calculated as a function of the frame rate. The following calculation is used: 
-\begin{equation}
-\label{equ:LimitedBitrateCalculation}
-Bitrate_{max} = \frac {Bandwidth_{channel}}{\frac {T} {17.28} } * K
-\end{equation}
-where $T$ is the frame rate of the video. The optimal bitrate for a given spatial resolution is then found as a function of the video dimensions and an optimization constant:
-\begin{equation}
-\label{equ:OptimalBitrate}
-Bitrate_{opt} = width * height * Q_{max}
-\end{equation}
-where $width$ and $height$ are the dimensions of the video, and $Q_{max}$ is the optimization constant which can be configured to find the highest necessary bitrate to deliver high quality video at a given spatial resolution. The output bitrate is then simply $Bitrate_{max}$ unless we wish to be conservative with channel bandwidth. In this case, the best choice of bitrate is either the maximum allowable bitrate or maximum necessary bitrate for the given channel, spatial resolution, and temporal resolution. The output bitrate is then selected from either equation (\ref{equ:SelectMaxBitrate}) or (\ref{equ:OutputBitrate}).
-\begin{equation}
-\label{equ:SelectMaxBitrate}
-Bitrate_{out} = Bitrate_{max}
-\end{equation}
-\begin{equation}
-\label{equ:OutputBitrate}
-Bitrate_{out} = \min (Bitrate_{max} , Bitrate_{opt})
-\end{equation}
-The highest necessary bitrate for delivering the best possible quality to the client is given in equation (\ref{equ:OutputBitrate}).
+\subsection{Multidimensional Video Adaptation}
+The perceived QoE of a video stream is highly dependent on how the video is adapted to changes in network capacity. Multidimensional video adaptation, in which the temporal, spatial, and quality resolution are subject to alteration, is essential for serving various users on disparate devices with individual preferences. To achieve multidimensional adaptation, we combine learned user preferences with our video scaling architecture in order to make intelligent adaptation decisions for individual users.
 
-Determining the temporal and spatial resolution will affect the quality resolution such that higher values will result in lower quality once the bitrate has reached $Bitrate_{max}$. The user's class is inspected in order to set these two parameters, as the class denotes if the temporal/spatial resolution should be optimized or if the quality should be optimized. In this study, we limit the possible temporal resolution values to 30 and 15. In the case where the temporal resolution bit is set in the user’s class, the frame rate simply becomes 30 fps, and if unset, the frame rate becomes 15 fps. If the spatial resolution bit is set, the spatial resolution is changed to the maximum value. When the bit is unset, the system first calculates $Bitrate_{max}$, then reduces the spatial resolution until:
+In our cognitive adaptation system, we estimate the link capacity to determine when to alter the video parameters. The multidimensional adaptation operation that we perform is dependent on a class label predicted at the time of adaptation. In order to predict this label, we use two support vector machines which learn the user’s perception of the importance of frame rate, frame size, and SNR resolution under different contexts. The context is determined based on features of the video and the streaming environment, such as network bandwidth and video content type. The predicted label takes on values from 0 to 3, conveying the following information: 
+\begin{itemize}
+\item Label 0: User weighs both frame rate and frame size with equal importance, while quality is of less importance
+\item Label 1: User weighs frame rate with highest importance, quality with secondary importance and size with least importance
+\item Label 2: User weighs frame size with highest importance, quality with secondary importance and frame rate with least importance
+\item Label 3: User weighs quality with highest importance, and frame size and rate with less importance
+\end{itemize}
+The motivation for using these four labels is that we only desire to know the preference of the user for each video dimension. This preference gives us a basis for which to optimize the encoding parameters in such a way that the QoE is maximized. In this, our system performs one of four operations to preferentially alter the encoding parameters. 
+
+When developing the pool of training data. our system assigns labels based on the quality, spatial, and temporal resolution of the video when a training sample is recorded. For the purposes of this study we employ a heuristic in which these resolutions are inspected and the ground truth is found by comparing them to a threshold value. For example, suppose the maximum frame size is CIF (352x288) and the maximum frame rate is 30fps. We can define the threshold to be half the max resolution value. In this, if the user is viewing video at QCIF frame size and 30fps, they are given label 1 as defined above. In the same way, if they are viewing video at CIF frame size and at 15fps, they will be given label 2. The remaining labels are determined in the same fashion.
+
+The multidimensional adaptation problem is characterized in \cite{wang2005classification} by the following:
 \begin{equation}
-\label{equ:OptMaxRelation}
-Bitrate_{opt} \le Bitrate_{max}
+\begin{aligned}
+\label{equ:UtilityFunction}
+& \tilde{a}=\underset{a \in A}{\operatorname{argmax}} 
+& & U(a) \\
+& R(a) \le R_0
+\end{aligned}
 \end{equation}
-This results in a spatial resolution that will be small enough to provide optimal quality video.
+where $a$ is a multidimensional adaptation function defined in the space $\mathbf{A}$. This model states that the correct adaptation function to choose should maximize the utility $U(a)$, which can be any metric that represents the quality of the user experience. The constraint $R_0$ is the available resource, in our case being the bandwidth of the network, and $R(a)$ is the new resource requirement due to the adaptation. We can equally represent the constraint as $R(a)=K*R_0,0<K\le 1$.  In addition, we assume that $R(a)=\beta$, the total bitrate of the video after the adaptation operation. Given this, we model quality resolution in bits per pixel as follows:
+\begin{equation}
+\label{equ:QualityResModel}
+l=\frac{\beta}{w*h*s}=\frac {R(a)} {w*h*s}=\frac {K*R_0} {w*h*s}
+\end{equation}
+where $w*h$ is the spatial resolution of the video after adaptation and $s$ is the temporal resolution after adaptation. In the adaptation operation, we select the spatial resolution and temporal resolution from a discrete set of values, then calculate the quality resolution $l$ as a result of these selections. We can call these sets $\mathbf{C}$ and $\mathbf{S}$, where $c_i$ is spatial resolution $i, i=1\ldots{n}$ and $s_i$ is temporal resolution $i, i=1\ldots{m}$. We assume that $R_0$ can be determined within a reasonable degree of accuracy. We then select a value for $K$, representing the percentage of available bandwidth that is acceptable to fill and providing a bit budget that we use to optimize the video encoding parameters. For this study we also define a value $l_{target}$, being the minimum target bits per pixel. This value is selected heuristically, but it can theoretically be configured or learned, representing the weight given to quality resolution. To perform the correct adaptation operation, we use the class label predicted by our support vector machines. The operations are defined below.
+\begin{itemize}
+\item $a_0$: Select $c_n$ and $s_m$, $l$ is calculated using equation \ref{equ:QualityResModel}
+\item $a_1$: Select  $s=s_m$ and $l=l_{target}$  ; maximize $c_k$ such that $w_k*h_k*l\le \frac {\beta} {s}$. If none exists, select $c_0$ and calculate $l$ using equation \ref{equ:QualityResModel}
+\item $a_2$: Select $c=c_n$ and $l=l_{target}$ ; maximize $s_k$ such that $s_k*l\le \frac {\beta} {c}$. If none exists, select $s_0$ and calculate $l$ using equation \ref{equ:QualityResModel}
+\item $a_3$:  Minimize $c$ and $s$, calculate $l$ such that $l=\frac{\beta}{c*s}$
+\end{itemize}
+These operations provide an effective way to maximize the QoE based on predicted user classes. Each video parameter is maximized according to the preference of the user, giving precedence to the parameter found most important. In our performance evaluation, we will compare the above method against single dimensional SNR resolution adaptation.
 
-\subsection{Scaling Decisions}
-
-The way that video bandwidth is optimized depends on the class that the user falls into for the given feature set at the time $T_k$ (the moment when the encoding parameters of the $k^{th}$ segment of video are selected). When channel bandwidth changes significantly enough, the first action taken is to predict the user’s preferences using the two decision functions already generated. This yields a bitmask that serves as the user’s class; the primary purpose of this class is to specify the order in which to scale the encoding parameters. This ordering also depends on whether or not the video bandwidth is increasing or decreasing. The chart given in Figure \ref{fig:ScalingDecisionChart} depicts the possible decisions that can be made about the video bandwidth.
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.65\linewidth]{images/BandwidthDecisions.png}
-\caption{Bandwidth Decisions}
-\label{fig:ScalingDecisionChart}
-\end{figure}
-The client application can then successfully adapt to channel bandwidth changes and alter the encoding parameters in such a way that the user’s desires are fulfilled.
+%\subsection{Scaling Decisions}
+%
+%The way that video bandwidth is optimized depends on the class that the user falls into for the given feature set at the time $T_k$ (the moment when the encoding parameters of the $k^{th}$ segment of video are selected). When channel bandwidth changes significantly enough, the first action taken is to predict the user’s preferences using the two decision functions already generated. This yields a bitmask that serves as the user’s class; the primary purpose of this class is to specify the order in which to scale the encoding parameters. This ordering also depends on whether or not the video bandwidth is increasing or decreasing. The chart given in Figure \ref{fig:ScalingDecisionChart} depicts the possible decisions that can be made about the video bandwidth.
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=0.65\linewidth]{images/BandwidthDecisions.png}
+%\caption{Bandwidth Decisions}
+%\label{fig:ScalingDecisionChart}
+%\end{figure}
+%The client application can then successfully adapt to channel bandwidth changes and alter the encoding parameters in such a way that the user’s desires are fulfilled.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{System Architecture}
 \label{sec:Architecture}

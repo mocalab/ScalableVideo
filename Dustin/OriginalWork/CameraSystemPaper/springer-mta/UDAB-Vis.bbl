@@ -85,6 +85,13 @@ Unane, I., Urteaga, I., Husemann, R., Del~Ser, J., Roseler, V., Rodriguez, A.,
 \newblock Available from:
   \url{http://www.intechopen.com/books/recent-advances-on-video-coding/}
 
+\bibitem{wang2005classification}
+Wang, Y., van~der Schaar, M., Chang, S.F., Loui, A.C.: Classification-based
+  multidimensional adaptation prediction for scalable video coding using
+  subjective quality evaluation.
+\newblock Circuits and Systems for Video Technology, IEEE Transactions on
+  \textbf{15}(10), 1270--1279 (2005)
+
 \bibitem{H264OverIP}
 Wenger, S.: H. 264/avc over ip.
 \newblock IEEE Transactions on Circuits and Systems for Video Technology
