@@ -54,6 +54,11 @@ void LearningInterface::trainCurrent()
         for (unsigned long i = 0; i < m_training_set.size(); ++i)
             m_training_set[i] = m_normalizer(m_training_set[i]);
 
+        //Randomize the order of the samples
+        randomize_samples(m_training_set, m_labels);
+
+
+
         //Perform cross-validation over a range of values of C and gamma
         //to determine the best parameters
         double C_best = 0;
@@ -63,9 +68,10 @@ void LearningInterface::trainCurrent()
         //Different values, simple implementation
         //Could look into better methods of doing this but this is a nice
         //and simple implementation at the cost of speed and efficiency
-        for(double gamma = 0.0001; gamma < 300; gamma *= 5)
+        matrix<double, 1, 2> best_accuracy_by_class;
+        for(double gamma = 0.0001; gamma < 300; gamma *= 2)
         {
-            for(double C = 0.0001; C < 300; C *= 5)
+            for(double C = 0.0001; C < 300; C *= 2)
             {
                 //Set a new kernel
                 m_trainer.set_kernel(kernel_type(gamma));
@@ -73,14 +79,16 @@ void LearningInterface::trainCurrent()
                 //Set a new C
                 m_trainer.set_c(C);
 
-                //Perform 3-fold cross validation and look at the accuracy
-                matrix<double, 1, 2> accuracy = cross_validate_trainer(m_trainer, m_training_set, m_labels, 3);
-                DEBUG() << " cross-validation accuracy: " << accuracy(0,0) << " " << accuracy(0,1);
+                //Perform 2-fold cross validation and look at the accuracy
+                //Our data set is small so 2 partitions is sufficient
+                matrix<double, 1, 2> accuracy = cross_validate_trainer(m_trainer, m_training_set, m_labels, 2);
+
                 //See if this has the best accuracy so far by multiplying the 0 class accuracy and 1 class accuracy
-                double curr_accuracy = accuracy(0,0) * accuracy(0,1);
+                double curr_accuracy = accuracy(0,0) + accuracy(0,1);
                 if(curr_accuracy > best_accuracy)
                 {
                     best_accuracy = curr_accuracy;
+                    best_accuracy_by_class = accuracy;
                     C_best = C;
                     gamma_best = gamma;
                 }
@@ -88,6 +96,8 @@ void LearningInterface::trainCurrent()
             }
         }
 
+        DEBUG() << "BEST cross-validation accuracy: 0:" << best_accuracy_by_class(0,0) << " 1:" << best_accuracy_by_class(0,1);
+        DEBUG() << "C: " << C_best << "Gamma: " << gamma_best;
         //Set C, epsilon and cache size
         m_trainer.set_c(C_best);
 
