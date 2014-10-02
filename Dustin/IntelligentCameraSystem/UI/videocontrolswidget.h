@@ -46,9 +46,12 @@ public:
      */
     QStringList &getSizes();
 
+    bool use_standard_video() const;
+    void setUse_standard_video(bool use_standard_video);
+
 protected:
-//    virtual void enterEvent(QEvent *e);
-//    virtual void leaveEvent(QEvent *e);
+    //    virtual void enterEvent(QEvent *e);
+    //    virtual void leaveEvent(QEvent *e);
     virtual void paintEvent(QPaintEvent *e);
 
 signals:
@@ -89,6 +92,7 @@ private:
     QLineEdit           *leWidth;
     QLineEdit           *leHeight;
     QLineEdit           *leFPS;
+    QComboBox           *cbFps;
     QLineEdit           *lebitRate;
 
     //Combo box for Width x Height
@@ -97,6 +101,9 @@ private:
 
     //Button
     QPushButton         *bSend;
+
+    //Whether or not standard file being used
+    bool                m_use_standard_video;
 };
 
 #endif // VIDEOCONTROLSWIDGET_H

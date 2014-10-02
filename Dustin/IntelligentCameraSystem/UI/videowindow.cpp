@@ -26,6 +26,7 @@ VideoWindow::VideoWindow(Camera *camera, IControlCenterManager *control_center, 
     m_s_key_down(false)
 {   
 
+    ui->video_controls->setUse_standard_video(m_control_center_manager->usingStandardVideo());
     ui->setupUi(this);
     this->setWindowTitle(m_camera->name());
     //this->setFixedSize(this->size());
@@ -255,9 +256,9 @@ void VideoWindow::receivedMessage(QString response, bool show_message)
     if(response.contains("Updating"))
     {
         //Set the new effective data rate by taking ratios of the new params to old params
-        float rate = m_effective_rate;
-        rate *= (((float)m_pending_parameters.fpsAsInt() / m_current_params.fpsAsInt()) * ((float)m_pending_parameters.bitrateAsInt() / m_current_params.bitrateAsInt()));
-        m_effective_rate = (int)rate;
+        //float rate = m_effective_rate;
+        //rate *= (((float)m_pending_parameters.fpsAsInt() / m_current_params.fpsAsInt()) * ((float)m_pending_parameters.bitrateAsInt() / m_current_params.bitrateAsInt()));
+        m_effective_rate = (int)(m_pending_parameters.bitrateAsInt() * ((float)m_pending_parameters.fpsAsInt() / 17.28));
         DEBUG() << "Effective bitrate: " << m_effective_rate;
         m_current_params = m_pending_parameters;
 
@@ -408,27 +409,41 @@ void VideoWindow::resizeVideo(QString width, QString height, QString fps, QStrin
     //See if we should change the bitrate
     if(bps == "0" && m_currentbw_kbps != 0)
     {
-        //Get the old bitrate
-        float old_bitrate = (float)m_current_params.bitrateAsInt();
-        int bitrate = 0;
-        //Figure out how to fit the channel
-        float fps_ratio = (float)fps.toInt() / m_current_params.fpsAsInt();
+        if(!m_control_center_manager->usingStandardVideo())
+        {
+            //Get the old bitrate
+            float old_bitrate = (float)m_current_params.bitrateAsInt();
+            int bitrate = 0;
+            //Figure out how to fit the channel
+            float fps_ratio = (float)fps.toInt() / m_current_params.fpsAsInt();
 
-        //Bitrate will be updated as such due to framerate
-        float ratio = m_effective_rate * fps_ratio;
+            //Bitrate will be updated as such due to framerate
+            float ratio = m_effective_rate * fps_ratio;
 
-        //Get the ratio of new datarate to channel bandwidth
-        ratio = ratio / m_currentbw_kbps;
+            //Get the ratio of new datarate to channel bandwidth
+            ratio = ratio / m_currentbw_kbps;
 
-        //Find the maximum and optimal bitrates
-        int max_bitrate = (int)((float)width.toInt() * (float)height.toInt() * 3.5);
-        int opt_bitrate = (int)((old_bitrate / ratio) * 0.85);
+            //Find the maximum and optimal bitrates
+            int max_bitrate = (int)((float)width.toInt() * (float)height.toInt() * 3.5);
+            int opt_bitrate = (int)((old_bitrate / ratio) * 0.85);
 
-        //Choose the least of these
-        bitrate = max_bitrate < opt_bitrate ? max_bitrate : opt_bitrate;
+            //Choose the least of these
+            bitrate = max_bitrate < opt_bitrate ? max_bitrate : opt_bitrate;
 
-        bps = QString::number(bitrate);
-
+            bps = QString::number(bitrate);
+        }
+        else
+        {
+            //This multiplier was found empirically by looking at charts of the video bandwidth
+            float fps_mult = (float) fps.toInt() / 17.28;
+            int complexity = m_video_features.contentType() <= 2 ? 0 : (m_video_features.contentType() <= 4 ? 1 : 2);
+            int bitrate = m_decision_interface.getOptimalBitrate(m_currentbw_kbps * 0.85 * 1000 / fps_mult,
+                                                                 fps.toInt(),
+                                                                 width.toInt(),
+                                                                 height.toInt(),
+                                                                 complexity);
+            bps = QString::number((int)(bitrate / fps_mult));
+        }
 
     }
     //Set new encoding parameters
@@ -491,7 +506,13 @@ void VideoWindow::onBandwidth(QString bandwidth)
             //this->takeSample();
             this->m_currentbw_kbps = iBW;
             //Knee-jerk reaction
-            m_decision_interface.defaultAdjustBitrate(m_currentbw_kbps, m_effective_rate, m_current_params, new_params);
+            if(!m_control_center_manager->usingStandardVideo())
+                m_decision_interface.defaultAdjustBitrate(m_currentbw_kbps, m_effective_rate, m_current_params, new_params);
+            else
+            {
+                int complexity = m_video_features.contentType() <= 2 ? 0 : (m_video_features.contentType() <= 4 ? 1 : 2);
+                m_decision_interface.defaultAdjustBitrate(m_currentbw_kbps, m_effective_rate, m_current_params, new_params, complexity);
+            }
         }
         //USE ML ALGORITHM TO DETERMINE WHAT THE PARAMETERS SHOULD BE
         else
@@ -503,8 +524,14 @@ void VideoWindow::onBandwidth(QString bandwidth)
             int class_mask = this->m_control_center_manager->predict(this->m_video_features);
 
             DEBUG() << "Class mask value: " << class_mask;
+            if(!m_control_center_manager->usingStandardVideo())
+                m_decision_interface.makeDecision(m_currentbw_kbps, m_effective_rate, m_current_params, class_mask, new_params);
+            else
+            {
+                int complexity = m_video_features.contentType() <= 2 ? 0 : (m_video_features.contentType() <= 4 ? 1 : 2);
+                m_decision_interface.makeDecisionUsingBeta(m_currentbw_kbps, m_effective_rate, m_current_params, class_mask, new_params, complexity);
 
-            m_decision_interface.makeDecision(m_currentbw_kbps, m_effective_rate, m_current_params, class_mask, new_params);
+            }
         }
         //m_effective_rate = (float)dr_avg_kbps;
         //DEBUG() << m_effective_rate;

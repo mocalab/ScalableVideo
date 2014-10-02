@@ -30,13 +30,15 @@ VideoControlsWidget::~VideoControlsWidget()
     delete lblHeight;
     delete leWidth;
     delete leHeight;
+    delete leFPS;
 #else
     delete lblWidthHeight;
     delete cbResolution;
+    delete cbFps;
 #endif
     delete lblFPS;
 
-    delete leFPS;
+
     delete bSend;
 
 }
@@ -69,17 +71,20 @@ void VideoControlsWidget::sendButtonClicked()
     //Determine the width field and height field
     QString width("");
     QString height("");
+    QString fps("");
 #if !USE_COMBO_BOX
     width = this->leWidth->text();
-    height = this->leHeight->text()
+    height = this->leHeight->text();
+    fps = leFPS->text();
 #else
     QStringList res = this->cbResolution->currentText().split("x");
     width = res.at(0);
     height = res.at(1);
+    fps = this->cbFps->currentText();
 #endif
 
     //Check to see if all of the fields have been filled
-    if(width == "" || height == "" || this->leFPS->text() == "" || this->lebitRate->text() == "")
+    if(width == "" || height == "" || fps == "" || this->lebitRate->text() == "")
     {
         //Create a message box to indicate error
         QMessageBox msgBox;
@@ -90,7 +95,7 @@ void VideoControlsWidget::sendButtonClicked()
     else
     {
         //Inform the parent to resize the video
-        emit sendClicked(width, height, leFPS->text(), lebitRate->text());
+        emit sendClicked(width, height, fps, lebitRate->text());
     }
 }
 
@@ -117,6 +122,7 @@ void VideoControlsWidget::setUpUI()
 #if !USE_COMBO_BOX
     this->leWidth = new QLineEdit(this);
     this->leHeight = new QLineEdit(this);
+    this->leFPS = new QLineEdit(this);
 #else
     //Instantiate the combo box
     this->cbResolution = new QComboBox(this);
@@ -136,8 +142,11 @@ void VideoControlsWidget::setUpUI()
         //If file fails to open... do something (will determine)
 
     }
+    this->cbFps = new QComboBox(this);
+    this->cbFps->addItem("30");
+    this->cbFps->addItem("15");
 #endif
-    this->leFPS = new QLineEdit(this);
+
     this->lebitRate = new QLineEdit(this);
 
 
@@ -157,14 +166,20 @@ void VideoControlsWidget::setUpUI()
     QHBoxLayout *heights = new QHBoxLayout;
     heights->addWidget(lblHeight);
     heights->addWidget(leHeight);
+
+    QHBoxLayout *FPSLayout = new QHBoxLayout;
+    FPSLayout->addWidget(lblFPS);
+    FPSLayout->addWidget(leFPS);
 #else
     QHBoxLayout *resolution = new QHBoxLayout;
     resolution->addWidget(lblWidthHeight);
     resolution->addWidget(cbResolution);
-#endif
+
     QHBoxLayout *FPSLayout = new QHBoxLayout;
     FPSLayout->addWidget(lblFPS);
-    FPSLayout->addWidget(leFPS);
+    FPSLayout->addWidget(cbFps);
+#endif
+
 
     QHBoxLayout *BPSLayout = new QHBoxLayout;
     BPSLayout->addWidget(lblbitRate);
@@ -197,6 +212,16 @@ void VideoControlsWidget::setUpUI()
 
 
 }
+bool VideoControlsWidget::use_standard_video() const
+{
+    return m_use_standard_video;
+}
+
+void VideoControlsWidget::setUse_standard_video(bool use_standard_video)
+{
+    m_use_standard_video = use_standard_video;
+}
+
 //Function to fade out
 void VideoControlsWidget::fadeOut()
 {

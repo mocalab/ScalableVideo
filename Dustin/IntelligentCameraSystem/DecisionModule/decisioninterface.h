@@ -7,6 +7,10 @@
 ///Keep any optimum at 95% of the average bandwidth in order to be resistant against fluctuations. This macro should be toggled until
 ///and acceptable value is determined
 #define OPTIMUM_CEILING         0.85
+#define FPS_15                  0
+#define QCIF                    0
+#define FPS_30                  1
+#define CIF                     1
 #include <QStringList>
 #include "Types/encodingparameters.h"
 #include "Types/featureset.h"
@@ -41,6 +45,13 @@ public:
                        int class_mask,
                        EncodingParameters &new_params);
 
+     void makeDecisionUsingBeta(int bandwidth,
+                                          int &datarate,
+                                          EncodingParameters &old_params,
+                                          int class_mask,
+                                          EncodingParameters &new_params,
+                                          int complexity);
+
      /**
       * @brief By default, adjust the bitrate to fit the channel.
       * @param bandwidth The video bandwidth.
@@ -53,11 +64,19 @@ public:
                                EncodingParameters &in,
                                EncodingParameters &out);
 
+     void defaultAdjustBitrate(int bandwidth,
+                                  int &datarate,
+                                  EncodingParameters &in,
+                                  EncodingParameters &out,
+                                  int complexity);
+
      /**
       * @brief Set the internal resolutions list.
       * @param resolutions The resolutions available.
       */
      void setResolutionsList(QStringList &resolutions);
+
+     int getOptimalBitrate(int max_bitrate, int fps, int width, int height, int complexity);
 
 private:
     /**
@@ -111,6 +130,9 @@ private:
     int                                         *m_resolutions;
 
     QStringList                                 m_possible_resolutions;
+
+    //The matrices \beta. Each have 4 values as there are 2 possible frame rates and 2 possible frame sizes
+    int                                         m_betas[3][2][2];
 };
 
 #endif // DECISIONINTERFACE_H

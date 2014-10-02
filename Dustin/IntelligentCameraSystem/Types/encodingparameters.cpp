@@ -1,10 +1,10 @@
 #include "encodingparameters.h"
 
 EncodingParameters::EncodingParameters() :
-    m_width(QString::number(320)),
-    m_height(QString::number(240)),
+    m_width(QString::number(352)),
+    m_height(QString::number(288)),
     m_fps(QString::number(30)),
-    m_bitrate(QString::number(320*240*3))
+    m_bitrate(QString::number(352*288*3.5))
 {
 }
 

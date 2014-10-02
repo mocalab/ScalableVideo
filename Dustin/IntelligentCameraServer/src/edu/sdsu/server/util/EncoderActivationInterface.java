@@ -86,7 +86,7 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 	
 	//FOR GETTING FRAMES FROM A STANDARD VIDEO FILE
 	public static final boolean			USE_STANDARD_VIDEO = true;
-	private static final String			CIF_VIDEO_FILENAME = "/data/dustin/akiyo/akiyo_cif.nv21";
+	private static final String			CIF_VIDEO_FILENAME = "/data/dustin/coastguard/coastguard_cif.nv21";
 	boolean									cif_video_file_open = false;
 	private FileInputStream					cifVideoFile;
 	private int 							standardVideoRateControl = 0;			
@@ -94,7 +94,7 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 	private byte[] 						cifFrame = new byte[(int) (352*288*1.5)];	
 	
 	//QCIF
-	private static final String			QCIF_VIDEO_FILENAME = "/data/dustin/akiyo/akiyo_qcif.nv21";
+	private static final String			QCIF_VIDEO_FILENAME = "/data/dustin/coastguard/coastguard_qcif.nv21";
 	boolean									qcif_video_file_open = false;
 	private FileInputStream					qcifVideoFile;		
 	//CIF Buffer
@@ -413,8 +413,16 @@ public class EncoderActivationInterface implements PreviewCallback, Callback{
 //							System.arraycopy(Y, 0, cifFrame, 0, Y.length);
 //							System.arraycopy(V, 0, cifFrame, Y.length, V.length);
 //							System.arraycopy(U, 0, cifFrame, Y.length + V.length, U.length);
+							
+							
 							cifVideoFile.read(cifFrame);
 							qcifVideoFile.read(qcifFrame);
+							if(m_frameRate == 15)
+							{
+								cifVideoFile.read(cifFrame);
+								qcifVideoFile.read(qcifFrame);
+							}
+							
 							//Attempt to encode
 							if(m_previewWidth == 176)
 							{

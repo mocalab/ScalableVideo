@@ -6,7 +6,25 @@ DecisionInterface::DecisionInterface(IVideoWindowManager *manager) :
     m_window_interface(manager),
     m_resolutions(NULL)
 {
+    //Set up the optimal bitrate matrices
+    //Values for FPS_15 are set higher to compensate for encoder behavior
+    //Low complexity
+    m_betas[0][FPS_15][QCIF] = 150000;
+    m_betas[0][FPS_15][CIF] = 200000;
+    m_betas[0][FPS_30][QCIF] = 100000;
+    m_betas[0][FPS_30][CIF] = 400000;
 
+    //Medium complexity
+    m_betas[1][FPS_15][QCIF] = 250000;
+    m_betas[1][FPS_15][CIF] = 400000;
+    m_betas[1][FPS_30][QCIF] = 260000;
+    m_betas[1][FPS_30][CIF] = 500000;
+
+    //High complexity
+    m_betas[2][FPS_15][QCIF] = 500000;
+    m_betas[2][FPS_15][CIF] = 800000;
+    m_betas[2][FPS_30][QCIF] = 500000;
+    m_betas[2][FPS_30][CIF] = 850000;
 }
 
 DecisionInterface::~DecisionInterface()
@@ -53,6 +71,125 @@ void DecisionInterface::makeDecision(int bandwidth,
     return;
 }
 
+//Determine what the new encoding parameters should be using the method with \beta
+void DecisionInterface::makeDecisionUsingBeta(int bandwidth,
+                                     int &datarate,
+                                     EncodingParameters &old_params,
+                                     int class_mask,
+                                     EncodingParameters &new_params,
+                                     int complexity)
+{
+    int width = 0, height = 0, max_bitrate = 0, optimum_bitrate = 0, bitrate = 0, i = 0, fps;
+    float ceiling = OPTIMUM_CEILING;
+    QStringList split;
+    QString res;
+    //Because we get the bw in kbps
+    bandwidth *= 1000;
+    max_bitrate = bandwidth * ceiling;
+    //See what the user's class is
+    switch(class_mask)
+    {
+        //Maximize all
+        case 0:
+            bitrate = max_bitrate < m_betas[complexity][FPS_30][CIF] ? max_bitrate : m_betas[complexity][FPS_30][CIF];
+            res = m_possible_resolutions[0];
+            split = res.split('x');
+            width = split[0].toInt();//in.widthAsInt();
+            height = split[1].toInt();//in.heightAsInt();
+            fps = 30;
+            break;
+        //Frame rate > frame size
+        case 1:
+            fps = 30;
+            if(m_betas[complexity][FPS_30][QCIF] > max_bitrate)
+            {
+                bitrate = max_bitrate;
+                width = 176;
+                height = 144;
+            }
+            else if(m_betas[complexity][FPS_30][CIF] > max_bitrate)
+            {
+                bitrate = m_betas[complexity][FPS_30][QCIF];
+                width = 176;
+                height = 144;
+            }
+            else
+            {
+                bitrate = max_bitrate;
+                width = 352;
+                height = 256;
+            }
+            break;
+        //Frame size > frame rate
+        case 2:
+            res = m_possible_resolutions[0];
+            split = res.split('x');
+            width = split[0].toInt();//in.widthAsInt();
+            height = split[1].toInt();//in.heightAsInt();
+            if(m_betas[complexity][FPS_15][CIF] > max_bitrate)
+            {
+                bitrate = max_bitrate;
+                fps = 15;
+            }
+            else if(m_betas[complexity][FPS_30][CIF] > max_bitrate)
+            {
+                bitrate = m_betas[complexity][FPS_15][CIF];
+                fps = 15;
+            }
+            else
+            {
+                bitrate = max_bitrate;
+                fps = 30;
+            }
+            break;
+        //Quality most important
+        case 3:
+            bitrate = max_bitrate;
+            //Very limited bandwidth, minimize everything
+            if(m_betas[complexity][FPS_15][QCIF] > max_bitrate)
+            {
+                bitrate = max_bitrate;
+                width = 176;
+                height = 144;
+                fps = 15;
+            }
+            else if(m_betas[complexity][FPS_30][QCIF] > max_bitrate)
+            {
+                bitrate = max_bitrate;
+                width = 176;
+                height = 144;
+                fps = 15;
+            }
+            else if(m_betas[complexity][FPS_15][CIF] > max_bitrate)
+            {
+                bitrate = max_bitrate;
+                width = 176;
+                height = 144;
+                fps = 30;
+            }
+            else if(m_betas[complexity][FPS_30][CIF] > max_bitrate)
+            {
+                bitrate = max_bitrate;
+                width = 352;
+                height = 288;
+                fps = 15;
+            }
+            else
+            {
+                bitrate = max_bitrate;
+                width = 352;
+                height = 288;
+                fps = 30;
+            }
+            break;
+    }
+    float fps_mult = (float)fps / 17.28;
+    new_params.setBitrate(QString::number((int)(bitrate / fps_mult)));
+    new_params.setFps(QString::number(fps));
+    new_params.setHeight(QString::number(height));
+    new_params.setWidth(QString::number(width));
+}
+
 //This is the default action (as in when in learning mode)
 void DecisionInterface::defaultAdjustBitrate(int bandwidth,
                                              int &datarate,
@@ -70,6 +207,39 @@ void DecisionInterface::defaultAdjustBitrate(int bandwidth,
     out.setHeight(QString::number(height));
     //Decide the optimum bitrate that can be used
     int optimum_bitrate = width * height * 3.5;
+
+    int bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
+
+    out.setBitrate(QString::number(bitrate));
+
+    //Set the new bitrate for the caller
+    //datarate /= ratio;
+}
+
+//This is the default action (as in when in learning mode)
+void DecisionInterface::defaultAdjustBitrate(int bandwidth,
+                                             int &datarate,
+                                             EncodingParameters &in,
+                                             EncodingParameters &out,
+                                             int complexity)
+{
+    float ceiling = OPTIMUM_CEILING;
+    //Determined empirically by looking at graphs of the actual video bitrate
+    float fps_mult = (float)30 / 17.28;
+
+    int max_bitrate = (int) bandwidth * ceiling * 1000 / fps_mult;
+
+    QString res = m_possible_resolutions[0];
+    QStringList split = res.split('x');
+    int width = split[0].toInt();//in.widthAsInt();
+    int height = split[1].toInt();//in.heightAsInt();
+    out.setWidth(QString::number(width));
+    out.setHeight(QString::number(height));
+
+    out.setFps("30");
+
+    //Decide the optimum bitrate that can be used
+    int optimum_bitrate = m_betas[complexity][FPS_30][CIF];
 
     int bitrate = max_bitrate < optimum_bitrate ? max_bitrate : optimum_bitrate;
 
@@ -97,6 +267,18 @@ void DecisionInterface::setResolutionsList(QStringList &resolutions)
     }
 
     m_possible_resolutions = resolutions;
+}
+
+int DecisionInterface::getOptimalBitrate(int max_bitrate, int fps, int width, int height, int complexity)
+{
+    int fps_idx = fps == 30 ? 1 : 0;
+
+    int spatial_idx = width == 352 ? 1 : 0;
+
+    //Decide the optimum bitrate that can be used
+    int optimum_bitrate = m_betas[complexity][fps_idx][spatial_idx];
+    //optimum_bitrate /= (fps / 17.28);
+    return max_bitrate < optimum_bitrate ? (int) max_bitrate : (int) optimum_bitrate;
 }
 
 //Up convert the encoding parameters

@@ -1,5 +1,105 @@
- INFO 2014-07-25T18:24:11.656 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/main.cpp : 25  --  Program init. 
-DEBUG 2014-07-25T18:24:52.272 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 99 -- BEST cross-validation accuracy: 0: 0.75  1: 0.833333 
-DEBUG 2014-07-25T18:24:52.272 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 100 -- C:  52.4288 Gamma:  209.715 
-DEBUG 2014-07-25T18:24:52.378 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 99 -- BEST cross-validation accuracy: 0: 1  1: 0.923077 
-DEBUG 2014-07-25T18:24:52.378 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 100 -- C:  209.715 Gamma:  1.6384 
+ INFO 2014-10-01T22:59:04.295 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/main.cpp : 25  --  Program init. 
+DEBUG 2014-10-01T22:59:25.755 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 99 -- BEST cross-validation accuracy: 0: 0.75  1: 0.954545 
+DEBUG 2014-10-01T22:59:25.755 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/LearningModule/learninginterface.cpp : 100 -- C:  209.715 Gamma:  0.0016 
+ INFO 2014-10-01T22:59:41.130 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Connected!" 
+ INFO 2014-10-01T22:59:45.245 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 143 -- Video window destructor called. 
+ INFO 2014-10-01T22:59:45.245 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 
+ INFO 2014-10-01T23:00:30.091 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Connected!" 
+DEBUG 2014-10-01T23:00:40.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 526 -- Class mask value:  0 
+ INFO 2014-10-01T23:00:40.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 458 -- Sent:  "start 352 288 30 288000" 
+ INFO 2014-10-01T23:00:40.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-10-01T23:00:40.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-10-01T23:00:40.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-10-01T23:00:40.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-10-01T23:00:40.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-10-01T23:00:40.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 262 -- Effective bitrate:  499999 
+DEBUG 2014-10-01T23:00:42.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 526 -- Class mask value:  0 
+ INFO 2014-10-01T23:00:42.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 458 -- Sent:  "start 352 288 30 244800" 
+ INFO 2014-10-01T23:00:42.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-10-01T23:00:42.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-10-01T23:00:43.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-10-01T23:00:43.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-10-01T23:00:43.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-10-01T23:00:43.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 262 -- Effective bitrate:  424999 
+DEBUG 2014-10-01T23:00:44.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 526 -- Class mask value:  0 
+ INFO 2014-10-01T23:00:44.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 458 -- Sent:  "start 352 288 30 269280" 
+ INFO 2014-10-01T23:00:44.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-10-01T23:00:44.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-10-01T23:00:44.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-10-01T23:00:45.202 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-10-01T23:00:45.202 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-10-01T23:00:45.202 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 262 -- Effective bitrate:  467499 
+DEBUG 2014-10-01T23:00:47.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 526 -- Class mask value:  0 
+ INFO 2014-10-01T23:00:47.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 458 -- Sent:  "start 352 288 30 220320" 
+ INFO 2014-10-01T23:00:47.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-10-01T23:00:47.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-10-01T23:00:48.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-10-01T23:00:48.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-10-01T23:00:48.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-10-01T23:00:48.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 262 -- Effective bitrate:  382499 
+DEBUG 2014-10-01T23:00:49.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 526 -- Class mask value:  0 
+ INFO 2014-10-01T23:00:49.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 458 -- Sent:  "start 352 288 30 288000" 
+ INFO 2014-10-01T23:00:49.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-10-01T23:00:49.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-10-01T23:00:50.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-10-01T23:00:50.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-10-01T23:00:50.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-10-01T23:00:50.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 262 -- Effective bitrate:  499999 
+DEBUG 2014-10-01T23:00:51.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 526 -- Class mask value:  1 
+ INFO 2014-10-01T23:00:51.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 458 -- Sent:  "start 176 144 30 149760" 
+ INFO 2014-10-01T23:00:51.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-10-01T23:00:51.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-10-01T23:00:52.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-10-01T23:00:52.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-10-01T23:00:52.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-10-01T23:00:52.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 262 -- Effective bitrate:  259999 
+DEBUG 2014-10-01T23:00:56.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 526 -- Class mask value:  0 
+ INFO 2014-10-01T23:00:56.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 458 -- Sent:  "start 352 288 30 288000" 
+ INFO 2014-10-01T23:00:56.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-10-01T23:00:56.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-10-01T23:00:57.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-10-01T23:00:57.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-10-01T23:00:57.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-10-01T23:00:57.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 262 -- Effective bitrate:  499999 
+DEBUG 2014-10-01T23:00:59.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 526 -- Class mask value:  1 
+ INFO 2014-10-01T23:01:00.718 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 458 -- Sent:  "start 176 144 30 149760" 
+ INFO 2014-10-01T23:01:00.719 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-10-01T23:01:00.719 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-10-01T23:01:01.194 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-10-01T23:01:01.194 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-10-01T23:01:01.195 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-10-01T23:01:01.195 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 262 -- Effective bitrate:  259999 
+DEBUG 2014-10-01T23:01:04.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 526 -- Class mask value:  0 
+ INFO 2014-10-01T23:01:04.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 458 -- Sent:  "start 352 288 30 288000" 
+ INFO 2014-10-01T23:01:04.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-10-01T23:01:04.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-10-01T23:01:04.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-10-01T23:01:04.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-10-01T23:01:04.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-10-01T23:01:04.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 262 -- Effective bitrate:  499999 
+DEBUG 2014-10-01T23:01:06.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 526 -- Class mask value:  1 
+ INFO 2014-10-01T23:01:06.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 458 -- Sent:  "start 176 144 30 146880" 
+ INFO 2014-10-01T23:01:06.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-10-01T23:01:06.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-10-01T23:01:07.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-10-01T23:01:07.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-10-01T23:01:07.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-10-01T23:01:07.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 262 -- Effective bitrate:  254999 
+DEBUG 2014-10-01T23:01:10.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 526 -- Class mask value:  0 
+ INFO 2014-10-01T23:01:10.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 458 -- Sent:  "start 352 288 30 288000" 
+ INFO 2014-10-01T23:01:10.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-10-01T23:01:10.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-10-01T23:01:10.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-10-01T23:01:10.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-10-01T23:01:10.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-10-01T23:01:10.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 262 -- Effective bitrate:  499999 
+DEBUG 2014-10-01T23:01:13.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 526 -- Class mask value:  0 
+ INFO 2014-10-01T23:01:13.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 458 -- Sent:  "start 352 288 30 244800" 
+ INFO 2014-10-01T23:01:13.571 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 72 -- After send. STATUS:  0 
+ INFO 2014-10-01T23:01:13.572 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 32 -- Setting up timer... 
+ INFO 2014-10-01T23:01:14.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 89 -- Response tick... 
+ INFO 2014-10-01T23:01:14.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/networktoqtinterface.cpp : 96 -- Received response: Updating the camera 
+ INFO 2014-10-01T23:01:14.071 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 250 -- In slot 'receivedPacket' Message: "Updating the camera" 
+DEBUG 2014-10-01T23:01:14.072 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 262 -- Effective bitrate:  424999 
+ INFO 2014-10-01T23:01:19.679 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/UI/videowindow.cpp : 143 -- Video window destructor called. 
+ INFO 2014-10-01T23:01:19.679 ../../ResearchCodeBase/ScalableVideo/Dustin/IntelligentCameraSystem/Network/tcpclient.cpp : 180 -- Closing connection to server. 
